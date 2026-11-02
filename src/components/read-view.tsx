@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { useProductViews } from "@/components/use-product-views";
 import type { ProductView } from "@/lib/catalog";
 import { UI_COPY } from "@/lib/guard/uiCopy";
-import { KIND_LABEL } from "@/lib/illustration";
+import { illustrationSrc, KIND_LABEL } from "@/lib/illustration";
 import type { MedicineKind } from "@/lib/schema/product";
 import { cleanJan, isValidJan } from "@/lib/jan";
 import { cn } from "@/lib/utils";
@@ -115,12 +115,30 @@ function Detail({ current, read }: { current: ProductView; read: ProductView[] }
 
 // 種類の並びは KIND_LABEL の定義順で固定（棚の並びに近い順。順位ではない）
 const KIND_ORDER = Object.keys(KIND_LABEL) as MedicineKind[];
+// 選んだ種類はタブを閉じるまで覚える（商品を見て戻ったとき同じ一覧に戻すため）。検索語は保存しない。
+// ヘッダのロゴを押したときは HOME_RESET を送り、種類のタイルに戻す
+const KIND_KEY = "hakoyomi.homeKind";
+const HOME_RESET = "hakoyomi:home-reset";
 
-// 何も開いていない画面：検索と種類で絞る一覧（L-20261103-21）。読み取りは下部中央の JAN ボタンから
+export function resetHome() {
+  try {
+    sessionStorage.removeItem(KIND_KEY);
+  } catch {
+    // 保存領域が使えない環境では何もしない
+  }
+  window.dispatchEvent(new Event(HOME_RESET));
+}
+
+function isKind(value: string | null): value is MedicineKind {
+  return value !== null && value in KIND_LABEL;
+}
+
+// 何も開いていない画面（L-20261103-23）。検索欄 → 種類のタイル → 種類を押すとその一覧。
+// 読み取りは下部中央の JAN ボタンから
 function Home({ read }: { read: ProductView[] }) {
   const { ids, add } = useStack();
   const [q, setQ] = useState("");
-  const [kind, setKind] = useState<MedicineKind | "all">("all");
+  const [kind, setKindState] = useState<MedicineKind | null>(null);
   const [all, setAll] = useState<ProductView[] | null>(null);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -137,24 +155,49 @@ function Home({ read }: { read: ProductView[] }) {
     };
   }, []);
 
+  // サーバーの描画と食い違わないよう、復元はハイドレーションの後に行う
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem(KIND_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- 外部ストレージからの一度きりの復元
+      if (isKind(saved)) setKindState(saved);
+    } catch {
+      // 保存領域が使えない環境では覚えない
+    }
+  }, []);
+
+  useEffect(() => {
+    const reset = () => {
+      setKindState(null);
+      setQ("");
+    };
+    window.addEventListener(HOME_RESET, reset);
+    return () => window.removeEventListener(HOME_RESET, reset);
+  }, []);
+
+  function setKind(next: MedicineKind | null) {
+    setKindState(next);
+    window.scrollTo({ top: 0 });
+    try {
+      if (next) sessionStorage.setItem(KIND_KEY, next);
+      else sessionStorage.removeItem(KIND_KEY);
+    } catch {
+      // 同上
+    }
+  }
+
   const term = q.trim().toLowerCase();
   const digits = /^[\d０-９\s-]+$/.test(term);
-  const matched = (all ?? []).filter((v) => {
+  const products = all ?? [];
+  const matched = products.filter((v) => {
     if (!term) return true;
     if (digits) return v.product.jan.includes(cleanJan(term));
     return `${v.product.name} ${v.product.maker}`.toLowerCase().includes(term);
   });
-
-  // 種類ごとにまとめる。種類の並びは KIND_LABEL の定義順、種類の中は品名順（どちらも順位ではない）
-  const counts = new Map<MedicineKind, number>();
-  for (const v of matched) counts.set(v.product.kind, (counts.get(v.product.kind) ?? 0) + 1);
-  const kinds = KIND_ORDER.filter((k) => counts.has(k));
-  // 検索で選んだ種類の品がなくなったら「すべて」に戻して見せる
-  const current = kind !== "all" && kinds.includes(kind) ? kind : "all";
-  const groups = (current === "all" ? kinds : [current]).map((k) => ({
-    kind: k,
-    views: matched.filter((v) => v.product.kind === k),
-  }));
+  const byKind = (list: ProductView[]) =>
+    KIND_ORDER.map((k) => ({ kind: k, views: list.filter((v) => v.product.kind === k) })).filter(
+      (g) => g.views.length > 0,
+    );
 
   async function submit() {
     setMessage(null);
@@ -167,10 +210,11 @@ function Home({ read }: { read: ProductView[] }) {
     add(((await res.json()) as { product: { id: string } }).product.id);
   }
 
+  const kindViews = kind ? products.filter((v) => v.product.kind === kind) : [];
+
   return (
-    <div className="flex flex-col gap-4">
-      {/* 検索と種類は送っても見えるよう上に留める */}
-      <div className="sticky top-12 z-20 -mx-4 -mt-4 flex flex-col gap-2 bg-background/95 px-4 pt-3 pb-2 backdrop-blur">
+    <div className="flex flex-col gap-5">
+      <div className="sticky top-12 z-20 -mx-4 -mt-4 bg-background/95 px-4 pt-3 pb-2 backdrop-blur">
         <form
           role="search"
           onSubmit={(e) => {
@@ -209,105 +253,129 @@ function Home({ read }: { read: ProductView[] }) {
             </button>
           )}
         </form>
-        <div
-          role="group"
-          aria-label="種類"
-          className="-mx-4 flex gap-1.5 overflow-x-auto px-4 [scrollbar-width:none]"
-        >
-          {[
-            { key: "all" as const, label: UI_COPY.showAll, n: matched.length },
-            ...kinds.map((k) => ({ key: k, label: KIND_LABEL[k], n: counts.get(k) ?? 0 })),
-          ].map((t) => {
-            const on = current === t.key;
-            return (
-              <button
-                type="button"
-                key={t.key}
-                onClick={() => setKind(t.key)}
-                aria-pressed={on}
-                className={cn(
-                  "min-h-9 shrink-0 rounded-full border px-3 text-[13px] whitespace-nowrap",
-                  on
-                    ? "border-primary bg-primary font-bold text-primary-foreground"
-                    : "border-border bg-background",
-                )}
-              >
-                {t.label}
-                <span className="ml-1 tabular-nums opacity-80">{t.n}</span>
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       {message && (
-        <p role="status" className="rounded-lg bg-muted p-3 text-sm">
+        <p role="status" className="-mt-3 rounded-lg bg-muted p-3 text-sm">
           {message}
         </p>
       )}
 
-      {!term && read.length > 0 && (
-        <section aria-labelledby="read-title" className="flex flex-col gap-1.5">
-          <h2 id="read-title" className="text-xs font-bold text-muted-foreground">
-            {UI_COPY.readList}（{read.length}/4）
-          </h2>
-          <ul className="-mx-4 flex gap-1.5 overflow-x-auto px-4 pb-1">
-            {read.map((v) => (
-              <li key={v.product.id}>
-                <button
-                  type="button"
-                  onClick={() => add(v.product.id)}
-                  className="flex min-h-10 items-center gap-1.5 rounded-full border border-border py-1 pr-3 pl-1 text-sm whitespace-nowrap active:bg-accent"
-                >
-                  <ProductImage
-                    id={v.product.id}
-                    kind={v.product.kind}
-                    name={v.product.name}
-                    size={28}
-                    decorative
-                    className="size-7 rounded-full bg-white object-contain p-0.5"
-                  />
-                  {v.product.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
       {all === null ? (
         <p className="text-muted-foreground">…</p>
-      ) : groups.length === 0 ? (
-        <p className="rounded-lg bg-muted p-3 text-sm">{UI_COPY.noMatch}</p>
+      ) : term ? (
+        // 検索中：種類ごとにまとめた結果
+        matched.length === 0 ? (
+          <p className="rounded-lg bg-muted p-3 text-sm">{UI_COPY.noMatch}</p>
+        ) : (
+          <>
+            <ListHeading title={`「${q.trim()}」`} count={matched.length} />
+            {byKind(matched).map((g) => (
+              <section key={g.kind} className="-mt-2 flex flex-col gap-1.5">
+                <h3 className="text-xs font-bold text-muted-foreground">
+                  {KIND_LABEL[g.kind]}　{g.views.length}品
+                </h3>
+                <ProductList views={g.views} ids={ids} onPick={add} />
+              </section>
+            ))}
+          </>
+        )
+      ) : kind ? (
+        // 種類を選んだとき：その種類の一覧
+        <section className="-mt-2 flex flex-col gap-2">
+          <button
+            type="button"
+            onClick={() => setKind(null)}
+            className="-ml-1 flex min-h-10 items-center gap-0.5 self-start rounded-lg pr-2 text-sm text-primary active:bg-accent"
+          >
+            <ChevronLeft className="size-5" aria-hidden="true" />
+            {UI_COPY.kindsTitle}
+          </button>
+          <ListHeading title={KIND_LABEL[kind]} count={kindViews.length} />
+          <ProductList views={kindViews} ids={ids} onPick={add} />
+        </section>
       ) : (
+        // 最初の画面：種類のタイル（12種類が1画面に収まる）と読んだ商品
         <>
-          <p className="-mb-2 text-[11px] text-muted-foreground">
-            {UI_COPY.demoList} {matched.length}品・{UI_COPY.sortedByName}
-          </p>
-          {groups.map((g) => (
-            <section
-              key={g.kind}
-              aria-labelledby={`home-${g.kind}`}
-              className="flex flex-col gap-1.5"
+          <section aria-labelledby="kinds-title" className="-mt-2 flex flex-col gap-2">
+            <h2
+              id="kinds-title"
+              className="flex items-baseline justify-between text-base font-bold"
             >
-              <h2 id={`home-${g.kind}`} className="flex items-baseline gap-2 text-sm font-bold">
-                {KIND_LABEL[g.kind]}
-                <span className="text-xs font-normal text-muted-foreground">
-                  {g.views.length}品
-                </span>
+              {UI_COPY.kindsTitle}
+              <span className="text-xs font-normal text-muted-foreground">{products.length}品</span>
+            </h2>
+            <ul className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+              {byKind(products).map((g) => (
+                <li key={g.kind}>
+                  <button
+                    type="button"
+                    onClick={() => setKind(g.kind)}
+                    className="flex h-full w-full flex-col items-center gap-1 rounded-xl border border-border bg-card px-1 py-3 text-center active:bg-accent"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
+                    <img
+                      src={illustrationSrc(g.kind, "form")}
+                      alt=""
+                      width={44}
+                      height={44}
+                      className="size-11"
+                    />
+                    <span className="text-sm leading-tight font-bold">{KIND_LABEL[g.kind]}</span>
+                    <span className="text-[11px] text-muted-foreground">{g.views.length}品</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {read.length > 0 && (
+            <section aria-labelledby="read-title" className="flex flex-col gap-2">
+              <h2
+                id="read-title"
+                className="flex items-baseline justify-between text-base font-bold"
+              >
+                {UI_COPY.readList}
+                <span className="text-xs font-normal text-muted-foreground">{read.length}/4品</span>
               </h2>
-              <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border">
-                {g.views.map((v) => (
-                  <li key={v.product.id}>
-                    <ProductRow view={v} read={ids.includes(v.product.id)} onPick={add} />
-                  </li>
-                ))}
-              </ul>
+              <ProductList views={read} ids={[]} onPick={add} />
             </section>
-          ))}
+          )}
         </>
       )}
     </div>
+  );
+}
+
+function ListHeading({ title, count }: { title: string; count: number }) {
+  return (
+    <h2 className="flex items-baseline gap-2 text-lg font-bold">
+      {title}
+      <span className="text-sm font-normal text-muted-foreground">{count}品</span>
+      <span className="ml-auto text-[11px] font-normal text-muted-foreground">
+        {UI_COPY.sortedShort}
+      </span>
+    </h2>
+  );
+}
+
+function ProductList({
+  views,
+  ids,
+  onPick,
+}: {
+  views: ProductView[];
+  ids: string[];
+  onPick: (id: string) => void;
+}) {
+  return (
+    <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border">
+      {views.map((v) => (
+        <li key={v.product.id}>
+          <ProductRow view={v} read={ids.includes(v.product.id)} onPick={onPick} />
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -339,9 +407,10 @@ function ProductRow({
         />
       </span>
       <span className="flex min-w-0 flex-1 flex-col">
-        <span className="truncate text-sm font-bold">{product.name}</span>
+        <span className="truncate text-[15px] font-bold">{product.name}</span>
         <span className="truncate text-xs text-muted-foreground">
-          {product.maker}・{product.riskClass}
+          {/* 一覧では「株式会社」を省いて読みやすくする */}
+          {product.maker.replace(/株式会社/g, "").trim()}・{product.riskClass}
         </span>
       </span>
       {read && (

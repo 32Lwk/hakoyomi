@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { resetHome } from "@/components/read-view";
 import { useStack } from "@/components/stack-provider";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 
@@ -21,7 +22,11 @@ export function AppHeader() {
       <div className="mx-auto flex h-12 max-w-3xl items-center gap-2 px-4">
         <Link
           href="/"
-          onClick={() => select(null)}
+          onClick={() => {
+            select(null);
+            // 商品一覧も種類のタイルから
+            resetHome();
+          }}
           className="flex shrink-0 items-center gap-2 text-base font-bold tracking-wide"
         >
           <span
