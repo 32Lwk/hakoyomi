@@ -2,14 +2,14 @@
 
 ## Open
 
-### L-20261102-38
-- asked: 開発を続ける（ゆう 2026-11-02）→ T003 の migration を先に書く
-- why: architecture §5 の表と、実装済みの zod スキーマ（src/lib/schema）・T101 の出力がずれている（notice_items の id が uuid、excluded_by・badge・needs_review がない、products に kind・route・efficacy_groups・crude_drug_main・1日最大量がない など）。seed（T102・T103）を zod の形のまま入れられるよう、DB を zod に合わせる
-- target: supabase/migrations/20261102000000_init.sql、docs/architecture.md §5、src/lib/schema/schema.test.ts（PII カラムなしの検査）
-- owner: Claude Code
-- status: done（2026-11-02。Supabase プロジェクトの作成・migration の適用はゆう）
-- proof: products・notice_items の id は text（kaze_1-ng-1-3 等）。全表 RLS 有効・ポリシーなし（service role のサーバーからのみ読む）。お客様の氏名・症状・健康情報・質問入力のカラムなしをテストで検査
-- notes: 販売記録の下書き（T401）の表は T401 で足す
+### L-20261102-39
+- asked: Vercel ではなく、Tailscale で接続した Mac mini でホストし Cloudflare Tunnel で公開する（ゆう 2026-11-02）
+- why: 手持ちの Mac mini（常時稼働）と Cloudflare 管理の yutok.dev がそろっており、Vercel 連携なしで HTTPS（スマホのカメラで JAN 読取）を出せる
+- target: Mac mini の ~/hakoyomi（git clone → next build → next start :3000、LaunchAgent dev.yutok.hakoyomi.web）、別 Tunnel `hakoyomi`（d229589b、LaunchAgent dev.yutok.hakoyomi.tunnel、設定 ~/.cloudflared/hakoyomi.yml。cloudflared tunnel login で作成）、hakoyomi.yutok.dev、scripts/host/、tasks.md T004・T501、architecture §9
+- owner: Claude Code（Mac mini 側の設定・Tunnel 作成・DNS）／ゆう（cloudflared tunnel login の承認、DNS 上書きの承認、任意で Access）
+- status: done（2026-11-02）
+- proof: https://hakoyomi.yutok.dev が Cloudflare 経由で 200、/api/jan が Supabase のデモ商品を返す。medicine.yutok.dev は 200 のまま。cert.pem は作業後に削除
+- notes: 既存の medicine-recommend の Tunnel・LaunchAgent には触らない（別プロジェクト。再利用と混同させない）。Tailscale は管理用で、公開は Cloudflare。Claude の API を公開するまでに簡易レート制限（T501）か Access で絞る
 
 ### L-20261102-38
 - asked: 開発を続ける（ゆう 2026-11-02）→ T003 の migration を先に書く

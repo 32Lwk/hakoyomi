@@ -12,7 +12,7 @@ flowchart LR
     BOX[実商品の箱・PMDA<br/>ゆうが1件ずつ確認] --> PIN[ゆうが入力<br/>成分・分量・区分]
     PIN --> PSEED[seed: products / product_facts]
   end
-  U[Browser<br/>スマホ / PC] --> APP[Next.js App Router<br/>Vercel]
+  U[Browser<br/>スマホ / PC] --> APP[Next.js App Router<br/>Mac mini＋Cloudflare Tunnel]
   APP --> API[/Route Handlers<br/>/api/jan /api/compare /api/ask /api/search /api/shelf /api/record /api/memo/]
   API --> RE[コード: 通知ルール評価<br/>8成分・数量・禁止表照合<br/>換算・差分]
   API --> AG[Claude エージェント<br/>解釈→検索→照合→出典検証]
@@ -33,7 +33,7 @@ flowchart LR
 ## 2. Technology Stack
 | 層 | 技術 | 理由 |
 |---|---|---|
-| Frontend | Next.js（App Router）+ TypeScript + Tailwind CSS + shadcn/ui | スマホ/PC両対応、Vercel直結 |
+| Frontend | Next.js（App Router）+ TypeScript + Tailwind CSS + shadcn/ui | スマホ/PC両対応 |
 | JAN読取 | @zxing/browser＋手入力・品名検索 | iOS Safari含め安定 |
 | 商品データ | 実商品の事実 seed（ゆうが会期中に手入力・検証） | 事実のみ。本文・画像は持たない |
 | 文面データ | 厚労省通知（使用上の注意 36薬効群＋指定濫用防止、承認基準の効能・効果） | 著作権法13条2号。出典URL・取得日つき |
@@ -41,7 +41,7 @@ flowchart LR
 | Runtime AI | Claude API（tool use によるエージェント、逆引きの対応づけ、記録下書き、自己検査） | モデルは `.env` の `CLAUDE_MODEL`／`CLAUDE_MODEL_GUARD` |
 | Validation | zod | 推薦欄なしのスキーマ、エージェント出力の検証 |
 | DB | Supabase Postgres（全文検索は pg の `tsvector`＋trigram。ベクトル検索は P2） | 通知本文の検索、商品・棚・メモ・記録 |
-| Hosting | Vercel | 提出URL |
+| Hosting | Mac mini（next start :3000、LaunchAgent）＋ Cloudflare Tunnel（hakoyomi.yutok.dev） | HTTPS でカメラの JAN 読取。管理は Tailscale 経由の SSH、更新は `scripts/host/deploy.sh`（L-20261102-39） |
 
 ## 3. Folder Structure
 ```
@@ -126,7 +126,7 @@ erDiagram
 実店舗の棚 CSV 取込、手順書アップロード、ベクトル検索、箱OCR、多店舗＋認証、店内での実添付文書利用（PMDA 規約の「所属薬局等での使用」の範囲で）。
 
 ## 9. External Services
-Anthropic Claude API／Supabase／Vercel／GitHub／PMDA（リンクアウト先のみ）／JADA・Global DRO（リンク先のみ）。
+Anthropic Claude API／Supabase／Cloudflare（Tunnel・DNS、ハコよみ専用 Tunnel `hakoyomi`）／Tailscale（Mac mini の管理用）／GitHub／PMDA（リンクアウト先のみ）／JADA・Global DRO（リンク先のみ）。
 
 ## 10. Environment Setup
 ```
@@ -137,7 +137,7 @@ SUPABASE_URL=
 SUPABASE_SERVICE_ROLE_KEY=
 ```
 ※ キーは NEXT_PUBLIC_ にしない（サーバ側のみ）。
-`@anthropic-ai/sdk` `@supabase/supabase-js` zod `@zxing/browser` → migrations → Vercel。
+`@anthropic-ai/sdk` `@supabase/supabase-js` zod `@zxing/browser` → migrations → Mac mini に deploy（`scripts/host/`）。
 
 ## 11. Conclusion
 速さが要るところ（バッジ・差分・棚）は決定的なコード、柔らかさが要るところ（質問・逆引き）は Claude のエージェント。どちらも公的な出典にひもづけ、出典のない文は出さない。推薦はせず、判断と説明は登録販売者が行う。

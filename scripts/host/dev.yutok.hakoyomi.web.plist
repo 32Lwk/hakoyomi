@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Mac mini でハコよみを動かす（L-20261102-39）。127.0.0.1 だけで待ち受け、外へは Cloudflare Tunnel で出す -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>dev.yutok.hakoyomi.web</string>
+  <key>WorkingDirectory</key>
+  <string>/Users/yuto/hakoyomi</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/node</string>
+    <string>node_modules/next/dist/bin/next</string>
+    <string>start</string>
+    <string>-H</string>
+    <string>127.0.0.1</string>
+    <string>-p</string>
+    <string>3000</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>NODE_ENV</key>
+    <string>production</string>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/bin:/bin</string>
+  </dict>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+  <key>StandardOutPath</key>
+  <string>/Users/yuto/Library/Logs/hakoyomi/web.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/yuto/Library/Logs/hakoyomi/web.err.log</string>
+</dict>
+</plist>

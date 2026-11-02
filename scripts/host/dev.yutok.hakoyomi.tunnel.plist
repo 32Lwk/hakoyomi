@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- ハコよみ専用の Cloudflare Tunnel（L-20261102-39）。既存の medicine-recommend の Tunnel とは別。
+     設定は ~/.cloudflared/hakoyomi.yml（hakoyomi.yutok.dev → http://127.0.0.1:3000）、認証は hakoyomi.json -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>dev.yutok.hakoyomi.tunnel</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/yuto/bin/cloudflared</string>
+    <string>tunnel</string>
+    <string>--config</string>
+    <string>/Users/yuto/.cloudflared/hakoyomi.yml</string>
+    <string>run</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+  <key>StandardOutPath</key>
+  <string>/Users/yuto/Library/Logs/hakoyomi/tunnel.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/yuto/Library/Logs/hakoyomi/tunnel.err.log</string>
+</dict>
+</plist>

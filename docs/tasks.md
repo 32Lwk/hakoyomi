@@ -14,7 +14,7 @@
 - [x] **T001** P0 公開リポ・Next.js 足場（2026-11-02 done、origin/main 04fe044）
 - [x] **T002** P0 0.5h ESLint/Prettier/vitest、tsconfig strict、`"typecheck": "next typegen && tsc --noEmit"` — 完了：`npm run lint && npm run typecheck && npm test` 通過（2026-11-02 done。`npm run check` で lint・型・テスト・整形を一括。禁止語リスト `src/lib/guard/banwords.ts` と src 全体の禁止語スキャンテストを追加。vitest 5 の peer 要件で `@types/node` を ^24 に更新）
 - [x] **T003** P0 0.5h Supabase プロジェクト、migration（architecture §5、PIIカラムなし） — 完了：テーブル作成済み（2026-11-02：migration `supabase/migrations/20261102000000_init.sql` を作成。zod スキーマに合わせ、全表 RLS 有効、PII カラムなし・CHECK 値と zod の一致をテストで検査、Postgres で適用を確認。Supabase プロジェクト hakoyomi（eu-west-1）に MCP で適用済み、8表とも RLS 有効。`src/lib/catalog.ts` は SUPABASE_URL があれば Supabase から読む（60秒キャッシュ、なければ src/data）。`npm run db:seed` で架空8品・6薬効群・かぜ薬Ⅰ抜粋・棚位置を投入。T102・T103 の seed もこのスクリプトで入れる）
-- [ ] **T004** P0 0.5h `.env.local`・Vercel 連携（空デプロイ） — 完了：Vercel URL が開く
+- [x] **T004** P0 0.5h `.env.local`・Vercel 連携（空デプロイ） — 完了：Vercel URL が開く（2026-11-02 L-39 で Vercel → Mac mini＋Cloudflare Tunnel に変更。Mac mini の ~/hakoyomi で next start :3000 を LaunchAgent 化済み・Supabase 読み出し確認。更新は `scripts/host/deploy.sh`。Tunnel `hakoyomi`（d229589b、設定 ~/.cloudflared/hakoyomi.yml）を作成し LaunchAgent で接続済み。https://hakoyomi.yutok.dev で外部から 200・API 応答を確認。cert.pem は削除済み）
 
 ## Day 1–2（11/3〜11/4）データと中核ロジック
 - [x] **T101** P0 1.5h `scripts/notice`：通知PDF → テキスト → Claude で項目・本文・記載条件（条件式 JSON）に構造化 → zod 検証。対象は T-R2 の薬効群＋指定濫用防止（Ⅲ） — 完了：`notice_items` seed 案が出る（2026-11-02 done。`npm run notice:extract` → `npm run notice:structure`。対象＝かぜ薬Ⅰ・解熱鎮痛薬・鎮咳去痰薬・鼻炎用内服薬・眠気防止薬・指定濫用防止Ⅲの「添付文書等に記載すべき事項」、計140項目。本文・記載条件は原文と全件照合済み（離れた箇所をつないだものは指摘に出す）。下書き・検証用 `.review.md` は `data/notices/out/`（リポ外）。照合だけやり直すときは `-- --recheck`）
