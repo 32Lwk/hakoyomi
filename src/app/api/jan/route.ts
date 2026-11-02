@@ -8,9 +8,9 @@ export async function GET(request: NextRequest) {
   if (!isValidJan(code)) {
     return Response.json({ error: "invalid_jan" }, { status: 400 });
   }
-  const product = findByJan(code);
+  const product = await findByJan(code);
   if (!product) {
     return Response.json({ error: "unknown_jan", jan: code }, { status: 404 });
   }
-  return Response.json(productView(product));
+  return Response.json(await productView(product));
 }

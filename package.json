@@ -14,11 +14,13 @@
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run typecheck && npm test && npm run format:check",
     "notice:extract": "python3 -I scripts/notice/extract.py data/notices/001742612.pdf data/notices/001742612.pages.json",
-    "notice:structure": "tsx scripts/notice/structure.ts"
+    "notice:structure": "tsx scripts/notice/structure.ts",
+    "db:seed": "tsx scripts/db/seed.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.3.0",
     "@base-ui/react": "^1.9.0",
+    "@supabase/supabase-js": "^2.118.0",
     "@zxing/browser": "^0.2.1",
     "@zxing/library": "^0.23.0",
     "class-variance-authority": "^0.7.1",
@@ -27,6 +29,7 @@
     "next": "16.4.3",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
     "shadcn": "^4.23.0",
     "tw-animate-css": "^1.4.0",
     "zod": "^4.6.7"

@@ -1,0 +1,73 @@
+// src/data の静的データを Supabase に入れる（T003、開発時のみ）。何度流しても同じ状態になる。
+// いまは架空の商品・通知かぜ薬Ⅰの抜粋・架空店舗の棚位置。T102（検証済みの通知）・T103（実商品）で入れ替える。
+//
+// 使い方：npm run db:seed（.env.local の SUPABASE_URL・SUPABASE_SERVICE_ROLE_KEY を使う）
+import { createClient } from "@supabase/supabase-js";
+import { DEMO_PRODUCTS } from "@/data/demo_products";
+import { MOCK_STORE } from "@/data/mock_store";
+import { KAZE_GROUP, KAZE_ITEMS } from "@/data/notice_kaze";
+import { noticeGroupToRow, noticeItemToRow, productToRows } from "@/lib/db/rows";
+import { NOTICE_PDF, NOTICE_SOURCES } from "../notice/lib";
+
+async function main() {
+  try {
+    process.loadEnvFile(".env.local");
+  } catch {
+    // .env.local がなければ環境変数をそのまま使う
+  }
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) throw new Error("SUPABASE_URL・SUPABASE_SERVICE_ROLE_KEY がありません");
+  const db = createClient(url, key, { auth: { persistSession: false } });
+
+  const check = <T extends { error: { message: string } | null }>(label: string, result: T) => {
+    if (result.error) throw new Error(`${label}：${result.error.message}`);
+    return result;
+  };
+
+  // 薬効群は T101 の構造化対象の6群（出典・頁）。項目の本文はまだかぜ薬Ⅰの抜粋だけ
+  const groups = NOTICE_SOURCES.map((source) =>
+    noticeGroupToRow({
+      id: source.id,
+      name: source.name,
+      sourceUrl: NOTICE_PDF.url,
+      sourcePage: source.pages[0],
+      fetchedOn: KAZE_GROUP.fetchedOn,
+    }),
+  );
+  check("notice_groups", await db.from("notice_groups").upsert(groups));
+  check(
+    "notice_items",
+    await db.from("notice_items").upsert(KAZE_ITEMS.map((item, i) => noticeItemToRow(item, i))),
+  );
+
+  const rows = DEMO_PRODUCTS.map(productToRows);
+  check("products", await db.from("products").upsert(rows.map((r) => r.product)));
+  // 成分は id を持たないので、商品ごとに入れ直す
+  const ids = DEMO_PRODUCTS.map((p) => p.id);
+  check("product_facts（削除）", await db.from("product_facts").delete().in("product_id", ids));
+  check("product_facts", await db.from("product_facts").insert(rows.flatMap((r) => r.facts)));
+
+  check(
+    "shelf_locations",
+    await db.from("shelf_locations").upsert(
+      MOCK_STORE.locations.map((l) => ({
+        product_id: l.productId,
+        store_id: MOCK_STORE.id,
+        shelf_id: l.shelfId,
+        tier: l.tier,
+        column: l.column,
+      })),
+      { onConflict: "store_id,product_id" },
+    ),
+  );
+
+  console.log(
+    `seed 完了：薬効群 ${groups.length}、通知項目 ${KAZE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${MOCK_STORE.locations.length}`,
+  );
+}
+
+main().catch((error) => {
+  console.error(error instanceof Error ? error.message : error);
+  process.exit(1);
+});

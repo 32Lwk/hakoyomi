@@ -13,7 +13,7 @@
 - [ ] **T-R3** P0 0.5h WADA 禁止表 2026年版（JADA 公開）から OTC に関わる成分を確認 — 完了：`doping_list.ts` の元表（成分・区分・年版・URL）
 - [x] **T001** P0 公開リポ・Next.js 足場（2026-11-02 done、origin/main 04fe044）
 - [x] **T002** P0 0.5h ESLint/Prettier/vitest、tsconfig strict、`"typecheck": "next typegen && tsc --noEmit"` — 完了：`npm run lint && npm run typecheck && npm test` 通過（2026-11-02 done。`npm run check` で lint・型・テスト・整形を一括。禁止語リスト `src/lib/guard/banwords.ts` と src 全体の禁止語スキャンテストを追加。vitest 5 の peer 要件で `@types/node` を ^24 に更新）
-- [ ] **T003** P0 0.5h Supabase プロジェクト、migration（architecture §5、PIIカラムなし） — 完了：テーブル作成済み（2026-11-02：migration `supabase/migrations/20261102000000_init.sql` を作成。zod スキーマに合わせ、全表 RLS 有効、PII カラムなし・CHECK 値と zod の一致をテストで検査、Postgres で適用を確認。残り＝ゆうが Supabase プロジェクトを作って SQL Editor で適用、`.env.local` に SUPABASE_URL・SUPABASE_SERVICE_ROLE_KEY）
+- [x] **T003** P0 0.5h Supabase プロジェクト、migration（architecture §5、PIIカラムなし） — 完了：テーブル作成済み（2026-11-02：migration `supabase/migrations/20261102000000_init.sql` を作成。zod スキーマに合わせ、全表 RLS 有効、PII カラムなし・CHECK 値と zod の一致をテストで検査、Postgres で適用を確認。Supabase プロジェクト hakoyomi（eu-west-1）に MCP で適用済み、8表とも RLS 有効。`src/lib/catalog.ts` は SUPABASE_URL があれば Supabase から読む（60秒キャッシュ、なければ src/data）。`npm run db:seed` で架空8品・6薬効群・かぜ薬Ⅰ抜粋・棚位置を投入。T102・T103 の seed もこのスクリプトで入れる）
 - [ ] **T004** P0 0.5h `.env.local`・Vercel 連携（空デプロイ） — 完了：Vercel URL が開く
 
 ## Day 1–2（11/3〜11/4）データと中核ロジック
