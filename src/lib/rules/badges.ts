@@ -132,7 +132,7 @@ export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
     badges.push({
       kind: "doping",
       tone: "ingredient",
-      label: DOPING_SOURCE.verified ? "禁止表成分" : "禁止表成分（年版確認中）",
+      label: DOPING_SOURCE.verified ? "ドーピング禁止成分" : "ドーピング禁止成分（年版確認中）",
       evidence: doping.map((d) => ({
         kind: "list",
         list: "doping",
@@ -159,7 +159,7 @@ export function dopingBadgeFromSku(badges: Badge[], product: Product, sku: DemoS
   const badge: Badge = {
     kind: "doping",
     tone: "ingredient",
-    label: "禁止表成分（年版確認中）",
+    label: "ドーピング禁止成分（年版確認中）",
     evidence: ingredients.map((ingredient) => ({
       kind: "list",
       list: "doping",

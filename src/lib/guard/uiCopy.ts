@@ -1,3 +1,5 @@
+import type { BadgeKind } from "@/lib/schema/notice";
+
 // 画面の固定文言はここからだけ使う（rules §4-3）。src 全体の禁止語スキャンの対象
 export const UI_COPY = {
   chooseNotice: "この中から選ぶのは販売者です",
@@ -28,6 +30,10 @@ export const UI_COPY = {
   sortedByName: "品名順に並べています（順位ではありません）",
   illustration: "イメージ図",
   badgeHint: "タップで根拠を表示",
+  badgeNone: "該当なし",
+  badgeNoneNote:
+    "「該当なし」は、この商品の成分が通知・リストの条件に当たらないことを示します。添付文書の記載は PMDA で確認してください",
+  badgeRowHint: "行の名前で説明、バッジで根拠を表示",
   addToCompare: "比べるに追加",
   compareFull: "比べられるのは4品までです。外してから追加してください",
   scanLead: "箱のバーコードにカメラを向けます",
@@ -48,3 +54,42 @@ export const UI_COPY = {
 } as const;
 
 export type UiCopyKey = keyof typeof UI_COPY;
+
+// バッジの種類ごとの名前と「何のバッジか」の1行（L-20261103-10）。根拠シートの先頭と比べるの行見出しで使う。
+// short は比べるの行見出し用（なければ name）
+export const BADGE_INFO: Record<BadgeKind, { name: string; short?: string; about: string }> = {
+  abuse: {
+    name: "指定濫用防止医薬品",
+    short: "濫用防止",
+    about: "告示で指定された成分を含む医薬品です。販売の際に確認する事項が決められています",
+  },
+  drive: {
+    name: "運転",
+    about: "厚労省通知の使用上の注意に、服用後の乗物・機械類の運転操作についての記載があります",
+  },
+  breastfeeding: {
+    name: "授乳",
+    about: "厚労省通知の使用上の注意に、授乳中の人についての記載があります",
+  },
+  under15: {
+    name: "15歳未満",
+    about: "厚労省通知の使用上の注意に、15歳未満の小児についての記載があります",
+  },
+  under12: {
+    name: "12歳未満",
+    about: "厚労省通知の使用上の注意に、12歳未満の小児についての記載があります",
+  },
+  alcohol: {
+    name: "飲酒",
+    about: "厚労省通知の使用上の注意に、服用前後の飲酒についての記載があります",
+  },
+  caffeine: {
+    name: "カフェイン",
+    about: "カフェイン類を含みます。量は1回あたりを無水カフェインに換算した値です",
+  },
+  doping: {
+    name: "ドーピング",
+    about:
+      "WADA（世界アンチ・ドーピング機構）の禁止表に載っている成分を含みます。競技に出る人に説明するときの材料です",
+  },
+};

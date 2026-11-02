@@ -1,8 +1,8 @@
 "use client";
 
-import { ChevronRight, Plus, X } from "lucide-react";
-import { Fragment, useEffect, useState } from "react";
-import { BadgeChip } from "@/components/badges";
+import { ChevronRight, CircleHelp, Plus, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { BadgeChip, BadgeSheet, type BadgeTarget } from "@/components/badges";
 import { IngredientSheet, type IngredientTarget } from "@/components/ingredient-sheet";
 import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
@@ -16,8 +16,7 @@ import {
 } from "@/components/ui/sheet";
 import type { ProductView } from "@/lib/catalog";
 import type { BadgeRowCompare, CompareRow } from "@/lib/compare";
-import { UI_COPY } from "@/lib/guard/uiCopy";
-import type { BadgeKind } from "@/lib/schema/notice";
+import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
 import { cn } from "@/lib/utils";
 
 type CompareData = { views: ProductView[]; rows: CompareRow[]; badges: BadgeRowCompare[] };
@@ -34,6 +33,7 @@ export function CompareView() {
   const [onlyDiff, setOnlyDiff] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [ingredient, setIngredient] = useState<IngredientTarget | null>(null);
+  const [badge, setBadge] = useState<BadgeTarget | null>(null);
 
   useEffect(() => {
     if (ids.length < 2) return;
@@ -84,13 +84,8 @@ export function CompareView() {
     onlyDiff ? list.filter((r) => r.diff) : list;
   const diffCount = rows.filter((r) => r.diff).length + badges.filter((b) => b.diff).length;
 
-  // 成分は手引きの分類ごとに見出しを入れる（並びはサーバーで分類順にしてある）
-  const groups: { group: string | null; rows: CompareRow[] }[] = [];
-  for (const r of show(ingredients)) {
-    const last = groups.at(-1);
-    if (last && last.group === r.group) last.rows.push(r);
-    else groups.push({ group: r.group ?? null, rows: [r] });
-  }
+  // 成分は手引きの分類順に並んでいる（サーバー側）。分類は各行の成分名の後ろに括弧で出す
+  const shownIngredients = show(ingredients);
 
   const cols = `${LABEL_W}rem repeat(${views.length}, minmax(${COL_W}rem, 1fr))`;
   const minWidth = `${LABEL_W + COL_W * views.length}rem`;
@@ -199,17 +194,51 @@ export function CompareView() {
             </Row>
           ))}
 
-          <Section title="確認ポイント" show={show(badges).length > 0} />
+          <Section
+            title="確認ポイント"
+            show={show(badges).length > 0}
+            note={`${UI_COPY.badgeRowHint}。${UI_COPY.badgeNoneNote}`}
+          />
           {show(badges).map((b) => (
-            <Row key={b.kind} cols={cols} label={KIND_LABEL[b.kind]} diff={b.diff} small>
+            <Row
+              key={b.kind}
+              cols={cols}
+              diff={b.diff}
+              small
+              label={
+                <button
+                  type="button"
+                  onClick={() => setBadge({ kind: b.kind, badge: null, group: null })}
+                  className="-m-1 flex items-center gap-1 rounded p-1 text-left font-bold active:bg-accent"
+                >
+                  {BADGE_INFO[b.kind].short ?? BADGE_INFO[b.kind].name}
+                  <CircleHelp
+                    className="size-3.5 shrink-0 text-muted-foreground"
+                    aria-hidden="true"
+                  />
+                </button>
+              }
+            >
               {b.labels.map((label, i) => {
-                const badge = views[i]?.badges.find((x) => x.kind === b.kind);
+                const v = views[i];
+                const found = v?.badges.find((x) => x.kind === b.kind);
                 return (
                   <span role="cell" key={i} className="p-2">
-                    {badge && label ? (
-                      <BadgeChip badge={badge} compact />
+                    {v && found && label ? (
+                      <BadgeChip
+                        badge={found}
+                        compact
+                        onClick={() =>
+                          setBadge({
+                            kind: b.kind,
+                            badge: found,
+                            group: v.group,
+                            productName: v.product.name,
+                          })
+                        }
+                      />
                     ) : (
-                      <span className="text-muted-foreground">—</span>
+                      <span className="text-xs text-muted-foreground">{UI_COPY.badgeNone}</span>
                     )}
                   </span>
                 );
@@ -217,32 +246,32 @@ export function CompareView() {
             </Row>
           ))}
 
-          <Section title="成分（1日最大量あたり）" show={groups.length > 0} />
-          {groups.map((g) => (
-            <Fragment key={g.group ?? "none"}>
-              <div className="border-t border-border bg-accent/60 px-2 py-1">
-                <span className="sticky left-2 text-xs font-bold text-accent-foreground">
-                  {g.group ?? "その他（手引きに記載なし）"}
-                </span>
-              </div>
-              {g.rows.map((r) => (
-                <IngredientRow key={r.key} cols={cols} row={r} onOpen={() => openIngredient(r)} />
-              ))}
-            </Fragment>
+          <Section
+            title="成分（1日最大量あたり）"
+            show={shownIngredients.length > 0}
+            note="（　）は厚労省の手引きでの成分の分類"
+          />
+          {shownIngredients.map((r) => (
+            <IngredientRow key={r.key} cols={cols} row={r} onOpen={() => openIngredient(r)} />
           ))}
         </div>
       </div>
 
       <IngredientSheet target={ingredient} onClose={() => setIngredient(null)} />
+      <BadgeSheet target={badge} onClose={() => setBadge(null)} />
     </div>
   );
 }
 
-function Section({ title, show }: { title: string; show: boolean }) {
+function Section({ title, show, note }: { title: string; show: boolean; note?: string }) {
   if (!show) return null;
   return (
-    <div className="border-t border-border bg-muted px-2 pt-3 pb-1">
-      <span className="sticky left-2 text-xs font-bold text-muted-foreground">{title}</span>
+    <div className="border-t border-border bg-muted px-2 pt-3 pb-1.5">
+      {/* 横に送っても読めるよう、見出しと説明は画面幅に収めて左に留める */}
+      <div className="sticky left-2 flex w-[calc(100vw-4rem)] max-w-xl flex-col gap-0.5">
+        <span className="text-xs font-bold text-muted-foreground">{title}</span>
+        {note && <span className="text-[11px] leading-snug text-muted-foreground">{note}</span>}
+      </div>
     </div>
   );
 }
@@ -300,9 +329,22 @@ function IngredientRow({
         <button
           type="button"
           onClick={onOpen}
-          className="sticky left-2 inline-flex min-h-8 items-center gap-1 rounded text-left text-sm font-bold underline decoration-border underline-offset-4 active:bg-accent"
+          className="sticky left-2 inline-flex max-w-[calc(100vw-4rem)] min-h-8 items-center gap-1 rounded text-left active:bg-accent"
         >
-          {row.label}
+          <span className="text-sm">
+            <span className="font-bold underline decoration-border underline-offset-4">
+              {row.label}
+            </span>
+            {/* 何の成分かを一目で：手引きの分類を括弧で */}
+            <span
+              className={cn(
+                "ml-0.5 text-xs",
+                row.group ? "font-bold text-accent-foreground" : "text-muted-foreground",
+              )}
+            >
+              （{row.group ?? "手引きに記載なし"}）
+            </span>
+          </span>
           <ChevronRight className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
         </button>
       </div>
@@ -335,18 +377,6 @@ function ValueCell({ cell }: { cell: CompareRow["cells"][number] }) {
     </span>
   );
 }
-
-// 比較表の行見出し（バッジの種類）
-const KIND_LABEL: Record<BadgeKind, string> = {
-  abuse: "濫用防止",
-  drive: "運転",
-  breastfeeding: "授乳",
-  under15: "15歳未満",
-  under12: "12歳未満",
-  alcohol: "飲酒",
-  caffeine: "カフェイン",
-  doping: "禁止表",
-};
 
 function DiffTag() {
   return <span className="rounded bg-diff px-1 text-[11px] font-bold text-foreground">違う</span>;

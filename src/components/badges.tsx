@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/sheet";
 import { ABUSE_SOURCE } from "@/data/abuse_ingredients";
 import { DOPING_SOURCE } from "@/data/doping_list";
-import { UI_COPY } from "@/lib/guard/uiCopy";
+import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
 import type { Badge, BadgeTone, Evidence } from "@/lib/rules/badges";
 import type { BadgeKind, NoticeGroup } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
@@ -88,7 +88,10 @@ const ICON: Record<BadgeKind, LucideIcon> = {
 
 export function BadgeRow({ badges, group }: { badges: Badge[]; group: NoticeGroup | null }) {
   const [open, setOpen] = useState<Badge | null>(null);
-  if (!badges.length) return null;
+  // バッジがない種類も「該当なし」として名前を出す（何も出ないと、見落としか該当なしか区別できない）
+  const none = (Object.keys(BADGE_INFO) as BadgeKind[]).filter(
+    (k) => !badges.some((b) => b.kind === k),
+  );
   return (
     <section aria-labelledby="badges-title" className="flex flex-col gap-2">
       <div className="flex items-baseline justify-between gap-2">
@@ -97,34 +100,79 @@ export function BadgeRow({ badges, group }: { badges: Badge[]; group: NoticeGrou
         </h2>
         <span className="text-xs text-muted-foreground">{UI_COPY.badgeHint}</span>
       </div>
-      <ul className="flex flex-wrap gap-2" aria-label="この商品のバッジ">
-        {badges.map((b) => (
-          <li key={b.kind}>
-            <BadgeChip badge={b} onClick={() => setOpen(b)} />
-          </li>
-        ))}
-      </ul>
-      <Sheet open={open !== null} onOpenChange={(o) => !o && setOpen(null)}>
-        <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto rounded-t-2xl">
-          {open && (
-            <>
-              <SheetHeader>
-                <SheetTitle>{open.label} の根拠</SheetTitle>
-                <SheetDescription>通知・リストの該当箇所と出典</SheetDescription>
-              </SheetHeader>
-              <div className="flex flex-col gap-3 px-4 pb-6">
-                {open.evidence.map((e, i) => (
-                  <EvidenceBlock key={i} evidence={e} group={group} />
-                ))}
-                {open.evidence.some((e) => e.kind === "notice") && (
-                  <p className="text-sm text-muted-foreground">{UI_COPY.noticeDerived}</p>
-                )}
-              </div>
-            </>
-          )}
-        </SheetContent>
-      </Sheet>
+      {badges.length > 0 && (
+        <ul className="flex flex-wrap gap-2" aria-label="この商品のバッジ">
+          {badges.map((b) => (
+            <li key={b.kind}>
+              <BadgeChip badge={b} onClick={() => setOpen(b)} />
+            </li>
+          ))}
+        </ul>
+      )}
+      {none.length > 0 && (
+        <p className="text-xs leading-relaxed text-muted-foreground">
+          <span className="font-bold">{UI_COPY.badgeNone}：</span>
+          {none.map((k) => BADGE_INFO[k].name).join("・")}
+          <br />
+          {UI_COPY.badgeNoneNote}
+        </p>
+      )}
+      <BadgeSheet
+        target={open ? { kind: open.kind, badge: open, group } : null}
+        onClose={() => setOpen(null)}
+      />
     </section>
+  );
+}
+
+// 何のバッジかの説明と、その商品での根拠。badge が null なら説明だけ（比べるの行見出しから開いたとき）
+export type BadgeTarget = {
+  kind: BadgeKind;
+  badge: Badge | null;
+  group: NoticeGroup | null;
+  productName?: string;
+};
+
+export function BadgeSheet({
+  target,
+  onClose,
+}: {
+  target: BadgeTarget | null;
+  onClose: () => void;
+}) {
+  const info = target ? BADGE_INFO[target.kind] : null;
+  const Icon = target ? ICON[target.kind] : null;
+  return (
+    <Sheet open={target !== null} onOpenChange={(o) => !o && onClose()}>
+      <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto rounded-t-2xl">
+        {target && info && Icon && (
+          <>
+            <SheetHeader>
+              <SheetTitle className="flex items-center gap-2 pr-8 leading-snug">
+                <Icon className="size-5" aria-hidden="true" />
+                {target.badge
+                  ? `${target.badge.label}${target.productName ? `（${target.productName}）` : ""}`
+                  : info.name}
+              </SheetTitle>
+              <SheetDescription className="text-sm text-foreground">{info.about}</SheetDescription>
+            </SheetHeader>
+            <div className="flex flex-col gap-3 px-4 pb-6">
+              {target.badge && (
+                <>
+                  <h3 className="text-sm font-bold">根拠と出典</h3>
+                  {target.badge.evidence.map((e, i) => (
+                    <EvidenceBlock key={i} evidence={e} group={target.group} />
+                  ))}
+                  {target.badge.evidence.some((e) => e.kind === "notice") && (
+                    <p className="text-sm text-muted-foreground">{UI_COPY.noticeDerived}</p>
+                  )}
+                </>
+              )}
+            </div>
+          </>
+        )}
+      </SheetContent>
+    </Sheet>
   );
 }
 
@@ -171,7 +219,7 @@ function EvidenceBlock({ evidence, group }: { evidence: Evidence; group: NoticeG
   return (
     <div className="rounded-lg border border-border p-3 text-sm">
       <p>
-        {evidence.ingredient}　→　{abuse ? "告示の成分" : "禁止表"}：
+        {evidence.ingredient}　→　{abuse ? "告示の成分" : "WADA禁止表"}：
         <span className="font-bold">{evidence.listed}</span>
       </p>
       <p className="mt-1 text-xs text-muted-foreground">

@@ -19,7 +19,7 @@ const CONDITIONS: { kind: BadgeKind; label: string }[] = [
   { kind: "drive", label: "運転注意の成分を含まない" },
   { kind: "caffeine", label: "カフェインを含まない" },
   { kind: "abuse", label: "指定濫用防止の対象外" },
-  { kind: "doping", label: "禁止表の成分を含まない" },
+  { kind: "doping", label: "ドーピング禁止成分を含まない" },
 ];
 
 // 種類の並びは KIND_LABEL の定義順で固定（棚の並びに近い順。順位ではない）
