@@ -25,11 +25,11 @@
 - [x] **T106** P0 0.5h `banwords.ts`＋`guard()`（regex）＋`uiCopy.ts`＋テスト — 完了：禁止語入りの文を差し止めるテストが緑（2026-11-02 done）
 
 ## Day 2–3（11/4〜11/5）画面（P0）
-- [ ] **T201** P0 1.5h 画面の骨格：ヘッダの常時表示（JudgeNotice）、下部タブ（読む／比べる／さがす／棚）、中央の JAN ボタン、shadcn/ui 導入 — 完了：スマホ/PCで崩れない
-- [ ] **T202** P0 1h `JanScanner`（@zxing/browser＋手入力＋品名検索） — 完了：スマホでJAN読取、PCで手入力・品名検索
-- [ ] **T203** P0 1.5h `/api/jan`＋ProductCard／BadgeRow／BadgeSheet（根拠・出典・PMDAリンク） — 完了：読取から3秒以内にバッジ、タップで根拠
-- [ ] **T204** P0 1.5h `units.ts`＋`/api/compare`＋CompareTable（2〜4品、違う行だけ強調、バッジの差） — 完了：基準をそろえた差分が出る、並べ替えなし
-- [ ] **T205** P0 1h `/api/shelf`＋StoreMap／ShelfFront — 完了：選んだ商品（複数可）がマップと正面図でハイライト
+- [x] **T201** P0 1.5h 画面の骨格：ヘッダの常時表示（JudgeNotice）、下部タブ（読む／比べる／さがす／棚）、中央の JAN ボタン、shadcn/ui 導入 — 完了：スマホ/PCで崩れない（2026-11-02 done。shadcn/ui（base-nova）導入、色は design.md トークンに置換、Noto Sans JP）
+- [x] **T202** P0 1h `JanScanner`（@zxing/browser＋手入力＋品名検索） — 完了：スマホでJAN読取、PCで手入力・品名検索（2026-11-02 done。手入力・チェックデジット検証・未登録JAN・品名検索をブラウザで確認。カメラ読取は実機スマホで未確認）
+- [x] **T203** P0 1.5h `/api/jan`＋ProductCard／BadgeRow／BadgeSheet（根拠・出典・PMDAリンク） — 完了：読取から3秒以内にバッジ、タップで根拠（2026-11-02 done。架空6品＋通知かぜ薬Ⅰ抜粋で動作。商品データは lib/catalog.ts 経由、T003 で Supabase に差し替え）
+- [x] **T204** P0 1.5h `units.ts`＋`/api/compare`＋CompareTable（2〜4品、違う行だけ強調、バッジの差） — 完了：基準をそろえた差分が出る、並べ替えなし（2026-11-02 done。成分の行に加えバッジ・区分・1日最大量・内容量の差も表示）
+- [x] **T205** P0 1h `/api/shelf`＋StoreMap／ShelfFront — 完了：選んだ商品（複数可）がマップと正面図でハイライト（2026-11-02 done。棚マップは src/data/mock_store.ts の暫定版、T104 で正式 seed）
 
 ## Day 4（11/6）Claude（P0）
 - [ ] **T301** P0 3h 質問エージェント `/api/ask`：tool use（`get_product_facts` `get_applicable_notice_items` `search_notice_text` `check_abuse` `check_doping`）→ 出典ID＋抜き出しの配列 → `verifyCitations`（原文と完全一致しない文を捨てる）→ guard（regex＋Claude自己検査）→ AskBox／AnswerQuote（段階表示つき） — 完了：よくある質問10問で、全回答に出典、言い換えなし、根拠なしは「該当する記載が見つかりません」

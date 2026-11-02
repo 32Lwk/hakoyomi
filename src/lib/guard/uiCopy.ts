@@ -13,6 +13,14 @@ export const UI_COPY = {
   diffRow: "この行の分量が異なります",
   dopingCheck: "最終確認は Global DRO 等で行ってください",
   mockNotice: "担当者・手順書・店舗・棚は模擬データです",
+  demoData: "デモ・架空データ",
+  demoProducts: "表示中の商品は画面確認用の架空品です（実在の商品ではありません）",
+  invalidJan: "JANの桁数かチェックデジットが合いません。入力し直してください",
+  readError: "読み取れませんでした。もう一度読むか、JANを入力してください",
+  cameraUnavailable: "カメラを使えません。JANを入力するか、品名で検索してください",
+  addedToCompare: "比べるに追加しました",
+  needTwo: "比べるには2品以上を読んでください",
+  sortedByName: "品名順に並べています（順位ではありません）",
 } as const;
 
 export type UiCopyKey = keyof typeof UI_COPY;

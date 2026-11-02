@@ -1,0 +1,154 @@
+"use client";
+
+import { useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { ABUSE_SOURCE } from "@/data/abuse_ingredients";
+import { DOPING_SOURCE } from "@/data/doping_list";
+import { UI_COPY } from "@/lib/guard/uiCopy";
+import type { Badge, BadgeTone, Evidence } from "@/lib/rules/badges";
+import type { NoticeGroup } from "@/lib/schema/notice";
+import { cn } from "@/lib/utils";
+
+// 種類で見た目を分ける。良し悪しの色は使わない（design.md §3）
+const TONE: Record<BadgeTone, string> = {
+  system: "border-2 border-primary bg-background text-primary",
+  notice: "border-2 border-notice bg-notice text-white",
+  ingredient: "border-2 border-notice bg-background text-foreground",
+};
+
+export function BadgeChip({
+  badge,
+  onClick,
+  compact = false,
+}: {
+  badge: Badge;
+  onClick?: () => void;
+  // 比較表など狭い場所では折り返して小さく出す
+  compact?: boolean;
+}) {
+  const className = cn(
+    "inline-flex items-center rounded-md font-bold",
+    compact ? "px-1.5 py-0.5 text-xs leading-snug" : "min-h-9 px-2.5 text-sm whitespace-nowrap",
+    TONE[badge.tone],
+  );
+  if (!onClick) return <span className={className}>{badge.label}</span>;
+  return (
+    <button type="button" onClick={onClick} className={cn(className, "min-h-11")}>
+      {badge.label}
+    </button>
+  );
+}
+
+export function BadgeRow({ badges, group }: { badges: Badge[]; group: NoticeGroup | null }) {
+  const [open, setOpen] = useState<Badge | null>(null);
+  if (!badges.length) return null;
+  return (
+    <>
+      <ul className="flex flex-wrap gap-2" aria-label="この商品のバッジ">
+        {badges.map((b) => (
+          <li key={b.kind}>
+            <BadgeChip badge={b} onClick={() => setOpen(b)} />
+          </li>
+        ))}
+      </ul>
+      <Sheet open={open !== null} onOpenChange={(o) => !o && setOpen(null)}>
+        <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto rounded-t-2xl">
+          {open && (
+            <>
+              <SheetHeader>
+                <SheetTitle>{open.label} の根拠</SheetTitle>
+                <SheetDescription>{UI_COPY.judgeNotice}</SheetDescription>
+              </SheetHeader>
+              <div className="flex flex-col gap-3 px-4 pb-6">
+                {open.evidence.map((e, i) => (
+                  <EvidenceBlock key={i} evidence={e} group={group} />
+                ))}
+                {open.evidence.some((e) => e.kind === "notice") && (
+                  <p className="text-sm text-muted-foreground">{UI_COPY.noticeDerived}</p>
+                )}
+              </div>
+            </>
+          )}
+        </SheetContent>
+      </Sheet>
+    </>
+  );
+}
+
+function EvidenceBlock({ evidence, group }: { evidence: Evidence; group: NoticeGroup | null }) {
+  if (evidence.kind === "notice") {
+    return (
+      <div className="flex flex-col gap-2 rounded-lg border border-border p-3">
+        <blockquote className="border-l-0 bg-muted px-3 py-2 text-base">{evidence.body}</blockquote>
+        <p className="text-sm">
+          当たった成分：
+          <span className="font-bold">{evidence.matched.join("、") || "（全製剤に記載）"}</span>
+        </p>
+        {evidence.conditionText && (
+          <p className="text-xs text-muted-foreground">記載条件：{evidence.conditionText}</p>
+        )}
+        <p className="text-xs text-muted-foreground">
+          出典：厚労省通知「使用上の注意」{group?.name ?? evidence.groupId}　{evidence.section}{" "}
+          {evidence.itemNo}
+          {group && (
+            <>
+              {" "}
+              （
+              <a href={group.sourceUrl} target="_blank" rel="noreferrer" className="underline">
+                PDF {group.sourcePage}頁〜
+              </a>
+              ・取得 {group.fetchedOn}）
+            </>
+          )}
+        </p>
+      </div>
+    );
+  }
+  if (evidence.kind === "fact") {
+    return (
+      <div className="rounded-lg border border-border p-3 text-sm">
+        <p>
+          {evidence.ingredient}：無水カフェイン換算で{evidence.per} {evidence.amountMg}mg
+        </p>
+        <p className="mt-1 text-xs text-muted-foreground">出典：この商品の成分・分量（入力値）</p>
+      </div>
+    );
+  }
+  const abuse = evidence.list === "abuse";
+  return (
+    <div className="rounded-lg border border-border p-3 text-sm">
+      <p>
+        {evidence.ingredient}　→　{abuse ? "告示の成分" : "禁止表"}：
+        <span className="font-bold">{evidence.listed}</span>
+      </p>
+      <p className="mt-1 text-xs text-muted-foreground">
+        出典：{evidence.source}
+        {abuse ? (
+          <>
+            {" "}
+            （
+            <a href={ABUSE_SOURCE.url} target="_blank" rel="noreferrer" className="underline">
+              通知の掲載元
+            </a>
+            ）
+          </>
+        ) : (
+          <>
+            {DOPING_SOURCE.verified ? ` ${DOPING_SOURCE.year}年版` : "（年版確認中）"}。
+            {UI_COPY.dopingCheck}（
+            <a href={DOPING_SOURCE.checkUrl} target="_blank" rel="noreferrer" className="underline">
+              Global DRO
+            </a>
+            ）
+          </>
+        )}
+      </p>
+    </div>
+  );
+}
