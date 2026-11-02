@@ -46,8 +46,11 @@ export function BadgeChip({
 }) {
   const Icon = ICON[badge.kind];
   const className = cn(
-    "inline-flex items-center gap-1.5 rounded-md font-bold",
-    compact ? "px-1.5 py-0.5 text-xs leading-snug" : "min-h-9 px-2.5 text-sm whitespace-nowrap",
+    "inline-flex items-center rounded-md font-bold",
+    // 狭い表では語の途中で折り返さないよう、文節で折り返す（L-20261103-31）
+    compact
+      ? "gap-1 px-1.5 py-0.5 text-left text-xs leading-snug [word-break:auto-phrase]"
+      : "min-h-9 gap-1.5 px-2.5 text-sm whitespace-nowrap",
     TONE[badge.tone],
   );
   const icon = <Icon className={compact ? "size-3.5" : "size-4"} aria-hidden="true" />;
@@ -69,8 +72,9 @@ export function BadgeChip({
       )}
     >
       {icon}
-      {badge.label}
-      <ChevronRight className="-mr-1 size-4 opacity-70" aria-hidden="true" />
+      <span>{badge.label}</span>
+      {/* 狭い表では矢印を省いて文字の幅を空ける（押せることは影で示す） */}
+      {!compact && <ChevronRight className="-mr-1 size-4 opacity-70" aria-hidden="true" />}
     </button>
   );
 }
