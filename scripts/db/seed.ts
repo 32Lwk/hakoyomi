@@ -9,6 +9,8 @@ import { KAZE_GROUP, KAZE_ITEMS } from "@/data/notice_kaze";
 import { noticeGroupToRow, noticeItemToRow, productToRows } from "@/lib/db/rows";
 import { NOTICE_PDF, NOTICE_SOURCES } from "../notice/lib";
 
+const EXTRA_GROUP_NAMES: Record<string, string> = { suimin_kaizen: "催眠鎮静薬" };
+
 async function main() {
   try {
     process.loadEnvFile(".env.local");
@@ -35,11 +37,27 @@ async function main() {
       fetchedOn: KAZE_GROUP.fetchedOn,
     }),
   );
-  check("notice_groups", await db.from("notice_groups").upsert(groups));
+  // デモSKUの薬効群のうち通知の構造化対象外のもの（例：催眠鎮静薬）。項目は持たず、外部キーのためだけに置く
+  const known = new Set(groups.map((g) => g.id));
+  const extraGroups = [...new Set(DEMO_PRODUCTS.map((p) => p.noticeGroupId))]
+    .filter((id) => !known.has(id))
+    .map((id) =>
+      noticeGroupToRow({
+        id,
+        name: `${EXTRA_GROUP_NAMES[id] ?? id}（通知の構造化対象外）`,
+        sourceUrl: NOTICE_PDF.url,
+        sourcePage: null,
+        fetchedOn: KAZE_GROUP.fetchedOn,
+      }),
+    );
+  check("notice_groups", await db.from("notice_groups").upsert([...groups, ...extraGroups]));
   check(
     "notice_items",
     await db.from("notice_items").upsert(KAZE_ITEMS.map((item, i) => noticeItemToRow(item, i))),
   );
+
+  // T003 で入れた架空のデモ品（demo-a〜h）を消す。成分・棚位置は外部キーの cascade で消える
+  check("products（架空品の削除）", await db.from("products").delete().like("id", "demo-%"));
 
   const rows = DEMO_PRODUCTS.map(productToRows);
   check("products", await db.from("products").upsert(rows.map((r) => r.product)));
@@ -65,7 +83,7 @@ async function main() {
   );
 
   console.log(
-    `seed 完了：薬効群 ${groups.length}、通知項目 ${KAZE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${locations.length}`,
+    `seed 完了：薬効群 ${groups.length + extraGroups.length}、通知項目 ${KAZE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${locations.length}`,
   );
 }
 
