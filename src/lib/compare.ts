@@ -1,3 +1,4 @@
+import { dailyMaxLabel, timesPerDayLabel } from "@/lib/dosage";
 import { ingredientRole } from "@/lib/ingredientRole";
 import type { Badge } from "@/lib/rules/badges";
 import { normalizeName } from "@/lib/rules/normalize";
@@ -76,7 +77,7 @@ export function compareRows(products: Product[]): CompareRow[] {
       "1日最大量",
       products.map((p) => ({
         kind: "value",
-        text: `${p.dailyMaxUnits}${p.contentUnit}（${p.timesPerDay}回）`,
+        text: `${dailyMaxLabel(p)}（${timesPerDayLabel(p)}）`,
         uncertain: false,
       })),
     ),

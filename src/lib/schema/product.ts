@@ -35,29 +35,49 @@ export const ProductFact = z.object({
 });
 export type ProductFact = z.infer<typeof ProductFact>;
 
-export const Product = z.object({
-  id: z.string().min(1),
-  jan: z.string().regex(/^\d{8}$|^\d{13}$/),
-  name: z.string().min(1),
-  maker: z.string().min(1),
-  riskClass: RiskClass,
-  kind: MedicineKind,
-  // 通知「使用上の注意」の薬効群 ID（notice.ts の NoticeGroupId）
-  noticeGroupId: z.string().min(1),
-  // 効能・効果に含まれる薬効群。指定濫用防止の数量基準（5日分／7日分）の判定に使う
-  efficacyGroups: z.array(z.string()).default([]),
-  route: DosageRoute,
-  // 生薬を主たる有効成分とする製剤か（指定濫用防止の対象外の判定。ゆうが判定）
-  crudeDrugMain: z.boolean().default(false),
-  // 1日最大の服用単位数と回数（例：1回3錠×3回 → 9 と 3）。年齢で違う場合は最大の年齢の値
-  dailyMaxUnits: z.number().positive(),
-  timesPerDay: z.number().int().positive(),
-  contentQty: z.number().positive(),
-  contentUnit: z.string().min(1),
-  facts: z.array(ProductFact).min(1),
-  pmdaUrl: z.string().url().nullable(),
-  docRevisedOn: z.string().nullable(),
-  enteredBy: z.string().min(1),
-  verifiedOn: z.string().nullable(),
-});
+export const Product = z
+  .object({
+    id: z.string().min(1),
+    jan: z.string().regex(/^\d{8}$|^\d{13}$/),
+    name: z.string().min(1),
+    maker: z.string().min(1),
+    riskClass: RiskClass,
+    kind: MedicineKind,
+    // 通知「使用上の注意」の薬効群 ID（notice.ts の NoticeGroupId）
+    noticeGroupId: z.string().min(1),
+    // 効能・効果に含まれる薬効群。指定濫用防止の数量基準（5日分／7日分）の判定に使う
+    efficacyGroups: z.array(z.string()).default([]),
+    route: DosageRoute,
+    // 生薬を主たる有効成分とする製剤か（指定濫用防止の対象外の判定。ゆうが判定）
+    crudeDrugMain: z.boolean().default(false),
+    // 1日最大の服用単位数と回数（例：1回3錠×3回 → 9 と 3）。年齢で違う場合は最大の年齢の値。
+    // 外用で上限がない品（「1日数回」「適量」）は null にし、添付文書の表記を …Text に入れる（L-20261103-25）
+    dailyMaxUnits: z.number().positive().nullable(),
+    timesPerDay: z.number().int().positive().nullable(),
+    timesPerDayText: z.string().min(1).nullable().default(null),
+    dailyMaxText: z.string().min(1).nullable().default(null),
+    contentQty: z.number().positive(),
+    contentUnit: z.string().min(1),
+    facts: z.array(ProductFact).min(1),
+    pmdaUrl: z.string().url().nullable(),
+    docRevisedOn: z.string().nullable(),
+    enteredBy: z.string().min(1),
+    verifiedOn: z.string().nullable(),
+  })
+  .superRefine((p, ctx) => {
+    // 数値を null にできるのは外用だけ。null のときは表記がいる（数値を推測で入れない）
+    const pairs = [
+      ["timesPerDay", p.timesPerDay, p.timesPerDayText],
+      ["dailyMaxUnits", p.dailyMaxUnits, p.dailyMaxText],
+    ] as const;
+    for (const [key, value, text] of pairs) {
+      if (value !== null) continue;
+      if (p.route !== "external" || !text)
+        ctx.addIssue({
+          code: "custom",
+          path: [key],
+          message: "外用で用法の表記があるときだけ null にできる",
+        });
+    }
+  });
 export type Product = z.infer<typeof Product>;

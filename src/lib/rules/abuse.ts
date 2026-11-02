@@ -39,7 +39,9 @@ export function checkAbuse(product: Product): AbuseResult {
   }
 
   if (!hits.length) return { target: false, reason: "no_ingredient" };
-  if (product.route === "external") return { target: false, reason: "external" };
+  // 1日の最大量が null なのは外用だけ（スキーマで保証）
+  if (product.route === "external" || product.dailyMaxUnits === null)
+    return { target: false, reason: "external" };
   if (product.crudeDrugMain) return { target: false, reason: "crude_drug_main" };
 
   // 対象成分が複数あるときは短いほうの日数で判定する【要確認：告示第33号の複数成分の扱い】

@@ -212,6 +212,9 @@ VERIFIED = {sku[0] for sku in SKUS[:19]}
 # 画面とスキーマで必須の数値。調べて見つからない品は入れず、除外の一覧に出す（ゆうが補う）
 REQUIRED = [("dailyMaxUnits", "1日の最大量"), ("timesPerDay", "1日の回数"), ("contentQty", "内容量"), ("contentUnit", "内容量の単位")]
 
+# 数値の代わりになる表記の欄（外用だけ）
+TEXT_OF = {"dailyMaxUnits": "dailyMaxText", "timesPerDay": "timesPerDayText"}
+
 RISK = {"要指導": "要指導", "要指導医薬品": "要指導", "第1類": "第1類", "指定第2類": "指定第2類", "第2類": "第2類", "第3類": "第3類"}
 
 
@@ -242,7 +245,11 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
         if not found or not found.get("jan"):
             skipped.append(f"{name}（JAN 未確認）")
             continue
-        lacking = [label for key, label in REQUIRED if not found.get(key)]
+        # 外用で上限がない品（「1日数回」「適量」）は数値の代わりに添付文書の表記があればよい（L-20261103-25）
+        lacking = [
+            label for key, label in REQUIRED
+            if not found.get(key) and not (found.get("route") == "external" and found.get(TEXT_OF.get(key, "")))
+        ]
         if lacking:
             skipped.append(f"{name}（{'・'.join(lacking)} 未確認）")
             continue
@@ -275,6 +282,8 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
             "crudeDrugMain": kind in CRUDE_DRUG_MAIN_KINDS or name in CRUDE_DRUG_MAIN,
             "dailyMaxUnits": found["dailyMaxUnits"],
             "timesPerDay": found["timesPerDay"],
+            "timesPerDayText": found.get("timesPerDayText") if found["timesPerDay"] is None else None,
+            "dailyMaxText": found.get("dailyMaxText") if found["dailyMaxUnits"] is None else None,
             "contentQty": found["contentQty"],
             "contentUnit": found["contentUnit"],
             "facts": facts,

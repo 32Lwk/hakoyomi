@@ -82,7 +82,9 @@ export function convertedMg(
     if (factor === undefined) return null;
     totalMg += mg * factor;
   }
-  return per === "1回" ? totalMg / product.timesPerDay : totalMg;
+  if (per === "1日") return totalMg;
+  // 「1日数回」の外用は1回分量を出せない
+  return product.timesPerDay === null ? null : totalMg / product.timesPerDay;
 }
 
 export type AppliedItem = {

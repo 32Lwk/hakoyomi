@@ -13340,5 +13340,545 @@
         "url": "https://shopping.yahoo.co.jp/search?p=4987076606021"
       }
     ]
+  },
+  {
+    "id": "med-01624",
+    "jan": "4987426002954",
+    "name": "オデキュアEX",
+    "maker": "池田模範堂",
+    "riskClass": "第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 12,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "ジフェンヒドラミンサリチル酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "スルファジアジン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/130034_J2201000013_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%AA%E3%83%87%E3%82%AD%E3%83%A5%E3%82%A2EX.webp?v=1c779f09",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/130034_J2201000013_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ジフェンヒドラミンサリチル酸塩",
+        "スルファジアジン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS オデキュアEX",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2201000013"
+      },
+      {
+        "label": "Qoo10 出品ページ（JAN記載）",
+        "url": "https://www.qoo10.jp/item/%e7%ac%ac%ef%bc%92%e9%a1%9e%e5%8c%bb%e8%96%ac%e5%93%81-%e3%82%aa%e3%83%87%e3%82%ad%e3%83%a5%e3%82%a2EX-12G/1179462952"
+      },
+      {
+        "label": "価格.com オデキュアEX 12g",
+        "url": "https://kakaku.com/item/K0001462958/"
+      },
+      {
+        "label": "クリエイトSD（JAN・在庫あり）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987426002954/"
+      }
+    ]
+  },
+  {
+    "id": "med-03162",
+    "jan": "4987426002138",
+    "name": "ムヒアルファEX",
+    "maker": "池田模範堂",
+    "riskClass": "指定第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 15,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "イソプロピルメチルフェノール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロタミトン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ジフェンヒドラミン塩酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "プレドニゾロン吉草酸エステル酢酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "dl-カンフル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "l-メントール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/130034_J0801000169_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%A0%E3%83%92%E3%82%A2%E3%83%AB%E3%83%95%E3%82%A1EX.webp?v=0baabf9e",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/130034_J0801000169_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イソプロピルメチルフェノール",
+        "クロタミトン",
+        "ジフェンヒドラミン塩酸塩",
+        "プレドニゾロン吉草酸エステル酢酸エステル",
+        "dl-カンフル",
+        "l-メントール"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ムヒアルファEX",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000169"
+      },
+      {
+        "label": "クリエイトSD（JAN）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987426002138/"
+      },
+      {
+        "label": "ツルハドラッグ",
+        "url": "https://shop.tsuruha.co.jp/10075630.html"
+      }
+    ]
+  },
+  {
+    "id": "med-02825",
+    "jan": "4987188100325",
+    "name": "サロンパスAe",
+    "maker": "久光製薬",
+    "riskClass": "第3類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "記載なし",
+    "contentQty": 140,
+    "contentUnit": "枚",
+    "facts": [
+      {
+        "ingredient": "サリチル酸メチル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ビタミンE酢酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "dl-カンフル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "l-メントール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/650034_J0601006593_03_03",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B5%E3%83%AD%E3%83%B3%E3%83%91%E3%82%B9Ae.webp?v=37f293cc",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/650034_J0601006593_03_03"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "サリチル酸メチル",
+        "ビタミンE酢酸エステル",
+        "dl-カンフル",
+        "l-メントール"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006593"
+      },
+      {
+        "label": "クリエイトSD（JAN・140枚）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987188100325/"
+      }
+    ]
+  },
+  {
+    "id": "med-03539",
+    "jan": "4987904100844",
+    "name": "リンデロンVs軟膏",
+    "maker": "シオノギヘルスケア",
+    "riskClass": "指定第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日1回〜数回",
+    "dailyMaxText": "適量",
+    "contentQty": 10,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "ベタメタゾン吉草酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/342681_J2001000202_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AA%E3%83%B3%E3%83%87%E3%83%AD%E3%83%B3Vs%E8%BB%9F%E8%86%8F.webp?v=40e41dfc",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/342681_J2001000202_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ベタメタゾン吉草酸エステル"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS リンデロンVs軟膏",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000202"
+      },
+      {
+        "label": "クリエイトSD リンデロンVs軟膏 10g",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987904100844/"
+      },
+      {
+        "label": "ツルハ リンデロンVs軟膏 10g",
+        "url": "https://shop.tsuruha.co.jp/10146941.html"
+      }
+    ]
+  },
+  {
+    "id": "med-03160",
+    "jan": "4987107608659",
+    "name": "ベトネベートN軟膏AS",
+    "maker": "グラクソ・スミスクライン（製造販売元）／第一三共ヘルスケア（販売元）",
+    "riskClass": "指定第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日1〜数回",
+    "dailyMaxText": "適量",
+    "contentQty": 5,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "フラジオマイシン硫酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ベタメタゾン吉草酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/340278_J1001000260_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%99%E3%83%88%E3%83%8D%E3%83%99%E3%83%BC%E3%83%88N%E8%BB%9F%E8%86%8FAS.webp?v=0ac3cc55",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/340278_J1001000260_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "フラジオマイシン硫酸塩",
+        "ベタメタゾン吉草酸エステル"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "第一三共ヘルスケア 製品情報（JAN）",
+        "url": "https://www.daiichisankyo-hc.co.jp/products/details/betnevate_n/"
+      },
+      {
+        "label": "KEGG MEDICUS ベトネベートN軟膏AS",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000260"
+      }
+    ]
+  },
+  {
+    "id": "med-01633",
+    "jan": "4903301025719",
+    "name": "ペアアクネクリームW",
+    "maker": "ライオン",
+    "riskClass": "第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 14,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "イソプロピルメチルフェノール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "イブプロフェンピコノール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/840001_J0610000009_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%9A%E3%82%A2%E3%82%A2%E3%82%AF%E3%83%8D%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0W.webp?v=cf040def",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/840001_J0610000009_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イソプロピルメチルフェノール",
+        "イブプロフェンピコノール"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ペアアクネクリームW",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0610000009"
+      },
+      {
+        "label": "ライオン 製品情報",
+        "url": "https://www.lion.co.jp/ja/products/160"
+      },
+      {
+        "label": "クリエイトSD 14g JAN",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4903301025719/"
+      }
+    ]
+  },
+  {
+    "id": "med-01540",
+    "jan": "4987306019485",
+    "name": "口内炎軟膏大正クイックケア",
+    "maker": "大正製薬",
+    "riskClass": "指定第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日1〜数回",
+    "dailyMaxText": "適量",
+    "contentQty": 5,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "トリアムシノロンアセトニド",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_J1401000446_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E5%8F%A3%E5%86%85%E7%82%8E%E8%BB%9F%E8%86%8F%E5%A4%A7%E6%AD%A3%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%82%B1%E3%82%A2.webp?v=8dd5f3f9",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_J1401000446_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "トリアムシノロンアセトニド"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": true,
+      "dopingClass": "S9. 糖質コルチコイド"
+    },
+    "research": [
+      {
+        "label": "クリエイトSD 商品ページ",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987306019485/"
+      },
+      {
+        "label": "富士薬品 通販ページ",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987306019485.html"
+      },
+      {
+        "label": "カインズ 商品ページ",
+        "url": "https://www.cainz.com/g/4987306019485.html"
+      },
+      {
+        "label": "KEGG MEDICUS（用法・用量）",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000446"
+      }
+    ]
   }
 ]

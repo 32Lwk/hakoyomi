@@ -478,6 +478,14 @@ export const MOCK_STORE = {
     { productId: "med-01997", shelfId: "8B-2", tier: 2, column: 5 },
     { productId: "med-01942", shelfId: "8B-2", tier: 2, column: 6 },
     { productId: "med-03046", shelfId: "8B-2", tier: 2, column: 7 },
+    // 「1日数回」の外用薬7品（L-20261103-25）。皮膚薬・口内炎・湿布・虫さされの売場に置く
+    { productId: "med-03539", shelfId: "8B-2", tier: 1, column: 1 },
+    { productId: "med-03160", shelfId: "8B-2", tier: 1, column: 2 },
+    { productId: "med-01633", shelfId: "8B-2", tier: 3, column: 1 },
+    { productId: "med-01624", shelfId: "8B-2", tier: 3, column: 2 },
+    { productId: "med-01540", shelfId: "8B-3", tier: 1, column: 1 },
+    { productId: "med-02825", shelfId: "8B-4", tier: 2, column: 1 },
+    { productId: "med-03162", shelfId: "8B-5", tier: 4, column: 1 },
     // 類似名・同シリーズ品25品（L-20261103-24）。種類の棚の空いている位置に置く
     { productId: "med-05882", shelfId: "6A-1", tier: 2, column: 4 },
     { productId: "med-05450", shelfId: "6A-1", tier: 2, column: 5 },

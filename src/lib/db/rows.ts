@@ -32,8 +32,10 @@ export type ProductRow = {
   efficacy_groups: string[];
   route: string;
   crude_drug_main: boolean;
-  daily_max_units: number;
-  times_per_day: number;
+  daily_max_units: number | null;
+  times_per_day: number | null;
+  times_per_day_text: string | null;
+  daily_max_text: string | null;
   content_qty: number;
   content_unit: string;
   pmda_url: string | null;
@@ -80,6 +82,8 @@ export function productToRows(product: Product): { product: ProductRow; facts: P
       crude_drug_main: product.crudeDrugMain,
       daily_max_units: product.dailyMaxUnits,
       times_per_day: product.timesPerDay,
+      times_per_day_text: product.timesPerDayText,
+      daily_max_text: product.dailyMaxText,
       content_qty: product.contentQty,
       content_unit: product.contentUnit,
       pmda_url: product.pmdaUrl,
@@ -125,6 +129,8 @@ export function productFromRow(row: ProductRow): Product {
     crudeDrugMain: row.crude_drug_main,
     dailyMaxUnits: row.daily_max_units,
     timesPerDay: row.times_per_day,
+    timesPerDayText: row.times_per_day_text,
+    dailyMaxText: row.daily_max_text,
     contentQty: row.content_qty,
     contentUnit: row.content_unit,
     facts,

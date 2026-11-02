@@ -15,6 +15,7 @@
     "check": "npm run lint && npm run typecheck && npm test && npm run format:check",
     "notice:extract": "python3 -I scripts/notice/extract.py data/notices/001742612.pdf data/notices/001742612.pages.json",
     "notice:structure": "tsx scripts/notice/structure.ts",
+    "notice:preview": "tsx scripts/notice/preview.ts",
     "db:seed": "tsx scripts/db/seed.ts"
   },
   "dependencies": {

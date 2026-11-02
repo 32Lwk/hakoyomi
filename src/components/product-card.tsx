@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ageStatus, BadgeRow, BadgeSheet } from "@/components/badges";
 import { IngredientSheet } from "@/components/ingredient-sheet";
+import { dailyMaxLabel, timesPerDayLabel } from "@/lib/dosage";
 import { ingredientRole } from "@/lib/ingredientRole";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
 import { cn } from "@/lib/utils";
@@ -53,8 +54,16 @@ export function ProductCard({ view }: { view: ProductView }) {
 
       <dl className="grid grid-cols-3 divide-x divide-border rounded-xl bg-muted text-center">
         <Stat label="内容量" value={`${product.contentQty}${product.contentUnit}`} />
-        <Stat label="1日最大" value={`${product.dailyMaxUnits}${product.contentUnit}`} />
-        <Stat label="1日の回数" value={`${product.timesPerDay}回`} />
+        <Stat
+          label="1日最大"
+          value={dailyMaxLabel(product)}
+          small={product.dailyMaxUnits === null}
+        />
+        <Stat
+          label="1日の回数"
+          value={timesPerDayLabel(product)}
+          small={product.timesPerDay === null}
+        />
       </dl>
 
       <BadgeRow badges={badges} group={group} noticeLoaded={view.noticeLoaded} />
@@ -221,11 +230,14 @@ function AgeBand({ view }: { view: ProductView }) {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+// small：添付文書の表記（「1日1回〜数回」など）は長いので一段小さく
+function Stat({ label, value, small = false }: { label: string; value: string; small?: boolean }) {
   return (
     <div className="flex flex-col gap-0.5 px-2 py-2.5">
       <dt className="text-[11px] text-muted-foreground">{label}</dt>
-      <dd className="text-lg font-bold tabular-nums">{value}</dd>
+      <dd className={cn("font-bold tabular-nums", small ? "text-sm leading-7" : "text-lg")}>
+        {value}
+      </dd>
     </div>
   );
 }
