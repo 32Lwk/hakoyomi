@@ -62,7 +62,9 @@ function preview(groupId: string): string {
           ? `出さない：${c.itemIds.join("・")}`
           : c.action === "add"
             ? `足す：${c.section} 【バッジ ${c.badge}】${c.body}`
-            : `未収録：${c.kinds.join("・")}（${c.note}）`;
+            : c.action === "unrecorded"
+              ? `未収録：${c.kinds.join("・")}（${c.note}）`
+              : `添付文書で確認：${c.note}`;
       detail.push(`- 〔補正 ${c.id}〕${matched.length ? `（${matched.join("・")}）` : ""}${what}`);
     }
     detail.push("");

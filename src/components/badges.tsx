@@ -283,7 +283,8 @@ function EvidenceBlock({ evidence, group }: { evidence: Evidence; group: NoticeG
           </p>
         )}
         <p className="text-xs text-muted-foreground">
-          {UI_COPY.labelCorrected}（{evidence.section}）。出典：
+          {evidence.labelOnly ? UI_COPY.labelOnly : UI_COPY.labelCorrected}（{evidence.section}
+          ）。出典：
           {evidence.sources.map((s, i) => (
             <span key={s.url}>
               {i > 0 && "・"}

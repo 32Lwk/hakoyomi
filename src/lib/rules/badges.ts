@@ -31,6 +31,8 @@ export type Evidence =
       matched: string[];
       sources: CorrectionSource[];
       checkedOn: string;
+      // 通知に項目がない種類で、添付文書だけから出した（L-20261103-36）
+      labelOnly: boolean;
     }
   | { kind: "fact"; ingredient: string; amountMg: number; per: "1回" | "1日" }
   | { kind: "list"; list: "abuse" | "doping"; ingredient: string; listed: string; source: string };
@@ -74,10 +76,15 @@ export const NOTICE_BADGE_KINDS: readonly BadgeKind[] = [
 
 // 「未収録」と出す通知由来の種類。通知を取り込んでいない薬効群は全部、取り込み済みでも補正で表せない種類（L-20261103-28）
 export function unrecordedKinds(product: Product, noticeLoaded: boolean): BadgeKind[] {
-  if (!noticeLoaded) return [...NOTICE_BADGE_KINDS];
+  if (!noticeLoaded && !labelChecked(product)) return [...NOTICE_BADGE_KINDS];
   return correctionsFor(product).flatMap(({ correction }) =>
     correction.action === "unrecorded" ? correction.kinds : [],
   );
+}
+
+// 通知に項目がない種類で、添付文書を確かめた商品（L-20261103-36）
+function labelChecked(product: Product): boolean {
+  return correctionsFor(product).some(({ correction }) => correction.action === "labelChecked");
 }
 
 // 並び順（制度 → 通知の注意 → 成分）。量や優劣の順ではない
@@ -131,7 +138,7 @@ export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
 
   // 添付文書による補正は、薬効群の通知を取り込んだ商品だけに当てる（取り込む前は全部「未収録」）
   const loaded = items.some((i) => i.groupId === product.noticeGroupId);
-  const corrections = loaded ? correctionsFor(product) : [];
+  const corrections = loaded || labelChecked(product) ? correctionsFor(product) : [];
   const removed = new Set(
     corrections.flatMap(({ correction: c }) => (c.action === "remove" ? c.itemIds : [])),
   );
@@ -157,6 +164,7 @@ export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
       matched,
       sources: c.sources,
       checkedOn: c.checkedOn,
+      labelOnly: !loaded,
     });
   }
   badges.push(...byKind.values());

@@ -255,7 +255,7 @@ const FIXTURES: Fixture[] = [
       bays: [
         [s("漢方薬", "kampo")],
         [s("皮膚薬", "topical", 3), s("水虫", "topical", 3)],
-        [s("口内炎", "topical", 2), s("痔の薬", "topical", 2), s("殺菌消毒", "topical", 2)],
+        [s("口内炎・のど", "topical", 2), s("痔の薬", "topical", 2), s("殺菌消毒", "topical", 2)],
         [s("湿布・外用鎮痛", "topical")],
         [s("湿布・外用鎮痛", "topical", 3), s("虫さされ・かゆみ", "topical", 3)],
       ],
@@ -594,6 +594,14 @@ export const MOCK_STORE = {
     { productId: "med-05074", shelfId: "8A-1", tier: 1, column: 3 },
     { productId: "med-00085", shelfId: "8A-4", tier: 2, column: 6 },
     { productId: "med-05338", shelfId: "6A-3", tier: 5, column: 7 },
+    // のどスプレー7品（L-20261103-36）。8B-3 の「口内炎・のど」の段
+    { productId: "med-02924", shelfId: "8B-3", tier: 2, column: 7 },
+    { productId: "med-02948", shelfId: "8B-3", tier: 2, column: 8 },
+    { productId: "med-02927", shelfId: "8B-3", tier: 1, column: 2 },
+    { productId: "med-02934", shelfId: "8B-3", tier: 1, column: 3 },
+    { productId: "med-02991", shelfId: "8B-3", tier: 1, column: 4 },
+    { productId: "med-02969", shelfId: "8B-3", tier: 1, column: 5 },
+    { productId: "med-02925", shelfId: "8B-3", tier: 1, column: 6 },
   ] satisfies ShelfLocation[],
 };
 

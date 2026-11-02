@@ -64,6 +64,30 @@ describe("鎮咳去痰薬（L-20261103-29）", () => {
   });
 });
 
+describe("睡眠改善薬（L-20261103-36）", () => {
+  it("添付文書を確かめた品は運転・授乳・年齢・飲酒を出し、未収録にしない", () => {
+    for (const name of ["ドリエル", "ドリエルEX"]) {
+      const badges = deriveBadges(byName(name), NOTICE_ITEMS);
+      expect(
+        badges.map((b) => b.kind),
+        name,
+      ).toEqual(expect.arrayContaining(["drive", "breastfeeding", "under15", "alcohol"]));
+      const age = badges.find((b) => b.kind === "under15");
+      expect(age?.label).toBe("年齢 15歳から");
+      expect(age?.evidence[0]).toMatchObject({ kind: "label", labelOnly: true });
+      expect(unrecordedKinds(byName(name), false), name).toEqual([]);
+    }
+  });
+
+  it("添付文書を確かめていない品（ドリーミンZ）は未収録のまま", () => {
+    const p = byName("ドリーミンZ");
+    expect(unrecordedKinds(p, false)).toEqual(
+      expect.arrayContaining(["drive", "breastfeeding", "under15", "alcohol"]),
+    );
+    expect(deriveBadges(p, NOTICE_ITEMS).map((b) => b.kind)).not.toContain("drive");
+  });
+});
+
 describe("成分名の旧表記", () => {
   it("塩酸○○ と ○○塩酸塩 を同じとみる", () => {
     expect(sameName("塩酸プソイドエフェドリン", "プソイドエフェドリン塩酸塩")).toBe(true);

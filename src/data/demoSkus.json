@@ -12940,6 +12940,10 @@
       {
         "label": "富士薬品（セイムス）販売ページ（72mL・商品コード）",
         "url": "https://www.seims.co.jp/shop/g/g4987904101414/"
+      },
+      {
+        "label": "セイムス（L-20261103-36）",
+        "url": "https://www.seims.co.jp/shop/g/g4987904101414/"
       }
     ]
   },
@@ -13904,6 +13908,14 @@
       {
         "label": "ツルハ サンテメディカルアクティブ 12mL（JAN・在庫あり）",
         "url": "https://shop.tsuruha.co.jp/10104905.html"
+      },
+      {
+        "label": "参天製薬 製品ページ（L-20261103-36）",
+        "url": "https://www.santen.com/content/santen/jp/ja/healthcare/eye/products/otc/sante_medical_active.html"
+      },
+      {
+        "label": "KEGG MEDICUS（L-20261103-36）",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000225"
       }
     ]
   },
@@ -17992,7 +18004,7 @@
   {
     "id": "med-03058",
     "jan": "4987241118984",
-    "name": "メンソレータムリシーナ軟膏",
+    "name": "メンソレータムリシーナ軟膏A",
     "maker": "ロート製薬",
     "riskClass": "指定第2類",
     "kind": "topical",
@@ -18106,6 +18118,14 @@
       {
         "label": "ドラッグセイムス（15g・JAN・成分）",
         "url": "https://www.seims.co.jp/shop/g/g4987241118984/"
+      },
+      {
+        "label": "ロート製薬 リシーナ軟膏A（L-20261103-36）",
+        "url": "https://jp.rohto.com/risina/risina-ointment/"
+      },
+      {
+        "label": "KEGG MEDICUS 軟膏A（L-20261103-36）",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933"
       }
     ]
   },
@@ -19220,6 +19240,14 @@
       {
         "label": "サンドラッグ 4987487103324",
         "url": "https://sundrug-online.com/products/4987487103324"
+      },
+      {
+        "label": "楽天ビック (ビックカメラ)（L-20261103-36）",
+        "url": "https://biccamera.rakuten.co.jp/item/4987487103324/"
+      },
+      {
+        "label": "楽天 製品価格比較 (JAN 4987487103324, shop list incl. 楽天ビック)（L-20261103-36）",
+        "url": "https://product.rakuten.co.jp/product/-/8921e5d8ac4474918fadcceabe11a2e0/"
       }
     ]
   },
@@ -21782,6 +21810,486 @@
       {
         "label": "クリエイトSD 45包",
         "url": "https://netshop.create-sd.co.jp/shop/g/g4987045043208/"
+      }
+    ]
+  },
+  {
+    "id": "med-02924",
+    "jan": "4987072061183",
+    "name": "のどぬーるナイテクト",
+    "maker": "小林製薬",
+    "riskClass": "第3類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 15,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "アズレンスルホン酸ナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "セチルピリジニウム塩化物水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/270172_K2102000022_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%81%AE%E3%81%A9%E3%81%AC%E3%83%BC%E3%82%8B%E3%83%8A%E3%82%A4%E3%83%86%E3%82%AF%E3%83%88.webp?v=8214df5e",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/270172_K2102000022_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アズレンスルホン酸ナトリウム水和物",
+        "セチルピリジニウム塩化物水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG のどぬーるナイテクト",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2102000022"
+      },
+      {
+        "label": "クリエイトSD 15ml",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987072061183/"
+      },
+      {
+        "label": "ドラッグセイムス 15mL",
+        "url": "https://www.seims.co.jp/shop/g/g4987072061183/"
+      }
+    ]
+  },
+  {
+    "id": "med-02948",
+    "jan": "4987469543124",
+    "name": "コフジスACのどスプレー",
+    "maker": "福地製薬",
+    "riskClass": "第3類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 30,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "アズレンスルホン酸ナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "セチルピリジニウム塩化物水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/670055_K2607000009_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B3%E3%83%95%E3%82%B8%E3%82%B9AC%E3%81%AE%E3%81%A9%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC.webp?v=19ba5601",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/670055_K2607000009_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アズレンスルホン酸ナトリウム水和物",
+        "セチルピリジニウム塩化物水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG コフジスACのどスプレー",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2607000009"
+      },
+      {
+        "label": "au PAY マーケット（くすりのiQ）30mL",
+        "url": "https://wowma.jp/item/713075561"
+      }
+    ]
+  },
+  {
+    "id": "med-02927",
+    "jan": "4987316012414",
+    "name": "ストナのどスプレー",
+    "maker": "佐藤製薬",
+    "riskClass": "第3類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 25,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "アズレンスルホン酸ナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "セチルピリジニウム塩化物水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300089_J1201000288_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B9%E3%83%88%E3%83%8A%E3%81%AE%E3%81%A9%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC.webp?v=88541fe4",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300089_J1201000288_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アズレンスルホン酸ナトリウム水和物",
+        "セチルピリジニウム塩化物水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG ストナのどスプレー",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000288"
+      },
+      {
+        "label": "ツルハ 25mL",
+        "url": "https://shop.tsuruha.co.jp/10103747.html"
+      },
+      {
+        "label": "クリエイトSD 25ml（お取り寄せ）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987316012414/"
+      },
+      {
+        "label": "ドラッグセイムス 25mL",
+        "url": "https://www.seims.co.jp/shop/g/g4987316012414/"
+      }
+    ]
+  },
+  {
+    "id": "med-02934",
+    "jan": "4987107611925",
+    "name": "ルルのどスプレー",
+    "maker": "東興薬品工業",
+    "riskClass": "第3類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 25,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "アズレンスルホン酸ナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/480115_J1201000252_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AB%E3%83%AB%E3%81%AE%E3%81%A9%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC.webp?v=80bf27a3",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/480115_J1201000252_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アズレンスルホン酸ナトリウム水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG ルルのどスプレー",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000252"
+      },
+      {
+        "label": "第一三共ヘルスケア 公式製品ページ",
+        "url": "https://www.daiichisankyo-hc.co.jp/products/details/lulu_nodo_spray/"
+      },
+      {
+        "label": "第一三共ヘルスケア ルル製品一覧（掲載あり）",
+        "url": "https://www.daiichisankyo-hc.co.jp/products/brand/lulu/"
+      }
+    ]
+  },
+  {
+    "id": "med-02991",
+    "jan": "4987426002831",
+    "name": "ムヒののどスプレー",
+    "maker": "ダイヤ製薬",
+    "riskClass": "第3類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 30,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "アズレンスルホン酸ナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400116_K2312000004_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%A0%E3%83%92%E3%81%AE%E3%81%AE%E3%81%A9%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC.webp?v=403df3dc",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400116_K2312000004_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アズレンスルホン酸ナトリウム水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG ムヒののどスプレー",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2312000004"
+      },
+      {
+        "label": "クリエイトSD 30ml",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987426002831/"
+      },
+      {
+        "label": "ドラッグセイムス 30mL",
+        "url": "https://www.seims.co.jp/shop/g/g4987426002831/"
+      }
+    ]
+  },
+  {
+    "id": "med-02969",
+    "jan": "4987206622785",
+    "name": "浅田飴AZのどスプレーS",
+    "maker": "ジャパンメディック",
+    "riskClass": "第3類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 30,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "アズレンスルホン酸ナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/730011_J0901000069_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E6%B5%85%E7%94%B0%E9%A3%B4AZ%E3%81%AE%E3%81%A9%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BCS.webp?v=89820498",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/730011_J0901000069_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アズレンスルホン酸ナトリウム水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG 浅田飴AZのどスプレーS",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0901000069"
+      },
+      {
+        "label": "浅田飴 公式製品ページ",
+        "url": "https://www.asadaame.co.jp/medicine/azulene_s.html"
+      },
+      {
+        "label": "クリエイトSD 30ml",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987206622785/"
+      }
+    ]
+  },
+  {
+    "id": "med-02925",
+    "jan": "4987072051344",
+    "name": "ハレナーススプレー",
+    "maker": "小林製薬",
+    "riskClass": "第3類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": null,
+    "timesPerDay": null,
+    "timesPerDayText": "1日数回",
+    "dailyMaxText": "適量",
+    "contentQty": 15,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "アズレンスルホン酸ナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "セチルピリジニウム塩化物水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/270172_K2202000008_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%8F%E3%83%AC%E3%83%8A%E3%83%BC%E3%82%B9%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC.webp?v=9adac1b4",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/270172_K2202000008_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アズレンスルホン酸ナトリウム水和物",
+        "セチルピリジニウム塩化物水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG ハレナーススプレー",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2202000008"
+      },
+      {
+        "label": "クリエイトSD 15ml",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987072051344/"
+      },
+      {
+        "label": "ドラッグセイムス 15mL",
+        "url": "https://www.seims.co.jp/shop/g/g4987072051344/"
       }
     ]
   }

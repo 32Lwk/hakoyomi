@@ -32,6 +32,9 @@ export type LabelCorrection = Base &
     | { action: "add"; badge: BadgeKind; section: NoticeSection; body: string; bodyFrom: string }
     // 通知のバッジの種類で表せない記載がある（例：7才未満）。「該当なし」ではなく「未収録」にする
     | { action: "unrecorded"; kinds: BadgeKind[]; note: string }
+    // 通知に項目がない種類（睡眠改善薬など）で、この商品の添付文書を確かめた。確認ポイントは add の補正だけで出し、
+    // 出ない種類は「未収録」ではなく「該当なし」にする（L-20261103-36）
+    | { action: "labelChecked"; note: string }
   );
 
 const KEGG = (code: string, name: string): CorrectionSource => ({
@@ -49,6 +52,8 @@ const LOXONIN = [
   KEGG("J1601000006", "ロキソニンSプレミアム"),
 ];
 const MUCODYNE = KEGG("J2401000006", "ムコダイン去たん錠Pro500");
+const DREWELL = KEGG("J0601001652", "ドリエル");
+const DREWELL_EX = KEGG("K0706000002", "ドリエルEX");
 const CHECKED_ON = "2026-11-03";
 
 // 第2世代の抗ヒスタミン成分の単味製剤。通知（鼻炎用内服薬）の記載条件に名前がない
@@ -160,6 +165,65 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     bodyFrom: "chinga_kyotan-sd-1-3",
     target: { productIds: ["mucodyne-pro500"] },
     sources: [MUCODYNE],
+    checkedOn: CHECKED_ON,
+  },
+  // 睡眠改善薬（ジフェンヒドラミン塩酸塩、L-20261103-36）。通知PDFに項目がないため、添付文書で確かめた品だけ確認ポイントを出す。
+  // 文言は他の薬効群の通知の同じ趣旨の項目。ドリーミンZ は KEGG に添付文書がなく確かめられないため「未収録」のまま
+  {
+    id: "suimin-label-checked",
+    groupId: "suimin_kaizen",
+    action: "labelChecked",
+    note: "添付文書の「してはいけないこと」を KEGG MEDICUS で確認",
+    target: { productIds: ["drewell", "drewell-ex"] },
+    sources: [DREWELL, DREWELL_EX],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "suimin-drive",
+    groupId: "suimin_kaizen",
+    action: "add",
+    badge: "drive",
+    section: "してはいけないこと",
+    body: "服用後，乗物又は機械類の運転操作をしないこと",
+    bodyFrom: "bien_naifuku-ng-3-1",
+    target: { productIds: ["drewell", "drewell-ex"] },
+    sources: [DREWELL, DREWELL_EX],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "suimin-breastfeeding",
+    groupId: "suimin_kaizen",
+    action: "add",
+    badge: "breastfeeding",
+    section: "してはいけないこと",
+    body: "授乳中の人は本剤を服用しないか，本剤を服用する場合は授乳を避けること",
+    bodyFrom: "bien_naifuku-ng-4",
+    target: { productIds: ["drewell", "drewell-ex"] },
+    sources: [DREWELL, DREWELL_EX],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "suimin-under15",
+    groupId: "suimin_kaizen",
+    action: "add",
+    badge: "under15",
+    section: "してはいけないこと",
+    body: "１５歳未満の小児．",
+    bodyFrom: "genetsu_chintsu-ng-1-3",
+    target: { productIds: ["drewell", "drewell-ex"] },
+    sources: [DREWELL, DREWELL_EX],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "suimin-alcohol",
+    groupId: "suimin_kaizen",
+    action: "add",
+    badge: "alcohol",
+    section: "してはいけないこと",
+    body: "服用前後は飲酒しないこと",
+    bodyFrom: "genetsu_chintsu-ng-4",
+    target: { productIds: ["drewell", "drewell-ex"] },
+    sources: [DREWELL, DREWELL_EX],
     checkedOn: CHECKED_ON,
   },
 ];
