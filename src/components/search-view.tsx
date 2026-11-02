@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ChevronDown, Plus, Search, X } from "lucide-react";
+import { BookOpen, Check, ChevronDown, Loader2, Plus, Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ProductList } from "@/components/product-row";
@@ -19,6 +19,7 @@ import { amountText } from "@/lib/compare";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 import { illustrationSrc, KIND_LABEL } from "@/lib/illustration";
 import { ingredientRole } from "@/lib/ingredientRole";
+import { matchedTerms, standardOf, type ReverseResult } from "@/lib/reverse/match";
 import { canonicalName, normalizeName } from "@/lib/rules/normalize";
 import type { BadgeKind } from "@/lib/schema/notice";
 import type { MedicineKind } from "@/lib/schema/product";
@@ -104,6 +105,9 @@ export function SearchView() {
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [exclude, setExclude] = useState<BadgeKind[]>([]);
   const [panel, setPanel] = useState<Panel | null>(null);
+  // 逆引き（T302）の結果。検索語を変えたら外す。入力は保存しない
+  const [reverse, setReverse] = useState<ReverseResult | null>(null);
+  const [reversing, setReversing] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -120,8 +124,11 @@ export function SearchView() {
 
   const products = all ?? [];
   const index = ingredientIndex(products);
-  const filters: Filters = { term: normalizeName(q), kind, ingredients, exclude };
-  const shown = apply(products, filters);
+  // 逆引き中は、検索語を品名ではなく効能・効果の語として使う
+  const filters: Filters = { term: reverse ? "" : normalizeName(q), kind, ingredients, exclude };
+  const shown = apply(products, filters).filter(
+    (v) => !reverse || matchedTerms(v.product, reverse.terms).length > 0,
+  );
   const groups = KIND_ORDER.map((k) => ({
     kind: k,
     views: shown.filter((v) => v.product.kind === k),
@@ -135,8 +142,12 @@ export function SearchView() {
         .slice(0, 6)
     : [];
 
-  // 結果の行に、絞った成分（または入力に当たった成分）の分量を添える
+  // 結果の行に、絞った成分（または入力に当たった成分）の分量を添える。逆引きでは当たった承認基準の語
   const note = (v: ProductView) => {
+    if (reverse) {
+      const words = matchedTerms(v.product, reverse.terms).map((t) => t.word);
+      return `${UI_COPY.reverseMatched}：${words.join("・")}`;
+    }
     const facts = v.product.facts.filter(
       (f) =>
         ingredients.includes(canonicalName(f.ingredient)) ||
@@ -175,6 +186,25 @@ export function SearchView() {
     setExclude([]);
   };
 
+  const runReverse = async () => {
+    setReversing(true);
+    try {
+      const res = await fetch("/api/reverse", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ q }),
+      });
+      const result = (await res.json()) as ReverseResult;
+      setReverse(result);
+      // 「眠くならない」などの条件は、含まないの条件として選んだ状態にする（チップで外せる）
+      setExclude((prev) => [...new Set([...prev, ...result.exclude])]);
+    } catch {
+      setReverse({ terms: [], exclude: [], via: "keyword" });
+    } finally {
+      setReversing(false);
+    }
+  };
+
   const pick = (id: string) => {
     add(id);
     router.push("/");
@@ -194,7 +224,10 @@ export function SearchView() {
           <Input
             id="search-q"
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(e) => {
+              setQ(e.target.value);
+              setReverse(null);
+            }}
             placeholder={UI_COPY.searchPlaceholder}
             inputMode="search"
             autoComplete="off"
@@ -203,7 +236,10 @@ export function SearchView() {
           {q && (
             <button
               type="button"
-              onClick={() => setQ("")}
+              onClick={() => {
+                setQ("");
+                setReverse(null);
+              }}
               aria-label="検索語を消す"
               className="absolute top-1/2 right-1 flex size-9 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground"
             >
@@ -269,7 +305,27 @@ export function SearchView() {
         )}
       </div>
 
-      {suggested.length > 0 && (
+      {q.trim() && !reverse && (
+        <button
+          type="button"
+          onClick={runReverse}
+          disabled={reversing}
+          className="-mt-2 flex min-h-11 items-center gap-2 rounded-xl border border-primary px-3 text-left text-sm font-bold text-primary disabled:opacity-60"
+        >
+          {reversing ? (
+            <Loader2 className="size-4 shrink-0 animate-spin" aria-hidden="true" />
+          ) : (
+            <BookOpen className="size-4 shrink-0" aria-hidden="true" />
+          )}
+          <span className="min-w-0 [word-break:auto-phrase]">
+            「{q.trim()}」を{UI_COPY.reverseAction}
+          </span>
+        </button>
+      )}
+
+      {reverse && <ReversePanel result={reverse} onClear={() => setReverse(null)} />}
+
+      {suggested.length > 0 && !reverse && (
         <section aria-labelledby="suggest-title" className="-mt-2 flex flex-col gap-1.5">
           <h2 id="suggest-title" className="text-xs font-bold text-muted-foreground">
             {UI_COPY.ingredientSuggest}
@@ -348,6 +404,70 @@ export function SearchView() {
         onExclude={toggleExclude}
       />
     </div>
+  );
+}
+
+// 逆引きで対応づけた承認基準の語と出典。語は承認基準の原文で、Claude が書いた文ではない
+function ReversePanel({ result, onClear }: { result: ReverseResult; onClear: () => void }) {
+  const standards = [...new Set(result.terms.map((t) => t.standardId))].flatMap(
+    (id) => standardOf(id) ?? [],
+  );
+  return (
+    <section
+      aria-labelledby="reverse-title"
+      className="-mt-2 flex flex-col gap-2 rounded-xl bg-muted p-3 text-sm"
+    >
+      <div className="flex items-start gap-2">
+        <h2 id="reverse-title" className="font-bold">
+          {UI_COPY.reverseTitle}
+        </h2>
+        <button
+          type="button"
+          onClick={onClear}
+          className="ml-auto shrink-0 text-xs text-primary underline underline-offset-2"
+        >
+          {UI_COPY.reverseClear}
+        </button>
+      </div>
+      {result.terms.length === 0 ? (
+        <p>{UI_COPY.reverseNone}</p>
+      ) : (
+        <>
+          <ul className="flex flex-col gap-1.5">
+            {standards.map((s) => (
+              <li key={s.id} className="flex flex-col gap-1">
+                <span className="text-xs text-muted-foreground">{s.name}の承認基準</span>
+                <span className="flex flex-wrap gap-1.5">
+                  {result.terms
+                    .filter((t) => t.standardId === s.id)
+                    .map((t) => (
+                      <span
+                        key={t.id}
+                        className="rounded-full bg-background px-2.5 py-1 text-xs font-bold"
+                      >
+                        {t.word}
+                      </span>
+                    ))}
+                </span>
+                <a
+                  href={s.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[11px] break-all text-primary underline underline-offset-2"
+                >
+                  {s.notice}（取得 {s.fetchedOn}）
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-muted-foreground">{UI_COPY.reverseNote}</p>
+        </>
+      )}
+      {result.via === "keyword" && (
+        <p className="text-[11px] text-muted-foreground">{UI_COPY.reverseKeyword}</p>
+      )}
+      <p className="text-xs font-bold">{UI_COPY.chooseNotice}</p>
+    </section>
   );
 }
 

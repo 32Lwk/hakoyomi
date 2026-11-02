@@ -54,6 +54,11 @@ const LOXONIN = [
 const MUCODYNE = KEGG("J2401000006", "ムコダイン去たん錠Pro500");
 const DREWELL = KEGG("J0601001652", "ドリエル");
 const DREWELL_EX = KEGG("K0706000002", "ドリエルEX");
+// KEGG にない。製造販売元（小林薬品工業）の添付文書（2026年5月改訂）を MEDLEY が載せている PDF で確認（L-20261103-41）
+const DREAMIN_Z: CorrectionSource = {
+  label: "ドリーミンZ 添付文書（2026年5月改訂、MEDLEY 掲載の PDF）",
+  url: "https://cdn.medley.life/uploads/medicines/otc/pdf/A00400067011_20260831.pdf",
+};
 const ELPAIN_A = KEGG("J2501000118", "エルペインコーワα");
 const LUNA_J = KEGG("J1201000074", "バファリンルナJ");
 const NORSHIN_JUNIOR = KEGG("J0601001553", "小中学生用ノーシンピュア");
@@ -174,14 +179,14 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     checkedOn: CHECKED_ON,
   },
   // 睡眠改善薬（ジフェンヒドラミン塩酸塩、L-20261103-36）。通知PDFに項目がないため、添付文書で確かめた品だけ確認ポイントを出す。
-  // 文言は他の薬効群の通知の同じ趣旨の項目。ドリーミンZ は KEGG に添付文書がなく確かめられないため「未収録」のまま
+  // 文言は他の薬効群の通知の同じ趣旨の項目。ドリーミンZ は添付文書の PDF で確かめた（L-20261103-41）
   {
     id: "suimin-label-checked",
     groupId: "suimin_kaizen",
     action: "labelChecked",
-    note: "添付文書の「してはいけないこと」を KEGG MEDICUS で確認",
-    target: { productIds: ["drewell", "drewell-ex"] },
-    sources: [DREWELL, DREWELL_EX],
+    note: "添付文書の「してはいけないこと」を KEGG MEDICUS（ドリーミンZ は添付文書の PDF）で確認",
+    target: { productIds: ["drewell", "drewell-ex", "dreamin-z"] },
+    sources: [DREWELL, DREWELL_EX, DREAMIN_Z],
     checkedOn: CHECKED_ON,
   },
   {
@@ -192,8 +197,8 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     section: "してはいけないこと",
     body: "服用後，乗物又は機械類の運転操作をしないこと",
     bodyFrom: "bien_naifuku-ng-3-1",
-    target: { productIds: ["drewell", "drewell-ex"] },
-    sources: [DREWELL, DREWELL_EX],
+    target: { productIds: ["drewell", "drewell-ex", "dreamin-z"] },
+    sources: [DREWELL, DREWELL_EX, DREAMIN_Z],
     checkedOn: CHECKED_ON,
   },
   {
@@ -204,8 +209,8 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     section: "してはいけないこと",
     body: "授乳中の人は本剤を服用しないか，本剤を服用する場合は授乳を避けること",
     bodyFrom: "bien_naifuku-ng-4",
-    target: { productIds: ["drewell", "drewell-ex"] },
-    sources: [DREWELL, DREWELL_EX],
+    target: { productIds: ["drewell", "drewell-ex", "dreamin-z"] },
+    sources: [DREWELL, DREWELL_EX, DREAMIN_Z],
     checkedOn: CHECKED_ON,
   },
   {
@@ -216,8 +221,8 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     section: "してはいけないこと",
     body: "１５歳未満の小児．",
     bodyFrom: "genetsu_chintsu-ng-1-3",
-    target: { productIds: ["drewell", "drewell-ex"] },
-    sources: [DREWELL, DREWELL_EX],
+    target: { productIds: ["drewell", "drewell-ex", "dreamin-z"] },
+    sources: [DREWELL, DREWELL_EX, DREAMIN_Z],
     checkedOn: CHECKED_ON,
   },
   {
@@ -228,8 +233,8 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     section: "してはいけないこと",
     body: "服用前後は飲酒しないこと",
     bodyFrom: "genetsu_chintsu-ng-4",
-    target: { productIds: ["drewell", "drewell-ex"] },
-    sources: [DREWELL, DREWELL_EX],
+    target: { productIds: ["drewell", "drewell-ex", "dreamin-z"] },
+    sources: [DREWELL, DREWELL_EX, DREAMIN_Z],
     checkedOn: CHECKED_ON,
   },
   // 生理痛にも使う解熱鎮痛薬（L-20261103-40）

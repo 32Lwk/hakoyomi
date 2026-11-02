@@ -58,6 +58,15 @@ export const UI_COPY = {
   sortedShort: "品名順（順位ではありません）",
   backToList: "商品一覧",
   openShelf: "棚で見る",
+  reverseAction: "効能・効果の語で探す",
+  reverseTitle: "承認基準の効能・効果の語",
+  reverseClear: "品名の検索に戻す",
+  reverseNone:
+    "承認基準の効能・効果に当たる語が見つかりません。言い方を変えるか、種類・成分で探してください",
+  reverseNote:
+    "薬効群の承認基準の効能・効果にこの語があり、商品の効能・効果にも同じ語がある商品です。商品の効能・効果は添付文書（PMDA）で確認してください。対象はかぜ薬・解熱鎮痛薬・せき止め・鼻炎薬（内服・点鼻）・乗り物酔い薬で、目薬・胃腸薬・ビタミン剤・外用薬・漢方薬・睡眠改善薬など承認基準の区分を持たない種類は含みません",
+  reverseMatched: "効能の語",
+  reverseKeyword: "語の一致で対応づけました（Claude を使っていません）",
   readAnother: "比べる商品を読む",
   noMatch: "該当する商品がありません",
   showAll: "すべて",

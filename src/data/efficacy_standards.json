@@ -1,0 +1,466 @@
+[
+  {
+    "id": "kaze",
+    "name": "かぜ薬",
+    "noticeGroupIds": [
+      "kaze_1"
+    ],
+    "notice": "薬食発0325第28号 平成27年３月25日「かぜ薬の製造販売承認基準について」（一部改正：平成29年７月４日 薬生発0704第２号）",
+    "sourceUrl": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000092775.pdf",
+    "sourcePage": "7",
+    "fetchedOn": "2026-11-03",
+    "text": "かぜの諸症状（鼻水，鼻づまり，くしゃみ，のどの痛み，せき，たん，悪寒（発熱によるさむけ），発熱，頭痛，関節の痛み，筋肉の痛み）の緩和",
+    "terms": [
+      {
+        "id": "kaze:hanamizu",
+        "word": "鼻水",
+        "keys": [
+          "鼻水",
+          "鼻みず"
+        ]
+      },
+      {
+        "id": "kaze:hanazumari",
+        "word": "鼻づまり",
+        "keys": [
+          "鼻づまり",
+          "鼻閉"
+        ]
+      },
+      {
+        "id": "kaze:kushami",
+        "word": "くしゃみ",
+        "keys": [
+          "くしゃみ"
+        ]
+      },
+      {
+        "id": "kaze:nodo",
+        "word": "のどの痛み",
+        "keys": [
+          "のどの痛み",
+          "咽喉痛"
+        ]
+      },
+      {
+        "id": "kaze:seki",
+        "word": "せき",
+        "keys": [
+          "せき"
+        ]
+      },
+      {
+        "id": "kaze:tan",
+        "word": "たん",
+        "keys": [
+          "たん"
+        ]
+      },
+      {
+        "id": "kaze:okan",
+        "word": "悪寒（発熱によるさむけ）",
+        "keys": [
+          "悪寒",
+          "さむけ"
+        ]
+      },
+      {
+        "id": "kaze:hatsunetsu",
+        "word": "発熱",
+        "keys": [
+          "発熱"
+        ]
+      },
+      {
+        "id": "kaze:zutsu",
+        "word": "頭痛",
+        "keys": [
+          "頭痛"
+        ]
+      },
+      {
+        "id": "kaze:kansetsu",
+        "word": "関節の痛み",
+        "keys": [
+          "関節の痛み",
+          "関節痛"
+        ]
+      },
+      {
+        "id": "kaze:kinniku",
+        "word": "筋肉の痛み",
+        "keys": [
+          "筋肉の痛み",
+          "筋肉痛"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "genetsu",
+    "name": "解熱鎮痛薬",
+    "noticeGroupIds": [
+      "genetsu_chintsu"
+    ],
+    "notice": "薬食発0325第30号 平成27年３月25日「解熱鎮痛薬の製造販売承認基準について」",
+    "sourceUrl": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000092777.pdf",
+    "sourcePage": "6",
+    "fetchedOn": "2026-11-03",
+    "text": "頭痛・歯痛・抜歯後の疼痛・咽喉痛（のどの痛み）・耳痛・関節痛・神経痛・腰痛・筋肉痛・肩こり痛・打撲痛・骨折痛・ねんざにともなう痛み（ねんざ痛）・月経痛（生理痛）・外傷痛の鎮痛\n悪寒（発熱によるさむけ）・発熱時の解熱",
+    "terms": [
+      {
+        "id": "genetsu:zutsu",
+        "word": "頭痛",
+        "keys": [
+          "頭痛"
+        ]
+      },
+      {
+        "id": "genetsu:shitsu",
+        "word": "歯痛",
+        "keys": [
+          "歯痛"
+        ]
+      },
+      {
+        "id": "genetsu:batsushi",
+        "word": "抜歯後の疼痛",
+        "keys": [
+          "抜歯後"
+        ]
+      },
+      {
+        "id": "genetsu:intou",
+        "word": "咽喉痛（のどの痛み）",
+        "keys": [
+          "咽喉痛",
+          "のどの痛み"
+        ]
+      },
+      {
+        "id": "genetsu:jitsu",
+        "word": "耳痛",
+        "keys": [
+          "耳痛"
+        ]
+      },
+      {
+        "id": "genetsu:kansetsu",
+        "word": "関節痛",
+        "keys": [
+          "関節痛"
+        ]
+      },
+      {
+        "id": "genetsu:shinkei",
+        "word": "神経痛",
+        "keys": [
+          "神経痛"
+        ]
+      },
+      {
+        "id": "genetsu:youtsu",
+        "word": "腰痛",
+        "keys": [
+          "腰痛"
+        ]
+      },
+      {
+        "id": "genetsu:kinniku",
+        "word": "筋肉痛",
+        "keys": [
+          "筋肉痛"
+        ]
+      },
+      {
+        "id": "genetsu:katakori",
+        "word": "肩こり痛",
+        "keys": [
+          "肩こり痛"
+        ]
+      },
+      {
+        "id": "genetsu:daboku",
+        "word": "打撲痛",
+        "keys": [
+          "打撲痛"
+        ]
+      },
+      {
+        "id": "genetsu:kossetsu",
+        "word": "骨折痛",
+        "keys": [
+          "骨折痛"
+        ]
+      },
+      {
+        "id": "genetsu:nenza",
+        "word": "ねんざにともなう痛み（ねんざ痛）",
+        "keys": [
+          "ねんざ"
+        ]
+      },
+      {
+        "id": "genetsu:gekkei",
+        "word": "月経痛（生理痛）",
+        "keys": [
+          "月経痛",
+          "生理痛"
+        ]
+      },
+      {
+        "id": "genetsu:gaishou",
+        "word": "外傷痛",
+        "keys": [
+          "外傷痛"
+        ]
+      },
+      {
+        "id": "genetsu:okan",
+        "word": "悪寒（発熱によるさむけ）",
+        "keys": [
+          "悪寒",
+          "さむけ"
+        ]
+      },
+      {
+        "id": "genetsu:genetsu",
+        "word": "発熱時の解熱",
+        "keys": [
+          "解熱"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chinga",
+    "name": "鎮咳去痰薬",
+    "noticeGroupIds": [
+      "chinga_kyotan"
+    ],
+    "notice": "薬食発0325第26号 平成27年３月25日「鎮咳去痰薬の製造販売承認基準について」（一部改正：平成28年３月28日 薬生発0328第10号［別紙として基準全文］、平成29年７月４日 薬生発0704第４号）",
+    "sourceUrl": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000118532.pdf",
+    "sourcePage": "5-6",
+    "fetchedOn": "2026-11-03",
+    "text": "せき，喘鳴（ぜーぜー，ひゅーひゅー）をともなうせき，たん",
+    "terms": [
+      {
+        "id": "chinga:seki",
+        "word": "せき",
+        "keys": [
+          "せき",
+          "咳"
+        ]
+      },
+      {
+        "id": "chinga:zenmei",
+        "word": "喘鳴（ぜーぜー，ひゅーひゅー）をともなうせき",
+        "keys": [
+          "喘鳴"
+        ]
+      },
+      {
+        "id": "chinga:tan",
+        "word": "たん",
+        "keys": [
+          "たん",
+          "痰"
+        ]
+      }
+    ],
+    "note": "承認基準の効能・効果のうち基本の範囲（ア）。配合成分や剤形で加わる範囲（イ〜エ）は商品の区分を持たないため載せない"
+  },
+  {
+    "id": "bien",
+    "name": "鼻炎用内服薬",
+    "noticeGroupIds": [
+      "bien_naifuku"
+    ],
+    "notice": "薬食発0325第23号 平成27年３月25日「鼻炎用内服薬の製造販売承認基準について」（一部改正：平成27年12月14日 薬生発1214第２号）",
+    "sourceUrl": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000107459.pdf",
+    "sourcePage": "5",
+    "fetchedOn": "2026-11-03",
+    "text": "急性鼻炎，アレルギー性鼻炎又は副鼻腔炎による次の諸症状の緩和：くしゃみ，鼻みず（鼻汁過多），鼻づまり，なみだ目，のどの痛み，頭重（頭が重い）",
+    "terms": [
+      {
+        "id": "bien:kyusei",
+        "word": "急性鼻炎",
+        "keys": [
+          "急性鼻炎"
+        ]
+      },
+      {
+        "id": "bien:allergy",
+        "word": "アレルギー性鼻炎",
+        "keys": [
+          "アレルギー性鼻炎",
+          "鼻のアレルギー"
+        ]
+      },
+      {
+        "id": "bien:fukubiku",
+        "word": "副鼻腔炎",
+        "keys": [
+          "副鼻腔炎"
+        ]
+      },
+      {
+        "id": "bien:kushami",
+        "word": "くしゃみ",
+        "keys": [
+          "くしゃみ"
+        ]
+      },
+      {
+        "id": "bien:hanamizu",
+        "word": "鼻みず（鼻汁過多）",
+        "keys": [
+          "鼻みず",
+          "鼻水",
+          "鼻汁"
+        ]
+      },
+      {
+        "id": "bien:hanazumari",
+        "word": "鼻づまり",
+        "keys": [
+          "鼻づまり"
+        ]
+      },
+      {
+        "id": "bien:namidame",
+        "word": "なみだ目",
+        "keys": [
+          "なみだ目",
+          "涙目"
+        ]
+      },
+      {
+        "id": "bien:nodo",
+        "word": "のどの痛み",
+        "keys": [
+          "のどの痛み"
+        ]
+      },
+      {
+        "id": "bien:juju",
+        "word": "頭重（頭が重い）",
+        "keys": [
+          "頭重",
+          "頭が重い"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tenbi",
+    "name": "鼻炎用点鼻薬",
+    "noticeGroupIds": [
+      "tenbi"
+    ],
+    "notice": "薬発第一〇九号 平成三年二月一日「鼻炎用点鼻薬製造(輸入)承認基準について」",
+    "sourceUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta7154&dataType=1&pageNo=1",
+    "sourcePage": null,
+    "fetchedOn": "2026-11-03",
+    "text": "急性鼻炎、アレルギー性鼻炎又は副鼻腔炎による次の諸症状の緩和：鼻づまり、鼻みず(鼻汁過多)、くしゃみ、頭重(頭が重い)",
+    "terms": [
+      {
+        "id": "tenbi:kyusei",
+        "word": "急性鼻炎",
+        "keys": [
+          "急性鼻炎"
+        ]
+      },
+      {
+        "id": "tenbi:allergy",
+        "word": "アレルギー性鼻炎",
+        "keys": [
+          "アレルギー性鼻炎",
+          "鼻のアレルギー"
+        ]
+      },
+      {
+        "id": "tenbi:fukubiku",
+        "word": "副鼻腔炎",
+        "keys": [
+          "副鼻腔炎"
+        ]
+      },
+      {
+        "id": "tenbi:hanazumari",
+        "word": "鼻づまり",
+        "keys": [
+          "鼻づまり"
+        ]
+      },
+      {
+        "id": "tenbi:hanamizu",
+        "word": "鼻みず(鼻汁過多)",
+        "keys": [
+          "鼻みず",
+          "鼻水",
+          "鼻汁"
+        ]
+      },
+      {
+        "id": "tenbi:kushami",
+        "word": "くしゃみ",
+        "keys": [
+          "くしゃみ"
+        ]
+      },
+      {
+        "id": "tenbi:juju",
+        "word": "頭重(頭が重い)",
+        "keys": [
+          "頭重",
+          "頭が重い"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chinun",
+    "name": "鎮うん薬",
+    "noticeGroupIds": [
+      "chinun"
+    ],
+    "notice": "薬発第三八一号 昭和五九年六月一日「鎮暈薬製造(輸入)承認基準について」",
+    "sourceUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta7035&dataType=1&pageNo=1",
+    "sourcePage": null,
+    "fetchedOn": "2026-11-03",
+    "text": "乗物酔いによるめまい・吐き気・頭痛の予防及び緩和",
+    "terms": [
+      {
+        "id": "chinun:norimono",
+        "word": "乗物酔い",
+        "keys": [
+          "乗物酔い",
+          "乗り物酔い"
+        ]
+      },
+      {
+        "id": "chinun:memai",
+        "word": "めまい",
+        "keys": [
+          "めまい"
+        ]
+      },
+      {
+        "id": "chinun:hakike",
+        "word": "吐き気",
+        "keys": [
+          "吐き気",
+          "はきけ"
+        ]
+      },
+      {
+        "id": "chinun:zutsu",
+        "word": "頭痛",
+        "keys": [
+          "頭痛"
+        ]
+      }
+    ]
+  }
+]
