@@ -915,7 +915,7 @@
     "docRevisedOn": null,
     "enteredBy": "ゆう（既存データ）＋公開情報",
     "verifiedOn": "2026-11-03",
-    "imageUrl": "https://images.yutok.dev/otc/%E3%82%BF%E3%82%A4%E3%83%AC%E3%83%8E%E3%83%BC%E3%83%ABA.webp?v=ef164d5b",
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%BF%E3%82%A4%E3%83%AC%E3%83%8E%E3%83%BC%E3%83%ABA.webp?v=927b632d",
     "source": {
       "label": "添付文書を PMDA で開く",
       "url": "https://www.info.pmda.go.jp/ogo/480018_J0601013063_05_01"
@@ -2040,7 +2040,7 @@
     "docRevisedOn": null,
     "enteredBy": "ゆう（既存データ）＋公開情報",
     "verifiedOn": null,
-    "imageUrl": "https://images.yutok.dev/otc/%E3%83%99%E3%83%B3%E3%82%B6%E3%83%96%E3%83%AD%E3%83%83%E3%82%AFS%E9%8C%A0.webp?v=4702c9d8",
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%99%E3%83%B3%E3%82%B6%E3%83%96%E3%83%AD%E3%83%83%E3%82%AFS%E9%8C%A0.webp?v=5a10f091",
     "source": {
       "label": "添付文書を PMDA で開く",
       "url": "https://www.info.pmda.go.jp/ogo/430974_J0607000110_15_01"
@@ -2751,9 +2751,9 @@
       {
         "ingredient": "ベラドンナ総アルカロイド",
         "ingredientClasses": [],
-        "amountPerDay": 0.4,
+        "amountPerDay": 0.39,
         "unit": "mg",
-        "uncertain": true
+        "uncertain": false
       },
       {
         "ingredient": "塩酸プソイドエフェドリン",
@@ -3077,7 +3077,7 @@
         "ingredientClasses": [],
         "amountPerDay": 750,
         "unit": "mg",
-        "uncertain": true
+        "uncertain": false
       }
     ],
     "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170039_K0707000024_09_01",
@@ -3406,6 +3406,7500 @@
       {
         "label": "プラメドプラス 市販薬情報（JAN・12錠）",
         "url": "https://www.plamedplus.co.jp/otc/4987336765390.html"
+      }
+    ]
+  },
+  {
+    "id": "med-05883",
+    "jan": "4987306047372",
+    "name": "パブロンSゴールドW錠",
+    "maker": "大正製薬",
+    "riskClass": "指定第2類",
+    "kind": "cold",
+    "noticeGroupId": "kaze_1",
+    "efficacyGroups": [
+      "かぜ薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 3,
+    "contentQty": 30,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "アセトアミノフェン",
+        "ingredientClasses": [],
+        "amountPerDay": 900,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "アンブロキソール塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 45,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 7.5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ジヒドロコデインリン酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 24,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リボフラビン",
+        "ingredientClasses": [],
+        "amountPerDay": 12,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "L-カルボシステイン",
+        "ingredientClasses": [],
+        "amountPerDay": 750,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_K1506000009_07_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%91%E3%83%96%E3%83%AD%E3%83%B3S%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89W%E9%8C%A0.webp?v=eddc8896",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_K1506000009_07_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アセトアミノフェン",
+        "アンブロキソール塩酸塩",
+        "クロルフェニラミンマレイン酸塩",
+        "ジヒドロコデインリン酸塩",
+        "リボフラビン",
+        "L-カルボシステイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": true,
+      "dopingClass": "S7. 麻薬"
+    },
+    "research": [
+      {
+        "label": "大正製薬 製品情報（カタログ）",
+        "url": "https://www.catalog-taisho.com/category/02/001/04739/"
+      },
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1506000009"
+      }
+    ]
+  },
+  {
+    "id": "med-06448",
+    "jan": "4987300063019",
+    "name": "エスタックイブTT",
+    "maker": "エスエス製薬",
+    "riskClass": "指定第2類",
+    "kind": "cold",
+    "noticeGroupId": "kaze_1",
+    "efficacyGroups": [
+      "かぜ薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 3,
+    "contentQty": 24,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "イブプロフェン",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 7.5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "グリチルリチン酸",
+        "ingredientClasses": [],
+        "amountPerDay": 39,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ジヒドロコデインリン酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 24,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 75,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "酸化マグネシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "dl-メチルエフェドリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170039_J0601000165_11_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%A8%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF%E3%82%A4%E3%83%96TT.webp?v=ba48361b",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170039_J0601000165_11_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イブプロフェン",
+        "クロルフェニラミンマレイン酸塩",
+        "グリチルリチン酸",
+        "ジヒドロコデインリン酸塩",
+        "無水カフェイン",
+        "酸化マグネシウム",
+        "dl-メチルエフェドリン塩酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": true,
+      "dopingClass": "S6. 興奮剤"
+    },
+    "research": [
+      {
+        "label": "薬事日報 発売記事",
+        "url": "https://www.yakuji.co.jp/entry59630.html"
+      },
+      {
+        "label": "DATA INDEX 添付文書PDF(2018)",
+        "url": "https://www.data-index.co.jp/drugdata/pdf/otc/A00100020440_20181109.pdf"
+      },
+      {
+        "label": "QLife 24錠",
+        "url": "https://www.qlife.jp/meds/otc4987300063019.html"
+      }
+    ]
+  },
+  {
+    "id": "med-05907",
+    "jan": "4987904100479",
+    "name": "パイロンPL錠",
+    "maker": "シオノギヘルスケア",
+    "riskClass": "指定第2類",
+    "kind": "cold",
+    "noticeGroupId": "kaze_1",
+    "efficacyGroups": [
+      "かぜ薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 3,
+    "contentQty": 24,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "アセトアミノフェン",
+        "ingredientClasses": [],
+        "amountPerDay": 360,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "サリチルアミド",
+        "ingredientClasses": [],
+        "amountPerDay": 648,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "プロメタジンメチレンジサリチル酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 32.4,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 144,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/342681_J1901000057_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%91%E3%82%A4%E3%83%AD%E3%83%B3PL%E9%8C%A0.webp?v=90549dbd",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/342681_J1901000057_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アセトアミノフェン",
+        "サリチルアミド",
+        "プロメタジンメチレンジサリチル酸塩",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS パイロンPL錠",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1901000057"
+      },
+      {
+        "label": "クリエイトSD パイロンPL錠 24錠",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987904100479/"
+      }
+    ]
+  },
+  {
+    "id": "med-00553",
+    "jan": "4987107630025",
+    "name": "ロキソニンSクイック",
+    "maker": "第一三共ヘルスケア",
+    "riskClass": "第1類",
+    "kind": "fever",
+    "noticeGroupId": "genetsu_chintsu",
+    "efficacyGroups": [
+      "解熱鎮痛薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 12,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "メタケイ酸アルミン酸マグネシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ロキソプロフェンナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 204.3,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/430549_J2101000113_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AD%E3%82%AD%E3%82%BD%E3%83%8B%E3%83%B3S%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF.webp?v=0ad08f59",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/430549_J2101000113_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "メタケイ酸アルミン酸マグネシウム",
+        "ロキソプロフェンナトリウム水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハドラッグ 商品ページ",
+        "url": "https://shop.tsuruha.co.jp/10149979.html"
+      }
+    ]
+  },
+  {
+    "id": "med-00193",
+    "jan": "4987300058510",
+    "name": "イブA錠EX",
+    "maker": "エスエス製薬",
+    "riskClass": "指定第2類",
+    "kind": "fever",
+    "noticeGroupId": "genetsu_chintsu",
+    "efficacyGroups": [
+      "解熱鎮痛薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 4,
+    "timesPerDay": 2,
+    "contentQty": 40,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "アリルイソプロピルアセチル尿素",
+        "ingredientClasses": [],
+        "amountPerDay": 120,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "イブプロフェン",
+        "ingredientClasses": [],
+        "amountPerDay": 400,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 160,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170039_K1406000029_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%A4%E3%83%96A%E9%8C%A0EX.webp?v=6566c50a",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170039_K1406000029_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アリルイソプロピルアセチル尿素",
+        "イブプロフェン",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS イブA錠EX",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1406000029"
+      },
+      {
+        "label": "富士薬品通販 40錠 JAN",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987300058510.html"
+      },
+      {
+        "label": "クリエイトSD 40錠 JAN",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987300058510/"
+      }
+    ]
+  },
+  {
+    "id": "med-00274",
+    "jan": "4987306041257",
+    "name": "ナロンエースプレミアム",
+    "maker": "大正製薬",
+    "riskClass": "指定第2類",
+    "kind": "fever",
+    "noticeGroupId": "genetsu_chintsu",
+    "efficacyGroups": [
+      "解熱鎮痛薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 3,
+    "contentQty": 24,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "イブプロフェン",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "エテンザミド",
+        "ingredientClasses": [],
+        "amountPerDay": 1500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "乾燥水酸化アルミニウムゲル",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_K2103000008_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%8A%E3%83%AD%E3%83%B3%E3%82%A8%E3%83%BC%E3%82%B9%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0.webp?v=ae27d6de",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_K2103000008_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イブプロフェン",
+        "エテンザミド",
+        "乾燥水酸化アルミニウムゲル"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "クリエイトSD 商品ページ",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987306041257/"
+      },
+      {
+        "label": "大正製薬 新発売リリース（共同通信PRワイヤー）",
+        "url": "https://kyodonewsprwire.jp/release/202103162295"
+      }
+    ]
+  },
+  {
+    "id": "med-00243",
+    "jan": "4987087022797",
+    "name": "セデス・ハイ",
+    "maker": "シオノギヘルスケア",
+    "riskClass": "指定第2類",
+    "kind": "fever",
+    "noticeGroupId": "genetsu_chintsu",
+    "efficacyGroups": [
+      "解熱鎮痛薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 3,
+    "contentQty": 20,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "アセトアミノフェン",
+        "ingredientClasses": [],
+        "amountPerDay": 750,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "アリルイソプロピルアセチル尿素",
+        "ingredientClasses": [],
+        "amountPerDay": 180,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "イソプロピルアンチピリン",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 150,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/342681_J0601001226_12_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%BB%E3%83%87%E3%82%B9%E3%83%BB%E3%83%8F%E3%82%A4.webp?v=1c1d0cb5",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/342681_J0601001226_12_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アセトアミノフェン",
+        "アリルイソプロピルアセチル尿素",
+        "イソプロピルアンチピリン",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001226"
+      },
+      {
+        "label": "クリエイトSD（JAN・20錠）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987087022797/"
+      }
+    ]
+  },
+  {
+    "id": "med-00233",
+    "jan": "4987316032917",
+    "name": "リングルアイビー錠α200",
+    "maker": "佐藤製薬",
+    "riskClass": "指定第2類",
+    "kind": "fever",
+    "noticeGroupId": "genetsu_chintsu",
+    "efficacyGroups": [
+      "解熱鎮痛薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 12,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "イブプロフェン",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300089_K1502000002_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%AB%E3%82%A2%E3%82%A4%E3%83%93%E3%83%BC%E9%8C%A0%CE%B1200.webp?v=1a9b6a6e",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300089_K1502000002_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イブプロフェン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 リングルアイビー錠α200",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1502000002"
+      },
+      {
+        "label": "ANAモール 販売ページ（JAN・12錠）",
+        "url": "https://anamall.ana.co.jp/shop/g/g0075-10160475/"
+      }
+    ]
+  },
+  {
+    "id": "med-00177",
+    "jan": "4987009101814",
+    "name": "ノーシン",
+    "maker": "アラクス",
+    "riskClass": "指定第2類",
+    "kind": "fever",
+    "noticeGroupId": "genetsu_chintsu",
+    "efficacyGroups": [
+      "解熱鎮痛薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 20,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "アセトアミノフェン",
+        "ingredientClasses": [],
+        "amountPerDay": 900,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "エテンザミド",
+        "ingredientClasses": [],
+        "amountPerDay": 360,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カフェイン水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 210,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/100387_J0601001341_05_02",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%8E%E3%83%BC%E3%82%B7%E3%83%B3.webp?v=9f4b8bc0",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/100387_J0601001341_05_02"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アセトアミノフェン",
+        "エテンザミド",
+        "カフェイン水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハ ノーシン20包",
+        "url": "https://shop.tsuruha.co.jp/10180832.html"
+      },
+      {
+        "label": "マツキヨココカラ",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987009101814"
+      }
+    ]
+  },
+  {
+    "id": "med-06455",
+    "jan": "4987300035108",
+    "name": "エスエスブロン液L",
+    "maker": "エスエス製薬",
+    "riskClass": "第2類",
+    "kind": "cough",
+    "noticeGroupId": "chinga_kyotan",
+    "efficacyGroups": [
+      "鎮咳去痰薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 30,
+    "timesPerDay": 6,
+    "contentQty": 120,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 12,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "グアイフェネシン",
+        "ingredientClasses": [],
+        "amountPerDay": 170,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "デキストロメトルファン臭化水素酸塩水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 62,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170039_J0601012133_08_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%A8%E3%82%B9%E3%82%A8%E3%82%B9%E3%83%96%E3%83%AD%E3%83%B3%E6%B6%B2L.webp?v=15315856",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170039_J0601012133_08_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "グアイフェネシン",
+        "デキストロメトルファン臭化水素酸塩水和物",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS エスエスブロン液L",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012133"
+      },
+      {
+        "label": "富士薬品 エスエスブロン液L 120mL",
+        "url": "https://www.e-fujiyakuhin.jp/smp/item/4987300035108.html"
+      }
+    ]
+  },
+  {
+    "id": "med-05476",
+    "jan": "4987316017013",
+    "name": "新トニン咳止め液",
+    "maker": "佐藤製薬",
+    "riskClass": "指定第2類",
+    "kind": "cough",
+    "noticeGroupId": "chinga_kyotan",
+    "efficacyGroups": [
+      "鎮咳去痰薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 30,
+    "timesPerDay": 6,
+    "contentQty": 60,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "キキョウエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 105,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 12,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "グアヤコールスルホン酸カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 270,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ジヒドロコデインリン酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "セネガエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 42,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ソヨウ流エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 0.21,
+        "unit": "mL",
+        "uncertain": false
+      },
+      {
+        "ingredient": "トリメトキノール塩酸塩水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 6,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "バクモンドウエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 62.5,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300089_J0601012515_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E6%96%B0%E3%83%88%E3%83%8B%E3%83%B3%E5%92%B3%E6%AD%A2%E3%82%81%E6%B6%B2.webp?v=cd7a317c",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300089_J0601012515_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "キキョウエキス",
+        "クロルフェニラミンマレイン酸塩",
+        "グアヤコールスルホン酸カリウム",
+        "ジヒドロコデインリン酸塩",
+        "セネガエキス",
+        "ソヨウ流エキス",
+        "トリメトキノール塩酸塩水和物",
+        "バクモンドウエキス",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": true,
+      "dopingClass": "S3. ベータ−2作用剤（常に禁止）"
+    },
+    "research": [
+      {
+        "label": "佐藤製薬 製品情報",
+        "url": "https://search.sato-seiyaku.co.jp/pub/product/2040/"
+      },
+      {
+        "label": "KEGG MEDICUS 新トニン咳止め液",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012515"
+      },
+      {
+        "label": "ドラッグセイムス（JAN）",
+        "url": "https://www.seims.co.jp/shop/g/g4987316017013/"
+      }
+    ]
+  },
+  {
+    "id": "med-05751",
+    "jan": "4987107611956",
+    "name": "プレコール持続性せき止めカプセル",
+    "maker": "第一三共ヘルスケア",
+    "riskClass": "指定第2類",
+    "kind": "cough",
+    "noticeGroupId": "chinga_kyotan",
+    "efficacyGroups": [
+      "鎮咳去痰薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 10,
+    "contentUnit": "カプセル",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 8,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "グアヤコールスルホン酸カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 135,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "デキストロメトルファン臭化水素酸塩水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "dl-メチルエフェドリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300094_J1101000267_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%97%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%AB%E6%8C%81%E7%B6%9A%E6%80%A7%E3%81%9B%E3%81%8D%E6%AD%A2%E3%82%81%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB.webp?v=561b9e71",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300094_J1101000267_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "グアヤコールスルホン酸カリウム",
+        "デキストロメトルファン臭化水素酸塩水和物",
+        "dl-メチルエフェドリン塩酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": true,
+      "dopingClass": "S6. 興奮剤"
+    },
+    "research": [
+      {
+        "label": "セイムス 商品ページ",
+        "url": "https://www.seims.co.jp/shop/g/g4987107611956/"
+      },
+      {
+        "label": "価格.com 10カプセル",
+        "url": "https://kakaku.com/item/K0000542639/"
+      }
+    ]
+  },
+  {
+    "id": "med-06018",
+    "jan": "4987072047323",
+    "name": "ダスモックb",
+    "maker": "小林製薬",
+    "riskClass": "第2類",
+    "kind": "cough",
+    "noticeGroupId": "chinga_kyotan",
+    "efficacyGroups": [
+      "鎮咳去痰薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 10,
+    "timesPerDay": 2,
+    "contentQty": 80,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "オウゴン",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "キキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "キョウニン",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ゴミシ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.25,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "サンシシ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ショウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.25,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ソウハクヒ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タイソウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チクジョ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チンピ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "テンモンドウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "トウキ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "バイモ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "バクモンドウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ブクリョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/270172_K1708000017_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%80%E3%82%B9%E3%83%A2%E3%83%83%E3%82%AFb.webp?v=ea775e15",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/270172_K1708000017_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "オウゴン",
+        "カンゾウ",
+        "キキョウ",
+        "キョウニン",
+        "ゴミシ",
+        "サンシシ",
+        "ショウキョウ",
+        "ソウハクヒ",
+        "タイソウ",
+        "チクジョ",
+        "チンピ",
+        "テンモンドウ",
+        "トウキ",
+        "バイモ",
+        "バクモンドウ",
+        "ブクリョウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ダスモックb",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1708000017"
+      },
+      {
+        "label": "富士薬品通販 80錠 JAN",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987072047323.html"
+      },
+      {
+        "label": "クリエイトSD 80錠 JAN",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987072047323/"
+      }
+    ]
+  },
+  {
+    "id": "med-05114",
+    "jan": "4987316012865",
+    "name": "ストナリニ・サット",
+    "maker": "佐藤製薬",
+    "riskClass": "第2類",
+    "kind": "rhinitis",
+    "noticeGroupId": "bien_naifuku",
+    "efficacyGroups": [
+      "鼻炎用内服薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 3,
+    "contentQty": 12,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "フェニレフリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ベラドンナ総アルカロイド",
+        "ingredientClasses": [],
+        "amountPerDay": 0.6,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 80,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "d-クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 6,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300089_K1706000027_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B9%E3%83%88%E3%83%8A%E3%83%AA%E3%83%8B%E3%83%BB%E3%82%B5%E3%83%83%E3%83%88.webp?v=6ff36c2f",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300089_K1706000027_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "フェニレフリン塩酸塩",
+        "ベラドンナ総アルカロイド",
+        "無水カフェイン",
+        "d-クロルフェニラミンマレイン酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハドラッグ 商品ページ",
+        "url": "https://shop.tsuruha.co.jp/10074138.html"
+      },
+      {
+        "label": "マツキヨココカラ 商品ページ",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987316012865"
+      }
+    ]
+  },
+  {
+    "id": "med-05107",
+    "jan": "4987067289004",
+    "name": "コルゲンコーワ鼻炎ソフトミニカプセル",
+    "maker": "興和",
+    "riskClass": "第2類",
+    "kind": "rhinitis",
+    "noticeGroupId": "bien_naifuku",
+    "efficacyGroups": [
+      "鼻炎用内服薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 36,
+    "contentUnit": "カプセル",
+    "facts": [
+      {
+        "ingredient": "グリチルリチン酸二カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "フェニレフリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 15,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ベラドンナ総アルカロイド",
+        "ingredientClasses": [],
+        "amountPerDay": 0.399,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 120,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "d-クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 6,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/270072_J0601008190_03_03",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B3%E3%83%AB%E3%82%B2%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%AF%E9%BC%BB%E7%82%8E%E3%82%BD%E3%83%95%E3%83%88%E3%83%9F%E3%83%8B%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB.webp?v=b03e3e38",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/270072_J0601008190_03_03"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "グリチルリチン酸二カリウム",
+        "フェニレフリン塩酸塩",
+        "ベラドンナ総アルカロイド",
+        "無水カフェイン",
+        "d-クロルフェニラミンマレイン酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008190"
+      },
+      {
+        "label": "マツモトキヨシ オンライン（JAN・36カプセル）",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987067289004"
+      },
+      {
+        "label": "富士薬品 通販（JAN）",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987067289004.html"
+      }
+    ]
+  },
+  {
+    "id": "med-05149",
+    "jan": "4987241145072",
+    "name": "アルガードクイックチュアブル",
+    "maker": "ロート製薬",
+    "riskClass": "第2類",
+    "kind": "rhinitis",
+    "noticeGroupId": "bien_naifuku",
+    "efficacyGroups": [
+      "鼻炎用内服薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 15,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "フェニレフリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 15,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ベラドンナ総アルカロイド",
+        "ingredientClasses": [],
+        "amountPerDay": 0.4,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "メキタジン",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 4,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 90,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/880020_J1501000252_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%A2%E3%83%AB%E3%82%AC%E3%83%BC%E3%83%89%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%83%81%E3%83%A5%E3%82%A2%E3%83%96%E3%83%AB.webp?v=7fa889d0",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/880020_J1501000252_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "フェニレフリン塩酸塩",
+        "ベラドンナ総アルカロイド",
+        "メキタジン",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "セイムス 販売ページ（3錠中分量・JAN）",
+        "url": "https://www.seims.co.jp/shop/g/g4987241145072/"
+      },
+      {
+        "label": "クリエイトSD 販売ページ（JAN）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987241145072/"
+      }
+    ]
+  },
+  {
+    "id": "med-00522",
+    "jan": "4987306028852",
+    "name": "センパアPro",
+    "maker": "大正製薬",
+    "riskClass": "指定第2類",
+    "kind": "motion",
+    "noticeGroupId": "chinun",
+    "efficacyGroups": [
+      "鎮暈薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 6,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "アミノ安息香酸エチル",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "スコポラミン臭化水素酸塩水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 0.25,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "d-クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 2,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_K2303000030_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%BB%E3%83%B3%E3%83%91%E3%82%A2Pro.webp?v=5631bfd5",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_K2303000030_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アミノ安息香酸エチル",
+        "スコポラミン臭化水素酸塩水和物",
+        "ピリドキシン塩酸塩",
+        "無水カフェイン",
+        "d-クロルフェニラミンマレイン酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "セイムス センパアPro 6錠",
+        "url": "https://www.seims.co.jp/shop/g/g4987306028852/"
+      },
+      {
+        "label": "薬事日報 発売記事",
+        "url": "https://www.yakuji.co.jp/entry102652.html"
+      },
+      {
+        "label": "クリエイトSD",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987306028852/"
+      }
+    ]
+  },
+  {
+    "id": "med-00598",
+    "jan": "4987028110620",
+    "name": "トラベルミン1",
+    "maker": "エーザイ",
+    "riskClass": "第2類",
+    "kind": "motion",
+    "noticeGroupId": "chinun",
+    "efficacyGroups": [
+      "鎮暈薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 3,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "スコポラミン臭化水素酸塩水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 0.25,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "塩酸メクリジン",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170033_K1006000006_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%88%E3%83%A9%E3%83%99%E3%83%AB%E3%83%9F%E3%83%B31.webp?v=c6d2e48d",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170033_K1006000006_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "スコポラミン臭化水素酸塩水和物",
+        "塩酸メクリジン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS トラベルミン1",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1006000006"
+      },
+      {
+        "label": "マツモトキヨシ トラベルミン1 3錠",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987028110620"
+      }
+    ]
+  },
+  {
+    "id": "med-00616",
+    "jan": "4987306028678",
+    "name": "センパアトラベル1",
+    "maker": "大正製薬",
+    "riskClass": "第2類",
+    "kind": "motion",
+    "noticeGroupId": "chinun",
+    "efficacyGroups": [
+      "鎮暈薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 6,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": 4,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "スコポラミン臭化水素酸塩水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 0.25,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_J1501000159_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%BB%E3%83%B3%E3%83%91%E3%82%A2%E3%83%88%E3%83%A9%E3%83%99%E3%83%AB1.webp?v=2354e359",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_J1501000159_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "スコポラミン臭化水素酸塩水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS センパア トラベル1",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000159"
+      },
+      {
+        "label": "クリエイトSD（JAN）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987306028678/"
+      }
+    ]
+  },
+  {
+    "id": "med-00635",
+    "jan": "4987241103577",
+    "name": "パンシロントラベルSP",
+    "maker": "ロート製薬",
+    "riskClass": "第2類",
+    "kind": "motion",
+    "noticeGroupId": "chinun",
+    "efficacyGroups": [
+      "鎮暈薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 4,
+    "timesPerDay": 2,
+    "contentQty": 12,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "スコポラミン臭化水素酸塩水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 0.5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 12,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "塩酸メクリジン",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/880020_J1201000266_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%91%E3%83%B3%E3%82%B7%E3%83%AD%E3%83%B3%E3%83%88%E3%83%A9%E3%83%99%E3%83%ABSP.webp?v=619e2188",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/880020_J1201000266_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "スコポラミン臭化水素酸塩水和物",
+        "ピリドキシン塩酸塩",
+        "塩酸メクリジン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "クリエイトSD 商品ページ",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987241103577/"
+      },
+      {
+        "label": "GreenBeans 商品ページ",
+        "url": "https://greenbeans.com/products/14987241103574/details"
+      }
+    ]
+  },
+  {
+    "id": "med-05216",
+    "jan": "4987316018768",
+    "name": "ナザールスプレー",
+    "maker": "佐藤製薬",
+    "riskClass": "第2類",
+    "kind": "nasal",
+    "noticeGroupId": "tenbi",
+    "efficacyGroups": [
+      "鼻炎用点鼻薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 30,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ナファゾリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ベンザルコニウム塩化物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300089_J0601008320_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%8A%E3%82%B6%E3%83%BC%E3%83%AB%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC.webp?v=62d790d9",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300089_J0601008320_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "ナファゾリン塩酸塩",
+        "ベンザルコニウム塩化物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ナザール「スプレー」",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008319"
+      },
+      {
+        "label": "KEGG MEDICUS ナザールスプレー",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008320"
+      },
+      {
+        "label": "クリエイトSD 30mL JAN",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987316018768/"
+      },
+      {
+        "label": "富士薬品通販 30mL JAN",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987316018768.html"
+      }
+    ]
+  },
+  {
+    "id": "med-05231",
+    "jan": "4987306047150",
+    "name": "パブロン点鼻",
+    "maker": "大正製薬",
+    "riskClass": "第2類",
+    "kind": "nasal",
+    "noticeGroupId": "tenbi",
+    "efficacyGroups": [
+      "鼻炎用点鼻薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 30,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ナファゾリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ベンゼトニウム塩化物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_J0601008322_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%91%E3%83%96%E3%83%AD%E3%83%B3%E7%82%B9%E9%BC%BB.webp?v=a25ee565",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_J0601008322_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "ナファゾリン塩酸塩",
+        "ベンゼトニウム塩化物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハドラッグ 商品ページ",
+        "url": "https://shop.tsuruha.co.jp/10072588.html"
+      },
+      {
+        "label": "クリエイトSD 商品ページ",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987306047150/"
+      }
+    ]
+  },
+  {
+    "id": "med-05220",
+    "jan": "4987316019000",
+    "name": "ナシビンMスプレー",
+    "maker": "佐藤製薬",
+    "riskClass": "第2類",
+    "kind": "nasal",
+    "noticeGroupId": "tenbi",
+    "efficacyGroups": [
+      "鼻炎用点鼻薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 8,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "オキシメタゾリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300089_J1101000048_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%8A%E3%82%B7%E3%83%93%E3%83%B3M%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC.webp?v=784aa084",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300089_J1101000048_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "オキシメタゾリン塩酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 ナシビンMスプレー",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1101000048"
+      },
+      {
+        "label": "クリエイトSD 販売ページ（JAN・8mL）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987316019000/"
+      }
+    ]
+  },
+  {
+    "id": "med-05277",
+    "jan": "4987241129225",
+    "name": "ロートアルガードST鼻炎スプレー",
+    "maker": "ロート製薬",
+    "riskClass": "第2類",
+    "kind": "nasal",
+    "noticeGroupId": "tenbi",
+    "efficacyGroups": [
+      "鼻炎用点鼻薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 5,
+    "timesPerDay": 5,
+    "contentQty": 15,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "クロモグリク酸ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ナファゾリン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ベンゼトニウム塩化物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/880020_K0812000012_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AD%E3%83%BC%E3%83%88%E3%82%A2%E3%83%AB%E3%82%AC%E3%83%BC%E3%83%89ST%E9%BC%BB%E7%82%8E%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC.webp?v=b766cd70",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/880020_K0812000012_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロモグリク酸ナトリウム",
+        "クロルフェニラミンマレイン酸塩",
+        "ナファゾリン塩酸塩",
+        "ベンゼトニウム塩化物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハ アルガードST鼻炎スプレー15mL",
+        "url": "https://shop.tsuruha.co.jp/10087456.html"
+      },
+      {
+        "label": "クリエイトSD",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987241129225/"
+      }
+    ]
+  },
+  {
+    "id": "med-00083",
+    "jan": "4987033904016",
+    "name": "太田胃散",
+    "maker": "太田胃散",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3.9,
+    "timesPerDay": 3,
+    "contentQty": 75,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "ウイキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 72,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ケイヒ",
+        "ingredientClasses": [],
+        "amountPerDay": 276,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ゲンチアナ",
+        "ingredientClasses": [],
+        "amountPerDay": 45,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チョウジ",
+        "ingredientClasses": [],
+        "amountPerDay": 36,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チンピ",
+        "ingredientClasses": [],
+        "amountPerDay": 66,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニガキ末",
+        "ingredientClasses": [],
+        "amountPerDay": 45,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニクズク",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビオヂアスターゼ",
+        "ingredientClasses": [],
+        "amountPerDay": 120,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "合成ケイ酸アルミニウム",
+        "ingredientClasses": [],
+        "amountPerDay": 820.2,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "沈降炭酸カルシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 399,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "炭酸マグネシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 78,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "炭酸水素ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 1875,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/180061_J0601002825_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E5%A4%AA%E7%94%B0%E8%83%83%E6%95%A3.webp?v=93f6d264",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/180061_J0601002825_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ウイキョウ",
+        "ケイヒ",
+        "ゲンチアナ",
+        "チョウジ",
+        "チンピ",
+        "ニガキ末",
+        "ニクズク",
+        "ビオヂアスターゼ",
+        "合成ケイ酸アルミニウム",
+        "沈降炭酸カルシウム",
+        "炭酸マグネシウム",
+        "炭酸水素ナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 太田胃散（旧処方）",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002825"
+      },
+      {
+        "label": "クリエイトSD（JAN・販売終了表示）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987033904016/"
+      },
+      {
+        "label": "QLife（JAN）",
+        "url": "https://www.qlife.jp/meds/otc4987033904016.html"
+      },
+      {
+        "label": "太田胃散 太田胃散S発売リリース",
+        "url": "https://ohta-isan.co.jp/太田胃散S・太田胃散＜分包＞S_リリース.pdf"
+      },
+      {
+        "label": "KEGG MEDICUS 太田胃散S",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000126"
+      }
+    ]
+  },
+  {
+    "id": "med-00086",
+    "jan": "4987033000428",
+    "name": "太田漢方胃腸薬II",
+    "maker": "太田胃散",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 9,
+    "timesPerDay": 3,
+    "contentQty": 120,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "ウイキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "エンゴサク",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ケイヒ",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シュクシャ",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ブクリョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ボレイ",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リョウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/180061_J0607000086_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E5%A4%AA%E7%94%B0%E6%BC%A2%E6%96%B9%E8%83%83%E8%85%B8%E8%96%ACII.webp?v=f7fcd527",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/180061_J0607000086_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ウイキョウ",
+        "エンゴサク",
+        "カンゾウ",
+        "ケイヒ",
+        "シュクシャ",
+        "ブクリョウ",
+        "ボレイ",
+        "リョウキョウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハドラッグ 商品ページ",
+        "url": "https://shop.tsuruha.co.jp/10133874.html"
+      },
+      {
+        "label": "クリエイトSD 120錠",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987033000428/"
+      }
+    ]
+  },
+  {
+    "id": "med-00097",
+    "jan": "4987067267309",
+    "name": "新キャベ2コーワ",
+    "maker": "興和",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 18,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "ウイキョウ末",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ウコン末",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウエキス末",
+        "ingredientClasses": [],
+        "amountPerDay": 75,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ショウキョウ末",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チョウジ末",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニンジン乾燥エキス-E",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ベンフォチアミン",
+        "ingredientClasses": [],
+        "amountPerDay": 25,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "メチルメチオニンスルホニウムクロリド",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "乾燥水酸化アルミニウムゲル",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "合成ヒドロタルサイト",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "水酸化マグネシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 325,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/270072_J0801000544_03_04",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E6%96%B0%E3%82%AD%E3%83%A3%E3%83%992%E3%82%B3%E3%83%BC%E3%83%AF.webp?v=a193192b",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/270072_J0801000544_03_04"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ウイキョウ末",
+        "ウコン末",
+        "カンゾウエキス末",
+        "ショウキョウ末",
+        "チョウジ末",
+        "ニンジン乾燥エキス-E",
+        "ベンフォチアミン",
+        "メチルメチオニンスルホニウムクロリド",
+        "乾燥水酸化アルミニウムゲル",
+        "合成ヒドロタルサイト",
+        "水酸化マグネシウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "クリエイトSD 商品ページ",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987067267309/"
+      },
+      {
+        "label": "マツキヨココカラ 商品ページ",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987067267309"
+      }
+    ]
+  },
+  {
+    "id": "med-00102",
+    "jan": "4987306009400",
+    "name": "大正胃腸薬K",
+    "maker": "大正製薬",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 16,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "ウイキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 225,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "エンゴサク",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ケイヒ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シャクヤク",
+        "ingredientClasses": [],
+        "amountPerDay": 1020,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シュクシャ",
+        "ingredientClasses": [],
+        "amountPerDay": 150,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ボレイ",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リョウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 75,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_J0601002830_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E5%A4%A7%E6%AD%A3%E8%83%83%E8%85%B8%E8%96%ACK.webp?v=e0dd0347",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_J0601002830_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ウイキョウ",
+        "エンゴサク",
+        "カンゾウ",
+        "ケイヒ",
+        "シャクヤク",
+        "シュクシャ",
+        "ボレイ",
+        "リョウキョウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 大正胃腸薬K（微粒）",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002830"
+      },
+      {
+        "label": "クリエイトSD 販売ページ（微粒16包・JAN）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987306009400/"
+      },
+      {
+        "label": "価格.com 大正胃腸薬K 16包",
+        "url": "https://kakaku.com/item/K0000544199/"
+      }
+    ]
+  },
+  {
+    "id": "med-00104",
+    "jan": "4987306009783",
+    "name": "大正漢方胃腸薬〈錠剤〉",
+    "maker": "大正製薬",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 12,
+    "timesPerDay": 3,
+    "contentQty": 60,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "ウイキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 225,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "エンゴサク",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ケイヒ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シャクヤク",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "シュクシャ",
+        "ingredientClasses": [],
+        "amountPerDay": 150,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ボレイ",
+        "ingredientClasses": [],
+        "amountPerDay": 450,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リョウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 75,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_J0601002832_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E5%A4%A7%E6%AD%A3%E6%BC%A2%E6%96%B9%E8%83%83%E8%85%B8%E8%96%AC.webp?v=92b68731",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_J0601002832_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ウイキョウ",
+        "エンゴサク",
+        "カンゾウ",
+        "ケイヒ",
+        "シャクヤク",
+        "シュクシャ",
+        "ボレイ",
+        "リョウキョウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "セイムス 大正漢方胃腸薬〈錠剤〉60錠",
+        "url": "https://www.seims.co.jp/shop/g/g4987306009783/"
+      },
+      {
+        "label": "ツルハ 220錠",
+        "url": "https://shop.tsuruha.co.jp/10082629.html"
+      },
+      {
+        "label": "薬事日報 2021リニューアル記事",
+        "url": "https://www.yakuji.co.jp/?p=87723"
+      }
+    ]
+  },
+  {
+    "id": "med-00138",
+    "jan": "4987300037515",
+    "name": "ガストール錠",
+    "maker": "エスエス製薬",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 9,
+    "timesPerDay": 3,
+    "contentQty": 60,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "ビオヂアスターゼ2000",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピレンゼピン塩酸塩水和物",
+        "ingredientClasses": [],
+        "amountPerDay": 47.1,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "メタケイ酸アルミン酸マグネシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 900,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "炭酸水素ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 1200,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170039_J0601002564_09_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%AC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E9%8C%A0.webp?v=cd43c540",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170039_J0601002564_09_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ビオヂアスターゼ2000",
+        "ピレンゼピン塩酸塩水和物",
+        "メタケイ酸アルミン酸マグネシウム",
+        "炭酸水素ナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ガストール錠",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002564"
+      },
+      {
+        "label": "富士薬品 ガストール錠 60錠",
+        "url": "https://www.e-fujiyakuhin.jp/smp/item/4987300037515.html"
+      },
+      {
+        "label": "クリエイトSD ガストール錠 60錠",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987300037515/"
+      }
+    ]
+  },
+  {
+    "id": "med-00080",
+    "jan": "4987028114246",
+    "name": "セルベール",
+    "maker": "エーザイ",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 12,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "コウボク乾燥エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 83.4,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ソウジュツ乾燥エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 150,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "テプレノン",
+        "ingredientClasses": [],
+        "amountPerDay": 112.5,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170033_J0601002065_07_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%BB%E3%83%AB%E3%83%99%E3%83%BC%E3%83%AB.webp?v=4d2c6871",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170033_J0601002065_07_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "コウボク乾燥エキス",
+        "ソウジュツ乾燥エキス",
+        "テプレノン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS セルベール",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002065"
+      },
+      {
+        "label": "クリエイトSD（JAN）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987028114246/"
+      },
+      {
+        "label": "ツルハドラッグ",
+        "url": "https://shop.tsuruha.co.jp/10072625.html"
+      }
+    ]
+  },
+  {
+    "id": "med-00147",
+    "jan": "4903301177050",
+    "name": "ストッパ下痢止めEX",
+    "maker": "ライオン",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 12,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "タンニン酸ベルベリン",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ロートエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/840001_J1201000286_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B9%E3%83%88%E3%83%83%E3%83%91%E4%B8%8B%E7%97%A2%E6%AD%A2%E3%82%81EX.webp?v=3c51718a",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/840001_J1201000286_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "タンニン酸ベルベリン",
+        "ロートエキス"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ストッパ下痢止めEX",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000286"
+      },
+      {
+        "label": "クリエイトSD 12錠 JAN",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4903301177050/"
+      },
+      {
+        "label": "wowma 12錠 JAN",
+        "url": "https://wowma.jp/item/490349959"
+      }
+    ]
+  },
+  {
+    "id": "med-04107",
+    "jan": "4987910002798",
+    "name": "大地の漢方便秘薬",
+    "maker": "アリナミン製薬",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 4,
+    "timesPerDay": 1,
+    "contentQty": 120,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 267,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ダイオウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1067,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/430974_J0601009988_07_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%BF%E3%82%B1%E3%83%80%E6%BC%A2%E6%96%B9%E4%BE%BF%E7%A7%98%E8%96%AC.webp?v=071e2d3f",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/430974_J0601009988_07_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "カンゾウ",
+        "ダイオウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "アリナミン製薬 製品情報PDF（タケダ漢方便秘薬時代の表示）",
+        "url": "https://alinamin-kenko.jp/products/upload/benpi/exp_benpi.pdf"
+      },
+      {
+        "label": "クリエイトSD 商品ページ（大地の漢方便秘薬 120錠）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987910002798/"
+      }
+    ]
+  },
+  {
+    "id": "med-04104",
+    "jan": "4987306026452",
+    "name": "大正漢方便秘薬",
+    "maker": "大正製薬",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 4,
+    "timesPerDay": 1,
+    "contentQty": 70,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 400,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ダイオウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1600,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_J0601010002_10_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E5%A4%A7%E6%AD%A3%E6%BC%A2%E6%96%B9%E4%BE%BF%E7%A7%98%E8%96%AC.webp?v=71f0109c",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_J0601010002_10_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "カンゾウ",
+        "ダイオウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "大正製薬 製品情報（カタログ）",
+        "url": "https://www.catalog-taisho.com/category/05/002/02645/"
+      },
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010002"
+      }
+    ]
+  },
+  {
+    "id": "med-04160",
+    "jan": "4987045100062",
+    "name": "新コッコアポA錠",
+    "maker": "クラシエ薬品（製造販売元 クラシエ）",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 12,
+    "timesPerDay": 3,
+    "contentQty": 480,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "オウゴン",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カッセキ",
+        "ingredientClasses": [],
+        "amountPerDay": 1500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "キキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ケイガイ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "サンシシ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シャクヤク",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ショウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "セッコウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "センキュウ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ダイオウ",
+        "ingredientClasses": [],
+        "amountPerDay": 750,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "トウキ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ハッカ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビャクジュツ",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ボウフウ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "マオウ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "レンギョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水ボウショウ",
+        "ingredientClasses": [],
+        "amountPerDay": 375,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/252468_J0601010618_09_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E6%96%B0%E3%82%B3%E3%83%83%E3%82%B3%E3%82%A2%E3%83%9DA%E9%8C%A0.webp?v=0bee6261",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/252468_J0601010618_09_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "オウゴン",
+        "カッセキ",
+        "カンゾウ",
+        "キキョウ",
+        "ケイガイ",
+        "サンシシ",
+        "シャクヤク",
+        "ショウキョウ",
+        "セッコウ",
+        "センキュウ",
+        "ダイオウ",
+        "トウキ",
+        "ハッカ",
+        "ビャクジュツ",
+        "ボウフウ",
+        "マオウ",
+        "レンギョウ",
+        "無水ボウショウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": true,
+      "dopingClass": "S6. 興奮剤"
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 新コッコアポA錠",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010618"
+      },
+      {
+        "label": "価格.com 新コッコアポA錠 480錠（ショップリンクのJAN）",
+        "url": "https://kakaku.com/item/K0000979170/"
+      }
+    ]
+  },
+  {
+    "id": "med-04221",
+    "jan": "4987241190782",
+    "name": "ロート防風通聖散錠満量a",
+    "maker": "ロート製薬",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 12,
+    "timesPerDay": 2,
+    "contentQty": 360,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "オウゴン",
+        "ingredientClasses": [],
+        "amountPerDay": 2.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カッセキ",
+        "ingredientClasses": [],
+        "amountPerDay": 3.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 2.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "キキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 2.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ケイガイ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "サンシシ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シャクヤク",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ショウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.4,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "セッコウ",
+        "ingredientClasses": [],
+        "amountPerDay": 2.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "センキュウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ダイオウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "トウキ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ハッカ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビャクジュツ",
+        "ingredientClasses": [],
+        "amountPerDay": 2.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ボウショウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ボウフウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "マオウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "レンギョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.2,
+        "unit": "g",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/880020_K2212000009_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AD%E3%83%BC%E3%83%88%E9%98%B2%E9%A2%A8%E9%80%9A%E8%81%96%E6%95%A3%E9%8C%A0%E6%BA%80%E9%87%8Fa.webp?v=a0e820e5",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/880020_K2212000009_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "オウゴン",
+        "カッセキ",
+        "カンゾウ",
+        "キキョウ",
+        "ケイガイ",
+        "サンシシ",
+        "シャクヤク",
+        "ショウキョウ",
+        "セッコウ",
+        "センキュウ",
+        "ダイオウ",
+        "トウキ",
+        "ハッカ",
+        "ビャクジュツ",
+        "ボウショウ",
+        "ボウフウ",
+        "マオウ",
+        "レンギョウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": true,
+      "dopingClass": "S6. 興奮剤"
+    },
+    "research": [
+      {
+        "label": "セイムス ロート防風通聖散錠満量a 360錠",
+        "url": "https://www.seims.co.jp/shop/g/g4987241190782/"
+      },
+      {
+        "label": "クリエイトSD 360錠",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987241190782/"
+      }
+    ]
+  },
+  {
+    "id": "med-00145",
+    "jan": "4987306054837",
+    "name": "ビオフェルミン止瀉薬",
+    "maker": "ビオフェルミン製薬（販売元 大正製薬）",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 12,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "ゲンノショウコエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 600,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タンニン酸アルブミン",
+        "ingredientClasses": [],
+        "amountPerDay": 2700,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "フェーカリス菌末",
+        "ingredientClasses": [],
+        "amountPerDay": 180,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ロートエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 33,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/650006_J0601002967_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%93%E3%82%AA%E3%83%95%E3%82%A7%E3%83%AB%E3%83%9F%E3%83%B3%E6%AD%A2%E7%80%89%E8%96%AC.webp?v=30c2843b",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/650006_J0601002967_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ゲンノショウコエキス",
+        "タンニン酸アルブミン",
+        "フェーカリス菌末",
+        "ロートエキス"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ビオフェルミン止瀉薬",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002967"
+      },
+      {
+        "label": "クリエイトSD ビオフェルミン止瀉薬 12包",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987306054837/"
+      }
+    ]
+  },
+  {
+    "id": "med-00144",
+    "jan": "4987110001737",
+    "name": "正露丸《瓶》",
+    "maker": "大幸薬品",
+    "riskClass": "第2類",
+    "kind": "stomach",
+    "noticeGroupId": "ichoyaku",
+    "efficacyGroups": [
+      "胃腸薬"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 9,
+    "timesPerDay": 3,
+    "contentQty": 100,
+    "contentUnit": "粒",
+    "facts": [
+      {
+        "ingredient": "アセンヤク末",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "オウバク末",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ末",
+        "ingredientClasses": [],
+        "amountPerDay": 150,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チンピ末",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "木クレオソート",
+        "ingredientClasses": [],
+        "amountPerDay": 400,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400044_J0601003042_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E6%AD%A3%E9%9C%B2%E4%B8%B8%E3%80%8A%E7%93%B6%E3%80%8B.webp?v=9a1f99e0",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400044_J0601003042_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アセンヤク末",
+        "オウバク末",
+        "カンゾウ末",
+        "チンピ末",
+        "木クレオソート"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 正露丸（大幸薬品）",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601003042"
+      },
+      {
+        "label": "クリエイトSD（JAN）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987110001737/"
+      },
+      {
+        "label": "ドラッグセイムス（JAN）",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987110001737.html"
+      }
+    ]
+  },
+  {
+    "id": "med-06556",
+    "jan": "4987084311764",
+    "name": "ヒアレインS",
+    "maker": "参天製薬",
+    "riskClass": "第2類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 5,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "精製ヒアルロン酸ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300237_J2001000136_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%92%E3%82%A2%E3%83%AC%E3%82%A4%E3%83%B3S.webp?v=e66c7fec",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300237_J2001000136_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "精製ヒアルロン酸ナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "セイムス 5mL",
+        "url": "https://www.seims.co.jp/shop/g/g4987084311764/"
+      },
+      {
+        "label": "ツルハドラッグ 5mL×2本（JAN 4987084302779）",
+        "url": "https://shop.tsuruha.co.jp/10162312.html"
+      }
+    ]
+  },
+  {
+    "id": "med-06750",
+    "jan": "4987084410276",
+    "name": "サンテメディカル12",
+    "maker": "参天製薬",
+    "riskClass": "第2類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 12,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "イプシロン-アミノカプロン酸",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "グリチルリチン酸二カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "シアノコバラミン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ネオスチグミンメチル硫酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "パンテノール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩酸テトラヒドロゾリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "硫酸亜鉛水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "L-アスパラギン酸カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300237_J1601000224_01_02",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B5%E3%83%B3%E3%83%86%E3%83%A1%E3%83%87%E3%82%A3%E3%82%AB%E3%83%AB12.webp?v=e2a21f34",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300237_J1601000224_01_02"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イプシロン-アミノカプロン酸",
+        "クロルフェニラミンマレイン酸塩",
+        "グリチルリチン酸二カリウム",
+        "コンドロイチン硫酸エステルナトリウム",
+        "シアノコバラミン",
+        "タウリン",
+        "ネオスチグミンメチル硫酸塩",
+        "パンテノール",
+        "ピリドキシン塩酸塩",
+        "塩酸テトラヒドロゾリン",
+        "硫酸亜鉛水和物",
+        "L-アスパラギン酸カリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS サンテメディカル12",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000224"
+      },
+      {
+        "label": "クリエイトSD 12mL JAN",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987084410276/"
+      }
+    ]
+  },
+  {
+    "id": "med-06747",
+    "jan": "4987084315106",
+    "name": "サンテFXVプラス",
+    "maker": "参天製薬",
+    "riskClass": "第2類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 12,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "イプシロン-アミノカプロン酸",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ネオスチグミンメチル硫酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩酸テトラヒドロゾリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "L-アスパラギン酸カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300237_K0903000016_02_03",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B5%E3%83%B3%E3%83%86FXV%E3%83%97%E3%83%A9%E3%82%B9.webp?v=26f484fe",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300237_K0903000016_02_03"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イプシロン-アミノカプロン酸",
+        "クロルフェニラミンマレイン酸塩",
+        "タウリン",
+        "ネオスチグミンメチル硫酸塩",
+        "ピリドキシン塩酸塩",
+        "塩酸テトラヒドロゾリン",
+        "L-アスパラギン酸カリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハドラッグ 商品ページ",
+        "url": "https://shop.tsuruha.co.jp/10147234.html"
+      },
+      {
+        "label": "クリエイトSD 商品ページ",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987084315106/"
+      }
+    ]
+  },
+  {
+    "id": "med-06748",
+    "jan": "4987084411983",
+    "name": "サンテPC",
+    "maker": "参天製薬",
+    "riskClass": "第2類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 12,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "グリチルリチン酸二カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "シアノコバラミン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ネオスチグミンメチル硫酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩酸テトラヒドロゾリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300237_K1305000002_01_05",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B5%E3%83%B3%E3%83%86PC.webp?v=b180a21c",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300237_K1305000002_01_05"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "グリチルリチン酸二カリウム",
+        "コンドロイチン硫酸エステルナトリウム",
+        "シアノコバラミン",
+        "タウリン",
+        "ネオスチグミンメチル硫酸塩",
+        "ピリドキシン塩酸塩",
+        "塩酸テトラヒドロゾリン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1305000002"
+      },
+      {
+        "label": "クリエイトSD（JAN・12mL）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987084411983/"
+      },
+      {
+        "label": "富士薬品 通販（JAN）",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987084411983.html"
+      }
+    ]
+  },
+  {
+    "id": "med-06740",
+    "jan": "4987084410979",
+    "name": "サンテボーティエ",
+    "maker": "参天製薬",
+    "riskClass": "第2類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 12,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "シアノコバラミン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩酸テトラヒドロゾリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300237_K1303000001_02_04",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B5%E3%83%B3%E3%83%86%E3%83%9C%E3%83%BC%E3%83%86%E3%82%A3%E3%82%A8.webp?v=f5aebd37",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300237_K1303000001_02_04"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "コンドロイチン硫酸エステルナトリウム",
+        "シアノコバラミン",
+        "タウリン",
+        "塩酸テトラヒドロゾリン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 サンテボーティエ",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1303000001"
+      },
+      {
+        "label": "マツキヨココカラ 販売ページ（JAN・12mL）",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987084410979"
+      },
+      {
+        "label": "ツルハ 販売ページ",
+        "url": "https://shop.tsuruha.co.jp/10073578.html"
+      }
+    ]
+  },
+  {
+    "id": "med-06746",
+    "jan": "4987084411761",
+    "name": "サンテALクールII",
+    "maker": "参天製薬",
+    "riskClass": "第2類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 15,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "イプシロン-アミノカプロン酸",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "グリチルリチン酸二カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "パンテノール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩酸テトラヒドロゾリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300237_K0704000095_03_03",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B5%E3%83%B3%E3%83%86AL%E3%82%AF%E3%83%BC%E3%83%ABII.webp?v=b9acceff",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300237_K0704000095_03_03"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イプシロン-アミノカプロン酸",
+        "クロルフェニラミンマレイン酸塩",
+        "グリチルリチン酸二カリウム",
+        "タウリン",
+        "パンテノール",
+        "塩酸テトラヒドロゾリン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハ サンテALクールII 15mL",
+        "url": "https://shop.tsuruha.co.jp/10081398.html"
+      },
+      {
+        "label": "価格.com",
+        "url": "https://kakaku.com/item/K0000544106/"
+      }
+    ]
+  },
+  {
+    "id": "med-06844",
+    "jan": "4903301393573",
+    "name": "スマイル40EXa",
+    "maker": "ライオン",
+    "riskClass": "第2類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 15,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ネオスチグミンメチル硫酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "レチノールパルミチン酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩酸テトラヒドロゾリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "酢酸d-α-トコフェロール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "L-アスパラギン酸カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/840001_J0601007833_02_02",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B9%E3%83%9E%E3%82%A4%E3%83%AB40EX.webp?v=19724ba5",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/840001_J0601007833_02_02"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "ネオスチグミンメチル硫酸塩",
+        "ピリドキシン塩酸塩",
+        "レチノールパルミチン酸エステル",
+        "塩酸テトラヒドロゾリン",
+        "酢酸d-α-トコフェロール",
+        "L-アスパラギン酸カリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS スマイル40EXa",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047"
+      },
+      {
+        "label": "KEGG MEDICUS スマイル40EX",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007833"
+      },
+      {
+        "label": "ツルハ スマイル40EXa 15mL",
+        "url": "https://shop.tsuruha.co.jp/10073456.html"
+      },
+      {
+        "label": "マツモトキヨシ スマイル40EX 15ml",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4903301393573"
+      }
+    ]
+  },
+  {
+    "id": "med-06847",
+    "jan": "4903301017035",
+    "name": "スマイル40EXゴールド",
+    "maker": "ライオン",
+    "riskClass": "第2類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 13,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ネオスチグミンメチル硫酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "レチノールパルミチン酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩酸テトラヒドロゾリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "酢酸d-α-トコフェロール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "L-アスパラギン酸カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/840001_J1001000020_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B9%E3%83%9E%E3%82%A4%E3%83%AB40EX%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89.webp?v=eba3e844",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/840001_J1001000020_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "クロルフェニラミンマレイン酸塩",
+        "タウリン",
+        "ネオスチグミンメチル硫酸塩",
+        "ピリドキシン塩酸塩",
+        "レチノールパルミチン酸エステル",
+        "塩酸テトラヒドロゾリン",
+        "酢酸d-α-トコフェロール",
+        "L-アスパラギン酸カリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS スマイル40EX ゴールド",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020"
+      },
+      {
+        "label": "ツルハドラッグ（JAN）",
+        "url": "https://shop.tsuruha.co.jp/10073451.html"
+      },
+      {
+        "label": "マツキヨココカラオンライン（JAN）",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4903301017035"
+      },
+      {
+        "label": "ドラッグセイムス（JAN表示が食い違い）",
+        "url": "https://www.seims.co.jp/shop/g/g4903301017035/"
+      }
+    ]
+  },
+  {
+    "id": "med-06641",
+    "jan": "4987241123186",
+    "name": "ロートCキューブm",
+    "maker": "ロート製薬",
+    "riskClass": "第3類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 13,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ヒプロメロース",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化カルシウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "炭酸水素ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/880020_J1201000053_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AD%E3%83%BC%E3%83%88C%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%96m.webp?v=cd2e2f66",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/880020_J1201000053_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "コンドロイチン硫酸エステルナトリウム",
+        "ヒプロメロース",
+        "塩化カリウム",
+        "塩化カルシウム水和物",
+        "塩化ナトリウム",
+        "炭酸水素ナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品（ロートCキューブm）",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000053"
+      },
+      {
+        "label": "クリエイトSD（旧表記・同成分）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987241123186/"
+      },
+      {
+        "label": "マツキヨココカラ（同JANでCキューブa表記）",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987241123186"
+      }
+    ]
+  },
+  {
+    "id": "med-06651",
+    "jan": "4987241174423",
+    "name": "Vロートドライアイプレミアム",
+    "maker": "ロート製薬",
+    "riskClass": "第3類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 15,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "ポビドン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化カルシウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "硫酸マグネシウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/880020_J1901000004_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/V%E3%83%AD%E3%83%BC%E3%83%88%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A2%E3%82%A4%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0.webp?v=af694688",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/880020_J1901000004_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ポビドン",
+        "塩化カルシウム水和物",
+        "硫酸マグネシウム水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS Vロートドライアイプレミアム",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1901000004"
+      },
+      {
+        "label": "クリエイトSD 15mL JAN（販売終了表示）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987241174423/"
+      },
+      {
+        "label": "@cosme 商品情報（別JAN 4987241161720 記載）",
+        "url": "https://www.cosme.net/products/10166355/"
+      }
+    ]
+  },
+  {
+    "id": "med-06650",
+    "jan": "4987241135646",
+    "name": "ロートリセコンタクトw",
+    "maker": "ロート製薬",
+    "riskClass": "第3類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 8,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ヒプロメロース",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ブドウ糖",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "炭酸水素ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/880020_J1601000121_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AD%E3%83%BC%E3%83%88%E3%83%AA%E3%82%BB%E3%82%B3%E3%83%B3%E3%82%BF%E3%82%AF%E3%83%88w.webp?v=f21329fd",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/880020_J1601000121_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "コンドロイチン硫酸エステルナトリウム",
+        "ヒプロメロース",
+        "ブドウ糖",
+        "塩化カリウム",
+        "塩化ナトリウム",
+        "炭酸水素ナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "クリエイトSD 商品ページ（ロート リセ コンタクト 8ml）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987241135646/"
+      },
+      {
+        "label": "富士薬品 通販ページ",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987241135646.html"
+      }
+    ]
+  },
+  {
+    "id": "med-06660",
+    "jan": "4987241133604",
+    "name": "なみだロートドライエイド",
+    "maker": "ロート製薬",
+    "riskClass": "第3類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 4,
+    "timesPerDay": 4,
+    "contentQty": 10,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ヒドロキシエチルセルロース",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/880020_J2501000061_01_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%81%AA%E3%81%BF%E3%81%A0%E3%83%AD%E3%83%BC%E3%83%88%E3%83%89%E3%83%A9%E3%82%A4%E3%82%A8%E3%82%A4%E3%83%89.webp?v=bf820313",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/880020_J2501000061_01_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "コンドロイチン硫酸エステルナトリウム",
+        "ヒドロキシエチルセルロース",
+        "塩化カリウム",
+        "塩化ナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000061"
+      },
+      {
+        "label": "ロート製薬 なみだロートシリーズ",
+        "url": "https://jp.rohto.com/dryaid/"
+      },
+      {
+        "label": "クリエイトSD（JAN・10mL、成分%一致）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987241133604/"
+      }
+    ]
+  },
+  {
+    "id": "med-06679",
+    "jan": "4987072032893",
+    "name": "アイボンd",
+    "maker": "小林製薬",
+    "riskClass": "第3類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 500,
+    "contentUnit": "mL",
+    "facts": [
+      {
+        "ingredient": "アラントイン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "イプシロン-アミノカプロン酸",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "グリチルリチン酸二カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "トコフェロール酢酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/270172_K1411000113_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%A2%E3%82%A4%E3%83%9C%E3%83%B3d.webp?v=64b79d22",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/270172_K1411000113_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アラントイン",
+        "イプシロン-アミノカプロン酸",
+        "クロルフェニラミンマレイン酸塩",
+        "グリチルリチン酸二カリウム",
+        "コンドロイチン硫酸エステルナトリウム",
+        "トコフェロール酢酸エステル",
+        "ピリドキシン塩酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 アイボンd",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113"
+      },
+      {
+        "label": "ツルハ 販売ページ（JAN・500mL）",
+        "url": "https://shop.tsuruha.co.jp/10089023.html"
+      },
+      {
+        "label": "マツキヨココカラ 販売ページ",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987072032893"
+      }
+    ]
+  },
+  {
+    "id": "med-06611",
+    "jan": "4987084416902",
+    "name": "ソフトサンティア",
+    "maker": "参天製薬",
+    "riskClass": "第3類",
+    "kind": "eye",
+    "noticeGroupId": "ganka",
+    "efficacyGroups": [
+      "眼科用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 6,
+    "contentQty": 4,
+    "contentUnit": "本",
+    "facts": [
+      {
+        "ingredient": "塩化カリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩化ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300237_J0601008096_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%BD%E3%83%95%E3%83%88%E3%82%B5%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2.webp?v=eb9163b4",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300237_J0601008096_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "塩化カリウム",
+        "塩化ナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハ ソフトサンティア 5mL×4本",
+        "url": "https://shop.tsuruha.co.jp/10058496.html"
+      },
+      {
+        "label": "クリエイトSD",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987084416902/"
+      }
+    ]
+  },
+  {
+    "id": "med-07285",
+    "jan": "4987123145374",
+    "name": "アリナミンA",
+    "maker": "アリナミン製薬",
+    "riskClass": "第3類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 1,
+    "contentQty": 60,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "フルスルチアミン",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シアノコバラミン",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "µg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リボフラビン",
+        "ingredientClasses": [],
+        "amountPerDay": 12,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "パントテン酸カルシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 15,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/430974_J0607000108_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%A2%E3%83%AA%E3%83%8A%E3%83%9F%E3%83%B3A.webp?v=1458b22b",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/430974_J0607000108_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "フルスルチアミン",
+        "ピリドキシン塩酸塩",
+        "シアノコバラミン",
+        "リボフラビン",
+        "パントテン酸カルシウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS アリナミンA",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0607000108"
+      },
+      {
+        "label": "マツモトキヨシ アリナミンA 60錠",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987123145374"
+      },
+      {
+        "label": "クリエイトSD アリナミンA 60錠",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987123145374/"
+      }
+    ]
+  },
+  {
+    "id": "med-07092",
+    "jan": "4987028123378",
+    "name": "チョコラBBプラス",
+    "maker": "エーザイ",
+    "riskClass": "第3類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 60,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "チアミン硝化物",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 40,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "パントテン酸カルシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リボフラビンリン酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 38,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170033_J0601004077_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%81%E3%83%A7%E3%82%B3%E3%83%A9BB%E3%83%97%E3%83%A9%E3%82%B9.webp?v=f844f64d",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170033_J0601004077_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "チアミン硝化物",
+        "ニコチン酸アミド",
+        "パントテン酸カルシウム",
+        "ピリドキシン塩酸塩",
+        "リボフラビンリン酸エステルナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS チョコラBBプラス",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004077"
+      },
+      {
+        "label": "クリエイトSD（JAN）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987028123378/"
+      },
+      {
+        "label": "マツキヨココカラオンライン（JAN）",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987028123378"
+      }
+    ]
+  },
+  {
+    "id": "med-01123",
+    "jan": "4987028115472",
+    "name": "チョコラBBローヤルT",
+    "maker": "エーザイ",
+    "riskClass": "第3類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 4,
+    "timesPerDay": 2,
+    "contentQty": 56,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チアミン硝化物",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 15,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リボフラビンリン酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 15,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ローヤルゼリーチンキ",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170033_K1001000005_06_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%81%E3%83%A7%E3%82%B3%E3%83%A9BB%E3%83%AD%E3%83%BC%E3%83%A4%E3%83%ABT.webp?v=f4757267",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170033_K1001000005_06_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "タウリン",
+        "チアミン硝化物",
+        "ニコチン酸アミド",
+        "ピリドキシン塩酸塩",
+        "リボフラビンリン酸エステルナトリウム",
+        "ローヤルゼリーチンキ",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハドラッグ 56錠",
+        "url": "https://shop.tsuruha.co.jp/10052970.html"
+      },
+      {
+        "label": "マツキヨココカラ 56錠",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987028115472"
+      }
+    ]
+  },
+  {
+    "id": "med-01148",
+    "jan": "4987067200504",
+    "name": "キューピーコーワゴールドα",
+    "maker": "興和",
+    "riskClass": "第3類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 90,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "エゾウコギ乾燥エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 12,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "オウギ乾燥エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "オキソアミヂン末",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チアミン硝化物",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "トコフェロールコハク酸エステルカルシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 20.7,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 25,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リボフラビン",
+        "ingredientClasses": [],
+        "amountPerDay": 4,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "L-アスコルビン酸ナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 112.6,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "L-アルギニン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/270072_J0607000433_03_04",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%AD%E3%83%A5%E3%83%BC%E3%83%94%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%AF%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89%CE%B1.webp?v=38a668c4",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/270072_J0607000433_03_04"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "エゾウコギ乾燥エキス",
+        "オウギ乾燥エキス",
+        "オキソアミヂン末",
+        "チアミン硝化物",
+        "トコフェロールコハク酸エステルカルシウム",
+        "ニコチン酸アミド",
+        "ピリドキシン塩酸塩",
+        "リボフラビン",
+        "無水カフェイン",
+        "L-アスコルビン酸ナトリウム",
+        "L-アルギニン塩酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS キューピーコーワゴールドα",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0607000433"
+      },
+      {
+        "label": "クリエイトSD 90錠 JAN",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987067200504/"
+      },
+      {
+        "label": "マツキヨココカラ 90錠 JAN",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987067200504"
+      }
+    ]
+  },
+  {
+    "id": "med-04595",
+    "jan": "4987300067017",
+    "name": "ハイチオールCプラス2",
+    "maker": "エスエス製薬",
+    "riskClass": "第3類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 6,
+    "timesPerDay": 3,
+    "contentQty": 180,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "アスコルビン酸",
+        "ingredientClasses": [],
+        "amountPerDay": 500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "パントテン酸カルシウム",
+        "ingredientClasses": [],
+        "amountPerDay": 24,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "L-システイン",
+        "ingredientClasses": [],
+        "amountPerDay": 240,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/170039_K2003000001_03_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%8F%E3%82%A4%E3%83%81%E3%82%AA%E3%83%BC%E3%83%ABC%E3%83%97%E3%83%A9%E3%82%B92.webp?v=5549bcdc",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/170039_K2003000001_03_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アスコルビン酸",
+        "パントテン酸カルシウム",
+        "L-システイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "クリエイトSD 商品ページ（180錠）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987300067017/"
+      },
+      {
+        "label": "ツルハドラッグ 商品ページ",
+        "url": "https://shop.tsuruha.co.jp/10135752.html"
+      },
+      {
+        "label": "富士薬品 通販ページ",
+        "url": "https://www.e-fujiyakuhin.jp/smp/item/4987300067024.html"
+      }
+    ]
+  },
+  {
+    "id": "med-04323",
+    "jan": "4987123143660",
+    "name": "ハイシーBメイト2",
+    "maker": "アリナミン製薬",
+    "riskClass": "第3類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 1,
+    "contentQty": 40,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "アスコルビン酸",
+        "ingredientClasses": [],
+        "amountPerDay": 150,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビオチン",
+        "ingredientClasses": [],
+        "amountPerDay": 75,
+        "unit": "µg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リボフラビン",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "L-システイン",
+        "ingredientClasses": [],
+        "amountPerDay": 60,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/430974_J0601004218_07_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%8F%E3%82%A4%E3%82%B7%E3%83%BCB%E3%83%A1%E3%82%A4%E3%83%882.webp?v=d4e28573",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/430974_J0601004218_07_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アスコルビン酸",
+        "ニコチン酸アミド",
+        "ビオチン",
+        "ピリドキシン塩酸塩",
+        "リボフラビン",
+        "L-システイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004218"
+      },
+      {
+        "label": "アリナミン製薬 説明文書",
+        "url": "https://alinamin-kenko.jp/products/upload/hic_bmat/exp_hic_bmat.pdf"
+      },
+      {
+        "label": "クリエイトSD（JAN・40錠）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987123143660/"
+      }
+    ]
+  },
+  {
+    "id": "med-04318",
+    "jan": "4987107674807",
+    "name": "エバユースBBプラスC",
+    "maker": "第一三共ヘルスケア（製造販売元 佐藤薬品工業）",
+    "riskClass": "第3類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 1,
+    "contentQty": 70,
+    "contentUnit": "錠",
+    "facts": [
+      {
+        "ingredient": "アスコルビン酸",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ヨクイニンエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 107.7,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リボフラビン酪酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "L-システイン",
+        "ingredientClasses": [],
+        "amountPerDay": 40,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300094_J2001000106_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%A8%E3%83%90%E3%83%A6%E3%83%BC%E3%82%B9BB%E3%83%97%E3%83%A9%E3%82%B9C.webp?v=a1d679a2",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300094_J2001000106_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アスコルビン酸",
+        "ニコチン酸アミド",
+        "ピリドキシン塩酸塩",
+        "ヨクイニンエキス",
+        "リボフラビン酪酸エステル",
+        "L-システイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 エバユースBBプラスC",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000106"
+      },
+      {
+        "label": "ツルハ 販売ページ（JAN・70錠）",
+        "url": "https://shop.tsuruha.co.jp/10166189.html"
+      }
+    ]
+  },
+  {
+    "id": "med-00717",
+    "jan": "4987316035017",
+    "name": "ユンケル黄帝",
+    "maker": "佐藤製薬",
+    "riskClass": "第2類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 1,
+    "contentUnit": "本",
+    "facts": [
+      {
+        "ingredient": "アルコール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 120,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ゴオウチンキ",
+        "ingredientClasses": [],
+        "amountPerDay": 250,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シベットチンキ",
+        "ingredientClasses": [],
+        "amountPerDay": 250,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ジオウ乾燥エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 25,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニンジン乾燥エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "パンテノール",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB1硝酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB12",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "µg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB2リン酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": 5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB6",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンE酢酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ローヤルゼリー",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "反鼻チンキ",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "西洋サンザシエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 3,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300089_J0601004968_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%A6%E3%83%B3%E3%82%B1%E3%83%AB%E9%BB%84%E5%B8%9D%E6%B6%B2.webp?v=f7a2639c",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300089_J0601004968_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アルコール",
+        "コンドロイチン硫酸エステルナトリウム",
+        "ゴオウチンキ",
+        "シベットチンキ",
+        "ジオウ乾燥エキス",
+        "ニコチン酸アミド",
+        "ニンジン乾燥エキス",
+        "パンテノール",
+        "ビタミンB1硝酸塩",
+        "ビタミンB12",
+        "ビタミンB2リン酸エステル",
+        "ビタミンB6",
+        "ビタミンE酢酸エステル",
+        "ローヤルゼリー",
+        "反鼻チンキ",
+        "無水カフェイン",
+        "西洋サンザシエキス"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "佐藤製薬 製品情報 ユンケル黄帝",
+        "url": "https://search.sato-seiyaku.co.jp/pub/product/7155/"
+      },
+      {
+        "label": "ドラッグセイムス（JAN）",
+        "url": "https://www.seims.co.jp/shop/g/g4987316035017/"
+      },
+      {
+        "label": "サンドラッグ（JAN）",
+        "url": "https://sundrug-online.com/en/products/4987316035017"
+      }
+    ]
+  },
+  {
+    "id": "med-00781",
+    "jan": "4987117437355",
+    "name": "チオビタゴールド",
+    "maker": "大鵬薬品工業",
+    "riskClass": "第2類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 10,
+    "contentUnit": "本",
+    "facts": [
+      {
+        "ingredient": "アルコール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "インヨウカク流エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 0.1,
+        "unit": "mL",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チアミン硝化物",
+        "ingredientClasses": [],
+        "amountPerDay": 5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 30,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニンジン流エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 0.6,
+        "unit": "mL",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ピリドキシン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "リボフラビンリン酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ローヤルゼリー",
+        "ingredientClasses": [],
+        "amountPerDay": 100,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400107_J0601004669_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%81%E3%82%AA%E3%83%93%E3%82%BF%E3%82%B4%E3%83%BC%E3%83%AB%E3%83%89.webp?v=a7304a17",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400107_J0601004669_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アルコール",
+        "インヨウカク流エキス",
+        "チアミン硝化物",
+        "ニコチン酸アミド",
+        "ニンジン流エキス",
+        "ピリドキシン塩酸塩",
+        "リボフラビンリン酸エステルナトリウム",
+        "ローヤルゼリー",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハドラッグ 30mL×10本",
+        "url": "https://shop.tsuruha.co.jp/10073441.html"
+      },
+      {
+        "label": "セイムス 30mL×10本",
+        "url": "https://www.seims.co.jp/shop/g/g4987117437355/"
+      }
+    ]
+  },
+  {
+    "id": "med-00169",
+    "jan": "4987103048459",
+    "name": "ヘパリーゼドリンクII",
+    "maker": "ゼリア新薬工業",
+    "riskClass": "第3類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 3,
+    "contentUnit": "本",
+    "facts": [
+      {
+        "ingredient": "アルコール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "オウギ流エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 0.1,
+        "unit": "mL",
+        "uncertain": false
+      },
+      {
+        "ingredient": "クコシ流エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 0.2,
+        "unit": "mL",
+        "uncertain": false
+      },
+      {
+        "ingredient": "コンドロイチン硫酸エステルナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": 120,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ゴミシエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 54,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ジクロロ酢酸ジイソプロピルアミン",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 20,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB2リン酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": 5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB6",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "肝臓水解物",
+        "ingredientClasses": [],
+        "amountPerDay": 200,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/380077_J1701000028_01_02",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%98%E3%83%91%E3%83%AA%E3%83%BC%E3%82%BC%E3%83%89%E3%83%AA%E3%83%B3%E3%82%AFII.webp?v=0f05c734",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/380077_J1701000028_01_02"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アルコール",
+        "オウギ流エキス",
+        "クコシ流エキス",
+        "コンドロイチン硫酸エステルナトリウム",
+        "ゴミシエキス",
+        "ジクロロ酢酸ジイソプロピルアミン",
+        "タウリン",
+        "ニコチン酸アミド",
+        "ビタミンB2リン酸エステル",
+        "ビタミンB6",
+        "肝臓水解物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ヘパリーゼドリンクII",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000028"
+      },
+      {
+        "label": "セイムス通販 50mL×3本 JAN・添加物",
+        "url": "https://www.seims.co.jp/shop/g/g4987103048459/"
+      },
+      {
+        "label": "マツキヨココカラ 50mL×10本",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987103048466"
+      }
+    ]
+  },
+  {
+    "id": "med-00708",
+    "jan": "4987316030432",
+    "name": "スパークユンケル",
+    "maker": "佐藤製薬",
+    "riskClass": "第2類",
+    "kind": "vitamin",
+    "noticeGroupId": "vitamin",
+    "efficacyGroups": [
+      "ビタミン主薬製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 3,
+    "contentUnit": "本",
+    "facts": [
+      {
+        "ingredient": "アルコール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "イカリソウ流エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "オウセイ流エキス",
+        "ingredientClasses": [],
+        "amountPerDay": 300,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タイソウエキス",
+        "ingredientClasses": [],
+        "amountPerDay": 120,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タウリン",
+        "ingredientClasses": [],
+        "amountPerDay": 500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニコチン酸アミド",
+        "ingredientClasses": [],
+        "amountPerDay": 25,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB1硝酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB12",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "µg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB2リン酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": 5,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ビタミンB6",
+        "ingredientClasses": [],
+        "amountPerDay": 10,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "無水カフェイン",
+        "ingredientClasses": [],
+        "amountPerDay": 50,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/300089_J0601004587_02_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%82%B9%E3%83%91%E3%83%BC%E3%82%AF%E3%83%A6%E3%83%B3%E3%82%B1%E3%83%AB.webp?v=036cb55c",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/300089_J0601004587_02_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アルコール",
+        "イカリソウ流エキス",
+        "オウセイ流エキス",
+        "タイソウエキス",
+        "タウリン",
+        "ニコチン酸アミド",
+        "ビタミンB1硝酸塩",
+        "ビタミンB12",
+        "ビタミンB2リン酸エステル",
+        "ビタミンB6",
+        "無水カフェイン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "価格.com 商品ページ（スパークユンケル 50mL×3本、旧処方）",
+        "url": "https://kakaku.com/item/K0000547701/"
+      },
+      {
+        "label": "薬事日報 スパークユンケルαリニューアル記事",
+        "url": "https://www.yakuji.co.jp/?p=117205"
+      },
+      {
+        "label": "富士薬品 スパークユンケルα 10本（参考：新処方）",
+        "url": "https://www.e-fujiyakuhin.jp/SHOP/4987316035697.html"
+      }
+    ]
+  },
+  {
+    "id": "med-06002",
+    "jan": "4987138390196",
+    "name": "ツムラ漢方小青竜湯エキス顆粒",
+    "maker": "ツムラ",
+    "riskClass": "第2類",
+    "kind": "kampo",
+    "noticeGroupId": "kampo",
+    "efficacyGroups": [
+      "漢方製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 20,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "カンキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ケイヒ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ゴミシ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "サイシン",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シャクヤク",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ハンゲ",
+        "ingredientClasses": [],
+        "amountPerDay": 3,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "マオウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/460026_J0601009803_05_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%84%E3%83%A0%E3%83%A9%E6%BC%A2%E6%96%B9%E5%B0%8F%E9%9D%92%E7%AB%9C%E6%B9%AF%E3%82%A8%E3%82%AD%E3%82%B9%E9%A1%86%E7%B2%92.webp?v=bccc57d3",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/460026_J0601009803_05_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "カンキョウ",
+        "カンゾウ",
+        "ケイヒ",
+        "ゴミシ",
+        "サイシン",
+        "シャクヤク",
+        "ハンゲ",
+        "マオウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": true,
+      "dopingClass": "S3. ベータ−2作用剤（常に禁止）"
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601009803"
+      },
+      {
+        "label": "ツルハ（JAN・20包）",
+        "url": "https://shop.tsuruha.co.jp/10118019.html"
+      }
+    ]
+  },
+  {
+    "id": "med-05996",
+    "jan": "4987138481276",
+    "name": "ツムラ漢方麦門冬湯エキス顆粒",
+    "maker": "ツムラ",
+    "riskClass": "第2類",
+    "kind": "kampo",
+    "noticeGroupId": "kampo",
+    "efficacyGroups": [
+      "漢方製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 8,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "コウベイ",
+        "ingredientClasses": [],
+        "amountPerDay": 2500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タイソウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニンジン",
+        "ingredientClasses": [],
+        "amountPerDay": 1000,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ハンゲ",
+        "ingredientClasses": [],
+        "amountPerDay": 2500,
+        "unit": "mg",
+        "uncertain": false
+      },
+      {
+        "ingredient": "バクモンドウ",
+        "ingredientClasses": [],
+        "amountPerDay": 5000,
+        "unit": "mg",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/460026_J0601010323_07_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%84%E3%83%A0%E3%83%A9%E6%BC%A2%E6%96%B9%E9%BA%A6%E9%96%80%E5%86%AC%E6%B9%AF%E3%82%A8%E3%82%AD%E3%82%B9%E9%A1%86%E7%B2%92.webp?v=ac0b5714",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/460026_J0601010323_07_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "カンゾウ",
+        "コウベイ",
+        "タイソウ",
+        "ニンジン",
+        "ハンゲ",
+        "バクモンドウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 ツムラ漢方麦門冬湯エキス顆粒",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010323"
+      },
+      {
+        "label": "ツルハ 販売ページ（JAN・8包）",
+        "url": "https://shop.tsuruha.co.jp/10082997.html"
+      }
+    ]
+  },
+  {
+    "id": "med-05995",
+    "jan": "4987138392411",
+    "name": "ツムラ漢方補中益気湯エキス顆粒",
+    "maker": "ツムラ",
+    "riskClass": "第2類",
+    "kind": "kampo",
+    "noticeGroupId": "kampo",
+    "efficacyGroups": [
+      "漢方製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 10,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "オウギ",
+        "ingredientClasses": [],
+        "amountPerDay": 2.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.75,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "サイコ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ショウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.25,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ショウマ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ソウジュツ",
+        "ingredientClasses": [],
+        "amountPerDay": 2.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タイソウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "チンピ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.0,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "トウキ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニンジン",
+        "ingredientClasses": [],
+        "amountPerDay": 2.0,
+        "unit": "g",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/460026_J0601010648_07_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%84%E3%83%A0%E3%83%A9%E6%BC%A2%E6%96%B9%E8%A3%9C%E4%B8%AD%E7%9B%8A%E6%B0%97%E6%B9%AF%E3%82%A8%E3%82%AD%E3%82%B9%E9%A1%86%E7%B2%92.webp?v=7c6be58e",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/460026_J0601010648_07_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "オウギ",
+        "カンゾウ",
+        "サイコ",
+        "ショウキョウ",
+        "ショウマ",
+        "ソウジュツ",
+        "タイソウ",
+        "チンピ",
+        "トウキ",
+        "ニンジン"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "セイムス ツムラ漢方補中益気湯エキス顆粒 10包",
+        "url": "https://www.seims.co.jp/shop/g/g4987138392411/"
+      }
+    ]
+  },
+  {
+    "id": "med-05349",
+    "jan": "4987138390028",
+    "name": "ツムラ漢方葛根湯加川きゅう辛夷エキス顆粒",
+    "maker": "ツムラ",
+    "riskClass": "第2類",
+    "kind": "kampo",
+    "noticeGroupId": "kampo",
+    "efficacyGroups": [
+      "漢方製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 20,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "カッコン",
+        "ingredientClasses": [],
+        "amountPerDay": 2,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ケイヒ",
+        "ingredientClasses": [],
+        "amountPerDay": 1,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シャクヤク",
+        "ingredientClasses": [],
+        "amountPerDay": 1,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ショウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "シンイ",
+        "ingredientClasses": [],
+        "amountPerDay": 1,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "センキュウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タイソウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "マオウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/460026_J0601008881_08_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%84%E3%83%A0%E3%83%A9%E6%BC%A2%E6%96%B9%E8%91%9B%E6%A0%B9%E6%B9%AF%E5%8A%A0%E5%B7%9D%E3%81%8D%E3%82%85%E3%81%86%E8%BE%9B%E5%A4%B7%E3%82%A8%E3%82%AD%E3%82%B9%E9%A1%86%E7%B2%92.webp?v=bbdd490e",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/460026_J0601008881_08_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "カッコン",
+        "カンゾウ",
+        "ケイヒ",
+        "シャクヤク",
+        "ショウキョウ",
+        "シンイ",
+        "センキュウ",
+        "タイソウ",
+        "マオウ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": true,
+      "dopingClass": "S3. ベータ−2作用剤（常に禁止）"
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ツムラ漢方葛根湯加川きゅう辛夷エキス顆粒",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008881"
+      },
+      {
+        "label": "富士薬品 同 20包",
+        "url": "https://www.e-fujiyakuhin.jp/smp/item/4987138390028.html"
+      },
+      {
+        "label": "クリエイトSD 同 20包",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987138390028/"
+      }
+    ]
+  },
+  {
+    "id": "med-06003",
+    "jan": "4987138390097",
+    "name": "ツムラ漢方小柴胡湯エキス顆粒",
+    "maker": "ツムラ",
+    "riskClass": "第2類",
+    "kind": "kampo",
+    "noticeGroupId": "kampo",
+    "efficacyGroups": [
+      "漢方製剤"
+    ],
+    "route": "internal",
+    "crudeDrugMain": true,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 2,
+    "contentQty": 20,
+    "contentUnit": "包",
+    "facts": [
+      {
+        "ingredient": "オウゴン",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "カンゾウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "サイコ",
+        "ingredientClasses": [],
+        "amountPerDay": 3.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ショウキョウ",
+        "ingredientClasses": [],
+        "amountPerDay": 0.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "タイソウ",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ニンジン",
+        "ingredientClasses": [],
+        "amountPerDay": 1.5,
+        "unit": "g",
+        "uncertain": false
+      },
+      {
+        "ingredient": "ハンゲ",
+        "ingredientClasses": [],
+        "amountPerDay": 2.5,
+        "unit": "g",
+        "uncertain": false
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/460026_J0601009743_05_02",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%84%E3%83%A0%E3%83%A9%E6%BC%A2%E6%96%B9%E5%B0%8F%E6%9F%B4%E8%83%A1%E6%B9%AF%E3%82%A8%E3%82%AD%E3%82%B9%E9%A1%86%E7%B2%92.webp?v=7af62617",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/460026_J0601009743_05_02"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "オウゴン",
+        "カンゾウ",
+        "サイコ",
+        "ショウキョウ",
+        "タイソウ",
+        "ニンジン",
+        "ハンゲ"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS ツムラ漢方小柴胡湯エキス顆粒",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601009743"
+      },
+      {
+        "label": "クリエイトSD（JAN）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987138390097/"
+      },
+      {
+        "label": "ツルハドラッグ",
+        "url": "https://shop.tsuruha.co.jp/10182961.html"
+      }
+    ]
+  },
+  {
+    "id": "med-01521",
+    "jan": "4987305265814",
+    "name": "ラミシールATクリーム",
+    "maker": "全薬工業",
+    "riskClass": "指定第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 10,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "テルビナフィン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/380101_J0601007391_09_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%A9%E3%83%9F%E3%82%B7%E3%83%BC%E3%83%ABAT%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0.webp?v=9eeb810d",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/380101_J0601007391_09_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "テルビナフィン塩酸塩"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "クリエイトSD 商品ページ（全薬工業 ラミシールATクリーム 10g）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987305265814/"
+      },
+      {
+        "label": "マツキヨココカラ 商品ページ",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987305265814"
+      },
+      {
+        "label": "ヨドバシ.com 全薬工業 取扱一覧",
+        "url": "https://www.yodobashi.com/maker/0000020919/"
+      }
+    ]
+  },
+  {
+    "id": "med-01369",
+    "jan": "4987188188279",
+    "name": "ブテナロックVαクリーム",
+    "maker": "久光製薬",
+    "riskClass": "指定第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 18,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "イソプロピルメチルフェノール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロタミトン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロルフェニラミンマレイン酸塩",
+        "ingredientClasses": [
+          "抗ヒスタミン剤"
+        ],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "グリチルレチン酸",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ジブカイン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ブテナフィン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "l-メントール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/650034_J1201000021_02_04",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%96%E3%83%86%E3%83%8A%E3%83%AD%E3%83%83%E3%82%AFV%CE%B1%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%A0.webp?v=a7c1b2d9",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/650034_J1201000021_02_04"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イソプロピルメチルフェノール",
+        "クロタミトン",
+        "クロルフェニラミンマレイン酸塩",
+        "グリチルレチン酸",
+        "ジブカイン塩酸塩",
+        "ブテナフィン塩酸塩",
+        "l-メントール"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": true,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021"
+      },
+      {
+        "label": "クリエイトSD（JAN・18g）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987188188279/"
+      }
+    ]
+  },
+  {
+    "id": "med-01348",
+    "jan": "4987306035119",
+    "name": "ダマリングランデX",
+    "maker": "大正製薬",
+    "riskClass": "指定第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 1,
+    "timesPerDay": 1,
+    "contentQty": 15,
+    "contentUnit": "g",
+    "facts": [
+      {
+        "ingredient": "イソプロピルメチルフェノール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "グリチルレチン酸",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "テルビナフィン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "リドカイン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "l-メントール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_J1301000035_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%80%E3%83%9E%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%87X.webp?v=24f00a86",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_J1301000035_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "イソプロピルメチルフェノール",
+        "グリチルレチン酸",
+        "テルビナフィン塩酸塩",
+        "リドカイン",
+        "l-メントール"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "セイムス ダマリングランデX 15g（クリーム）",
+        "url": "https://www.seims.co.jp/shop/g/g4987306035119/"
+      },
+      {
+        "label": "マツキヨココカラ",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987306035119"
+      }
+    ]
+  },
+  {
+    "id": "med-02048",
+    "jan": "4987107617859",
+    "name": "ロキソニンSテープ",
+    "maker": "リードケミカル",
+    "riskClass": "第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 4,
+    "timesPerDay": 1,
+    "contentQty": 7,
+    "contentUnit": "枚",
+    "facts": [
+      {
+        "ingredient": "ロキソプロフェンナトリウム水和物",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/850028_K1607000001_08_02",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%AD%E3%82%AD%E3%82%BD%E3%83%8B%E3%83%B3S%E3%83%86%E3%83%BC%E3%83%97.webp?v=a45b0d89",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/850028_K1607000001_08_02"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ロキソプロフェンナトリウム水和物"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "クリエイトSD 商品ページ（ロキソニンS テープ 7枚）",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987107617859/"
+      },
+      {
+        "label": "マツキヨココカラ 商品ページ",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987107617859"
+      }
+    ]
+  },
+  {
+    "id": "med-01997",
+    "jan": "4987188123805",
+    "name": "フェイタスZαジクサス",
+    "maker": "久光製薬",
+    "riskClass": "第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 1,
+    "contentQty": 7,
+    "contentUnit": "枚",
+    "facts": [
+      {
+        "ingredient": "ジクロフェナクナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "l-メントール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/650034_J1701000026_01_03",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%95%E3%82%A7%E3%82%A4%E3%82%BF%E3%82%B9Z%CE%B1%E3%82%B8%E3%82%AF%E3%82%B5%E3%82%B9.webp?v=dc8843df",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/650034_J1701000026_01_03"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ジクロフェナクナトリウム",
+        "l-メントール"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "KEGG MEDICUS 一般用医薬品 フェイタスZαジクサス",
+        "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000026"
+      },
+      {
+        "label": "マツキヨココカラ 販売ページ（JAN・7枚）",
+        "url": "https://www.matsukiyococokara-online.com/store/catalog/product/view/id/4987188123805"
+      },
+      {
+        "label": "ツルハ 販売ページ（同JANのセット品）",
+        "url": "https://shop.tsuruha.co.jp/10159677.html"
+      }
+    ]
+  },
+  {
+    "id": "med-01942",
+    "jan": "4987443351707",
+    "name": "ボルタレンEXテープ",
+    "maker": "同仁医薬化工（製造販売元）／ハレオンジャパン（発売元）",
+    "riskClass": "第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 2,
+    "timesPerDay": 1,
+    "contentQty": 7,
+    "contentUnit": "枚",
+    "facts": [
+      {
+        "ingredient": "ジクロフェナクナトリウム",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/471825_J1301000189_08_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%9C%E3%83%AB%E3%82%BF%E3%83%AC%E3%83%B3EX%E3%83%86%E3%83%BC%E3%83%97.webp?v=92e647e0",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/471825_J1301000189_08_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "ジクロフェナクナトリウム"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": false,
+      "dopingClass": null
+    },
+    "research": [
+      {
+        "label": "ツルハ ボルタレンEXテープ 7枚",
+        "url": "https://shop.tsuruha.co.jp/10073552.html"
+      },
+      {
+        "label": "クリエイトSD",
+        "url": "https://netshop.create-sd.co.jp/shop/g/g4987443351707/"
+      }
+    ]
+  },
+  {
+    "id": "med-03046",
+    "jan": "4987306061439",
+    "name": "プリザエース坐剤T",
+    "maker": "大正製薬",
+    "riskClass": "指定第2類",
+    "kind": "topical",
+    "noticeGroupId": "gaihi",
+    "efficacyGroups": [
+      "外皮用薬"
+    ],
+    "route": "external",
+    "crudeDrugMain": false,
+    "dailyMaxUnits": 3,
+    "timesPerDay": 3,
+    "contentQty": 10,
+    "contentUnit": "個",
+    "facts": [
+      {
+        "ingredient": "アラントイン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "クロルヘキシジン塩酸塩",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "トコフェロール酢酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "ヒドロコルチゾン酢酸エステル",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "リドカイン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "塩酸テトラヒドロゾリン",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      },
+      {
+        "ingredient": "l-メントール",
+        "ingredientClasses": [],
+        "amountPerDay": null,
+        "unit": null,
+        "uncertain": true
+      }
+    ],
+    "pmdaUrl": "https://www.info.pmda.go.jp/ogo/400059_J1201000057_04_01",
+    "docRevisedOn": null,
+    "enteredBy": "ゆう（既存データ）＋公開情報",
+    "verifiedOn": null,
+    "imageUrl": "https://images.yutok.dev/otc/%E3%83%97%E3%83%AA%E3%82%B6%E3%82%A8%E3%83%BC%E3%82%B9%E5%9D%90%E5%89%A4T.webp?v=274abe18",
+    "source": {
+      "label": "添付文書を PMDA で開く",
+      "url": "https://www.info.pmda.go.jp/ogo/400059_J1201000057_04_01"
+    },
+    "quotes": {
+      "efficacy": null,
+      "ingredients": [
+        "アラントイン",
+        "クロルヘキシジン塩酸塩",
+        "トコフェロール酢酸エステル",
+        "ヒドロコルチゾン酢酸エステル",
+        "リドカイン",
+        "塩酸テトラヒドロゾリン",
+        "l-メントール"
+      ],
+      "dosage": null
+    },
+    "flags": {
+      "drowsyMention": false,
+      "dopingRelated": true,
+      "dopingClass": "S9. 糖質コルチコイド"
+    },
+    "research": [
+      {
+        "label": "大正製薬 製品情報（カタログ）",
+        "url": "https://www.catalog-taisho.com/category/05/006/06145/"
+      },
+      {
+        "label": "ツルハ（区分 第(2)類）",
+        "url": "https://shop.tsuruha.co.jp/10082721.html"
       }
     ]
   }

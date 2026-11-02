@@ -15,6 +15,21 @@ const NOT_IN_TEBIKI = new Set([
   // 追加21品（L-20261103-03）
   "cold:プロメタジンメチレンジサリチル酸塩",
   "rhinitis:セチリジン塩酸塩",
+  // L-20261103-08（手引きの該当章に名前がない。ダスモックb の清肺湯の構成生薬など）
+  "cold:L-カルボシステイン",
+  "fever:カフェイン水和物",
+  "cough:ソヨウ流エキス",
+  "cough:オウゴン",
+  "cough:サンシシ",
+  "cough:ショウキョウ",
+  "cough:ソウハクヒ",
+  "cough:タイソウ",
+  "cough:チクジョ",
+  "cough:チンピ",
+  "cough:テンモンドウ",
+  "cough:トウキ",
+  "cough:バイモ",
+  "cough:ブクリョウ",
 ]);
 
 describe("ingredientRole", () => {
@@ -34,11 +49,15 @@ describe("ingredientRole", () => {
   });
 
   it("デモ商品の成分は、手引きの記載があるか、記載なしの一覧にあるか", () => {
-    const unknown = DEMO_PRODUCTS.flatMap((p) =>
-      p.facts
-        .filter((f) => !ingredientRole(p.kind, f.ingredient))
-        .map((f) => `${p.kind}:${f.ingredient}`),
-    ).filter((k) => !NOT_IN_TEBIKI.has(k));
+    // 手引きの記載をまだ収録していない種類（L-20261103-08 で足した胃腸薬・目薬など）は対象外。画面は「記載が見つかりません」
+    const mapped = new Set(INGREDIENT_ROLES.flatMap((r) => r.kinds));
+    const unknown = DEMO_PRODUCTS.filter((p) => mapped.has(p.kind))
+      .flatMap((p) =>
+        p.facts
+          .filter((f) => !ingredientRole(p.kind, f.ingredient))
+          .map((f) => `${p.kind}:${f.ingredient}`),
+      )
+      .filter((k) => !NOT_IN_TEBIKI.has(k));
     expect(unknown).toEqual([]);
   });
 

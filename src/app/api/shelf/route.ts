@@ -11,8 +11,8 @@ export async function GET(request: NextRequest) {
   const items = found.flatMap(({ id, product, location }) =>
     product && location ? [{ id, name: product.name, kind: product.kind, location }] : [],
   );
-  // 棚の正面図に、同じ棚に並ぶほかの商品も描く
-  const shelfIds = new Set(items.map((i) => i.location.shelfId));
+  // 棚の正面図に並ぶデモ商品。どの棚も売場図から開けるので、全部の棚ぶん返す（数十件）
+  const shelfIds = new Set(MOCK_STORE.shelves.map((s) => s.id));
   const occupants = (await shelfOccupants(shelfIds)).map(({ product, ...l }) => ({
     ...l,
     name: product.name,

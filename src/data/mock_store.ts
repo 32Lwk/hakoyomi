@@ -1,12 +1,12 @@
 import type { MedicineKind } from "@/lib/schema/product";
 
-// 架空1店舗の売場と棚割り（模擬、L-20261103-06・-07・-08）。T104 で正式な seed にする。
+// 架空1店舗の売場と棚割り（模擬、L-20261103-06・-07・-11・-14）。T104 で正式な seed にする。
 // 座標はメートル（売場図の viewBox もメートル）。上が店の奥、下が入口側。
 //
 // 寸法は一般的な郊外型ドラッグストアの目安（出典つきの値ではない）：
-// - 売場 24m×28m（約670㎡・約200坪）
-// - ゴンドラ1本＝幅90cm・6段、両面の奥行1.2m、両端のエンドは奥行0.55m。1列＝5本（L-08）
-// - 主通路2.4m、副通路1.6m、壁面棚の奥行0.6m
+// - 売場 20.1m×28m（約560㎡・約170坪）
+// - ゴンドラ1本＝幅90cm・6段、両面の奥行1.2m、両端のエンドは奥行0.55m。1列＝5本（L-14）
+// - 主通路1.8m（ゴンドラのエンドから相談カウンター・レジまで）、副通路1.6m、カウンターの内側1.5m、壁面棚の奥行0.6m
 // 売場：
 // - 右側に医薬品の相談カウンター（情報提供の場所）とレジを隣り合わせに置き、その横のゴンドラを医薬品売場にする
 // - 医薬品はゴンドラ2台半（25本）＋カウンター内の5本（第1類・要指導）＝30本。小さい売場は1本を段で分け合う
@@ -166,9 +166,9 @@ function wall(
 const FIXTURES: Fixture[] = [
   // 壁面
   wall("W-b1", { x: 0.6, y: 0, w: 7.4, h: 0.6 }, "S", "food", "冷凍食品", "奥の壁面"),
-  wall("W-b2", { x: 8, y: 0, w: 8, h: 0.6 }, "S", "food", "食品", "奥の壁面"),
-  wall("W-b3", { x: 16, y: 0, w: 7.4, h: 0.6 }, "S", "food", "飲料（冷蔵ケース）", "奥の壁面"),
-  wall("W-r1", { x: 23.4, y: 0.6, w: 0.6, h: 9.9 }, "W", "food", "酒・飲料（冷蔵）", "右の壁面"),
+  wall("W-b2", { x: 8, y: 0, w: 7, h: 0.6 }, "S", "food", "食品", "奥の壁面"),
+  wall("W-b3", { x: 15, y: 0, w: 4.5, h: 0.6 }, "S", "food", "飲料（冷蔵ケース）", "奥の壁面"),
+  wall("W-r1", { x: 19.5, y: 0.6, w: 0.6, h: 9.9 }, "W", "food", "酒・飲料（冷蔵）", "右の壁面"),
   wall("W-l1", { x: 0, y: 0.6, w: 0.6, h: 6.4 }, "E", "daily", "ペット用品", "左の壁面"),
   wall("W-l2", { x: 0, y: 7, w: 0.6, h: 7 }, "E", "daily", "洗剤・柔軟剤", "左の壁面"),
   wall("W-l3", { x: 0, y: 14, w: 0.6, h: 6.6 }, "E", "daily", "ティッシュ・紙製品", "左の壁面"),
@@ -178,11 +178,11 @@ const FIXTURES: Fixture[] = [
     name: "カウンター内の棚",
     kind: "wall",
     vertical: true,
-    x: 23.4,
+    x: 19.5,
     y: 11.75,
     w: 0.6,
     h: BAYS_PER_ROW * BAY_W,
-    via: [[22.6, 16.5]],
+    via: [[18.7, 16.5]],
     faces: [
       {
         side: "W",
@@ -327,26 +327,26 @@ const AREAS: Area[] = FIXTURES.flatMap((fixture) =>
 export const MOCK_STORE = {
   id: "mock-store-1",
   name: "ハコよみ デモ店（架空）",
-  size: { w: 24, h: 28 },
+  size: { w: 20.1, h: 28 },
   endcapDepth: ENDCAP,
-  entrance: { x: 15.6, y: 27.7, w: 3.4, h: 0.3 } satisfies Rect,
-  carts: { x: 20.6, y: 24.4, w: 2.6, h: 2.2 } satisfies Rect,
+  entrance: { x: 13.6, y: 27.7, w: 3.4, h: 0.3 } satisfies Rect,
+  carts: { x: 17.3, y: 24.4, w: 2.2, h: 2.2 } satisfies Rect,
   // 平台（季節品・特売）
   tables: [
     { x: 2.95, y: 23.8, w: 4.5, h: 1.2, label: "季節品（平台）" },
     { x: 10.35, y: 23.8, w: 4.5, h: 1.2, label: "特売（平台）" },
   ],
   // 右側：相談カウンター（情報提供の場所）とレジが隣り合う。その内側はスタッフだけ
-  staffArea: { x: 20.4, y: 11, w: 3, h: 10.5 } satisfies Rect,
-  counter: { x: 19.6, y: 12, w: 0.8, h: 4 } satisfies Rect,
-  register: { x: 19.6, y: 17, w: 0.8, h: 4 } satisfies Rect,
+  staffArea: { x: 18, y: 11, w: 1.5, h: 10.5 } satisfies Rect,
+  counter: { x: 17.2, y: 12, w: 0.8, h: 4 } satisfies Rect,
+  register: { x: 17.2, y: 17, w: 0.8, h: 4 } satisfies Rect,
   // 登販が立つ場所（経路の起点）。カウンターとレジのあいだ
-  start: { x: 19, y: 16.5, label: "現在地" },
+  start: { x: 16.7, y: 16.5, label: "現在地" },
   // 主通路（右、縦）の中心
-  mainAisleX: 16.8,
+  mainAisleX: 16.3,
   // 医薬品売場のまとまり（全体図で囲む）と、拡大図の範囲
-  medicineZone: { x: 9.5, y: 7.4, w: 14.3, h: 9.2 } satisfies Rect,
-  zoom: { x: 8.4, y: 6.6, w: 15.6, h: 15.2 } satisfies Rect,
+  medicineZone: { x: 9.5, y: 7.4, w: 10.4, h: 9.2 } satisfies Rect,
+  zoom: { x: 8.9, y: 6.6, w: 11.2, h: 14.8 } satisfies Rect,
   // 通路番号の札（行のあいだの副通路。全体図は左の通路、拡大図は列のあいだに描く）
   aisles: Array.from({ length: ROWS - 1 }, (_, i) => ({ no: i + 1, y: ROW_Y(i + 1) + 2 })),
   // 売場のまとまりの名前（全体図に大きく出す）
@@ -402,6 +402,82 @@ export const MOCK_STORE = {
     { productId: "colgen-film-alpha", shelfId: "6B-4", tier: 4, column: 6 },
     { productId: "stona-rhini-z-gel", shelfId: "6B-5", tier: 4, column: 6 },
     { productId: "jikinin-bien-ag", shelfId: "6B-5", tier: 5, column: 2 },
+    // 追加75品（L-20261103-08）。種類の棚の空いている位置に上の段から順に置く（第1類・要指導はカウンター内）
+    { productId: "med-05883", shelfId: "6A-1", tier: 2, column: 1 },
+    { productId: "med-06448", shelfId: "6A-1", tier: 2, column: 2 },
+    { productId: "med-05907", shelfId: "6A-1", tier: 2, column: 3 },
+    { productId: "med-00553", shelfId: "C-1", tier: 2, column: 1 },
+    { productId: "med-00193", shelfId: "6B-1", tier: 2, column: 1 },
+    { productId: "med-00274", shelfId: "6B-1", tier: 2, column: 2 },
+    { productId: "med-00243", shelfId: "6B-1", tier: 2, column: 3 },
+    { productId: "med-00233", shelfId: "6B-1", tier: 2, column: 4 },
+    { productId: "med-00177", shelfId: "6B-1", tier: 2, column: 5 },
+    { productId: "med-06455", shelfId: "6A-4", tier: 2, column: 1 },
+    { productId: "med-05476", shelfId: "6A-4", tier: 2, column: 3 },
+    { productId: "med-05751", shelfId: "6A-4", tier: 2, column: 4 },
+    { productId: "med-06018", shelfId: "6A-4", tier: 2, column: 5 },
+    { productId: "med-05114", shelfId: "6B-4", tier: 2, column: 1 },
+    { productId: "med-05107", shelfId: "6B-4", tier: 2, column: 2 },
+    { productId: "med-05149", shelfId: "6B-4", tier: 2, column: 3 },
+    { productId: "med-00522", shelfId: "6B-3", tier: 4, column: 1 },
+    { productId: "med-00598", shelfId: "6B-3", tier: 4, column: 2 },
+    { productId: "med-00616", shelfId: "6B-3", tier: 4, column: 3 },
+    { productId: "med-00635", shelfId: "6B-3", tier: 4, column: 4 },
+    { productId: "med-05216", shelfId: "8A-1", tier: 2, column: 1 },
+    { productId: "med-05231", shelfId: "8A-1", tier: 2, column: 2 },
+    { productId: "med-05220", shelfId: "8A-1", tier: 2, column: 3 },
+    { productId: "med-05277", shelfId: "8A-1", tier: 2, column: 4 },
+    { productId: "med-00083", shelfId: "8A-3", tier: 2, column: 1 },
+    { productId: "med-00086", shelfId: "8A-3", tier: 2, column: 2 },
+    { productId: "med-00097", shelfId: "8A-3", tier: 2, column: 3 },
+    { productId: "med-00102", shelfId: "8A-3", tier: 2, column: 4 },
+    { productId: "med-00104", shelfId: "8A-3", tier: 2, column: 5 },
+    { productId: "med-00138", shelfId: "8A-3", tier: 2, column: 6 },
+    { productId: "med-00080", shelfId: "8A-3", tier: 2, column: 7 },
+    { productId: "med-00147", shelfId: "8A-3", tier: 2, column: 8 },
+    { productId: "med-04107", shelfId: "8A-3", tier: 3, column: 1 },
+    { productId: "med-04104", shelfId: "8A-3", tier: 3, column: 2 },
+    { productId: "med-04160", shelfId: "8A-3", tier: 3, column: 3 },
+    { productId: "med-04221", shelfId: "8A-3", tier: 3, column: 4 },
+    { productId: "med-00145", shelfId: "8A-3", tier: 3, column: 5 },
+    { productId: "med-00144", shelfId: "8A-3", tier: 3, column: 6 },
+    { productId: "med-06556", shelfId: "8A-1", tier: 4, column: 1 },
+    { productId: "med-06750", shelfId: "8A-1", tier: 4, column: 2 },
+    { productId: "med-06747", shelfId: "8A-1", tier: 4, column: 3 },
+    { productId: "med-06748", shelfId: "8A-1", tier: 4, column: 4 },
+    { productId: "med-06740", shelfId: "8A-1", tier: 4, column: 5 },
+    { productId: "med-06746", shelfId: "8A-1", tier: 4, column: 6 },
+    { productId: "med-06844", shelfId: "8A-1", tier: 4, column: 7 },
+    { productId: "med-06847", shelfId: "8A-1", tier: 4, column: 8 },
+    { productId: "med-06641", shelfId: "8A-1", tier: 5, column: 1 },
+    { productId: "med-06651", shelfId: "8A-1", tier: 5, column: 2 },
+    { productId: "med-06650", shelfId: "8A-1", tier: 5, column: 3 },
+    { productId: "med-06660", shelfId: "8A-1", tier: 5, column: 4 },
+    { productId: "med-06679", shelfId: "8A-1", tier: 5, column: 5 },
+    { productId: "med-06611", shelfId: "8A-1", tier: 5, column: 6 },
+    { productId: "med-07285", shelfId: "10A-1", tier: 2, column: 1 },
+    { productId: "med-07092", shelfId: "10A-1", tier: 2, column: 2 },
+    { productId: "med-01123", shelfId: "10A-1", tier: 2, column: 3 },
+    { productId: "med-01148", shelfId: "10A-1", tier: 2, column: 4 },
+    { productId: "med-04595", shelfId: "10A-1", tier: 2, column: 5 },
+    { productId: "med-04323", shelfId: "10A-1", tier: 2, column: 6 },
+    { productId: "med-04318", shelfId: "10A-1", tier: 2, column: 7 },
+    { productId: "med-00717", shelfId: "10A-1", tier: 2, column: 8 },
+    { productId: "med-00781", shelfId: "10A-1", tier: 3, column: 1 },
+    { productId: "med-00169", shelfId: "10A-1", tier: 3, column: 2 },
+    { productId: "med-00708", shelfId: "10A-1", tier: 3, column: 3 },
+    { productId: "med-06002", shelfId: "6A-3", tier: 4, column: 1 },
+    { productId: "med-05996", shelfId: "6A-3", tier: 4, column: 2 },
+    { productId: "med-05995", shelfId: "6A-3", tier: 4, column: 3 },
+    { productId: "med-05349", shelfId: "6A-3", tier: 4, column: 4 },
+    { productId: "med-06003", shelfId: "6A-3", tier: 4, column: 5 },
+    { productId: "med-01521", shelfId: "8B-2", tier: 2, column: 1 },
+    { productId: "med-01369", shelfId: "8B-2", tier: 2, column: 2 },
+    { productId: "med-01348", shelfId: "8B-2", tier: 2, column: 3 },
+    { productId: "med-02048", shelfId: "8B-2", tier: 2, column: 4 },
+    { productId: "med-01997", shelfId: "8B-2", tier: 2, column: 5 },
+    { productId: "med-01942", shelfId: "8B-2", tier: 2, column: 6 },
+    { productId: "med-03046", shelfId: "8B-2", tier: 2, column: 7 },
   ] satisfies ShelfLocation[],
 };
 

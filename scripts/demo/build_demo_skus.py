@@ -57,7 +57,109 @@ SKUS = [
     ("askuron", "med_07286", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
     ("drewell-ex", "med_04905", "sleep", "suimin_kaizen", ["催眠鎮静薬"]),
     ("dreamin-z", "med_04906", "sleep", "suimin_kaizen", ["催眠鎮静薬"]),
+    # 追加97品（L-20261103-08）。id は既存データの id から
+    ("med-05883", "med_05883", "cold", "kaze_1", ["かぜ薬"]),
+    ("med-05697", "med_05697", "cold", "kaze_1", ["かぜ薬"]),
+    ("med-06448", "med_06448", "cold", "kaze_1", ["かぜ薬"]),
+    ("med-05907", "med_05907", "cold", "kaze_1", ["かぜ薬"]),
+    ("med-05491", "med_05491", "cold", "kaze_1", ["かぜ薬"]),
+    ("med-00553", "med_00553", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("med-00193", "med_00193", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("med-00274", "med_00274", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("med-00243", "med_00243", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("med-00233", "med_00233", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("med-00177", "med_00177", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("med-06455", "med_06455", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("med-05476", "med_05476", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("med-05751", "med_05751", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("med-06018", "med_06018", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("med-05114", "med_05114", "rhinitis", "bien_naifuku", ["鼻炎用内服薬"]),
+    ("med-05107", "med_05107", "rhinitis", "bien_naifuku", ["鼻炎用内服薬"]),
+    ("med-05149", "med_05149", "rhinitis", "bien_naifuku", ["鼻炎用内服薬"]),
+    ("med-00522", "med_00522", "motion", "chinun", ["鎮暈薬"]),
+    ("med-00598", "med_00598", "motion", "chinun", ["鎮暈薬"]),
+    ("med-00616", "med_00616", "motion", "chinun", ["鎮暈薬"]),
+    ("med-00635", "med_00635", "motion", "chinun", ["鎮暈薬"]),
+    ("med-05216", "med_05216", "nasal", "tenbi", ["鼻炎用点鼻薬"]),
+    ("med-05231", "med_05231", "nasal", "tenbi", ["鼻炎用点鼻薬"]),
+    ("med-05235", "med_05235", "nasal", "tenbi", ["鼻炎用点鼻薬"]),
+    ("med-05220", "med_05220", "nasal", "tenbi", ["鼻炎用点鼻薬"]),
+    ("med-05277", "med_05277", "nasal", "tenbi", ["鼻炎用点鼻薬"]),
+    ("med-05072", "med_05072", "nasal", "tenbi", ["鼻炎用点鼻薬"]),
+    ("med-00083", "med_00083", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00086", "med_00086", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00096", "med_00096", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00097", "med_00097", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00054", "med_00054", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00102", "med_00102", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00104", "med_00104", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00138", "med_00138", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00080", "med_00080", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00140", "med_00140", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00147", "med_00147", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-04107", "med_04107", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-04104", "med_04104", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-04160", "med_04160", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-04221", "med_04221", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00145", "med_00145", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-00144", "med_00144", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-06556", "med_06556", "eye", "ganka", ["眼科用薬"]),
+    ("med-06750", "med_06750", "eye", "ganka", ["眼科用薬"]),
+    ("med-06747", "med_06747", "eye", "ganka", ["眼科用薬"]),
+    ("med-06748", "med_06748", "eye", "ganka", ["眼科用薬"]),
+    ("med-06740", "med_06740", "eye", "ganka", ["眼科用薬"]),
+    ("med-06746", "med_06746", "eye", "ganka", ["眼科用薬"]),
+    ("med-06844", "med_06844", "eye", "ganka", ["眼科用薬"]),
+    ("med-06847", "med_06847", "eye", "ganka", ["眼科用薬"]),
+    ("med-06641", "med_06641", "eye", "ganka", ["眼科用薬"]),
+    ("med-06651", "med_06651", "eye", "ganka", ["眼科用薬"]),
+    ("med-06650", "med_06650", "eye", "ganka", ["眼科用薬"]),
+    ("med-06660", "med_06660", "eye", "ganka", ["眼科用薬"]),
+    ("med-06679", "med_06679", "eye", "ganka", ["眼科用薬"]),
+    ("med-06611", "med_06611", "eye", "ganka", ["眼科用薬"]),
+    ("med-07285", "med_07285", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-07092", "med_07092", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-01123", "med_01123", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-01148", "med_01148", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-04595", "med_04595", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-04323", "med_04323", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-04318", "med_04318", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-04325", "med_04325", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-00762", "med_00762", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-00717", "med_00717", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-00781", "med_00781", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-00169", "med_00169", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-00708", "med_00708", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-06002", "med_06002", "kampo", "kampo", ["漢方製剤"]),
+    ("med-05996", "med_05996", "kampo", "kampo", ["漢方製剤"]),
+    ("med-05995", "med_05995", "kampo", "kampo", ["漢方製剤"]),
+    ("med-05349", "med_05349", "kampo", "kampo", ["漢方製剤"]),
+    ("med-06003", "med_06003", "kampo", "kampo", ["漢方製剤"]),
+    ("med-00014", "med_00014", "kampo", "kampo", ["漢方製剤"]),
+    ("med-07019", "med_07019", "kampo", "kampo", ["漢方製剤"]),
+    ("med-01521", "med_01521", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01369", "med_01369", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01530", "med_01530", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01348", "med_01348", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01624", "med_01624", "topical", "gaihi", ["外皮用薬"]),
+    ("med-03162", "med_03162", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01748", "med_01748", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01750", "med_01750", "topical", "gaihi", ["外皮用薬"]),
+    ("med-02048", "med_02048", "topical", "gaihi", ["外皮用薬"]),
+    ("med-02825", "med_02825", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01997", "med_01997", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01942", "med_01942", "topical", "gaihi", ["外皮用薬"]),
+    ("med-03539", "med_03539", "topical", "gaihi", ["外皮用薬"]),
+    ("med-03160", "med_03160", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01638", "med_01638", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01633", "med_01633", "topical", "gaihi", ["外皮用薬"]),
+    ("med-01540", "med_01540", "topical", "gaihi", ["外皮用薬"]),
+    ("med-03046", "med_03046", "topical", "gaihi", ["外皮用薬"]),
 ]
+
+# 生薬を主たる有効成分とする製剤（指定濫用防止の対象外の判定、告示第32号）。漢方薬の種類と、胃腸薬・便秘薬の漢方処方（L-20261103-08）
+CRUDE_DRUG_MAIN_KINDS = {"kampo"}
+CRUDE_DRUG_MAIN = {"太田漢方胃腸薬II", "大正漢方胃腸薬", "タケダ漢方便秘薬", "大正漢方便秘薬", "新コッコアポA錠", "ロート防風通聖散錠満量a"}
 
 # 通知の記載条件「抗ヒスタミン剤を含有する製剤」に当てるための成分群
 ANTIHISTAMINES = [
@@ -81,7 +183,10 @@ IMAGE_OVERRIDE = {
 VERIFIED_ON = "2026-11-03"
 VERIFIED = {sku[0] for sku in SKUS[:19]}
 
-RISK = {"第1類": "第1類", "指定第2類": "指定第2類", "第2類": "第2類", "第3類": "第3類"}
+# 画面とスキーマで必須の数値。調べて見つからない品は入れず、除外の一覧に出す（ゆうが補う）
+REQUIRED = [("dailyMaxUnits", "1日の最大量"), ("timesPerDay", "1日の回数"), ("contentQty", "内容量"), ("contentUnit", "内容量の単位")]
+
+RISK = {"要指導": "要指導", "要指導医薬品": "要指導", "第1類": "第1類", "指定第2類": "指定第2類", "第2類": "第2類", "第3類": "第3類"}
 
 
 def norm(name: str) -> str:
@@ -111,6 +216,10 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
         if not found or not found.get("jan"):
             skipped.append(f"{name}（JAN 未確認）")
             continue
+        lacking = [label for key, label in REQUIRED if not found.get(key)]
+        if lacking:
+            skipped.append(f"{name}（{'・'.join(lacking)} 未確認）")
+            continue
         ingredients = [unicodedata.normalize("NFKC", i).replace("−", "-").strip() for i in row["成分"].split("\n") if i.strip()]
         amounts = {norm(f[0]): f for f in found["facts"]}
         low = set(map(norm, found.get("low", [])))
@@ -137,7 +246,7 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
             "noticeGroupId": group,
             "efficacyGroups": efficacy,
             "route": found.get("route", "internal"),
-            "crudeDrugMain": False,
+            "crudeDrugMain": kind in CRUDE_DRUG_MAIN_KINDS or name in CRUDE_DRUG_MAIN,
             "dailyMaxUnits": found["dailyMaxUnits"],
             "timesPerDay": found["timesPerDay"],
             "contentQty": found["contentQty"],

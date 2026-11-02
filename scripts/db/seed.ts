@@ -9,7 +9,17 @@ import { KAZE_GROUP, KAZE_ITEMS } from "@/data/notice_kaze";
 import { noticeGroupToRow, noticeItemToRow, productToRows } from "@/lib/db/rows";
 import { NOTICE_PDF, NOTICE_SOURCES } from "../notice/lib";
 
-const EXTRA_GROUP_NAMES: Record<string, string> = { suimin_kaizen: "催眠鎮静薬" };
+const EXTRA_GROUP_NAMES: Record<string, string> = {
+  suimin_kaizen: "催眠鎮静薬",
+  // L-20261103-08 で足した種類
+  chinun: "鎮暈薬（乗物酔い防止薬）",
+  tenbi: "鼻炎用点鼻薬",
+  ichoyaku: "胃腸薬",
+  ganka: "眼科用薬",
+  vitamin: "ビタミン主薬製剤",
+  kampo: "漢方製剤",
+  gaihi: "外皮用薬",
+};
 
 async function main() {
   try {

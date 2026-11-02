@@ -1,9 +1,17 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import {
   BAY_W,
   ZONE_LABEL,
@@ -50,12 +58,13 @@ const ZONE_FILL: Record<Zone, string> = {
 };
 
 export function ShelfView() {
-  const { ids, currentId, setScannerOpen } = useStack();
+  const { ids, currentId, add, select: selectProduct, setScannerOpen } = useStack();
+  const router = useRouter();
   const key = ids.join(",");
   const [data, setData] = useState<{ key: string; data: ShelfData } | null>(null);
   const [picked, setPicked] = useState<string | null>(null);
   const [view, setView] = useState<View>("zoom");
-  const panelRef = useRef<HTMLElement>(null);
+  const [open, setOpen] = useState(false);
   const mapRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -83,17 +92,24 @@ export function ShelfView() {
   const shelf = store.shelves.find((s) => s.id === selectedId) ?? null;
   const area = store.areas.find((a) => a.id === selectedId) ?? null;
 
-  function select(id: string, scroll: boolean) {
+  // 棚・売場を押すと、ボトムシートで開く
+  function select(id: string) {
     setPicked(id);
-    if (scroll)
-      requestAnimationFrame(() =>
-        panelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
-      );
+    setOpen(true);
   }
 
   function showMedicine() {
+    setOpen(false);
     setView("zoom");
     mapRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // 商品カードを開く。読んだ商品ならそのまま選び、ほかは読んだ商品に足す
+  function openProduct(id: string) {
+    if (ids.includes(id)) selectProduct(id);
+    else add(id);
+    setOpen(false);
+    router.push("/");
   }
 
   return (
@@ -106,7 +122,7 @@ export function ShelfView() {
               <li key={item.id}>
                 <button
                   type="button"
-                  onClick={() => select(item.location.shelfId, true)}
+                  onClick={() => select(item.location.shelfId)}
                   className={cn(
                     "flex w-full items-center gap-3 rounded-lg border px-2.5 py-2 text-left",
                     on ? "border-diff bg-diff-soft" : "border-border bg-card",
@@ -180,11 +196,11 @@ export function ShelfView() {
           store={store}
           items={numbered}
           selectedId={selectedId}
-          onSelect={(id) => select(id, true)}
+          onSelect={select}
           view={view}
         />
         <p className="text-xs text-muted-foreground">
-          棚をタップすると中が見られます。
+          棚をタップすると、棚の正面が開きます。
           {view === "overall"
             ? "点線の枠が医薬品売場です（「医薬品売場」で拡大）。"
             : "数字は左から何本目か（正面に立って見たとき）です。"}
@@ -192,26 +208,36 @@ export function ShelfView() {
         <MapLegend />
       </section>
 
-      <section ref={panelRef} aria-live="polite" className="flex scroll-mt-16 flex-col gap-3">
-        {shelf ? (
-          <ShelfPanel
-            store={store}
-            shelf={shelf}
-            items={numbered}
-            occupants={occupants}
-            onSelect={(id) => select(id, false)}
+      <Sheet open={open && !!(shelf || area)} onOpenChange={setOpen}>
+        <SheetContent
+          side="bottom"
+          className={cn(
+            "gap-0 rounded-t-2xl px-4 pt-2 pb-0",
+            // 棚は画面の高さに収めてスクロールさせない。売場（医薬品以外）は高さ自動
+            shelf ? "h-[92dvh] overflow-hidden" : "max-h-[92dvh] overflow-y-auto",
+          )}
+        >
+          <span
+            aria-hidden="true"
+            className="mx-auto mb-2 h-1 w-10 shrink-0 rounded-full bg-muted-foreground/30"
           />
-        ) : area ? (
-          <AreaPanel area={area} onShowMedicine={showMedicine} />
-        ) : (
-          <p className="rounded-lg border border-dashed border-border px-3 py-6 text-center text-sm text-muted-foreground">
-            売場図の棚をタップすると、ここに棚の正面が出ます
-          </p>
-        )}
-      </section>
+          {shelf ? (
+            <ShelfPanel
+              key={shelf.id}
+              store={store}
+              shelf={shelf}
+              items={numbered}
+              occupants={occupants}
+              onOpenProduct={openProduct}
+            />
+          ) : area ? (
+            <AreaPanel area={area} onShowMedicine={showMedicine} />
+          ) : null}
+        </SheetContent>
+      </Sheet>
 
       <p className="text-xs text-muted-foreground">
-        売場は約24m×28m（約200坪）、棚1本は幅90cm・通路は1.6〜2.4mの想定で描いています。上が店の奥、下が入口側。
+        売場は約20m×28m（約170坪）、棚1本は幅90cm・通路は1.6〜1.8mの想定で描いています。上が店の奥、下が入口側。
         {UI_COPY.mockNotice}
       </p>
     </div>
@@ -319,6 +345,7 @@ function FaceShapes({
   f,
   face,
   active,
+  selectedId,
   onSelect,
   view,
 }: {
@@ -326,6 +353,7 @@ function FaceShapes({
   f: Fixture;
   face: Face;
   active: Set<string>;
+  selectedId: string | null;
   onSelect: (id: string) => void;
   view: View;
 }) {
@@ -335,7 +363,7 @@ function FaceShapes({
       <Tappable
         rect={faceRect(f, face.side)}
         label={`${face.title}（${ZONE_LABEL[face.zone]}の売場）`}
-        fill={ZONE_FILL[face.zone]}
+        fill={area && area.id === selectedId ? C.diff : ZONE_FILL[face.zone]}
         onSelect={() => area && onSelect(area.id)}
       />
     );
@@ -353,7 +381,8 @@ function FaceShapes({
             <Tappable
               rect={r}
               label={`${s.label} ${s.category}`}
-              fill={on ? C.primary : ZONE_FILL.medicine}
+              // 読んだ商品の棚は濃紺、選んでいる棚は黄色
+              fill={on ? C.primary : s.id === selectedId ? C.diff : ZONE_FILL.medicine}
               onSelect={() => onSelect(s.id)}
             />
             {view === "zoom" && (
@@ -449,6 +478,7 @@ function FixtureShapes({
           f={f}
           face={face}
           active={active}
+          selectedId={selectedId}
           onSelect={onSelect}
           view={view}
         />
@@ -532,7 +562,8 @@ function StoreMap({
   const { staffArea, counter, register, entrance, carts, start, medicineZone } = store;
   const vb = view === "zoom" ? store.zoom : { x: 0, y: 0, w, h };
   const zoom = view === "zoom";
-  const aisleX = zoom ? store.zoom.x + 0.5 : 1.5;
+  // 拡大図では、列のあいだの通路（ゴンドラのエンドの左）に描く
+  const aisleX = zoom ? store.zoom.x + 0.35 : 1.5;
   return (
     <svg
       viewBox={`${vb.x} ${vb.y} ${vb.w} ${vb.h}`}
@@ -551,13 +582,13 @@ function StoreMap({
       {/* スタッフ側（相談カウンターとレジの内側） */}
       <rect {...box(staffArea)} fill={C.staff} />
       <text
-        x={staffArea.x + 1.2}
+        x={staffArea.x + staffArea.w / 2}
         y={register.y + register.h / 2}
         fontSize={0.38}
         textAnchor="middle"
         dominantBaseline="central"
         fill={C.text}
-        transform={`rotate(90 ${staffArea.x + 1.2} ${register.y + register.h / 2})`}
+        transform={`rotate(90 ${staffArea.x + staffArea.w / 2} ${register.y + register.h / 2})`}
       >
         スタッフ側
       </text>
@@ -816,7 +847,7 @@ function MapLegend() {
         読んだ商品の棚
       </li>
       <li className="flex items-center gap-1.5">
-        <span className="inline-block size-3 rounded-[2px] border-2 border-diff bg-white" />
+        <span className="inline-block size-3 rounded-[2px] bg-diff" />
         選んでいる棚
       </li>
       <li className="flex items-center gap-1.5">
@@ -847,115 +878,176 @@ function faceTitle(f: Fixture, side: Side): string {
 // 医薬品以外の売場：売場名だけ
 function AreaPanel({ area, onShowMedicine }: { area: Area; onShowMedicine: () => void }) {
   return (
-    <div className="flex flex-col gap-2 rounded-lg border border-border bg-card px-3 py-3">
-      <p className="text-xs text-muted-foreground">{area.where}</p>
-      <h2 className="flex items-center gap-2 text-lg font-bold">
-        <span
-          className="inline-block size-3.5 rounded-[3px] border border-border"
-          style={{ background: ZONE_FILL[area.zone] }}
-        />
-        {area.name}
-        <span className="text-sm font-normal text-muted-foreground">
-          （{ZONE_LABEL[area.zone]}）
-        </span>
-      </h2>
+    <div className="flex flex-col gap-3 pb-6">
+      <SheetHeader className="p-0 pr-8">
+        <SheetDescription className="text-xs">{area.where}</SheetDescription>
+        <SheetTitle className="flex items-center gap-2 text-lg font-bold">
+          <span
+            className="inline-block size-3.5 rounded-[3px] border border-border"
+            style={{ background: ZONE_FILL[area.zone] }}
+          />
+          {area.name}
+          <span className="text-sm font-normal text-muted-foreground">
+            （{ZONE_LABEL[area.zone]}）
+          </span>
+        </SheetTitle>
+      </SheetHeader>
       <p className="text-sm text-muted-foreground">
         医薬品以外の売場です。ハコよみでは医薬品の棚だけ中を表示します。
       </p>
-      <Button variant="outline" onClick={onShowMedicine} className="h-10 self-start">
+      <Button onClick={onShowMedicine} className="h-11">
         医薬品売場を見る
       </Button>
     </div>
   );
 }
 
-// 選んだ棚：場所の説明・1列5本の並び・正面図
+// 正面図で押した箱
+type Box = { tier: number; column: number };
+
+// 選んだ棚：場所の説明・正面図・押した箱の情報。シートの高さに収める
 function ShelfPanel({
   store,
   shelf,
   items,
   occupants,
-  onSelect,
+  onOpenProduct,
 }: {
   store: MockStore;
   shelf: Shelf;
   items: Numbered[];
   occupants: Occupant[];
-  onSelect: (id: string) => void;
+  onOpenProduct: (id: string) => void;
 }) {
+  const [pickedBox, setPickedBox] = useState<Box | null>(null);
   const fixture = store.fixtures.find((f) => f.id === shelf.fixtureId);
   if (!fixture) return null;
   const row = store.shelves
     .filter((s) => s.fixtureId === shelf.fixtureId && s.side === shelf.side)
     .sort((a, b) => a.bay - b.bay);
+  const here = occupants.filter((o) => o.shelfId === shelf.id);
   return (
-    <>
-      <div className="flex flex-col gap-1">
-        <p className="text-xs text-muted-foreground">
+    <div className="flex min-h-0 flex-1 flex-col gap-2">
+      <SheetHeader className="shrink-0 gap-0.5 p-0 pr-8">
+        <SheetDescription className="text-xs">
           {shelf.where}・{faceTitle(fixture, shelf.side)}
-        </p>
-        <h2 className="flex flex-wrap items-baseline gap-x-2 text-lg font-bold">
+        </SheetDescription>
+        <SheetTitle className="flex flex-wrap items-baseline gap-x-2 text-lg font-bold">
           <span className="text-primary">{shelf.label}</span>
           <span>{shelf.category}</span>
           <span className="text-sm font-normal text-muted-foreground">
             左から{shelf.bay}本目／{row.length}本
           </span>
-        </h2>
-      </div>
-
-      {/* 1列（5本）の並び。押すと隣の棚に切り替わる */}
-      <div className="flex flex-col gap-1">
-        <div
-          className="grid gap-1 rounded-lg bg-neutral-300 p-1"
-          style={{ gridTemplateColumns: `repeat(${row.length}, minmax(0, 1fr))` }}
-        >
-          {row.map((s) => {
-            const marks = items.filter((n) => n.location.shelfId === s.id);
-            const on = s.id === shelf.id;
-            return (
-              <button
-                type="button"
-                key={s.id}
-                onClick={() => onSelect(s.id)}
-                aria-pressed={on}
-                className={cn(
-                  "relative flex min-h-16 flex-col items-center justify-center gap-0.5 rounded-md px-0.5 py-1 text-center",
-                  on ? "bg-primary text-primary-foreground ring-3 ring-diff" : "bg-white",
-                )}
-              >
-                <span className="text-xs font-bold">{s.id}</span>
-                {s.sections.map((x, i) => (
-                  <span
-                    key={i}
-                    className={cn("text-[10px] leading-tight", !on && "text-muted-foreground")}
-                  >
-                    {x.name}
-                  </span>
-                ))}
-                {marks.length > 0 && (
-                  <span className="absolute inset-x-0 -top-2.5 flex justify-center gap-0.5">
-                    {marks.map((n) => (
-                      <Marker key={n.id} no={n.no} small />
-                    ))}
-                  </span>
-                )}
-              </button>
-            );
-          })}
-        </div>
-        <p className="flex justify-between text-[10px] text-muted-foreground">
-          <span>← 左端</span>
-          <span>正面に立って見た並び（1本＝幅90cm）</span>
-          <span>右端 →</span>
-        </p>
-      </div>
+        </SheetTitle>
+      </SheetHeader>
 
       <BayFront
         shelf={shelf}
         items={items.filter((n) => n.location.shelfId === shelf.id)}
-        occupants={occupants.filter((o) => o.shelfId === shelf.id)}
+        occupants={here}
+        picked={pickedBox}
+        onPick={setPickedBox}
       />
-    </>
+
+      {/* 押した箱の情報（シートのいちばん下） */}
+      <div className="-mx-4 shrink-0 border-t border-border bg-popover px-4 pt-2.5 pb-4 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]">
+        {pickedBox ? (
+          <BoxInfo
+            shelf={shelf}
+            box={pickedBox}
+            occupant={
+              here.find((o) => o.tier === pickedBox.tier && o.column === pickedBox.column) ?? null
+            }
+            others={here}
+            onPickBox={setPickedBox}
+            onOpenProduct={onOpenProduct}
+          />
+        ) : (
+          <p className="text-center text-xs text-muted-foreground">
+            {items.some((n) => n.location.shelfId === shelf.id) && "黄色の枠が読んだ商品の場所。"}
+            箱を押すと情報が出ます。写真のない箱はイメージ図（実在の商品ではありません）
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// 押した箱：デモ商品なら商品カードへ。イラストならイメージ図であることと、この棚のデモ商品
+function BoxInfo({
+  shelf,
+  box,
+  occupant,
+  others,
+  onPickBox,
+  onOpenProduct,
+}: {
+  shelf: Shelf;
+  box: Box;
+  occupant: Occupant | null;
+  others: Occupant[];
+  onPickBox: (box: Box) => void;
+  onOpenProduct: (id: string) => void;
+}) {
+  const section = sectionAt(shelf, box.tier);
+  const place = `${shelf.label}・上から${box.tier}段目・左から${box.column}列目`;
+  if (occupant)
+    return (
+      <div className="flex items-center gap-3">
+        <ProductImage
+          id={occupant.productId}
+          kind={occupant.kind}
+          name={occupant.name}
+          size={56}
+          className="size-14 shrink-0 rounded-md bg-muted p-0.5"
+        />
+        <div className="min-w-0 flex-1">
+          <p className="truncate font-bold">{occupant.name}</p>
+          <p className="text-xs text-muted-foreground">
+            {section.name}・{place}
+          </p>
+        </div>
+        <Button onClick={() => onOpenProduct(occupant.productId)} className="h-11 shrink-0">
+          商品を見る
+        </Button>
+      </div>
+    );
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-3">
+        {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
+        <img
+          src={illustrationAt(shelf, box.tier, box.column)}
+          alt=""
+          width={56}
+          height={56}
+          className="size-14 shrink-0 rounded-md bg-muted p-0.5"
+        />
+        <div className="min-w-0 flex-1">
+          <p className="font-bold">{section.name}のイメージ図</p>
+          <p className="text-xs text-muted-foreground">
+            実在の商品ではありません（デモに入っていない商品の場所）。{place}
+          </p>
+        </div>
+      </div>
+      {others.length > 0 && (
+        <div className="flex flex-col gap-1">
+          <p className="text-xs text-muted-foreground">この棚のデモ商品（押すと場所を示します）</p>
+          <div className="flex flex-wrap gap-1.5">
+            {others.map((o) => (
+              <button
+                key={o.productId}
+                type="button"
+                onClick={() => onPickBox({ tier: o.tier, column: o.column })}
+                className="rounded-full border border-border bg-card px-3 py-1.5 text-sm active:bg-accent"
+              >
+                {o.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -974,10 +1066,14 @@ function BayFront({
   shelf,
   items,
   occupants,
+  picked,
+  onPick,
 }: {
   shelf: Shelf;
   items: Numbered[];
   occupants: Occupant[];
+  picked: Box | null;
+  onPick: (box: Box) => void;
 }) {
   // 読んだ商品がある棚では、ほかの箱を薄くして場所を目立たせる
   const dim = items.length > 0;
@@ -989,33 +1085,37 @@ function BayFront({
     firsts.set(top, `${s.name}（${s.tiers}段）`);
     top += s.tiers;
   }
+  // 段は残りの高さを等分する（箱は高さに合わせて縮む）
   return (
-    <div className="flex flex-col gap-2">
-      <div className="overflow-hidden rounded-lg border-2 border-neutral-400 bg-neutral-100">
+    <div className="flex min-h-0 flex-1 flex-col">
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border-2 border-neutral-400 bg-neutral-100">
         {/* 売場の看板 */}
-        <div className="flex items-center justify-between bg-primary px-3 py-1.5 text-primary-foreground">
+        <div className="flex shrink-0 items-center justify-between bg-primary px-3 py-1.5 text-primary-foreground">
           <span className="text-sm font-bold">{shelf.category}</span>
           <span className="text-xs">{shelf.id}</span>
         </div>
-        <div className="flex flex-col px-1 pt-1">
+        <div className="flex min-h-0 flex-1 flex-col px-1 pt-1">
           {Array.from({ length: shelf.tiers }, (_, t) => {
             const tier = t + 1;
             const head = split ? firsts.get(tier) : undefined;
             return (
-              <div key={tier} className="flex flex-col">
+              <div key={tier} className="flex min-h-0 flex-1 flex-col">
                 {head && (
-                  <span className="mt-1 ml-9 self-start rounded-sm bg-primary/10 px-1.5 text-[11px] font-bold text-primary">
+                  <span className="mt-0.5 ml-9 shrink-0 self-start rounded-sm bg-primary/10 px-1.5 text-[11px] font-bold text-primary">
                     ▼ {head}
                   </span>
                 )}
-                <div className="flex items-stretch gap-1">
+                <div className="flex min-h-0 flex-1 items-stretch gap-1">
                   <span className="flex w-8 shrink-0 items-center justify-center text-center text-[10px] leading-tight text-muted-foreground">
                     {tierLabel(tier, shelf.tiers)}
                   </span>
-                  <div className="flex-1">
+                  <div className="flex min-h-0 flex-1 flex-col">
                     <div
-                      className="grid gap-0.5 pt-1"
-                      style={{ gridTemplateColumns: `repeat(${shelf.columns}, minmax(0, 1fr))` }}
+                      className="grid min-h-0 flex-1 gap-0.5 pt-0.5"
+                      style={{
+                        gridTemplateColumns: `repeat(${shelf.columns}, minmax(0, 1fr))`,
+                        gridTemplateRows: "minmax(0, 1fr)",
+                      }}
                     >
                       {Array.from({ length: shelf.columns }, (_, c) => {
                         const column = c + 1;
@@ -1023,18 +1123,21 @@ function BayFront({
                           (n) => n.location.tier === tier && n.location.column === column,
                         );
                         const other = occupants.find((o) => o.tier === tier && o.column === column);
+                        const on = picked?.tier === tier && picked.column === column;
                         return (
-                          <div
+                          <button
+                            type="button"
                             key={column}
+                            onClick={() => onPick({ tier, column })}
+                            aria-pressed={on}
                             className={cn(
-                              "relative flex aspect-[3/4] items-end justify-center rounded-sm",
+                              "relative flex min-h-0 items-end justify-center rounded-sm active:bg-accent",
                               target && "z-10 bg-diff-soft ring-3 ring-diff",
+                              on && "z-20 bg-white ring-3 ring-primary",
                             )}
-                            aria-label={
-                              target
-                                ? `${target.name}：${tierLabel(tier, shelf.tiers)}・左から${column}列目`
-                                : undefined
-                            }
+                            aria-label={`${
+                              other?.name ?? `${sectionAt(shelf, tier).name}のイメージ図`
+                            }：${tierLabel(tier, shelf.tiers)}・左から${column}列目`}
                           >
                             {other ? (
                               <ProductImage
@@ -1045,7 +1148,7 @@ function BayFront({
                                 decorative
                                 className={cn(
                                   "size-full object-contain",
-                                  dim && !target && "opacity-45",
+                                  dim && !target && !on && "opacity-45",
                                 )}
                               />
                             ) : (
@@ -1056,7 +1159,10 @@ function BayFront({
                                 alt=""
                                 width={48}
                                 height={48}
-                                className={cn("size-full object-contain", dim && "opacity-45")}
+                                className={cn(
+                                  "size-full object-contain",
+                                  dim && !on && "opacity-45",
+                                )}
                               />
                             )}
                             {target && (
@@ -1064,12 +1170,12 @@ function BayFront({
                                 <Marker no={target.no} small />
                               </span>
                             )}
-                          </div>
+                          </button>
                         );
                       })}
                     </div>
                     {/* 棚板と値札 */}
-                    <div className="mt-0.5 flex h-2.5 items-center justify-around rounded-[2px] border-b-2 border-neutral-400 bg-neutral-300">
+                    <div className="mt-0.5 flex h-2.5 shrink-0 items-center justify-around rounded-[2px] border-b-2 border-neutral-400 bg-neutral-300">
                       {Array.from({ length: shelf.columns }, (_, c) => (
                         <span key={c} className="h-1.5 w-2.5 rounded-[1px] bg-white" />
                       ))}
@@ -1081,12 +1187,8 @@ function BayFront({
           })}
         </div>
         {/* 台輪（いちばん下の板） */}
-        <div className="mt-1 h-3 bg-neutral-500" />
+        <div className="mt-1 h-3 shrink-0 bg-neutral-500" />
       </div>
-      <p className="text-xs text-muted-foreground">
-        {items.length > 0 && "黄色の枠が読んだ商品の場所です。"}
-        写真のない箱は売場の種類のイラスト（イメージ図）で、実在の商品ではありません。
-      </p>
     </div>
   );
 }
