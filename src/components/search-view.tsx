@@ -7,6 +7,7 @@ import { useStack } from "@/components/stack-provider";
 import { Input } from "@/components/ui/input";
 import type { ProductView } from "@/lib/catalog";
 import { UI_COPY } from "@/lib/guard/uiCopy";
+import { illustrationAlt, illustrationSrc } from "@/lib/illustration";
 import type { BadgeKind } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +20,7 @@ const CONDITIONS: { kind: BadgeKind; label: string }[] = [
 ];
 
 export function SearchView() {
-  const { add } = useStack();
+  const { ids, add } = useStack();
   const router = useRouter();
   const [q, setQ] = useState("");
   const [exclude, setExclude] = useState<BadgeKind[]>([]);
@@ -88,30 +89,59 @@ export function SearchView() {
 
       {views && (
         <ul className="flex flex-col gap-2">
-          {views.map((v) => (
-            <li key={v.product.id}>
-              <button
-                type="button"
-                onClick={() => {
-                  add(v.product.id);
-                  router.push("/");
-                }}
-                className="flex w-full flex-col gap-2 rounded-lg border border-border p-3 text-left"
+          {views.map((v) => {
+            const added = ids.includes(v.product.id);
+            return (
+              <li
+                key={v.product.id}
+                className="flex flex-col gap-2 rounded-lg border border-border p-3"
               >
-                <span className="font-bold">{v.product.name}</span>
-                <span className="text-xs text-muted-foreground">
-                  {v.product.maker}・{v.product.riskClass}
-                </span>
+                <div className="flex items-center gap-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
+                  <img
+                    src={illustrationSrc(v.product.kind, "box")}
+                    alt={illustrationAlt(v.product.kind)}
+                    width={56}
+                    height={56}
+                    className="size-14 shrink-0 rounded-md bg-muted p-0.5"
+                  />
+                  <span className="flex min-w-0 flex-col">
+                    <span className="font-bold">{v.product.name}</span>
+                    <span className="text-xs text-muted-foreground">
+                      {v.product.maker}・{v.product.riskClass}
+                    </span>
+                  </span>
+                </div>
                 {v.badges.length > 0 && (
                   <span className="flex flex-wrap gap-1">
                     {v.badges.map((b) => (
-                      <BadgeChip key={b.kind} badge={b} />
+                      <BadgeChip key={b.kind} badge={b} compact />
                     ))}
                   </span>
                 )}
-              </button>
-            </li>
-          ))}
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      add(v.product.id);
+                      router.push("/");
+                    }}
+                    className="min-h-11 rounded-md bg-primary text-sm font-bold text-primary-foreground"
+                  >
+                    詳しく見る
+                  </button>
+                  <button
+                    type="button"
+                    disabled={added || ids.length >= 4}
+                    onClick={() => add(v.product.id)}
+                    className="min-h-11 rounded-md border-2 border-primary text-sm font-bold text-primary disabled:border-border disabled:text-muted-foreground"
+                  >
+                    {added ? "比べるに追加済み" : UI_COPY.addToCompare}
+                  </button>
+                </div>
+              </li>
+            );
+          })}
           {views.length === 0 && <li className="text-sm text-muted-foreground">該当なし</li>}
         </ul>
       )}

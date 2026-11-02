@@ -2,6 +2,7 @@ import { ExternalLink, MapPin } from "lucide-react";
 import { BadgeRow } from "@/components/badges";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 import type { ProductView } from "@/lib/catalog";
+import { illustrationAlt, illustrationSrc, KIND_LABEL } from "@/lib/illustration";
 
 function amount(value: number | null, unit: string | null): string {
   if (value === null || unit === null) return "不明";
@@ -17,17 +18,40 @@ export function ProductCard({ view }: { view: ProductView }) {
         <p className="text-sm text-muted-foreground">
           {product.maker}・JAN {product.jan}
         </p>
-        <p className="flex flex-wrap gap-2 text-sm">
-          <span className="rounded border border-foreground px-1.5">{product.riskClass}</span>
-          <span>
-            内容量 {product.contentQty}
-            {product.contentUnit}
-          </span>
-          <span className="text-muted-foreground">
-            1日最大 {product.dailyMaxUnits}
-            {product.contentUnit}（{product.timesPerDay}回）
-          </span>
-        </p>
+        <div className="mt-2 flex items-center gap-4">
+          <figure className="flex shrink-0 flex-col items-center gap-1">
+            {/* 実物の写真は使わない（L-28）。種類のイメージ図（L-33） */}
+            {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
+            <img
+              src={illustrationSrc(product.kind, "box")}
+              alt={illustrationAlt(product.kind)}
+              width={96}
+              height={96}
+              className="size-24 rounded-lg bg-muted p-1"
+            />
+            <figcaption className="text-[11px] text-muted-foreground">
+              {UI_COPY.illustration}（{KIND_LABEL[product.kind]}）
+            </figcaption>
+          </figure>
+          <dl className="grid flex-1 grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-sm">
+            <dt className="text-muted-foreground">区分</dt>
+            <dd>
+              <span className="rounded border border-foreground px-1.5 font-bold">
+                {product.riskClass}
+              </span>
+            </dd>
+            <dt className="text-muted-foreground">内容量</dt>
+            <dd className="font-bold">
+              {product.contentQty}
+              {product.contentUnit}
+            </dd>
+            <dt className="text-muted-foreground">1日最大</dt>
+            <dd>
+              {product.dailyMaxUnits}
+              {product.contentUnit}（{product.timesPerDay}回）
+            </dd>
+          </dl>
+        </div>
       </header>
 
       <BadgeRow badges={badges} group={group} />

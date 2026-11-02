@@ -4,6 +4,23 @@ import { z } from "zod";
 
 export const RiskClass = z.enum(["要指導", "第1類", "指定第2類", "第2類", "第3類"]);
 
+// 薬の種類。画面のイメージ図（public/illustrations/{kind}-*.svg、L-33）の選択に使う
+export const MedicineKind = z.enum([
+  "cold",
+  "fever",
+  "cough",
+  "rhinitis",
+  "nasal",
+  "stomach",
+  "eye",
+  "topical",
+  "vitamin",
+  "sleep",
+  "kampo",
+  "motion",
+]);
+export type MedicineKind = z.infer<typeof MedicineKind>;
+
 // 内服か外用か。指定濫用防止医薬品は外用剤を除く（告示第32号）
 export const DosageRoute = z.enum(["internal", "external"]);
 
@@ -24,6 +41,7 @@ export const Product = z.object({
   name: z.string().min(1),
   maker: z.string().min(1),
   riskClass: RiskClass,
+  kind: MedicineKind,
   // 通知「使用上の注意」の薬効群 ID（notice.ts の NoticeGroupId）
   noticeGroupId: z.string().min(1),
   // 効能・効果に含まれる薬効群。指定濫用防止の数量基準（5日分／7日分）の判定に使う

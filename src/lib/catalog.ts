@@ -45,9 +45,8 @@ export type LocatedShelf = ShelfLocation & { shelf: Shelf; areaLabel: string };
 export function locationOf(productId: string): LocatedShelf | null {
   const loc = MOCK_STORE.locations.find((l) => l.productId === productId);
   const shelf = loc && MOCK_STORE.shelves.find((s) => s.id === loc.shelfId);
-  const area = shelf && MOCK_STORE.areas.find((a) => a.id === shelf.areaId);
-  if (!loc || !shelf || !area) return null;
-  return { ...loc, shelf, areaLabel: area.label };
+  if (!loc || !shelf) return null;
+  return { ...loc, shelf, areaLabel: shelf.category };
 }
 
 export type ProductView = {

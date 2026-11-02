@@ -1,23 +1,33 @@
 "use client";
 
-import { X } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BadgeChip } from "@/components/badges";
 import { useStack } from "@/components/stack-provider";
-import { Button } from "@/components/ui/button";
+import { ProductPicker } from "@/components/product-picker";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import type { ProductView } from "@/lib/catalog";
 import type { BadgeRowCompare, CompareRow } from "@/lib/compare";
 import { UI_COPY } from "@/lib/guard/uiCopy";
+import { illustrationAlt, illustrationSrc } from "@/lib/illustration";
 import type { BadgeKind } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
 
 type CompareData = { views: ProductView[]; rows: CompareRow[]; badges: BadgeRowCompare[] };
 
 export function CompareView() {
-  const { ids, remove, setScannerOpen } = useStack();
+  const { ids, remove } = useStack();
   const key = ids.join(",");
   const [data, setData] = useState<{ key: string; data: CompareData } | null>(null);
   const [onlyDiff, setOnlyDiff] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
 
   useEffect(() => {
     if (ids.length < 2) return;
@@ -35,11 +45,10 @@ export function CompareView() {
 
   if (ids.length < 2) {
     return (
-      <div className="flex flex-col items-center gap-4 pt-10 text-center">
-        <p>{UI_COPY.needTwo}</p>
-        <Button onClick={() => setScannerOpen(true)} className="h-12 px-6">
-          JANを読む
-        </Button>
+      <div className="flex flex-col gap-4">
+        <h1 className="text-lg font-bold">比べる商品を選ぶ</h1>
+        <p className="text-sm">{UI_COPY.needTwo}</p>
+        <ProductPicker />
       </div>
     );
   }
@@ -69,6 +78,25 @@ export function CompareView() {
         分量は1日最大量あたり。並びは読んだ順です。{UI_COPY.judgeNotice}
       </p>
 
+      <Sheet open={pickerOpen} onOpenChange={setPickerOpen}>
+        <SheetTrigger
+          disabled={views.length >= 4}
+          className="flex min-h-12 items-center justify-center gap-2 rounded-lg border-2 border-dashed border-primary text-sm font-bold text-primary disabled:border-border disabled:text-muted-foreground"
+        >
+          <Plus className="size-5" aria-hidden="true" />
+          {views.length >= 4 ? UI_COPY.compareFull : `商品を追加（${views.length}/4品）`}
+        </SheetTrigger>
+        <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto rounded-t-2xl">
+          <SheetHeader>
+            <SheetTitle>{UI_COPY.addToCompare}</SheetTitle>
+            <SheetDescription>{UI_COPY.chooseNotice}</SheetDescription>
+          </SheetHeader>
+          <div className="px-4 pb-6">
+            <ProductPicker onPicked={() => setPickerOpen(false)} />
+          </div>
+        </SheetContent>
+      </Sheet>
+
       <div className="overflow-x-auto rounded-lg border border-border">
         <div
           role="table"
@@ -88,7 +116,17 @@ export function CompareView() {
                 key={v.product.id}
                 className="flex items-start gap-1 p-2 font-bold"
               >
-                <span className="flex-1 text-sm leading-snug">{v.product.name}</span>
+                <span className="flex flex-1 flex-col items-start gap-1">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
+                  <img
+                    src={illustrationSrc(v.product.kind, "box")}
+                    alt={illustrationAlt(v.product.kind)}
+                    width={48}
+                    height={48}
+                    className="size-12 rounded-md bg-background p-0.5"
+                  />
+                  <span className="text-sm leading-snug">{v.product.name}</span>
+                </span>
                 <button
                   type="button"
                   onClick={() => remove(v.product.id)}

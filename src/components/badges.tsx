@@ -1,5 +1,16 @@
 "use client";
 
+import {
+  Baby,
+  Car,
+  ChevronRight,
+  ClipboardList,
+  Coffee,
+  type LucideIcon,
+  Medal,
+  UserRound,
+  Wine,
+} from "lucide-react";
 import { useState } from "react";
 import {
   Sheet,
@@ -12,7 +23,7 @@ import { ABUSE_SOURCE } from "@/data/abuse_ingredients";
 import { DOPING_SOURCE } from "@/data/doping_list";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 import type { Badge, BadgeTone, Evidence } from "@/lib/rules/badges";
-import type { NoticeGroup } from "@/lib/schema/notice";
+import type { BadgeKind, NoticeGroup } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
 
 // 種類で見た目を分ける。良し悪しの色は使わない（design.md §3）
@@ -32,24 +43,60 @@ export function BadgeChip({
   // 比較表など狭い場所では折り返して小さく出す
   compact?: boolean;
 }) {
+  const Icon = ICON[badge.kind];
   const className = cn(
-    "inline-flex items-center rounded-md font-bold",
+    "inline-flex items-center gap-1.5 rounded-md font-bold",
     compact ? "px-1.5 py-0.5 text-xs leading-snug" : "min-h-9 px-2.5 text-sm whitespace-nowrap",
     TONE[badge.tone],
   );
-  if (!onClick) return <span className={className}>{badge.label}</span>;
+  const icon = <Icon className={compact ? "size-3.5" : "size-4"} aria-hidden="true" />;
+  if (!onClick) {
+    return (
+      <span className={className}>
+        {icon}
+        {badge.label}
+      </span>
+    );
+  }
   return (
-    <button type="button" onClick={onClick} className={cn(className, "min-h-11")}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn(
+        className,
+        "min-h-11 shadow-sm transition-transform active:translate-y-px active:shadow-none",
+      )}
+    >
+      {icon}
       {badge.label}
+      <ChevronRight className="-mr-1 size-4 opacity-70" aria-hidden="true" />
     </button>
   );
 }
+
+// バッジの種類ごとのアイコン（色ではなく形で見分けられるように）
+const ICON: Record<BadgeKind, LucideIcon> = {
+  abuse: ClipboardList,
+  drive: Car,
+  breastfeeding: Baby,
+  under15: UserRound,
+  under12: UserRound,
+  alcohol: Wine,
+  caffeine: Coffee,
+  doping: Medal,
+};
 
 export function BadgeRow({ badges, group }: { badges: Badge[]; group: NoticeGroup | null }) {
   const [open, setOpen] = useState<Badge | null>(null);
   if (!badges.length) return null;
   return (
-    <>
+    <section aria-labelledby="badges-title" className="flex flex-col gap-2">
+      <div className="flex items-baseline justify-between gap-2">
+        <h2 id="badges-title" className="text-base font-bold">
+          確認ポイント
+        </h2>
+        <span className="text-xs text-muted-foreground">{UI_COPY.badgeHint}</span>
+      </div>
       <ul className="flex flex-wrap gap-2" aria-label="この商品のバッジ">
         {badges.map((b) => (
           <li key={b.kind}>
@@ -77,7 +124,7 @@ export function BadgeRow({ badges, group }: { badges: Badge[]; group: NoticeGrou
           )}
         </SheetContent>
       </Sheet>
-    </>
+    </section>
   );
 }
 

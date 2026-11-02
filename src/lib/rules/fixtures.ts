@@ -9,6 +9,7 @@ const KAZE = KAZE_GROUP.id;
 const base = {
   maker: "テスト製薬",
   riskClass: "指定第2類",
+  kind: "cold",
   noticeGroupId: KAZE,
   efficacyGroups: ["かぜ薬"],
   route: "internal",

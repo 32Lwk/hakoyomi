@@ -8,10 +8,15 @@ export async function GET(request: NextRequest) {
   const items = ids.flatMap((id) => {
     const product = findById(id);
     const location = locationOf(id);
-    return product && location ? [{ id, name: product.name, location }] : [];
+    return product && location ? [{ id, name: product.name, kind: product.kind, location }] : [];
   });
-  return Response.json({
-    store: { name: MOCK_STORE.name, areas: MOCK_STORE.areas, shelves: MOCK_STORE.shelves },
-    items,
-  });
+  // 棚の正面図に、同じ棚に並ぶほかの商品も描く
+  const shelfIds = new Set(items.map((i) => i.location.shelfId));
+  const occupants = MOCK_STORE.locations
+    .filter((l) => shelfIds.has(l.shelfId))
+    .flatMap((l) => {
+      const product = findById(l.productId);
+      return product ? [{ ...l, name: product.name, kind: product.kind }] : [];
+    });
+  return Response.json({ store: MOCK_STORE, items, occupants });
 }

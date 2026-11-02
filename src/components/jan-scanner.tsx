@@ -2,7 +2,7 @@
 
 import { BrowserMultiFormatReader, type IScannerControls } from "@zxing/browser";
 import { BarcodeFormat, DecodeHintType } from "@zxing/library";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useStack } from "@/components/stack-provider";
 import { Button } from "@/components/ui/button";
@@ -27,6 +27,7 @@ const HINTS = new Map([
 export function JanScanner() {
   const { scannerOpen, setScannerOpen, add } = useStack();
   const router = useRouter();
+  const pathname = usePathname();
   const videoRef = useRef<HTMLVideoElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -40,7 +41,8 @@ export function JanScanner() {
     setText("");
     setResults([]);
     setMessage(null);
-    router.push("/");
+    // 比べる画面から読んだときはそのまま比較に足す。それ以外は「読む」へ
+    if (pathname !== "/compare") router.push("/");
   }
 
   async function lookupJan(raw: string) {

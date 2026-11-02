@@ -21,6 +21,10 @@ export const UI_COPY = {
   addedToCompare: "比べるに追加しました",
   needTwo: "比べるには2品以上を読んでください",
   sortedByName: "品名順に並べています（順位ではありません）",
+  illustration: "イメージ図",
+  badgeHint: "タップで根拠を表示",
+  addToCompare: "比べるに追加",
+  compareFull: "比べられるのは4品までです。外してから追加してください",
 } as const;
 
 export type UiCopyKey = keyof typeof UI_COPY;
