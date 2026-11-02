@@ -19,16 +19,16 @@ describe("findBanwords", () => {
   });
 });
 
-// 画面とAPIのソースに禁止語が直接書かれていないことを確かめる（禁止語リストとテスト自身は除く）
+// 画面とAPIのソースに禁止語が直接書かれていないことを確かめる（禁止語リストとテストは除く）
 describe("src に禁止語がない", () => {
   const root = join(import.meta.dirname, "..", "..");
-  const skip = new Set(["lib/guard/banwords.ts", "lib/guard/banwords.test.ts"]);
+  const skip = new Set(["lib/guard/banwords.ts"]);
 
   function sourceFiles(dir: string): string[] {
     return readdirSync(dir).flatMap((name) => {
       const path = join(dir, name);
       if (statSync(path).isDirectory()) return sourceFiles(path);
-      return /\.(ts|tsx)$/.test(name) ? [path] : [];
+      return /\.(ts|tsx)$/.test(name) && !/\.test\.ts$/.test(name) ? [path] : [];
     });
   }
 
