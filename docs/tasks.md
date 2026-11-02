@@ -1,68 +1,56 @@
-# Tasks — ハコよみ（キックオフ 2026-11-02 12:00 JST → MVP）
+# Tasks — ハコよみ（prd v2.0 → 提出 2026-11-08 20:00 JST）
 
-凡例：P0＝デモに必須／P1＝余力。見積はソロ実時間。Claude Code には「T0xx を prd.md / architecture.md / rules.md に従って実装して」と渡す。
-**主経路は JAN（バーコード／手入力／品名検索）。箱写真OCRは補助（P1以降）。**（改訂 2026-11-02, L-20261102-23）
-**デモは実商品の事実データ＋PMDAリンクアウト。添付文書の文言・製品画像は持たない。事実の抽出は開発時（Claude抽出→ゆう検証）。**（改訂 2026-11-02, L-20261102-28）
+改訂 2026-11-02（L-20261102-32）：開発目的の再定義に合わせて全面的に組み直し。v1.x のタスク（T101〜T802）は破棄。
+凡例：P0＝提出に必須／P1＝P0 が動いてから順に／P2＝余力。見積はソロ実時間。Claude Code には「T0xx を prd.md / architecture.md / rules.md に従って実装して」と渡す。
 
-## 各Phaseのマージ前チェック
-推薦系フィールドなし／症状入力欄なし／緑・赤の可否色なし／判定ボタンなし／`NEXT_PUBLIC_` にキーなし／添付文書の文言・PDF・製品画像がリポ・seed・画面にない／`data/` がリポに入っていない
+## 各タスクのマージ前チェック
+推薦系フィールドなし／順位付け・量順ソートなし／緑・赤の可否色なし／判定ボタンなし／`NEXT_PUBLIC_` にキーなし／商品固有の添付文書本文・PDF・製品画像がリポ・seed・画面にない／`data/` がリポに入っていない／Claude 出力が guard を通っている／入力文がログに残らない
 
-## Phase 0 Setup
-- [x] **T001** P0 0.5h 【担当：ゆう／Mac の Claude Code】「ハコよみ」フォルダ内に `hakoyomi/` を新規作成し公開リポ（GitHub 32Lwk/hakoyomi）、create-next-app（TS/Tailwind/App Router/src、`@/*`）、docsコピー、`.gitignore`（`data/`・`*.zip`・`.env*`、`.env.example`は残す）、`.env.example`（ANTHROPIC_API_KEY / SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY / CLAUDE_MODEL / CLAUDE_MODEL_GUARD、NEXT_PUBLIC_禁止）、最小page（作品名【仮】＋「判断は販売者が行ってください」）、README（対象／やらないこと／データ方針／HITL） — 完了：localhost表示・build通過・docsあり・dataなし（2026-11-02 done、origin/main 04fe044）
-- [ ] **T002** P0 0.5h ESLint/Prettier/vitest、tsconfig strict、禁止語テスト雛形、`"typecheck": "next typegen && tsc --noEmit"`（tsc 単体だと `LayoutProps` 未定義で落ちるため） — 完了：`npm run lint && npm run typecheck && npm test` 通過
-- [ ] **T003** P0 0.5h Supabaseプロジェクト、migration（architecture §5、PIIカラムなし） — 完了：テーブル作成済み
-- [ ] **T004** P0 0.5h `.env.local`・Vercel連携（空デプロイ） — 完了：Vercel URLが開く
+## Day 0–1（11/2夜〜11/3）準備・調査・土台
+- [ ] **T000** P0 0.5h 【ゆう】都道府県の薬務課に設計を確認（逆引き・バッジ・質問回答が医療機器プログラムや広告規制に当たらないか）。問い合わせ文は Claude が下書き — 完了：回答を memory.md に記録
+- [ ] **T-R1** P0 0.5h 通知の権利確認：著作権法13条2号の条文（e-Gov）と厚労省サイトの利用規約を確認し prd §5 に出典を記録 — 完了：出典URLつきで prd Q3 クローズ
+- [ ] **T-R2** P0 1h 対象の薬効群を決めて通知の出典を確定：使用上の注意（mhlw.go.jp/content/001742612.pdf）の該当ページ、承認基準の効能・効果（かぜ薬・解熱鎮痛薬・鎮咳去痰薬・鼻炎用内服薬、眠気防止薬は承認基準なし）— 完了：薬効群ごとに出典URL・ページを memory.md に
+- [ ] **T-R3** P0 0.5h WADA 禁止表 2026年版（JADA 公開）から OTC に関わる成分を確認 — 完了：`doping_list.ts` の元表（成分・区分・年版・URL）
+- [x] **T001** P0 公開リポ・Next.js 足場（2026-11-02 done、origin/main 04fe044）
+- [ ] **T002** P0 0.5h ESLint/Prettier/vitest、tsconfig strict、`"typecheck": "next typegen && tsc --noEmit"` — 完了：`npm run lint && npm run typecheck && npm test` 通過
+- [ ] **T003** P0 0.5h Supabase プロジェクト、migration（architecture §5、PIIカラムなし） — 完了：テーブル作成済み
+- [ ] **T004** P0 0.5h `.env.local`・Vercel 連携（空デプロイ） — 完了：Vercel URL が開く
 
-## Phase 1 静的モックUI（固定JSON）
-- [ ] **T101** P0 2h 単一縦画面レイアウト（design §2）、shadcn/ui をここで導入（色は design.md トークン）、固定JSONで DiffTable / SourceAccordion / AbuseBanner / Checklist / ShelfCard — 完了：スマホ/PCで崩れない
-- [ ] **T102** P0 0.5h `uiCopy.ts` ホワイトリスト＋`JudgeNotice`（「判断は販売者が行ってください」常時表示） — 完了：画面文言が全てホワイトリスト由来
-- [ ] **T103′** P0 1h `JanCapture`（@zxing/browser でカメラJAN読取＋手入力＋品名検索）※旧CaptureBarを置換 — 完了：スマホでJAN読取、PCで手入力・品名検索
+## Day 1–2（11/3〜11/4）データと中核ロジック
+- [ ] **T101** P0 1.5h `scripts/notice`：通知PDF → テキスト → Claude で項目・本文・記載条件（条件式 JSON）に構造化 → zod 検証。対象は T-R2 の薬効群＋指定濫用防止（Ⅲ） — 完了：`notice_items` seed 案が出る
+- [ ] **T102** P0 1h 【ゆう】T101 の出力を通知原文と照らして検証・修正 — 完了：検証済み seed
+- [ ] **T103** P0 3h 【ゆう】デモ商品 20〜30品を入力（品名・メーカー・JAN・区分・薬効群・成分・分量・基準・内容量・PMDA URL・改訂日）。バッジの差が出る組み合わせを含める（抗ヒスタミンあり／なし、カフェイン量違い、8成分あり／なし、メチルエフェドリン等の禁止表成分）。Claude は候補の組み合わせを提案 — 完了：`products` / `product_facts` seed
+- [ ] **T104** P0 0.5h 架空1店舗の棚マップ（売場ブロック・棚・段・列）と、デモ商品の棚位置 — 完了：`mock_store.json`・`shelf_locations` seed
+- [ ] **T105** P0 2h `noticeRules.ts`（条件式の評価）＋`badges.ts`（バッジ導出）＋`abuse.ts`（8成分・数量）＋`doping.ts`＋テスト — 完了：デモ商品全件で期待どおりのバッジ（ゆうが実物の添付文書で確認した結果とテストで一致）
+- [ ] **T106** P0 0.5h `banwords.ts`＋`guard()`（regex）＋`uiCopy.ts`＋テスト — 完了：禁止語入りの文を差し止めるテストが緑
 
-## Phase 2 JAN→構造化（旧「単箱抽出」を置換）
-- [ ] **T201′** P0 1h `schema/product.ts`（zod。推薦欄なし・文言欄なし、項目ごとに出典欄名・添付文書改訂日・PMDA URL・uncertain・verified_by） — 完了：型生成
-- [ ] **T202′** P0 1.5h デモSKU選定（JAN特定済み97件から Claude が候補提案→ゆうが手元の箱で絞る。8成分あり／なし・基準表記違いの対比を含む10組、L-20261102-31）＋`catalog/janLookup.ts`（seed 参照＋PMDA GTIN/JANリダイレクトURL＝リンクアウト専用、コード定数） — 完了：デモJANで製品と出典URLが返る
-- [ ] **T203′** P0 2h `scripts/extract`（開発時・ローカルのみ）：ゆうが1件ずつ開いた添付文書から Claude tool use で事実だけ抽出 → zod検証 → ゆうが検証 → seed。入力文書は `data/`（非コミット）、出力に文言を含めない。`/api/jan` は seed を返す — 完了：デモSKUの成分・分量・基準量・内容量・区分・出典がJANで返り、文言がどこにも無い
-- [ ] **T601-min** P0 0.5h（前倒し）`banwords.ts`＋最小 regex `guard()`。rules §4-2「Claude出力は必ずguard経由」をPhase 2から守る — 完了：禁止語入り文字列を差し止めるテスト緑
-- [ ] **T204** P1 0.5h（廃止）実行時取得をしないためキャッシュ不要。`product_facts` seed で代替（L-20261102-28）
-- [ ] **T205** P1 1h（補助）箱写真OCR：JAN読めない時のみ品名候補を出す — 完了：主経路に影響なし
+## Day 2–3（11/4〜11/5）画面（P0）
+- [ ] **T201** P0 1.5h 画面の骨格：ヘッダの常時表示（JudgeNotice）、下部タブ（読む／比べる／さがす／棚）、中央の JAN ボタン、shadcn/ui 導入 — 完了：スマホ/PCで崩れない
+- [ ] **T202** P0 1h `JanScanner`（@zxing/browser＋手入力＋品名検索） — 完了：スマホでJAN読取、PCで手入力・品名検索
+- [ ] **T203** P0 1.5h `/api/jan`＋ProductCard／BadgeRow／BadgeSheet（根拠・出典・PMDAリンク） — 完了：読取から3秒以内にバッジ、タップで根拠
+- [ ] **T204** P0 1.5h `units.ts`＋`/api/compare`＋CompareTable（2〜4品、違う行だけ強調、バッジの差） — 完了：基準をそろえた差分が出る、並べ替えなし
+- [ ] **T205** P0 1h `/api/shelf`＋StoreMap／ShelfFront — 完了：選んだ商品（複数可）がマップと正面図でハイライト
 
-## Phase 3 2品アライン＋差分
-- [ ] **T301** P0 1.5h `units.ts` 基準量換算（1日量／○錠中）＋テスト — 完了：テスト緑
-- [ ] **T302** P0 2h `/api/compare` A/B、Claude名寄せ（実行時）、コードで換算・差分行 → guard — 完了：違う行のみ強調
-- [ ] **T303** P0 0.5h SourceAccordion（欄名・添付文書改訂日・PMDAリンク。文言・要約は出さない）＋値タップで出典表示 — 完了：全値に出典、文言が画面に無い
-- [ ] **T304** P0 0.5h 不確実値のグレー表示・差分除外 — 完了：低確信値が「添付文書で確認」
+## Day 4（11/6）Claude（P0）
+- [ ] **T301** P0 3h 質問エージェント `/api/ask`：tool use（`get_product_facts` `get_applicable_notice_items` `search_notice_text` `check_abuse` `check_doping`）→ 出典ID＋抜き出しの配列 → `verifyCitations`（原文と完全一致しない文を捨てる）→ guard（regex＋Claude自己検査）→ AskBox／AnswerQuote（段階表示つき） — 完了：よくある質問10問で、全回答に出典、言い換えなし、根拠なしは「該当する記載が見つかりません」
+- [ ] **T302** P0 2h 逆引き `/api/search`：自由入力 → Claude が効能・効果の語と成分条件に対応づけ（JSON）→ コードで絞り込み → 五十音順＋一致根拠 → guard。入力は保存しない — 完了：「鼻水」「眠くならないかぜ薬」「カフェインなし」で順位なしの一覧と根拠
+- [ ] **T303** P0 0.5h Claude 自己検査の guard 追加、差し止めログ（出力側のみ） — 完了：全 API 出力が guard 経由（grep で確認）
 
-## Phase 4 指定濫用照合＋チェック＋記録
-- [ ] **T401** P0 0.5h `abuse_ingredients.ts`（8成分＋水和物・塩類、外用剤除外、成分ごとの日数＝5日／7日の条件。出典＝告示第32号・第33号と適用通知、memory.md Glossary） — 完了：定数＋テスト（8成分一致、生薬主体フラグで対象外、同一成分2品で複数個）、出典URLあり
-- [ ] **T402** P0 1h 模擬手順書 `mock_sop.md`（確認項目＝医薬発1226第16号 第4-1(4) ア〜キ、各項目に出典）→`sop_items` seed — 完了：項目が順番どおりDBに
-- [ ] **T403** P0 2h `/api/rules` 対象成分照合（コード、生薬主体は対象外）＋seed の小容量／大容量と根拠を表示＋A/B同一指定成分なら複数個に該当と表示＋手順書項目を `order_no` 順（コード）、個数→複数個 — 完了：対象成分を含むデモSKUで対象・根拠成分表示、判定ボタンなし
-- [ ] **T404** P0 1h Checklist（判定ボタンなし）＋`/api/record` 販売記録作成支援（Claudeで下書き→guard。保存は項目・時刻・担当仮名のみ） — 完了：記録行がDBに、PIIカラムなし
+## Day 5（11/7）P1・公開
+- [ ] **T401** P1 2h 指定濫用防止の確認・記録（通知 第4-1(4) ア〜キの順、個数→複数、内容量→大容量）＋販売記録の下書き（Claude→guard） — 完了：記録行がDBに、PIIカラムなし、判定ボタンなし
+- [ ] **T402** P1 1h 「相談すること」確認リスト＋困ったときの行き先（医療機関・#7119 等の一般案内） — 完了：商品ごとに通知の「相談すること」由来の確認項目が出る
+- [ ] **T403** P1 1.5h ベテランの説明メモ（作成・表示、guard 経由） — 完了：メモが商品を読んだ画面に出る
+- [ ] **T501** P0 0.5h Vercel 本番、環境変数、簡易レート制限 — 完了：本番URLでスマホ/PC動作
 
-## Phase 5 棚
-- [ ] **T501** P0 1h `mock_shelf.json`（架空1店舗）【仮】seed＋`/api/shelf`＋ShelfCard — 完了：A/Bの棚番・段表示
+## Day 6（11/8 20:00 締切）仕上げ・提出
+- [ ] **T601** P0 1h 推薦ゼロ検査（デモの全出力を禁止語＋目視で検査）、バッジ正答率、速度の計測 — 完了：結果の表
+- [ ] **T602** P0 0.5h Claude なし版（キーワード検索だけ）との比較ログ — 完了：差を示せる
+- [ ] **T603** P0 2h 3分の台本（prd §12）・動画収録・書き出し — 完了：YouTube/Loom にアップ
+- [ ] **T604** P0 0.5h README（目的・対象・やらないこと・データ3層と出典・HITL）・プロジェクト概要・提出 — 完了：11/8 20:00 までに提出
 
-## Phase 6 禁止語ガード（本実装）
-- [ ] **T601** P0 0.5h T601-minを拡充＋テスト — 完了：禁止語リスト網羅
-- [ ] **T602** P0 1h Claude自己検査（因果表現）をguardに追加、ログ保存 — 完了：全API出力がguard経由（grepで確認）
-- [ ] **T603** P0 0.5h 推薦ゼロ検査スクリプト（10組の出力を一括検査） — 完了：0件レポート
+## P2（余力）
+- [ ] **T701** 箱写真OCR（JANが読めないときの補助）
+- [ ] **T702** 音声での質問
+- [ ] **T703** PC 2カラムの作り込み
 
-## Phase 7 Polish＋デモ
-- [ ] **T701** P0 1h デモSKU10組で抽出精度（Claude抽出 vs ゆう検証値）・秒数計測 — 完了：表にまとめる
-- [ ] **T702** P1 1h Claudeなし版（master単独＝分量なし）比較画面/ログ — 完了：差を示せる
-- [ ] **T703** P0 1h 裏側ログビュー（A/Bサブエージェント・照合・ガード） — 完了：デモ130–155秒で見せられる
-- [ ] **T704** P0 1.5h 180秒台本（prd §11）・動画 — 完了：書き出し済み
-- [ ] **T705** P1 0.5h 禁止パターン目視チェック（rules §5） — 完了：全OK
-
-## Phase 8 Deploy
-- [ ] **T801** P0 0.5h Vercel本番、環境変数、簡易レート制限 — 完了：本番URLでスマホ/PC動作
-- [ ] **T802** P0 0.5h README・提出物 — 完了：提出
-
-## データ方針（改訂 2026-11-02, L-20261102-28）
-- デモSKU：**実商品**（実名表示）。画面・seed・リポに載せるのは事実（品名・メーカー・JAN・リスク区分・成分名・分量・基準量・内容量）と出典（PMDA URL・欄名・添付文書改訂日）のみ。
-- 事実は開発時に、ゆうがPMDAの添付文書を1件ずつ開き、ローカルで Claude に抽出させ、ゆうが検証して seed 化。一括DL・クロール・実行時の自動取得はしない。
-- 添付文書の文言・PDF・製品画像はリポ・DB・公開URL・動画に載せない（文言は PMDA リンクアウトで登販が確認）。
-- `data/` と zip はコミットしない（.gitignore）。
-- `data/medicine_data_assets/` はローカル参照のみ（既存「Medicine Recommend System」由来・症状辞書含む）。使う列は master の品名・メーカー・JAN・分類・成分名・PMDA URL。効能文・用法・画像URL・症状辞書・safety・clinical・推薦ロジックは使わない。master は古い可能性があるため、分量等は最新の添付文書で確認する。
-- 客・担当者・手順書・棚は模擬。
-
-合計 P0 ≈ 27h。初日目標：Phase 0–2。
+合計 P0 ≈ 29h、P1 ≈ 4.5h。毎日の終わりに `main` をデプロイ可能に保つ。
