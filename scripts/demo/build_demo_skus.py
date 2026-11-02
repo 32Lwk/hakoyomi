@@ -257,6 +257,14 @@ SKUS = [
     ("med-07091", "med_07091", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
     ("med-04596", "med_04596", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
     ("med-00764", "med_00764", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    # 突き合わせ調査で条件がそろった7品（L-20261103-34）
+    ("med-01312", "med_01312", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-00723", "med_00723", "vitamin", "vitamin", ["ビタミン主薬製剤"]),
+    ("med-00520", "med_00520", "motion", "chinun", ["鎮暈薬"]),
+    ("med-00660", "med_00660", "motion", "chinun", ["鎮暈薬"]),
+    ("med-05074", "med_05074", "nasal", "tenbi", ["鼻炎用点鼻薬"]),
+    ("med-00085", "med_00085", "stomach", "ichoyaku", ["胃腸薬"]),
+    ("med-05338", "med_05338", "kampo", "kampo", ["漢方製剤"]),
 ]
 
 # 生薬を主たる有効成分とする製剤（指定濫用防止の対象外の判定、告示第32号）。漢方薬の種類と、胃腸薬・便秘薬の漢方処方（L-20261103-08）
@@ -280,6 +288,12 @@ DROWSY = [
 IMAGE_OVERRIDE = {
     "バファリンA": "https://images.yutok.dev/otc/bufferin-a.webp?v=3ac703b8",
     "新ブロン液エース": "https://images.yutok.dev/otc/shin-bron-ace.webp?v=682d0fcb",
+    # 品名に記号（「」・<>）があり簡易の対応表から引けない品。既存データの詳しい対応表（r2_medicine_image_mapping_detailed.json）の URL（L-20261103-34）
+    "アネロン「ニスキャップ」": "https://images.yutok.dev/otc/%E3%82%A2%E3%83%8D%E3%83%AD%E3%83%B3%E3%83%8B%E3%82%B9%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97.webp?v=4070c345",
+    "センパア・QT": "https://images.yutok.dev/otc/%E3%82%BB%E3%83%B3%E3%83%91%E3%82%A2QT.webp?v=771ace9d",
+    "ナザールαAR0.1%<季節性アレルギー専用>": "https://images.yutok.dev/otc/%E3%83%8A%E3%82%B6%E3%83%BC%E3%83%AB%CE%B1AR01%E5%AD%A3%E7%AF%80%E6%80%A7%E3%82%A2%E3%83%AC%E3%83%AB%E3%82%AE%E3%83%BC%E5%B0%82%E7%94%A8.webp?v=01b70fee",
+    "太田胃散A<錠剤>": "https://images.yutok.dev/otc/%E5%A4%AA%E7%94%B0%E8%83%83%E6%95%A3A%E9%8C%A0%E5%89%A4.webp?v=8f40c5c0",
+    "「クラシエ」漢方葛根湯加川きゅう辛夷エキス顆粒": "https://images.yutok.dev/otc/%E3%82%AF%E3%83%A9%E3%82%B7%E3%82%A8%E6%BC%A2%E6%96%B9%E8%91%9B%E6%A0%B9%E6%B9%AF%E5%8A%A0%E5%B7%9D%E3%81%8D%E3%82%85%E3%81%86%E8%BE%9B%E5%A4%B7%E3%82%A8%E3%82%AD%E3%82%B9%E9%A1%86%E7%B2%92.webp?v=1d1deb00",
 }
 
 # ゆうが実物の箱と PMDA で確認した日と品。確認済みの品は「出典が弱い値」（low）も差分とバッジに使う（L-20261103-02）。

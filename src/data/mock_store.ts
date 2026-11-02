@@ -588,6 +588,14 @@ export const MOCK_STORE = {
     { productId: "med-07091", shelfId: "10A-1", tier: 1, column: 4 },
     { productId: "med-04596", shelfId: "10A-1", tier: 1, column: 5 },
     { productId: "med-00764", shelfId: "10A-4", tier: 2, column: 1 },
+    // 突き合わせ調査で追加した7品（L-20261103-34）
+    { productId: "med-01312", shelfId: "10A-3", tier: 2, column: 1 },
+    { productId: "med-00723", shelfId: "10A-4", tier: 2, column: 2 },
+    { productId: "med-00520", shelfId: "6B-3", tier: 5, column: 8 },
+    { productId: "med-00660", shelfId: "6B-3", tier: 4, column: 5 },
+    { productId: "med-05074", shelfId: "8A-1", tier: 1, column: 3 },
+    { productId: "med-00085", shelfId: "8A-4", tier: 2, column: 6 },
+    { productId: "med-05338", shelfId: "6A-3", tier: 5, column: 7 },
   ] satisfies ShelfLocation[],
 };
 
