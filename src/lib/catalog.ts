@@ -1,7 +1,7 @@
 import "server-only";
 import { createClient } from "@supabase/supabase-js";
 import { DEMO_PRODUCTS, demoSku } from "@/data/demo_products";
-import { MOCK_STORE, type Shelf, type ShelfLocation } from "@/data/mock_store";
+import { MOCK_STORE, sectionAt, type Shelf, type ShelfLocation } from "@/data/mock_store";
 import { KAZE_GROUP, KAZE_ITEMS } from "@/data/notice_kaze";
 import {
   noticeGroupFromRow,
@@ -107,7 +107,8 @@ function locate(catalog: Catalog, productId: string): LocatedShelf | null {
   const loc = catalog.locations.find((l) => l.productId === productId);
   const shelf = loc && MOCK_STORE.shelves.find((s) => s.id === loc.shelfId);
   if (!loc || !shelf) return null;
-  return { ...loc, shelf, areaLabel: shelf.category };
+  // 1本を段で分け合う棚では、その段の売場名
+  return { ...loc, shelf, areaLabel: sectionAt(shelf, loc.tier).name };
 }
 
 export async function locationOf(productId: string): Promise<LocatedShelf | null> {

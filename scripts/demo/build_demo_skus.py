@@ -35,6 +35,28 @@ SKUS = [
     ("shin-bron-ace", "med_05458", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
     ("benza-block-cough", "med_05687", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
     ("drewell", "med_04904", "sleep", "suimin_kaizen", ["催眠鎮静薬"]),
+    # 追加21品（L-20261103-03）
+    ("pylon-pl-granule", "med_05904", "cold", "kaze_1", ["かぜ薬"]),
+    ("lulu-attack-nx", "med_05592", "cold", "kaze_1", ["かぜ薬"]),
+    ("shin-lulu-a-gold-s", "med_05448", "cold", "kaze_1", ["かぜ薬"]),
+    ("benza-block-s", "med_05690", "cold", "kaze_1", ["かぜ薬"]),
+    ("loxonin-s-premium", "med_00552", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("eve-quick-dx", "med_00194", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("bufferin-premium", "med_00320", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("calonal-a", "med_00588", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("excedrin-a", "med_00316", "fever", "genetsu_chintsu", ["解熱鎮痛薬"]),
+    ("stona-rhini-z-gel", "med_05119", "rhinitis", "bien_naifuku", ["鼻炎用内服薬"]),
+    ("algard-gold-z", "med_05026", "rhinitis", "bien_naifuku", ["鼻炎用内服薬"]),
+    ("colgen-film-alpha", "med_05111", "rhinitis", "bien_naifuku", ["鼻炎用内服薬"]),
+    ("jikinin-bien-ag", "med_05004", "rhinitis", "bien_naifuku", ["鼻炎用内服薬"]),
+    ("medicon-pro", "med_05638", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("mucodyne-pro500", "med_05648", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("pabron-s-cough", "med_05881", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("ss-bron-ace-tab", "med_05538", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("stona-kyotan", "med_06105", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("askuron", "med_07286", "cough", "chinga_kyotan", ["鎮咳去痰薬"]),
+    ("drewell-ex", "med_04905", "sleep", "suimin_kaizen", ["催眠鎮静薬"]),
+    ("dreamin-z", "med_04906", "sleep", "suimin_kaizen", ["催眠鎮静薬"]),
 ]
 
 # 通知の記載条件「抗ヒスタミン剤を含有する製剤」に当てるための成分群
@@ -54,8 +76,10 @@ IMAGE_OVERRIDE = {
     "新ブロン液エース": "https://images.yutok.dev/otc/shin-bron-ace.webp?v=682d0fcb",
 }
 
-# ゆうが実物の箱と PMDA で全品を確認した日。確認済みなので「出典が弱い値」（low）も差分とバッジに使う（L-20261103-02）
+# ゆうが実物の箱と PMDA で確認した日と品。確認済みの品は「出典が弱い値」（low）も差分とバッジに使う（L-20261103-02）。
+# L-20261103-03 の追加21品は未確認（verifiedOn=null、画面に「未確認」）
 VERIFIED_ON = "2026-11-03"
+VERIFIED = {sku[0] for sku in SKUS[:19]}
 
 RISK = {"第1類": "第1類", "指定第2類": "指定第2類", "第2類": "第2類", "第3類": "第3類"}
 
@@ -100,7 +124,7 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
                 "amountPerDay": amount,
                 "unit": unit,
                 # 量が見つからない・出典が弱い値は差分とバッジに使わない（rules §4-8）
-                "uncertain": amount is None or (norm(ingredient) in low and not VERIFIED_ON),
+                "uncertain": amount is None or (norm(ingredient) in low and sku_id not in VERIFIED),
             })
         skus.append({
             "id": sku_id,
@@ -122,7 +146,7 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
             "pmdaUrl": row["pmda添付文書URL"],
             "docRevisedOn": None,
             "enteredBy": "ゆう（既存データ）＋公開情報",
-            "verifiedOn": VERIFIED_ON,
+            "verifiedOn": VERIFIED_ON if sku_id in VERIFIED else None,
             "imageUrl": IMAGE_OVERRIDE.get(name) or images.get(name),
             "source": {"label": "添付文書を PMDA で開く", "url": row["pmda添付文書URL"]},
             "quotes": {"efficacy": None, "ingredients": ingredients, "dosage": None},

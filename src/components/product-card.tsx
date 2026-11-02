@@ -135,7 +135,7 @@ export function ProductCard({ view }: { view: ProductView }) {
             <MapPin className="size-5 shrink-0 text-primary" aria-hidden="true" />
             <span className="flex min-w-0 flex-1 flex-col">
               <span className="text-xs text-muted-foreground">
-                売場の場所（{location.areaLabel}）
+                売場の場所（{location.shelf.where}・{location.areaLabel}）
               </span>
               <span className="text-sm">
                 <span className="font-bold">{location.shelf.label}</span>　上から{location.tier}
