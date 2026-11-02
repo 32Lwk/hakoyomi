@@ -11,7 +11,7 @@ type Stack = {
   currentId: string | null;
   add: (id: string) => void;
   remove: (id: string) => void;
-  select: (id: string) => void;
+  select: (id: string | null) => void;
   clear: () => void;
   scannerOpen: boolean;
   setScannerOpen: (open: boolean) => void;

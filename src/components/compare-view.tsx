@@ -47,7 +47,9 @@ export function CompareView() {
     return (
       <div className="flex flex-col gap-4">
         <h1 className="text-lg font-bold">比べる商品を選ぶ</h1>
-        <p className="text-sm">{UI_COPY.needTwo}</p>
+        <p className="rounded-xl bg-muted p-3 text-sm">
+          {UI_COPY.needTwo}（いま {ids.length}品）
+        </p>
         <ProductPicker />
       </div>
     );
@@ -56,32 +58,52 @@ export function CompareView() {
 
   const { views, rows, badges } = data.data;
   const shownRows = onlyDiff ? rows.filter((r) => r.diff) : rows;
-  const cols = `5.5rem repeat(${views.length}, minmax(5.5rem, 1fr))`;
+  const diffCount = rows.filter((r) => r.diff).length + badges.filter((b) => b.diff).length;
+  const cols = `5rem repeat(${views.length}, minmax(7rem, 1fr))`;
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between gap-2">
-        <h1 className="text-lg font-bold">{views.length}品の違い</h1>
-        <button
-          type="button"
-          onClick={() => setOnlyDiff((v) => !v)}
-          aria-pressed={onlyDiff}
-          className={cn(
-            "min-h-10 rounded-md border-2 border-primary px-3 text-sm font-bold",
-            onlyDiff ? "bg-primary text-primary-foreground" : "bg-background text-primary",
-          )}
-        >
-          違う行だけ
-        </button>
+      <div className="flex items-end justify-between gap-3">
+        <div className="flex flex-col gap-0.5">
+          <h1 className="text-lg font-bold">{views.length}品の違い</h1>
+          <p className="text-sm">
+            違う項目
+            <span className="mx-1 rounded bg-diff px-1.5 text-base font-bold tabular-nums">
+              {diffCount}
+            </span>
+            ／ {rows.length + badges.length}
+          </p>
+        </div>
+        <div role="group" aria-label="表示する行" className="flex rounded-lg bg-muted p-1 text-sm">
+          {[
+            { on: false, label: UI_COPY.showAll },
+            { on: true, label: UI_COPY.showDiff },
+          ].map((o) => (
+            <button
+              key={o.label}
+              type="button"
+              onClick={() => setOnlyDiff(o.on)}
+              aria-pressed={onlyDiff === o.on}
+              className={cn(
+                "min-h-9 rounded-md px-3",
+                onlyDiff === o.on
+                  ? "bg-background font-bold text-primary shadow-sm"
+                  : "text-muted-foreground",
+              )}
+            >
+              {o.label}
+            </button>
+          ))}
+        </div>
       </div>
-      <p className="text-xs text-muted-foreground">
-        分量は1日最大量あたり。並びは読んだ順です。{UI_COPY.judgeNotice}
+      <p className="-mt-2 text-xs text-muted-foreground">
+        分量は1日最大量あたり。並びは読んだ順です
       </p>
 
       <Sheet open={pickerOpen} onOpenChange={setPickerOpen}>
         <SheetTrigger
           disabled={views.length >= 4}
-          className="flex min-h-12 items-center justify-center gap-2 rounded-lg border-2 border-dashed border-primary text-sm font-bold text-primary disabled:border-border disabled:text-muted-foreground"
+          className="order-last flex min-h-12 items-center justify-center gap-2 rounded-xl border-2 border-dashed border-primary text-sm font-bold text-primary disabled:border-border disabled:text-muted-foreground"
         >
           <Plus className="size-5" aria-hidden="true" />
           {views.length >= 4 ? UI_COPY.compareFull : `商品を追加（${views.length}/4品）`}
@@ -97,11 +119,11 @@ export function CompareView() {
         </SheetContent>
       </Sheet>
 
-      <div className="overflow-x-auto rounded-lg border border-border">
+      <div className="overflow-x-auto rounded-xl border border-border">
         <div
           role="table"
           aria-label="商品の比較"
-          style={{ minWidth: `${5.5 * (views.length + 1)}rem` }}
+          style={{ minWidth: `${5 + 7 * views.length}rem` }}
         >
           <div role="row" className="grid bg-muted text-sm" style={{ gridTemplateColumns: cols }}>
             <span

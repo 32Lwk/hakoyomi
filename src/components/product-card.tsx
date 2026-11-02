@@ -1,4 +1,5 @@
-import { ExternalLink, MapPin } from "lucide-react";
+import { ChevronRight, ExternalLink, FileText, MapPin } from "lucide-react";
+import Link from "next/link";
 import { BadgeRow } from "@/components/badges";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 import type { ProductView } from "@/lib/catalog";
@@ -10,67 +11,68 @@ function amount(value: number | null, unit: string | null): string {
   return `${Number.isInteger(value) ? value : value.toFixed(1)}${unit}`;
 }
 
+// 上から「何の商品か」→「確認ポイント」→「成分・分量」→「場所」→「添付文書」の順。店頭で聞かれる順に並べる
 export function ProductCard({ view }: { view: ProductView }) {
   const { product, badges, group, location, sku } = view;
   const image = packageImage(product.id, product.kind, product.name);
   return (
-    <article className="flex flex-col gap-4">
-      <header className="flex flex-col gap-1">
-        <h1 className="text-xl leading-snug font-bold">{product.name}</h1>
-        <p className="text-sm text-muted-foreground">
-          {product.maker}・JAN {product.jan}
-        </p>
-        <div className="mt-2 flex items-center gap-4">
-          <figure className="flex shrink-0 flex-col items-center gap-1">
-            {/* デモSKUはゆうが取得したパッケージ写真（L-40）、それ以外は種類のイメージ図（L-33） */}
-            <ProductImage
-              id={product.id}
-              kind={product.kind}
-              name={product.name}
-              size={96}
-              className="size-24 rounded-lg bg-muted p-1"
-            />
-            <figcaption className="text-[11px] text-muted-foreground">{image.caption}</figcaption>
-          </figure>
-          <dl className="grid flex-1 grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-sm">
-            <dt className="text-muted-foreground">区分</dt>
-            <dd>
-              <span className="rounded border border-foreground px-1.5 font-bold">
-                {product.riskClass}
-              </span>
-            </dd>
-            <dt className="text-muted-foreground">内容量</dt>
-            <dd className="font-bold">
-              {product.contentQty}
-              {product.contentUnit}
-            </dd>
-            <dt className="text-muted-foreground">1日最大</dt>
-            <dd>
-              {product.dailyMaxUnits}
-              {product.contentUnit}（{product.timesPerDay}回）
-            </dd>
-          </dl>
+    <article className="flex flex-col gap-5">
+      <header className="flex gap-4">
+        <figure className="flex shrink-0 flex-col items-center gap-1">
+          {/* デモSKUはゆうが取得したパッケージ写真（L-40）、それ以外は種類のイメージ図（L-33） */}
+          <ProductImage
+            id={product.id}
+            kind={product.kind}
+            name={product.name}
+            size={112}
+            className="size-28 rounded-xl bg-muted p-1.5"
+          />
+          <figcaption className="text-[10px] text-muted-foreground">{image.caption}</figcaption>
+        </figure>
+        <div className="flex min-w-0 flex-1 flex-col gap-1.5 pt-0.5">
+          <span className="self-start rounded border-2 border-primary px-1.5 text-xs font-bold text-primary">
+            {product.riskClass}
+          </span>
+          <h1 className="text-xl leading-snug font-bold">{product.name}</h1>
+          <p className="text-xs text-muted-foreground">
+            {product.maker}
+            <br />
+            JAN <span className="tabular-nums">{product.jan}</span>
+          </p>
         </div>
       </header>
 
+      <dl className="grid grid-cols-3 divide-x divide-border rounded-xl bg-muted text-center">
+        <Stat label="内容量" value={`${product.contentQty}${product.contentUnit}`} />
+        <Stat label="1日最大" value={`${product.dailyMaxUnits}${product.contentUnit}`} />
+        <Stat label="1日の回数" value={`${product.timesPerDay}回`} />
+      </dl>
+
       <BadgeRow badges={badges} group={group} />
 
+      {sku?.flags.drowsyMention && (
+        <p className="rounded-xl border border-border px-3 py-2.5 text-sm">
+          {UI_COPY.drowsyIngredient}
+        </p>
+      )}
+
       <section aria-labelledby="facts-title" className="flex flex-col gap-2">
-        <h2 id="facts-title" className="text-base font-bold">
-          成分・分量（1日最大量あたり）
+        <h2 id="facts-title" className="flex items-baseline justify-between text-base font-bold">
+          成分・分量
+          <span className="text-xs font-normal text-muted-foreground">1日最大量あたり</span>
         </h2>
-        <table className="w-full border-collapse overflow-hidden rounded-lg text-left">
-          <tbody>
+        <table className="w-full border-collapse text-left">
+          <tbody className="divide-y divide-border rounded-xl border border-border">
             {product.facts.map((f) => (
-              <tr key={f.ingredient} className="border-b border-border last:border-0">
-                <th scope="row" className="py-2 pr-2 text-sm font-normal">
+              <tr key={f.ingredient}>
+                <th scope="row" className="px-3 py-2.5 text-sm font-normal">
                   {f.ingredient}
                 </th>
-                <td className="py-2 text-right">
+                <td className="px-3 py-2.5 text-right">
                   {f.uncertain ? (
                     <span className="text-sm text-uncertain underline">{UI_COPY.uncertain}</span>
                   ) : (
-                    <span className="text-xl font-bold tabular-nums">
+                    <span className="text-xl font-bold whitespace-nowrap tabular-nums">
                       {amount(f.amountPerDay, f.unit)}
                     </span>
                   )}
@@ -79,12 +81,12 @@ export function ProductCard({ view }: { view: ProductView }) {
             ))}
           </tbody>
         </table>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-[11px] text-muted-foreground">
           出典：この商品の成分・分量（入力：{product.enteredBy}
           {product.verifiedOn ? `、確認日 ${product.verifiedOn}` : "、未確認"}）
         </p>
         {sku && !product.verifiedOn && sku.research.length > 0 && (
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[11px] text-muted-foreground">
             {UI_COPY.researchedFacts}：
             {sku.research.map((r, i) => (
               <span key={r.url}>
@@ -98,41 +100,55 @@ export function ProductCard({ view }: { view: ProductView }) {
         )}
       </section>
 
-      {sku?.flags.drowsyMention && (
-        <p className="rounded-lg border border-border px-3 py-2 text-sm">
-          {UI_COPY.drowsyIngredient}
-        </p>
-      )}
-
-      {location && (
-        <p className="flex items-center gap-2 rounded-lg bg-muted px-3 py-2 text-sm">
-          <MapPin className="size-4 text-primary" aria-hidden="true" />
-          <span>
-            {location.areaLabel}　<span className="font-bold">{location.shelf.label}</span>　上から
-            {location.tier}段目・左から{location.column}列目
-          </span>
-        </p>
-      )}
-
-      {product.pmdaUrl ? (
-        <section aria-labelledby="source-title" className="flex flex-col gap-1">
-          <h2 id="source-title" className="text-base font-bold">
-            効能・効果／用法・用量
-          </h2>
-          <p className="text-sm">{UI_COPY.linkOutText}</p>
+      <div className="flex flex-col divide-y divide-border overflow-hidden rounded-xl border border-border">
+        {location && (
+          <Link
+            href="/shelf"
+            className="flex min-h-14 items-center gap-3 px-3 py-2.5 active:bg-accent"
+          >
+            <MapPin className="size-5 shrink-0 text-primary" aria-hidden="true" />
+            <span className="flex min-w-0 flex-1 flex-col">
+              <span className="text-xs text-muted-foreground">
+                売場の場所（{location.areaLabel}）
+              </span>
+              <span className="text-sm">
+                <span className="font-bold">{location.shelf.label}</span>　上から{location.tier}
+                段目・左から{location.column}列目
+              </span>
+            </span>
+            <ChevronRight className="size-5 text-muted-foreground" aria-hidden="true" />
+          </Link>
+        )}
+        {product.pmdaUrl ? (
           <a
             href={product.pmdaUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-11 items-center gap-1 text-sm text-primary underline"
+            className="flex min-h-14 items-center gap-3 px-3 py-2.5 active:bg-accent"
           >
-            {sku?.source.label ?? "添付文書を PMDA で開く"}
-            <ExternalLink className="size-4" aria-hidden="true" />
+            <FileText className="size-5 shrink-0 text-primary" aria-hidden="true" />
+            <span className="flex min-w-0 flex-1 flex-col">
+              <span className="text-xs text-muted-foreground">効能・効果／用法・用量</span>
+              <span className="text-sm">{sku?.source.label ?? "添付文書を PMDA で開く"}</span>
+            </span>
+            <ExternalLink className="size-4 text-muted-foreground" aria-hidden="true" />
           </a>
-        </section>
-      ) : (
-        <p className="text-xs text-muted-foreground">{UI_COPY.demoProducts}</p>
+        ) : (
+          <p className="px-3 py-2.5 text-xs text-muted-foreground">{UI_COPY.demoProducts}</p>
+        )}
+      </div>
+      {product.pmdaUrl && (
+        <p className="-mt-3 text-[11px] text-muted-foreground">{UI_COPY.linkOutText}</p>
       )}
     </article>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex flex-col gap-0.5 px-2 py-2.5">
+      <dt className="text-[11px] text-muted-foreground">{label}</dt>
+      <dd className="text-lg font-bold tabular-nums">{value}</dd>
+    </div>
   );
 }

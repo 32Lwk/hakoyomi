@@ -110,7 +110,7 @@ export function BadgeRow({ badges, group }: { badges: Badge[]; group: NoticeGrou
             <>
               <SheetHeader>
                 <SheetTitle>{open.label} の根拠</SheetTitle>
-                <SheetDescription>{UI_COPY.judgeNotice}</SheetDescription>
+                <SheetDescription>通知・リストの該当箇所と出典</SheetDescription>
               </SheetHeader>
               <div className="flex flex-col gap-3 px-4 pb-6">
                 {open.evidence.map((e, i) => (

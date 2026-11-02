@@ -2,6 +2,15 @@
 
 ## Open
 
+### L-20261103-04
+- asked: 「判断は販売者が行ってください」の常時表示は不要。UI・UX が洗練されておらず、導線と利用体験が考えられていないので改善する（ゆう 2026-11-03）
+- why: 常時の帯が画面の上部を占め、店頭の数秒の操作で最初に目に入るのが商品ではなく固定文言になっている。ホームが品名ボタンの羅列で、読んだ後に「比べる」「棚」へ進む導線がない
+- target: src/components/{app-header,bottom-nav,read-view,product-card,compare-view,search-view,badges}.tsx、src/lib/guard/uiCopy.ts、src/app/layout.tsx、docs/{design,prd,rules,DESIGN-project,PROJECT}.md・README.md・../CLAUDE.md の HITL 常時表示の記述
+- owner: Claude Code（実装）／ゆう（見た目の確認）
+- status: done（ゆうの見た目確認待ち）
+- proof: typecheck・lint・vitest 89件 通過。スマホ幅（375px）で ホーム・商品・比べる・さがす を確認
+- notes: 推薦ゼロ・判定なしの方針は変えない（判定ボタン・自動判定は作らない）。消すのは常時表示の文言だけ。「この中から選ぶのは販売者です」（さがす）は残す。タブ「読む」は中央の「JANを読む」と紛らわしいので「商品」に改名。ホームに検索欄・写真つきの商品一覧・読んだ商品を置き、商品カードの下に「比べる」「棚で見る」の操作バーを常設する
+
 ### L-20261103-02
 - asked: デモSKU 19品を実物で確認済みにする。確認日は 2026-11-03。ストナリニSの分量（3成分）も確認済み（ゆう 2026-11-03）
 - why: L-40 の「ゆうの実物確認待ち」を解く。確認までは画面に「未確認」と出ていた

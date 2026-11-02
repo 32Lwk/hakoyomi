@@ -1,6 +1,5 @@
 // 画面の固定文言はここからだけ使う（rules §4-3）。src 全体の禁止語スキャンの対象
 export const UI_COPY = {
-  judgeNotice: "判断は販売者が行ってください",
   chooseNotice: "この中から選ぶのは販売者です",
   noticeDerived:
     "この商品の成分から導いた通知上の記載事項です。実際の添付文書は PMDA で確認してください",
@@ -14,6 +13,7 @@ export const UI_COPY = {
   dopingCheck: "最終確認は Global DRO 等で行ってください",
   mockNotice: "担当者・手順書・店舗・棚は模擬データです",
   demoData: "デモ（商品は実在・店舗は架空）",
+  demoShort: "デモ・店舗は架空",
   demoProducts: "この商品の添付文書へのリンクがありません。PMDA で品名から確認してください",
   linkOutText: "この商品の文面はアプリに載せていません。添付文書（PMDA）で確認してください",
   researchedFacts:
@@ -30,6 +30,16 @@ export const UI_COPY = {
   badgeHint: "タップで根拠を表示",
   addToCompare: "比べるに追加",
   compareFull: "比べられるのは4品までです。外してから追加してください",
+  scanLead: "箱のバーコードにカメラを向けます",
+  findPlaceholder: "品名・メーカー・JANで探す",
+  demoList: "デモ商品",
+  readList: "読んだ商品",
+  backToList: "商品一覧",
+  openShelf: "棚で見る",
+  readAnother: "比べる商品を読む",
+  noMatch: "該当する商品がありません",
+  showAll: "すべて",
+  showDiff: "違いだけ",
 } as const;
 
 export type UiCopyKey = keyof typeof UI_COPY;

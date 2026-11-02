@@ -14,7 +14,7 @@ const noto = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: "ハコよみ",
-  description: "登録販売者向けの店頭業務支援（説明の根拠をそろえるツール。判断は販売者が行います）",
+  description: "登録販売者向けの店頭業務支援（説明の根拠をそろえるツール）",
 };
 
 export const viewport: Viewport = {
