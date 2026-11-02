@@ -1,6 +1,11 @@
+"use client";
+
 import { ChevronRight, ExternalLink, FileText, MapPin } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 import { BadgeRow } from "@/components/badges";
+import { IngredientSheet } from "@/components/ingredient-sheet";
+import { ingredientRole } from "@/lib/ingredientRole";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 import type { ProductView } from "@/lib/catalog";
 import { ProductImage } from "@/components/product-image";
@@ -15,6 +20,7 @@ function amount(value: number | null, unit: string | null): string {
 export function ProductCard({ view }: { view: ProductView }) {
   const { product, badges, group, location, sku } = view;
   const image = packageImage(product.id, product.kind, product.name);
+  const [ingredient, setIngredient] = useState<string | null>(null);
   return (
     <article className="flex flex-col gap-5">
       <header className="flex gap-4">
@@ -59,16 +65,32 @@ export function ProductCard({ view }: { view: ProductView }) {
       <section aria-labelledby="facts-title" className="flex flex-col gap-2">
         <h2 id="facts-title" className="flex items-baseline justify-between text-base font-bold">
           成分・分量
-          <span className="text-xs font-normal text-muted-foreground">1日最大量あたり</span>
+          <span className="text-xs font-normal text-muted-foreground">
+            1日最大量あたり・タップで配合目的
+          </span>
         </h2>
-        <table className="w-full border-collapse text-left">
-          <tbody className="divide-y divide-border rounded-xl border border-border">
-            {product.facts.map((f) => (
-              <tr key={f.ingredient}>
-                <th scope="row" className="px-3 py-2.5 text-sm font-normal">
-                  {f.ingredient}
-                </th>
-                <td className="px-3 py-2.5 text-right">
+        {/* 成分名の下に、手引きの分類と配合目的。タップで原文と出典（L-20261103-05） */}
+        <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border">
+          {product.facts.map((f) => {
+            const role = ingredientRole(product.kind, f.ingredient);
+            return (
+              <li key={f.ingredient}>
+                <button
+                  type="button"
+                  onClick={() => setIngredient(f.ingredient)}
+                  className="flex w-full items-center gap-3 px-3 py-2.5 text-left active:bg-accent"
+                >
+                  <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                    <span className="text-sm">{f.ingredient}</span>
+                    {role ? (
+                      <span className="text-xs text-muted-foreground">
+                        <span className="font-bold text-accent-foreground">{role.group}</span>・
+                        {role.purpose}
+                      </span>
+                    ) : (
+                      <span className="text-xs text-muted-foreground">手引きに記載なし</span>
+                    )}
+                  </span>
                   {f.uncertain ? (
                     <span className="text-sm text-uncertain underline">{UI_COPY.uncertain}</span>
                   ) : (
@@ -76,11 +98,15 @@ export function ProductCard({ view }: { view: ProductView }) {
                       {amount(f.amountPerDay, f.unit)}
                     </span>
                   )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  <ChevronRight
+                    className="size-4 shrink-0 text-muted-foreground"
+                    aria-hidden="true"
+                  />
+                </button>
+              </li>
+            );
+          })}
+        </ul>
         <p className="text-[11px] text-muted-foreground">
           出典：この商品の成分・分量（入力：{product.enteredBy}
           {product.verifiedOn ? `、確認日 ${product.verifiedOn}` : "、未確認"}）
@@ -140,6 +166,12 @@ export function ProductCard({ view }: { view: ProductView }) {
       {product.pmdaUrl && (
         <p className="-mt-3 text-[11px] text-muted-foreground">{UI_COPY.linkOutText}</p>
       )}
+      <IngredientSheet
+        target={
+          ingredient ? { ingredient, products: [{ name: product.name, kind: product.kind }] } : null
+        }
+        onClose={() => setIngredient(null)}
+      />
     </article>
   );
 }

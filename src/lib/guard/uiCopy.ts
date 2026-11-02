@@ -40,6 +40,11 @@ export const UI_COPY = {
   noMatch: "該当する商品がありません",
   showAll: "すべて",
   showDiff: "違いだけ",
+  purposeTitle: "配合目的",
+  purposeHint: "成分名をタップで配合目的を表示",
+  tebikiPending: "手引きと照合待ち",
+  tebikiMissing:
+    "手引きのこの薬効群の項に、この成分の記載が見つかりません。添付文書（PMDA）で確認してください",
 } as const;
 
 export type UiCopyKey = keyof typeof UI_COPY;

@@ -1,3 +1,4 @@
+import { ingredientRole } from "@/lib/ingredientRole";
 import type { Badge } from "@/lib/rules/badges";
 import { normalizeName } from "@/lib/rules/normalize";
 import type { BadgeKind } from "@/lib/schema/notice";
@@ -14,6 +15,8 @@ export type CompareRow = {
   // 違う行だけ強調する。未検証の値がある行は差分に使わない
   diff: boolean;
   uncertain: boolean;
+  // 成分行だけ：手引きの成分の分類（解熱鎮痛成分など）。記載がなければ null
+  group?: string | null;
 };
 
 function amountText(amount: number | null, unit: string | null): string {
@@ -29,17 +32,24 @@ function rowFromCells(key: string, label: string, cells: Cell[]): CompareRow {
 }
 
 export function compareRows(products: Product[]): CompareRow[] {
-  // 成分の並びは、読んだ順の商品で最初に出てきた順
-  const order: { key: string; label: string }[] = [];
+  // 成分は手引きの分類ごとにまとめる（同じ目的の成分どうしを見比べるため）。
+  // 分類の並び・分類の中の並びは、読んだ順の商品で最初に出てきた順。分類のない成分は最後
+  const order: { key: string; label: string; group: string | null }[] = [];
   for (const product of products) {
     for (const fact of product.facts) {
       const key = normalizeName(fact.ingredient);
-      if (!order.some((o) => o.key === key)) order.push({ key, label: fact.ingredient });
+      if (order.some((o) => o.key === key)) continue;
+      const group = ingredientRole(product.kind, fact.ingredient)?.group ?? null;
+      order.push({ key, label: fact.ingredient, group });
     }
   }
+  const groups = [...new Set(order.map((o) => o.group))].sort(
+    (a, b) => Number(a === null) - Number(b === null),
+  );
+  const grouped = groups.flatMap((g) => order.filter((o) => o.group === g));
 
-  const ingredientRows = order.map(({ key, label }) =>
-    rowFromCells(
+  const ingredientRows = grouped.map(({ key, label, group }) => ({
+    ...rowFromCells(
       key,
       label,
       products.map((p): Cell => {
@@ -52,7 +62,8 @@ export function compareRows(products: Product[]): CompareRow[] {
         };
       }),
     ),
-  );
+    group,
+  }));
 
   const meta = [
     rowFromCells(
