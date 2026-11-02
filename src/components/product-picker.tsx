@@ -2,12 +2,13 @@
 
 import { Check, Plus, ScanBarcode } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type { ProductView } from "@/lib/catalog";
 import { UI_COPY } from "@/lib/guard/uiCopy";
-import { illustrationAlt, illustrationSrc, KIND_LABEL } from "@/lib/illustration";
+import { KIND_LABEL } from "@/lib/illustration";
 
 const MAX = 4;
 
@@ -75,12 +76,11 @@ export function ProductPicker({ onPicked }: { onPicked?: () => void }) {
                 }}
                 className="flex w-full items-center gap-3 rounded-lg border border-border p-2 text-left disabled:opacity-60"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
-                <img
-                  src={illustrationSrc(v.product.kind, "box")}
-                  alt={illustrationAlt(v.product.kind)}
-                  width={56}
-                  height={56}
+                <ProductImage
+                  id={v.product.id}
+                  kind={v.product.kind}
+                  name={v.product.name}
+                  size={56}
                   className="size-14 shrink-0 rounded-md bg-muted p-0.5"
                 />
                 <span className="flex min-w-0 flex-1 flex-col">

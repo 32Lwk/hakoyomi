@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
 import { Button } from "@/components/ui/button";
 import type { MockStore, Rect, Shelf, ShelfLocation } from "@/data/mock_store";
 import type { LocatedShelf } from "@/lib/catalog";
 import { UI_COPY } from "@/lib/guard/uiCopy";
-import { illustrationAlt, illustrationSrc } from "@/lib/illustration";
 import type { MedicineKind } from "@/lib/schema/product";
 import { cn } from "@/lib/utils";
 
@@ -68,12 +68,11 @@ export function ShelfView() {
         {numbered.map((item) => (
           <li key={item.id} className="flex items-center gap-3">
             <Marker no={item.no} />
-            {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
-            <img
-              src={illustrationSrc(item.kind, "box")}
-              alt={illustrationAlt(item.kind)}
-              width={40}
-              height={40}
+            <ProductImage
+              id={item.id}
+              kind={item.kind}
+              name={item.name}
+              size={40}
               className="size-10 shrink-0 rounded bg-muted p-0.5"
             />
             <span className="min-w-0 flex-1">
@@ -411,10 +410,12 @@ function ShelfFront({
                           }
                         >
                           {other ? (
-                            // eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG
-                            <img
-                              src={illustrationSrc(other.kind, "box")}
-                              alt=""
+                            <ProductImage
+                              id={other.productId}
+                              kind={other.kind}
+                              name={other.name}
+                              size={64}
+                              decorative
                               className={cn("size-full object-contain", !target && "opacity-35")}
                             />
                           ) : (

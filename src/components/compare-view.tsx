@@ -3,6 +3,7 @@
 import { Plus, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BadgeChip } from "@/components/badges";
+import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
 import { ProductPicker } from "@/components/product-picker";
 import {
@@ -16,7 +17,6 @@ import {
 import type { ProductView } from "@/lib/catalog";
 import type { BadgeRowCompare, CompareRow } from "@/lib/compare";
 import { UI_COPY } from "@/lib/guard/uiCopy";
-import { illustrationAlt, illustrationSrc } from "@/lib/illustration";
 import type { BadgeKind } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
 
@@ -117,12 +117,11 @@ export function CompareView() {
                 className="flex items-start gap-1 p-2 font-bold"
               >
                 <span className="flex flex-1 flex-col items-start gap-1">
-                  {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
-                  <img
-                    src={illustrationSrc(v.product.kind, "box")}
-                    alt={illustrationAlt(v.product.kind)}
-                    width={48}
-                    height={48}
+                  <ProductImage
+                    id={v.product.id}
+                    kind={v.product.kind}
+                    name={v.product.name}
+                    size={48}
                     className="size-12 rounded-md bg-background p-0.5"
                   />
                   <span className="text-sm leading-snug">{v.product.name}</span>

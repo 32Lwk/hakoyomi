@@ -4,6 +4,7 @@ import { checkAbuse } from "@/lib/rules/abuse";
 import { checkDoping } from "@/lib/rules/doping";
 import { normalizeName } from "@/lib/rules/normalize";
 import { applicableItems, convertedMg } from "@/lib/rules/noticeRules";
+import type { DemoSku } from "@/lib/schema/demoSku";
 import type { BadgeKind, NoticeItem } from "@/lib/schema/notice";
 import type { Product } from "@/lib/schema/product";
 
@@ -143,4 +144,29 @@ export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
   }
 
   return badges.sort((a, b) => ORDER.indexOf(a.kind) - ORDER.indexOf(b.kind));
+}
+
+export const LEGACY_DOPING_SOURCE = "既存データ（Medicine Recommend System）の禁止表区分・年版不明";
+
+// デモSKUは、成分照合ではなく既存データの「禁止物質あり」「競技会区分」を出す（L-40 ④）。
+// 照合で当たった成分があれば根拠に添え、なければ商品全体の区分として出す
+export function dopingBadgeFromSku(badges: Badge[], product: Product, sku: DemoSku): Badge[] {
+  const rest = badges.filter((b) => b.kind !== "doping");
+  if (!sku.flags.dopingRelated) return rest;
+  const listed = sku.flags.dopingClass ?? "区分不明";
+  const hits = checkDoping(product);
+  const ingredients = hits.length ? hits.map((h) => h.ingredient) : ["（成分の特定なし）"];
+  const badge: Badge = {
+    kind: "doping",
+    tone: "ingredient",
+    label: "禁止表成分（年版確認中）",
+    evidence: ingredients.map((ingredient) => ({
+      kind: "list",
+      list: "doping",
+      ingredient,
+      listed,
+      source: LEGACY_DOPING_SOURCE,
+    })),
+  };
+  return [...rest, badge].sort((a, b) => ORDER.indexOf(a.kind) - ORDER.indexOf(b.kind));
 }

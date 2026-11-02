@@ -1,6 +1,6 @@
 import "server-only";
 import { createClient } from "@supabase/supabase-js";
-import { DEMO_PRODUCTS } from "@/data/demo_products";
+import { DEMO_PRODUCTS, demoSku } from "@/data/demo_products";
 import { MOCK_STORE, type Shelf, type ShelfLocation } from "@/data/mock_store";
 import { KAZE_GROUP, KAZE_ITEMS } from "@/data/notice_kaze";
 import {
@@ -13,8 +13,9 @@ import {
   type ShelfLocationRow,
 } from "@/lib/db/rows";
 import { checkAbuse, type AbuseResult } from "@/lib/rules/abuse";
-import { deriveBadges, type Badge } from "@/lib/rules/badges";
+import { deriveBadges, dopingBadgeFromSku, type Badge } from "@/lib/rules/badges";
 import { normalizeName } from "@/lib/rules/normalize";
+import type { DemoSku } from "@/lib/schema/demoSku";
 import type { NoticeGroup, NoticeItem } from "@/lib/schema/notice";
 import type { Product } from "@/lib/schema/product";
 
@@ -132,17 +133,25 @@ export type ProductView = {
   abuse: AbuseResult;
   group: NoticeGroup | null;
   location: LocatedShelf | null;
+  sku: DemoSku | null;
 };
 
 export async function productViews(products: Product[]): Promise<ProductView[]> {
   const catalog = await getCatalog();
-  return products.map((product) => ({
-    product,
-    badges: deriveBadges(product, catalog.items),
-    abuse: checkAbuse(product),
-    group: catalog.groups.find((g) => g.id === product.noticeGroupId) ?? null,
-    location: locate(catalog, product.id),
-  }));
+  return products.map((product) => {
+    const sku = demoSku(product.id);
+    let badges = deriveBadges(product, catalog.items);
+    // デモSKUの禁止表バッジは既存データの区分で出す（L-40 ④）
+    if (sku) badges = dopingBadgeFromSku(badges, product, sku);
+    return {
+      product,
+      badges,
+      abuse: checkAbuse(product),
+      group: catalog.groups.find((g) => g.id === product.noticeGroupId) ?? null,
+      location: locate(catalog, product.id),
+      sku,
+    };
+  });
 }
 
 export async function productView(product: Product): Promise<ProductView> {

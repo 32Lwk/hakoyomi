@@ -35,7 +35,7 @@ flowchart LR
 |---|---|---|
 | Frontend | Next.js（App Router）+ TypeScript + Tailwind CSS + shadcn/ui | スマホ/PC両対応 |
 | JAN読取 | @zxing/browser＋手入力・品名検索 | iOS Safari含め安定 |
-| 商品データ | 実商品の事実 seed（ゆうが会期中に手入力・検証） | 事実のみ。本文・画像は持たない |
+| 商品データ | 実商品の事実 seed（`src/data/demoSkus.json`、L-40。ゆうが実物で検証） | 事実＋パッケージ写真のURL（images.yutok.dev）。本文は持たない |
 | 文面データ | 厚労省通知（使用上の注意 36薬効群＋指定濫用防止、承認基準の効能・効果） | 著作権法13条2号。出典URL・取得日つき |
 | ルール評価 | `noticeRules`（条件式を JSON で持ち、成分事実に当てはめる純関数） | 速い・テスト可能・揺れない |
 | Runtime AI | Claude API（tool use によるエージェント、逆引きの対応づけ、記録下書き、自己検査） | モデルは `.env` の `CLAUDE_MODEL`／`CLAUDE_MODEL_GUARD` |

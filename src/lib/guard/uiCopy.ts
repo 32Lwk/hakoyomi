@@ -13,8 +13,13 @@ export const UI_COPY = {
   diffRow: "この行の分量が異なります",
   dopingCheck: "最終確認は Global DRO 等で行ってください",
   mockNotice: "担当者・手順書・店舗・棚は模擬データです",
-  demoData: "デモ・架空データ",
-  demoProducts: "表示中の商品は画面確認用の架空品です（実在の商品ではありません）",
+  demoData: "デモ（商品は実在・店舗は架空）",
+  demoProducts: "この商品の添付文書へのリンクがありません。PMDA で品名から確認してください",
+  linkOutText: "この商品の文面はアプリに載せていません。添付文書（PMDA）で確認してください",
+  researchedFacts:
+    "分量・内容量は公開情報から入れた未確認の値です。実物の箱で確認してください。参照",
+  drowsyIngredient:
+    "眠気の注意につながる成分を含みます（抗ヒスタミン剤・鎮静成分・コデイン類など）。記載は添付文書（PMDA）で確認してください",
   invalidJan: "JANの桁数かチェックデジットが合いません。入力し直してください",
   readError: "読み取れませんでした。もう一度読むか、JANを入力してください",
   cameraUnavailable: "カメラを使えません。JANを入力するか、品名で検索してください",

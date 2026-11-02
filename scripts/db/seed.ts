@@ -1,5 +1,5 @@
 // src/data の静的データを Supabase に入れる（T003、開発時のみ）。何度流しても同じ状態になる。
-// いまは架空の商品・通知かぜ薬Ⅰの抜粋・架空店舗の棚位置。T102（検証済みの通知）・T103（実商品）で入れ替える。
+// いまはデモSKU（実商品、L-40）・通知かぜ薬Ⅰの抜粋・架空店舗の棚位置。T102（検証済みの通知）で入れ替える。
 //
 // 使い方：npm run db:seed（.env.local の SUPABASE_URL・SUPABASE_SERVICE_ROLE_KEY を使う）
 import { createClient } from "@supabase/supabase-js";
@@ -48,10 +48,12 @@ async function main() {
   check("product_facts（削除）", await db.from("product_facts").delete().in("product_id", ids));
   check("product_facts", await db.from("product_facts").insert(rows.flatMap((r) => r.facts)));
 
+  // JAN が確かめられず demoSkus.json から外した商品の棚位置は入れない
+  const locations = MOCK_STORE.locations.filter((l) => ids.includes(l.productId));
   check(
     "shelf_locations",
     await db.from("shelf_locations").upsert(
-      MOCK_STORE.locations.map((l) => ({
+      locations.map((l) => ({
         product_id: l.productId,
         store_id: MOCK_STORE.id,
         shelf_id: l.shelfId,
@@ -63,7 +65,7 @@ async function main() {
   );
 
   console.log(
-    `seed 完了：薬効群 ${groups.length}、通知項目 ${KAZE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${MOCK_STORE.locations.length}`,
+    `seed 完了：薬効群 ${groups.length}、通知項目 ${KAZE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${locations.length}`,
   );
 }
 

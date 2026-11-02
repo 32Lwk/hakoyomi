@@ -2,7 +2,8 @@ import { ExternalLink, MapPin } from "lucide-react";
 import { BadgeRow } from "@/components/badges";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 import type { ProductView } from "@/lib/catalog";
-import { illustrationAlt, illustrationSrc, KIND_LABEL } from "@/lib/illustration";
+import { ProductImage } from "@/components/product-image";
+import { packageImage } from "@/lib/packageImage";
 
 function amount(value: number | null, unit: string | null): string {
   if (value === null || unit === null) return "不明";
@@ -10,7 +11,8 @@ function amount(value: number | null, unit: string | null): string {
 }
 
 export function ProductCard({ view }: { view: ProductView }) {
-  const { product, badges, group, location } = view;
+  const { product, badges, group, location, sku } = view;
+  const image = packageImage(product.id, product.kind, product.name);
   return (
     <article className="flex flex-col gap-4">
       <header className="flex flex-col gap-1">
@@ -20,18 +22,15 @@ export function ProductCard({ view }: { view: ProductView }) {
         </p>
         <div className="mt-2 flex items-center gap-4">
           <figure className="flex shrink-0 flex-col items-center gap-1">
-            {/* 実物の写真は使わない（L-28）。種類のイメージ図（L-33） */}
-            {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
-            <img
-              src={illustrationSrc(product.kind, "box")}
-              alt={illustrationAlt(product.kind)}
-              width={96}
-              height={96}
+            {/* デモSKUはゆうが取得したパッケージ写真（L-40）、それ以外は種類のイメージ図（L-33） */}
+            <ProductImage
+              id={product.id}
+              kind={product.kind}
+              name={product.name}
+              size={96}
               className="size-24 rounded-lg bg-muted p-1"
             />
-            <figcaption className="text-[11px] text-muted-foreground">
-              {UI_COPY.illustration}（{KIND_LABEL[product.kind]}）
-            </figcaption>
+            <figcaption className="text-[11px] text-muted-foreground">{image.caption}</figcaption>
           </figure>
           <dl className="grid flex-1 grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-sm">
             <dt className="text-muted-foreground">区分</dt>
@@ -84,7 +83,26 @@ export function ProductCard({ view }: { view: ProductView }) {
           出典：この商品の成分・分量（入力：{product.enteredBy}
           {product.verifiedOn ? `、確認日 ${product.verifiedOn}` : "、未確認"}）
         </p>
+        {sku && !product.verifiedOn && sku.research.length > 0 && (
+          <p className="text-xs text-muted-foreground">
+            {UI_COPY.researchedFacts}：
+            {sku.research.map((r, i) => (
+              <span key={r.url}>
+                {i > 0 && "／"}
+                <a href={r.url} target="_blank" rel="noreferrer" className="underline">
+                  {r.label}
+                </a>
+              </span>
+            ))}
+          </p>
+        )}
       </section>
+
+      {sku?.flags.drowsyMention && (
+        <p className="rounded-lg border border-border px-3 py-2 text-sm">
+          {UI_COPY.drowsyIngredient}
+        </p>
+      )}
 
       {location && (
         <p className="flex items-center gap-2 rounded-lg bg-muted px-3 py-2 text-sm">
@@ -97,15 +115,21 @@ export function ProductCard({ view }: { view: ProductView }) {
       )}
 
       {product.pmdaUrl ? (
-        <a
-          href={product.pmdaUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex min-h-11 items-center gap-1 text-sm text-primary underline"
-        >
-          添付文書を PMDA で開く
-          <ExternalLink className="size-4" aria-hidden="true" />
-        </a>
+        <section aria-labelledby="source-title" className="flex flex-col gap-1">
+          <h2 id="source-title" className="text-base font-bold">
+            効能・効果／用法・用量
+          </h2>
+          <p className="text-sm">{UI_COPY.linkOutText}</p>
+          <a
+            href={product.pmdaUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-11 items-center gap-1 text-sm text-primary underline"
+          >
+            {sku?.source.label ?? "添付文書を PMDA で開く"}
+            <ExternalLink className="size-4" aria-hidden="true" />
+          </a>
+        </section>
       ) : (
         <p className="text-xs text-muted-foreground">{UI_COPY.demoProducts}</p>
       )}

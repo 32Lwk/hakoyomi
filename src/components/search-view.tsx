@@ -3,11 +3,11 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BadgeChip } from "@/components/badges";
+import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
 import { Input } from "@/components/ui/input";
 import type { ProductView } from "@/lib/catalog";
 import { UI_COPY } from "@/lib/guard/uiCopy";
-import { illustrationAlt, illustrationSrc } from "@/lib/illustration";
 import type { BadgeKind } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
 
@@ -97,12 +97,11 @@ export function SearchView() {
                 className="flex flex-col gap-2 rounded-lg border border-border p-3"
               >
                 <div className="flex items-center gap-3">
-                  {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
-                  <img
-                    src={illustrationSrc(v.product.kind, "box")}
-                    alt={illustrationAlt(v.product.kind)}
-                    width={56}
-                    height={56}
+                  <ProductImage
+                    id={v.product.id}
+                    kind={v.product.kind}
+                    name={v.product.name}
+                    size={56}
                     className="size-14 shrink-0 rounded-md bg-muted p-0.5"
                   />
                   <span className="flex min-w-0 flex-col">
