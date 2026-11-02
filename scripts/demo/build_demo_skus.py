@@ -48,24 +48,14 @@ DROWSY = [
     "メキタジン", "ケトチフェン", "ブロモバレリル尿素", "アリルイソプロピルアセチル尿素", "コデイン",
 ]
 
-# 画像URLの対応表で、品名と写っている商品が違うもの（目で確認、2026-11-02）。写真を出さずイメージ図にする
-IMAGE_MISMATCH = {
-    "ベンザブロックL錠",  # ベンザブロックトローチが写っている
-    "エスタックイブファインEX",  # イブA錠EX
-    "ナロンエース",  # ナロンm
-    "ドリエル",  # ドリエル ユアリズム DEEP（食品）
+# パッケージの外の文言・ロゴを切り抜いた新しい画像（ゆうが R2 に配置、L-20261103-01）。既存の対応表より優先する
+IMAGE_OVERRIDE = {
+    "バファリンA": "https://images.yutok.dev/otc/bufferin-a.webp?v=3ac703b8",
+    "新ブロン液エース": "https://images.yutok.dev/otc/shin-bron-ace.webp?v=682d0fcb",
 }
 
-# 禁止語（rules §4 の banwords）に当たる宣伝文が写っている写真。画像はガードを通せないのでイメージ図にする（L-40）
-IMAGE_AD_COPY = {
-    "ロキソニンS",  # 速く効く
-    "バファリンA",  # 早く効いて
-    "アレグラFX",  # しっかり効く
-    "アレジオン20",  # ずっと効く
-    "パブロン鼻炎速溶錠EX",  # 良く効く
-    "ストナリニS",  # 1日1〜2回で効く
-    "新ブロン液エース",  # 宣伝文はないが、他社（通販サイト）のロゴが写っている
-}
+# ゆうが実物の箱と PMDA で全品を確認した日。確認済みなので「出典が弱い値」（low）も差分とバッジに使う（L-20261103-02）
+VERIFIED_ON = "2026-11-03"
 
 RISK = {"第1類": "第1類", "指定第2類": "指定第2類", "第2類": "第2類", "第3類": "第3類"}
 
@@ -110,7 +100,7 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
                 "amountPerDay": amount,
                 "unit": unit,
                 # 量が見つからない・出典が弱い値は差分とバッジに使わない（rules §4-8）
-                "uncertain": amount is None or norm(ingredient) in low,
+                "uncertain": amount is None or (norm(ingredient) in low and not VERIFIED_ON),
             })
         skus.append({
             "id": sku_id,
@@ -132,8 +122,8 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
             "pmdaUrl": row["pmda添付文書URL"],
             "docRevisedOn": None,
             "enteredBy": "ゆう（既存データ）＋公開情報",
-            "verifiedOn": None,
-            "imageUrl": None if name in IMAGE_MISMATCH | IMAGE_AD_COPY else images.get(name),
+            "verifiedOn": VERIFIED_ON,
+            "imageUrl": IMAGE_OVERRIDE.get(name) or images.get(name),
             "source": {"label": "添付文書を PMDA で開く", "url": row["pmda添付文書URL"]},
             "quotes": {"efficacy": None, "ingredients": ingredients, "dosage": None},
             "flags": {

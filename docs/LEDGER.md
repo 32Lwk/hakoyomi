@@ -2,6 +2,24 @@
 
 ## Open
 
+### L-20261103-02
+- asked: デモSKU 19品を実物で確認済みにする。確認日は 2026-11-03。ストナリニSの分量（3成分）も確認済み（ゆう 2026-11-03）
+- why: L-40 の「ゆうの実物確認待ち」を解く。確認までは画面に「未確認」と出ていた
+- target: src/data/demoSkus.json の verifiedOn（19品）とストナリニSの facts[].uncertain、scripts/demo/build_demo_skus.py（作り直しても確認日が消えないように）
+- owner: ゆう（実物・PMDA の確認）／Claude Code（データ反映）
+- status: done
+- proof: npm run check
+- notes: 値の変更はなし（別の AI の調査で出た食い違い3品＝エスタックイブファインEX・アレグラFX・新ブロン液エースは、アプリの値が正しいとゆうが確認）。docRevisedOn（添付文書の改訂日）は出典つきで確認できていないため null のまま。AI 調査の「箱での確認日」「改訂日」「薬理作用の説明」は取り込まない
+
+### L-20261103-01
+- asked: 写真のない11品に画像を載せる（ゆう 2026-11-03）。バファリンA・新ブロン液エースは新しい画像（パッケージの外の文言・ロゴを切り抜きで落としたもの）、それ以外の9品は R2 の既存画像をそのまま使う
+- why: 写真のない品が多く、デモで実物と見比べにくい。ゆうの判断で、L-40 の除外（IMAGE_MISMATCH・IMAGE_AD_COPY）を9品について取り消す
+- target: scripts/demo/build_demo_skus.py の IMAGE_MISMATCH・IMAGE_AD_COPY、src/data/demoSkus.json の imageUrl
+- owner: Claude Code（データ反映）／ゆう（切り抜き画像2件の R2 アップロード）
+- status: done（2026-11-03。19品すべて写真あり）
+- proof: npm run check。バファリンA・新ブロン液エースは R2 の otc/bufferin-a.webp?v=3ac703b8・otc/shin-bron-ace.webp?v=682d0fcb（ゆうがアップロード）が切り抜いたファイルとバイト一致することを確認。build_demo_skus.py の IMAGE_OVERRIDE で既存の対応表より優先
+- notes: 切り抜き画像は `ハコよみ/edited_images/`（リポの外）。パッケージ本体には手を加えていない。Claude の確認（2026-11-03、キャッシュなしで再取得）：既存画像のうち4件は R2 上で別の商品（ベンザブロックトローチ・イブA錠EX・ナロンm・ドリエル ユアリズムDEEP）、5件は禁止語に当たる宣伝文入り。ゆうはこれを聞いたうえで既存画像を使うと決定
+
 ### L-20261102-40
 - asked: デモのリアリティのため、実医薬品名＋パッケージ画像＋出典（PMDAリンク）でデモSKU 8〜12件を載せる。架空のデモ品A〜Hは実品に置き換える（ゆう 2026-11-02）
 - why: 架空品では接客の場面が伝わらない。運営（Cerebral Valley Kai、Discord 2026-10-31 11:11）が「自分が権利を持つコンテンツから開始前に作ったデータ」を入力データに使うことについて「利用するデータは、既存のプロジェクトの禁止事項にあたらない」と回答（同 10:27「リポジトリ自体は新規である必要。コード自体がキックオフ後に開始されればOK」）。データは既存の Medicine Recommend System の資産（`otc_medicines_integrated.csv` 等。ゆうが手動で入手・撮影）
