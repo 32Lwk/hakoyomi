@@ -83,7 +83,7 @@ erDiagram
   sop_documents ||--o{ sop_items : "項目"
   checklist_sessions ||--o{ checklist_checks : "確認"
   sop_items ||--o{ checklist_checks : ""
-  products { uuid id PK; text jan; text name; text maker; text risk_class; text pmda_url; date doc_revised_on; }
+  products { uuid id PK; text jan; text name; text maker; text risk_class; text pmda_url; date doc_revised_on; bool crude_drug_main "生薬主体（ゆう判定）"; text capacity_class "small|large（告示第33号、ゆう判定）"; text capacity_basis "例: 7日分基準・内容量6日分"; }
   product_facts { uuid id PK; uuid product_id FK; text field "ingredient|content_qty|basis"; text ingredient; numeric amount; text unit; text basis; text source_field; bool uncertain; text verified_by; }
   shelf_locations { uuid id PK; uuid product_id FK; text store_id "mock-store-1"; text aisle; text shelf; int tier; }
   sop_documents { uuid id PK; text title; text source "mock-JACDS-style"; date version_date; text raw_text; }

@@ -4,7 +4,7 @@
 - title: Built with Claude Japan 2026
 - goal: 新規作品「ハコよみ」で参加。登録販売者向け・箱起点の業務支援（推薦なし）。説明の質を揃え、ベテランと新人の差をなくす
 - audience: Cerebral Valley / Anthropic 審査
-- deadline: キックオフ 2026-11-02 12:00 JST（イベント期間・提出要件は要確認）
+- deadline: 会期 2026-11-02 12:00〜2026-11-10 14:00 JST（公式 https://cerebralvalley.ai/e/built-with-claude-japan2026 ）。提出物・審査基準は公開ページに記載なし→Discord／キックオフ内容で確認（L-20261102-30）
 - hard constraints:
   - 最大2名・公開リポ必須・期間中実装のみ・新規制作のみ
   - 医療アドバイスを行うAIは禁止例。Discord回答済み(2026-11-02 Kai: HITLなしが禁止; OTC取扱い自体は問題にならない／岡本注意6点)。現行設計(推薦ゼロ・HITL・診断なし)でルール上OK。Won't厚め維持。個別作品の書面承認ではない

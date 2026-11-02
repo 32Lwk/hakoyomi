@@ -15,21 +15,21 @@
 - asked: BWC 提出締切・提出物要件・審査基準を公式ページで調査（prd Q5）
 - why: P0/P1 の配分を決めるため（ユーザー回答）
 - target: docs/PROJECT.md, docs/tasks.md
-- owner: Claude Code
-- status: open
-- proof:
-- notes:
+- owner: Claude Code → ゆう（Discord／キックオフ内容を共有）
+- status: open（公開情報は反映済み）
+- proof: https://cerebralvalley.ai/e/built-with-claude-japan2026（会期 11/2 12:00〜11/10 14:00 JST、チーム2名まで、審査員は近日発表）
+- notes: 提出物（動画尺・リポ・URL）・審査基準は公開ページに記載なし。ゆうが参加者向け情報を貼る（ユーザー回答）
+
+## Done
 
 ### L-20261102-29
 - asked: 指定濫用防止医薬品の対象成分・施行日・大容量の定義を厚労省の告示・通知原文で調査（memory Glossary、prd Q4、T401）
 - why: デモの核。根拠URL・日付つきで固定するため（ユーザー回答：Claude調査→ゆう確認）
 - target: docs/memory.md, docs/prd.md Q4, docs/tasks.md T401
 - owner: Claude Code → ゆう確認
-- status: open
-- proof:
-- notes:
-
-## Done
+- status: done（ゆう確認済み 2026-11-02）
+- proof: 令和8年2月13日 医薬発0213第1号（告示第32号）・医薬発0213第2号（告示第33号）・令和7年12月26日 医薬発1226第16号（いずれも原文PDFを読んで確認。掲載元 https://www.pref.toyama.jp/1208/kusuri/20260501.html）。docs/memory.md Glossary、prd M4/M5/Q3/Q4、tasks T401–T403、architecture products
+- notes: ユーザー決定：①確定して反映 ②生薬主体は seed に手で印を付け対象外表示 ③A/B同一指定成分は「複数個に該当」を根拠つきで表示（判定なし）④小容量／大容量は開発時にゆうが判定して seed ⑤模擬手順書の確認項目は通知ア〜キをそのまま使う（JACDS風は廃止）。厚労省ウェブマガジンは6成分のままの記載があるため参照しない
 
 ### L-20261102-28
 - asked: docs の食い違いを修正（Claude Code 全体確認の指摘 1〜8）＋実商品データ方針への転換
