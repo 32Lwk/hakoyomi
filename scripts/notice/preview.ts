@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { DEMO_PRODUCTS } from "@/data/demo_products";
 import { deriveBadges, NOTICE_BADGE_KINDS } from "@/lib/rules/badges";
+import { correctionsFor } from "@/lib/rules/labelCorrections";
 import { applicableItems } from "@/lib/rules/noticeRules";
 import { NoticeItem } from "@/lib/schema/notice";
 
@@ -53,6 +54,16 @@ function preview(groupId: string): string {
       detail.push(
         `- ${item.section} ${item.itemNo}${by}${flags.length ? ` 【${flags.join("・")}】` : ""}：${item.body}`,
       );
+    }
+    // 添付文書による補正（L-20261103-28）
+    for (const { correction: c, matched } of correctionsFor(product)) {
+      const what =
+        c.action === "remove"
+          ? `出さない：${c.itemIds.join("・")}`
+          : c.action === "add"
+            ? `足す：${c.section} 【バッジ ${c.badge}】${c.body}`
+            : `未収録：${c.kinds.join("・")}（${c.note}）`;
+      detail.push(`- 〔補正 ${c.id}〕${matched.length ? `（${matched.join("・")}）` : ""}${what}`);
     }
     detail.push("");
   }

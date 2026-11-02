@@ -66,7 +66,7 @@ export function ProductCard({ view }: { view: ProductView }) {
         />
       </dl>
 
-      <BadgeRow badges={badges} group={group} noticeLoaded={view.noticeLoaded} />
+      <BadgeRow badges={badges} group={group} unrecorded={view.unrecorded} />
 
       {sku?.flags.drowsyMention && (
         <p className="rounded-xl border border-border px-3 py-2.5 text-sm">
@@ -191,7 +191,7 @@ export function ProductCard({ view }: { view: ProductView }) {
 // 年齢は店頭で最初に確かめることが多いので、品名のすぐ下に大きく出す。押すと根拠（L-20261103-16）
 function AgeBand({ view }: { view: ProductView }) {
   const [open, setOpen] = useState(false);
-  const age = ageStatus(view.badges, view.noticeLoaded);
+  const age = ageStatus(view.badges, view.unrecorded);
   return (
     <>
       <button

@@ -621,7 +621,9 @@
       },
       {
         "ingredient": "ヨウ化イソプロパミド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 6,
         "unit": "mg",
         "uncertain": false
@@ -1246,7 +1248,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.6,
         "unit": "mg",
         "uncertain": false
@@ -1348,7 +1352,9 @@
       },
       {
         "ingredient": "ダツラエキス",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 24,
         "unit": "mg",
         "uncertain": false
@@ -1761,7 +1767,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.3,
         "unit": "mg",
         "uncertain": false
@@ -1892,7 +1900,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.3,
         "unit": "mg",
         "uncertain": false
@@ -2007,7 +2017,9 @@
       },
       {
         "ingredient": "ヨウ化イソプロパミド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 6,
         "unit": "mg",
         "uncertain": false
@@ -2574,7 +2586,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.4,
         "unit": "mg",
         "uncertain": false
@@ -2674,7 +2688,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.6,
         "unit": "mg",
         "uncertain": false
@@ -2750,7 +2766,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.39,
         "unit": "mg",
         "uncertain": false
@@ -4636,7 +4654,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.6,
         "unit": "mg",
         "uncertain": false
@@ -4727,7 +4747,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.399,
         "unit": "mg",
         "uncertain": false
@@ -4816,7 +4838,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.4,
         "unit": "mg",
         "uncertain": false
@@ -6316,7 +6340,9 @@
       },
       {
         "ingredient": "ロートエキス",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 60,
         "unit": "mg",
         "uncertain": false
@@ -6920,7 +6946,9 @@
       },
       {
         "ingredient": "ロートエキス",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 33,
         "unit": "mg",
         "uncertain": false
@@ -11060,7 +11088,9 @@
       },
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.3,
         "unit": "mg",
         "uncertain": false
@@ -11167,7 +11197,9 @@
       },
       {
         "ingredient": "ヨウ化イソプロパミド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 6,
         "unit": "mg",
         "uncertain": false
@@ -12001,7 +12033,9 @@
       },
       {
         "ingredient": "ヨウ化イソプロパミド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 6,
         "unit": "mg",
         "uncertain": false
@@ -13105,7 +13139,9 @@
     "facts": [
       {
         "ingredient": "ベラドンナ総アルカロイド",
-        "ingredientClasses": [],
+        "ingredientClasses": [
+          "副交感神経遮断剤"
+        ],
         "amountPerDay": 0.2,
         "unit": "mg",
         "uncertain": false

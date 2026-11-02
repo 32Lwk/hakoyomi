@@ -5,6 +5,8 @@ export const UI_COPY = {
   chooseNotice: "この中から選ぶのは販売者です",
   noticeDerived:
     "この商品の成分から導いた通知上の記載事項です。実際の添付文書は PMDA で確認してください",
+  labelCorrected:
+    "通知の記載条件には当たらないが、この商品の添付文書に同じ趣旨の記載があるため表示（添付文書による補正）",
   noEvidence: "該当する記載が見つかりません。添付文書（PMDA）で確認してください",
   blocked: "表示できない表現が含まれたため省略しました",
   uncertain: "添付文書で確認",

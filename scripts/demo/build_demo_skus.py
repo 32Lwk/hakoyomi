@@ -192,6 +192,8 @@ ANTIHISTAMINES = [
     "クロルフェニラミン", "クレマスチン", "ジフェンヒドラミン", "カルビノキサミン",
     "フェキソフェナジン", "エピナスチン", "メキタジン", "ケトチフェン",
 ]
+# 通知の記載条件「副交感神経遮断剤を含有する製剤」に当てるための成分（手引きの抗コリン成分と、ベラドンナアルカロイドを含む生薬、L-20261103-28）
+PARASYMPATHOLYTICS = ["ベラドンナ総アルカロイド", "ヨウ化イソプロパミド", "ダツラエキス", "ロートエキス"]
 # 眠気の注意につながる成分（抗ヒスタミン剤の一部・鎮静成分・コデイン類）。成分名の照合だけ
 DROWSY = [
     "クロルフェニラミン", "クレマスチン", "ジフェンヒドラミン", "カルビノキサミン", "エピナスチン",
@@ -262,7 +264,8 @@ def main(catalog_path: str, images_path: str, out_path: str, *research_paths: st
             amount, unit = (hit[1], hit[2]) if hit and hit[1] is not None else (None, None)
             facts.append({
                 "ingredient": ingredient,
-                "ingredientClasses": ["抗ヒスタミン剤"] if any(a in ingredient for a in ANTIHISTAMINES) else [],
+                "ingredientClasses": (["抗ヒスタミン剤"] if any(a in ingredient for a in ANTIHISTAMINES) else [])
+                + (["副交感神経遮断剤"] if any(a in ingredient for a in PARASYMPATHOLYTICS) else []),
                 "amountPerDay": amount,
                 "unit": unit,
                 # 量が見つからない・出典が弱い値は差分とバッジに使わない（rules §4-8）

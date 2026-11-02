@@ -1,0 +1,465 @@
+{
+  "group": {
+    "id": "bien_naifuku",
+    "name": "鼻炎用内服薬",
+    "sourceUrl": "https://www.mhlw.go.jp/content/001742612.pdf",
+    "sourcePage": 120,
+    "fetchedOn": "2026-11-02"
+  },
+  "items": [
+    {
+      "id": "bien_naifuku-ng-1",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "1.",
+      "body": "次の人は服用しないこと",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-ng-1-1",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "1.(1)",
+      "body": "本剤又は本剤の成分によりアレルギー症状を起こしたことがある人．",
+      "condition": {
+        "hasIngredient": [
+          "メキタジン",
+          "プソイドエフェドリン塩酸塩",
+          "プソイドエフェドリン硫酸塩"
+        ]
+      },
+      "conditionText": "メキタジン，プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-ng-1-2",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "1.(2)",
+      "body": "１５歳未満の小児．",
+      "condition": {
+        "hasIngredient": [
+          "プロメタジン塩酸塩",
+          "プロメタジンメチレン二サリチル酸塩"
+        ]
+      },
+      "conditionText": "プロメタジン塩酸塩又はプロメタジンメチレン二サリチル酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "badge": "under15",
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-ng-1-3",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "1.(3)",
+      "body": "次の症状のある人． 前立腺肥大による排尿困難",
+      "condition": {
+        "hasIngredient": [
+          "プソイドエフェドリン塩酸塩",
+          "プソイドエフェドリン硫酸塩"
+        ]
+      },
+      "conditionText": "プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-ng-1-4",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "1.(4)",
+      "body": "次の診断を受けた人． 高血圧，心臓病，甲状腺機能障害，糖尿病",
+      "condition": {
+        "hasIngredient": [
+          "プソイドエフェドリン塩酸塩",
+          "プソイドエフェドリン硫酸塩"
+        ]
+      },
+      "conditionText": "プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-ng-2",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "2.",
+      "body": "本剤を服用している間は，次のいずれの医薬品も使用しないこと 他の鼻炎用内服薬，抗ヒスタミン剤を含有する内服薬等（かぜ薬，鎮咳去痰薬，乗物酔い薬，アレルギー用薬等），胃腸鎮痛鎮痙薬１）",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "１）は，副交感神経遮断剤を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-ng-3-1",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "3.1)",
+      "body": "服用後，乗物又は機械類の運転操作をしないこと（眠気等があらわれることがある．）",
+      "condition": {
+        "not": {
+          "hasClass": [
+            "副交感神経遮断剤"
+          ]
+        }
+      },
+      "conditionText": "１）は，副交感神経遮断剤を含有しない製剤に，２）は，副交感神経遮断剤を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "badge": "drive",
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-ng-3-2",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "3.2)",
+      "body": "服用後，乗物又は機械類の運転操作をしないこと（眠気や目のかすみ，異常なまぶしさ等の症状があらわれることがある．）",
+      "condition": {
+        "hasClass": [
+          "副交感神経遮断剤"
+        ]
+      },
+      "conditionText": "１）は，副交感神経遮断剤を含有しない製剤に，２）は，副交感神経遮断剤を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "badge": "drive",
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-ng-4",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "4.",
+      "body": "授乳中の人は本剤を服用しないか，本剤を服用する場合は授乳を避けること（母乳に移行して乳児の脈が速くなることがある．）",
+      "condition": {
+        "hasIngredient": [
+          "ジフェンヒドラミン塩酸塩",
+          "ジフェンヒドラミンサリチル酸塩",
+          "タンニン酸ジフェンヒドラミン",
+          "ロートエキス"
+        ]
+      },
+      "conditionText": "ジフェンヒドラミン塩酸塩，ジフェンヒドラミンサリチル酸塩，タンニン酸ジフェンヒドラミン又はロートエキスを含有する製剤に記載すること． ただし，（ ）内はロートエキスを含有する製剤にのみ記載すること．",
+      "excludedBy": [],
+      "badge": "breastfeeding",
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-ng-5",
+      "groupId": "bien_naifuku",
+      "section": "してはいけないこと",
+      "itemNo": "5.",
+      "body": "長期連用しないこと",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-1",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.",
+      "body": "次の人は服用前に医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-1-1",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(1)",
+      "body": "医師の治療を受けている人．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-1-2",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(2)",
+      "body": "妊婦又は妊娠していると思われる人．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-1-3",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(3)",
+      "body": "授乳中の人．",
+      "condition": {
+        "any": [
+          {
+            "hasIngredient": [
+              "メキタジン",
+              "dl－メチルエフェドリン塩酸塩",
+              "l－メチルエフェドリン塩酸塩",
+              "トリプロリジン塩酸塩水和物",
+              "プソイドエフェドリン塩酸塩",
+              "プソイドエフェドリン硫酸塩"
+            ]
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "安息香酸ナトリウムカフェイン",
+                "無水カフェイン",
+                "カフェイン水和物"
+              ],
+              "as": "無水カフェイン",
+              "value": 100,
+              "unit": "mg",
+              "per": "1回"
+            }
+          }
+        ]
+      },
+      "conditionText": "メキタジン，dl－メチルエフェドリン塩酸塩，l－メチルエフェドリン塩酸塩，トリプロリジン塩酸塩水和物，プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に記載すること． また，安息香酸ナトリウムカフェイン，無水カフェイン又はカフェイン水和物を無水カフェインとして１回分量１００ｍｇ以上を含有する製剤に記載すること． ただし，「してはいけないこと」の４．を記載した製剤にあっては記載しない．",
+      "excludedBy": [
+        "bien_naifuku-ng-4"
+      ],
+      "badge": "breastfeeding",
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-1-4",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(4)",
+      "body": "高齢者．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-1-5",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(5)",
+      "body": "薬などによりアレルギー症状を起こしたことがある人．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-1-6",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(6)",
+      "body": "かぜ薬，鎮咳去痰薬，鼻炎用内服薬等により，不眠，めまい，脱力感，震え，動悸を起こしたことがある人．",
+      "condition": {
+        "hasIngredient": [
+          "プソイドエフェドリン塩酸塩",
+          "プソイドエフェドリン硫酸塩"
+        ]
+      },
+      "conditionText": "プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-1-7",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(7)",
+      "body": "次の症状のある人． 高熱，排尿困難，むくみ１）",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "１）は，グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-sd-1-8",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(8)",
+      "body": "次の診断を受けた人． 緑内障，糖尿病１），甲状腺機能障害１），心臓病１）２）３），高血圧１）２），腎臓病２）４）",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "１）は，フェニレフリン塩酸塩，dl－メチルエフェドリン塩酸塩，l－メチルエフェドリン塩酸塩又はメトキシフェナミン塩酸塩を含有する製剤に， ２）は，グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に， ３）は，副交感神経遮断剤を含有する製剤に， ４）は，プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に記載すること． ただし，「してはいけないこと」の１．の（４）に「高血圧，心臓病，甲状腺機能障害，糖尿病」を記載した製剤にあっては「高血圧，心臓病，甲状腺機能障害，糖尿病」を記載しない．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-sd-1-9",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "1.(9)",
+      "body": "モノアミン酸化酵素阻害剤（セレギリン塩酸塩等）で治療を受けている人．",
+      "condition": {
+        "hasIngredient": [
+          "プソイドエフェドリン塩酸塩",
+          "プソイドエフェドリン硫酸塩"
+        ]
+      },
+      "conditionText": "プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-sd-2",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "2.",
+      "body": "服用後，次の症状があらわれた場合は副作用の可能性があるので，直ちに服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること 関係部位 症 状 皮 膚 発疹・発赤，かゆみ 消化器 吐き気・嘔吐，食欲不振 精神神経系 めまい１），不眠１），神経過敏１），頭痛２），けいれん１） 泌尿器 排尿困難 その他 顔のほてり２），異常なまぶしさ２） まれに下記の重篤な症状が起こることがある．その場合は直ちに医師の診療を受けること． 症状の名称 症 状 ショック（アナフィラキシー）１）５） 服用後すぐに，皮膚のかゆみ，じんましん，声のかすれ，くしゃみ，のどのかゆみ，息苦しさ，動悸，意識の混濁等があらわれる． 肝機能障害５） 発熱，かゆみ，発疹，黄疸（皮膚や白目が黄色くなる），褐色尿，全身のだるさ，食欲不振等があらわれる． 偽アルドステロン症，ミオパチー２） 手足のだるさ，しびれ，つっぱり感やこわばりに加えて，脱力感，筋肉痛があらわれ，徐々に強くなる． 再生不良性貧血３） 青あざ，鼻血，歯ぐきの出血，発熱，皮膚や粘膜が青白くみえる，疲労感，動悸，息切れ，気分が悪くなりくらっとする，血尿等があらわれる． 無顆粒球症３） 突然の高熱，さむけ，のどの痛み等があらわれる． 悪性症候群４） 高熱，発汗，ぼやっとする，手足の震え，身体のこわばり，話しづらい，よだれが出る，飲み込みにくい，脈が速くなる，呼吸数増加，血圧上昇等があらわれる． 血小板減少５） 血液中の成分である血小板の数が減ることにより，鼻血，歯ぐきからの出血，青あざ等の出血症状があらわれる． 急性汎発性発疹性膿疱症６） 高熱，皮膚の広範囲の発疹・発赤，赤くなった皮膚上に小さなブツブツ（小膿疱）が出る，全身がだるい，食欲がない等が持続したり，急激に悪化する.",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "１）は，プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に， ２）は，副交感神経遮断剤を含有する製剤に記載すること． １）は，クロルフェニラミンマレイン酸塩・ベラドンナ総アルカロイド・プソイドエフェドリン塩酸塩・カフェイン又はクロルフェニラミンマレイン酸塩・ベラドンナ総アルカロイド・プソイドエフェドリン硫酸塩・カフェインを含有する製剤に， ２）は，グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に， ３）は，dl－（d－）クロルフェニラミンマレイン酸塩を含有する製剤に， ４）は，プロメタジン塩酸塩を含有する製剤に， ５）は，メキタジンを含有する製剤に， ６）は，プソイドエフェドリン塩酸塩又はプソイドエフェドリン硫酸塩を含有する製剤に記載すること.",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-sd-3",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "3.",
+      "body": "服用後，次の症状があらわれることがあるので，このような症状の持続又は増強が見られた場合には，服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること 口のかわき，眠気，便秘１），目のかすみ１）",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "１）は，副交感神経遮断剤を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-sd-4",
+      "groupId": "bien_naifuku",
+      "section": "相談すること",
+      "itemNo": "4.",
+      "body": "５～６日間服用しても症状がよくならない場合は服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-etc-sonota",
+      "groupId": "bien_naifuku",
+      "section": "その他",
+      "itemNo": "その他の注意",
+      "body": "母乳が出にくくなることがある．",
+      "condition": {
+        "hasIngredient": [
+          "ロートエキス"
+        ]
+      },
+      "conditionText": "ロートエキスを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "badge": "breastfeeding",
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-etc-youho-1",
+      "groupId": "bien_naifuku",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(1)",
+      "body": "小児に服用させる場合には，保護者の指導監督のもとに服用させること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "小児の用法及び用量がある場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-etc-youho-2-1",
+      "groupId": "bien_naifuku",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)1)",
+      "body": "３歳以上の幼児に服用させる場合には，薬剤がのどにつかえることのないよう，よく注意すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "５歳未満の幼児の用法がある錠剤（発泡錠を除く）・丸剤・軟カプセル剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-etc-youho-2-2",
+      "groupId": "bien_naifuku",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)2)",
+      "body": "２歳未満の乳幼児には，医師の診療を受けさせることを優先し，止むを得ない場合にのみ服用させること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "２歳未満の乳幼児の用法を有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-etc-hokan-1",
+      "groupId": "bien_naifuku",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(1)",
+      "body": "直射日光の当たらない（湿気の少ない）涼しい所に（密栓して）保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "（ ）内は必要とする場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "bien_naifuku-etc-hokan-2",
+      "groupId": "bien_naifuku",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(2)",
+      "body": "小児の手の届かない所に保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "bien_naifuku-etc-hokan-3",
+      "groupId": "bien_naifuku",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(3)",
+      "body": "他の容器に入れ替えないこと（誤用の原因になったり品質が変わる．）．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "容器等の個々に至適表示がなされていて，誤用のおそれのない場合には記載しなくてもよい．",
+      "excludedBy": [],
+      "needsReview": true
+    }
+  ]
+}

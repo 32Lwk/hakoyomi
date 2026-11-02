@@ -2,7 +2,7 @@ import "server-only";
 import { createClient } from "@supabase/supabase-js";
 import { DEMO_PRODUCTS, demoSku } from "@/data/demo_products";
 import { MOCK_STORE, sectionAt, type Shelf, type ShelfLocation } from "@/data/mock_store";
-import { KAZE_GROUP, KAZE_ITEMS } from "@/data/notice_kaze";
+import { NOTICE_GROUPS, NOTICE_ITEMS } from "@/data/notices";
 import {
   noticeGroupFromRow,
   noticeItemFromRow,
@@ -13,10 +13,10 @@ import {
   type ShelfLocationRow,
 } from "@/lib/db/rows";
 import { checkAbuse, type AbuseResult } from "@/lib/rules/abuse";
-import { deriveBadges, dopingBadgeFromSku, type Badge } from "@/lib/rules/badges";
+import { deriveBadges, dopingBadgeFromSku, unrecordedKinds, type Badge } from "@/lib/rules/badges";
 import { normalizeName } from "@/lib/rules/normalize";
 import type { DemoSku } from "@/lib/schema/demoSku";
-import type { NoticeGroup, NoticeItem } from "@/lib/schema/notice";
+import type { BadgeKind, NoticeGroup, NoticeItem } from "@/lib/schema/notice";
 import type { Product } from "@/lib/schema/product";
 
 // データの読み出し口。SUPABASE_URL があれば Supabase（T003）から、なければ src/data の静的データから読む。
@@ -31,8 +31,8 @@ type Catalog = {
 
 const STATIC_CATALOG: Catalog = {
   products: DEMO_PRODUCTS,
-  groups: [KAZE_GROUP],
-  items: KAZE_ITEMS,
+  groups: NOTICE_GROUPS,
+  items: NOTICE_ITEMS,
   locations: MOCK_STORE.locations,
 };
 
@@ -135,6 +135,8 @@ export type ProductView = {
   group: NoticeGroup | null;
   // この商品の薬効群の通知（使用上の注意）を取り込み済みか。false なら通知由来のバッジは「未収録」
   noticeLoaded: boolean;
+  // 「該当なし」ではなく「未収録」と出す通知由来の種類（未取り込みの薬効群・添付文書による補正で表せない記載）
+  unrecorded: BadgeKind[];
   location: LocatedShelf | null;
   sku: DemoSku | null;
 };
@@ -143,6 +145,7 @@ export async function productViews(products: Product[]): Promise<ProductView[]> 
   const catalog = await getCatalog();
   return products.map((product) => {
     const sku = demoSku(product.id);
+    const noticeLoaded = catalog.items.some((i) => i.groupId === product.noticeGroupId);
     let badges = deriveBadges(product, catalog.items);
     // デモSKUの禁止表バッジは既存データの区分で出す（L-40 ④）
     if (sku) badges = dopingBadgeFromSku(badges, product, sku);
@@ -151,7 +154,8 @@ export async function productViews(products: Product[]): Promise<ProductView[]> 
       badges,
       abuse: checkAbuse(product),
       group: catalog.groups.find((g) => g.id === product.noticeGroupId) ?? null,
-      noticeLoaded: catalog.items.some((i) => i.groupId === product.noticeGroupId),
+      noticeLoaded,
+      unrecorded: unrecordedKinds(product, noticeLoaded),
       location: locate(catalog, product.id),
       sku,
     };

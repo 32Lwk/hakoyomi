@@ -7,8 +7,18 @@ export function normalizeName(name: string): string {
     .toLowerCase();
 }
 
+// 塩の旧表記「塩酸プソイドエフェドリン」を今の表記「プソイドエフェドリン塩酸塩」にそろえる（L-20261103-28）。
+// 既存データの成分名は旧表記が残っていて、通知の記載条件（今の表記）と照合できない
+const SALT_PREFIX = /^((?:dl|d|l)-)?(塩酸|硫酸|マレイン酸|リン酸|臭化水素酸)(.+)$/;
+
+export function canonicalName(name: string): string {
+  const n = normalizeName(name);
+  const m = n.match(SALT_PREFIX);
+  return m ? `${m[1] ?? ""}${m[3]}${m[2]}塩` : n;
+}
+
 export function sameName(a: string, b: string): boolean {
-  return normalizeName(a) === normalizeName(b);
+  return canonicalName(a) === canonicalName(b);
 }
 
 // 単位をそろえて mg にする

@@ -1,11 +1,12 @@
 // src/data の静的データを Supabase に入れる（T003、開発時のみ）。何度流しても同じ状態になる。
-// いまはデモSKU（実商品、L-40）・通知かぜ薬Ⅰの抜粋・架空店舗の棚位置。T102（検証済みの通知）で入れ替える。
+// いまはデモSKU（実商品、L-40）・通知（かぜ薬Ⅰの抜粋・解熱鎮痛薬・鼻炎用内服薬）・架空店舗の棚位置。
 //
 // 使い方：npm run db:seed（.env.local の SUPABASE_URL・SUPABASE_SERVICE_ROLE_KEY を使う）
 import { createClient } from "@supabase/supabase-js";
 import { DEMO_PRODUCTS } from "@/data/demo_products";
 import { MOCK_STORE } from "@/data/mock_store";
-import { KAZE_GROUP, KAZE_ITEMS } from "@/data/notice_kaze";
+import { KAZE_GROUP } from "@/data/notice_kaze";
+import { NOTICE_ITEMS } from "@/data/notices";
 import { noticeGroupToRow, noticeItemToRow, productToRows } from "@/lib/db/rows";
 import { NOTICE_PDF, NOTICE_SOURCES } from "../notice/lib";
 
@@ -37,7 +38,7 @@ async function main() {
     return result;
   };
 
-  // 薬効群は T101 の構造化対象の6群（出典・頁）。項目の本文はまだかぜ薬Ⅰの抜粋だけ
+  // 薬効群は T101 の構造化対象の6群（出典・頁）。項目はかぜ薬Ⅰの抜粋と解熱鎮痛薬・鼻炎用内服薬（L-20261103-28）
   const groups = NOTICE_SOURCES.map((source) =>
     noticeGroupToRow({
       id: source.id,
@@ -63,7 +64,7 @@ async function main() {
   check("notice_groups", await db.from("notice_groups").upsert([...groups, ...extraGroups]));
   check(
     "notice_items",
-    await db.from("notice_items").upsert(KAZE_ITEMS.map((item, i) => noticeItemToRow(item, i))),
+    await db.from("notice_items").upsert(NOTICE_ITEMS.map((item, i) => noticeItemToRow(item, i))),
   );
 
   // T003 で入れた架空のデモ品（demo-a〜h）を消す。成分・棚位置は外部キーの cascade で消える
@@ -93,7 +94,7 @@ async function main() {
   );
 
   console.log(
-    `seed 完了：薬効群 ${groups.length + extraGroups.length}、通知項目 ${KAZE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${locations.length}`,
+    `seed 完了：薬効群 ${groups.length + extraGroups.length}、通知項目 ${NOTICE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${locations.length}`,
   );
 }
 

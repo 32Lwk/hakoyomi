@@ -1,0 +1,151 @@
+import type { BadgeKind, Condition, NoticeItem } from "@/lib/schema/notice";
+
+type NoticeSection = NoticeItem["section"];
+
+// 添付文書による補正（L-20261103-28）。通知の記載条件と、個別に承認された商品（スイッチOTC など）の添付文書が違うとき、添付文書を優先する。
+// 通知の項目は書き換えない。補正で出したバッジは、根拠に「添付文書の記載による補正」と出典を出す。
+// 添付文書の本文は持たない。文言は通知の同じ趣旨の項目の文面を使う（bodyFrom に項目 id）。
+
+export type CorrectionTarget =
+  // 通知と同じ式で成分を見る
+  | { condition: Condition }
+  // 有効成分がこれだけの製剤
+  | { onlyIngredients: string[] }
+  // 同じ成分でも添付文書が違う品（例：アレグラFX とジュニアの年齢）
+  | { productIds: string[] };
+
+export type CorrectionSource = { label: string; url: string };
+
+type Base = {
+  id: string;
+  groupId: string;
+  target: CorrectionTarget;
+  sources: CorrectionSource[];
+  checkedOn: string;
+};
+
+export type LabelCorrection = Base &
+  (
+    | // 通知の項目に当たっても出さない
+    { action: "remove"; itemIds: string[] }
+    // 通知の記載条件の外でもバッジを出す
+    | { action: "add"; badge: BadgeKind; section: NoticeSection; body: string; bodyFrom: string }
+    // 通知のバッジの種類で表せない記載がある（例：7才未満）。「該当なし」ではなく「未収録」にする
+    | { action: "unrecorded"; kinds: BadgeKind[]; note: string }
+  );
+
+const KEGG = (code: string, name: string): CorrectionSource => ({
+  label: `KEGG MEDICUS ${name}`,
+  url: `https://www.kegg.jp/medicus-bin/japic_otc?japic_code=${code}`,
+});
+
+const ALLEGRA_FX = KEGG("J1201000287", "アレグラFX");
+const ALLEGRA_JR = KEGG("K1710000019", "アレグラFXジュニア");
+const ALESION = KEGG("K1510000018", "アレジオン20");
+const STONA_Z = KEGG("K1711000019", "ストナリニZジェル");
+const LOXONIN = [
+  KEGG("K1101000003", "ロキソニンS"),
+  KEGG("J2101000113", "ロキソニンSクイック"),
+  KEGG("J1601000006", "ロキソニンSプレミアム"),
+];
+const CHECKED_ON = "2026-11-03";
+
+// 第2世代の抗ヒスタミン成分の単味製剤。通知（鼻炎用内服薬）の記載条件に名前がない
+const SWITCH_ANTIHISTAMINES = ["フェキソフェナジン塩酸塩", "エピナスチン塩酸塩", "セチリジン塩酸塩"];
+
+export const LABEL_CORRECTIONS: LabelCorrection[] = [
+  {
+    id: "bien-drive-fexofenadine",
+    groupId: "bien_naifuku",
+    action: "remove",
+    itemIds: ["bien_naifuku-ng-3-1", "bien_naifuku-ng-3-2"],
+    target: { onlyIngredients: ["フェキソフェナジン塩酸塩"] },
+    sources: [ALLEGRA_FX, ALLEGRA_JR],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "genetsu-under15-loxoprofen",
+    groupId: "genetsu_chintsu",
+    action: "add",
+    badge: "under15",
+    section: "してはいけないこと",
+    body: "１５歳未満の小児．",
+    bodyFrom: "genetsu_chintsu-ng-1-3",
+    target: { condition: { hasIngredient: ["ロキソプロフェンナトリウム水和物"] } },
+    sources: LOXONIN,
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "genetsu-breastfeeding-loxoprofen",
+    groupId: "genetsu_chintsu",
+    action: "add",
+    badge: "breastfeeding",
+    section: "相談すること",
+    body: "授乳中の人．",
+    bodyFrom: "genetsu_chintsu-sd-1-3",
+    target: { condition: { hasIngredient: ["ロキソプロフェンナトリウム水和物"] } },
+    sources: LOXONIN,
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "bien-under15-switch",
+    groupId: "bien_naifuku",
+    action: "add",
+    badge: "under15",
+    section: "してはいけないこと",
+    body: "１５歳未満の小児．",
+    bodyFrom: "bien_naifuku-ng-1-2",
+    target: { condition: { hasIngredient: ["エピナスチン塩酸塩", "セチリジン塩酸塩"] } },
+    sources: [ALESION, STONA_Z],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    // ジュニアは 7才未満が服用しない。成分が同じなので商品で分ける
+    id: "bien-under15-allegra-fx",
+    groupId: "bien_naifuku",
+    action: "add",
+    badge: "under15",
+    section: "してはいけないこと",
+    body: "１５歳未満の小児．",
+    bodyFrom: "bien_naifuku-ng-1-2",
+    target: { productIds: ["allegra-fx"] },
+    sources: [ALLEGRA_FX],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "bien-age-allegra-junior",
+    groupId: "bien_naifuku",
+    action: "unrecorded",
+    kinds: ["under15"],
+    note: "添付文書では7才未満は服用しない。年齢のバッジ（15歳・12歳）では表せない",
+    target: { productIds: ["med-05202"] },
+    sources: [ALLEGRA_JR],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    // 通知の「4.」の（ ）内はロートエキスを含有する製剤だけに記載するので、（ ）の前までを使う
+    id: "bien-breastfeeding-switch",
+    groupId: "bien_naifuku",
+    action: "add",
+    badge: "breastfeeding",
+    section: "してはいけないこと",
+    body: "授乳中の人は本剤を服用しないか，本剤を服用する場合は授乳を避けること",
+    bodyFrom: "bien_naifuku-ng-4",
+    target: { condition: { hasIngredient: SWITCH_ANTIHISTAMINES } },
+    sources: [ALLEGRA_FX, ALLEGRA_JR, ALESION, STONA_Z],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    // 鼻炎用内服薬の通知に飲酒の項目はない。文言は解熱鎮痛薬の通知の同じ項目
+    id: "bien-alcohol-switch",
+    groupId: "bien_naifuku",
+    action: "add",
+    badge: "alcohol",
+    section: "してはいけないこと",
+    body: "服用前後は飲酒しないこと",
+    bodyFrom: "genetsu_chintsu-ng-4",
+    target: { condition: { hasIngredient: SWITCH_ANTIHISTAMINES } },
+    sources: [ALLEGRA_FX, ALLEGRA_JR, ALESION, STONA_Z],
+    checkedOn: CHECKED_ON,
+  },
+];

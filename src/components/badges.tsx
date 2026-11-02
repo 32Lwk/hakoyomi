@@ -23,7 +23,7 @@ import { ABUSE_SOURCE } from "@/data/abuse_ingredients";
 import { DOPING_SOURCE } from "@/data/doping_list";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
 import { badgeRowKind } from "@/lib/compare";
-import { NOTICE_BADGE_KINDS, type Badge, type BadgeTone, type Evidence } from "@/lib/rules/badges";
+import type { Badge, BadgeTone, Evidence } from "@/lib/rules/badges";
 import type { BadgeKind, NoticeGroup } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
 
@@ -95,22 +95,23 @@ export type AgeStatus = {
   state: "set" | "none" | "unloaded";
 };
 
-export function ageStatus(badges: Badge[], noticeLoaded: boolean): AgeStatus {
+// unrecorded：「未収録」と出す種類（ProductView.unrecorded）
+export function ageStatus(badges: Badge[], unrecorded: BadgeKind[]): AgeStatus {
   const badge = badges.find((b) => badgeRowKind(b.kind) === "under15") ?? null;
   if (badge) return { badge, text: badge.label.replace(/^年齢 /, ""), state: "set" };
-  return noticeLoaded
-    ? { badge: null, text: UI_COPY.badgeNone, state: "none" }
-    : { badge: null, text: UI_COPY.badgeUnloaded, state: "unloaded" };
+  return unrecorded.includes("under15")
+    ? { badge: null, text: UI_COPY.badgeUnloaded, state: "unloaded" }
+    : { badge: null, text: UI_COPY.badgeNone, state: "none" };
 }
 
 export function BadgeRow({
   badges,
   group,
-  noticeLoaded,
+  unrecorded,
 }: {
   badges: Badge[];
   group: NoticeGroup | null;
-  noticeLoaded: boolean;
+  unrecorded: BadgeKind[];
 }) {
   const [open, setOpen] = useState<BadgeTarget | null>(null);
   // 年齢は商品カードの上に別に大きく出すので、ここでは扱わない
@@ -119,8 +120,8 @@ export function BadgeRow({
   const absent = (Object.keys(BADGE_INFO) as BadgeKind[])
     .filter((k) => badgeRowKind(k) === k && k !== "under15")
     .filter((k) => !shown.some((b) => b.kind === k));
-  // 通知を取り込んでいない薬効群では、通知由来の種類は「該当なし」ではなく「未収録」
-  const unloaded = noticeLoaded ? [] : absent.filter((k) => NOTICE_BADGE_KINDS.includes(k));
+  // 通知を取り込んでいない薬効群や、補正で表せない種類は「該当なし」ではなく「未収録」
+  const unloaded = absent.filter((k) => unrecorded.includes(k));
   const none = absent.filter((k) => !unloaded.includes(k));
   return (
     <section aria-labelledby="badges-title" className="flex flex-col gap-2">
@@ -264,6 +265,30 @@ function EvidenceBlock({ evidence, group }: { evidence: Evidence; group: NoticeG
               ・取得 {group.fetchedOn}）
             </>
           )}
+        </p>
+      </div>
+    );
+  }
+  if (evidence.kind === "label") {
+    return (
+      <div className="flex flex-col gap-2 rounded-lg border border-border p-3">
+        <blockquote className="border-l-0 bg-muted px-3 py-2 text-base">{evidence.body}</blockquote>
+        {evidence.matched.length > 0 && (
+          <p className="text-sm">
+            当たった成分：<span className="font-bold">{evidence.matched.join("、")}</span>
+          </p>
+        )}
+        <p className="text-xs text-muted-foreground">
+          {UI_COPY.labelCorrected}（{evidence.section}）。出典：
+          {evidence.sources.map((s, i) => (
+            <span key={s.url}>
+              {i > 0 && "・"}
+              <a href={s.url} target="_blank" rel="noreferrer" className="underline">
+                {s.label}
+              </a>
+            </span>
+          ))}
+          （確認 {evidence.checkedOn}）
         </p>
       </div>
     );

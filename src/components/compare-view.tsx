@@ -17,7 +17,6 @@ import {
 import type { ProductView } from "@/lib/catalog";
 import { badgeRowKind, type BadgeRowCompare, type CompareRow } from "@/lib/compare";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
-import { NOTICE_BADGE_KINDS } from "@/lib/rules/badges";
 import { cn } from "@/lib/utils";
 
 type CompareData = { views: ProductView[]; rows: CompareRow[]; badges: BadgeRowCompare[] };
@@ -84,7 +83,7 @@ export function CompareView() {
   const show = <T extends { diff: boolean }>(list: T[]) =>
     onlyDiff ? list.filter((r) => r.diff) : list;
   // 年齢は重要なので「確認ポイント」から「基本」に上げ、文字を大きく出す（L-20261103-16）
-  const ages = views.map((v) => ageStatus(v.badges, v.noticeLoaded));
+  const ages = views.map((v) => ageStatus(v.badges, v.unrecorded));
   const ageDiff = new Set(ages.map((a) => a.text)).size > 1;
   const points = badges.filter((b) => b.kind !== "under15");
   const diffCount =
@@ -294,7 +293,7 @@ export function CompareView() {
                       />
                     ) : v ? (
                       <EmptyCell
-                        unloaded={!v.noticeLoaded && NOTICE_BADGE_KINDS.includes(b.kind)}
+                        unloaded={v.unrecorded.includes(b.kind)}
                         onClick={(empty) =>
                           setBadge({
                             kind: b.kind,

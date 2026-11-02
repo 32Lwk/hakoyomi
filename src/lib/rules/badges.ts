@@ -3,6 +3,8 @@ import { DOPING_SOURCE } from "@/data/doping_list";
 import { checkAbuse } from "@/lib/rules/abuse";
 import { checkDoping } from "@/lib/rules/doping";
 import { normalizeName } from "@/lib/rules/normalize";
+import type { CorrectionSource } from "@/data/label_corrections";
+import { correctionsFor } from "@/lib/rules/labelCorrections";
 import { applicableItems, convertedMg } from "@/lib/rules/noticeRules";
 import type { DemoSku } from "@/lib/schema/demoSku";
 import type { BadgeKind, NoticeItem } from "@/lib/schema/notice";
@@ -20,6 +22,15 @@ export type Evidence =
       body: string;
       conditionText: string | null;
       matched: string[];
+    }
+  // 添付文書による補正（L-20261103-28）。通知の記載条件の外で、添付文書に同じ趣旨の記載がある
+  | {
+      kind: "label";
+      section: NoticeItem["section"];
+      body: string;
+      matched: string[];
+      sources: CorrectionSource[];
+      checkedOn: string;
     }
   | { kind: "fact"; ingredient: string; amountMg: number; per: "1回" | "1日" }
   | { kind: "list"; list: "abuse" | "doping"; ingredient: string; listed: string; source: string };
@@ -61,6 +72,14 @@ export const NOTICE_BADGE_KINDS: readonly BadgeKind[] = [
   "alcohol",
 ];
 
+// 「未収録」と出す通知由来の種類。通知を取り込んでいない薬効群は全部、取り込み済みでも補正で表せない種類（L-20261103-28）
+export function unrecordedKinds(product: Product, noticeLoaded: boolean): BadgeKind[] {
+  if (!noticeLoaded) return [...NOTICE_BADGE_KINDS];
+  return correctionsFor(product).flatMap(({ correction }) =>
+    correction.action === "unrecorded" ? correction.kinds : [],
+  );
+}
+
 // 並び順（制度 → 通知の注意 → 成分）。量や優劣の順ではない
 const ORDER: BadgeKind[] = [
   "abuse",
@@ -94,9 +113,32 @@ export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
 
   // 同じ種類のバッジは1つにまとめ、根拠を並べる。「してはいけないこと」があればその表記を使う
   const byKind = new Map<BadgeKind, Badge>();
+  const put = (
+    kind: BadgeKind,
+    section: NoticeItem["section"],
+    body: string,
+    evidence: Evidence,
+  ) => {
+    const label = NOTICE_LABELS[kind]?.[section] ?? body;
+    const existing = byKind.get(kind);
+    if (!existing) {
+      byKind.set(kind, { kind, tone: "notice", label, evidence: [evidence] });
+    } else {
+      existing.evidence.push(evidence);
+      if (section === "してはいけないこと") existing.label = label;
+    }
+  };
+
+  // 添付文書による補正は、薬効群の通知を取り込んだ商品だけに当てる（取り込む前は全部「未収録」）
+  const loaded = items.some((i) => i.groupId === product.noticeGroupId);
+  const corrections = loaded ? correctionsFor(product) : [];
+  const removed = new Set(
+    corrections.flatMap(({ correction: c }) => (c.action === "remove" ? c.itemIds : [])),
+  );
   for (const { item, matched } of applicableItems(product, items)) {
     if (!item.badge || item.badge === "abuse" || item.badge === "caffeine") continue;
-    const evidence: Evidence = {
+    if (removed.has(item.id)) continue;
+    put(item.badge, item.section, item.body, {
       kind: "notice",
       groupId: item.groupId,
       section: item.section,
@@ -104,15 +146,18 @@ export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
       body: item.body,
       conditionText: item.conditionText,
       matched,
-    };
-    const label = NOTICE_LABELS[item.badge]?.[item.section] ?? item.body;
-    const existing = byKind.get(item.badge);
-    if (!existing) {
-      byKind.set(item.badge, { kind: item.badge, tone: "notice", label, evidence: [evidence] });
-    } else {
-      existing.evidence.push(evidence);
-      if (item.section === "してはいけないこと") existing.label = label;
-    }
+    });
+  }
+  for (const { correction: c, matched } of corrections) {
+    if (c.action !== "add") continue;
+    put(c.badge, c.section, c.body, {
+      kind: "label",
+      section: c.section,
+      body: c.body,
+      matched,
+      sources: c.sources,
+      checkedOn: c.checkedOn,
+    });
   }
   badges.push(...byKind.values());
 
