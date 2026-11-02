@@ -17,7 +17,7 @@
 - [ ] **T004** P0 0.5h `.env.local`・Vercel 連携（空デプロイ） — 完了：Vercel URL が開く
 
 ## Day 1–2（11/3〜11/4）データと中核ロジック
-- [ ] **T101** P0 1.5h `scripts/notice`：通知PDF → テキスト → Claude で項目・本文・記載条件（条件式 JSON）に構造化 → zod 検証。対象は T-R2 の薬効群＋指定濫用防止（Ⅲ） — 完了：`notice_items` seed 案が出る
+- [x] **T101** P0 1.5h `scripts/notice`：通知PDF → テキスト → Claude で項目・本文・記載条件（条件式 JSON）に構造化 → zod 検証。対象は T-R2 の薬効群＋指定濫用防止（Ⅲ） — 完了：`notice_items` seed 案が出る（2026-11-02 done。`npm run notice:extract` → `npm run notice:structure`。対象＝かぜ薬Ⅰ・解熱鎮痛薬・鎮咳去痰薬・鼻炎用内服薬・眠気防止薬・指定濫用防止Ⅲの「添付文書等に記載すべき事項」、計140項目。本文・記載条件は原文と全件照合済み（離れた箇所をつないだものは指摘に出す）。下書き・検証用 `.review.md` は `data/notices/out/`（リポ外）。照合だけやり直すときは `-- --recheck`）
 - [ ] **T102** P0 1h 【ゆう】T101 の出力を通知原文と照らして検証・修正 — 完了：検証済み seed
 - [ ] **T103** P0 3h 【ゆう】デモ商品 20〜30品を入力（品名・メーカー・JAN・区分・薬効群・成分・分量・基準・内容量・PMDA URL・改訂日）。バッジの差が出る組み合わせを含める（抗ヒスタミンあり／なし、カフェイン量違い、8成分あり／なし、メチルエフェドリン等の禁止表成分）。Claude は候補の組み合わせを提案 — 完了：`products` / `product_facts` seed
 - [ ] **T104** P0 0.5h 架空1店舗の棚マップ（売場ブロック・棚・段・列）と、デモ商品の棚位置 — 完了：`mock_store.json`・`shelf_locations` seed
