@@ -2,6 +2,15 @@
 
 ## Open
 
+### L-20261103-27
+- asked: Vロートドライアイプレミアム・アイボンd・キューピーコーワゴールドα の画像を R2 の新しい版（v=6f7c2c8b・b7ae7295・db5d84ea）に差し替える（ゆう 2026-11-03）
+- why: demoSkus.json の imageUrl が古い版（v=af694688・64b79d22・38a668c4）のまま
+- target: src/data/demoSkus.json の imageUrl（med-06651・med-06679・med-01148）
+- owner: Claude Code（データ反映）／ゆう（R2 アップロード）
+- status: done（2026-11-03）
+- proof: curl -sI で3件とも HTTP 200。npm run check
+- notes: ゆう側の対応表（otc_image_versions.json・r2_medicine_image_urls.json）は既に新しい版のため、build_demo_skus.py の IMAGE_OVERRIDE は不要（再ビルドでも同じ URL になる）
+
 ### L-20261103-26
 - asked: 通知「使用上の注意」の構造化を、かぜ薬Ⅰの次に解熱鎮痛薬（genetsu_chintsu）・鼻炎用内服薬（bien_naifuku）へ広げられるよう準備・設計する（ゆう 2026-11-03）
 - why: 解熱鎮痛薬26品・鼻炎薬13品の確認ポイント（運転・授乳・年齢など）が「未収録」で、店頭でよく使う種類ほどバッジが出ない
