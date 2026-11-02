@@ -1,0 +1,29 @@
+# PROJECT
+
+- slug: bwc-japan-2026
+- title: Built with Claude Japan 2026
+- goal: 新規作品「ハコヨミ【仮】」で参加。登録販売者向け・箱起点の業務支援（推薦なし）。説明の質を揃え、ベテランと新人の差をなくす
+- audience: Cerebral Valley / Anthropic 審査
+- deadline: キックオフ 2026-11-02 12:00 JST（イベント期間・提出要件は要確認）
+- hard constraints:
+  - 最大2名・公開リポ必須・期間中実装のみ・新規制作のみ
+  - 医療アドバイスを行うAIは禁止例。Discord回答済み(2026-11-02 Kai: HITLなしが禁止; OTC取扱い自体は問題にならない／岡本注意6点)。現行設計(推薦ゼロ・HITL・診断なし)でルール上OK。Won't厚め維持。個別作品の書面承認ではない
+  - MedNavi本体・道場は対象外
+  - 症状→薬／効く／おすすめ／販売可否自動判定を出さない
+  - Discord確定設計（2026-11-02、#質問へ設計共有の返信投稿済み。個別承認ではない）:
+    - 想定ユーザー: ドラッグストアの登録販売者のみ（お客様向けではない）
+    - やること: JAN読取／品名検索→公開の添付文書・製品情報を構造化・差分表示（原文引用）／指定濫用防止の確認項目を手順書順に提示し確認事実の記録支援／販売記録作成支援／商品の自店棚番表示／画面に出典明示
+    - HITL: 最終判断は常に登録販売者。「判断は販売者が行ってください」常時表示
+    - やらないこと(Won't厚め維持): 症状入力、個人の病状・受診・販売可否のAI判定／特定の薬・商品のおすすめ／効く・代わりにこれ等の推奨／客の健康情報・勤務先の無断データ利用（模擬データのみ）
+    - データ取得: PMDAおよび各製品の公式サイトを情報源。PMDAはリンクアウト主・一括クロールなし・全文を公開URLで再配布しない（prd Q8）
+    - 医療機器該当・「診断できる」等の宣伝文言に触れない。SaMD該当性などは都道府県の薬務課にも確認する方針
+- owners:
+  - commander: おしゃべり
+  - workers: [ハッカソン, 資料作成君]
+  - person: ゆう（ソロ実装）
+- deliverable paths:
+  - /workspace/contests/bwc_japan_2026/ （定義・リサーチ）
+  - /workspace/contests/bwc_japan_2026/docs/ （prd/architecture/rules/design/tasks/memory）
+- tech【仮】: Next.js + TypeScript + Tailwind / Claude API + Claude Code / Supabase + Vercel / 認証なし / カメラ+アップロード / デモはスマホ+PC
+- status: キックオフdocs整備済み・実装待ち（tasks Phase 0〜）
+- github mirror: TBD（公開必須・32Lwk/hakoyomi 想定）
