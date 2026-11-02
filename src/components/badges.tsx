@@ -22,7 +22,8 @@ import {
 import { ABUSE_SOURCE } from "@/data/abuse_ingredients";
 import { DOPING_SOURCE } from "@/data/doping_list";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
-import type { Badge, BadgeTone, Evidence } from "@/lib/rules/badges";
+import { badgeRowKind } from "@/lib/compare";
+import { NOTICE_BADGE_KINDS, type Badge, type BadgeTone, type Evidence } from "@/lib/rules/badges";
 import type { BadgeKind, NoticeGroup } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
 
@@ -86,12 +87,24 @@ const ICON: Record<BadgeKind, LucideIcon> = {
   doping: Medal,
 };
 
-export function BadgeRow({ badges, group }: { badges: Badge[]; group: NoticeGroup | null }) {
+export function BadgeRow({
+  badges,
+  group,
+  noticeLoaded,
+}: {
+  badges: Badge[];
+  group: NoticeGroup | null;
+  noticeLoaded: boolean;
+}) {
   const [open, setOpen] = useState<Badge | null>(null);
   // バッジがない種類も「該当なし」として名前を出す（何も出ないと、見落としか該当なしか区別できない）
-  const none = (Object.keys(BADGE_INFO) as BadgeKind[]).filter(
-    (k) => !badges.some((b) => b.kind === k),
-  );
+  // 年齢（15歳未満・12歳未満）は1つとして数える
+  const absent = (Object.keys(BADGE_INFO) as BadgeKind[])
+    .filter((k) => badgeRowKind(k) === k)
+    .filter((k) => !badges.some((b) => badgeRowKind(b.kind) === k));
+  // 通知を取り込んでいない薬効群では、通知由来の種類は「該当なし」ではなく「未収録」
+  const unloaded = noticeLoaded ? [] : absent.filter((k) => NOTICE_BADGE_KINDS.includes(k));
+  const none = absent.filter((k) => !unloaded.includes(k));
   return (
     <section aria-labelledby="badges-title" className="flex flex-col gap-2">
       <div className="flex items-baseline justify-between gap-2">
@@ -108,6 +121,14 @@ export function BadgeRow({ badges, group }: { badges: Badge[]; group: NoticeGrou
             </li>
           ))}
         </ul>
+      )}
+      {unloaded.length > 0 && (
+        <p className="rounded-lg border border-uncertain px-3 py-2 text-xs leading-relaxed text-uncertain">
+          <span className="font-bold">{UI_COPY.badgeUnloaded}：</span>
+          {unloaded.map((k) => BADGE_INFO[k].name).join("・")}
+          <br />
+          {UI_COPY.badgeUnloadedNote}
+        </p>
       )}
       {none.length > 0 && (
         <p className="text-xs leading-relaxed text-muted-foreground">

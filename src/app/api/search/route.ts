@@ -1,5 +1,6 @@
 import type { NextRequest } from "next/server";
 import { allProducts, productViews, searchByName } from "@/lib/catalog";
+import { NOTICE_BADGE_KINDS } from "@/lib/rules/badges";
 import { BadgeKind } from "@/lib/schema/notice";
 
 // 成分条件の絞り込み（コードのみ）。結果は品名順で、順位は付けない（rules §4-7）。
@@ -13,8 +14,13 @@ export async function GET(request: NextRequest) {
     .flatMap((r) => (r.success ? [r.data] : []));
 
   const base = await (q ? searchByName(q) : allProducts());
+  // 通知由来の条件は、通知を取り込んでいない薬効群の商品では確かめられないので残さない
   const views = (await productViews(base)).filter((v) =>
-    exclude.every((kind) => !v.badges.some((b) => b.kind === kind)),
+    exclude.every(
+      (kind) =>
+        !v.badges.some((b) => b.kind === kind) &&
+        (v.noticeLoaded || !NOTICE_BADGE_KINDS.includes(kind)),
+    ),
   );
   return Response.json({ views });
 }

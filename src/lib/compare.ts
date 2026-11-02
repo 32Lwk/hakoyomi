@@ -100,14 +100,24 @@ export type BadgeRowCompare = {
   diff: boolean;
 };
 
+// 比べるの行。12歳未満と15歳未満は同じ製剤に併記されないので、1行「年齢」にまとめる（L-20261103-12）
+export function badgeRowKind(kind: BadgeKind): BadgeKind {
+  return kind === "under12" ? "under15" : kind;
+}
+
 // バッジの種類ごとに、各商品のラベル（なければ null）を並べる
 export function compareBadges(badgeLists: Badge[][]): BadgeRowCompare[] {
   const kinds: BadgeKind[] = [];
   for (const list of badgeLists) {
-    for (const b of list) if (!kinds.includes(b.kind)) kinds.push(b.kind);
+    for (const b of list) {
+      const kind = badgeRowKind(b.kind);
+      if (!kinds.includes(kind)) kinds.push(kind);
+    }
   }
   return kinds.map((kind) => {
-    const labels = badgeLists.map((list) => list.find((b) => b.kind === kind)?.label ?? null);
+    const labels = badgeLists.map(
+      (list) => list.find((b) => badgeRowKind(b.kind) === kind)?.label ?? null,
+    );
     return { kind, labels, diff: new Set(labels).size > 1 };
   });
 }

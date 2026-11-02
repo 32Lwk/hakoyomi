@@ -15,8 +15,9 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import type { ProductView } from "@/lib/catalog";
-import type { BadgeRowCompare, CompareRow } from "@/lib/compare";
+import { badgeRowKind, type BadgeRowCompare, type CompareRow } from "@/lib/compare";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
+import { NOTICE_BADGE_KINDS } from "@/lib/rules/badges";
 import { cn } from "@/lib/utils";
 
 type CompareData = { views: ProductView[]; rows: CompareRow[]; badges: BadgeRowCompare[] };
@@ -197,7 +198,10 @@ export function CompareView() {
           <Section
             title="確認ポイント"
             show={show(badges).length > 0}
-            note={`${UI_COPY.badgeRowHint}。${UI_COPY.badgeNoneNote}`}
+            note={[
+              `${UI_COPY.badgeRowHint}。${UI_COPY.badgeNoneNote}`,
+              ...(views.some((v) => !v.noticeLoaded) ? [UI_COPY.badgeUnloadedNote] : []),
+            ].join("\n")}
           />
           {show(badges).map((b) => (
             <Row
@@ -221,22 +225,27 @@ export function CompareView() {
             >
               {b.labels.map((label, i) => {
                 const v = views[i];
-                const found = v?.badges.find((x) => x.kind === b.kind);
+                const found = v?.badges.find((x) => badgeRowKind(x.kind) === b.kind);
                 return (
                   <span role="cell" key={i} className="p-2">
                     {v && found && label ? (
                       <BadgeChip
-                        badge={found}
+                        // 行名が「年齢」なので、表の中では「15歳から」だけにする
+                        badge={{ ...found, label: found.label.replace(/^年齢 /, "") }}
                         compact
                         onClick={() =>
                           setBadge({
-                            kind: b.kind,
+                            kind: found.kind,
                             badge: found,
                             group: v.group,
                             productName: v.product.name,
                           })
                         }
                       />
+                    ) : v && !v.noticeLoaded && NOTICE_BADGE_KINDS.includes(b.kind) ? (
+                      <span className="text-xs text-uncertain underline">
+                        {UI_COPY.badgeUnloaded}
+                      </span>
                     ) : (
                       <span className="text-xs text-muted-foreground">{UI_COPY.badgeNone}</span>
                     )}
@@ -270,7 +279,11 @@ function Section({ title, show, note }: { title: string; show: boolean; note?: s
       {/* 横に送っても読めるよう、見出しと説明は画面幅に収めて左に留める */}
       <div className="sticky left-2 flex w-[calc(100vw-4rem)] max-w-xl flex-col gap-0.5">
         <span className="text-xs font-bold text-muted-foreground">{title}</span>
-        {note && <span className="text-[11px] leading-snug text-muted-foreground">{note}</span>}
+        {note && (
+          <span className="text-[11px] leading-snug whitespace-pre-line text-muted-foreground">
+            {note}
+          </span>
+        )}
       </div>
     </div>
   );

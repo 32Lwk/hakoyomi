@@ -133,6 +133,8 @@ export type ProductView = {
   badges: Badge[];
   abuse: AbuseResult;
   group: NoticeGroup | null;
+  // この商品の薬効群の通知（使用上の注意）を取り込み済みか。false なら通知由来のバッジは「未収録」
+  noticeLoaded: boolean;
   location: LocatedShelf | null;
   sku: DemoSku | null;
 };
@@ -149,6 +151,7 @@ export async function productViews(products: Product[]): Promise<ProductView[]> 
       badges,
       abuse: checkAbuse(product),
       group: catalog.groups.find((g) => g.id === product.noticeGroupId) ?? null,
+      noticeLoaded: catalog.items.some((i) => i.groupId === product.noticeGroupId),
       location: locate(catalog, product.id),
       sku,
     };

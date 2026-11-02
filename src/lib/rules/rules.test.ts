@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { compareBadges } from "@/lib/compare";
 import { checkAbuse, isMultiple } from "@/lib/rules/abuse";
 import { deriveBadges } from "@/lib/rules/badges";
 import { checkDoping } from "@/lib/rules/doping";
@@ -138,7 +139,7 @@ describe("バッジ", () => {
       "濫用防止 対象",
       "運転注意",
       "授乳中は服用しない",
-      "12歳未満 服用しない",
+      "年齢 12歳から",
       "飲酒しない",
       "カフェイン 1回25mg",
       "ドーピング禁止成分（年版確認中）",
@@ -149,7 +150,7 @@ describe("バッジ", () => {
     const labels = deriveBadges(productB, KAZE_ITEMS).map((b) => b.label);
     expect(labels).toEqual([
       "授乳中は相談",
-      "15歳未満 服用しない",
+      "年齢 15歳から",
       "飲酒しない",
       "カフェイン 1回109.8mg",
     ]);
@@ -162,5 +163,18 @@ describe("バッジ", () => {
       section: "してはいけないこと",
       itemNo: "3.",
     });
+  });
+});
+
+describe("比べるのバッジ行", () => {
+  it("15歳未満と12歳未満は1行「年齢」にまとめ、何歳からの違いを出す", () => {
+    const rows = compareBadges([
+      deriveBadges(productA, KAZE_ITEMS),
+      deriveBadges(productB, KAZE_ITEMS),
+    ]);
+    const age = rows.filter((r) => r.kind === "under15" || r.kind === "under12");
+    expect(age).toEqual([
+      { kind: "under15", labels: ["年齢 12歳から", "年齢 15歳から"], diff: true },
+    ]);
   });
 });

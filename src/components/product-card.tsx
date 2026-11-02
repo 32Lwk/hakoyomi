@@ -54,7 +54,7 @@ export function ProductCard({ view }: { view: ProductView }) {
         <Stat label="1日の回数" value={`${product.timesPerDay}回`} />
       </dl>
 
-      <BadgeRow badges={badges} group={group} />
+      <BadgeRow badges={badges} group={group} noticeLoaded={view.noticeLoaded} />
 
       {sku?.flags.drowsyMention && (
         <p className="rounded-xl border border-border px-3 py-2.5 text-sm">
