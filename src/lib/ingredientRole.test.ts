@@ -30,6 +30,11 @@ const NOT_IN_TEBIKI = new Set([
   "cough:トウキ",
   "cough:バイモ",
   "cough:ブクリョウ",
+  // L-20261103-24（手引きの該当章に名前がない）
+  "fever:グリシン",
+  "fever:セトチアミン塩酸塩水和物",
+  "cough:アセンヤク末",
+  "cough:ニンジン末",
 ]);
 
 describe("ingredientRole", () => {

@@ -214,7 +214,9 @@ export function ShelfView() {
           className={cn(
             "gap-0 rounded-t-2xl px-4 pt-2 pb-0",
             // 棚は画面の高さに収めてスクロールさせない。売場（医薬品以外）は高さ自動
-            shelf ? "h-[92dvh] overflow-hidden" : "max-h-[92dvh] overflow-y-auto",
+            shelf
+              ? "overflow-hidden data-[side=bottom]:h-[92dvh]"
+              : "max-h-[92dvh] overflow-y-auto",
           )}
         >
           <span
