@@ -11,6 +11,15 @@
 - proof: products・notice_items の id は text（kaze_1-ng-1-3 等）。全表 RLS 有効・ポリシーなし（service role のサーバーからのみ読む）。お客様の氏名・症状・健康情報・質問入力のカラムなしをテストで検査
 - notes: 販売記録の下書き（T401）の表は T401 で足す
 
+### L-20261102-38
+- asked: 開発を続ける（ゆう 2026-11-02）→ T003 の migration を先に書く
+- why: architecture §5 の表と、実装済みの zod スキーマ（src/lib/schema）・T101 の出力がずれている（notice_items の id が uuid、excluded_by・badge・needs_review がない、products に kind・route・efficacy_groups・crude_drug_main・1日最大量がない など）。seed（T102・T103）を zod の形のまま入れられるよう、DB を zod に合わせる
+- target: supabase/migrations/20261102000000_init.sql、docs/architecture.md §5、src/lib/schema/schema.test.ts（PII カラムなしの検査）
+- owner: Claude Code
+- status: done（2026-11-02。Supabase プロジェクトの作成・migration の適用はゆう）
+- proof: products・notice_items の id は text（kaze_1-ng-1-3 等）。全表 RLS 有効・ポリシーなし（service role のサーバーからのみ読む）。お客様の氏名・症状・健康情報・質問入力のカラムなしをテストで検査
+- notes: 販売記録の下書き（T401）の表は T401 で足す
+
 ### L-20261102-37
 - asked: 同じ形・同じ種類でも絶妙な違いを出したパッケージを複数つくる（ゆう 2026-11-02）
 - why: 同じ種類・同じ形の商品が一覧や比較に並んでも見分けられるようにするため

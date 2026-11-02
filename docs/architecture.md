@@ -91,18 +91,19 @@ erDiagram
   products ||--o{ memos : "説明メモ"
   notice_items }o--|| notice_groups : "薬効群"
   checklist_sessions ||--o{ checklist_checks : "確認"
-  products { uuid id PK; text jan; text name; text maker; text risk_class; text notice_group_id "通知の薬効群"; text dosage_basis "1日量など"; int content_qty; text content_unit; text pmda_url; date doc_revised_on; text entered_by; date verified_on; }
-  product_facts { uuid id PK; uuid product_id FK; text ingredient; text ingredient_class "抗ヒスタミン剤 等"; numeric amount; text unit; text basis; bool uncertain; }
-  notice_groups { text id PK "kaze_1 等"; text name; text source_url; date fetched_on; }
-  notice_items { uuid id PK; text group_id FK; text section "してはいけないこと|相談すること|その他"; text item_no; text body "通知の本文"; jsonb condition "記載条件の式"; text condition_text "条件の原文"; }
-  shelf_locations { uuid id PK; uuid product_id FK; text store_id "mock-store-1"; text area; text shelf; int tier; int column; }
-  memos { uuid id PK; uuid product_id FK "null可"; text ingredient "null可"; text group_id "null可"; text body; text author_alias; timestamptz created_at; }
-  checklist_sessions { uuid id PK; text staff_alias; uuid product_id; int quantity; timestamptz created_at; }
+  products { text id PK; text jan UK; text name; text maker; text risk_class; text kind "イメージ図の種類"; text notice_group_id FK "通知の薬効群"; text_arr efficacy_groups; text route "internal|external"; bool crude_drug_main; numeric daily_max_units; int times_per_day; numeric content_qty; text content_unit; text pmda_url; date doc_revised_on; text entered_by; date verified_on; }
+  product_facts { uuid id PK; text product_id FK; text ingredient; text_arr ingredient_classes "抗ヒスタミン剤 等"; numeric amount_per_day "1日最大量あたり"; text unit; bool uncertain; int position; }
+  notice_groups { text id PK "kaze_1 等"; text name; text source_url; int source_page; date fetched_on; }
+  notice_items { text id PK "kaze_1-ng-1-3 等"; text group_id FK; text section "してはいけないこと|相談すること|その他"; text item_no; text body "通知の本文"; jsonb condition "記載条件の式"; text condition_text "条件の原文"; text_arr excluded_by; text badge; bool needs_review; int position; }
+  shelf_locations { uuid id PK; text product_id FK; text store_id "mock-store-1"; text shelf_id; int tier; int column; }
+  memos { uuid id PK; text product_id FK "null可"; text ingredient "null可"; text group_id FK "null可"; text body; text author_alias; timestamptz created_at; }
+  checklist_sessions { uuid id PK; text staff_alias; text product_id FK; int quantity; timestamptz created_at; }
   checklist_checks { uuid id PK; uuid session_id FK; text item_code "ア〜キ"; timestamptz checked_at; }
 ```
 - お客様の氏名・症状・健康情報のカラムは作らない。逆引き・質問の入力は保存しない。
 - 商品固有の添付文書本文のカラムは作らない（`notice_items.body` は厚労省通知の本文のみ）。
 - 8成分・数量基準・禁止表成分は `src/data` の静的定数（出典URL・日付・年版つき）。
+- 定義は `supabase/migrations/`。形は `src/lib/schema` の zod に合わせる（L-20261102-38）。全表 RLS 有効・ポリシーなしで、service role のサーバーからのみ読み書きする。
 
 ## 6. Key Decisions
 | 決定 | 理由 |
