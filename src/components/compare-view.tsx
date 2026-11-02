@@ -206,7 +206,7 @@ export function CompareView() {
                 <button
                   type="button"
                   onClick={() => setBadge({ kind: "under15", badge: null, group: null })}
-                  className="-m-1 flex items-center gap-1 rounded p-1 text-left active:bg-accent"
+                  className="-m-1 flex flex-wrap items-center gap-1 rounded p-1 text-left active:bg-accent"
                 >
                   {BADGE_INFO.under15.name}
                   <CircleHelp
@@ -263,7 +263,7 @@ export function CompareView() {
                 <button
                   type="button"
                   onClick={() => setBadge({ kind: b.kind, badge: null, group: null })}
-                  className="-m-1 flex items-center gap-1 rounded p-1 text-left font-bold active:bg-accent"
+                  className="-m-1 flex flex-wrap items-center gap-1 rounded p-1 text-left font-bold active:bg-accent"
                 >
                   {BADGE_INFO[b.kind].short ?? BADGE_INFO[b.kind].name}
                   <CircleHelp
@@ -385,7 +385,8 @@ function Row({
       <span
         role="rowheader"
         className={cn(
-          "sticky left-0 z-10 flex flex-col items-start gap-1 border-l-4 bg-background p-2 leading-snug",
+          // 項目名は文節で折り返す（「リスク区分」→「リスク／区分」。L-20261103-32）
+          "sticky left-0 z-10 flex flex-col items-start gap-1 border-l-4 bg-background p-2 leading-snug [word-break:auto-phrase]",
           small ? "text-xs" : "text-sm",
           diff ? "border-diff bg-diff-soft" : "border-transparent",
         )}
