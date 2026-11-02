@@ -48,6 +48,7 @@ const LOXONIN = [
   KEGG("J2101000113", "ロキソニンSクイック"),
   KEGG("J1601000006", "ロキソニンSプレミアム"),
 ];
+const MUCODYNE = KEGG("J2401000006", "ムコダイン去たん錠Pro500");
 const CHECKED_ON = "2026-11-03";
 
 // 第2世代の抗ヒスタミン成分の単味製剤。通知（鼻炎用内服薬）の記載条件に名前がない
@@ -146,6 +147,19 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     bodyFrom: "genetsu_chintsu-ng-4",
     target: { condition: { hasIngredient: SWITCH_ANTIHISTAMINES } },
     sources: [ALLEGRA_FX, ALLEGRA_JR, ALESION, STONA_Z],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    // L-カルボシステイン単味。同じ成分のストナ去たんカプセルの添付文書には授乳の記載がないので、商品で当てる（L-20261103-29）
+    id: "chinga-breastfeeding-mucodyne",
+    groupId: "chinga_kyotan",
+    action: "add",
+    badge: "breastfeeding",
+    section: "相談すること",
+    body: "授乳中の人．",
+    bodyFrom: "chinga_kyotan-sd-1-3",
+    target: { productIds: ["mucodyne-pro500"] },
+    sources: [MUCODYNE],
     checkedOn: CHECKED_ON,
   },
 ];

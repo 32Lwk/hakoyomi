@@ -1,0 +1,684 @@
+{
+  "group": {
+    "id": "chinga_kyotan",
+    "name": "鎮咳去痰薬",
+    "sourceUrl": "https://www.mhlw.go.jp/content/001742612.pdf",
+    "sourcePage": 22,
+    "fetchedOn": "2026-11-02"
+  },
+  "items": [
+    {
+      "id": "chinga_kyotan-ng-1",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "1.",
+      "body": "次の人は服用しないこと",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-ng-1-1",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "1.(1)",
+      "body": "本剤又は本剤の成分，クロルヘキシジンによりアレルギー症状を起こしたことがある人．",
+      "condition": {
+        "hasIngredient": [
+          "デキストロメトルファン臭化水素酸塩水和物",
+          "フェノールフタリン酸デキストロメトルファン",
+          "ブロムヘキシン塩酸塩",
+          "L－カルボシステイン",
+          "アミノフィリン水和物",
+          "テオフィリン",
+          "クエン酸チペピジン",
+          "チペピジンヒベンズ酸塩",
+          "クレマスチンフマル酸塩",
+          "クロルヘキシジン塩酸塩"
+        ]
+      },
+      "conditionText": "デキストロメトルファン臭化水素酸塩水和物，フェノールフタリン酸デキストロメトルファン，ブロムヘキシン塩酸塩，L－カルボシステイン，アミノフィリン水和物，テオフィリン，クエン酸チペピジン，チペピジンヒベンズ酸塩，クレマスチンフマル酸塩又はクロルヘキシジン塩酸塩を含有する製剤に記載すること．ただし，「，クロルヘキシジン」はクロルヘキシジン塩酸塩を含有する製剤にのみ記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-ng-1-2",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "1.(2)",
+      "body": "１５歳未満の小児．",
+      "condition": {
+        "hasIngredient": [
+          "プロメタジン塩酸塩",
+          "プロメタジンメチレンジサリチル酸塩"
+        ]
+      },
+      "conditionText": "プロメタジン塩酸塩又はプロメタジンメチレンジサリチル酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "badge": "under15",
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-ng-1-3",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "1.(3)",
+      "body": "１２歳未満の小児．",
+      "condition": {
+        "hasIngredient": [
+          "コデインリン酸塩水和物",
+          "ジヒドロコデインリン酸塩"
+        ]
+      },
+      "conditionText": "コデインリン酸塩水和物又はジヒドロコデインリン酸塩を含有する製剤に記載すること．また，用法及び用量で認められている最小の年齢が１３歳以上の場合，「１２歳未満」を最小の年齢に置き換えて追記すること．ただし，「してはいけないこと」の１．（２）を記載した製剤にあっては記載しない．",
+      "excludedBy": [
+        "chinga_kyotan-ng-1-2"
+      ],
+      "badge": "under12",
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-ng-2",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "2.",
+      "body": "本剤を服用している間は，次のいずれの医薬品も使用しないこと 他の鎮咳去痰薬，かぜ薬，鎮静薬，抗ヒスタミン剤を含有する内服薬等（鼻炎用内服薬，乗物酔い薬，アレルギー用薬等）",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-ng-3",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "3.",
+      "body": "服用後，乗物又は機械類の運転操作をしないこと（眠気等があらわれることがある．）",
+      "condition": {
+        "any": [
+          {
+            "hasClass": [
+              "抗ヒスタミン剤"
+            ]
+          },
+          {
+            "hasIngredient": [
+              "コデインリン酸塩水和物",
+              "ジヒドロコデインリン酸塩",
+              "デキストロメトルファン臭化水素酸塩水和物",
+              "フェノールフタリン酸デキストロメトルファン"
+            ]
+          }
+        ]
+      },
+      "conditionText": "抗ヒスタミン剤，コデインリン酸塩水和物，ジヒドロコデインリン酸塩，デキストロメトルファン臭化水素酸塩水和物又はフェノールフタリン酸デキストロメトルファンを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "badge": "drive",
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-ng-4",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "4.",
+      "body": "授乳中の人は本剤を服用しないか，本剤を服用する場合は授乳を避けること",
+      "condition": {
+        "hasIngredient": [
+          "アミノフィリン水和物",
+          "テオフィリン",
+          "ジフェンヒドラミン塩酸塩",
+          "ジフェンヒドラミンサリチル酸塩",
+          "タンニン酸ジフェンヒドラミン",
+          "コデインリン酸塩水和物",
+          "ジヒドロコデインリン酸塩"
+        ]
+      },
+      "conditionText": "アミノフィリン水和物，テオフィリン，ジフェンヒドラミン塩酸塩，ジフェンヒドラミンサリチル酸塩，タンニン酸ジフェンヒドラミン，コデインリン酸塩水和物又はジヒドロコデインリン酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "badge": "breastfeeding",
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-ng-5",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "5.",
+      "body": "過量服用・長期連用しないこと",
+      "condition": {
+        "hasIngredient": [
+          "コデインリン酸塩水和物",
+          "ジヒドロコデインリン酸塩"
+        ]
+      },
+      "conditionText": "コデインリン酸塩水和物又はジヒドロコデインリン酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "badge": "abuse",
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-ng-5'",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "5'.",
+      "body": "長期連用しないこと",
+      "condition": {
+        "any": [
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "グリチルリチン酸",
+              "value": 40,
+              "unit": "mg",
+              "per": "1日"
+            }
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "甘草",
+              "value": 1,
+              "unit": "g",
+              "per": "1日"
+            }
+          }
+        ]
+      },
+      "conditionText": "グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤で，漢方生薬製剤以外の製剤に記載すること．ただし，「してはいけないこと」の５．を記載した製剤にあっては記載しない．",
+      "excludedBy": [
+        "chinga_kyotan-ng-5"
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-ng-5''",
+      "groupId": "chinga_kyotan",
+      "section": "してはいけないこと",
+      "itemNo": "5''.",
+      "body": "短期間の服用にとどめ，連用しないこと",
+      "condition": {
+        "any": [
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "グリチルリチン酸",
+              "value": 40,
+              "unit": "mg",
+              "per": "1日"
+            }
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "甘草",
+              "value": 1,
+              "unit": "g",
+              "per": "1日"
+            }
+          }
+        ]
+      },
+      "conditionText": "グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤で，短期服用に限られる漢方生薬製剤に記載すること．ただし，「してはいけないこと」の５．を記載した製剤にあっては記載しない．",
+      "excludedBy": [
+        "chinga_kyotan-ng-5"
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-sd-1",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.",
+      "body": "次の人は服用前に医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-sd-1-1",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(1)",
+      "body": "医師の治療を受けている人．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-sd-1-2",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(2)",
+      "body": "妊婦又は妊娠していると思われる人．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-sd-1-3",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(3)",
+      "body": "授乳中の人．",
+      "condition": {
+        "any": [
+          {
+            "hasIngredient": [
+              "dl－メチルエフェドリン塩酸塩",
+              "l－メチルエフェドリン塩酸塩",
+              "トリプロリジン塩酸塩水和物",
+              "ペントキシベリンクエン酸塩",
+              "クレマスチンフマル酸塩"
+            ]
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "安息香酸ナトリウムカフェイン",
+                "カフェイン水和物",
+                "無水カフェイン"
+              ],
+              "as": "無水カフェイン",
+              "value": 100,
+              "unit": "mg",
+              "per": "1回"
+            }
+          }
+        ]
+      },
+      "conditionText": "dl－メチルエフェドリン塩酸塩，l－メチルエフェドリン塩酸塩，トリプロリジン塩酸塩水和物，ペントキシベリンクエン酸塩又はクレマスチンフマル酸塩を含有する製剤に記載すること．また，安息香酸ナトリウムカフェイン，カフェイン水和物又は無水カフェインを無水カフェインとして１回分量１００ｍｇ以上を含有する製剤に記載すること．ただし，「してはいけないこと」の４．を記載した製剤にあっては記載しない．",
+      "excludedBy": [
+        "chinga_kyotan-ng-4"
+      ],
+      "badge": "breastfeeding",
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-sd-1-4",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(4)",
+      "body": "発熱している小児．",
+      "condition": {
+        "hasIngredient": [
+          "テオフィリン",
+          "アミノフィリン水和物"
+        ]
+      },
+      "conditionText": "テオフィリン，アミノフィリン水和物を含有する製剤（小児の用法・用量を有する製剤）の場合に記載すること.",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-sd-1-5",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(5)",
+      "body": "けいれんを起こしたことがある小児．",
+      "condition": {
+        "hasIngredient": [
+          "テオフィリン",
+          "アミノフィリン水和物"
+        ]
+      },
+      "conditionText": "テオフィリン，アミノフィリン水和物を含有する製剤（小児の用法・用量を有する製剤）の場合に記載すること.",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-sd-1-6",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(6)",
+      "body": "高齢者．",
+      "condition": {
+        "any": [
+          {
+            "hasIngredient": [
+              "トリメトキノール塩酸塩水和物",
+              "メトキシフェナミン塩酸塩",
+              "dl－メチルエフェドリン塩酸塩",
+              "l－メチルエフェドリン塩酸塩",
+              "マオウ"
+            ]
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "グリチルリチン酸",
+              "value": 40,
+              "unit": "mg",
+              "per": "1日"
+            }
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "甘草",
+              "value": 1,
+              "unit": "g",
+              "per": "1日"
+            }
+          }
+        ]
+      },
+      "conditionText": "トリメトキノール塩酸塩水和物，メトキシフェナミン塩酸塩，dl－メチルエフェドリン塩酸塩，l－メチルエフェドリン塩酸塩又はマオウを含有する製剤に記載すること．また，グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-sd-1-7",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(7)",
+      "body": "薬などによりアレルギー症状を起こしたことがある人．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-sd-1-8",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(8)",
+      "body": "次の症状のある人． 高熱，むくみ１），排尿困難２）",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "１）は，グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に，２）は，抗ヒスタミン剤を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-sd-1-9",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "1.(9)",
+      "body": "次の診断を受けた人． 心臓病１）２），高血圧１）２），糖尿病１），腎臓病２），緑内障３），肝臓病４），甲状腺機能障害１）５），てんかん５），血栓のある人（脳血栓，心筋梗塞，血栓性静脈炎）６），血栓症を起こすおそれのある人６），呼吸機能障害７），閉塞性睡眠時無呼吸症候群７），肥満症７）",
+      "condition": {
+        "any": [
+          {
+            "hasIngredient": [
+              "トリメトキノール塩酸塩水和物",
+              "メトキシフェナミン塩酸塩",
+              "dl－メチルエフェドリン塩酸塩",
+              "l－メチルエフェドリン塩酸塩",
+              "マオウ"
+            ]
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "グリチルリチン酸",
+              "value": 40,
+              "unit": "mg",
+              "per": "1日"
+            }
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "甘草",
+              "value": 1,
+              "unit": "g",
+              "per": "1日"
+            }
+          },
+          {
+            "hasClass": [
+              "抗ヒスタミン剤"
+            ]
+          },
+          {
+            "hasIngredient": [
+              "ペントキシベリンクエン酸塩",
+              "L－カルボシステイン",
+              "ジプロフィリン",
+              "トラネキサム酸",
+              "コデインリン酸塩水和物",
+              "ジヒドロコデインリン酸塩"
+            ]
+          }
+        ]
+      },
+      "conditionText": "１）は，トリメトキノール塩酸塩水和物，メトキシフェナミン塩酸塩，dl－メチルエフェドリン塩酸塩，l－メチルエフェドリン塩酸塩又はマオウを含有する製剤に，２）は，グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に，３）は，抗ヒスタミン剤又はペントキシベリンクエン酸塩を含有する製剤に，４）は，L－カルボシステインを含有する製剤に，５）は，ジプロフィリンを含有する製剤に，６）は，トラネキサム酸を含有する製剤に，７）は，コデインリン酸塩水和物又はジヒドロコデインリン酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-sd-2",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "2.",
+      "body": "服用後，次の症状があらわれた場合は副作用の可能性があるので，直ちに服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること 関係部位 症 状 皮 膚 発疹・発赤，かゆみ 消化器 吐き気・嘔吐，食欲不振，胃腸出血１） 精神神経系 めまい，意識の低下１），興奮５），けいれん１）５） 循環器 動悸２） 呼吸器 息苦しさ３），息切れ３），呼吸が荒い１） 泌尿器 排尿困難４） その他 貧血１），からだがだるい１） まれに下記の重篤な症状が起こることがある．その場合は直ちに医師の診療を受けること． 症状の名称 症 状 ショック（アナフィラキシー）１）６） 服用後すぐに，皮膚のかゆみ，じんましん，声のかすれ，くしゃみ，のどのかゆみ，息苦しさ，動悸，意識の混濁等があらわれる． 皮膚粘膜眼症候群（ｽﾃｨｰﾌﾞﾝｽ･ｼﾞｮﾝｿﾝ症候群），中毒性表皮壊死融解症６） 高熱，目の充血，目やに，唇のただれ，のどの痛み，皮膚の広範囲の発疹・発赤等が持続したり，急激に悪化する． 肝機能障害２）６）７） 発熱，かゆみ，発疹，黄疸（皮膚や白目が黄色くなる），褐色尿，全身のだるさ，食欲不振等があらわれる． 偽アルドステロン症，ミオパチー３） 手足のだるさ，しびれ，つっぱり感やこわばりに加えて，脱力感，筋肉痛があらわれ，徐々に強くなる． 横紋筋融解症２） 手足・肩・腰等の筋肉が痛む，手足がしびれる，力が入らない，こわばる，全身がだるい，赤褐色尿等があらわれる． 再生不良性貧血４） 青あざ，鼻血，歯ぐきの出血，発熱，皮膚や粘膜が青白くみえる，疲労感，動悸，息切れ，気分が悪くなりくらっとする，血尿等があらわれる． 無顆粒球症４） 突然の高熱，さむけ，のどの痛み等があらわれる． 悪性症候群５） 高熱，発汗，ぼやっとする，手足の震え，身体のこわばり，話しづらい，よだれが出る，飲み込みにくい，脈が速くなる，呼吸数増加，血圧上昇等があらわれる． 呼吸抑制８） 息切れ，息苦しさ等があらわれる.",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "１）は，アミノフィリン水和物又はテオフィリンを含有する製剤に，２）は，アミノフィリン水和物，ジプロフィリン，テオフィリン又はプロキシフィリンを含有する製剤に，３）は，デキストロメトルファン臭化水素酸塩水和物又はフェノールフタリン酸デキストロメトルファンを含有する製剤に，４）は，抗ヒスタミン剤を含有する製剤に，５）は，クレマスチンフマル酸塩を含有する製剤に記載すること． １）は，デキストロメトルファン臭化水素酸塩水和物，フェノールフタリン酸デキストロメトルファン，ブロムヘキシン塩酸塩，アミノフィリン水和物，テオフィリン，クエン酸チペピジン，チペピジンヒベンズ酸塩又はクロルヘキシジン塩酸塩を含有する製剤に，２）は，アミノフィリン水和物又はテオフィリンを含有する製剤に，３）は，グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に，４）は，dl－（d－）クロルフェニラミンマレイン酸塩を含有する製剤に，５）は，プロメタジン塩酸塩を含有する製剤に，６）は，L－カルボシステインを含有する製剤に，７）は，クレマスチンフマル酸塩を含有する製剤に，８）は，コデインリン酸塩水和物又はジヒドロコデインリン酸塩を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-sd-3",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "3.",
+      "body": "服用後，次の症状があらわれることがあるので，このような症状の持続又は増強が見られた場合には，服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること 便秘１），口のかわき２），眠気１）２）３）",
+      "condition": {
+        "any": [
+          {
+            "hasIngredient": [
+              "コデインリン酸塩水和物",
+              "ジヒドロコデインリン酸塩",
+              "デキストロメトルファン臭化水素酸塩水和物",
+              "フェノールフタリン酸デキストロメトルファン"
+            ]
+          },
+          {
+            "hasClass": [
+              "抗ヒスタミン剤"
+            ]
+          }
+        ]
+      },
+      "conditionText": "１）は，コデインリン酸塩水和物又はジヒドロコデインリン酸塩を含有する製剤に，２）は，抗ヒスタミン剤を含有する製剤に，３）は，デキストロメトルファン臭化水素酸塩水和物又はフェノールフタリン酸デキストロメトルファンを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-sd-4",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "4.",
+      "body": "５～６回服用しても症状がよくならない場合は服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-sd-5",
+      "groupId": "chinga_kyotan",
+      "section": "相談すること",
+      "itemNo": "5.",
+      "body": "長期連用する場合には，医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "any": [
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "グリチルリチン酸",
+              "value": 40,
+              "unit": "mg",
+              "per": "1日"
+            }
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "グリチルリチン酸等"
+              ],
+              "as": "甘草",
+              "value": 1,
+              "unit": "g",
+              "per": "1日"
+            }
+          }
+        ]
+      },
+      "conditionText": "グリチルリチン酸等を１日最大配合量がグリチルリチン酸として４０ｍｇ以上又は甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤で，短期服用に限られる漢方生薬製剤以外の漢方生薬製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-etc-youho-1",
+      "groupId": "chinga_kyotan",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(1)",
+      "body": "小児に服用させる場合には，保護者の指導監督のもとに服用させること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "小児の用法及び用量がある場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-etc-youho-2-1",
+      "groupId": "chinga_kyotan",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)1)",
+      "body": "３歳以上の幼児に服用させる場合には，薬剤がのどにつかえることのないよう，よく注意すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "５歳未満の幼児の用法がある錠剤（発泡錠を除く）・丸剤・軟カプセル剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-etc-youho-2-2",
+      "groupId": "chinga_kyotan",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)2)",
+      "body": "２歳未満の乳幼児には，医師の診療を受けさせることを優先し，止むを得ない場合にのみ服用させること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "２歳未満の乳幼児の用法を有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-etc-seibun",
+      "groupId": "chinga_kyotan",
+      "section": "その他",
+      "itemNo": "成分及び分量に関連する注意",
+      "body": "本剤の服用により，糖尿病の検査値に影響を及ぼすことがある．",
+      "condition": {
+        "any": [
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "オンジ"
+              ],
+              "as": "オンジ",
+              "value": 1,
+              "unit": "g",
+              "per": "1日"
+            }
+          },
+          {
+            "amountAtLeast": {
+              "ingredients": [
+                "セネガ"
+              ],
+              "as": "セネガ",
+              "value": 1.2,
+              "unit": "g",
+              "per": "1日"
+            }
+          }
+        ]
+      },
+      "conditionText": "１日最大配合量がオンジとして１ｇ以上又はセネガとして１.２ｇ以上（エキス剤については原生薬に換算してオンジ１ｇ又はセネガ１.２ｇ以上）含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-etc-hokan-1",
+      "groupId": "chinga_kyotan",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(1)",
+      "body": "直射日光の当たらない（湿気の少ない）涼しい所に（密栓して）保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "（ ）内は必要とする場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "chinga_kyotan-etc-hokan-2",
+      "groupId": "chinga_kyotan",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(2)",
+      "body": "小児の手の届かない所に保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "chinga_kyotan-etc-hokan-3",
+      "groupId": "chinga_kyotan",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(3)",
+      "body": "他の容器に入れ替えないこと（誤用の原因になったり品質が変わる．）．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "容器等の個々に至適表示がなされていて，誤用のおそれのない場合には記載しなくてもよい．",
+      "excludedBy": [],
+      "needsReview": true
+    }
+  ]
+}

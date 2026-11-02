@@ -50,6 +50,20 @@ describe("添付文書による補正（L-20261103-28）", () => {
   });
 });
 
+describe("鎮咳去痰薬（L-20261103-29）", () => {
+  it("ムコダイン去たん錠Pro500 は授乳中は相談、同じ成分のストナ去たんカプセルには出さない", () => {
+    expect(kinds("ムコダイン去たん錠Pro500")).toContain("breastfeeding");
+    expect(kinds("ストナ去たんカプセル")).not.toContain("breastfeeding");
+  });
+
+  it("コデイン類の製剤は年齢 12歳から", () => {
+    const age = deriveBadges(byName("新ブロン液エース"), NOTICE_ITEMS).find(
+      (b) => b.kind === "under12",
+    );
+    expect(age?.label).toBe("年齢 12歳から");
+  });
+});
+
 describe("成分名の旧表記", () => {
   it("塩酸○○ と ○○塩酸塩 を同じとみる", () => {
     expect(sameName("塩酸プソイドエフェドリン", "プソイドエフェドリン塩酸塩")).toBe(true);
