@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="かぜ薬のイメージ図">
+  <title>かぜ薬のイメージ図</title>
+  <path d="M26 4h48a22 22 0 0 1 22 22v48a22 22 0 0 1 -22 22h-48a22 22 0 0 1 -22 -22v-48a22 22 0 0 1 22 -22z" fill="#FDECEC"/>
+  <path d="M23 46a17 17 0 1 0 34 0a17 17 0 1 0 -34 0z" fill="#D9534F"/>
+  <path d="M52 62a14 14 0 1 0 28 0a14 14 0 1 0 -28 0z" fill="#F2A19E"/>
+  <path d="M31 39a3 3 0 1 0 6 0a3 3 0 1 0 -6 0z" fill="#FFFFFF"/>
+  <path d="M27 46h26M56 62h20" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

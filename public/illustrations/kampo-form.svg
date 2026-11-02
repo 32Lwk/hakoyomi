@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="漢方薬のイメージ図">
+  <title>漢方薬のイメージ図</title>
+  <path d="M26 4h48a22 22 0 0 1 22 22v48a22 22 0 0 1 -22 22h-48a22 22 0 0 1 -22 -22v-48a22 22 0 0 1 22 -22z" fill="#F5EEE3"/>
+  <path d="M32 20h36a6 6 0 0 1 6 6v48a6 6 0 0 1 -6 6h-36a6 6 0 0 1 -6 -6v-48a6 6 0 0 1 6 -6z" fill="#8A6A3F"/>
+  <path d="M37 32h26a4 4 0 0 1 4 4v28a4 4 0 0 1 -4 4h-26a4 4 0 0 1 -4 -4v-28a4 4 0 0 1 4 -4z" fill="#CDB38C"/>
+  <path d="M38 62c0-14 10-22 24-22 0 16-10 22-24 22z" fill="#5F4826"/>
+  <path d="M26 26l4-3l4 3l4-3l4 3l4-3l4 3l4-3l4 3l4-3l4 3l4-3l4 3" fill="none" stroke="#5F4826" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

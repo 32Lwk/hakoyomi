@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="乗り物酔い薬のイメージ図">
+  <title>乗り物酔い薬のイメージ図</title>
+  <path d="M4 50a46 46 0 1 0 92 0a46 46 0 1 0 -92 0z" fill="#EBF0F6"/>
+  <path d="M18 60v-8c0-4 2-6 6-7l8-2 8-10c2-2 4-3 7-3h16c3 0 5 1 7 4l6 9 4 1c3 1 4 3 4 6v10z" fill="#5E7FA3"/>
+  <path d="M25 62a7 7 0 1 0 14 0a7 7 0 1 0 -14 0zM63 62a7 7 0 1 0 14 0a7 7 0 1 0 -14 0z" fill="#3F5A78"/>
+  <path d="M42 36h10v8H36zM56 36h10l5 8H56zM29 62a3 3 0 1 0 6 0a3 3 0 1 0 -6 0zM67 62a3 3 0 1 0 6 0a3 3 0 1 0 -6 0z" fill="#FFFFFF"/>
+  <path d="M8 74c4-3 8 3 12 0M80 76c4-3 8 3 12 0" fill="none" stroke="#3F5A78" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

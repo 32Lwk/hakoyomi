@@ -1,0 +1,110 @@
+{
+  "cold": {
+    "label": "かぜ薬",
+    "colors": {
+      "a": "#D9534F",
+      "b": "#F2A19E",
+      "c": "#A33532",
+      "t": "#FDECEC"
+    }
+  },
+  "fever": {
+    "label": "解熱鎮痛薬",
+    "colors": {
+      "a": "#E8833A",
+      "b": "#F6BE8F",
+      "c": "#B45F1F",
+      "t": "#FDF0E4"
+    }
+  },
+  "cough": {
+    "label": "せき止め",
+    "colors": {
+      "a": "#8E5BD0",
+      "b": "#C9AEEE",
+      "c": "#643C9E",
+      "t": "#F3ECFC"
+    }
+  },
+  "rhinitis": {
+    "label": "鼻炎薬",
+    "colors": {
+      "a": "#1F9D6B",
+      "b": "#7FD1AE",
+      "c": "#157350",
+      "t": "#E4F6EE"
+    }
+  },
+  "nasal": {
+    "label": "点鼻薬",
+    "colors": {
+      "a": "#2A9FBF",
+      "b": "#86CFE2",
+      "c": "#1C7590",
+      "t": "#E3F4F9"
+    }
+  },
+  "stomach": {
+    "label": "胃腸薬",
+    "colors": {
+      "a": "#6B8E23",
+      "b": "#B5CC7A",
+      "c": "#4B6418",
+      "t": "#EFF4E2"
+    }
+  },
+  "eye": {
+    "label": "目薬",
+    "colors": {
+      "a": "#3E7BE6",
+      "b": "#9DBDF4",
+      "c": "#2756A8",
+      "t": "#E8F0FD"
+    }
+  },
+  "topical": {
+    "label": "外用薬",
+    "colors": {
+      "a": "#C2577E",
+      "b": "#E9A7C0",
+      "c": "#8F3B5B",
+      "t": "#FBEAF1"
+    }
+  },
+  "vitamin": {
+    "label": "ビタミン剤",
+    "colors": {
+      "a": "#E8A700",
+      "b": "#F6D46B",
+      "c": "#A87800",
+      "t": "#FDF5DC"
+    }
+  },
+  "sleep": {
+    "label": "睡眠改善薬",
+    "colors": {
+      "a": "#3B3F8F",
+      "b": "#9599D6",
+      "c": "#272A63",
+      "t": "#ECEDF8"
+    }
+  },
+  "kampo": {
+    "label": "漢方薬",
+    "colors": {
+      "a": "#8A6A3F",
+      "b": "#CDB38C",
+      "c": "#5F4826",
+      "t": "#F5EEE3"
+    }
+  },
+  "motion": {
+    "label": "乗り物酔い薬",
+    "colors": {
+      "a": "#5E7FA3",
+      "b": "#A9BDD3",
+      "c": "#3F5A78",
+      "t": "#EBF0F6"
+    }
+  }
+}

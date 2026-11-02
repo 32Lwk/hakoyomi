@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="鼻炎薬のイメージ図">
+  <title>鼻炎薬のイメージ図</title>
+  <path d="M26 4h48a22 22 0 0 1 22 22v48a22 22 0 0 1 -22 22h-48a22 22 0 0 1 -22 -22v-48a22 22 0 0 1 22 -22z" fill="#E4F6EE"/>
+  <path d="M50 38h28a12 12 0 0 1 0 24H50z" fill="#FFFFFF"/>
+  <path d="M22 38h28v24H22a12 12 0 0 1 0-24z" fill="#1F9D6B"/>
+  <path d="M20 42h18a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-18a2 2 0 0 1 -2 -2v0a2 2 0 0 1 2 -2z" fill="#7FD1AE"/>
+  <path d="M22 38h28v24H22a12 12 0 0 1 0-24zM50 38h28a12 12 0 0 1 0 24H50z" fill="none" stroke="#157350" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

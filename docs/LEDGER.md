@@ -2,6 +2,15 @@
 
 ## Open
 
+### L-20261102-33
+- asked: 薬の種類イラスト（12種×3パターン：パッケージ／剤形／シンボル）をSVGとしてリポジトリに書き出す（ゆう 2026-11-02）
+- why: 製品写真は権利上使えないため（ガイド「権利を有しない素材は失格」・L-28 製品画像を持たない）。実商品の画像ではなく薬の種類のイメージ図として、一覧・比較・検索で目印に使う
+- target: public/illustrations/{kind}-{pattern}.svg（36点）＋ public/illustrations/README.md、scripts/gen-illustrations.mjs
+- owner: Claude Code
+- status: done（2026-11-02）
+- proof: public/illustrations/*.svg（36点・xmllint 通過・一覧を目視確認）、public/illustrations/index.json、public/illustrations/README.md、scripts/gen-illustrations.mjs
+- notes: 会期中に Claude が新規作成した図形のみ（外部素材・AI画像生成なし）。実在商品のパッケージに似せない。画面では「イメージ図」と明示する。デザインの元はモックのキャンバス（MedArt 部品）
+
 ### L-20261102-32
 - asked: 開発目的の再定義を正本にする（ゆう 2026-11-02）。「誰が接客しても同じ水準の説明」を目的に、JAN読取→添付文書情報を手元に表示／2品の差分を瞬時に表示（バッジでビジュアライズ）／RAGで添付文書から詳細・正確に回答／逆引き・成分検索／ドーピング・眠気成分の有無に即答
 - why: 現行設計のモックが現場で使いづらく役に立たない、との評価（ゆう）。起点を「禁止事項の回避」から「説明水準のばらつき＝現場ペイン」に戻す
