@@ -12,7 +12,7 @@
 - [ ] **T-R2** P0 1h 対象の薬効群を決めて通知の出典を確定：使用上の注意（mhlw.go.jp/content/001742612.pdf）の該当ページ、承認基準の効能・効果（かぜ薬・解熱鎮痛薬・鎮咳去痰薬・鼻炎用内服薬、眠気防止薬は承認基準なし）— 完了：薬効群ごとに出典URL・ページを memory.md に
 - [ ] **T-R3** P0 0.5h WADA 禁止表 2026年版（JADA 公開）から OTC に関わる成分を確認 — 完了：`doping_list.ts` の元表（成分・区分・年版・URL）
 - [x] **T001** P0 公開リポ・Next.js 足場（2026-11-02 done、origin/main 04fe044）
-- [ ] **T002** P0 0.5h ESLint/Prettier/vitest、tsconfig strict、`"typecheck": "next typegen && tsc --noEmit"` — 完了：`npm run lint && npm run typecheck && npm test` 通過
+- [x] **T002** P0 0.5h ESLint/Prettier/vitest、tsconfig strict、`"typecheck": "next typegen && tsc --noEmit"` — 完了：`npm run lint && npm run typecheck && npm test` 通過（2026-11-02 done。`npm run check` で lint・型・テスト・整形を一括。禁止語リスト `src/lib/guard/banwords.ts` と src 全体の禁止語スキャンテストを追加。vitest 5 の peer 要件で `@types/node` を ^24 に更新）
 - [ ] **T003** P0 0.5h Supabase プロジェクト、migration（architecture §5、PIIカラムなし） — 完了：テーブル作成済み
 - [ ] **T004** P0 0.5h `.env.local`・Vercel 連携（空デプロイ） — 完了：Vercel URL が開く
 
