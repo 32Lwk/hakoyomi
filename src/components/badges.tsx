@@ -87,6 +87,22 @@ const ICON: Record<BadgeKind, LucideIcon> = {
   doping: Medal,
 };
 
+// 年齢（15歳未満・12歳未満は同じ製剤に併記されない）を1つの値にする。比べると商品カードで大きく出す（L-20261103-16）
+export type AgeStatus = {
+  badge: Badge | null;
+  // 「15歳から」「15歳未満は相談」、なければ「該当なし」「未収録」
+  text: string;
+  state: "set" | "none" | "unloaded";
+};
+
+export function ageStatus(badges: Badge[], noticeLoaded: boolean): AgeStatus {
+  const badge = badges.find((b) => badgeRowKind(b.kind) === "under15") ?? null;
+  if (badge) return { badge, text: badge.label.replace(/^年齢 /, ""), state: "set" };
+  return noticeLoaded
+    ? { badge: null, text: UI_COPY.badgeNone, state: "none" }
+    : { badge: null, text: UI_COPY.badgeUnloaded, state: "unloaded" };
+}
+
 export function BadgeRow({
   badges,
   group,
@@ -96,12 +112,13 @@ export function BadgeRow({
   group: NoticeGroup | null;
   noticeLoaded: boolean;
 }) {
-  const [open, setOpen] = useState<Badge | null>(null);
+  const [open, setOpen] = useState<BadgeTarget | null>(null);
+  // 年齢は商品カードの上に別に大きく出すので、ここでは扱わない
+  const shown = badges.filter((b) => badgeRowKind(b.kind) !== "under15");
   // バッジがない種類も「該当なし」として名前を出す（何も出ないと、見落としか該当なしか区別できない）
-  // 年齢（15歳未満・12歳未満）は1つとして数える
   const absent = (Object.keys(BADGE_INFO) as BadgeKind[])
-    .filter((k) => badgeRowKind(k) === k)
-    .filter((k) => !badges.some((b) => badgeRowKind(b.kind) === k));
+    .filter((k) => badgeRowKind(k) === k && k !== "under15")
+    .filter((k) => !shown.some((b) => b.kind === k));
   // 通知を取り込んでいない薬効群では、通知由来の種類は「該当なし」ではなく「未収録」
   const unloaded = noticeLoaded ? [] : absent.filter((k) => NOTICE_BADGE_KINDS.includes(k));
   const none = absent.filter((k) => !unloaded.includes(k));
@@ -113,35 +130,44 @@ export function BadgeRow({
         </h2>
         <span className="text-xs text-muted-foreground">{UI_COPY.badgeHint}</span>
       </div>
-      {badges.length > 0 && (
+      {shown.length > 0 && (
         <ul className="flex flex-wrap gap-2" aria-label="この商品のバッジ">
-          {badges.map((b) => (
+          {shown.map((b) => (
             <li key={b.kind}>
-              <BadgeChip badge={b} onClick={() => setOpen(b)} />
+              <BadgeChip badge={b} onClick={() => setOpen({ kind: b.kind, badge: b, group })} />
             </li>
           ))}
         </ul>
       )}
-      {unloaded.length > 0 && (
-        <p className="rounded-lg border border-uncertain px-3 py-2 text-xs leading-relaxed text-uncertain">
-          <span className="font-bold">{UI_COPY.badgeUnloaded}：</span>
-          {unloaded.map((k) => BADGE_INFO[k].name).join("・")}
-          <br />
-          {UI_COPY.badgeUnloadedNote}
-        </p>
-      )}
-      {none.length > 0 && (
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          <span className="font-bold">{UI_COPY.badgeNone}：</span>
-          {none.map((k) => BADGE_INFO[k].name).join("・")}
-          <br />
-          {UI_COPY.badgeNoneNote}
-        </p>
-      )}
-      <BadgeSheet
-        target={open ? { kind: open.kind, badge: open, group } : null}
-        onClose={() => setOpen(null)}
-      />
+      {/* 「該当なし」「未収録」は1行ずつ。意味は名前を押すと出る */}
+      {[
+        { kinds: unloaded, label: UI_COPY.badgeUnloadedShort, empty: "unloaded" as const },
+        { kinds: none, label: UI_COPY.badgeNone, empty: "none" as const },
+      ]
+        .filter((line) => line.kinds.length > 0)
+        .map((line) => (
+          <p
+            key={line.empty}
+            className={cn(
+              "flex flex-wrap items-baseline gap-x-1 text-xs",
+              line.empty === "unloaded" ? "text-uncertain" : "text-muted-foreground",
+            )}
+          >
+            <span className="font-bold">{line.label}：</span>
+            {line.kinds.map((k, i) => (
+              <button
+                key={k}
+                type="button"
+                onClick={() => setOpen({ kind: k, badge: null, group, empty: line.empty })}
+                className="underline decoration-dotted underline-offset-2"
+              >
+                {BADGE_INFO[k].name}
+                {i < line.kinds.length - 1 && "・"}
+              </button>
+            ))}
+          </p>
+        ))}
+      <BadgeSheet target={open} onClose={() => setOpen(null)} />
     </section>
   );
 }
@@ -152,6 +178,8 @@ export type BadgeTarget = {
   badge: Badge | null;
   group: NoticeGroup | null;
   productName?: string;
+  // バッジがないセルから開いたとき：その意味を添える
+  empty?: "none" | "unloaded";
 };
 
 export function BadgeSheet({
@@ -173,11 +201,25 @@ export function BadgeSheet({
                 <Icon className="size-5" aria-hidden="true" />
                 {target.badge
                   ? `${target.badge.label}${target.productName ? `（${target.productName}）` : ""}`
-                  : info.name}
+                  : target.empty
+                    ? `${info.name}：${target.empty === "none" ? UI_COPY.badgeNone : UI_COPY.badgeUnloaded}${target.productName ? `（${target.productName}）` : ""}`
+                    : info.name}
               </SheetTitle>
               <SheetDescription className="text-sm text-foreground">{info.about}</SheetDescription>
             </SheetHeader>
             <div className="flex flex-col gap-3 px-4 pb-6">
+              {target.empty && (
+                <p
+                  className={cn(
+                    "rounded-lg border px-3 py-2 text-sm",
+                    target.empty === "unloaded"
+                      ? "border-uncertain text-uncertain"
+                      : "border-border",
+                  )}
+                >
+                  {target.empty === "none" ? UI_COPY.badgeNoneNote : UI_COPY.badgeUnloadedNote}
+                </p>
+              )}
               {target.badge && (
                 <>
                   <h3 className="text-sm font-bold">根拠と出典</h3>

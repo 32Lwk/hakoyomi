@@ -2,7 +2,7 @@
 
 import { ChevronRight, CircleHelp, Plus, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { BadgeChip, BadgeSheet, type BadgeTarget } from "@/components/badges";
+import { ageStatus, BadgeChip, BadgeSheet, type BadgeTarget } from "@/components/badges";
 import { IngredientSheet, type IngredientTarget } from "@/components/ingredient-sheet";
 import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
@@ -83,7 +83,12 @@ export function CompareView() {
   const ingredients = rows.filter((r) => r.group !== undefined);
   const show = <T extends { diff: boolean }>(list: T[]) =>
     onlyDiff ? list.filter((r) => r.diff) : list;
-  const diffCount = rows.filter((r) => r.diff).length + badges.filter((b) => b.diff).length;
+  // 年齢は重要なので「確認ポイント」から「基本」に上げ、文字を大きく出す（L-20261103-16）
+  const ages = views.map((v) => ageStatus(v.badges, v.noticeLoaded));
+  const ageDiff = new Set(ages.map((a) => a.text)).size > 1;
+  const points = badges.filter((b) => b.kind !== "under15");
+  const diffCount =
+    rows.filter((r) => r.diff).length + points.filter((b) => b.diff).length + Number(ageDiff);
 
   // 成分は手引きの分類順に並んでいる（サーバー側）。分類は各行の成分名の後ろに括弧で出す
   const shownIngredients = show(ingredients);
@@ -108,7 +113,7 @@ export function CompareView() {
           <span className="mx-1 rounded bg-diff px-1.5 text-base font-bold tabular-nums">
             {diffCount}
           </span>
-          ／ {rows.length + badges.length}
+          ／ {rows.length + points.length + 1}
         </p>
       </div>
 
@@ -186,7 +191,7 @@ export function CompareView() {
             ))}
           </div>
 
-          <Section title="基本" show={show(meta).length > 0} />
+          <Section title="基本" show={show(meta).length > 0 || !onlyDiff || ageDiff} />
           {show(meta).map((r) => (
             <Row key={r.key} cols={cols} label={r.label} diff={r.diff}>
               {r.cells.map((c, i) => (
@@ -194,16 +199,62 @@ export function CompareView() {
               ))}
             </Row>
           ))}
+          {(!onlyDiff || ageDiff) && (
+            <Row
+              cols={cols}
+              diff={ageDiff}
+              label={
+                <button
+                  type="button"
+                  onClick={() => setBadge({ kind: "under15", badge: null, group: null })}
+                  className="-m-1 flex items-center gap-1 rounded p-1 text-left active:bg-accent"
+                >
+                  {BADGE_INFO.under15.name}
+                  <CircleHelp
+                    className="size-3.5 shrink-0 text-muted-foreground"
+                    aria-hidden="true"
+                  />
+                </button>
+              }
+            >
+              {ages.map((a, i) => {
+                const v = views[i];
+                return (
+                  <span role="cell" key={v.product.id} className="p-2">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setBadge({
+                          kind: a.badge?.kind ?? "under15",
+                          badge: a.badge,
+                          group: v.group,
+                          productName: v.product.name,
+                          empty: a.state === "set" ? undefined : a.state,
+                        })
+                      }
+                      className={cn(
+                        "-m-1 rounded p-1 text-left active:bg-accent",
+                        a.state === "set"
+                          ? "text-base font-bold"
+                          : a.state === "unloaded"
+                            ? "text-xs text-uncertain underline"
+                            : "text-xs text-muted-foreground underline decoration-dotted",
+                      )}
+                    >
+                      {a.text}
+                    </button>
+                  </span>
+                );
+              })}
+            </Row>
+          )}
 
           <Section
             title="確認ポイント"
-            show={show(badges).length > 0}
-            note={[
-              `${UI_COPY.badgeRowHint}。${UI_COPY.badgeNoneNote}`,
-              ...(views.some((v) => !v.noticeLoaded) ? [UI_COPY.badgeUnloadedNote] : []),
-            ].join("\n")}
+            show={show(points).length > 0}
+            aside={UI_COPY.badgeRowHint}
           />
-          {show(badges).map((b) => (
+          {show(points).map((b) => (
             <Row
               key={b.kind}
               cols={cols}
@@ -230,8 +281,7 @@ export function CompareView() {
                   <span role="cell" key={i} className="p-2">
                     {v && found && label ? (
                       <BadgeChip
-                        // 行名が「年齢」なので、表の中では「15歳から」だけにする
-                        badge={{ ...found, label: found.label.replace(/^年齢 /, "") }}
+                        badge={found}
                         compact
                         onClick={() =>
                           setBadge({
@@ -242,13 +292,20 @@ export function CompareView() {
                           })
                         }
                       />
-                    ) : v && !v.noticeLoaded && NOTICE_BADGE_KINDS.includes(b.kind) ? (
-                      <span className="text-xs text-uncertain underline">
-                        {UI_COPY.badgeUnloaded}
-                      </span>
-                    ) : (
-                      <span className="text-xs text-muted-foreground">{UI_COPY.badgeNone}</span>
-                    )}
+                    ) : v ? (
+                      <EmptyCell
+                        unloaded={!v.noticeLoaded && NOTICE_BADGE_KINDS.includes(b.kind)}
+                        onClick={(empty) =>
+                          setBadge({
+                            kind: b.kind,
+                            badge: null,
+                            group: v.group,
+                            productName: v.product.name,
+                            empty,
+                          })
+                        }
+                      />
+                    ) : null}
                   </span>
                 );
               })}
@@ -256,9 +313,9 @@ export function CompareView() {
           ))}
 
           <Section
-            title="成分（1日最大量あたり）"
+            title="成分"
             show={shownIngredients.length > 0}
-            note="（　）は厚労省の手引きでの成分の分類"
+            aside="1日最大量あたり・（ ）は手引きの分類"
           />
           {shownIngredients.map((r) => (
             <IngredientRow key={r.key} cols={cols} row={r} onOpen={() => openIngredient(r)} />
@@ -272,20 +329,41 @@ export function CompareView() {
   );
 }
 
-function Section({ title, show, note }: { title: string; show: boolean; note?: string }) {
+// 区分の見出し。補足は見出しと同じ1行に短く（L-20261103-16）
+function Section({ title, show, aside }: { title: string; show: boolean; aside?: string }) {
   if (!show) return null;
   return (
     <div className="border-t border-border bg-muted px-2 pt-3 pb-1.5">
-      {/* 横に送っても読めるよう、見出しと説明は画面幅に収めて左に留める */}
-      <div className="sticky left-2 flex w-[calc(100vw-4rem)] max-w-xl flex-col gap-0.5">
+      {/* 横に送っても読めるよう、画面幅に収めて左に留める */}
+      <div className="sticky left-2 flex w-[calc(100vw-4rem)] max-w-xl items-baseline justify-between gap-2">
         <span className="text-xs font-bold text-muted-foreground">{title}</span>
-        {note && (
-          <span className="text-[11px] leading-snug whitespace-pre-line text-muted-foreground">
-            {note}
-          </span>
-        )}
+        {aside && <span className="truncate text-[11px] text-muted-foreground">{aside}</span>}
       </div>
     </div>
+  );
+}
+
+// バッジがないセル。押すと「該当なし」「未収録」の意味を出す
+function EmptyCell({
+  unloaded,
+  onClick,
+}: {
+  unloaded: boolean;
+  onClick: (empty: "none" | "unloaded") => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onClick(unloaded ? "unloaded" : "none")}
+      className={cn(
+        "-m-1 rounded p-1 text-xs active:bg-accent",
+        unloaded
+          ? "text-uncertain underline"
+          : "text-muted-foreground underline decoration-dotted underline-offset-2",
+      )}
+    >
+      {unloaded ? UI_COPY.badgeUnloaded : UI_COPY.badgeNone}
+    </button>
   );
 }
 

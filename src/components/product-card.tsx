@@ -1,12 +1,13 @@
 "use client";
 
-import { ChevronRight, ExternalLink, FileText, MapPin } from "lucide-react";
+import { ChevronRight, ExternalLink, FileText, MapPin, UserRound } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { BadgeRow } from "@/components/badges";
+import { ageStatus, BadgeRow, BadgeSheet } from "@/components/badges";
 import { IngredientSheet } from "@/components/ingredient-sheet";
 import { ingredientRole } from "@/lib/ingredientRole";
-import { UI_COPY } from "@/lib/guard/uiCopy";
+import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
+import { cn } from "@/lib/utils";
 import type { ProductView } from "@/lib/catalog";
 import { ProductImage } from "@/components/product-image";
 import { packageImage } from "@/lib/packageImage";
@@ -47,6 +48,8 @@ export function ProductCard({ view }: { view: ProductView }) {
           </p>
         </div>
       </header>
+
+      <AgeBand view={view} />
 
       <dl className="grid grid-cols-3 divide-x divide-border rounded-xl bg-muted text-center">
         <Stat label="内容量" value={`${product.contentQty}${product.contentUnit}`} />
@@ -173,6 +176,48 @@ export function ProductCard({ view }: { view: ProductView }) {
         onClose={() => setIngredient(null)}
       />
     </article>
+  );
+}
+
+// 年齢は店頭で最初に確かめることが多いので、品名のすぐ下に大きく出す。押すと根拠（L-20261103-16）
+function AgeBand({ view }: { view: ProductView }) {
+  const [open, setOpen] = useState(false);
+  const age = ageStatus(view.badges, view.noticeLoaded);
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className={cn(
+          "flex min-h-14 items-center gap-3 rounded-xl px-4 py-2 text-left active:translate-y-px",
+          age.state === "set"
+            ? "bg-notice text-white"
+            : age.state === "unloaded"
+              ? "border-2 border-uncertain text-uncertain"
+              : "border-2 border-border text-muted-foreground",
+        )}
+      >
+        <UserRound className="size-5 shrink-0" aria-hidden="true" />
+        <span className="text-sm">{BADGE_INFO.under15.name}</span>
+        <span className={cn("flex-1 font-bold", age.state === "set" ? "text-2xl" : "text-base")}>
+          {age.text}
+        </span>
+        <ChevronRight className="size-5 shrink-0 opacity-70" aria-hidden="true" />
+      </button>
+      <BadgeSheet
+        target={
+          open
+            ? {
+                kind: age.badge?.kind ?? "under15",
+                badge: age.badge,
+                group: view.group,
+                empty: age.state === "set" ? undefined : age.state,
+              }
+            : null
+        }
+        onClose={() => setOpen(false)}
+      />
+    </>
   );
 }
 
