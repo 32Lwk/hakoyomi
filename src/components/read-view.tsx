@@ -1,10 +1,11 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, Columns3, MapPin, Plus, Search, X } from "lucide-react";
+import { ChevronLeft, Columns3, MapPin, Plus, Search, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ProductCard } from "@/components/product-card";
 import { ProductImage } from "@/components/product-image";
+import { ProductList } from "@/components/product-row";
 import { useStack } from "@/components/stack-provider";
 import { Input } from "@/components/ui/input";
 import { useProductViews } from "@/components/use-product-views";
@@ -356,69 +357,5 @@ function ListHeading({ title, count }: { title: string; count: number }) {
         {UI_COPY.sortedShort}
       </span>
     </h2>
-  );
-}
-
-function ProductList({
-  views,
-  ids,
-  onPick,
-}: {
-  views: ProductView[];
-  ids: string[];
-  onPick: (id: string) => void;
-}) {
-  return (
-    <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border">
-      {views.map((v) => (
-        <li key={v.product.id}>
-          <ProductRow view={v} read={ids.includes(v.product.id)} onPick={onPick} />
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-// 一覧の1行。写真は小さく、品名を主に（1画面に多く見えるように）
-function ProductRow({
-  view,
-  read,
-  onPick,
-}: {
-  view: ProductView;
-  read: boolean;
-  onPick: (id: string) => void;
-}) {
-  const { product } = view;
-  return (
-    <button
-      type="button"
-      onClick={() => onPick(product.id)}
-      className="flex w-full items-center gap-3 px-2.5 py-2 text-left active:bg-accent"
-    >
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-border">
-        <ProductImage
-          id={product.id}
-          kind={product.kind}
-          name={product.name}
-          size={48}
-          decorative
-          className="size-11 object-contain"
-        />
-      </span>
-      <span className="flex min-w-0 flex-1 flex-col">
-        <span className="truncate text-[15px] font-bold">{product.name}</span>
-        <span className="truncate text-xs text-muted-foreground">
-          {/* 一覧では「株式会社」を省いて読みやすくする */}
-          {product.maker.replace(/株式会社/g, "").trim()}・{product.riskClass}
-        </span>
-      </span>
-      {read && (
-        <span className="shrink-0 rounded bg-accent px-1.5 text-[11px] font-bold text-accent-foreground">
-          {UI_COPY.readMark}
-        </span>
-      )}
-      <ChevronRight className="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
-    </button>
   );
 }

@@ -20,7 +20,7 @@ export type CompareRow = {
   group?: string | null;
 };
 
-function amountText(amount: number | null, unit: string | null): string {
+export function amountText(amount: number | null, unit: string | null): string {
   if (amount === null || unit === null) return "不明";
   return `${Number.isInteger(amount) ? amount : amount.toFixed(1)}${unit}`;
 }

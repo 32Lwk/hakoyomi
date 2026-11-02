@@ -43,6 +43,13 @@ export const UI_COPY = {
   addToCompare: "比べるに追加",
   compareFull: "比べられるのは4品までです。外してから追加してください",
   findPlaceholder: "品名・メーカー・JANで探す",
+  searchPlaceholder: "品名・メーカー・成分名で探す",
+  clearFilters: "すべて外す",
+  ingredientSuggest: "成分の条件にする",
+  ingredientFilterNote: "選んだ成分をすべて含む商品に絞ります（数字は品数）",
+  excludeFilterNote:
+    "通知・リストに当たる成分を含む商品を除きます。通知を未取り込みの種類の商品も除きます",
+  ingredientNoGroup: "手引きの分類なし",
   readList: "読んだ商品",
   readMark: "読んだ",
   kindsTitle: "種類から探す",
