@@ -2,7 +2,7 @@
 
 - slug: bwc-japan-2026
 - title: Built with Claude Japan 2026
-- goal: 新規作品「ハコヨミ【仮】」で参加。登録販売者向け・箱起点の業務支援（推薦なし）。説明の質を揃え、ベテランと新人の差をなくす
+- goal: 新規作品「ハコよみ」で参加。登録販売者向け・箱起点の業務支援（推薦なし）。説明の質を揃え、ベテランと新人の差をなくす
 - audience: Cerebral Valley / Anthropic 審査
 - deadline: キックオフ 2026-11-02 12:00 JST（イベント期間・提出要件は要確認）
 - hard constraints:
@@ -22,8 +22,8 @@
   - workers: [ハッカソン, 資料作成君]
   - person: ゆう（ソロ実装）
 - deliverable paths:
-  - /workspace/contests/bwc_japan_2026/ （定義・リサーチ）
-  - /workspace/contests/bwc_japan_2026/docs/ （prd/architecture/rules/design/tasks/memory）
+  - /Users/yuto/ハコよみ/hakoyomi/ （公開リポ、docs 正本は hakoyomi/docs/）
+  - （旧）/workspace/contests/bwc_japan_2026/ （定義・リサーチ。この Mac には無い）
 - tech【仮】: Next.js + TypeScript + Tailwind / Claude API + Claude Code / Supabase + Vercel / 認証なし / カメラ+アップロード / デモはスマホ+PC
-- status: キックオフdocs整備済み・実装待ち（tasks Phase 0〜）
-- github mirror: TBD（公開必須・32Lwk/hakoyomi 想定）
+- status: T001 完了（公開リポ作成・push 済み）。docs 整合済み（L-20261102-28）。次は T002
+- github: https://github.com/32Lwk/hakoyomi （public）

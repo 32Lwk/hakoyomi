@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ハコヨミ【仮】",
+  title: "ハコよみ",
   description: "登録販売者向けの店頭業務支援（材料をそろえるツール。判断は販売者が行います）",
 };
 

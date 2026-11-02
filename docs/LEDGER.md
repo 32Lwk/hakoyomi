@@ -2,14 +2,74 @@
 
 ## Open
 
-### L-20261102-21
+### L-20261102-31
+- asked: デモSKU候補の提案（JAN特定済み97件から、8成分あり／なし・基準表記違いの対比が作れる組）
+- why: L-28 ⑨
+- target: docs/tasks.md T202′ の seed 対象
+- owner: Claude Code → ゆう（手元の箱で絞る）
+- status: open
+- proof:
+- notes: 分量はPMDAで1件ずつ手確認
+
+### L-20261102-30
+- asked: BWC 提出締切・提出物要件・審査基準を公式ページで調査（prd Q5）
+- why: P0/P1 の配分を決めるため（ユーザー回答）
+- target: docs/PROJECT.md, docs/tasks.md
+- owner: Claude Code
+- status: open
+- proof:
+- notes:
+
+### L-20261102-29
+- asked: 指定濫用防止医薬品の対象成分・施行日・大容量の定義を厚労省の告示・通知原文で調査（memory Glossary、prd Q4、T401）
+- why: デモの核。根拠URL・日付つきで固定するため（ユーザー回答：Claude調査→ゆう確認）
+- target: docs/memory.md, docs/prd.md Q4, docs/tasks.md T401
+- owner: Claude Code → ゆう確認
+- status: open
+- proof:
+- notes:
+
+## Done
+
+### L-20261102-28
+- asked: docs の食い違いを修正（Claude Code 全体確認の指摘 1〜8）＋実商品データ方針への転換
+- why: ユーザー指示「docsを直す」「改善点・方針は推奨と理由つき選択肢で質問」（2026-11-02、Mac の Claude Code。全項目を AskUserQuestion で確認）
+- target: hakoyomi/docs/*.md、hakoyomi/README.md、hakoyomi/src/app/{page,layout}.tsx（名称）、ルート CLAUDE.md / README.md / CLAUDE_PROJECT.txt
+- owner: ゆう（Mac の Claude Code）
+- status: done
+- proof: hakoyomi main（このエントリを含むコミット）
+- notes: 決定（すべてユーザー回答）——
+  ①デモは**実商品**。画面に出すのは事実（品名・メーカー・JAN・リスク区分・成分名・分量・基準量・内容量）のみ。添付文書の文言（効能・してはいけないこと等）は画面に出さず PMDA へリンクアウト（Q8）。模擬原文は作らない
+  ②事実の構造化は**開発時**：ゆうが PMDA の添付文書を1件ずつ開き（一括DLなし）、ローカルで Claude に事実だけ抽出させ、ゆうが検証して seed 化。文書ファイル・文言はリポに入れない。実行時の Claude は名寄せ・販売記録下書き・自己検査。換算・差分・8成分判定・手順書順はコード
+  ③M3 は「欄名＋添付文書改訂日＋出典＋PMDAリンク」。要約・見出し生成はしない
+  ④ガードの対象は Claude 生成文。seed の事実はコードが表示
+  ⑤master の使用列を拡大：品名・メーカー・JAN・分類・成分名・PMDA URL。分量等はPMDAで手確認。効能文・用法・画像URL・症状辞書・safety・clinical は使わない
+  ⑥製品画像は取得・保管しない。Supabase Storage・写真TTLを削除。JAN はデコード結果のみ使いフレームは保存しない
+  ⑦design.md を JAN 主経路に全面改訂
+  ⑧実名をそのまま表示（Q2 クローズ）
+  ⑨デモSKU：JAN特定済み97件から Claude が候補提案→ゆうが手元の箱で絞る
+  ⑩作品名表記は「ハコよみ」に統一（最終名は Q7）
+  ⑪docs 正本は hakoyomi/docs/ に一本化。ルート docs/ は docs_backup_20261102.zip に退避して削除
+  ⑫細部：LEDGER の ID 重複解消（Open 側旧-21→-26、旧-22→-27）と Open/Done 整理、T001 チェック、T002 に typecheck、architecture の JAN 行・env 整理、skills-stack に Mac 注記
+  ⑬反映は main 直コミット＋push（ユーザー指示）
+
+### L-20261102-27（旧 Open 側 L-20261102-22。ID 重複のため改番）
+- asked: T001 の GitHub 公開（Mac で node_modules 入れ直し → gh repo create 32Lwk/hakoyomi --public --push）
+- why: T001 完了条件（公開リポ）
+- target: GitHub 32Lwk/hakoyomi
+- owner: ハッカソン / ゆう
+- status: done
+- proof: origin/main = 04fe044（git ls-remote で確認 2026-11-02）
+- notes: 履歴 rewrite / force-push なし。data/・*.zip・.env* は非公開（git ls-files で確認）
+
+### L-20261102-26（旧 Open 側 L-20261102-21。ID 重複のため改番）
 - asked: T001 着手（公開リポ足場：/Users/yuto/ハコよみ/hakoyomi/ に Next.js、docs コピー、data は除外）
 - why: tasks.md Phase 0 初日目標
 - target: hakoyomi/（GitHub 32Lwk/hakoyomi public）
 - owner: ハッカソン / ゆう
-- status: in-progress
-- proof: n/a
-- notes: shadcn は T101。data/・*.zip・.env* は gitignore。T002 以降は未着手
+- status: done
+- proof: hakoyomi/ main 04fe044（T001: scaffold Next.js app）。npm run build・lint 通過、localhost:3000 で 200・常時表示を確認、origin へ push 済み
+- notes: shadcn は T101。data/・*.zip・.env* は gitignore（.env.example は追跡）。T002 以降は未着手
 
 ### L-20261102-20
 - asked: Discord医療アドバイス回答を設計と照合して台帳・prd・PROJECT・memory更新
@@ -28,9 +88,6 @@
 - status: done
 - proof: /workspace/contests/bwc_japan_2026/docs/skills-stack.md
 - notes: FE/BE/Claude/プレゼン/動画/Playwright/画面収録・既存Grok Bot skillsも含む
-
-
-
 
 ### L-20261102-02
 - asked: 公開リポ構成（医療アドバイス禁止・新規のみ）を満たす設計
@@ -58,8 +115,6 @@
 - status: done
 - proof: n/a
 - notes:
-
-## Done
 
 ### L-20261102-18
 - asked: prd §11 Demo Story を JAN主経路に合わせて書き換え
@@ -250,9 +305,9 @@
 - why: Phase 0 最初の1手（t219u）
 - target: Mac「ハコよみ」/hakoyomi/ → GitHub 32Lwk/hakoyomi（public）
 - owner: ゆう（Mac の Claude Code で実施。Grok BotはGitHubを触らない）
-- status: open
-- proof:
-- notes: 公開リポ作成待ち。data/・zip・.env* はコミットしない。.env.example に CLAUDE_MODEL_GUARD 追加（L-25）
+- status: done
+- proof: L-20261102-26 / -27（origin/main 04fe044）
+- notes: 公開リポ作成済み。data/・zip・.env* はコミットしない。.env.example に CLAUDE_MODEL_GUARD 追加（L-25）
 
 ### L-20261102-25
 - asked: 確定計画のdocs反映（JAN主経路／@zxing/browser／shadcn@T101／design.md正本／data除外／T001はClaude Code）

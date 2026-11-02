@@ -1,4 +1,6 @@
-# ハコヨミ【仮】 スキル・技術スタック一覧（BWC Japan 2026）
+# ハコよみ スキル・技術スタック一覧（BWC Japan 2026）
+
+> 注記（2026-11-02, L-20261102-28）：A表と F表は別環境（Grok Bot / Cursor、`/workspace/`・`/home/box/` パス）向けの記録。**この Mac の Claude Code では使えない**。実装は Mac の Claude Code（Bash・gh・ローカルの npm）で行う。B〜E のライブラリは有効。PMDA は「自前取得」ではなく、開発時に1件ずつ手で開き事実だけ抽出する（prd Q8）。
 
 - 作成日: 2026-11-02
 - 目的: 実装（FE/BE）・Claude連携・プレゼン・動画・画面収録/E2E に必要なスキルとライブラリを一覧化し、入れる順番を決める。
@@ -14,7 +16,7 @@
 
 ## A. このBotですでに使えるスキル（Cursor-managed / workflows）
 
-| 名前 | ハコヨミでの用途 | 場所 | 状態 |
+| 名前 | ハコよみでの用途 | 場所 | 状態 |
 |---|---|---|---|
 | project-ledger | PRD/DESIGN/LEDGERを全Botで共有・指示記録 | sand-workflow:project-ledger（/home/box/agent-data/workflows/project-ledger） | 利用可・Must |
 | code-changes | リポジトリでの実装作業全般 | Cursor-managed skill | 利用可・Must |
