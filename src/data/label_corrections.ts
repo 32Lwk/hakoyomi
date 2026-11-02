@@ -54,6 +54,12 @@ const LOXONIN = [
 const MUCODYNE = KEGG("J2401000006", "ムコダイン去たん錠Pro500");
 const DREWELL = KEGG("J0601001652", "ドリエル");
 const DREWELL_EX = KEGG("K0706000002", "ドリエルEX");
+const ELPAIN_A = KEGG("J2501000118", "エルペインコーワα");
+const LUNA_J = KEGG("J1201000074", "バファリンルナJ");
+const NORSHIN_JUNIOR = KEGG("J0601001553", "小中学生用ノーシンピュア");
+const RESTAMIN = KEGG("J0601005882", "レスタミンコーワ糖衣錠");
+const RESTAMIN_U = KEGG("J0601005881", "レスタミンUコーワ錠");
+const RESTAMIN_A = KEGG("K2309000002", "レスタミンコーワα錠");
 const CHECKED_ON = "2026-11-03";
 
 // 第2世代の抗ヒスタミン成分の単味製剤。通知（鼻炎用内服薬）の記載条件に名前がない
@@ -224,6 +230,100 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     bodyFrom: "genetsu_chintsu-ng-4",
     target: { productIds: ["drewell", "drewell-ex"] },
     sources: [DREWELL, DREWELL_EX],
+    checkedOn: CHECKED_ON,
+  },
+  // 生理痛にも使う解熱鎮痛薬（L-20261103-40）
+  {
+    // ブチルスコポラミン臭化物（目のかすみ等）。通知の運転の項目は眠気を起こす成分の記載条件なので、商品で当てる。（ ）の理由は書かない
+    id: "genetsu-drive-elpain",
+    groupId: "genetsu_chintsu",
+    action: "add",
+    badge: "drive",
+    section: "してはいけないこと",
+    body: "服用後，乗物又は機械類の運転操作をしないこと",
+    bodyFrom: "genetsu_chintsu-ng-3",
+    target: { productIds: ["med-00199"] },
+    sources: [ELPAIN_A],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "genetsu-age-children",
+    groupId: "genetsu_chintsu",
+    action: "unrecorded",
+    kinds: ["under15"],
+    note: "添付文書の用法・用量では7才未満は服用しない。年齢のバッジ（15歳・12歳）では表せない",
+    target: { productIds: ["med-00577", "med-00182"] },
+    sources: [LUNA_J, NORSHIN_JUNIOR],
+    checkedOn: CHECKED_ON,
+  },
+  // レスタミンコーワの内服（ジフェンヒドラミン塩酸塩、L-20261103-40）。抗ヒスタミン薬主薬製剤の通知を取り込んでいないため、
+  // 添付文書で確かめた品だけ確認ポイントを出す（睡眠改善薬と同じ扱い）
+  {
+    id: "kou-histamine-label-checked",
+    groupId: "kou_histamine",
+    action: "labelChecked",
+    note: "添付文書の「してはいけないこと」を KEGG MEDICUS で確認",
+    target: { productIds: ["med-03563", "med-03562", "med-03564"] },
+    sources: [RESTAMIN, RESTAMIN_U, RESTAMIN_A],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "kou-histamine-drive",
+    groupId: "kou_histamine",
+    action: "add",
+    badge: "drive",
+    section: "してはいけないこと",
+    body: "服用後，乗物又は機械類の運転操作をしないこと",
+    bodyFrom: "bien_naifuku-ng-3-1",
+    target: { productIds: ["med-03563", "med-03562", "med-03564"] },
+    sources: [RESTAMIN, RESTAMIN_U, RESTAMIN_A],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "kou-histamine-breastfeeding",
+    groupId: "kou_histamine",
+    action: "add",
+    badge: "breastfeeding",
+    section: "してはいけないこと",
+    body: "授乳中の人は本剤を服用しないか，本剤を服用する場合は授乳を避けること",
+    bodyFrom: "bien_naifuku-ng-4",
+    target: { productIds: ["med-03563", "med-03562", "med-03564"] },
+    sources: [RESTAMIN, RESTAMIN_U, RESTAMIN_A],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "kou-histamine-alcohol",
+    groupId: "kou_histamine",
+    action: "add",
+    badge: "alcohol",
+    section: "してはいけないこと",
+    body: "服用前後は飲酒しないこと",
+    bodyFrom: "genetsu_chintsu-ng-4",
+    target: { productIds: ["med-03563", "med-03562", "med-03564"] },
+    sources: [RESTAMIN, RESTAMIN_U, RESTAMIN_A],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    id: "kou-histamine-under15-alpha",
+    groupId: "kou_histamine",
+    action: "add",
+    badge: "under15",
+    section: "してはいけないこと",
+    body: "１５歳未満の小児．",
+    bodyFrom: "genetsu_chintsu-ng-1-3",
+    target: { productIds: ["med-03564"] },
+    sources: [RESTAMIN_A],
+    checkedOn: CHECKED_ON,
+  },
+  {
+    // 糖衣錠・U錠は 5才から（用法・用量）
+    id: "kou-histamine-age",
+    groupId: "kou_histamine",
+    action: "unrecorded",
+    kinds: ["under15"],
+    note: "添付文書の用法・用量では5才未満は服用しない。年齢のバッジ（15歳・12歳）では表せない",
+    target: { productIds: ["med-03563", "med-03562"] },
+    sources: [RESTAMIN, RESTAMIN_U],
     checkedOn: CHECKED_ON,
   },
 ];

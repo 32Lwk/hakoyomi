@@ -35,6 +35,10 @@ const NOT_IN_TEBIKI = new Set([
   "fever:セトチアミン塩酸塩水和物",
   "cough:アセンヤク末",
   "cough:ニンジン末",
+  // L-20261103-40（ブチルスコポラミンは胃腸鎮痛鎮痙薬の章。リボフラビン・オロチン酸は内服アレルギー用薬の章に名前がない）
+  "fever:ブチルスコポラミン臭化物",
+  "rhinitis:リボフラビン",
+  "rhinitis:オロチン酸",
 ]);
 
 describe("ingredientRole", () => {

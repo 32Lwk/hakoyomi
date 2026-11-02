@@ -2,6 +2,7 @@ import "server-only";
 import { createClient } from "@supabase/supabase-js";
 import { DEMO_PRODUCTS, demoSku } from "@/data/demo_products";
 import { MOCK_STORE, sectionAt, type Shelf, type ShelfLocation } from "@/data/mock_store";
+import { SHELF_LOCATIONS } from "@/data/shelf_stock";
 import { NOTICE_GROUPS, NOTICE_ITEMS } from "@/data/notices";
 import {
   noticeGroupFromRow,
@@ -33,7 +34,7 @@ const STATIC_CATALOG: Catalog = {
   products: DEMO_PRODUCTS,
   groups: NOTICE_GROUPS,
   items: NOTICE_ITEMS,
-  locations: MOCK_STORE.locations,
+  locations: SHELF_LOCATIONS,
 };
 
 const CACHE_MS = 60_000;

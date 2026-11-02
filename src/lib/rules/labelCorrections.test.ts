@@ -88,6 +88,33 @@ describe("睡眠改善薬（L-20261103-36）", () => {
   });
 });
 
+describe("レスタミン・生理痛にも使う解熱鎮痛薬（L-20261103-40）", () => {
+  it("レスタミン内服は添付文書から運転・授乳・飲酒を出す。α錠だけ15歳から、糖衣錠・U錠の年齢は未収録", () => {
+    for (const name of ["レスタミンコーワ糖衣錠", "レスタミンUコーワ錠", "レスタミンコーワα錠"]) {
+      expect(kinds(name), name).toEqual(
+        expect.arrayContaining(["abuse", "drive", "breastfeeding", "alcohol"]),
+      );
+    }
+    expect(kinds("レスタミンコーワα錠")).toContain("under15");
+    expect(unrecordedKinds(byName("レスタミンコーワα錠"), false)).toEqual([]);
+    expect(unrecordedKinds(byName("レスタミンコーワ糖衣錠"), false)).toEqual(["under15"]);
+  });
+
+  it("エルペインコーワα は添付文書の運転注意を足す", () => {
+    const drive = deriveBadges(byName("エルペインコーワα"), NOTICE_ITEMS).find(
+      (b) => b.kind === "drive",
+    );
+    expect(drive?.evidence[0]).toMatchObject({ kind: "label" });
+  });
+
+  it("7才から飲める品（バファリンルナJ・小中学生用ノーシンピュア）の年齢は未収録", () => {
+    for (const name of ["バファリンルナJ", "小中学生用ノーシンピュア"]) {
+      expect(kinds(name), name).not.toContain("under15");
+      expect(unrecordedKinds(byName(name), true), name).toEqual(["under15"]);
+    }
+  });
+});
+
 describe("成分名の旧表記", () => {
   it("塩酸○○ と ○○塩酸塩 を同じとみる", () => {
     expect(sameName("塩酸プソイドエフェドリン", "プソイドエフェドリン塩酸塩")).toBe(true);

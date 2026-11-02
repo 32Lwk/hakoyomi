@@ -5,6 +5,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { DEMO_PRODUCTS } from "@/data/demo_products";
 import { MOCK_STORE } from "@/data/mock_store";
+import { SHELF_LOCATIONS } from "@/data/shelf_stock";
 import { KAZE_GROUP } from "@/data/notice_kaze";
 import { NOTICE_ITEMS } from "@/data/notices";
 import { noticeGroupToRow, noticeItemToRow, productToRows } from "@/lib/db/rows";
@@ -20,6 +21,8 @@ const EXTRA_GROUP_NAMES: Record<string, string> = {
   vitamin: "ビタミン主薬製剤",
   kampo: "漢方製剤",
   gaihi: "外皮用薬",
+  // L-20261103-40
+  kou_histamine: "抗ヒスタミン薬主薬製剤",
 };
 
 // 販売終了でデモデータから外した品の id（新コッコアポA錠・スパークユンケル、L-20261103-35）。外すときはここに足す
@@ -84,7 +87,7 @@ async function main() {
   check("product_facts", await db.from("product_facts").insert(rows.flatMap((r) => r.facts)));
 
   // JAN が確かめられず demoSkus.json から外した商品の棚位置は入れない
-  const locations = MOCK_STORE.locations.filter((l) => ids.includes(l.productId));
+  const locations = SHELF_LOCATIONS.filter((l) => ids.includes(l.productId));
   check(
     "shelf_locations",
     await db.from("shelf_locations").upsert(
