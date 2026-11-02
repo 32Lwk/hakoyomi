@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="外用薬のイメージ図">
+  <title>外用薬のイメージ図</title>
+  <path d="M4 50a46 46 0 1 0 92 0a46 46 0 1 0 -92 0z" fill="#FBEAF1"/>
+  <path d="M32.3 16.8L83.2 67.7L67.7 83.2L16.8 32.3z" fill="#C2577E"/>
+  <path d="M16.8 67.7L67.7 16.8L83.2 32.3L32.3 83.2z" fill="#E9A7C0"/>
+  <path d="M48.4 44a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0zM48.4 56a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0zM42.4 50a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0zM54.4 50a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0z" fill="#8F3B5B"/>
+  <path d="M50 37.3L62.7 50L50 62.7L37.3 50z" fill="#FFFFFF"/>
+  <path d="M16.8 67.7L67.7 16.8L83.2 32.3L32.3 83.2z" fill="none" stroke="#8F3B5B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

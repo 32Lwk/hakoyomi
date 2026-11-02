@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="鼻炎薬のイメージ図">
+  <title>鼻炎薬のイメージ図</title>
+  <path d="M10 30h70v50h-70z" fill="#FFFFFF"/>
+  <path d="M10 64h70v16h-70z" fill="#1F9D6B"/>
+  <path d="M10 30l12-12h70L80 30z" fill="#7FD1AE"/>
+  <path d="M80 30l12-12v50L80 80z" fill="#157350"/>
+  <path d="M10 30h70v50h-70z" fill="none" stroke="#157350" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="45" y="76" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="10.5">鼻炎薬</text>
+  <svg x="29" y="31" width="32" height="32" viewBox="0 0 100 100">
+  <path d="M42 40a8 8 0 1 0 16 0a8 8 0 1 0 -16 0z" fill="#1F9D6B"/>
+  <path d="M55 40a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM48.5 51.3a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM35.5 51.3a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM29 40a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM35.5 28.7a8 8 0 1 0 16 0a8 8 0 1 0 -16 0zM48.5 28.7a8 8 0 1 0 16 0a8 8 0 1 0 -16 0z" fill="#7FD1AE"/>
+  <path d="M77.5 22a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0zM84 31a2 2 0 1 0 4 0a2 2 0 1 0 -4 0zM15.5 24a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0zM12 34a2 2 0 1 0 4 0a2 2 0 1 0 -4 0z" fill="#157350"/>
+  <path d="M50 54v28M50 72c-5-6-13-7-18-3M50 76c5-6 13-7 18-3" fill="none" stroke="#157350" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</svg>

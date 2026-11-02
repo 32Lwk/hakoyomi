@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ビタミン剤のイメージ図">
+  <title>ビタミン剤のイメージ図</title>
+  <path d="M26 4h48a22 22 0 0 1 22 22v48a22 22 0 0 1 -22 22h-48a22 22 0 0 1 -22 -22v-48a22 22 0 0 1 22 -22z" fill="#FDF5DC"/>
+  <svg x="2" y="2" width="80" height="80" viewBox="0 0 100 100">
+  <path d="M40 36h20a10 10 0 0 1 10 10v26a10 10 0 0 1 -10 10h-20a10 10 0 0 1 -10 -10v-26a10 10 0 0 1 10 -10z" fill="#FFFFFF"/>
+  <path d="M36 22h28a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-28a4 4 0 0 1 -4 -4v-8a4 4 0 0 1 4 -4z" fill="#E8A700"/>
+  <path d="M38 52h24a4 4 0 0 1 4 4v12a4 4 0 0 1 -4 4h-24a4 4 0 0 1 -4 -4v-12a4 4 0 0 1 4 -4z" fill="#F6D46B"/>
+  <path d="M40 62a4 4 0 1 0 8 0a4 4 0 1 0 -8 0zM52 62a4 4 0 1 0 8 0a4 4 0 1 0 -8 0z" fill="#A87800"/>
+  <path d="M40 36h20a10 10 0 0 1 10 10v26a10 10 0 0 1 -10 10h-20a10 10 0 0 1 -10 -10v-26a10 10 0 0 1 10 -10z" fill="none" stroke="#A87800" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <path d="M53 74a21 21 0 1 0 42 0a21 21 0 1 0 -42 0z" fill="#FFFFFF"/>
+  <svg x="55" y="55" width="38" height="38" viewBox="0 0 100 100">
+  <path d="M4 50a46 46 0 1 0 92 0a46 46 0 1 0 -92 0z" fill="#FDF5DC"/>
+  <path d="M20 50a30 30 0 1 0 60 0a30 30 0 1 0 -60 0z" fill="#E8A700"/>
+  <path d="M26 50a24 24 0 1 0 48 0a24 24 0 1 0 -48 0z" fill="#F6D46B"/>
+  <path d="M46 50a4 4 0 1 0 8 0a4 4 0 1 0 -8 0z" fill="#FFFFFF"/>
+  <path d="M50 28v44M28 50h44M34 34l32 32M66 34L34 66" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</svg>

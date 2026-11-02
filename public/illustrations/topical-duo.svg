@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="外用薬のイメージ図">
+  <title>外用薬のイメージ図</title>
+  <path d="M26 4h48a22 22 0 0 1 22 22v48a22 22 0 0 1 -22 22h-48a22 22 0 0 1 -22 -22v-48a22 22 0 0 1 22 -22z" fill="#FBEAF1"/>
+  <svg x="2" y="2" width="80" height="80" viewBox="0 0 100 100">
+  <path d="M18 40h52l12 6v8l-12 6H18z" fill="#C2577E"/>
+  <path d="M84 44h6a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2z" fill="#8F3B5B"/>
+  <path d="M28 44h28a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-28a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2z" fill="#FFFFFF"/>
+  <path d="M22 40v20M32 50h20" fill="none" stroke="#8F3B5B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <path d="M53 74a21 21 0 1 0 42 0a21 21 0 1 0 -42 0z" fill="#FFFFFF"/>
+  <svg x="55" y="55" width="38" height="38" viewBox="0 0 100 100">
+  <path d="M4 50a46 46 0 1 0 92 0a46 46 0 1 0 -92 0z" fill="#FBEAF1"/>
+  <path d="M26 38h48a12 12 0 0 1 12 12v0a12 12 0 0 1 -12 12h-48a12 12 0 0 1 -12 -12v0a12 12 0 0 1 12 -12z" fill="#C2577E"/>
+  <path d="M42 40h16a4 4 0 0 1 4 4v12a4 4 0 0 1 -4 4h-16a4 4 0 0 1 -4 -4v-12a4 4 0 0 1 4 -4z" fill="#E9A7C0"/>
+  <path d="M42.2 46a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM54.2 46a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM42.2 54a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM54.2 54a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM48.2 50a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z" fill="#8F3B5B"/>
+  </svg>
+</svg>

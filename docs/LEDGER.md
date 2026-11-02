@@ -2,6 +2,15 @@
 
 ## Open
 
+### L-20261102-35
+- asked: 同じ薬の種類でもイラストの種類を増やす（ゆう 2026-11-02）
+- why: 同じ種類の商品が一覧・比較に並んだときに見分けやすくするため。L-33 の3パターンでは種類ごとに絵が1つずつしかない
+- target: scripts/gen-illustrations.mjs、public/illustrations/（12種×7パターン＝84点）、public/illustrations/README.md、src/lib/illustration.ts（パターンの型）
+- owner: Claude Code
+- status: done（2026-11-02）
+- proof: 追加パターン box2（横長の箱）／form2（別の剤形）／symbol2（別のモチーフ）／duo（剤形＋シンボル）。xmllint 通過・一覧を目視確認
+- notes: L-33 と同じく Claude が新規作成した図形のみ（外部素材・AI画像生成なし）。実在商品のパッケージに似せない。「イメージ図」と明示する。既存3パターンのファイル名は変えない
+
 ### L-20261102-34
 - asked: UIを分かりやすく（バッジを押せると分かる見た目、品名の下にパッケージ画像）／比較で商品を追加しやすく／棚を店舗らしく（ゆう 2026-11-02）
 - why: T201〜T205 の画面を見たうえでの改善依頼

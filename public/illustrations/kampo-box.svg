@@ -5,7 +5,7 @@
   <path d="M18 24L32 12h52L70 24z" fill="#CDB38C"/>
   <path d="M70 24l14-12v66L70 90z" fill="#5F4826"/>
   <path d="M18 24h52v66h-52z" fill="none" stroke="#5F4826" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="44" y="39" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="10" font-weight="900" fill="#FFFFFF">漢方薬</text>
+  <text x="44" y="39" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="10">漢方薬</text>
   <svg x="24" y="48" width="40" height="40" viewBox="0 0 100 100">
   <path d="M24 76C24 46 42 26 76 24c0 34-18 52-52 52z" fill="#8A6A3F"/>
   <path d="M28 72L64 36M44 56l-1-12M54 46l11 1" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>

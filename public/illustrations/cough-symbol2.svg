@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="せき止めのイメージ図">
+  <title>せき止めのイメージ図</title>
+  <path d="M4 50a46 46 0 1 0 92 0a46 46 0 1 0 -92 0z" fill="#F3ECFC"/>
+  <path d="M45 40v28c0 6-5 10-12 9-7-1-12-7-12-15 0-13 7-24 15-28 5-2 9 0 9 6zM55 40v28c0 6 5 10 12 9 7-1 12-7 12-15 0-13-7-24-15-28-5-2-9 0-9 6z" fill="#8E5BD0"/>
+  <path d="M28 56a3 5 0 1 0 6 0a3 5 0 1 0 -6 0zM66 56a3 5 0 1 0 6 0a3 5 0 1 0 -6 0z" fill="#FFFFFF"/>
+  <path d="M50 16v22M50 38l-5 6M50 38l5 6" fill="none" stroke="#643C9E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

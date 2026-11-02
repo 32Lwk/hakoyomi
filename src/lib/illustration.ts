@@ -16,7 +16,7 @@ export const KIND_LABEL: Record<MedicineKind, string> = {
   motion: "乗り物酔い薬",
 };
 
-export type IllustrationPattern = "box" | "form" | "symbol";
+export type IllustrationPattern = "box" | "box2" | "form" | "form2" | "symbol" | "symbol2" | "duo";
 
 export function illustrationSrc(kind: MedicineKind, pattern: IllustrationPattern): string {
   return `/illustrations/${kind}-${pattern}.svg`;

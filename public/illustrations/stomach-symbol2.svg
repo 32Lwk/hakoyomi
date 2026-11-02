@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="胃腸薬のイメージ図">
+  <title>胃腸薬のイメージ図</title>
+  <path d="M4 50a46 46 0 1 0 92 0a46 46 0 1 0 -92 0z" fill="#EFF4E2"/>
+  <path d="M18 52h64c0 16-14 26-32 26S18 68 18 52z" fill="#6B8E23"/>
+  <path d="M28 52c0-12 10-18 22-18s22 6 22 18z" fill="#B5CC7A"/>
+  <path d="M42 76h16a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2z" fill="#4B6418"/>
+  <path d="M58 16l26 24M66 14l22 20" fill="none" stroke="#4B6418" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
