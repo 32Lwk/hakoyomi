@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="外用薬のイメージ図">
+  <title>外用薬のイメージ図</title>
+  <path d="M18 24h52v66h-52z" fill="#FFFFFF"/>
+  <path d="M18 24h52v22h-52z" fill="#8F3B5B"/>
+  <path d="M18 24L32 12h52L70 24z" fill="#C2577E"/>
+  <path d="M70 24l14-12v66L70 90z" fill="#5D263B"/>
+  <path d="M18 24h52v66h-52z" fill="none" stroke="#5D263B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="44" y="39" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="10">外用薬</text>
+  <svg x="24" y="48" width="40" height="40" viewBox="0 0 100 100">
+  <path d="M26 38h48a12 12 0 0 1 12 12v0a12 12 0 0 1 -12 12h-48a12 12 0 0 1 -12 -12v0a12 12 0 0 1 12 -12z" fill="#8F3B5B"/>
+  <path d="M42 40h16a4 4 0 0 1 4 4v12a4 4 0 0 1 -4 4h-16a4 4 0 0 1 -4 -4v-12a4 4 0 0 1 4 -4z" fill="#C2577E"/>
+  <path d="M42.2 46a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM54.2 46a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM42.2 54a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM54.2 54a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM48.2 50a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z" fill="#5D263B"/>
+  </svg>
+</svg>

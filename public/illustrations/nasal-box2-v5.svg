@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="点鼻薬のイメージ図">
+  <title>点鼻薬のイメージ図</title>
+  <path d="M10 30h70v50h-70z" fill="#E3F4F9"/>
+  <path d="M10 64h70v16h-70z" fill="#2A9FBF"/>
+  <path d="M10 30l12-12h70L80 30z" fill="#B5E2EE"/>
+  <path d="M80 30l12-12v50L80 80z" fill="#1C7590"/>
+  <path d="M10 30h70v50h-70z" fill="none" stroke="#1C7590" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="45" y="76" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="10.5">点鼻薬</text>
+  <svg x="29" y="31" width="32" height="32" viewBox="0 0 100 100">
+  <path d="M22 16h26c2 12 8 22 16 32 4 5 2 11-4 11h-4v9c0 7-5 12-12 12H22z" fill="#2A9FBF"/>
+  <path d="M68.5 46a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0zM77 54a3 3 0 1 0 6 0a3 3 0 1 0 -6 0zM69.5 62a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0z" fill="#86CFE2"/>
+  <path d="M48.5 56a3.5 2 0 1 0 7 0a3.5 2 0 1 0 -7 0z" fill="#1C7590"/>
+  <path d="M33 36a3 3 0 1 0 6 0a3 3 0 1 0 -6 0z" fill="#FFFFFF"/>
+  </svg>
+</svg>

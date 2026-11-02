@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="目薬のイメージ図">
+  <title>目薬のイメージ図</title>
+  <path d="M10 30h70v50h-70z" fill="#E8F0FD"/>
+  <path d="M10 64h70v16h-70z" fill="#3E7BE6"/>
+  <path d="M10 30l12-12h70L80 30z" fill="#C3D7F9"/>
+  <path d="M80 30l12-12v50L80 80z" fill="#2756A8"/>
+  <path d="M10 30h70v50h-70z" fill="none" stroke="#2756A8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="45" y="76" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="10.5">目薬</text>
+  <svg x="29" y="31" width="32" height="32" viewBox="0 0 100 100">
+  <path d="M50 14c6 9 10 15 10 21a10 10 0 0 1-20 0c0-6 4-12 10-21z" fill="#3E7BE6"/>
+  <path d="M43.5 36a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0z" fill="#FFFFFF"/>
+  <path d="M20 56c10 11 50 11 60 0M28 64l-4 6M40 69l-2 7M60 69l2 7M72 64l4 6" fill="none" stroke="#2756A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</svg>

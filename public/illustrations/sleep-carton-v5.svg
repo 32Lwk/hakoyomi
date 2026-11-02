@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="睡眠改善薬のイメージ図">
+  <title>睡眠改善薬のイメージ図</title>
+  <path d="M16 48l10-14h48l10 14z" fill="#272A63"/>
+  <svg x="24" y="0" width="52" height="52" viewBox="0 0 100 100">
+  <path d="M16 40a20 13 0 1 0 40 0a20 13 0 1 0 -40 0zM44 66a20 13 0 1 0 40 0a20 13 0 1 0 -40 0z" fill="#3B3F8F"/>
+  <path d="M61 30a11 7.5 0 1 0 22 0a11 7.5 0 1 0 -22 0z" fill="#9599D6"/>
+  <path d="M22 35a7 3 0 1 0 14 0a7 3 0 1 0 -14 0zM50 61a7 3 0 1 0 14 0a7 3 0 1 0 -14 0zM64 28a4 2 0 1 0 8 0a4 2 0 1 0 -8 0z" fill="#FFFFFF"/>
+  </svg>
+  <path d="M19 48h62a3 3 0 0 1 3 3v36a3 3 0 0 1 -3 3h-62a3 3 0 0 1 -3 -3v-36a3 3 0 0 1 3 -3z" fill="#3B3F8F"/>
+  <path d="M16 48L6 60h10zM84 48l10 12H84z" fill="#C1C3E7"/>
+  <path d="M19 48h62a3 3 0 0 1 3 3v36a3 3 0 0 1 -3 3h-62a3 3 0 0 1 -3 -3v-36a3 3 0 0 1 3 -3z" fill="none" stroke="#272A63" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="74" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="9.5">睡眠改善薬</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="外用薬のイメージ図">
+  <title>外用薬のイメージ図</title>
+  <path d="M30 16h36v76h-36z" fill="#FFFFFF"/>
+  <path d="M30 70L66 58V80L30 92z" fill="#8F3B5B"/>
+  <path d="M30 16l9-8h36l-9 8z" fill="#C2577E"/>
+  <path d="M66 16l9-8v76l-9 8z" fill="#5D263B"/>
+  <path d="M30 16h36v76h-36z" fill="none" stroke="#5D263B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="48" y="27" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#5D263B" font-size="8">外用薬</text>
+  <svg x="31" y="30" width="34" height="34" viewBox="0 0 100 100">
+  <path d="M18 40h52l12 6v8l-12 6H18z" fill="#8F3B5B"/>
+  <path d="M84 44h6a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2z" fill="#5D263B"/>
+  <path d="M28 44h28a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-28a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2z" fill="#FFFFFF"/>
+  <path d="M22 40v20M32 50h20" fill="none" stroke="#5D263B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ビタミン剤のイメージ図">
+  <title>ビタミン剤のイメージ図</title>
+  <path d="M18 24h52v66h-52z" fill="#FFFFFF"/>
+  <path d="M18 24h52v22h-52z" fill="#E8A700"/>
+  <path d="M18 24L32 12h52L70 24z" fill="#F6D46B"/>
+  <path d="M70 24l14-12v66L70 90z" fill="#A87800"/>
+  <path d="M18 24h52v66h-52z" fill="none" stroke="#A87800" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <clipPath id="f-vitamin-box-v3"><path d="M18 24h52v66h-52z"/></clipPath>
+  <g clip-path="url(#f-vitamin-box-v3)"><path d="M-100 0l100 100M-92 0l100 100M-84 0l100 100M-76 0l100 100M-68 0l100 100M-60 0l100 100M-52 0l100 100M-44 0l100 100M-36 0l100 100M-28 0l100 100M-20 0l100 100M-12 0l100 100M-4 0l100 100M4 0l100 100M12 0l100 100M20 0l100 100M28 0l100 100M36 0l100 100M44 0l100 100M52 0l100 100M60 0l100 100M68 0l100 100M76 0l100 100M84 0l100 100M92 0l100 100M100 0l100 100" fill="none" stroke="#A87800" stroke-width="3" opacity="0.13"/></g>
+  <text x="44" y="39" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="8.5">ビタミン剤</text>
+  <svg x="24" y="48" width="40" height="40" viewBox="0 0 100 100">
+  <path d="M20 50a30 30 0 1 0 60 0a30 30 0 1 0 -60 0z" fill="#E8A700"/>
+  <path d="M26 50a24 24 0 1 0 48 0a24 24 0 1 0 -48 0z" fill="#F6D46B"/>
+  <path d="M46 50a4 4 0 1 0 8 0a4 4 0 1 0 -8 0z" fill="#FFFFFF"/>
+  <path d="M50 28v44M28 50h44M34 34l32 32M66 34L34 66" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</svg>

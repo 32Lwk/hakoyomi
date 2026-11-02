@@ -2,6 +2,33 @@
 
 ## Open
 
+### L-20261102-38
+- asked: 開発を続ける（ゆう 2026-11-02）→ T003 の migration を先に書く
+- why: architecture §5 の表と、実装済みの zod スキーマ（src/lib/schema）・T101 の出力がずれている（notice_items の id が uuid、excluded_by・badge・needs_review がない、products に kind・route・efficacy_groups・crude_drug_main・1日最大量がない など）。seed（T102・T103）を zod の形のまま入れられるよう、DB を zod に合わせる
+- target: supabase/migrations/20261102000000_init.sql、docs/architecture.md §5、src/lib/schema/schema.test.ts（PII カラムなしの検査）
+- owner: Claude Code
+- status: done（2026-11-02。Supabase プロジェクトの作成・migration の適用はゆう）
+- proof: products・notice_items の id は text（kaze_1-ng-1-3 等）。全表 RLS 有効・ポリシーなし（service role のサーバーからのみ読む）。お客様の氏名・症状・健康情報・質問入力のカラムなしをテストで検査
+- notes: 販売記録の下書き（T401）の表は T401 で足す
+
+### L-20261102-37
+- asked: 同じ形・同じ種類でも絶妙な違いを出したパッケージを複数つくる（ゆう 2026-11-02）
+- why: 同じ種類・同じ形の商品が一覧や比較に並んでも見分けられるようにするため
+- target: scripts/gen-illustrations.mjs、public/illustrations/{kind}-{pattern}-v2〜v5.svg（パッケージ6形×12種×4＝288点）、README.md、index.json、src/lib/illustration.ts
+- owner: Claude Code
+- status: done（2026-11-02）
+- proof: v2 濃い色／v3 斜めストライプ／v4 ドット／v5 生成り（白地を薄い色に）。形とモチーフ・種類の色は同じ。xmllint 通過・一覧を目視確認
+- notes: v1 は既存ファイル（{kind}-{pattern}.svg）のまま。L-33 と同じく新規作成の図形のみ・実在商品に似せない・「イメージ図」と明示
+
+### L-20261102-36
+- asked: パッケージのイラストをもっとさまざまに増やす（ゆう 2026-11-02）
+- why: 商品カード・一覧のサムネイルは主にパッケージ型を使うため、同じ種類が並んでも見分けられる形を増やす
+- target: scripts/gen-illustrations.mjs、public/illustrations/（12種×11パターン＝132点）、public/illustrations/README.md、src/lib/illustration.ts
+- owner: Claude Code
+- status: done（2026-11-02）
+- proof: 追加パターン slim（縦長スリム箱）／square（正方形の箱・丸窓）／pouch（スタンドパウチ）／carton（フタの開いた箱から中身）。xmllint 通過・一覧を目視確認
+- notes: L-33 と同じく Claude が新規作成した図形のみ（外部素材・AI画像生成なし）。実在商品のパッケージに似せない。「イメージ図」と明示する。既存パターンは変えない
+
 ### L-20261102-35
 - asked: 同じ薬の種類でもイラストの種類を増やす（ゆう 2026-11-02）
 - why: 同じ種類の商品が一覧・比較に並んだときに見分けやすくするため。L-33 の3パターンでは種類ごとに絵が1つずつしかない

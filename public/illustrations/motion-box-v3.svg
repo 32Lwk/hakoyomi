@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="乗り物酔い薬のイメージ図">
+  <title>乗り物酔い薬のイメージ図</title>
+  <path d="M18 24h52v66h-52z" fill="#FFFFFF"/>
+  <path d="M18 24h52v22h-52z" fill="#5E7FA3"/>
+  <path d="M18 24L32 12h52L70 24z" fill="#A9BDD3"/>
+  <path d="M70 24l14-12v66L70 90z" fill="#3F5A78"/>
+  <path d="M18 24h52v66h-52z" fill="none" stroke="#3F5A78" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <clipPath id="f-motion-box-v3"><path d="M18 24h52v66h-52z"/></clipPath>
+  <g clip-path="url(#f-motion-box-v3)"><path d="M-100 0l100 100M-92 0l100 100M-84 0l100 100M-76 0l100 100M-68 0l100 100M-60 0l100 100M-52 0l100 100M-44 0l100 100M-36 0l100 100M-28 0l100 100M-20 0l100 100M-12 0l100 100M-4 0l100 100M4 0l100 100M12 0l100 100M20 0l100 100M28 0l100 100M36 0l100 100M44 0l100 100M52 0l100 100M60 0l100 100M68 0l100 100M76 0l100 100M84 0l100 100M92 0l100 100M100 0l100 100" fill="none" stroke="#3F5A78" stroke-width="3" opacity="0.13"/></g>
+  <text x="44" y="39" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="10">酔い止め</text>
+  <svg x="24" y="48" width="40" height="40" viewBox="0 0 100 100">
+  <path d="M18 60v-8c0-4 2-6 6-7l8-2 8-10c2-2 4-3 7-3h16c3 0 5 1 7 4l6 9 4 1c3 1 4 3 4 6v10z" fill="#5E7FA3"/>
+  <path d="M25 62a7 7 0 1 0 14 0a7 7 0 1 0 -14 0zM63 62a7 7 0 1 0 14 0a7 7 0 1 0 -14 0z" fill="#3F5A78"/>
+  <path d="M42 36h10v8H36zM56 36h10l5 8H56zM29 62a3 3 0 1 0 6 0a3 3 0 1 0 -6 0zM67 62a3 3 0 1 0 6 0a3 3 0 1 0 -6 0z" fill="#FFFFFF"/>
+  <path d="M8 74c4-3 8 3 12 0M80 76c4-3 8 3 12 0" fill="none" stroke="#3F5A78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</svg>

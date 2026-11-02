@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="胃腸薬のイメージ図">
+  <title>胃腸薬のイメージ図</title>
+  <path d="M30 16h36v76h-36z" fill="#FFFFFF"/>
+  <path d="M30 70L66 58V80L30 92z" fill="#6B8E23"/>
+  <path d="M30 16l9-8h36l-9 8z" fill="#B5CC7A"/>
+  <path d="M66 16l9-8v76l-9 8z" fill="#4B6418"/>
+  <path d="M30 16h36v76h-36z" fill="none" stroke="#4B6418" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <clipPath id="f-stomach-slim-v3"><path d="M30 16h36v76h-36z"/></clipPath>
+  <g clip-path="url(#f-stomach-slim-v3)"><path d="M-100 0l100 100M-92 0l100 100M-84 0l100 100M-76 0l100 100M-68 0l100 100M-60 0l100 100M-52 0l100 100M-44 0l100 100M-36 0l100 100M-28 0l100 100M-20 0l100 100M-12 0l100 100M-4 0l100 100M4 0l100 100M12 0l100 100M20 0l100 100M28 0l100 100M36 0l100 100M44 0l100 100M52 0l100 100M60 0l100 100M68 0l100 100M76 0l100 100M84 0l100 100M92 0l100 100M100 0l100 100" fill="none" stroke="#4B6418" stroke-width="3" opacity="0.13"/></g>
+  <text x="48" y="27" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#4B6418" font-size="8">胃腸薬</text>
+  <svg x="31" y="30" width="34" height="34" viewBox="0 0 100 100">
+  <path d="M30 26h40a6 6 0 0 1 6 6v36a6 6 0 0 1 -6 6h-40a6 6 0 0 1 -6 -6v-36a6 6 0 0 1 6 -6z" fill="#6B8E23"/>
+  <path d="M35 38h30a3 3 0 0 1 3 3v18a3 3 0 0 1 -3 3h-30a3 3 0 0 1 -3 -3v-18a3 3 0 0 1 3 -3z" fill="#FFFFFF"/>
+  <path d="M24 30l4-3l4 3l4-3l4 3l4-3l4 3l4-3l4 3l4-3l4 3l4-3l4 3l4-3M38 47h24M38 53h16" fill="none" stroke="#4B6418" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</svg>

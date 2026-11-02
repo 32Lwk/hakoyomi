@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="かぜ薬のイメージ図">
+  <title>かぜ薬のイメージ図</title>
+  <path d="M20 22h60l4 62c0 4-2 6-6 6H22c-4 0-6-2-6-6z" fill="#FDECEC"/>
+  <path d="M18 60h64l2 24c0 4-2 6-6 6H22c-4 0-6-2-6-6z" fill="#D9534F"/>
+  <path d="M23 10h54a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-54a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3z" fill="#F8C7C5"/>
+  <path d="M20 22h60v4h-60z" fill="#A33532"/>
+  <path d="M47 16a3 3 0 1 0 6 0a3 3 0 1 0 -6 0z" fill="#FFFFFF"/>
+  <path d="M20 22h60l4 62c0 4-2 6-6 6H22c-4 0-6-2-6-6z" fill="none" stroke="#A33532" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <svg x="31" y="25" width="38" height="38" viewBox="0 0 100 100">
+  <path d="M34 38h32a10 10 0 0 1 10 10v10a10 10 0 0 1 -10 10h-32a10 10 0 0 1 -10 -10v-10a10 10 0 0 1 10 -10z" fill="#D9534F"/>
+  <path d="M31 41h18a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-18a2 2 0 0 1 -2 -2v0a2 2 0 0 1 2 -2z" fill="#F2A19E"/>
+  <path d="M30 51h40M30 59h40M24 44c-9 0-11 16 0 18M76 44c9 0 11 16 0 18" fill="none" stroke="#A33532" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <text x="50" y="78" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="11">かぜ薬</text>
+</svg>

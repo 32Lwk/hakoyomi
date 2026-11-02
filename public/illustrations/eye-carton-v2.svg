@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="目薬のイメージ図">
+  <title>目薬のイメージ図</title>
+  <path d="M16 48l10-14h48l10 14z" fill="#19386D"/>
+  <svg x="24" y="0" width="52" height="52" viewBox="0 0 100 100">
+  <path d="M71 42h10a5 5 0 0 1 5 5v26a5 5 0 0 1 -5 5h-10a5 5 0 0 1 -5 -5v-26a5 5 0 0 1 5 -5z" fill="#FFFFFF"/>
+  <path d="M18 40h44l-7 36H25z" fill="#2756A8"/>
+  <path d="M21 50h38l-5 24H26z" fill="#3E7BE6"/>
+  <path d="M73 26h6a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3v-10a3 3 0 0 1 3 -3z" fill="#19386D"/>
+  <path d="M25 43h0a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h0a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2z" fill="#FFFFFF"/>
+  <path d="M71 42h10a5 5 0 0 1 5 5v26a5 5 0 0 1 -5 5h-10a5 5 0 0 1 -5 -5v-26a5 5 0 0 1 5 -5zM70 54h12" fill="none" stroke="#19386D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <path d="M19 48h62a3 3 0 0 1 3 3v36a3 3 0 0 1 -3 3h-62a3 3 0 0 1 -3 -3v-36a3 3 0 0 1 3 -3z" fill="#2756A8"/>
+  <path d="M16 48L6 60h10zM84 48l10 12H84z" fill="#3E7BE6"/>
+  <path d="M19 48h62a3 3 0 0 1 3 3v36a3 3 0 0 1 -3 3h-62a3 3 0 0 1 -3 -3v-36a3 3 0 0 1 3 -3z" fill="none" stroke="#19386D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="74" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="11">目薬</text>
+</svg>

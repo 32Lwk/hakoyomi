@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="点鼻薬のイメージ図">
+  <title>点鼻薬のイメージ図</title>
+  <path d="M12 30h64v58h-64z" fill="#1C7590"/>
+  <path d="M12 30l12-12h64L76 30z" fill="#2A9FBF"/>
+  <path d="M76 30l12-12v58L76 88z" fill="#124C5E"/>
+  <path d="M26 51a18 18 0 1 0 36 0a18 18 0 1 0 -36 0z" fill="#FFFFFF"/>
+  <path d="M12 30h64v58h-64z" fill="none" stroke="#124C5E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <svg x="28" y="35" width="32" height="32" viewBox="0 0 100 100">
+  <path d="M22 16h26c2 12 8 22 16 32 4 5 2 11-4 11h-4v9c0 7-5 12-12 12H22z" fill="#1C7590"/>
+  <path d="M68.5 46a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0 -7 0zM77 54a3 3 0 1 0 6 0a3 3 0 1 0 -6 0zM69.5 62a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0z" fill="#2A9FBF"/>
+  <path d="M48.5 56a3.5 2 0 1 0 7 0a3.5 2 0 1 0 -7 0z" fill="#124C5E"/>
+  <path d="M33 36a3 3 0 1 0 6 0a3 3 0 1 0 -6 0z" fill="#FFFFFF"/>
+  </svg>
+  <text x="44" y="82" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="9">点鼻薬</text>
+</svg>

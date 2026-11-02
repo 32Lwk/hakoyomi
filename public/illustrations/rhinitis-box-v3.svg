@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="鼻炎薬のイメージ図">
+  <title>鼻炎薬のイメージ図</title>
+  <path d="M18 24h52v66h-52z" fill="#FFFFFF"/>
+  <path d="M18 24h52v22h-52z" fill="#1F9D6B"/>
+  <path d="M18 24L32 12h52L70 24z" fill="#7FD1AE"/>
+  <path d="M70 24l14-12v66L70 90z" fill="#157350"/>
+  <path d="M18 24h52v66h-52z" fill="none" stroke="#157350" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <clipPath id="f-rhinitis-box-v3"><path d="M18 24h52v66h-52z"/></clipPath>
+  <g clip-path="url(#f-rhinitis-box-v3)"><path d="M-100 0l100 100M-92 0l100 100M-84 0l100 100M-76 0l100 100M-68 0l100 100M-60 0l100 100M-52 0l100 100M-44 0l100 100M-36 0l100 100M-28 0l100 100M-20 0l100 100M-12 0l100 100M-4 0l100 100M4 0l100 100M12 0l100 100M20 0l100 100M28 0l100 100M36 0l100 100M44 0l100 100M52 0l100 100M60 0l100 100M68 0l100 100M76 0l100 100M84 0l100 100M92 0l100 100M100 0l100 100" fill="none" stroke="#157350" stroke-width="3" opacity="0.13"/></g>
+  <text x="44" y="39" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="10">鼻炎薬</text>
+  <svg x="24" y="48" width="40" height="40" viewBox="0 0 100 100">
+  <path d="M28 46h44a6 6 0 0 1 6 6v18a6 6 0 0 1 -6 6h-44a6 6 0 0 1 -6 -6v-18a6 6 0 0 1 6 -6z" fill="#1F9D6B"/>
+  <path d="M27.5 66h45a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-45a1.5 1.5 0 0 1 -1.5 -1.5v0a1.5 1.5 0 0 1 1.5 -1.5z" fill="#7FD1AE"/>
+  <path d="M40.5 48h19a2.5 2.5 0 0 1 2.5 2.5v0a2.5 2.5 0 0 1 -2.5 2.5h-19a2.5 2.5 0 0 1 -2.5 -2.5v0a2.5 2.5 0 0 1 2.5 -2.5z" fill="#157350"/>
+  <path d="M40 50c-2-12 6-20 10-26 4 6 12 14 10 26z" fill="#FFFFFF"/>
+  <path d="M40 50c-2-12 6-20 10-26 4 6 12 14 10 26z" fill="none" stroke="#157350" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</svg>

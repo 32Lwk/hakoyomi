@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="乗り物酔い薬のイメージ図">
+  <title>乗り物酔い薬のイメージ図</title>
+  <path d="M12 30h64v58h-64z" fill="#5E7FA3"/>
+  <path d="M12 30l12-12h64L76 30z" fill="#CAD7E5"/>
+  <path d="M76 30l12-12v58L76 88z" fill="#3F5A78"/>
+  <path d="M26 51a18 18 0 1 0 36 0a18 18 0 1 0 -36 0z" fill="#FFFFFF"/>
+  <path d="M12 30h64v58h-64z" fill="none" stroke="#3F5A78" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <svg x="28" y="35" width="32" height="32" viewBox="0 0 100 100">
+  <path d="M16 58h68l-9 15H25z" fill="#5E7FA3"/>
+  <path d="M52 18v34H28zM57 26v26h16z" fill="#A9BDD3"/>
+  <path d="M55 14v44M8 82c5-4 11 4 17 0s11-4 17 0 11 4 17 0 11-4 17 0 7 3 9 1" fill="none" stroke="#3F5A78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <text x="44" y="82" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="9">酔い止め</text>
+</svg>

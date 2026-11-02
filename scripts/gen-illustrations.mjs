@@ -1,5 +1,5 @@
-// 薬の種類イラスト（12種×7パターン）を public/illustrations/ に SVG で書き出す。
-// 実在の商品を描いたものではなく、薬の種類を表すイメージ図（L-20261102-33、L-35 で4パターン追加）。
+// 薬の種類イラスト（12種×11パターン）を public/illustrations/ に SVG で書き出す。
+// 実在の商品を描いたものではなく、薬の種類を表すイメージ図（L-20261102-33、L-35・L-36 でパターン追加）。
 // 実行：node scripts/gen-illustrations.mjs
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -382,6 +382,38 @@ const BOX2 = {
   a: R(10, 64, 70, 16, 0),
   l: R(10, 30, 70, 50, 0),
 };
+// 縦長スリム箱（slim）。斜めの帯＋剤形
+const SLIM = {
+  b: "M30 16l9-8h36l-9 8z",
+  c: "M66 16l9-8v76l-9 8z",
+  w: R(30, 16, 36, 76, 0),
+  a: "M30 70L66 58V80L30 92z",
+  l: R(30, 16, 36, 76, 0),
+};
+// 正方形の箱（square）。色の面に白い丸窓
+const SQUARE = {
+  b: "M12 30l12-12h64L76 30z",
+  c: "M76 30l12-12v58L76 88z",
+  a: R(12, 30, 64, 58, 0),
+  h: C(44, 51, 18),
+  l: R(12, 30, 64, 58, 0),
+};
+// スタンドパウチ（pouch）
+const POUCH = {
+  b: R(20, 10, 60, 12, 3),
+  w: "M20 22h60l4 62c0 4-2 6-6 6H22c-4 0-6-2-6-6z",
+  c: R(20, 22, 60, 4, 0),
+  a: "M18 60h64l2 24c0 4-2 6-6 6H22c-4 0-6-2-6-6z",
+  h: C(50, 16, 3),
+  l: "M20 22h60l4 62c0 4-2 6-6 6H22c-4 0-6-2-6-6z",
+};
+// フタの開いた箱（carton）。奥の面→中身→手前の面の順に重ねる
+const CARTON_BACK = { c: "M16 48l10-14h48l10 14z" };
+const CARTON_FRONT = {
+  a: R(16, 48, 68, 42, 3),
+  b: "M16 48L6 60h10zM84 48l10 12H84z",
+  l: R(16, 48, 68, 42, 3),
+};
 const LABEL_FONT =
   'font-family="\'Noto Sans JP\', \'Hiragino Sans\', sans-serif" font-weight="900" fill="#FFFFFF"';
 const nest = (x, y, size, inner) =>
@@ -390,7 +422,7 @@ const nest = (x, y, size, inner) =>
 function layers(L, k, sw = 2.5) {
   const out = [];
   if (L.t) out.push(`<path d="${L.t}" fill="${k.t}"/>`);
-  if (L.w) out.push(`<path d="${L.w}" fill="#FFFFFF"/>`);
+  if (L.w) out.push(`<path d="${L.w}" fill="${k.w ?? "#FFFFFF"}"/>`);
   if (L.a) out.push(`<path d="${L.a}" fill="${k.a}"/>`);
   if (L.b) out.push(`<path d="${L.b}" fill="${k.b}"/>`);
   if (L.c) out.push(`<path d="${L.c}" fill="${k.c}"/>`);
@@ -406,10 +438,80 @@ function layers(L, k, sw = 2.5) {
   return out.join("\n  ");
 }
 
-export const PATTERNS = ["box", "form", "symbol", "box2", "form2", "symbol2", "duo"];
+export const PATTERNS = [
+  "box",
+  "form",
+  "symbol",
+  "box2",
+  "form2",
+  "symbol2",
+  "duo",
+  "slim",
+  "square",
+  "pouch",
+  "carton",
+];
 
-function svg(kind, pattern) {
-  const k = CAT[kind];
+// パッケージは同じ形で v2〜v5 の描き分けをつくる（L-36）。v1 は {kind}-{pattern}.svg
+export const PACKAGES = ["box", "box2", "slim", "square", "pouch", "carton"];
+export const VARIANTS = {
+  1: "基本",
+  2: "濃い色",
+  3: "斜めストライプ",
+  4: "ドット",
+  5: "生成り",
+};
+// 正面（模様を重ねる範囲）
+const FACE = {
+  box: R(18, 24, 52, 66, 0),
+  box2: R(10, 30, 70, 50, 0),
+  slim: R(30, 16, 36, 76, 0),
+  square: R(12, 30, 64, 58, 0),
+  pouch: POUCH.w,
+  carton: CARTON_FRONT.a,
+};
+const darken = (hex, f) =>
+  "#" +
+  [1, 3, 5]
+    .map((i) =>
+      Math.round(parseInt(hex.slice(i, i + 2), 16) * (1 - f))
+        .toString(16)
+        .padStart(2, "0"),
+    )
+    .join("")
+    .toUpperCase();
+const mix = (h1, h2) =>
+  "#" +
+  [1, 3, 5]
+    .map((i) =>
+      Math.round((parseInt(h1.slice(i, i + 2), 16) + parseInt(h2.slice(i, i + 2), 16)) / 2)
+        .toString(16)
+        .padStart(2, "0"),
+    )
+    .join("")
+    .toUpperCase();
+const STRIPES = Array.from({ length: 26 }, (_, i) => `M${i * 8 - 100} 0l100 100`).join("");
+const DOTS = Array.from({ length: 13 * 13 }, (_, i) =>
+  C(4 + (i % 13) * 8 + (Math.floor(i / 13) % 2) * 4, 4 + Math.floor(i / 13) * 8, 1.3),
+).join("");
+
+function deco(id, face, variant, k) {
+  if (variant !== 3 && variant !== 4) return "";
+  const fill =
+    variant === 3
+      ? `<path d="${STRIPES}" fill="none" stroke="${k.c}" stroke-width="3" opacity="0.13"/>`
+      : `<path d="${DOTS}" fill="${k.c}" opacity="0.16"/>`;
+  return `<clipPath id="${id}"><path d="${face}"/></clipPath>\n  <g clip-path="url(#${id})">${fill}</g>`;
+}
+
+function svg(kind, pattern, variant = 1) {
+  const k0 = CAT[kind];
+  const k = variant === 2 ? { ...k0, a: k0.c, b: k0.a, c: darken(k0.c, 0.35) } : k0;
+  const ks = variant === 5 ? { ...k, w: k.t, b: mix(k.b, k.t) } : k;
+  const pkg = (shape) =>
+    [layers(shape, ks), deco(`f-${kind}-${pattern}-v${variant}`, FACE[pattern], variant, k)]
+      .filter(Boolean)
+      .join("\n  ");
   const name = k.short ?? k.label;
   let body;
   if (pattern === "form") body = layers({ t: R(4, 4, 92, 92, 22), ...FORM[kind] }, k);
@@ -423,15 +525,40 @@ function svg(kind, pattern) {
       `<path d="${C(74, 74, 21)}" fill="#FFFFFF"/>`,
       nest(55, 55, 38, layers({ t: C(50, 50, 46), ...SYM[kind] }, k, 3.5)),
     ].join("\n  ");
+  else if (pattern === "slim")
+    body = [
+      pkg(SLIM),
+      `<text x="48" y="27" text-anchor="middle" ${LABEL_FONT.replace("#FFFFFF", k.c)} font-size="${name.length >= 5 ? 6.5 : 8}">${name}</text>`,
+      nest(31, 30, 34, layers(FORM[kind], k, 3)),
+    ].join("\n  ");
+  else if (pattern === "square")
+    body = [
+      pkg(SQUARE),
+      nest(28, 35, 32, layers(SYM2[kind], k, 3)),
+      `<text x="44" y="82" text-anchor="middle" ${LABEL_FONT} font-size="${name.length >= 5 ? 7.5 : 9}">${name}</text>`,
+    ].join("\n  ");
+  else if (pattern === "pouch")
+    body = [
+      pkg(POUCH),
+      nest(31, 25, 38, layers(SYM[kind], k, 3)),
+      `<text x="50" y="78" text-anchor="middle" ${LABEL_FONT} font-size="${name.length >= 5 ? 9 : 11}">${name}</text>`,
+    ].join("\n  ");
+  else if (pattern === "carton")
+    body = [
+      layers(CARTON_BACK, k),
+      nest(24, 0, 52, layers(FORM2[kind], k, 3)),
+      pkg(CARTON_FRONT),
+      `<text x="50" y="74" text-anchor="middle" ${LABEL_FONT} font-size="${name.length >= 5 ? 9.5 : 11}">${name}</text>`,
+    ].join("\n  ");
   else if (pattern === "box2")
     body = [
-      layers(BOX2, k),
+      pkg(BOX2),
       `<text x="45" y="76" text-anchor="middle" ${LABEL_FONT} font-size="${name.length >= 5 ? 9 : 10.5}">${name}</text>`,
       nest(29, 31, 32, layers(SYM2[kind], k, 3)),
     ].join("\n  ");
   else
     body = [
-      layers(BOX, k),
+      pkg(BOX),
       `<text x="44" y="39" text-anchor="middle" ${LABEL_FONT} font-size="${name.length >= 5 ? 8.5 : 10}">${name}</text>`,
       nest(24, 48, 40, layers(SYM[kind], k, 3)),
     ].join("\n  ");
@@ -444,6 +571,12 @@ for (const kind of Object.keys(CAT)) {
   for (const pattern of PATTERNS) {
     writeFileSync(join(OUT, `${kind}-${pattern}.svg`), svg(kind, pattern));
     n++;
+  }
+  for (const pattern of PACKAGES) {
+    for (const v of [2, 3, 4, 5]) {
+      writeFileSync(join(OUT, `${kind}-${pattern}-v${v}.svg`), svg(kind, pattern, v));
+      n++;
+    }
   }
 }
 writeFileSync(

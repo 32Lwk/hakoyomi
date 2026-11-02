@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="漢方薬のイメージ図">
+  <title>漢方薬のイメージ図</title>
+  <path d="M12 30h64v58h-64z" fill="#8A6A3F"/>
+  <path d="M12 30l12-12h64L76 30z" fill="#E1D1B8"/>
+  <path d="M76 30l12-12v58L76 88z" fill="#5F4826"/>
+  <path d="M26 51a18 18 0 1 0 36 0a18 18 0 1 0 -36 0z" fill="#FFFFFF"/>
+  <path d="M12 30h64v58h-64z" fill="none" stroke="#5F4826" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <svg x="28" y="35" width="32" height="32" viewBox="0 0 100 100">
+  <path d="M18 52h64c0 16-14 28-32 28S18 68 18 52z" fill="#8A6A3F"/>
+  <path d="M19.5 47h61a4.5 4.5 0 0 1 4.5 4.5v0a4.5 4.5 0 0 1 -4.5 4.5h-61a4.5 4.5 0 0 1 -4.5 -4.5v0a4.5 4.5 0 0 1 4.5 -4.5z" fill="#CDB38C"/>
+  <path d="M60 14l9 5-15 35-7-4z" fill="#5F4826"/>
+  <path d="M30 64c6 6 14 8 20 8" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <text x="44" y="82" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="9">漢方薬</text>
+</svg>

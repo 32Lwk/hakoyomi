@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="外用薬のイメージ図">
+  <title>外用薬のイメージ図</title>
+  <path d="M18 24h52v66h-52z" fill="#FFFFFF"/>
+  <path d="M18 24h52v22h-52z" fill="#C2577E"/>
+  <path d="M18 24L32 12h52L70 24z" fill="#E9A7C0"/>
+  <path d="M70 24l14-12v66L70 90z" fill="#8F3B5B"/>
+  <path d="M18 24h52v66h-52z" fill="none" stroke="#8F3B5B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <clipPath id="f-topical-box-v3"><path d="M18 24h52v66h-52z"/></clipPath>
+  <g clip-path="url(#f-topical-box-v3)"><path d="M-100 0l100 100M-92 0l100 100M-84 0l100 100M-76 0l100 100M-68 0l100 100M-60 0l100 100M-52 0l100 100M-44 0l100 100M-36 0l100 100M-28 0l100 100M-20 0l100 100M-12 0l100 100M-4 0l100 100M4 0l100 100M12 0l100 100M20 0l100 100M28 0l100 100M36 0l100 100M44 0l100 100M52 0l100 100M60 0l100 100M68 0l100 100M76 0l100 100M84 0l100 100M92 0l100 100M100 0l100 100" fill="none" stroke="#8F3B5B" stroke-width="3" opacity="0.13"/></g>
+  <text x="44" y="39" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-weight="900" fill="#FFFFFF" font-size="10">外用薬</text>
+  <svg x="24" y="48" width="40" height="40" viewBox="0 0 100 100">
+  <path d="M26 38h48a12 12 0 0 1 12 12v0a12 12 0 0 1 -12 12h-48a12 12 0 0 1 -12 -12v0a12 12 0 0 1 12 -12z" fill="#C2577E"/>
+  <path d="M42 40h16a4 4 0 0 1 4 4v12a4 4 0 0 1 -4 4h-16a4 4 0 0 1 -4 -4v-12a4 4 0 0 1 4 -4z" fill="#E9A7C0"/>
+  <path d="M42.2 46a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM54.2 46a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM42.2 54a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM54.2 54a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0zM48.2 50a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z" fill="#8F3B5B"/>
+  </svg>
+</svg>
