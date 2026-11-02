@@ -22,6 +22,9 @@ const EXTRA_GROUP_NAMES: Record<string, string> = {
   gaihi: "外皮用薬",
 };
 
+// 販売終了でデモデータから外した品の id（新コッコアポA錠・スパークユンケル、L-20261103-35）。外すときはここに足す
+const REMOVED_IDS = ["med-04160", "med-00708"];
+
 async function main() {
   try {
     process.loadEnvFile(".env.local");
@@ -69,6 +72,9 @@ async function main() {
 
   // T003 で入れた架空のデモ品（demo-a〜h）を消す。成分・棚位置は外部キーの cascade で消える
   check("products（架空品の削除）", await db.from("products").delete().like("id", "demo-%"));
+
+  // 販売終了でデモデータから外した品（L-20261103-35）を消す。成分・棚位置は外部キーの cascade で消える
+  check("products（外した品の削除）", await db.from("products").delete().in("id", REMOVED_IDS));
 
   const rows = DEMO_PRODUCTS.map(productToRows);
   check("products", await db.from("products").upsert(rows.map((r) => r.product)));
