@@ -1,0 +1,235 @@
+{
+  "group": {
+    "id": "kampo_209",
+    "name": "一般用漢方製剤 209．猪苓湯",
+    "sourceUrl": "https://www.pmda.go.jp/files/000240698.pdf",
+    "sourcePage": 542,
+    "fetchedOn": "2026-11-03"
+  },
+  "items": [
+    {
+      "id": "kampo_209-ng-1",
+      "groupId": "kampo_209",
+      "section": "してはいけないこと",
+      "itemNo": "1.",
+      "body": "次の人は服用しないこと",
+      "condition": {
+        "any": [
+          {
+            "usageUnderMonths": 3
+          }
+        ]
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-ng-1-1",
+      "groupId": "kampo_209",
+      "section": "してはいけないこと",
+      "itemNo": "1.(1)",
+      "body": "生後３ヵ月未満の乳児。",
+      "condition": {
+        "usageUnderMonths": 3
+      },
+      "conditionText": "生後３ヵ月未満の用法がある製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-sd-1",
+      "groupId": "kampo_209",
+      "section": "相談すること",
+      "itemNo": "1.",
+      "body": "次の人は服用前に医師、薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-sd-1-1",
+      "groupId": "kampo_209",
+      "section": "相談すること",
+      "itemNo": "1.(1)",
+      "body": "医師の治療を受けている人。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-sd-1-2",
+      "groupId": "kampo_209",
+      "section": "相談すること",
+      "itemNo": "1.(2)",
+      "body": "妊婦又は妊娠していると思われる人。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-sd-2",
+      "groupId": "kampo_209",
+      "section": "相談すること",
+      "itemNo": "2.",
+      "body": "服用後、次の症状があらわれた場合は副作用の可能性があるので、直ちに服用を中止し、この文書を持って医師、薬剤師又は登録販売者に相談すること\n関係部位 症状\n皮膚 発疹・発赤、かゆみ",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-sd-3",
+      "groupId": "kampo_209",
+      "section": "相談すること",
+      "itemNo": "3.",
+      "body": "１ヵ月位服用しても症状がよくならない場合は服用を中止し、この文書を持って医師、薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-etc-youho-1",
+      "groupId": "kampo_209",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(1)",
+      "body": "小児に服用させる場合には、保護者の指導監督のもとに服用させること。",
+      "condition": {
+        "usageUnderMonths": 180
+      },
+      "conditionText": "小児の用法及び用量がある場合に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-etc-youho-2-1",
+      "groupId": "kampo_209",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)1)",
+      "body": "３歳以上の幼児に服用させる場合には、薬剤がのどにつかえることのないよう、よく注意すること。",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 180
+          },
+          {
+            "dosageForm": [
+              "錠剤",
+              "丸剤"
+            ]
+          },
+          {
+            "usageUnderMonths": 60
+          }
+        ]
+      },
+      "conditionText": "５歳未満の幼児の用法がある錠剤・丸剤の場合に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-etc-youho-2-2",
+      "groupId": "kampo_209",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)2)",
+      "body": "幼児に服用させる場合には、薬剤がのどにつかえることのないよう、よく注意すること。",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 180
+          },
+          {
+            "dosageForm": [
+              "丸剤"
+            ]
+          },
+          {
+            "usageUnderMonths": 36
+          }
+        ]
+      },
+      "conditionText": "３歳未満の用法及び用量を有する丸剤の場合に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-etc-youho-2-3",
+      "groupId": "kampo_209",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)3)",
+      "body": "１歳未満の乳児には、医師の診療を受けさせることを優先し、やむを得ない場合にのみ服用させること。",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 180
+          },
+          {
+            "not": {
+              "dosageForm": [
+                "カプセル剤",
+                "錠剤",
+                "丸剤"
+              ]
+            }
+          }
+        ]
+      },
+      "conditionText": "カプセル剤及び錠剤・丸剤以外の製剤の場合に記載すること。なお、生後３ヵ月未満の用法がある製剤の場合、「生後３ヵ月未満の乳児」をしてはいけないことに記載し、用法及び用量欄には記載しないこと。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-etc-hokan-1",
+      "groupId": "kampo_209",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(1)",
+      "body": "直射日光の当たらない（湿気の少ない）涼しい所に（密栓して）保管すること。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "（ ）内は必要とする場合に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-etc-hokan-2",
+      "groupId": "kampo_209",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(2)",
+      "body": "小児の手の届かない所に保管すること。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_209-etc-hokan-3",
+      "groupId": "kampo_209",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(3)",
+      "body": "他の容器に入れ替えないこと。（誤用の原因になったり品質が変わる。）",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "容器等の個々に至適表示がなされていて、誤用のおそれのない場合には記載しなくてもよい。",
+      "excludedBy": [],
+      "needsReview": false
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "group": {
+    "id": "kampo_107",
+    "name": "一般用漢方製剤 107．柴胡加竜骨牡蛎湯",
+    "sourceUrl": "https://www.pmda.go.jp/files/000240698.pdf",
+    "sourcePage": 282,
+    "fetchedOn": "2026-11-03"
+  },
+  "items": [
+    {
+      "id": "kampo_107-ng-1",
+      "groupId": "kampo_107",
+      "section": "してはいけないこと",
+      "itemNo": "1.",
+      "body": "次の人は服用しないこと 生後３ヵ月未満の乳児。",
+      "condition": {
+        "usageUnderMonths": 3
+      },
+      "conditionText": "生後３ヵ月未満の用法がある製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-ng-2",
+      "groupId": "kampo_107",
+      "section": "してはいけないこと",
+      "itemNo": "2.",
+      "body": "本剤を服用している間は、次の医薬品を服用しないこと 他の瀉下薬（下剤）",
+      "condition": {
+        "hasIngredient": [
+          "大黄"
+        ]
+      },
+      "conditionText": "大黄を含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-ng-3",
+      "groupId": "kampo_107",
+      "section": "してはいけないこと",
+      "itemNo": "3.",
+      "body": "授乳中の人は本剤を服用しないか、本剤を服用する場合は授乳を避けること",
+      "condition": {
+        "hasIngredient": [
+          "大黄"
+        ]
+      },
+      "conditionText": "大黄を含有する製剤に記載すること。",
+      "excludedBy": [],
+      "badge": "breastfeeding",
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.",
+      "body": "次の人は服用前に医師、薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1-1",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.(1)",
+      "body": "医師の治療を受けている人。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1-2",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.(2)",
+      "body": "妊婦又は妊娠していると思われる人。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1-3",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.(3)",
+      "body": "体の虚弱な人（体力の衰えている人、体の弱い人）。",
+      "condition": {
+        "hasIngredient": [
+          "大黄"
+        ]
+      },
+      "conditionText": "大黄を含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1-4",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.(4)",
+      "body": "胃腸が弱く下痢しやすい人。",
+      "condition": {
+        "hasIngredient": [
+          "大黄"
+        ]
+      },
+      "conditionText": "大黄を含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1-5",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.(5)",
+      "body": "高齢者。",
+      "condition": {
+        "amountAtLeast": {
+          "ingredients": [
+            "甘草"
+          ],
+          "value": 1,
+          "unit": "g",
+          "per": "1日"
+        }
+      },
+      "conditionText": "１日最大配合量が甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1-6",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.(6)",
+      "body": "今までに薬などにより発疹・発赤、かゆみ等を起こしたことがある人。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1-7",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.(7)",
+      "body": "次の症状のある人。むくみ",
+      "condition": {
+        "amountAtLeast": {
+          "ingredients": [
+            "甘草"
+          ],
+          "value": 1,
+          "unit": "g",
+          "per": "1日"
+        }
+      },
+      "conditionText": "１日最大配合量が甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-1-8",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "1.(8)",
+      "body": "次の診断を受けた人。高血圧、心臓病、腎臓病",
+      "condition": {
+        "amountAtLeast": {
+          "ingredients": [
+            "甘草"
+          ],
+          "value": 1,
+          "unit": "g",
+          "per": "1日"
+        }
+      },
+      "conditionText": "１日最大配合量が甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-2",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "2.",
+      "body": "服用後、次の症状があらわれた場合は副作用の可能性があるので、直ちに服用を中止し、この文書を持って医師、薬剤師又は登録販売者に相談すること 関係部位 症状 皮膚 発疹・発赤、かゆみ まれに下記の重篤な症状が起こることがある。その場合は直ちに医師の診療を受けること。 症状の名称 症状 間質性肺炎 階段を上ったり、少し無理をしたりすると息切れがする・息苦しくなる、空せき、発熱等がみられ、これらが急にあらわれたり、持続したりする。 肝機能障害 発熱、かゆみ、発疹、黄疸(皮膚や白目が黄色くなる)、褐色尿、全身のだるさ、食欲不振等があらわれる。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-2-r1",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "2.r1",
+      "body": "消化器 はげしい腹痛を伴う下痢、腹痛",
+      "condition": {
+        "hasIngredient": [
+          "大黄"
+        ]
+      },
+      "conditionText": "１）は、大黄を含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-2-r2",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "2.r2",
+      "body": "まれに下記の重篤な症状が起こることがある。その場合は直ちに医師の診療を受けること。 偽アルドステロン症、ミオパチー 手足のだるさ、しびれ、つっぱり感やこわばりに加えて、脱力感、筋肉痛があらわれ、徐々に強くなる。",
+      "condition": {
+        "amountAtLeast": {
+          "ingredients": [
+            "甘草"
+          ],
+          "value": 1,
+          "unit": "g",
+          "per": "1日"
+        }
+      },
+      "conditionText": "１）は、１日最大配合量が甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-3",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "3.",
+      "body": "服用後、次の症状があらわれることがあるので、このような症状の持続又は増強が見られた場合には、服用を中止し、この文書を持って医師、薬剤師又は登録販売者に相談すること 軟便、下痢",
+      "condition": {
+        "hasIngredient": [
+          "大黄"
+        ]
+      },
+      "conditionText": "大黄を含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-4",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "4.",
+      "body": "１ヵ月位（小児夜泣き、便秘に服用する場合には１週間位）服用しても症状がよくならない場合は服用を中止し、この文書を持って医師、薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-sd-5",
+      "groupId": "kampo_107",
+      "section": "相談すること",
+      "itemNo": "5.",
+      "body": "長期連用する場合には、医師、薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "amountAtLeast": {
+          "ingredients": [
+            "甘草"
+          ],
+          "value": 1,
+          "unit": "g",
+          "per": "1日"
+        }
+      },
+      "conditionText": "１日最大配合量が甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する製剤に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-etc-youho-1",
+      "groupId": "kampo_107",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(1)",
+      "body": "小児に服用させる場合には、保護者の指導監督のもとに服用させること。",
+      "condition": {
+        "usageUnderMonths": 180
+      },
+      "conditionText": "小児の用法及び用量がある場合に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-etc-youho-2-1",
+      "groupId": "kampo_107",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)1)",
+      "body": "３歳以上の幼児に服用させる場合には、薬剤がのどにつかえることのないよう、よく注意すること。",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 180
+          },
+          {
+            "usageUnderMonths": 60
+          },
+          {
+            "dosageForm": [
+              "錠剤",
+              "丸剤"
+            ]
+          }
+        ]
+      },
+      "conditionText": "５歳未満の幼児の用法がある錠剤・丸剤の場合に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-etc-youho-2-2",
+      "groupId": "kampo_107",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)2)",
+      "body": "幼児に服用させる場合には、薬剤がのどにつかえることのないよう、よく注意すること。",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 180
+          },
+          {
+            "usageUnderMonths": 36
+          },
+          {
+            "dosageForm": [
+              "丸剤"
+            ]
+          }
+        ]
+      },
+      "conditionText": "３歳未満の用法及び用量を有する丸剤の場合に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-etc-youho-2-3",
+      "groupId": "kampo_107",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)3)",
+      "body": "１歳未満の乳児には、医師の診療を受けさせることを優先し、やむを得ない場合にのみ服用させること。",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 180
+          },
+          {
+            "not": {
+              "dosageForm": [
+                "カプセル剤",
+                "錠剤",
+                "丸剤"
+              ]
+            }
+          }
+        ]
+      },
+      "conditionText": "カプセル剤及び錠剤・丸剤以外の製剤の場合に記載すること。なお、生後３ヵ月未満の用法がある製剤の場合、「生後３ヵ月未満の乳児」をしてはいけないことに記載し、用法及び用量欄には記載しないこと。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-etc-hokan-1",
+      "groupId": "kampo_107",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(1)",
+      "body": "直射日光の当たらない（湿気の少ない）涼しい所に（密栓して）保管すること。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "（ ）内は必要とする場合に記載すること。",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-etc-hokan-2",
+      "groupId": "kampo_107",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(2)",
+      "body": "小児の手の届かない所に保管すること。",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "kampo_107-etc-hokan-3",
+      "groupId": "kampo_107",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(3)",
+      "body": "他の容器に入れ替えないこと。（誤用の原因になったり品質が変わる。）",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "容器等の個々に至適表示がなされていて、誤用のおそれのない場合には記載しなくてもよい。",
+      "excludedBy": [],
+      "needsReview": false
+    }
+  ]
+}
