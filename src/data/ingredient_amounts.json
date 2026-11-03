@@ -1,0 +1,6183 @@
+[
+ {
+  "productId": "med-00102",
+  "ingredient": "カンゾウ",
+  "uncertain": false,
+  "amountPerDay": 1170.0,
+  "unit": "mg",
+  "qualifier": "相当",
+  "concentration": null,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002830",
+   "checkedOn": "2026-11-04",
+   "note": "カンゾウは2か所に記載あり。こちらは安中散（混合粉末）中の分量。もう1か所は芍薬甘草湯エキス170mgの原生薬としてカンゾウ340mg（別行）。合算はしていない。用法は15才以上1回1包・1日3回。KEGG 2026/10/21版。メーカー公式ページは見つからず。／芍薬甘草湯エキス170mg（シャクヤク340mg、カンゾウ340mg から抽出）の原生薬量。qualifier『相当』はエキスの原生薬量であることを示すためにこちらで付けたもので、ページに『相当』の文字があるわけではない。安中散中のカンゾウ50mg とは別。"
+  }
+ },
+ {
+  "productId": "med-00104",
+  "ingredient": "カンゾウ",
+  "uncertain": false,
+  "amountPerDay": 990.0,
+  "unit": "mg",
+  "qualifier": "相当",
+  "concentration": null,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002833",
+   "checkedOn": "2026-11-04",
+   "note": "カンゾウは2か所に記載あり。こちらは安中散中の分量。もう1か所は芍薬甘草湯エキス140mgの原生薬としてカンゾウ280mg（別行）。合算はしていない。4錠は成人1回量（1日3回）。KEGG 2026/10/21版。／芍薬甘草湯エキス140mg の原生薬量（シャクヤク280mg、カンゾウ280mg）。qualifier『相当』はエキスの原生薬量であることを示すためにこちらで付けたもの。"
+  }
+ },
+ {
+  "productId": "med-00104",
+  "ingredient": "シャクヤク",
+  "uncertain": false,
+  "amountPerDay": 840.0,
+  "unit": "mg",
+  "qualifier": "相当",
+  "concentration": null,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002833",
+   "checkedOn": "2026-11-04",
+   "note": "シャクヤクは芍薬甘草湯エキス140mg の構成生薬としてのみ記載（安中散には含まれない）。qualifier『相当』はこちらで付けたもの。"
+  }
+ },
+ {
+  "productId": "med-00169",
+  "ingredient": "アルコール",
+  "uncertain": false,
+  "amountPerDay": 0.1,
+  "unit": "mL",
+  "qualifier": "以下",
+  "concentration": null,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000028",
+   "checkedOn": "2026-11-04",
+   "note": "添加物欄に『アルコール0.1mL以下』と記載（添加物としてエタノールも記載あり）。有効成分は input と一致。"
+  }
+ },
+ {
+  "productId": "med-00717",
+  "ingredient": "アルコール",
+  "uncertain": true,
+  "amountPerDay": 0.9,
+  "unit": "mL",
+  "qualifier": "以下",
+  "concentration": null,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2311000011",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG の今の処方が登録の成分と違う（改版の疑い）／添加物欄に『アルコール0.9mL以下』と記載。注意：KEGG の現行版（K2311000011、2023年以降の改訂とみられる）は input と配合が違う。現行版にはエレウテロコック乾燥エキスとガンマ-オリザノールがあり、ビタミンB1硝酸塩・ビタミンB12 は記載がない。input の成分一覧は旧処方の可能性があるため、JAN 4987316035017 の現品の箱で確認が必要。メーカー公式ページは見つからず、販売店サイトにも同じ0.9mL以下の記載あり。"
+  }
+ },
+ {
+  "productId": "med-00723",
+  "ingredient": "アルコール",
+  "uncertain": false,
+  "amountPerDay": 0.5,
+  "unit": "mL",
+  "qualifier": "以下",
+  "concentration": null,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1503000028",
+   "checkedOn": "2026-11-04",
+   "note": "添加物欄に『アルコール0.5mL以下』と記載。有効成分は input と一致（ビタミンB12 はシアノコバラミン10µg と記載）。"
+  }
+ },
+ {
+  "productId": "med-00764",
+  "ingredient": "アルコール",
+  "uncertain": false,
+  "amountPerDay": 0.2,
+  "unit": "mL",
+  "qualifier": "以下",
+  "concentration": null,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0701000705",
+   "checkedOn": "2026-11-04",
+   "note": "添加物欄に『アルコール0.2mL以下』と記載。有効成分は input と一致。"
+  }
+ },
+ {
+  "productId": "med-00781",
+  "ingredient": "アルコール",
+  "uncertain": false,
+  "amountPerDay": 0.2,
+  "unit": "mL",
+  "qualifier": "以下",
+  "concentration": null,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004669",
+   "checkedOn": "2026-11-04",
+   "note": "添加物欄に『アルコール0.2mL以下』と記載。有効成分は input と一致。KEGG 2026/10/21版。"
+  }
+ },
+ {
+  "productId": "med-01348",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1301000035",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG掲載名はダマリングランデX（クリーム、液剤は別ページ）"
+  }
+ },
+ {
+  "productId": "med-01348",
+  "ingredient": "イソプロピルメチルフェノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.3,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1301000035",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG掲載名はダマリングランデX（クリーム、液剤は別ページ）"
+  }
+ },
+ {
+  "productId": "med-01348",
+  "ingredient": "グリチルレチン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1301000035",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG掲載名はダマリングランデX（クリーム、液剤は別ページ）"
+  }
+ },
+ {
+  "productId": "med-01348",
+  "ingredient": "テルビナフィン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1301000035",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG掲載名はダマリングランデX（クリーム、液剤は別ページ）"
+  }
+ },
+ {
+  "productId": "med-01348",
+  "ingredient": "リドカイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1301000035",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG掲載名はダマリングランデX（クリーム、液剤は別ページ）"
+  }
+ },
+ {
+  "productId": "med-01369",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01369",
+  "ingredient": "イソプロピルメチルフェノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01369",
+  "ingredient": "クロタミトン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01369",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01369",
+  "ingredient": "グリチルレチン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01369",
+  "ingredient": "ジブカイン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01369",
+  "ingredient": "ブテナフィン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01521",
+  "ingredient": "テルビナフィン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007391",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01536",
+  "ingredient": "トリアムシノロンアセトニド",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.025,
+   "unit": "mg",
+   "basis": "1枚中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1907000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-01540",
+  "ingredient": "トリアムシノロンアセトニド",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000446",
+   "checkedOn": "2026-11-04",
+   "note": "パッチ（口内炎パッチ大正クイックケア）は別製品"
+  }
+ },
+ {
+  "productId": "med-01541",
+  "ingredient": "トリアムシノロンアセトニド",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.025,
+   "unit": "mg",
+   "basis": "1枚(1パッチ)中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1403000013",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-01555",
+  "ingredient": "トリアムシノロンアセトニド",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1608000008",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-01559",
+  "ingredient": "クロルヘキシジングルコン酸塩",
+  "uncertain": true,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601005963",
+   "checkedOn": "2026-11-04",
+   "note": "「液（20%）10mg」が液の量か成分の量か出典で不明／KEGG表記は「クロルヘキシジングルコン酸塩液(20％)」10mg。液としての量か成分としての量かはページ上で区別なし。KEGG上の会社名は大塚製薬"
+  }
+ },
+ {
+  "productId": "med-01624",
+  "ingredient": "ジフェンヒドラミンサリチル酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.8,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2201000013",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01624",
+  "ingredient": "スルファジアジン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2201000013",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01633",
+  "ingredient": "イソプロピルメチルフェノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.3,
+   "unit": "%",
+   "basis": "（記載なし・%表示）"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0610000009",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01633",
+  "ingredient": "イブプロフェンピコノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3,
+   "unit": "%",
+   "basis": "（記載なし・%表示）"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0610000009",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01754",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 30,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000043",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01754",
+  "ingredient": "アルニカチンキ",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000043",
+   "checkedOn": "2026-11-04",
+   "note": "同ページにアルニカ1mgと併記（チンキ中の生薬量とみられる）"
+  }
+ },
+ {
+  "productId": "med-01754",
+  "ingredient": "インドメタシン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000043",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01754",
+  "ingredient": "トコフェロール酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000043",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01755",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 60,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000042",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01755",
+  "ingredient": "アルニカチンキ",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000042",
+   "checkedOn": "2026-11-04",
+   "note": "同ページにアルニカ1mgと併記（チンキ中の生薬量とみられる）"
+  }
+ },
+ {
+  "productId": "med-01755",
+  "ingredient": "インドメタシン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000042",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01812",
+  "ingredient": "インドメタシン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012860",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-01942",
+  "ingredient": "ジクロフェナクナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1301000189",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG上の会社名はHaleonジャパン"
+  }
+ },
+ {
+  "productId": "med-01982",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3.5,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0901000260",
+   "checkedOn": "2026-11-04",
+   "note": "温感タイプ（サロンパスEX温感）は別製品"
+  }
+ },
+ {
+  "productId": "med-01982",
+  "ingredient": "インドメタシン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3.5,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0901000260",
+   "checkedOn": "2026-11-04",
+   "note": "温感タイプ（サロンパスEX温感）は別製品"
+  }
+ },
+ {
+  "productId": "med-01997",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3.5,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000026",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-01997",
+  "ingredient": "ジクロフェナクナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000026",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-02048",
+  "ingredient": "ロキソプロフェンナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5.67,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1607000001",
+   "checkedOn": "2026-11-04",
+   "note": "無水物として5g（同ページ記載）。KEGG上の会社名は第一三共ヘルスケア（販売元）"
+  }
+ },
+ {
+  "productId": "med-02713",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 7,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006591",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02713",
+  "ingredient": "グリチルレチン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006591",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02713",
+  "ingredient": "サリチル酸グリコール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006591",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02713",
+  "ingredient": "ビタミンE酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006591",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG表記はトコフェロール酢酸エステル"
+  }
+ },
+ {
+  "productId": "med-02715",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 7.78,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006590",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-02715",
+  "ingredient": "サリチル酸グリコール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5.56,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006590",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-02715",
+  "ingredient": "ノニル酸ワニリルアミド",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006590",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-02825",
+  "ingredient": "dl-カンフル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.24,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006593",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-02825",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5.71,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006593",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-02825",
+  "ingredient": "サリチル酸メチル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 6.29,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006593",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-02825",
+  "ingredient": "ビタミンE酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "g",
+   "basis": "膏体100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006593",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG表記はトコフェロール酢酸エステル"
+  }
+ },
+ {
+  "productId": "med-02924",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2102000022",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02924",
+  "ingredient": "セチルピリジニウム塩化物水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.3,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2102000022",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02925",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2202000008",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02925",
+  "ingredient": "セチルピリジニウム塩化物水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.3,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2202000008",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02927",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000288",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02927",
+  "ingredient": "セチルピリジニウム塩化物水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 300,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000288",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02933",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000400",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGの分量基準は100g中（mLではない）"
+  }
+ },
+ {
+  "productId": "med-02934",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000252",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGの分量基準は100g中（mLではない）"
+  }
+ },
+ {
+  "productId": "med-02948",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2607000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02948",
+  "ingredient": "セチルピリジニウム塩化物水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 300,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2607000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02953",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1608000014",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02953",
+  "ingredient": "セチルピリジニウム塩化物水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 300,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1608000014",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02969",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.2,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0901000069",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-02991",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2312000004",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03011",
+  "ingredient": "アズレンスルホン酸ナトリウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1404000001",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03011",
+  "ingredient": "アラントイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.3,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1404000001",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03011",
+  "ingredient": "グリチルレチン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.3,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1404000001",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03011",
+  "ingredient": "セチルピリジニウム塩化物水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1404000001",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03046",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "1個（1.65g）中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://brand.taisho.co.jp/preser/ace/",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記「I -メントール」。KEGGに坐剤Tの掲載なし（注入軟膏T・軟膏のみ）。公式ページ#01（坐剤T）の欄を使用、注入軟膏Tは1個（2g）中で別"
+  }
+ },
+ {
+  "productId": "med-03046",
+  "ingredient": "アラントイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "1個（1.65g）中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://brand.taisho.co.jp/preser/ace/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGに坐剤Tの掲載なし（注入軟膏T・軟膏のみ）。公式ページ#01（坐剤T）の欄を使用、注入軟膏Tは1個（2g）中で別"
+  }
+ },
+ {
+  "productId": "med-03046",
+  "ingredient": "クロルヘキシジン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "mg",
+   "basis": "1個（1.65g）中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://brand.taisho.co.jp/preser/ace/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGに坐剤Tの掲載なし（注入軟膏T・軟膏のみ）。公式ページ#01（坐剤T）の欄を使用、注入軟膏Tは1個（2g）中で別"
+  }
+ },
+ {
+  "productId": "med-03046",
+  "ingredient": "トコフェロール酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 60,
+   "unit": "mg",
+   "basis": "1個（1.65g）中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://brand.taisho.co.jp/preser/ace/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGに坐剤Tの掲載なし（注入軟膏T・軟膏のみ）。公式ページ#01（坐剤T）の欄を使用、注入軟膏Tは1個（2g）中で別"
+  }
+ },
+ {
+  "productId": "med-03046",
+  "ingredient": "ヒドロコルチゾン酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "mg",
+   "basis": "1個（1.65g）中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://brand.taisho.co.jp/preser/ace/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGに坐剤Tの掲載なし（注入軟膏T・軟膏のみ）。公式ページ#01（坐剤T）の欄を使用、注入軟膏Tは1個（2g）中で別"
+  }
+ },
+ {
+  "productId": "med-03046",
+  "ingredient": "リドカイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 60,
+   "unit": "mg",
+   "basis": "1個（1.65g）中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://brand.taisho.co.jp/preser/ace/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGに坐剤Tの掲載なし（注入軟膏T・軟膏のみ）。公式ページ#01（坐剤T）の欄を使用、注入軟膏Tは1個（2g）中で別"
+  }
+ },
+ {
+  "productId": "med-03046",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "mg",
+   "basis": "1個（1.65g）中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://brand.taisho.co.jp/preser/ace/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGに坐剤Tの掲載なし（注入軟膏T・軟膏のみ）。公式ページ#01（坐剤T）の欄を使用、注入軟膏Tは1個（2g）中で別"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.2,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "ingredient": "アミノ安息香酸エチル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "ingredient": "アラントイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "ingredient": "イソプロピルメチルフェノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "ingredient": "トコフェロール酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "ingredient": "ヒドロコルチゾン酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "ingredient": "リドカイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2.4,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "ingredient": "酸化亜鉛",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03160",
+  "ingredient": "フラジオマイシン硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.35,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000260",
+   "checkedOn": "2026-11-04",
+   "note": "0.35g(力価)と記載。KEGG上の会社名は第一三共ヘルスケア"
+  }
+ },
+ {
+  "productId": "med-03160",
+  "ingredient": "ベタメタゾン吉草酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.12,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000260",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-03162",
+  "ingredient": "dl-カンフル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000169",
+   "checkedOn": "2026-11-04",
+   "note": "クリーム（液体ムヒアルファEXは別製品）"
+  }
+ },
+ {
+  "productId": "med-03162",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3.5,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000169",
+   "checkedOn": "2026-11-04",
+   "note": "クリーム（液体ムヒアルファEXは別製品）"
+  }
+ },
+ {
+  "productId": "med-03162",
+  "ingredient": "イソプロピルメチルフェノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000169",
+   "checkedOn": "2026-11-04",
+   "note": "クリーム（液体ムヒアルファEXは別製品）"
+  }
+ },
+ {
+  "productId": "med-03162",
+  "ingredient": "クロタミトン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000169",
+   "checkedOn": "2026-11-04",
+   "note": "クリーム（液体ムヒアルファEXは別製品）"
+  }
+ },
+ {
+  "productId": "med-03162",
+  "ingredient": "ジフェンヒドラミン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000169",
+   "checkedOn": "2026-11-04",
+   "note": "クリーム（液体ムヒアルファEXは別製品）"
+  }
+ },
+ {
+  "productId": "med-03162",
+  "ingredient": "プレドニゾロン吉草酸エステル酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.15,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000169",
+   "checkedOn": "2026-11-04",
+   "note": "クリーム（液体ムヒアルファEXは別製品）"
+  }
+ },
+ {
+  "productId": "med-03167",
+  "ingredient": "dl-カンフル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000168",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03167",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3.5,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000168",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03167",
+  "ingredient": "イソプロピルメチルフェノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000168",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03167",
+  "ingredient": "グリチルレチン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.2,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000168",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03167",
+  "ingredient": "ジフェンヒドラミン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000168",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03167",
+  "ingredient": "デキサメタゾン酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 25,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000168",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03169",
+  "ingredient": "dl-カンフル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000098",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03169",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3.5,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000098",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03169",
+  "ingredient": "イソプロピルメチルフェノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000098",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03169",
+  "ingredient": "クロタミトン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000098",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03169",
+  "ingredient": "グリチルレチン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.2,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000098",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03169",
+  "ingredient": "ジフェンヒドラミン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000098",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03169",
+  "ingredient": "デキサメタゾン酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 25,
+   "unit": "mg",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000098",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-03539",
+  "ingredient": "ベタメタゾン吉草酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.2,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000202",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-04341",
+  "ingredient": "dl-カンフル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 9.6,
+   "unit": "%",
+   "basis": "（記載なし・%表示）"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0904000011",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-04341",
+  "ingredient": "l-メントール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.35,
+   "unit": "%",
+   "basis": "（記載なし・%表示）"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0904000011",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-04341",
+  "ingredient": "ユーカリ油",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.5,
+   "unit": "%",
+   "basis": "（記載なし・%表示）"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0904000011",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-04370",
+  "ingredient": "ジフェンヒドラミン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007124",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-04371",
+  "ingredient": "グリチルレチン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000024",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-04371",
+  "ingredient": "ジフェンヒドラミン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000024",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-04371",
+  "ingredient": "酸化亜鉛",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 100,
+   "unit": "mg",
+   "basis": "1g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000024",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS 成分欄の数値。メーカー公式ページでの照合は未実施"
+  }
+ },
+ {
+  "productId": "med-05074",
+  "ingredient": "ベクロメタゾンプロピオン酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100g中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1611000009",
+   "checkedOn": "2026-11-04",
+   "note": "基準は100g中（mLではない）。KEGG掲載名「ナザールαAR0.1％〈季節性アレルギー専用〉」。別品のαAR0.1%Cあり"
+  }
+ },
+ {
+  "productId": "med-05086",
+  "ingredient": "プレドニゾロン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.2,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1111000005",
+   "checkedOn": "2026-11-04",
+   "note": "基準は1mL中。KEGGでは製造販売元 陽進堂ホールディングス、販売元 JNTLコンシューマーヘルス"
+  }
+ },
+ {
+  "productId": "med-05086",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1111000005",
+   "checkedOn": "2026-11-04",
+   "note": "基準は1mL中。KEGGでは製造販売元 陽進堂ホールディングス、販売元 JNTLコンシューマーヘルス"
+  }
+ },
+ {
+  "productId": "med-05216",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 500,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008320",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG掲載名「ナザールスプレー」(J0601008320, 30mL)。別掲の「ナザール『スプレー』」(J0601008319, 15/30mL)も同一分量。"
+  }
+ },
+ {
+  "productId": "med-05216",
+  "ingredient": "ナファゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 50,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008320",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG掲載名「ナザールスプレー」(J0601008320, 30mL)。別掲の「ナザール『スプレー』」(J0601008319, 15/30mL)も同一分量。"
+  }
+ },
+ {
+  "productId": "med-05216",
+  "ingredient": "ベンザルコニウム塩化物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008320",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG掲載名「ナザールスプレー」(J0601008320, 30mL)。別掲の「ナザール『スプレー』」(J0601008319, 15/30mL)も同一分量。"
+  }
+ },
+ {
+  "productId": "med-05220",
+  "ingredient": "オキシメタゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1101000048",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGはg表記"
+  }
+ },
+ {
+  "productId": "med-05221",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 500,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000019",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05221",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 300,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000019",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05221",
+  "ingredient": "ナファゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 50,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000019",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05221",
+  "ingredient": "ベンザルコニウム塩化物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000019",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05222",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 500,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000020",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05222",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 300,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000020",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05222",
+  "ingredient": "ナファゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 50,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000020",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05222",
+  "ingredient": "ベンザルコニウム塩化物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000020",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05223",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 500,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1103000031",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05223",
+  "ingredient": "ナファゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 50,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1103000031",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05223",
+  "ingredient": "ベンゼトニウム塩化物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1103000031",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05223",
+  "ingredient": "塩酸リドカイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 300,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1103000031",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記は「塩酸リドカイン（無水物として）」"
+  }
+ },
+ {
+  "productId": "med-05231",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008322",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGはg表記"
+  }
+ },
+ {
+  "productId": "med-05231",
+  "ingredient": "ナファゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008322",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGはg表記"
+  }
+ },
+ {
+  "productId": "med-05231",
+  "ingredient": "ベンゼトニウム塩化物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008322",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGはg表記"
+  }
+ },
+ {
+  "productId": "med-05239",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 500,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1801000132",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05239",
+  "ingredient": "ナファゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 50,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1801000132",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05239",
+  "ingredient": "ベンゼトニウム塩化物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1801000132",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05276",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 500,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-cool/",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記は「マレイン酸クロルフェニラミン」。KEGG(J0601008292)も同値"
+  }
+ },
+ {
+  "productId": "med-05276",
+  "ingredient": "ベンゼトニウム塩化物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 20,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-cool/",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記は「塩化ベンゼトニウム」。KEGG(J0601008292)も同値"
+  }
+ },
+ {
+  "productId": "med-05276",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 100,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-cool/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG(J0601008292)も同値"
+  }
+ },
+ {
+  "productId": "med-05277",
+  "ingredient": "クロモグリク酸ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-st/",
+   "checkedOn": "2026-11-04",
+   "note": "公式は%表記（基準の記載なし）。KEGGでは該当品検索ヒットなし"
+  }
+ },
+ {
+  "productId": "med-05277",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.25,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-st/",
+   "checkedOn": "2026-11-04",
+   "note": "公式は%表記（基準の記載なし）。KEGGでは該当品検索ヒットなし"
+  }
+ },
+ {
+  "productId": "med-05277",
+  "ingredient": "ナファゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.025,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-st/",
+   "checkedOn": "2026-11-04",
+   "note": "公式は%表記（基準の記載なし）。KEGGでは該当品検索ヒットなし"
+  }
+ },
+ {
+  "productId": "med-05277",
+  "ingredient": "ベンゼトニウム塩化物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-st/",
+   "checkedOn": "2026-11-04",
+   "note": "公式は%表記（基準の記載なし）。KEGGでは該当品検索ヒットなし"
+  }
+ },
+ {
+  "productId": "med-06556",
+  "ingredient": "精製ヒアルロン酸ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/hyaleins.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06611",
+  "ingredient": "塩化カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/soft_santear.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）; 包装5mL×4本"
+  }
+ },
+ {
+  "productId": "med-06611",
+  "ingredient": "塩化ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.4,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/soft_santear.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）; 包装5mL×4本"
+  }
+ },
+ {
+  "productId": "med-06625",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000007",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: タウリン（アミノエチルスルホン酸）"
+  }
+ },
+ {
+  "productId": "med-06625",
+  "ingredient": "ブドウ糖",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06625",
+  "ingredient": "塩化カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06625",
+  "ingredient": "塩化ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06626",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000009",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: アミノエチルスルホン酸(タウリン)"
+  }
+ },
+ {
+  "productId": "med-06626",
+  "ingredient": "ブドウ糖",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06626",
+  "ingredient": "塩化カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06626",
+  "ingredient": "塩化ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06641",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": true,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000053",
+   "checkedOn": "2026-11-04",
+   "note": "同じ JAN が成分の違う「Cキューブ a」として出ている店がある（改版の疑い）／KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）; 要確認: 小売サイトではJAN 4987241123186が「ロートCキューブ a」名で掲載。KEGGのCキューブa(J2201000018)は成分構成が異なる（塩化K/塩化Na/塩化Ca/タウリン）ため、現行品が後継aに切替わっている可能性あり。箱で確認を"
+  }
+ },
+ {
+  "productId": "med-06641",
+  "ingredient": "ヒプロメロース",
+  "uncertain": true,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000053",
+   "checkedOn": "2026-11-04",
+   "note": "同じ JAN が成分の違う「Cキューブ a」として出ている店がある（改版の疑い）／KEGG表記: ヒプロメロース（ヒドロキシプロピルメチルセルロース）; KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）; 要確認: 小売サイトではJAN 4987241123186が「ロートCキューブ a」名で掲載。KEGGのCキューブa(J2201000018)は成分構成が異なる（塩化K/塩化Na/塩化Ca/タウリン）ため、現行品が後継aに切替わっている可能性あり。箱で確認を"
+  }
+ },
+ {
+  "productId": "med-06641",
+  "ingredient": "塩化カリウム",
+  "uncertain": true,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000053",
+   "checkedOn": "2026-11-04",
+   "note": "同じ JAN が成分の違う「Cキューブ a」として出ている店がある（改版の疑い）／KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）; 要確認: 小売サイトではJAN 4987241123186が「ロートCキューブ a」名で掲載。KEGGのCキューブa(J2201000018)は成分構成が異なる（塩化K/塩化Na/塩化Ca/タウリン）ため、現行品が後継aに切替わっている可能性あり。箱で確認を"
+  }
+ },
+ {
+  "productId": "med-06641",
+  "ingredient": "塩化カルシウム水和物",
+  "uncertain": true,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000053",
+   "checkedOn": "2026-11-04",
+   "note": "同じ JAN が成分の違う「Cキューブ a」として出ている店がある（改版の疑い）／KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）; 要確認: 小売サイトではJAN 4987241123186が「ロートCキューブ a」名で掲載。KEGGのCキューブa(J2201000018)は成分構成が異なる（塩化K/塩化Na/塩化Ca/タウリン）ため、現行品が後継aに切替わっている可能性あり。箱で確認を"
+  }
+ },
+ {
+  "productId": "med-06641",
+  "ingredient": "塩化ナトリウム",
+  "uncertain": true,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.49,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000053",
+   "checkedOn": "2026-11-04",
+   "note": "同じ JAN が成分の違う「Cキューブ a」として出ている店がある（改版の疑い）／KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）; 要確認: 小売サイトではJAN 4987241123186が「ロートCキューブ a」名で掲載。KEGGのCキューブa(J2201000018)は成分構成が異なる（塩化K/塩化Na/塩化Ca/タウリン）ため、現行品が後継aに切替わっている可能性あり。箱で確認を"
+  }
+ },
+ {
+  "productId": "med-06641",
+  "ingredient": "炭酸水素ナトリウム",
+  "uncertain": true,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000053",
+   "checkedOn": "2026-11-04",
+   "note": "同じ JAN が成分の違う「Cキューブ a」として出ている店がある（改版の疑い）／KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）; 要確認: 小売サイトではJAN 4987241123186が「ロートCキューブ a」名で掲載。KEGGのCキューブa(J2201000018)は成分構成が異なる（塩化K/塩化Na/塩化Ca/タウリン）ため、現行品が後継aに切替わっている可能性あり。箱で確認を"
+  }
+ },
+ {
+  "productId": "med-06650",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000121",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06650",
+  "ingredient": "ヒプロメロース",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000121",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG表記: ヒプロメロース（ヒドロキシプロピルメチルセルロース）; KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06650",
+  "ingredient": "ブドウ糖",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000121",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06650",
+  "ingredient": "塩化カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.08,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000121",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06650",
+  "ingredient": "塩化ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.44,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000121",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06650",
+  "ingredient": "炭酸水素ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000121",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06651",
+  "ingredient": "ポビドン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.68,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1901000004",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06651",
+  "ingredient": "塩化カルシウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1901000004",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06651",
+  "ingredient": "硫酸マグネシウム水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1901000004",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06660",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000061",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06660",
+  "ingredient": "ヒドロキシエチルセルロース",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.6,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000061",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG表記: ヒドロキシエチルセルロース(HEC); KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06660",
+  "ingredient": "塩化カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000061",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06660",
+  "ingredient": "塩化ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.44,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000061",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）は%のみ表記（基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06679",
+  "ingredient": "アラントイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 30,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; 洗眼薬; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06679",
+  "ingredient": "イプシロン-アミノカプロン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 200,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; 洗眼薬; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06679",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 3,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; 洗眼薬; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06679",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; 洗眼薬; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06679",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 50,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; 洗眼薬; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06679",
+  "ingredient": "トコフェロール酢酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; 洗眼薬; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06679",
+  "ingredient": "ピリドキシン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; 洗眼薬; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06740",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_beauteye.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06740",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_beauteye.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06740",
+  "ingredient": "シアノコバラミン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_beauteye.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記: ビタミンB12（シアノコバラミン）; 公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06740",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_beauteye.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06740",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_beauteye.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06741",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_bio.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06741",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_bio.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06741",
+  "ingredient": "シアノコバラミン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_bio.html",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: ビタミンB12（シアノコバラミン）; 公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06741",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_bio.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06741",
+  "ingredient": "ナファゾリン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.002,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_bio.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06741",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.002,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_bio.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06741",
+  "ingredient": "ピリドキシン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_bio.html",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: ビタミンB6（ピリドキシン塩酸塩）; 公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06746",
+  "ingredient": "イプシロン-アミノカプロン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_al_cool_2.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06746",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_al_cool_2.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06746",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.25,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_al_cool_2.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06746",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_al_cool_2.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06746",
+  "ingredient": "パンテノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_al_cool_2.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06746",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_al_cool_2.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06747",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_v_plus.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）; 公式表記名はサンテFX Vプラス"
+  }
+ },
+ {
+  "productId": "med-06747",
+  "ingredient": "イプシロン-アミノカプロン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_v_plus.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）; 公式表記名はサンテFX Vプラス"
+  }
+ },
+ {
+  "productId": "med-06747",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_v_plus.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）; 公式表記名はサンテFX Vプラス"
+  }
+ },
+ {
+  "productId": "med-06747",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_v_plus.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）; 公式表記名はサンテFX Vプラス"
+  }
+ },
+ {
+  "productId": "med-06747",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_v_plus.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）; 公式表記名はサンテFX Vプラス"
+  }
+ },
+ {
+  "productId": "med-06747",
+  "ingredient": "ピリドキシン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_v_plus.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記: ビタミンB6（ピリドキシン塩酸塩）; 公式ページは%のみ表記（100mL中等の基準記載なし）; 公式表記名はサンテFX Vプラス"
+  }
+ },
+ {
+  "productId": "med-06747",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_v_plus.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）; 公式表記名はサンテFX Vプラス"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_pc.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_pc.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_pc.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "ingredient": "シアノコバラミン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_pc.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記: ビタミンB12（シアノコバラミン）; 公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_pc.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.002,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_pc.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "ingredient": "ピリドキシン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_pc.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記: ビタミンB6（ピリドキシン塩酸塩）; 公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_pc.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "イプシロン-アミノカプロン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "シアノコバラミン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.02,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記: ビタミンB12（シアノコバラミン）; 公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "パンテノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "ピリドキシン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式表記: ビタミンB6（ピリドキシン塩酸塩）; 公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "ingredient": "硫酸亜鉛水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_12.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "イプシロン-アミノカプロン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "レチノールパルミチン酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 50000,
+   "unit": "単位",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: ビタミンA（レチノールパルミチン酸エステル）5万単位/100mL"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_medical_active.html",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: 天然型ビタミンE（酢酸d-α-トコフェロール）; 公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06776",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 2,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2010000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06776",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.3,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2010000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06776",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2010000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06776",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2010000007",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: アミノエチルスルホン酸(タウリン)"
+  }
+ },
+ {
+  "productId": "med-06776",
+  "ingredient": "プラノプロフェン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2010000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06777",
+  "ingredient": "アラントイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2206000025",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06777",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 10,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2206000025",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: アミノエチルスルホン酸（タウリン）"
+  }
+ },
+ {
+  "productId": "med-06777",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2206000025",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06777",
+  "ingredient": "パンテノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2206000025",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06777",
+  "ingredient": "ピリドキシン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2206000025",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06777",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2206000025",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06777",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "mg",
+   "basis": "1mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2206000025",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06844",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06844",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06844",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06844",
+  "ingredient": "ピリドキシン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.04,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06844",
+  "ingredient": "レチノールパルミチン酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 30000,
+   "unit": "単位",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06844",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06844",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG表記: アミノエチルスルホン酸(タウリン); KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "ingredient": "ピリドキシン塩酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "ingredient": "レチノールパルミチン酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 33000,
+   "unit": "単位",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "g",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG（JAPIC 2026/10/21版）; メーカー公式は未確認"
+  }
+ },
+ {
+  "productId": "med-06875",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000157",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06875",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000157",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06875",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000157",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06875",
+  "ingredient": "ビタミンB12",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.006,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000157",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: シアノコバラミン; KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06875",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000157",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06875",
+  "ingredient": "硫酸亜鉛水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000157",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "アラントイン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.25,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: アミノエチルスルホン酸(タウリン); KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "パンテノール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "ビタミンB6",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: ピリドキシン塩酸塩; KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "硫酸亜鉛水和物",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.025,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: アミノエチルスルホン酸(タウリン); KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "ビタミンB6",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: ピリドキシン塩酸塩; KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "レチノールパルミチン酸エステル",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 50000,
+   "unit": "単位",
+   "basis": "100mL中"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.01,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.045,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-06902",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_neo.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06902",
+  "ingredient": "イプシロン-アミノカプロン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_neo.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06902",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_neo.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06902",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_neo.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06902",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": true,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_neo.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページ内で 0.005% と 0.05% の2通り（KEGG は 0.005%）／公式ページ内で0.005%と0.05%の2表記が矛盾。KEGG（JAPIC 2026/10/21版 J0601007825）は0.005%のため0.005を採用。箱で要確認; 公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06902",
+  "ingredient": "塩酸テトラヒドロゾリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_neo.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページは%のみ表記（100mL中等の基準記載なし）"
+  }
+ },
+ {
+  "productId": "med-06919",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_koukin.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06919",
+  "ingredient": "グリチルリチン酸二カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.25,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_koukin.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06919",
+  "ingredient": "スルファメトキサゾール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 4.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_koukin.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06919",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.5,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_koukin.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06956",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_al.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06956",
+  "ingredient": "イプシロン-アミノカプロン酸",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_al.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06956",
+  "ingredient": "クロモグリク酸ナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_al.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06956",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_al.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-06956",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1.0,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://www.santen.com/jp/healthcare/eye/products/otc/sante_fx_al.html",
+   "checkedOn": "2026-11-04",
+   "note": "公式ページで%表記（基準の明示なし）"
+  }
+ },
+ {
+  "productId": "med-07231",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007907",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07231",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007907",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07231",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007907",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07231",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007907",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07231",
+  "ingredient": "ビタミンB6",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007907",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: ピリドキシン塩酸塩; KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07231",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007907",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07234",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0806000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07234",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0806000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07234",
+  "ingredient": "コンドロイチン硫酸エステルナトリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0806000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07234",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0806000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07234",
+  "ingredient": "ビタミンB6",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0806000002",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: ピリドキシン塩酸塩; KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07234",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0806000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07257",
+  "ingredient": "L-アスパラギン酸カリウム",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000064",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07257",
+  "ingredient": "クロルフェニラミンマレイン酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.03,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000064",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07257",
+  "ingredient": "タウリン",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000064",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: アミノエチルスルホン酸（タウリン）; KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07257",
+  "ingredient": "ネオスチグミンメチル硫酸塩",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.005,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000064",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07257",
+  "ingredient": "ビタミンB6",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.1,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000064",
+   "checkedOn": "2026-11-04",
+   "note": "出典表記: ピリドキシン塩酸塩; KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ },
+ {
+  "productId": "med-07257",
+  "ingredient": "酢酸d-α-トコフェロール",
+  "uncertain": false,
+  "amountPerDay": null,
+  "unit": null,
+  "qualifier": null,
+  "concentration": {
+   "amount": 0.05,
+   "unit": "%",
+   "basis": "濃度"
+  },
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000064",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG MEDICUS（JAPIC添付文書情報）で%表記、基準の明示なし"
+  }
+ }
+]
