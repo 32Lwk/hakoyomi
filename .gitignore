@@ -45,3 +45,6 @@ next-env.d.ts
 /data/
 medicine_data_assets/
 *.zip
+
+# python
+__pycache__/
