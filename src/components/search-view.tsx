@@ -15,7 +15,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import type { ProductView } from "@/lib/catalog";
-import { amountText } from "@/lib/compare";
+import { factAmountText } from "@/lib/compare";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 import { illustrationSrc, KIND_LABEL } from "@/lib/illustration";
 import { ingredientRole } from "@/lib/ingredientRole";
@@ -155,10 +155,7 @@ export function SearchView() {
     );
     if (facts.length === 0) return null;
     return facts
-      .map(
-        (f) =>
-          `${f.ingredient} ${f.uncertain ? UI_COPY.uncertain : amountText(f.amountPerDay, f.unit)}`,
-      )
+      .map((f) => `${f.ingredient} ${f.uncertain ? UI_COPY.uncertain : factAmountText(f)}`)
       .join("・");
   };
 
@@ -486,6 +483,7 @@ function ReversePanel({ result, onClear }: { result: ReverseResult; onClear: () 
             {standards.map((s) => (
               <li key={s.id} className="flex flex-col gap-1">
                 <span className="text-xs text-muted-foreground">{s.name}の承認基準</span>
+                {s.scope && <span className="text-xs">{s.scope}：</span>}
                 <span className="flex flex-wrap gap-1.5">
                   {result.terms
                     .filter((t) => t.standardId === s.id)

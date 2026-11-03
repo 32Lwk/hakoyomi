@@ -2,13 +2,16 @@ import "server-only";
 import { ABUSE_INGREDIENTS, ABUSE_SOURCE } from "@/data/abuse_ingredients";
 import { DOPING_ENTRIES, DOPING_SOURCE } from "@/data/doping_list";
 import { EFFICACY_STANDARDS } from "@/data/efficacy_standards";
+import { NO_NOTICE_GROUPS } from "@/data/notices";
 import { INGREDIENT_ROLES, TEBIKI_SOURCE, type IngredientRole } from "@/data/ingredient_roles";
 import { noticeCatalog, type ProductView } from "@/lib/catalog";
-import { amountText } from "@/lib/compare";
+import { factAmountText } from "@/lib/compare";
 import { dailyMaxLabel, timesPerDayLabel } from "@/lib/dosage";
 import { ingredientRole } from "@/lib/ingredientRole";
+import { checkDoping } from "@/lib/rules/doping";
 import { applicableItems } from "@/lib/rules/noticeRules";
-import type { BadgeKind, NoticeGroup, NoticeItem } from "@/lib/schema/notice";
+import { BADGE_INFO } from "@/lib/guard/uiCopy";
+import type { BadgeKind, Condition, NoticeGroup, NoticeItem } from "@/lib/schema/notice";
 
 // 質問エージェント（L-20261103-43）の根拠。コードが集め、Claude は番号を選んで原文を抜き出すだけ。
 // text は原文（通知・手引き・承認基準）か、この商品の入力値をコードで整えた文
@@ -16,6 +19,8 @@ export type Passage = {
   id: string;
   text: string;
   source: { label: string; url: string | null };
+  // 通知の記載条件の原文（「〔○○を含有する製剤に記載すること〕」）。通知の項目だけ（L-20261103-44）
+  condition: string | null;
   // 商品について集めた根拠ならその商品。全体から集めたものは null
   productId: string | null;
   // 語の一致で探すときに使う（Claude が使えないとき）
@@ -23,7 +28,16 @@ export type Passage = {
   ingredients: string[];
 };
 
-type Draft = Omit<Passage, "id" | "productId">;
+type Draft = Omit<Passage, "id" | "productId" | "condition"> & { condition?: string | null };
+
+// 記載条件に出てくる成分名（質問に成分名があるときの語の一致に使う）
+function conditionIngredients(c: Condition): string[] {
+  if ("hasIngredient" in c) return c.hasIngredient;
+  if ("amountAtLeast" in c) return c.amountAtLeast.ingredients;
+  if ("all" in c) return c.all.flatMap(conditionIngredients);
+  if ("any" in c) return c.any.flatMap(conditionIngredients);
+  return [];
+}
 
 function noticePassage(item: NoticeItem, group: NoticeGroup | undefined): Draft {
   return {
@@ -32,8 +46,9 @@ function noticePassage(item: NoticeItem, group: NoticeGroup | undefined): Draft 
       label: `厚労省通知「使用上の注意」${group?.name ?? item.groupId} ${item.section} ${item.itemNo}`,
       url: group?.sourceUrl ?? null,
     },
+    condition: item.conditionText,
     kinds: item.badge ? [item.badge] : [],
-    ingredients: [],
+    ingredients: [...new Set(conditionIngredients(item.condition))],
   };
 }
 
@@ -47,6 +62,72 @@ function rolePassage(role: IngredientRole, ingredients: string[]): Draft {
     kinds: [],
     ingredients,
   };
+}
+
+// 「含まない」「まだ取り込んでいない」もコードで確かめた事実として根拠にする（L-20261104-09）。
+// これがないと「指定濫用防止の対象？」に「記載が見つかりません」と答え、含まないのか調べていないのかがわからない
+function absenceFacts(view: ProductView): Draft[] {
+  const { product } = view;
+  const out: Draft[] = [];
+  const checked = "この商品の成分の照合（コード）";
+  if (!view.abuse.target && view.abuse.reason === "no_ingredient") {
+    out.push({
+      text: `指定濫用防止医薬品の対象成分（${ABUSE_INGREDIENTS.map((a) => a.name).join("、")}）は、この商品の成分に含まれていません`,
+      source: { label: `${checked}・${ABUSE_SOURCE.ingredients}`, url: ABUSE_SOURCE.url },
+      kinds: ["abuse"],
+      ingredients: [],
+    });
+  } else if (!view.abuse.target && view.abuse.reason === "external") {
+    out.push({
+      text: "指定濫用防止医薬品は外用剤を除きます。この商品は外用剤です",
+      source: { label: `${checked}・${ABUSE_SOURCE.ingredients}`, url: ABUSE_SOURCE.url },
+      kinds: ["abuse"],
+      ingredients: [],
+    });
+  }
+  if (!checkDoping(product).length) {
+    out.push({
+      text: `${DOPING_SOURCE.list}に掲載の成分は、この商品の成分に含まれていません${DOPING_SOURCE.verified ? "" : "（禁止表の年版は確認中）"}`,
+      source: { label: `${checked}・${DOPING_SOURCE.list}`, url: DOPING_SOURCE.url },
+      kinds: ["doping"],
+      ingredients: [],
+    });
+  }
+  if (!product.facts.some((f) => f.ingredient.includes("カフェイン"))) {
+    out.push({
+      text: "カフェインを含む成分は、この商品の成分に入っていません",
+      source: { label: checked, url: null },
+      kinds: ["caffeine"],
+      ingredients: [],
+    });
+  }
+  if (!view.noticeLoaded) {
+    const absent = NO_NOTICE_GROUPS[product.noticeGroupId];
+    out.push({
+      text: absent
+        ? `この商品の薬効群（${absent}）は、厚労省通知「使用上の注意」に項がありません。使用上の注意は添付文書（PMDA）で確認してください`
+        : "この商品の薬効群の通知「使用上の注意」は、まだ取り込んでいません。使用上の注意は添付文書（PMDA）で確認してください",
+      source: { label: "ハコよみの取り込み状況", url: null },
+      kinds: ["drive", "breastfeeding", "under15", "under12", "alcohol"],
+      ingredients: [],
+    });
+  }
+  return out;
+}
+
+// 成分の根拠の文。分量がない成分も「配合」と出して、回答から落とさない・「不明」と誤解させない（L-20261104-11）。
+// 目薬・点鼻・外用は濃度で表示する製剤で、1日量の分量を持たない作り
+export function factText(
+  product: ProductView["product"],
+  f: ProductView["product"]["facts"][number],
+) {
+  if (f.uncertain) return `${f.ingredient}：配合（分量は添付文書で確認）`;
+  if (f.concentration) return `${f.ingredient}：${factAmountText(f)}（濃度）`;
+  if (f.amountPerDay === null || f.unit === null)
+    return product.route === "external"
+      ? `${f.ingredient}：配合（濃度で表示する製剤のため、分量はこのアプリに未登録。添付文書で確認）`
+      : `${f.ingredient}：配合（分量は未登録。添付文書で確認）`;
+  return `${f.ingredient}：1日最大量あたり ${factAmountText(f)}`;
 }
 
 // 選んだ商品ごとの根拠。番号は「p{列の番号}-{連番}」
@@ -64,7 +145,7 @@ export async function productPassages(views: ProductView[]): Promise<Passage[]> 
     });
     for (const f of product.facts) {
       own.push({
-        text: `${f.ingredient}：1日最大量あたり ${f.uncertain ? "（添付文書で確認）" : amountText(f.amountPerDay, f.unit)}`,
+        text: factText(product, f),
         source: { label: facts, url: null },
         kinds: [],
         ingredients: [f.ingredient],
@@ -81,6 +162,16 @@ export async function productPassages(views: ProductView[]): Promise<Passage[]> 
       );
     }
     for (const badge of view.badges) {
+      // 確認ポイント（バッジ）の見出しもコードで出した事実として根拠にする。「何歳から？」に「15歳から」と答えられるように（L-20261104-12）
+      own.push({
+        text: `確認ポイント「${BADGE_INFO[badge.kind].name}」：${badge.label}`,
+        source: {
+          label: "この商品の確認ポイント（成分と通知の記載条件からコードで判定）",
+          url: null,
+        },
+        kinds: [badge.kind],
+        ingredients: [],
+      });
       for (const e of badge.evidence) {
         if (e.kind === "label") {
           own.push({
@@ -115,6 +206,7 @@ export async function productPassages(views: ProductView[]): Promise<Passage[]> 
         }
       }
     }
+    own.push(...absenceFacts(view));
     for (const s of EFFICACY_STANDARDS.filter((s) =>
       s.noticeGroupIds.includes(product.noticeGroupId),
     )) {
@@ -125,7 +217,12 @@ export async function productPassages(views: ProductView[]): Promise<Passage[]> 
         ingredients: [],
       });
     }
-    return own.map((d, i) => ({ ...d, id: `p${col + 1}-${i + 1}`, productId: product.id }));
+    return own.map((d, i) => ({
+      ...d,
+      condition: d.condition ?? null,
+      id: `p${col + 1}-${i + 1}`,
+      productId: product.id,
+    }));
   });
 }
 
@@ -162,5 +259,10 @@ export async function generalPassages(): Promise<Passage[]> {
       ingredients: [d.name],
     })),
   ];
-  return drafts.map((d, i) => ({ ...d, id: `g${i + 1}`, productId: null }));
+  return drafts.map((d, i) => ({
+    ...d,
+    condition: d.condition ?? null,
+    id: `g${i + 1}`,
+    productId: null,
+  }));
 }

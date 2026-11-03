@@ -14,7 +14,7 @@ import { useStack } from "@/components/stack-provider";
 import { cn } from "@/lib/utils";
 
 // 下部：［商品］［質問］［●探す］［棚］［設定］（L-20261103-43）。
-// 塗りつぶしの紺の丸は中央の「探す」だけ。今いるタブは薄い紺の下地＋上辺の線で示し、押すボタンと見分ける
+// 塗りつぶしの紺の丸は中央の「探す」だけ。今いるタブは紺の枠＋薄い紺の正円で示し、押すボタンと見分ける
 type Tab = { href: string; label: string; icon: LucideIcon };
 const LEFT: Tab[] = [
   { href: "/products", label: "商品", icon: Package },
@@ -40,27 +40,22 @@ export function BottomNav() {
         href={t.href}
         aria-current={active ? "page" : undefined}
         className={cn(
-          "relative flex min-h-16 flex-1 flex-col items-center justify-center gap-1 text-[11px]",
-          active ? "font-bold text-primary" : "text-muted-foreground",
+          "relative flex min-h-16 flex-1 flex-col items-center justify-center gap-0.5 text-[11px]",
+          active ? "font-bold text-primary" : "text-muted-foreground/80",
         )}
       >
-        {active && (
-          <span
-            aria-hidden="true"
-            className="absolute top-0 left-1/2 h-[3px] w-10 -translate-x-1/2 rounded-b-full bg-primary"
-          />
-        )}
+        {/* 今いるタブは紺の枠＋薄い紺の正円（L-20261104-03） */}
         <span
           className={cn(
-            "flex h-8 w-14 items-center justify-center rounded-full transition-colors",
-            active && "bg-primary/12",
+            "flex size-10 items-center justify-center rounded-full border-2 transition-colors",
+            active ? "border-primary bg-primary/15" : "border-transparent",
           )}
         >
           <Icon className="size-5" strokeWidth={active ? 2.4 : 1.8} aria-hidden="true" />
         </span>
         {t.label}
         {t.href === "/products" && ids.length > 0 && (
-          <span className="absolute top-1.5 right-[calc(50%-2.1rem)] min-w-[1.125rem] rounded-full bg-primary px-1 text-center text-[10px] leading-[1.125rem] font-bold text-primary-foreground ring-2 ring-background">
+          <span className="absolute top-1 right-[calc(50%-1.9rem)] min-w-[1.125rem] rounded-full bg-primary px-1 text-center text-[10px] leading-[1.125rem] font-bold text-primary-foreground ring-2 ring-background">
             {ids.length}
           </span>
         )}

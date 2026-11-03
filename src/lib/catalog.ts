@@ -1,6 +1,7 @@
 import "server-only";
 import { createClient } from "@supabase/supabase-js";
 import { DEMO_PRODUCTS, demoSku } from "@/data/demo_products";
+import { withResearchedAmounts } from "@/data/ingredient_amounts";
 import { MOCK_STORE, sectionAt, type Shelf, type ShelfLocation } from "@/data/mock_store";
 import { SHELF_LOCATIONS } from "@/data/shelf_stock";
 import { NOTICE_GROUPS, NOTICE_ITEMS } from "@/data/notices";
@@ -30,8 +31,9 @@ type Catalog = {
   locations: ShelfLocation[];
 };
 
+// 分量の調査結果は、静的データ・Supabase のどちらから読んでも同じように補う（L-20261104-13）
 const STATIC_CATALOG: Catalog = {
-  products: DEMO_PRODUCTS,
+  products: DEMO_PRODUCTS.map(withResearchedAmounts),
   groups: NOTICE_GROUPS,
   items: NOTICE_ITEMS,
   locations: SHELF_LOCATIONS,
@@ -63,7 +65,7 @@ async function loadFromSupabase(url: string, key: string): Promise<Catalog> {
   for (const result of [products, groups, items, locations])
     if (result.error) throw new Error(`Supabase の読み出しに失敗：${result.error.message}`);
   return {
-    products: (products.data as ProductRow[]).map(productFromRow),
+    products: (products.data as ProductRow[]).map(productFromRow).map(withResearchedAmounts),
     groups: (groups.data as NoticeGroupRow[]).map(noticeGroupFromRow),
     items: (items.data as NoticeItemRow[]).map(noticeItemFromRow),
     locations: (locations.data as ShelfLocationRow[]).map((row) => ({

@@ -3,7 +3,7 @@ import { ingredientRole } from "@/lib/ingredientRole";
 import type { Badge } from "@/lib/rules/badges";
 import { normalizeName } from "@/lib/rules/normalize";
 import type { BadgeKind } from "@/lib/schema/notice";
-import type { Product } from "@/lib/schema/product";
+import type { Product, ProductFact } from "@/lib/schema/product";
 
 // 2〜4品を、1日最大量あたりの分量にそろえて並べる。並べ替えはしない（量の順で優劣を示さない）
 
@@ -23,6 +23,18 @@ export type CompareRow = {
 export function amountText(amount: number | null, unit: string | null): string {
   if (amount === null || unit === null) return "不明";
   return `${Number.isInteger(amount) ? amount : amount.toFixed(1)}${unit}`;
+}
+
+// 成分の分量の表示。1日最大量あたりの分量、なければ濃度（出典の基準のまま）。「以下」「相当」は添える（L-20261104-13）
+export function factAmountText(f: ProductFact): string {
+  if (f.amountPerDay !== null && f.unit !== null)
+    return `${amountText(f.amountPerDay, f.unit)}${f.qualifier ?? ""}`;
+  if (f.concentration) {
+    const { amount, unit, basis } = f.concentration;
+    const value = `${amount}${unit}${f.qualifier ?? ""}`;
+    return basis === "濃度" || basis.startsWith("（") ? value : `${basis} ${value}`;
+  }
+  return "不明";
 }
 
 function rowFromCells(key: string, label: string, cells: Cell[]): CompareRow {
@@ -58,7 +70,7 @@ export function compareRows(products: Product[]): CompareRow[] {
         if (!fact) return { kind: "none" };
         return {
           kind: "value",
-          text: amountText(fact.amountPerDay, fact.unit),
+          text: factAmountText(fact),
           uncertain: fact.uncertain,
         };
       }),

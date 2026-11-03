@@ -3,27 +3,14 @@
 //
 // 使い方：npm run db:seed（.env.local の SUPABASE_URL・SUPABASE_SERVICE_ROLE_KEY を使う）
 import { createClient } from "@supabase/supabase-js";
+import { DEMO_MEMOS } from "@/data/demo_memos";
 import { DEMO_PRODUCTS } from "@/data/demo_products";
 import { MOCK_STORE } from "@/data/mock_store";
 import { SHELF_LOCATIONS } from "@/data/shelf_stock";
 import { KAZE_GROUP } from "@/data/notice_kaze";
-import { NOTICE_ITEMS } from "@/data/notices";
+import { NO_NOTICE_GROUPS, NOTICE_GROUPS, NOTICE_ITEMS } from "@/data/notices";
 import { noticeGroupToRow, noticeItemToRow, productToRows } from "@/lib/db/rows";
-import { NOTICE_PDF, NOTICE_SOURCES } from "../notice/lib";
-
-const EXTRA_GROUP_NAMES: Record<string, string> = {
-  suimin_kaizen: "催眠鎮静薬",
-  // L-20261103-08 で足した種類
-  chinun: "鎮暈薬（乗物酔い防止薬）",
-  tenbi: "鼻炎用点鼻薬",
-  ichoyaku: "胃腸薬",
-  ganka: "眼科用薬",
-  vitamin: "ビタミン主薬製剤",
-  kampo: "漢方製剤",
-  gaihi: "外皮用薬",
-  // L-20261103-40
-  kou_histamine: "抗ヒスタミン薬主薬製剤",
-};
+import { NOTICE_PDF, NOTICE_SOURCES, sourcePdf } from "../notice/lib";
 
 // 販売終了でデモデータから外した品の id（新コッコアポA錠・スパークユンケル、L-20261103-35）。外すときはここに足す
 const REMOVED_IDS = ["med-04160", "med-00708"];
@@ -45,14 +32,17 @@ async function main() {
   };
 
   // 薬効群は T101 の構造化対象の6群（出典・頁）。項目はかぜ薬Ⅰの抜粋と解熱鎮痛薬・鼻炎用内服薬（L-20261103-28）
+  // 取り込んだ薬効群（src/data/notices）はその出典・取得日、まだの群は構造化対象として置く
   const groups = NOTICE_SOURCES.map((source) =>
-    noticeGroupToRow({
-      id: source.id,
-      name: source.name,
-      sourceUrl: NOTICE_PDF.url,
-      sourcePage: source.pages[0],
-      fetchedOn: KAZE_GROUP.fetchedOn,
-    }),
+    noticeGroupToRow(
+      NOTICE_GROUPS.find((g) => g.id === source.id) ?? {
+        id: source.id,
+        name: source.name,
+        sourceUrl: sourcePdf(source).url,
+        sourcePage: source.pages[0],
+        fetchedOn: KAZE_GROUP.fetchedOn,
+      },
+    ),
   );
   // デモSKUの薬効群のうち通知の構造化対象外のもの（例：催眠鎮静薬）。項目は持たず、外部キーのためだけに置く
   const known = new Set(groups.map((g) => g.id));
@@ -61,7 +51,7 @@ async function main() {
     .map((id) =>
       noticeGroupToRow({
         id,
-        name: `${EXTRA_GROUP_NAMES[id] ?? id}（通知の構造化対象外）`,
+        name: `${NO_NOTICE_GROUPS[id] ?? id}（通知に項なし）`,
         sourceUrl: NOTICE_PDF.url,
         sourcePage: null,
         fetchedOn: KAZE_GROUP.fetchedOn,
@@ -102,8 +92,22 @@ async function main() {
     ),
   );
 
+  // デモの説明メモ（T403）。id 固定なので何度流しても同じ。本文は src/data/demo_memos.test.ts で禁止語・連絡先の形を検査済み
+  check(
+    "memos",
+    await db.from("memos").upsert(
+      DEMO_MEMOS.map((m) => ({
+        id: m.id,
+        product_id: m.productId ?? null,
+        ingredient: m.ingredient ?? null,
+        body: m.body,
+        author_alias: m.authorAlias,
+      })),
+    ),
+  );
+
   console.log(
-    `seed 完了：薬効群 ${groups.length + extraGroups.length}、通知項目 ${NOTICE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${locations.length}`,
+    `seed 完了：薬効群 ${groups.length + extraGroups.length}、通知項目 ${NOTICE_ITEMS.length}、商品 ${DEMO_PRODUCTS.length}、成分 ${rows.flatMap((r) => r.facts).length}、棚位置 ${locations.length}、説明メモ ${DEMO_MEMOS.length}`,
   );
 }
 

@@ -3,8 +3,9 @@
 //
 // 使い方：
 //   python3 -I scripts/notice/extract.py data/notices/001742612.pdf data/notices/001742612.pages.json
+//   python3 -I scripts/notice/extract.py data/notices/000240698.pdf data/notices/000240698.pages.json  # 漢方製剤
 //   npm run notice:structure            # 全薬効群
-//   npm run notice:structure -- kaze_1  # 指定した薬効群だけ
+//   npm run notice:structure -- kaze_1  # 指定した薬効群だけ（kampo なら漢方製剤の全処方）
 //   npm run notice:structure -- --recheck  # Claude を呼ばず、保存済みの下書きで照合だけやり直す
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
@@ -13,9 +14,9 @@ import { NoticeGroup, type NoticeItem } from "@/lib/schema/notice";
 import { guard } from "@/lib/guard/guard";
 import {
   DraftOutput,
-  NOTICE_PDF,
   NOTICE_SOURCES,
   sliceSource,
+  sourcePdf,
   toNoticeItems,
   type Issue,
   type NoticeSource,
@@ -33,6 +34,8 @@ const SYSTEM = `あなたは厚生労働省の通知「使用上の注意」を�
 - itemNo は半角で「1.」「1.(3)」のように親子をつなぐ。「その他」の項目は小見出しを前に付ける（例「保管及び取扱い上の注意(1)」、番号がなければ小見出しだけ）。本文に「１）」「２）」の書き分けがあり、条件が違うときは別項目にし、itemNo を「3.1)」「3.2)」とする。
 - section は「してはいけないこと」「相談すること」のどちらかで、それ以外（その他の注意、用法及び用量に関連する注意、保管及び取扱い上の注意など）は「その他」とする。
 - 副作用の表（関係部位・症状）は、その表を含む番号の項目の本文に含める。
+- ただし表の行に注番号（「１）」など）で別の記載条件が付いているときは、その行を子の項目に分ける。itemNo は親に「r1」「r2」…を足す（例「2.r1」）。子の本文はその行の文面（関係部位と症状、又は症状の名称と症状）で、重篤な症状の行なら頭に「まれに下記の重篤な症状が起こることがある。その場合は直ちに医師の診療を受けること。」を付ける。子の条件はその注の条件。親の本文には条件のない行だけを残し、条件のない重篤な症状の行がなければ「まれに下記の…」の文も親に入れない。行の注番号は本文から除く。
+- 「（９）次の診断を受けた人。高血圧１）２）、…」のように語ごとに注番号で条件が違うときは、条件ごとに子の項目（「1.(9)1)」「1.(9)2)」）に分け、本文は見出しを頭に付けて「次の診断を受けた人。高血圧、心臓病、腎臓病」のように注番号を除いた語だけを並べる。
 
 ## 本文（body）
 - 通知の文面をそのまま写す。言い換え・要約・補足・表記の統一をしない。全角・半角も原文のまま。崩れた改行・空白だけ詰めてよい。
@@ -45,11 +48,18 @@ const SYSTEM = `あなたは厚生労働省の通知「使用上の注意」を�
   {"hasIngredient": ["成分名", ...]}  いずれかを含有する
   {"hasClass": ["抗ヒスタミン剤", ...]}  成分群（通知が成分群で書いているとき）
   {"amountAtLeast": {"ingredients": [...], "as": "換算先（「○○として」のとき）", "value": 数値, "unit": "mg"|"g", "per": "1回"|"1日"}}
+  {"dosageForm": ["錠剤", "丸剤", ...]}  剤形（「錠剤」「丸剤」「カプセル剤」のように「剤」まで書く）
+  {"usageUnderMonths": 月齢}  その月齢未満の用法がある製剤（生後３ヵ月未満 → 3、１歳未満 → 12、３歳未満 → 36、５歳未満 → 60、小児（の用法及び用量がある）→ 180）
   {"all": [条件, ...]}  {"any": [条件, ...]}  {"not": 条件}
 - 「1日最大配合量」は per "1日"、「1回分量」は per "1回"。
 - 「ただし，「してはいけないこと」の４．を記載した製剤にあっては記載しない」は excludedBy に {"section","itemNo"} で入れる（conditionJson には入れない）。
 - 剤形・用法（小児の用法がある、錠剤の場合など）・年齢の置き換え・各社の承認の範囲など、上の型で表せない条件は、表せる部分だけを式にして needsReview を true、reviewNote に表せなかった点を短く書く。表せる部分がなければ {"always": true}。
 - 判断に迷ったときも needsReview を true にする。推測で条件を補わない。
+- 一般用漢方製剤の「１日最大配合量が甘草として１ｇ以上（エキス剤については原生薬に換算して１ｇ以上）含有する」は {"amountAtLeast": {"ingredients": ["甘草"], "value": 1, "unit": "g", "per": "1日"}} とする（as は付けない。エキス剤の原生薬換算は商品の入力値が原生薬量なので式で表せている。needsReview にしない）。「マオウ又は、…甘草として１ｇ以上…」は any でつなぐ。
+- 番号のない見出し（漢方製剤の「次の人は服用しないこと」など）は itemNo「1.」とし、その下の記載を「1.(1)」のように子の項目にする。
+- 「生後３ヵ月未満の用法がある製剤」「小児の用法及び用量がある場合」「５歳未満の幼児の用法がある錠剤・丸剤」「３歳未満の用法及び用量を有する丸剤」「カプセル剤及び錠剤・丸剤以外の製剤」は dosageForm・usageUnderMonths・not で表し、needsReview にしない（例：カプセル剤及び錠剤・丸剤以外 → {"not": {"dosageForm": ["カプセル剤", "錠剤", "丸剤"]}}）。親に「小児の用法がある場合、剤形により…いずれかを記載」とあるときは、子の条件に親の条件を all でつなぐ。親の見出しが記載条件の注記だけなら親は項目にしない。
+- 子の項目しか条件に当たらない見出しだけの親（「次の人は服用しないこと」の下が条件つきの子だけ等）は、親の条件を子の条件の any にする。
+- 保管及び取扱い上の注意の「（ ）内は必要とする場合に記載」「容器等の個々に至適表示がなされていて…記載しなくてもよい」は商品で判定しない注記なので、条件は {"always": true}、needsReview にしない。
 
 ## badge
 本文と条件が次に当たるときだけ付ける。迷ったら null。
@@ -77,7 +87,7 @@ async function structure(client: Anthropic, model: string, source: NoticeSource,
     messages: [
       {
         role: "user",
-        content: `薬効群：${source.name}\n出典：${NOTICE_PDF.url}（${source.pages[0]}〜${source.pages[1]}頁）\n\n<notice>\n${text}\n</notice>`,
+        content: `薬効群：${source.name}\n出典：${sourcePdf(source).url}（${source.pages[0]}〜${source.pages[1]}頁）\n\n<notice>\n${text}\n</notice>`,
       },
     ],
   });
@@ -128,18 +138,19 @@ async function main() {
   const args = process.argv.slice(2);
   const recheck = args.includes("--recheck");
   const only = args.filter((arg) => !arg.startsWith("--"));
-  const sources = only.length ? NOTICE_SOURCES.filter((s) => only.includes(s.id)) : NOTICE_SOURCES;
+  const sources = only.length
+    ? NOTICE_SOURCES.filter((s) => only.some((a) => s.id === a || s.id.startsWith(`${a}_`)))
+    : NOTICE_SOURCES;
   if (!sources.length) throw new Error(`薬効群が見つかりません：${only.join(", ")}`);
 
-  const pages: PageText[] = JSON.parse(
-    readFileSync(`${DATA_DIR}/${NOTICE_PDF.file}.pages.json`, "utf8"),
-  );
+  const pagesOf = (file: string): PageText[] =>
+    JSON.parse(readFileSync(`${DATA_DIR}/${file}.pages.json`, "utf8"));
   const fetchedOn = new Date().toISOString().slice(0, 10);
   const client = new Anthropic();
   mkdirSync(OUT_DIR, { recursive: true });
 
   for (const source of sources) {
-    const text = sliceSource(pages, source);
+    const text = sliceSource(pagesOf(sourcePdf(source).file), source);
     const draftPath = `${OUT_DIR}/${source.id}.draft.json`;
     let drafts;
     if (recheck) {
@@ -164,7 +175,7 @@ async function main() {
     const group = NoticeGroup.parse({
       id: source.id,
       name: source.name,
-      sourceUrl: NOTICE_PDF.url,
+      sourceUrl: sourcePdf(source).url,
       sourcePage: source.pages[0],
       fetchedOn,
     });

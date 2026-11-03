@@ -17,6 +17,15 @@ describe("findBanwords", () => {
       findBanwords("該当する記載が見つかりません。添付文書（PMDA）で確認してください"),
     ).toEqual([]);
   });
+
+  it("通知の原文の言い回しは通し、同じ語の別の使い方は止める（L-20261104-12）", () => {
+    expect(findBanwords("体の虚弱な人（体力の衰えている人、体の弱い人）。")).toEqual([]);
+    expect(findBanwords("胃腸の弱い人。")).toEqual([]);
+    expect(findBanwords("次の診断を受けた人。高血圧、心臓病")).toEqual([]);
+    expect(findBanwords("こちらは効き目が弱い")).toEqual(expect.arrayContaining(["弱い"]));
+    expect(findBanwords("AIが診断します")).toEqual(["診断"]);
+    expect(findBanwords("胃腸の弱い人には弱い薬")).toEqual(["弱い"]);
+  });
 });
 
 // 画面とAPIのソースに禁止語が直接書かれていないことを確かめる（禁止語リストとテストは除く）

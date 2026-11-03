@@ -57,8 +57,11 @@ describe("逆引きの対応づけ", () => {
   });
 
   it("承認基準の対象の薬効群の商品には、すべて照合の印がある", () => {
+    // 逆引きの語をまだ持たない承認基準（漢方製剤、L-20261104-09）は対象外
     for (const p of DEMO_PRODUCTS) {
-      const covered = EFFICACY_STANDARDS.some((s) => s.noticeGroupIds.includes(p.noticeGroupId));
+      const covered = EFFICACY_STANDARDS.some(
+        (s) => s.terms.length && s.noticeGroupIds.includes(p.noticeGroupId),
+      );
       if (covered) expect(EFFICACY_MARKS[p.id], p.name).toBeDefined();
     }
   });

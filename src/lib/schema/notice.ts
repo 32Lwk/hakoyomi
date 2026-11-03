@@ -29,6 +29,10 @@ export type Condition =
         per: "1回" | "1日";
       };
     }
+  // 剤形（例：錠剤・丸剤）。src/data/product_usage の値で判定する（L-20261104-12）
+  | { dosageForm: string[] }
+  // この月齢未満の用法がある（例：生後３ヵ月未満 → 3、小児（15歳未満）→ 180）
+  | { usageUnderMonths: number }
   | { all: Condition[] }
   | { any: Condition[] }
   | { not: Condition };
@@ -47,6 +51,8 @@ export const Condition: z.ZodType<Condition> = z.lazy(() =>
         per: z.enum(["1回", "1日"]),
       }),
     }),
+    z.object({ dosageForm: z.array(z.string()).min(1) }),
+    z.object({ usageUnderMonths: z.number().int().positive() }),
     z.object({ all: z.array(Condition).min(1) }),
     z.object({ any: z.array(Condition).min(1) }),
     z.object({ not: Condition }),

@@ -32,6 +32,23 @@ export const ProductFact = z.object({
   amountPerDay: z.number().nonnegative().nullable(),
   unit: z.enum(["mg", "g", "mL", "µg"]).nullable(),
   uncertain: z.boolean().default(false),
+  // 以下は分量の調査結果（src/data/ingredient_amounts.json、L-20261104-13）で補ったときだけ入る
+  // 「0.9mL以下」「原生薬として相当」など、出典の書き方の添え
+  qualifier: z.enum(["以下", "相当"]).nullable().optional(),
+  // 目薬・点鼻・外用の濃度（100mL中 30mg、0.03% など）。出典の基準のまま持ち、換算しない
+  concentration: z
+    .object({ amount: z.number().nonnegative(), unit: z.string().min(1), basis: z.string().min(1) })
+    .nullable()
+    .optional(),
+  source: z
+    .object({
+      kind: z.string(),
+      url: z.string().nullable(),
+      checkedOn: z.string(),
+      note: z.string().nullable(),
+    })
+    .nullable()
+    .optional(),
 });
 export type ProductFact = z.infer<typeof ProductFact>;
 

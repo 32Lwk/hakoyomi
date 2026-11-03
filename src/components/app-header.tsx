@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 
+export const HEADER_ACTION_ID = "header-action";
+
 // 画面名はタブと同じ語にそろえる。ロゴを押すと「探す」へ戻る（L-20261103-43）
 const TITLE: Record<string, string> = {
   "/": "探す",
@@ -37,12 +39,17 @@ export function AppHeader() {
             {title}
           </span>
         )}
-        <span
-          title={UI_COPY.demoData}
-          className="ml-auto truncate rounded-full bg-muted px-2.5 py-0.5 text-[11px] text-muted-foreground"
-        >
-          {UI_COPY.demoShort}
-        </span>
+        {pathname === "/ask" ? (
+          // 質問の画面は、右上に「新しい会話」を出す（画面側が差し込む。L-20261104-09）
+          <div id={HEADER_ACTION_ID} className="ml-auto" />
+        ) : (
+          <span
+            title={UI_COPY.demoData}
+            className="ml-auto truncate rounded-full bg-muted px-2.5 py-0.5 text-[11px] text-muted-foreground"
+          >
+            {UI_COPY.demoShort}
+          </span>
+        )}
       </div>
     </header>
   );

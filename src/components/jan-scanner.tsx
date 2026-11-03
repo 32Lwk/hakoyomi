@@ -25,7 +25,7 @@ const HINTS = new Map([
 
 // JAN の読み取り：カメラ（映像は保存・送信しない。読めた数字だけ使う）＋手入力＋品名検索
 export function JanScanner() {
-  const { scannerOpen, setScannerOpen, add } = useStack();
+  const { scannerOpen, setScannerOpen, add, handleScan } = useStack();
   const router = useRouter();
   const pathname = usePathname();
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -41,7 +41,9 @@ export function JanScanner() {
     setText("");
     setResults([]);
     setMessage(null);
-    // 読んだら「商品」へ。商品の画面（比べる表を含む）で読んだときはそのまま足す（L-20261103-43）
+    // 読んだら「商品」へ。商品の画面（比べる表を含む）で読んだときはそのまま足す（L-20261103-43）。
+    // 質問の画面で読んだときは、その画面が話題に足す（L-20261104-02）
+    if (handleScan(id)) return;
     if (pathname !== "/products") router.push("/products");
   }
 

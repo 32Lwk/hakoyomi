@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, MessageCircleQuestion, Plus, ScanBarcode, Search, X } from "lucide-react";
+import { MapPin, MessageCircleQuestion, Plus, X } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import { ColumnNo, CompareView } from "@/components/compare-view";
 import { ProductCard } from "@/components/product-card";
 import { ProductImage } from "@/components/product-image";
 import { ProductPicker } from "@/components/product-picker";
+import { SearchView } from "@/components/search-view";
 import { useStack } from "@/components/stack-provider";
 import {
   Sheet,
@@ -26,7 +27,7 @@ const MAX = 4;
 // 番号は比べる表の列の見出しと同じ
 export function ProductsView() {
   const initialView = useSearchParams().get("view") === "compare" ? "compare" : "card";
-  const { ids, currentId, select, remove, clear, setScannerOpen } = useStack();
+  const { ids, currentId, select, remove, clear } = useStack();
   const { views, loading } = useProductViews(ids);
   const [view, setView] = useState(initialView);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -34,31 +35,8 @@ export function ProductsView() {
   const mode = view === "compare" && canCompare ? "compare" : "card";
   const current = views.find((v) => v.product.id === currentId) ?? views.at(-1) ?? null;
 
-  if (ids.length === 0) {
-    return (
-      <div className="flex flex-col items-center gap-4 pt-10 text-center">
-        <p className="text-lg font-bold">{UI_COPY.productsEmpty}</p>
-        <p className="text-sm text-muted-foreground">{UI_COPY.productsEmptyHint}</p>
-        <div className="flex w-full max-w-sm flex-col gap-2">
-          <button
-            type="button"
-            onClick={() => setScannerOpen(true)}
-            className="flex min-h-12 items-center justify-center gap-2 rounded-xl bg-primary font-bold text-primary-foreground"
-          >
-            <ScanBarcode className="size-5" aria-hidden="true" />
-            {UI_COPY.readJan}
-          </button>
-          <Link
-            href="/"
-            className="flex min-h-12 items-center justify-center gap-2 rounded-xl border-2 border-primary font-bold text-primary"
-          >
-            <Search className="size-5" aria-hidden="true" />
-            品名・成分で探す
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  // 0品のときは探すと同じ画面をそのまま出す。選ぶとこの画面に切り替わる（L-20261103-44）
+  if (ids.length === 0) return <SearchView />;
 
   return (
     <div className="flex flex-col gap-3">

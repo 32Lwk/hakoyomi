@@ -13,12 +13,13 @@ export async function GET(request: NextRequest) {
   const q = params.get("q") ?? "";
   const products = await (q ? searchByName(q) : allProducts());
   return Response.json({
-    results: products.map(({ id, name, maker, jan, riskClass }) => ({
+    results: products.map(({ id, name, maker, jan, riskClass, kind }) => ({
       id,
       name,
       maker,
       jan,
       riskClass,
+      kind,
     })),
   });
 }

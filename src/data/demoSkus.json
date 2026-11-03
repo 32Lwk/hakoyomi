@@ -5510,7 +5510,7 @@
     "maker": "太田胃散",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_seisan",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -5668,7 +5668,7 @@
     "maker": "太田胃散",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "kampo_002",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -5782,7 +5782,7 @@
     "maker": "興和",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_seisan",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -5920,7 +5920,7 @@
     "maker": "大正製薬",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "kampo_mix",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6038,7 +6038,7 @@
     "maker": "大正製薬",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "kampo_mix",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6156,7 +6156,7 @@
     "maker": "エスエス製薬",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_seisan",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6242,7 +6242,7 @@
     "maker": "エーザイ",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_kenni",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6320,7 +6320,7 @@
     "maker": "ライオン",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_shisha",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6392,7 +6392,7 @@
     "maker": "アリナミン製薬",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "kampo_189",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6458,7 +6458,7 @@
     "maker": "大正製薬",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "kampo_189",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6524,7 +6524,7 @@
     "maker": "ロート製薬",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "kampo_262",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6718,7 +6718,7 @@
     "maker": "ビオフェルミン製薬（販売元 大正製薬）",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_shisha",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6802,7 +6802,7 @@
     "maker": "大幸薬品",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_shisha",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -6896,7 +6896,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -6954,7 +6954,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7102,7 +7102,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7210,7 +7210,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7330,7 +7330,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7426,7 +7426,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7526,7 +7526,7 @@
     "maker": "ライオン",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7642,7 +7642,7 @@
     "maker": "ライオン",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7766,7 +7766,7 @@
     "maker": "ロート製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_jinko",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7868,7 +7868,7 @@
     "maker": "ロート製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_jinko",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -7946,7 +7946,7 @@
     "maker": "ロート製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_jinko",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -8044,7 +8044,7 @@
     "maker": "ロート製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_jinko",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -8130,7 +8130,7 @@
     "maker": "小林製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_sengan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -8242,7 +8242,7 @@
     "maker": "参天製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_jinko",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -8308,7 +8308,7 @@
     "maker": "アリナミン製薬",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_b1",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -8402,7 +8402,7 @@
     "maker": "エーザイ",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_b2",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -8496,7 +8496,7 @@
     "maker": "エーザイ",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -8602,7 +8602,7 @@
     "maker": "興和",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -8744,7 +8744,7 @@
     "maker": "エスエス製薬",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "l_cysteine",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -8822,7 +8822,7 @@
     "maker": "アリナミン製薬",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_b2b6",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -8924,7 +8924,7 @@
     "maker": "第一三共ヘルスケア（製造販売元 佐藤薬品工業）",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_b2b6",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -9022,7 +9022,7 @@
     "maker": "佐藤製薬",
     "riskClass": "第2類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -9212,7 +9212,7 @@
     "maker": "大鵬薬品工業",
     "riskClass": "第2類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -9334,7 +9334,7 @@
     "maker": "ゼリア新薬工業",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -9476,7 +9476,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_152",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -9590,7 +9590,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_235",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -9688,7 +9688,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_264",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -9814,7 +9814,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_033",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -9940,7 +9940,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_149",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -10050,7 +10050,7 @@
     "maker": "全薬工業",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "mizumushi",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -10112,7 +10112,7 @@
     "maker": "久光製薬",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "mizumushi",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -10220,7 +10220,7 @@
     "maker": "大正製薬",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "mizumushi",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -10310,7 +10310,7 @@
     "maker": "リードケミカル",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -10368,7 +10368,7 @@
     "maker": "久光製薬",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -10438,7 +10438,7 @@
     "maker": "同仁医薬化工（製造販売元）／ハレオンジャパン（発売元）",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -10496,7 +10496,7 @@
     "maker": "大正製薬",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_jishitsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -13052,7 +13052,7 @@
     "maker": "池田模範堂",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kanou_hifu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -13130,7 +13130,7 @@
     "maker": "池田模範堂",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "chinyou_shoen",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -13236,7 +13236,7 @@
     "maker": "久光製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -13320,7 +13320,7 @@
     "maker": "シオノギヘルスケア",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "chinyou_shoen",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -13384,7 +13384,7 @@
     "maker": "グラクソ・スミスクライン（製造販売元）／第一三共ヘルスケア（販売元）",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kanou_hifu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -13452,7 +13452,7 @@
     "maker": "ライオン",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kanou_hifu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -13524,7 +13524,7 @@
     "maker": "大正製薬",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kounaien",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -13592,7 +13592,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -13694,7 +13694,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -13792,7 +13792,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -13926,7 +13926,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14036,7 +14036,7 @@
     "maker": "参天製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_kokin",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14122,7 +14122,7 @@
     "maker": "ロート製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14224,7 +14224,7 @@
     "maker": "ロート製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14326,7 +14326,7 @@
     "maker": "ロート製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14440,7 +14440,7 @@
     "maker": "ロート製薬",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14546,7 +14546,7 @@
     "maker": "ロート製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14700,7 +14700,7 @@
     "maker": "ロート製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14826,7 +14826,7 @@
     "maker": "千寿製薬（販売 第一三共ヘルスケア）",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_jinko",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14914,7 +14914,7 @@
     "maker": "千寿製薬（販売 第一三共ヘルスケア）",
     "riskClass": "第3類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_jinko",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -14998,7 +14998,7 @@
     "maker": "千寿製薬",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -15092,7 +15092,7 @@
     "maker": "千寿製薬（販売 第一三共ヘルスケア）",
     "riskClass": "第2類",
     "kind": "eye",
-    "noticeGroupId": "ganka",
+    "noticeGroupId": "ganka_ippan",
     "efficacyGroups": [
       "眼科用薬"
     ],
@@ -15200,7 +15200,7 @@
     "maker": "田村薬品工業",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_seisan",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -15356,7 +15356,7 @@
     "maker": "東亜薬品",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_seisan",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -15514,7 +15514,7 @@
     "maker": "ビオフェルミン製薬",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_shisha",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -15608,7 +15608,7 @@
     "maker": "日東薬品工業",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_c",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -15708,7 +15708,7 @@
     "maker": "興和",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -15856,7 +15856,7 @@
     "maker": "エーザイ",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_b2",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -15948,7 +15948,7 @@
     "maker": "クラシエ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_262",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -16148,7 +16148,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_262",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -16348,7 +16348,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_080",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -16444,7 +16444,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_208",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -16588,7 +16588,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_289",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -16676,7 +16676,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_020",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -16764,7 +16764,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_209",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -16860,7 +16860,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_144",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -16996,7 +16996,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_273",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -17100,7 +17100,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_107",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -17236,7 +17236,7 @@
     "maker": "大塚製薬工場",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kanou_hifu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -17300,7 +17300,7 @@
     "maker": "ロート製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "shimoyake",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -17380,7 +17380,7 @@
     "maker": "興和",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -17460,7 +17460,7 @@
     "maker": "興和",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -17548,7 +17548,7 @@
     "maker": "久光製薬",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -17620,7 +17620,7 @@
     "maker": "久光製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -17700,7 +17700,7 @@
     "maker": "久光製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -17788,7 +17788,7 @@
     "maker": "池田模範堂",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "chinyou_shoen",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -17902,7 +17902,7 @@
     "maker": "池田模範堂",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "chinyou_shoen",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -18008,7 +18008,7 @@
     "maker": "ロート製薬",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_jishitsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -18136,7 +18136,7 @@
     "maker": "興和",
     "riskClass": "第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "gaiyo_chintsu",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -19258,7 +19258,7 @@
     "maker": "救急薬品工業",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kounaien",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -19322,7 +19322,7 @@
     "maker": "ジャパンメディック",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kounaien",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -19386,7 +19386,7 @@
     "maker": "東興薬品工業",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -19450,7 +19450,7 @@
     "maker": "福地製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -19522,7 +19522,7 @@
     "maker": "ジャパンメディック",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kounaien",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -19610,7 +19610,7 @@
     "maker": "帝國製薬",
     "riskClass": "指定第2類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "kounaien",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -19674,7 +19674,7 @@
     "maker": "渡邊薬品",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_shisha",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -19762,7 +19762,7 @@
     "maker": "エスエス製薬",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_seisan",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -19850,7 +19850,7 @@
     "maker": "興和",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_kenni",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -19978,7 +19978,7 @@
     "maker": "日新製薬（山形）（発売元 ゼリア新薬）",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_seisan",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -20102,7 +20102,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_270",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -20182,7 +20182,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_269",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -20266,7 +20266,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_271",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -20350,7 +20350,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_110",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -20478,7 +20478,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_076",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -20570,7 +20570,7 @@
     "maker": "ツムラ",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_051",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -20638,7 +20638,7 @@
     "maker": "エーザイ",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_b2",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -20734,7 +20734,7 @@
     "maker": "エスエス製薬",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "l_cysteine",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -20810,7 +20810,7 @@
     "maker": "大正製薬",
     "riskClass": "第2類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -20934,7 +20934,7 @@
     "maker": "佐藤製薬",
     "riskClass": "第3類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -21114,7 +21114,7 @@
     "maker": "佐藤製薬",
     "riskClass": "第2類",
     "kind": "vitamin",
-    "noticeGroupId": "vitamin",
+    "noticeGroupId": "vitamin_hoken",
     "efficacyGroups": [
       "ビタミン主薬製剤"
     ],
@@ -21532,7 +21532,7 @@
     "maker": "太田胃散",
     "riskClass": "第2類",
     "kind": "stomach",
-    "noticeGroupId": "ichoyaku",
+    "noticeGroupId": "ichoyaku_seisan",
     "efficacyGroups": [
       "胃腸薬"
     ],
@@ -21680,7 +21680,7 @@
     "maker": "クラシエ（発売元 クラシエ薬品）",
     "riskClass": "第2類",
     "kind": "kampo",
-    "noticeGroupId": "kampo",
+    "noticeGroupId": "kampo_033",
     "efficacyGroups": [
       "漢方製剤"
     ],
@@ -21820,7 +21820,7 @@
     "maker": "小林製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -21892,7 +21892,7 @@
     "maker": "福地製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -21960,7 +21960,7 @@
     "maker": "佐藤製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -22036,7 +22036,7 @@
     "maker": "東興薬品工業",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -22100,7 +22100,7 @@
     "maker": "ダイヤ製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -22164,7 +22164,7 @@
     "maker": "ジャパンメディック",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -22228,7 +22228,7 @@
     "maker": "小林製薬",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "koukuu_spray",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -22300,7 +22300,7 @@
     "maker": "興和",
     "riskClass": "第2類",
     "kind": "rhinitis",
-    "noticeGroupId": "kou_histamine",
+    "noticeGroupId": "allergy",
     "efficacyGroups": [
       "抗ヒスタミン薬主薬製剤"
     ],
@@ -22374,7 +22374,7 @@
     "maker": "興和",
     "riskClass": "第2類",
     "kind": "rhinitis",
-    "noticeGroupId": "kou_histamine",
+    "noticeGroupId": "allergy",
     "efficacyGroups": [
       "抗ヒスタミン薬主薬製剤"
     ],
@@ -22480,7 +22480,7 @@
     "maker": "興和",
     "riskClass": "第2類",
     "kind": "rhinitis",
-    "noticeGroupId": "kou_histamine",
+    "noticeGroupId": "allergy",
     "efficacyGroups": [
       "抗ヒスタミン薬主薬製剤"
     ],
@@ -22554,7 +22554,7 @@
     "maker": "興和",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "chinyou_shoen",
     "efficacyGroups": [
       "外皮用薬"
     ],
@@ -22624,7 +22624,7 @@
     "maker": "興和",
     "riskClass": "第3類",
     "kind": "topical",
-    "noticeGroupId": "gaihi",
+    "noticeGroupId": "chinyou_shoen",
     "efficacyGroups": [
       "外皮用薬"
     ],

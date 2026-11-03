@@ -1,6 +1,14 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 // 読んだ商品の積み上げ（最大4品）。「読む」は current を、「比べる」「棚」は ids 全体を使う
 const MAX = 4;
@@ -15,6 +23,9 @@ type Stack = {
   clear: () => void;
   scannerOpen: boolean;
   setScannerOpen: (open: boolean) => void;
+  // 読めた商品をその画面で受け取る（質問の画面が話題に足す。L-20261104-02）。受け取る画面がなければ false
+  setScanHandler: (handler: ((id: string) => void) | null) => void;
+  handleScan: (id: string) => boolean;
 };
 
 const StackContext = createContext<Stack | null>(null);
@@ -35,6 +46,7 @@ export function StackProvider({ children }: { children: React.ReactNode }) {
   const [ids, setIds] = useState<string[]>([]);
   const [currentId, setCurrentId] = useState<string | null>(null);
   const [scannerOpen, setScannerOpen] = useState(false);
+  const scanHandler = useRef<((id: string) => void) | null>(null);
   // 復元が済むまでは保存しない（空の初期値で上書きしないため）
   const [restored, setRestored] = useState(false);
 
@@ -81,6 +93,14 @@ export function StackProvider({ children }: { children: React.ReactNode }) {
       },
       scannerOpen,
       setScannerOpen,
+      setScanHandler: (handler) => {
+        scanHandler.current = handler;
+      },
+      handleScan: (id) => {
+        if (!scanHandler.current) return false;
+        scanHandler.current(id);
+        return true;
+      },
     }),
     [ids, currentId, add, remove, scannerOpen],
   );

@@ -1,6 +1,7 @@
 import type { Condition, NoticeItem } from "@/lib/schema/notice";
 import type { Product, ProductFact } from "@/lib/schema/product";
 import { normalizeName, sameName, toMg } from "@/lib/rules/normalize";
+import { PRODUCT_USAGE } from "@/data/product_usage";
 
 // 「○○として」の換算係数（換算先 → 成分 → 係数）。
 // カフェイン水和物は分子量比（194.19/212.21）。安息香酸ナトリウムカフェインは日本薬局方のカフェイン含量 48.0〜50.0% の上限で置く【要確認：ゆう】
@@ -47,6 +48,17 @@ export function evaluate(condition: Condition, product: Product): Match | null {
     if (amount === null) return null;
     const threshold = toMg(value, unit) ?? value;
     return amount >= threshold ? { ingredients: hit.map((f) => f.ingredient) } : null;
+  }
+
+  // 剤形・用法の年齢は商品の値がないときは当てない（推測しない）
+  if ("dosageForm" in condition) {
+    const form = PRODUCT_USAGE[product.id]?.dosageForm;
+    return form && condition.dosageForm.includes(form) ? { ingredients: [] } : null;
+  }
+
+  if ("usageUnderMonths" in condition) {
+    const from = PRODUCT_USAGE[product.id]?.usageFromMonths;
+    return from != null && from < condition.usageUnderMonths ? { ingredients: [] } : null;
   }
 
   if ("all" in condition) {

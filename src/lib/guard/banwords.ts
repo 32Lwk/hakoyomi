@@ -25,10 +25,15 @@ export const BANWORDS: readonly string[] = [
 // 「1日○回飲んで」のような用法の指示
 const PATTERNS: readonly RegExp[] = [/1日\s*[0-9０-９一二三四五六]+\s*回\s*飲んで/];
 
+// 通知「使用上の注意」の原文にある言い回し。語「弱い」「診断」の禁止は残し、この言い回しだけ照合から外す
+// （全通知・手引き・承認基準の原文で禁止語に当たるのはこの3つだけ。L-20261104-12）
+export const NOTICE_PHRASES: readonly string[] = ["体の弱い人", "胃腸の弱い人", "診断を受けた人"];
+
 export function findBanwords(text: string): string[] {
-  const hits = BANWORDS.filter((word) => text.includes(word));
+  const rest = NOTICE_PHRASES.reduce((t, phrase) => t.replaceAll(phrase, "　"), text);
+  const hits = BANWORDS.filter((word) => rest.includes(word));
   for (const pattern of PATTERNS) {
-    const match = text.match(pattern);
+    const match = rest.match(pattern);
     if (match) hits.push(match[0]);
   }
   return hits;

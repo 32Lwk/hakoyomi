@@ -26,6 +26,8 @@ export type EfficacyStandard = {
   fetchedOn: string;
   // 効能・効果の原文
   text: string;
+  // 語の前の前置きの原文（漢方製剤の「比較的体力があるものの次の諸症」。L-20261104-12）
+  scope?: string;
   terms: EfficacyTerm[];
   note?: string;
 };

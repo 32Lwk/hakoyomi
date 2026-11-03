@@ -669,6 +669,94 @@
     "chinun:hakike",
     "chinun:zutsu"
   ],
+  "med-00998": [
+    "kampo_208:1",
+    "kampo_208:2",
+    "kampo_208:3"
+  ],
+  "med-01061": [
+    "kampo_289:1",
+    "kampo_289:2",
+    "kampo_289:3",
+    "kampo_289:4",
+    "kampo_289:5",
+    "kampo_289:6",
+    "kampo_289:7",
+    "kampo_289:8"
+  ],
+  "med-03936": [
+    "kampo_020:1",
+    "kampo_020:2",
+    "kampo_020:3",
+    "kampo_020:4",
+    "kampo_020:5",
+    "kampo_020:6",
+    "kampo_020:7",
+    "kampo_020:8",
+    "kampo_020:9",
+    "kampo_020:10",
+    "kampo_020:11",
+    "kampo_020:12"
+  ],
+  "med-03986": [
+    "kampo_080:1",
+    "kampo_080:2",
+    "kampo_080:3",
+    "kampo_080:4",
+    "kampo_080:5",
+    "kampo_080:6",
+    "kampo_080:7",
+    "kampo_080:8",
+    "kampo_080:9",
+    "kampo_080:10",
+    "kampo_080:11",
+    "kampo_080:12",
+    "kampo_080:13"
+  ],
+  "med-04058": [
+    "kampo_144:1",
+    "kampo_144:2",
+    "kampo_144:3",
+    "kampo_144:4"
+  ],
+  "med-04159": [
+    "kampo_262:1",
+    "kampo_262:2",
+    "kampo_262:3",
+    "kampo_262:4",
+    "kampo_262:5"
+  ],
+  "med-04210": [
+    "kampo_262:1",
+    "kampo_262:2",
+    "kampo_262:3",
+    "kampo_262:4",
+    "kampo_262:5"
+  ],
+  "med-04221": [
+    "kampo_262:1",
+    "kampo_262:2",
+    "kampo_262:3",
+    "kampo_262:4",
+    "kampo_262:5"
+  ],
+  "med-04276": [
+    "kampo_273:1"
+  ],
+  "med-04780": [
+    "kampo_107:1",
+    "kampo_107:2",
+    "kampo_107:3",
+    "kampo_107:4",
+    "kampo_107:5"
+  ],
+  "med-04810": [
+    "kampo_209:1",
+    "kampo_209:2",
+    "kampo_209:3",
+    "kampo_209:4",
+    "kampo_209:5"
+  ],
   "med-05011": [
     "bien:kyusei",
     "bien:allergy",
@@ -808,6 +896,16 @@
     "tenbi:hanamizu",
     "tenbi:kushami",
     "tenbi:juju"
+  ],
+  "med-05338": [
+    "kampo_033:1",
+    "kampo_033:2",
+    "kampo_033:3"
+  ],
+  "med-05349": [
+    "kampo_033:1",
+    "kampo_033:2",
+    "kampo_033:3"
   ],
   "med-05450": [
     "kaze:hanamizu",
@@ -959,6 +1057,71 @@
     "kaze:zutsu",
     "kaze:kansetsu",
     "kaze:kinniku"
+  ],
+  "med-05992": [
+    "kampo_270:1",
+    "kampo_270:2",
+    "kampo_270:3",
+    "kampo_270:4",
+    "kampo_270:5"
+  ],
+  "med-05993": [
+    "kampo_269:1",
+    "kampo_269:2",
+    "kampo_269:3",
+    "kampo_269:4"
+  ],
+  "med-05994": [
+    "kampo_271:1",
+    "kampo_271:2",
+    "kampo_271:3",
+    "kampo_271:4",
+    "kampo_271:5",
+    "kampo_271:6"
+  ],
+  "med-05995": [
+    "kampo_264:1",
+    "kampo_264:2",
+    "kampo_264:3",
+    "kampo_264:4",
+    "kampo_264:5",
+    "kampo_264:6"
+  ],
+  "med-05996": [
+    "kampo_235:1",
+    "kampo_235:2",
+    "kampo_235:3",
+    "kampo_235:4",
+    "kampo_235:5"
+  ],
+  "med-06002": [
+    "kampo_152:1",
+    "kampo_152:2",
+    "kampo_152:3",
+    "kampo_152:4",
+    "kampo_152:5",
+    "kampo_152:6",
+    "kampo_152:7"
+  ],
+  "med-06003": [
+    "kampo_149:1",
+    "kampo_149:2",
+    "kampo_149:3",
+    "kampo_149:4",
+    "kampo_149:5",
+    "kampo_149:6",
+    "kampo_149:7"
+  ],
+  "med-06004": [
+    "kampo_110:1",
+    "kampo_110:2"
+  ],
+  "med-06005": [
+    "kampo_076:1"
+  ],
+  "med-06006": [
+    "kampo_051:1",
+    "kampo_051:2"
   ],
   "med-06018": [
     "chinga:seki",

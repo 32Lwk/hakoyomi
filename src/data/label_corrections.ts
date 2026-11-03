@@ -262,10 +262,10 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     checkedOn: CHECKED_ON,
   },
   // レスタミンコーワの内服（ジフェンヒドラミン塩酸塩、L-20261103-40）。抗ヒスタミン薬主薬製剤の通知を取り込んでいないため、
-  // 添付文書で確かめた品だけ確認ポイントを出す（睡眠改善薬と同じ扱い）
+  // 添付文書で確かめた品だけ確認ポイントを出す（睡眠改善薬と同じ扱い）。L-20261104-16 で薬効群を allergy に付け替えた
   {
     id: "kou-histamine-label-checked",
-    groupId: "kou_histamine",
+    groupId: "allergy",
     action: "labelChecked",
     note: "添付文書の「してはいけないこと」を KEGG MEDICUS で確認",
     target: { productIds: ["med-03563", "med-03562", "med-03564"] },
@@ -274,7 +274,7 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
   },
   {
     id: "kou-histamine-drive",
-    groupId: "kou_histamine",
+    groupId: "allergy",
     action: "add",
     badge: "drive",
     section: "してはいけないこと",
@@ -286,7 +286,7 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
   },
   {
     id: "kou-histamine-breastfeeding",
-    groupId: "kou_histamine",
+    groupId: "allergy",
     action: "add",
     badge: "breastfeeding",
     section: "してはいけないこと",
@@ -298,7 +298,7 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
   },
   {
     id: "kou-histamine-alcohol",
-    groupId: "kou_histamine",
+    groupId: "allergy",
     action: "add",
     badge: "alcohol",
     section: "してはいけないこと",
@@ -310,7 +310,7 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
   },
   {
     id: "kou-histamine-under15-alpha",
-    groupId: "kou_histamine",
+    groupId: "allergy",
     action: "add",
     badge: "under15",
     section: "してはいけないこと",
@@ -323,7 +323,7 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
   {
     // 糖衣錠・U錠は 5才から（用法・用量）
     id: "kou-histamine-age",
-    groupId: "kou_histamine",
+    groupId: "allergy",
     action: "unrecorded",
     kinds: ["under15"],
     note: "添付文書の用法・用量では5才未満は服用しない。年齢のバッジ（15歳・12歳）では表せない",

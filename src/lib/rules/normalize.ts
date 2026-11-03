@@ -11,8 +11,18 @@ export function normalizeName(name: string): string {
 // 既存データの成分名は旧表記が残っていて、通知の記載条件（今の表記）と照合できない
 const SALT_PREFIX = /^((?:dl|d|l)-)?(塩酸|硫酸|マレイン酸|リン酸|臭化水素酸)(.+)$/;
 
+// 漢方製剤の通知は生薬を漢字（「甘草として」「大黄」）でも書き、入力値はカタカナ（カンゾウ・ダイオウ）。
+// 同じ生薬として照合する（L-20261104-09）
+const CRUDE_DRUG_KANA: Record<string, string> = {
+  甘草: "カンゾウ",
+  大黄: "ダイオウ",
+  麻黄: "マオウ",
+  附子: "ブシ",
+  芒硝: "ボウショウ",
+};
+
 export function canonicalName(name: string): string {
-  const n = normalizeName(name);
+  const n = normalizeName(CRUDE_DRUG_KANA[normalizeName(name)] ?? name);
   const m = n.match(SALT_PREFIX);
   return m ? `${m[1] ?? ""}${m[3]}${m[2]}塩` : n;
 }

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { ageStatus, BadgeRow, BadgeSheet } from "@/components/badges";
 import { IngredientSheet } from "@/components/ingredient-sheet";
+import { MemoSection } from "@/components/memo-section";
+import { factAmountText } from "@/lib/compare";
 import { dailyMaxLabel, timesPerDayLabel } from "@/lib/dosage";
 import { ingredientRole } from "@/lib/ingredientRole";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
@@ -12,11 +14,6 @@ import { cn } from "@/lib/utils";
 import type { ProductView } from "@/lib/catalog";
 import { ProductImage } from "@/components/product-image";
 import { packageImage } from "@/lib/packageImage";
-
-function amount(value: number | null, unit: string | null): string {
-  if (value === null || unit === null) return "不明";
-  return `${Number.isInteger(value) ? value : value.toFixed(1)}${unit}`;
-}
 
 // 上から「何の商品か」→「確認ポイント」→「成分・分量」→「場所」→「添付文書」の順。店頭で聞かれる順に並べる
 export function ProductCard({ view }: { view: ProductView }) {
@@ -106,8 +103,14 @@ export function ProductCard({ view }: { view: ProductView }) {
                   {f.uncertain ? (
                     <span className="text-sm text-uncertain underline">{UI_COPY.uncertain}</span>
                   ) : (
-                    <span className="text-xl font-bold whitespace-nowrap tabular-nums">
-                      {amount(f.amountPerDay, f.unit)}
+                    // 濃度（100mL中 30mg など）は長いので小さめに（L-20261104-13）
+                    <span
+                      className={cn(
+                        "font-bold whitespace-nowrap tabular-nums",
+                        f.amountPerDay === null && f.concentration ? "text-sm" : "text-xl",
+                      )}
+                    >
+                      {factAmountText(f)}
                     </span>
                   )}
                   <ChevronRight
@@ -178,6 +181,7 @@ export function ProductCard({ view }: { view: ProductView }) {
       {product.pmdaUrl && (
         <p className="-mt-3 text-[11px] text-muted-foreground">{UI_COPY.linkOutText}</p>
       )}
+      <MemoSection productId={product.id} ingredients={product.facts.map((f) => f.ingredient)} />
       <IngredientSheet
         target={
           ingredient ? { ingredient, products: [{ name: product.name, kind: product.kind }] } : null
