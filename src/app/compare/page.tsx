@@ -1,6 +1,6 @@
-import { CompareView } from "@/components/compare-view";
+import { redirect } from "next/navigation";
 
-// 比べる：2〜4品。違う行だけ1色で強調し、量の順に並べ替えない
+// 比べるは「商品」の中に移した（L-20261103-43）
 export default function ComparePage() {
-  return <CompareView />;
+  redirect("/products?view=compare");
 }

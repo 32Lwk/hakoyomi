@@ -41,8 +41,8 @@ export function JanScanner() {
     setText("");
     setResults([]);
     setMessage(null);
-    // 比べる画面から読んだときはそのまま比較に足す。それ以外は「読む」へ
-    if (pathname !== "/compare") router.push("/");
+    // 読んだら「商品」へ。商品の画面（比べる表を含む）で読んだときはそのまま足す（L-20261103-43）
+    if (pathname !== "/products") router.push("/products");
   }
 
   async function lookupJan(raw: string) {

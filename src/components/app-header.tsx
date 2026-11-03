@@ -2,31 +2,25 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { resetHome } from "@/components/read-view";
-import { useStack } from "@/components/stack-provider";
 import { UI_COPY } from "@/lib/guard/uiCopy";
 
-// 画面名はタブと同じ語にそろえる。ロゴを押すと商品一覧へ戻る
+// 画面名はタブと同じ語にそろえる。ロゴを押すと「探す」へ戻る（L-20261103-43）
 const TITLE: Record<string, string> = {
-  "/compare": "比べる",
-  "/search": "さがす",
+  "/": "探す",
+  "/products": "商品",
+  "/ask": "質問",
   "/shelf": "棚",
+  "/settings": "設定",
 };
 
 export function AppHeader() {
   const pathname = usePathname();
-  const { select } = useStack();
   const title = TITLE[pathname];
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex h-12 max-w-3xl items-center gap-2 px-4">
         <Link
           href="/"
-          onClick={() => {
-            select(null);
-            // 商品一覧も種類のタイルから
-            resetHome();
-          }}
           className="flex shrink-0 items-center gap-2 text-base font-bold tracking-wide"
         >
           <span

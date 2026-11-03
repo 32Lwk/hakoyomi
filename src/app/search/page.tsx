@@ -1,6 +1,6 @@
-import { SearchView } from "@/components/search-view";
+import { redirect } from "next/navigation";
 
-// さがす：品名検索と成分条件の絞り込み（順位なし）
+// さがすは「探す」（/）に統合した（L-20261103-43）
 export default function SearchPage() {
-  return <SearchView />;
+  redirect("/");
 }

@@ -109,7 +109,7 @@ export function ShelfView() {
     if (ids.includes(id)) selectProduct(id);
     else add(id);
     setOpen(false);
-    router.push("/");
+    router.push("/products");
   }
 
   return (

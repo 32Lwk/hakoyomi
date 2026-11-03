@@ -163,6 +163,12 @@ export async function productViews(products: Product[]): Promise<ProductView[]> 
   });
 }
 
+// 質問エージェント（L-20261103-43）が根拠を集めるときに使う、通知の薬効群と項目
+export async function noticeCatalog(): Promise<{ groups: NoticeGroup[]; items: NoticeItem[] }> {
+  const { groups, items } = await getCatalog();
+  return { groups, items };
+}
+
 export async function productView(product: Product): Promise<ProductView> {
   const [view] = await productViews([product]);
   return view;

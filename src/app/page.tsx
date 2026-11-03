@@ -1,6 +1,6 @@
-import { ReadView } from "@/components/read-view";
+import { SearchView } from "@/components/search-view";
 
-// 読む（既定タブ）：商品カード → バッジ → 成分・分量 → 棚の位置 → PMDA
-export default function ReadPage() {
-  return <ReadView />;
+// 探す（既定）：JANを読む・品名・成分の検索・種類・絞り込み（L-20261103-43）。結果は品名順で順位なし
+export default function SearchPage() {
+  return <SearchView />;
 }

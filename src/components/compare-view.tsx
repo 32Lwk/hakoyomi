@@ -1,20 +1,10 @@
 "use client";
 
-import { ChevronRight, CircleHelp, Plus, X } from "lucide-react";
+import { ChevronRight, CircleHelp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { ageStatus, BadgeChip, BadgeSheet, type BadgeTarget } from "@/components/badges";
 import { IngredientSheet, type IngredientTarget } from "@/components/ingredient-sheet";
-import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
-import { ProductPicker } from "@/components/product-picker";
-import { useProductViews } from "@/components/use-product-views";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
 import type { ProductView } from "@/lib/catalog";
 import { badgeRowKind, type BadgeRowCompare, type CompareRow } from "@/lib/compare";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
@@ -22,21 +12,18 @@ import { cn } from "@/lib/utils";
 
 type CompareData = { views: ProductView[]; rows: CompareRow[]; badges: BadgeRowCompare[] };
 
-const MAX = 4;
 // 項目の列と、商品1品あたりの列の幅（rem）。3〜4品は横に送って見る
 const LABEL_W = 5.5;
 const COL_W = 7;
 
+// 比べる表（2〜4品）。選んでいる商品の並びと追加は「商品」の画面が持つ（L-20261103-43）
 export function CompareView() {
-  const { ids, remove } = useStack();
+  const { ids } = useStack();
   const key = ids.join(",");
   const [data, setData] = useState<{ key: string; data: CompareData } | null>(null);
   const [onlyDiff, setOnlyDiff] = useState(false);
-  const [pickerOpen, setPickerOpen] = useState(false);
   const [ingredient, setIngredient] = useState<IngredientTarget | null>(null);
   const [badge, setBadge] = useState<BadgeTarget | null>(null);
-  // 2品未満のときに、いま選んでいる商品を見せる
-  const { views: picked } = useProductViews(ids.length < 2 ? ids : []);
   const headRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
 
@@ -54,63 +41,9 @@ export function CompareView() {
     };
   }, [key, ids.length]);
 
-  const picker = (
-    <Sheet open={pickerOpen} onOpenChange={setPickerOpen}>
-      <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto rounded-t-2xl">
-        <SheetHeader>
-          <SheetTitle>{UI_COPY.addToCompare}</SheetTitle>
-          <SheetDescription>{UI_COPY.chooseNotice}</SheetDescription>
-        </SheetHeader>
-        <div className="px-4 pb-6">
-          <ProductPicker onPicked={() => setPickerOpen(false)} />
-        </div>
-      </SheetContent>
-    </Sheet>
-  );
-
-  if (ids.length < 2) {
-    return (
-      <div className="flex flex-col gap-4">
-        <h1 className="text-lg font-bold">比べる商品を選ぶ</h1>
-        <p className="rounded-xl bg-muted p-3 text-sm">
-          {UI_COPY.needTwo}（いま {ids.length}品）
-        </p>
-        {picked.length > 0 && (
-          <ul aria-label="選んでいる商品" className="flex flex-col gap-1.5">
-            {picked.map((v, i) => (
-              <li
-                key={v.product.id}
-                className="flex items-center gap-2.5 rounded-xl border-2 border-primary bg-card p-2"
-              >
-                <ColumnNo n={i + 1} />
-                <ProductImage
-                  id={v.product.id}
-                  kind={v.product.kind}
-                  name={v.product.name}
-                  size={40}
-                  className="size-10 rounded-md bg-white object-contain"
-                />
-                <span className="min-w-0 flex-1 truncate text-sm font-bold">{v.product.name}</span>
-                <button
-                  type="button"
-                  onClick={() => remove(v.product.id)}
-                  aria-label={`${v.product.name} を外す`}
-                  className="flex size-9 items-center justify-center rounded-full text-muted-foreground active:bg-accent"
-                >
-                  <X className="size-4" aria-hidden="true" />
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-        <ProductPicker />
-      </div>
-    );
-  }
   if (!data || data.key !== key) return <p className="pt-6 text-muted-foreground">…</p>;
 
   const { views, rows, badges } = data.data;
-  const canAdd = views.length < MAX;
   const meta = rows.filter((r) => r.group === undefined);
   const ingredients = rows.filter((r) => r.group !== undefined);
   const show = <T extends { diff: boolean }>(list: T[]) =>
@@ -138,56 +71,6 @@ export function CompareView() {
 
   return (
     <div className="flex flex-col gap-3">
-      {/* 選んでいる商品（L-20261103-42）。番号は表の列の見出しと同じ。空きの枠から追加する */}
-      <section aria-labelledby="picked-title" className="flex flex-col gap-1.5">
-        <h1 id="picked-title" className="flex items-baseline justify-between text-base font-bold">
-          選んでいる商品
-          <span className="text-xs font-normal text-muted-foreground">
-            {views.length}/{MAX}品・読んだ順
-          </span>
-        </h1>
-        <ul className="grid grid-cols-4 gap-1.5">
-          {views.map((v, i) => (
-            <li
-              key={v.product.id}
-              className="relative flex flex-col items-center gap-1 rounded-xl border-2 border-primary bg-card px-1 pt-2 pb-1.5"
-            >
-              <ColumnNo n={i + 1} className="absolute top-1 left-1" />
-              <button
-                type="button"
-                onClick={() => remove(v.product.id)}
-                aria-label={`${v.product.name} を外す`}
-                className="absolute -top-1.5 -right-1.5 z-10 flex size-7 items-center justify-center rounded-full border border-border bg-background text-muted-foreground shadow-sm active:bg-accent"
-              >
-                <X className="size-3.5" aria-hidden="true" />
-              </button>
-              <ProductImage
-                id={v.product.id}
-                kind={v.product.kind}
-                name={v.product.name}
-                size={44}
-                className="size-11 rounded-md bg-white object-contain"
-              />
-              <span className="line-clamp-2 w-full text-center text-[11px] leading-tight font-bold">
-                {v.product.name}
-              </span>
-            </li>
-          ))}
-          {canAdd && (
-            <li>
-              <button
-                type="button"
-                onClick={() => setPickerOpen(true)}
-                className="flex h-full min-h-24 w-full flex-col items-center justify-center gap-1 rounded-xl border-2 border-dashed border-primary/50 text-xs font-bold text-primary active:bg-accent"
-              >
-                <Plus className="size-5" aria-hidden="true" />
-                追加
-              </button>
-            </li>
-          )}
-        </ul>
-      </section>
-
       {/* 表の操作：違う項目の数と、すべて／違いだけ */}
       <div className="flex items-center justify-between gap-2">
         <p className="text-sm">
@@ -220,8 +103,6 @@ export function CompareView() {
         </div>
       </div>
       <p className="-mt-1 text-xs text-muted-foreground">{UI_COPY.purposeHint}</p>
-
-      {picker}
 
       <div role="table" aria-label="商品の比較">
         {/* 列の見出しは画面の上に残し、表を横に送ると一緒に動く */}
@@ -399,7 +280,7 @@ export function CompareView() {
 }
 
 // 列の番号。選んでいる商品と表の見出しで同じ番号を使い、列と商品を対応させる
-function ColumnNo({ n, className }: { n: number; className?: string }) {
+export function ColumnNo({ n, className }: { n: number; className?: string }) {
   return (
     <span
       aria-label={`${n}列目`}

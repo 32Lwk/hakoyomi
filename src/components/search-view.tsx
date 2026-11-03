@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, Check, ChevronDown, Loader2, Plus, Search, X } from "lucide-react";
+import { BookOpen, Check, ChevronDown, Loader2, Plus, ScanBarcode, Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ProductList } from "@/components/product-row";
@@ -97,7 +97,7 @@ type Panel = "kind" | "ingredients" | "exclude";
 // さがす（L-20261103-30）：検索欄 → 種類・成分・含まないの3つのボタン → 選んだ条件 → 結果。
 // 結果は品名順（順位なし）。検索語・条件は保存しない
 export function SearchView() {
-  const { ids, add } = useStack();
+  const { ids, add, setScannerOpen } = useStack();
   const router = useRouter();
   const [all, setAll] = useState<ProductView[] | null>(null);
   const [q, setQ] = useState("");
@@ -205,14 +205,32 @@ export function SearchView() {
     }
   };
 
+  // 選んだ商品は「商品」で開く（L-20261103-43）
   const pick = (id: string) => {
     add(id);
-    router.push("/");
+    router.push("/products");
   };
+  // 何も入れていないときは、一覧ではなく種類のタイルを出す
+  const idle = !q.trim() && !kind && ingredients.length === 0 && exclude.length === 0 && !reverse;
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="sticky top-12 z-20 -mx-4 -mt-4 flex flex-col gap-2 bg-background/95 px-4 pt-3 pb-2 backdrop-blur">
+      {/* 主経路は JAN（prd）。探すの最上部に大きく置く。下部の中央をもう一度押しても読める */}
+      <button
+        type="button"
+        onClick={() => setScannerOpen(true)}
+        className="flex items-center gap-3 rounded-2xl bg-gradient-to-br from-[#2d5a8c] to-primary p-3.5 text-left text-primary-foreground shadow-md active:translate-y-px"
+      >
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white/15">
+          <ScanBarcode className="size-7" aria-hidden="true" />
+        </span>
+        <span className="flex flex-col">
+          <span className="text-lg font-bold">{UI_COPY.readJan}</span>
+          <span className="text-xs opacity-85">{UI_COPY.readJanHint}</span>
+        </span>
+      </button>
+
+      <div className="sticky top-12 z-20 -mx-4 -mt-2 flex flex-col gap-2 bg-background/95 px-4 pt-2 pb-2 backdrop-blur">
         <form role="search" onSubmit={(e) => e.preventDefault()} className="relative">
           <label htmlFor="search-q" className="sr-only">
             {UI_COPY.searchPlaceholder}
@@ -353,6 +371,37 @@ export function SearchView() {
 
       {all === null ? (
         <p className="text-muted-foreground">…</p>
+      ) : idle ? (
+        <section aria-labelledby="kinds-title" className="-mt-1 flex flex-col gap-2">
+          <h2 id="kinds-title" className="flex items-baseline justify-between text-base font-bold">
+            {UI_COPY.kindsTitle}
+            <span className="text-xs font-normal text-muted-foreground">{products.length}品</span>
+          </h2>
+          <ul className="grid grid-cols-3 gap-2 sm:grid-cols-4">
+            {KIND_ORDER.filter((k) => products.some((v) => v.product.kind === k)).map((k) => (
+              <li key={k}>
+                <button
+                  type="button"
+                  onClick={() => setKind(k)}
+                  className="flex h-full w-full flex-col items-center gap-1 rounded-xl border border-border bg-card px-1 py-3 text-center active:bg-accent"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element -- 小さな静的 SVG */}
+                  <img
+                    src={illustrationSrc(k, "form")}
+                    alt=""
+                    width={44}
+                    height={44}
+                    className="size-11"
+                  />
+                  <span className="text-sm leading-tight font-bold">{KIND_LABEL[k]}</span>
+                  <span className="text-[11px] text-muted-foreground">
+                    {products.filter((v) => v.product.kind === k).length}品
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
       ) : shown.length === 0 ? (
         <div className="flex flex-col items-start gap-2 rounded-lg bg-muted p-3 text-sm">
           <p>{UI_COPY.noMatch}</p>
@@ -471,7 +520,7 @@ function ReversePanel({ result, onClear }: { result: ReverseResult; onClear: () 
   );
 }
 
-// 開かずに比べるに追加する
+// 開かずに「商品」に追加する（比べる対象になる）
 function AddButton({
   view,
   ids,
@@ -488,7 +537,7 @@ function AddButton({
       type="button"
       disabled={added || ids.length >= 4}
       onClick={() => onAdd(id)}
-      aria-label={added ? `${name} は比べるに追加済み` : `${name} を${UI_COPY.addToCompare}`}
+      aria-label={added ? `${name} は商品に追加済み` : `${name} を商品に追加`}
       className="mr-2 flex size-11 shrink-0 flex-col items-center justify-center rounded-lg border-2 border-primary text-[10px] leading-none font-bold text-primary disabled:border-border disabled:text-muted-foreground"
     >
       {added ? (
@@ -496,7 +545,7 @@ function AddButton({
       ) : (
         <Plus className="size-4" aria-hidden="true" />
       )}
-      比べる
+      追加
     </button>
   );
 }

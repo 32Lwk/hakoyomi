@@ -4,6 +4,7 @@ import { AppHeader } from "@/components/app-header";
 import { BottomNav } from "@/components/bottom-nav";
 import { JanScanner } from "@/components/jan-scanner";
 import { StackProvider } from "@/components/stack-provider";
+import { TextSizeSync } from "@/components/text-size";
 import "./globals.css";
 
 const noto = Noto_Sans_JP({
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main className="mx-auto w-full max-w-3xl flex-1 px-4 pt-4 pb-36">{children}</main>
           <BottomNav />
           <JanScanner />
+          <TextSizeSync />
         </StackProvider>
       </body>
     </html>

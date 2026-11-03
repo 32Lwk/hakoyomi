@@ -52,6 +52,21 @@ export const UI_COPY = {
   excludeFilterNote:
     "通知・リストに当たる成分を含む商品を除きます。通知を未取り込みの種類の商品も除きます",
   ingredientNoGroup: "手引きの分類なし",
+  readJan: "JANを読む",
+  readJanHint: "箱のバーコードをカメラで読みます",
+  productsEmpty: "まだ商品がありません",
+  productsEmptyHint: "JANを読むか、品名・成分で探して商品を足してください（4品まで）",
+  clearProducts: "すべて外す",
+  askAbout: "この商品について質問",
+  askPlaceholder: "例：運転について書いてある？",
+  askTarget: "何について調べるか",
+  askGeneral: "商品を選ばない（通知・手引き全体）",
+  askNote: "通知・手引き・商品の入力値からの抜き出しです。添付文書（PMDA）で確認してください",
+  askKeyword: "Claude を使えないため、語の一致で探しました",
+  askGeneralSource: "全体から",
+  clearProductsDone: "選んでいる商品を外しました",
+  noticeOthers:
+    "ほかの薬効群の使用上の注意はまだ取り込んでいません。その商品の確認ポイントには「未収録」と出ます",
   readList: "読んだ商品",
   readMark: "読んだ",
   kindsTitle: "種類から探す",
@@ -79,6 +94,15 @@ export const UI_COPY = {
 } as const;
 
 export type UiCopyKey = keyof typeof UI_COPY;
+
+// 設定の「このアプリについて」（L-20261103-43）
+export const ABOUT_LINES = [
+  "登録販売者が店頭で説明するときに、医薬品の記載と出典を手元に出すためのツールです",
+  "推奨や順位は出しません。並びは品名順です",
+  "商品を選ぶこと・説明すること・販売の判断は販売者が行います",
+  "質問や検索に入れた言葉、お客様の情報は保存しません",
+  "商品は実在の医薬品、店舗・棚・担当者は架空のデモデータです",
+] as const;
 
 // バッジの種類ごとの名前と「何のバッジか」の1行（L-20261103-10）。根拠シートの先頭と比べるの行見出しで使う。
 // short は比べるの行見出し用（なければ name）
