@@ -27,21 +27,33 @@ export function BottomNav() {
         href={t.href}
         aria-current={active ? "page" : undefined}
         className={cn(
-          "relative flex min-h-14 flex-1 flex-col items-center justify-center gap-0.5 text-[11px]",
+          "relative flex min-h-16 flex-1 flex-col items-center justify-center gap-1 text-[11px]",
           active ? "font-bold text-primary" : "text-muted-foreground",
         )}
       >
+        {/* 今いる画面：上辺の線＋アイコンを紺の丸で塗る（L-20261103-42） */}
+        {active && (
+          <span
+            aria-hidden="true"
+            className="absolute top-0 left-1/2 h-[3px] w-10 -translate-x-1/2 rounded-b-full bg-primary"
+          />
+        )}
         <span
           className={cn(
-            "flex h-7 w-12 items-center justify-center rounded-full transition-colors",
-            active && "bg-accent",
+            "flex h-8 w-14 items-center justify-center rounded-full transition-colors",
+            active ? "bg-primary text-primary-foreground shadow-sm" : "",
           )}
         >
-          <Icon className="size-5" aria-hidden="true" />
+          <Icon className="size-5" strokeWidth={active ? 2.4 : 2} aria-hidden="true" />
         </span>
         {t.label}
         {t.href === "/compare" && ids.length > 0 && (
-          <span className="absolute top-1 right-[calc(50%-1.5rem)] min-w-4 rounded-full bg-primary px-1 text-center text-[10px] leading-4 font-bold text-primary-foreground ring-2 ring-background">
+          <span
+            className={cn(
+              "absolute top-1.5 right-[calc(50%-2.1rem)] min-w-[1.125rem] rounded-full px-1 text-center text-[10px] leading-[1.125rem] font-bold ring-2 ring-background",
+              active ? "bg-diff text-foreground" : "bg-primary text-primary-foreground",
+            )}
+          >
             {ids.length}
           </span>
         )}
@@ -57,16 +69,17 @@ export function BottomNav() {
       <div className="mx-auto flex max-w-3xl items-end px-2">
         {tab(TABS[0])}
         {tab(TABS[1])}
-        <div className="flex flex-1 justify-center">
+        {/* 読み取りは中央に浮かせた丸いボタン。下に名前を置いて他のタブと高さをそろえる */}
+        <div className="flex flex-1 flex-col items-center justify-end gap-1 pb-1.5 text-[11px] font-bold text-primary">
           <button
             type="button"
             onClick={() => setScannerOpen(true)}
             aria-label="JANを読む"
-            className="-mt-5 mb-1 flex size-16 flex-col items-center justify-center gap-0.5 rounded-2xl bg-primary text-[10px] font-bold text-primary-foreground shadow-lg ring-4 ring-background outline-offset-2 active:translate-y-px"
+            className="-mt-7 flex size-[3.75rem] items-center justify-center rounded-full bg-gradient-to-br from-[#2d5a8c] to-primary text-primary-foreground shadow-[0_6px_16px_-4px_rgb(30_58_95/0.55)] ring-4 ring-background transition-transform active:scale-95"
           >
-            <ScanBarcode className="size-6" aria-hidden="true" />
-            JAN
+            <ScanBarcode className="size-7" aria-hidden="true" />
           </button>
+          <span aria-hidden="true">JANを読む</span>
         </div>
         {tab(TABS[2])}
         {tab(TABS[3])}

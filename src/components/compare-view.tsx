@@ -1,12 +1,13 @@
 "use client";
 
 import { ChevronRight, CircleHelp, Plus, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ageStatus, BadgeChip, BadgeSheet, type BadgeTarget } from "@/components/badges";
 import { IngredientSheet, type IngredientTarget } from "@/components/ingredient-sheet";
 import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
 import { ProductPicker } from "@/components/product-picker";
+import { useProductViews } from "@/components/use-product-views";
 import {
   Sheet,
   SheetContent,
@@ -34,6 +35,10 @@ export function CompareView() {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [ingredient, setIngredient] = useState<IngredientTarget | null>(null);
   const [badge, setBadge] = useState<BadgeTarget | null>(null);
+  // 2品未満のときに、いま選んでいる商品を見せる
+  const { views: picked } = useProductViews(ids.length < 2 ? ids : []);
+  const headRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (ids.length < 2) return;
@@ -70,6 +75,34 @@ export function CompareView() {
         <p className="rounded-xl bg-muted p-3 text-sm">
           {UI_COPY.needTwo}（いま {ids.length}品）
         </p>
+        {picked.length > 0 && (
+          <ul aria-label="選んでいる商品" className="flex flex-col gap-1.5">
+            {picked.map((v, i) => (
+              <li
+                key={v.product.id}
+                className="flex items-center gap-2.5 rounded-xl border-2 border-primary bg-card p-2"
+              >
+                <ColumnNo n={i + 1} />
+                <ProductImage
+                  id={v.product.id}
+                  kind={v.product.kind}
+                  name={v.product.name}
+                  size={40}
+                  className="size-10 rounded-md bg-white object-contain"
+                />
+                <span className="min-w-0 flex-1 truncate text-sm font-bold">{v.product.name}</span>
+                <button
+                  type="button"
+                  onClick={() => remove(v.product.id)}
+                  aria-label={`${v.product.name} を外す`}
+                  className="flex size-9 items-center justify-center rounded-full text-muted-foreground active:bg-accent"
+                >
+                  <X className="size-4" aria-hidden="true" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
         <ProductPicker />
       </div>
     );
@@ -105,8 +138,58 @@ export function CompareView() {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-baseline justify-between gap-3">
-        <h1 className="text-lg font-bold">{views.length}品の違い</h1>
+      {/* 選んでいる商品（L-20261103-42）。番号は表の列の見出しと同じ。空きの枠から追加する */}
+      <section aria-labelledby="picked-title" className="flex flex-col gap-1.5">
+        <h1 id="picked-title" className="flex items-baseline justify-between text-base font-bold">
+          選んでいる商品
+          <span className="text-xs font-normal text-muted-foreground">
+            {views.length}/{MAX}品・読んだ順
+          </span>
+        </h1>
+        <ul className="grid grid-cols-4 gap-1.5">
+          {views.map((v, i) => (
+            <li
+              key={v.product.id}
+              className="relative flex flex-col items-center gap-1 rounded-xl border-2 border-primary bg-card px-1 pt-2 pb-1.5"
+            >
+              <ColumnNo n={i + 1} className="absolute top-1 left-1" />
+              <button
+                type="button"
+                onClick={() => remove(v.product.id)}
+                aria-label={`${v.product.name} を外す`}
+                className="absolute -top-1.5 -right-1.5 z-10 flex size-7 items-center justify-center rounded-full border border-border bg-background text-muted-foreground shadow-sm active:bg-accent"
+              >
+                <X className="size-3.5" aria-hidden="true" />
+              </button>
+              <ProductImage
+                id={v.product.id}
+                kind={v.product.kind}
+                name={v.product.name}
+                size={44}
+                className="size-11 rounded-md bg-white object-contain"
+              />
+              <span className="line-clamp-2 w-full text-center text-[11px] leading-tight font-bold">
+                {v.product.name}
+              </span>
+            </li>
+          ))}
+          {canAdd && (
+            <li>
+              <button
+                type="button"
+                onClick={() => setPickerOpen(true)}
+                className="flex h-full min-h-24 w-full flex-col items-center justify-center gap-1 rounded-xl border-2 border-dashed border-primary/50 text-xs font-bold text-primary active:bg-accent"
+              >
+                <Plus className="size-5" aria-hidden="true" />
+                追加
+              </button>
+            </li>
+          )}
+        </ul>
+      </section>
+
+      {/* 表の操作：違う項目の数と、すべて／違いだけ */}
+      <div className="flex items-center justify-between gap-2">
         <p className="text-sm">
           違う項目
           <span className="mx-1 rounded bg-diff px-1.5 text-base font-bold tabular-nums">
@@ -114,19 +197,6 @@ export function CompareView() {
           </span>
           ／ {rows.length + points.length + 1}
         </p>
-      </div>
-
-      {/* 表の操作は表の上にまとめる。追加は品数が増えても画面内に見える位置に置く */}
-      <div className="flex items-center gap-2">
-        <button
-          type="button"
-          onClick={() => setPickerOpen(true)}
-          disabled={!canAdd}
-          className="flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-lg border-2 border-primary px-3 text-sm font-bold text-primary disabled:border-border disabled:text-muted-foreground"
-        >
-          <Plus className="size-5" aria-hidden="true" />
-          {canAdd ? `商品を追加（${views.length}/${MAX}）` : `${MAX}品まで`}
-        </button>
         <div role="group" aria-label="表示する行" className="flex rounded-lg bg-muted p-1 text-sm">
           {[
             { on: false, label: UI_COPY.showAll },
@@ -149,182 +219,197 @@ export function CompareView() {
           ))}
         </div>
       </div>
-      <p className="-mt-1 text-xs text-muted-foreground">
-        並びは読んだ順です。{UI_COPY.purposeHint}
-      </p>
+      <p className="-mt-1 text-xs text-muted-foreground">{UI_COPY.purposeHint}</p>
 
       {picker}
 
-      <div className="overflow-x-auto rounded-xl border border-border">
-        <div role="table" aria-label="商品の比較" style={{ minWidth }}>
-          <div role="row" className="grid bg-muted" style={{ gridTemplateColumns: cols }}>
+      <div role="table" aria-label="商品の比較">
+        {/* 列の見出しは画面の上に残し、表を横に送ると一緒に動く */}
+        <div
+          ref={headRef}
+          className="sticky top-12 z-20 overflow-hidden rounded-t-xl border border-border bg-muted shadow-[0_2px_4px_-2px_rgb(0_0_0/0.15)]"
+        >
+          <div role="row" className="grid" style={{ gridTemplateColumns: cols, minWidth }}>
             <span
               role="columnheader"
-              className="sticky left-0 z-10 flex items-end bg-muted p-2 text-xs text-muted-foreground"
+              className="sticky left-0 z-10 flex items-center bg-muted p-2 text-xs text-muted-foreground"
             >
               商品
             </span>
-            {views.map((v) => (
+            {views.map((v, i) => (
               <span
                 role="columnheader"
                 key={v.product.id}
-                className="relative flex flex-col items-start gap-1 p-2 pr-7"
+                className="flex min-w-0 items-start gap-1.5 p-2"
               >
-                <ProductImage
-                  id={v.product.id}
-                  kind={v.product.kind}
-                  name={v.product.name}
-                  size={48}
-                  className="size-12 rounded-md bg-background p-0.5"
-                />
-                <span className="text-sm leading-snug font-bold">{v.product.name}</span>
-                <button
-                  type="button"
-                  onClick={() => remove(v.product.id)}
-                  aria-label={`${v.product.name} を外す`}
-                  className="absolute top-1 right-0.5 flex size-9 items-center justify-center rounded-full text-muted-foreground active:bg-background"
-                >
-                  <X className="size-4" aria-hidden="true" />
-                </button>
+                <ColumnNo n={i + 1} />
+                <span className="line-clamp-2 text-xs leading-snug font-bold">
+                  {v.product.name}
+                </span>
               </span>
             ))}
           </div>
-
-          <Section title="基本" show={show(meta).length > 0 || !onlyDiff || ageDiff} />
-          {show(meta).map((r) => (
-            <Row key={r.key} cols={cols} label={r.label} diff={r.diff}>
-              {r.cells.map((c, i) => (
-                <ValueCell key={i} cell={c} />
-              ))}
-            </Row>
-          ))}
-          {(!onlyDiff || ageDiff) && (
-            <Row
-              cols={cols}
-              diff={ageDiff}
-              label={
-                <button
-                  type="button"
-                  onClick={() => setBadge({ kind: "under15", badge: null, group: null })}
-                  className="-m-1 flex flex-wrap items-center gap-1 rounded p-1 text-left active:bg-accent"
-                >
-                  {BADGE_INFO.under15.name}
-                  <CircleHelp
-                    className="size-3.5 shrink-0 text-muted-foreground"
-                    aria-hidden="true"
-                  />
-                </button>
-              }
-            >
-              {ages.map((a, i) => {
-                const v = views[i];
-                return (
-                  <span role="cell" key={v.product.id} className="p-2">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setBadge({
-                          kind: a.badge?.kind ?? "under15",
-                          badge: a.badge,
-                          group: v.group,
-                          productName: v.product.name,
-                          empty: a.state === "set" ? undefined : a.state,
-                        })
-                      }
-                      className={cn(
-                        "-m-1 rounded p-1 text-left active:bg-accent",
-                        a.state === "set"
-                          ? "text-base font-bold"
-                          : a.state === "unloaded"
-                            ? "text-xs text-uncertain underline"
-                            : "text-xs text-muted-foreground underline decoration-dotted",
-                      )}
-                    >
-                      {a.text}
-                    </button>
-                  </span>
-                );
-              })}
-            </Row>
-          )}
-
-          <Section
-            title="確認ポイント"
-            show={show(points).length > 0}
-            aside={UI_COPY.badgeRowHint}
-          />
-          {show(points).map((b) => (
-            <Row
-              key={b.kind}
-              cols={cols}
-              diff={b.diff}
-              small
-              label={
-                <button
-                  type="button"
-                  onClick={() => setBadge({ kind: b.kind, badge: null, group: null })}
-                  className="-m-1 flex flex-wrap items-center gap-1 rounded p-1 text-left font-bold active:bg-accent"
-                >
-                  {BADGE_INFO[b.kind].short ?? BADGE_INFO[b.kind].name}
-                  <CircleHelp
-                    className="size-3.5 shrink-0 text-muted-foreground"
-                    aria-hidden="true"
-                  />
-                </button>
-              }
-            >
-              {b.labels.map((label, i) => {
-                const v = views[i];
-                const found = v?.badges.find((x) => badgeRowKind(x.kind) === b.kind);
-                return (
-                  <span role="cell" key={i} className="p-2">
-                    {v && found && label ? (
-                      <BadgeChip
-                        badge={found}
-                        compact
+        </div>
+        <div
+          ref={bodyRef}
+          onScroll={() => {
+            if (headRef.current && bodyRef.current)
+              headRef.current.scrollLeft = bodyRef.current.scrollLeft;
+          }}
+          className="overflow-x-auto rounded-b-xl border border-t-0 border-border"
+        >
+          <div style={{ minWidth }}>
+            <Section title="基本" show={show(meta).length > 0 || !onlyDiff || ageDiff} />
+            {show(meta).map((r) => (
+              <Row key={r.key} cols={cols} label={r.label} diff={r.diff}>
+                {r.cells.map((c, i) => (
+                  <ValueCell key={i} cell={c} />
+                ))}
+              </Row>
+            ))}
+            {(!onlyDiff || ageDiff) && (
+              <Row
+                cols={cols}
+                diff={ageDiff}
+                label={
+                  <button
+                    type="button"
+                    onClick={() => setBadge({ kind: "under15", badge: null, group: null })}
+                    className="-m-1 flex flex-wrap items-center gap-1 rounded p-1 text-left active:bg-accent"
+                  >
+                    {BADGE_INFO.under15.name}
+                    <CircleHelp
+                      className="size-3.5 shrink-0 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                  </button>
+                }
+              >
+                {ages.map((a, i) => {
+                  const v = views[i];
+                  return (
+                    <span role="cell" key={v.product.id} className="p-2">
+                      <button
+                        type="button"
                         onClick={() =>
                           setBadge({
-                            kind: found.kind,
-                            badge: found,
+                            kind: a.badge?.kind ?? "under15",
+                            badge: a.badge,
                             group: v.group,
                             productName: v.product.name,
+                            empty: a.state === "set" ? undefined : a.state,
                           })
                         }
-                      />
-                    ) : v ? (
-                      <EmptyCell
-                        unloaded={v.unrecorded.includes(b.kind)}
-                        onClick={(empty) =>
-                          setBadge({
-                            kind: b.kind,
-                            badge: null,
-                            group: v.group,
-                            productName: v.product.name,
-                            empty,
-                          })
-                        }
-                      />
-                    ) : null}
-                  </span>
-                );
-              })}
-            </Row>
-          ))}
+                        className={cn(
+                          "-m-1 rounded p-1 text-left active:bg-accent",
+                          a.state === "set"
+                            ? "text-base font-bold"
+                            : a.state === "unloaded"
+                              ? "text-xs text-uncertain underline"
+                              : "text-xs text-muted-foreground underline decoration-dotted",
+                        )}
+                      >
+                        {a.text}
+                      </button>
+                    </span>
+                  );
+                })}
+              </Row>
+            )}
 
-          <Section
-            title="成分"
-            show={shownIngredients.length > 0}
-            aside="1日最大量あたり・（ ）は手引きの分類"
-          />
-          {shownIngredients.map((r) => (
-            <IngredientRow key={r.key} cols={cols} row={r} onOpen={() => openIngredient(r)} />
-          ))}
+            <Section
+              title="確認ポイント"
+              show={show(points).length > 0}
+              aside={UI_COPY.badgeRowHint}
+            />
+            {show(points).map((b) => (
+              <Row
+                key={b.kind}
+                cols={cols}
+                diff={b.diff}
+                small
+                label={
+                  <button
+                    type="button"
+                    onClick={() => setBadge({ kind: b.kind, badge: null, group: null })}
+                    className="-m-1 flex flex-wrap items-center gap-1 rounded p-1 text-left font-bold active:bg-accent"
+                  >
+                    {BADGE_INFO[b.kind].short ?? BADGE_INFO[b.kind].name}
+                    <CircleHelp
+                      className="size-3.5 shrink-0 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                  </button>
+                }
+              >
+                {b.labels.map((label, i) => {
+                  const v = views[i];
+                  const found = v?.badges.find((x) => badgeRowKind(x.kind) === b.kind);
+                  return (
+                    <span role="cell" key={i} className="min-w-0 p-2">
+                      {v && found && label ? (
+                        <BadgeChip
+                          badge={found}
+                          compact
+                          onClick={() =>
+                            setBadge({
+                              kind: found.kind,
+                              badge: found,
+                              group: v.group,
+                              productName: v.product.name,
+                            })
+                          }
+                        />
+                      ) : v ? (
+                        <EmptyCell
+                          unloaded={v.unrecorded.includes(b.kind)}
+                          onClick={(empty) =>
+                            setBadge({
+                              kind: b.kind,
+                              badge: null,
+                              group: v.group,
+                              productName: v.product.name,
+                              empty,
+                            })
+                          }
+                        />
+                      ) : null}
+                    </span>
+                  );
+                })}
+              </Row>
+            ))}
+
+            <Section
+              title="成分"
+              show={shownIngredients.length > 0}
+              aside="1日最大量あたり・（ ）は手引きの分類"
+            />
+            {shownIngredients.map((r) => (
+              <IngredientRow key={r.key} cols={cols} row={r} onOpen={() => openIngredient(r)} />
+            ))}
+          </div>
         </div>
       </div>
 
       <IngredientSheet target={ingredient} onClose={() => setIngredient(null)} />
       <BadgeSheet target={badge} onClose={() => setBadge(null)} />
     </div>
+  );
+}
+
+// 列の番号。選んでいる商品と表の見出しで同じ番号を使い、列と商品を対応させる
+function ColumnNo({ n, className }: { n: number; className?: string }) {
+  return (
+    <span
+      aria-label={`${n}列目`}
+      className={cn(
+        "flex size-5 shrink-0 items-center justify-center rounded-full bg-primary text-[11px] font-bold text-primary-foreground tabular-nums",
+        className,
+      )}
+    >
+      {n}
+    </span>
   );
 }
 

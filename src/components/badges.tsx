@@ -49,11 +49,13 @@ export function BadgeChip({
     "inline-flex items-center rounded-md font-bold",
     // 狭い表では語の途中で折り返さないよう、文節で折り返す（L-20261103-31）
     compact
-      ? "gap-1 px-1.5 py-0.5 text-left text-xs leading-snug [word-break:auto-phrase]"
+      ? "max-w-full gap-1 px-1.5 py-0.5 text-left text-xs leading-snug [overflow-wrap:anywhere] [word-break:auto-phrase]"
       : "min-h-9 gap-1.5 px-2.5 text-sm whitespace-nowrap",
     TONE[badge.tone],
   );
-  const icon = <Icon className={compact ? "size-3.5" : "size-4"} aria-hidden="true" />;
+  const icon = (
+    <Icon className={cn("shrink-0", compact ? "size-3.5" : "size-4")} aria-hidden="true" />
+  );
   if (!onClick) {
     return (
       <span className={className}>
