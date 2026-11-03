@@ -1,6 +1,6 @@
 import { buildIndex, search } from "@/lib/ask/bm25";
 import { normalizeName } from "@/lib/rules/normalize";
-import type { BadgeKind } from "@/lib/schema/notice";
+import type { ProductBadgeKind } from "@/lib/schema/notice";
 import type { Passage } from "@/lib/ask/corpus";
 
 // 質問エージェントの検索（BM25、L-20261103-44）と選択結果の検査、Claude が使えないときの語の一致（L-20261103-43）。純粋関数のみ
@@ -38,13 +38,17 @@ export function verifyCitations(citations: Citation[], passages: Passage[]): Ans
   return out;
 }
 
-const KEYWORDS: { pattern: RegExp; kinds: BadgeKind[] }[] = [
+const KEYWORDS: { pattern: RegExp; kinds: ProductBadgeKind[] }[] = [
   { pattern: /運転|乗物|乗り物|機械|眠/, kinds: ["drive"] },
   { pattern: /授乳|母乳/, kinds: ["breastfeeding"] },
   { pattern: /歳|才|小児|子ども|子供|こども|年齢/, kinds: ["under15", "under12"] },
   { pattern: /カフェイン/, kinds: ["caffeine"] },
   { pattern: /濫用|乱用|何個|複数/, kinds: ["abuse"] },
   { pattern: /ドーピング|競技|スポーツ|アスリート/, kinds: ["doping"] },
+  {
+    pattern: /ハラール|ハラル|イスラム|ムスリム|豚|ゼラチン|エタノール|アルコール|添加物/,
+    kinds: ["halal"],
+  },
   { pattern: /酒|アルコール|飲酒/, kinds: ["alcohol"] },
 ];
 
@@ -82,6 +86,11 @@ const SYNONYMS: { pattern: RegExp; terms: string }[] = [
   { pattern: /何のため|目的|役割|働き/, terms: "配合 目的" },
   { pattern: /飲み合わせ|併用|一緒/, terms: "併用 他の" },
   { pattern: /副作用/, terms: "副作用 症状" },
+  {
+    pattern: /ハラール|ハラル|イスラム|ムスリム|豚/,
+    terms: "アルコール エタノール ゼラチン 添加物 ハラール認証",
+  },
+  { pattern: /ドーピング|競技|スポーツ|アスリート/, terms: "禁止表 WADA 監視プログラム" },
   { pattern: /何回|回数|何錠|量/, terms: "1日最大 回" },
   // 承認基準の効能・効果（出典名に「効能・効果」がある）。L-20261104-09
   { pattern: /何に(使|効)|どんな(症状|とき|時)|使い道|適応|何の薬/, terms: "効能・効果" },

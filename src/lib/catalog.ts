@@ -1,5 +1,5 @@
 import "server-only";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { DEMO_PRODUCTS, demoSku } from "@/data/demo_products";
 import { withResearchedAmounts } from "@/data/ingredient_amounts";
 import { MOCK_STORE, sectionAt, type Shelf, type ShelfLocation } from "@/data/mock_store";
@@ -15,10 +15,10 @@ import {
   type ShelfLocationRow,
 } from "@/lib/db/rows";
 import { checkAbuse, type AbuseResult } from "@/lib/rules/abuse";
-import { deriveBadges, dopingBadgeFromSku, unrecordedKinds, type Badge } from "@/lib/rules/badges";
+import { deriveBadges, unrecordedKinds, type Badge } from "@/lib/rules/badges";
 import { normalizeName } from "@/lib/rules/normalize";
 import type { DemoSku } from "@/lib/schema/demoSku";
-import type { BadgeKind, NoticeGroup, NoticeItem } from "@/lib/schema/notice";
+import type { NoticeGroup, NoticeItem, ProductBadgeKind } from "@/lib/schema/notice";
 import type { Product } from "@/lib/schema/product";
 
 // データの読み出し口。SUPABASE_URL があれば Supabase（T003）から、なければ src/data の静的データから読む。
@@ -54,12 +54,30 @@ function getCatalog(): Promise<Catalog> {
   return catalog;
 }
 
+// Supabase は1回の読み出しを1000行で切る。通知の項目は1000行を超えるので（L-20261104-16）、1000行ずつ続けて読む
+const PAGE = 1000;
+
+async function noticeItemRows(db: SupabaseClient) {
+  const rows: NoticeItemRow[] = [];
+  for (let from = 0; ; from += PAGE) {
+    const page = await db
+      .from("notice_items")
+      .select("*")
+      .order("group_id")
+      .order("position")
+      .range(from, from + PAGE - 1);
+    if (page.error) return page;
+    rows.push(...(page.data as NoticeItemRow[]));
+    if (page.data.length < PAGE) return { data: rows, error: null };
+  }
+}
+
 async function loadFromSupabase(url: string, key: string): Promise<Catalog> {
   const db = createClient(url, key, { auth: { persistSession: false } });
   const [products, groups, items, locations] = await Promise.all([
     db.from("products").select("*, product_facts(*)"),
     db.from("notice_groups").select("*"),
-    db.from("notice_items").select("*").order("group_id").order("position"),
+    noticeItemRows(db),
     db.from("shelf_locations").select("*").eq("store_id", MOCK_STORE.id),
   ]);
   for (const result of [products, groups, items, locations])
@@ -139,7 +157,7 @@ export type ProductView = {
   // この商品の薬効群の通知（使用上の注意）を取り込み済みか。false なら通知由来のバッジは「未収録」
   noticeLoaded: boolean;
   // 「該当なし」ではなく「未収録」と出す通知由来の種類（未取り込みの薬効群・添付文書による補正で表せない記載）
-  unrecorded: BadgeKind[];
+  unrecorded: ProductBadgeKind[];
   location: LocatedShelf | null;
   sku: DemoSku | null;
 };
@@ -149,9 +167,8 @@ export async function productViews(products: Product[]): Promise<ProductView[]> 
   return products.map((product) => {
     const sku = demoSku(product.id);
     const noticeLoaded = catalog.items.some((i) => i.groupId === product.noticeGroupId);
-    let badges = deriveBadges(product, catalog.items);
-    // デモSKUの禁止表バッジは既存データの区分で出す（L-40 ④）
-    if (sku) badges = dopingBadgeFromSku(badges, product, sku);
+    // 禁止表バッジは 2026年版との照合で出す（L-20261104-18）。既存データの区分（年版不明、コデイン類を S7 とする等）は使わない
+    const badges = deriveBadges(product, catalog.items);
     return {
       product,
       badges,

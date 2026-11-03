@@ -262,6 +262,11 @@
     "kaze:kansetsu",
     "kaze:kinniku"
   ],
+  "med-00086": [
+    "kampo_002:1",
+    "kampo_002:2",
+    "kampo_002:3"
+  ],
   "med-00177": [
     "genetsu:zutsu",
     "genetsu:shitsu",
@@ -718,6 +723,12 @@
     "kampo_144:2",
     "kampo_144:3",
     "kampo_144:4"
+  ],
+  "med-04104": [
+    "kampo_189:1"
+  ],
+  "med-04107": [
+    "kampo_189:1"
   ],
   "med-04159": [
     "kampo_262:1",

@@ -14,6 +14,10 @@ export const BadgeKind = z.enum([
 ]);
 export type BadgeKind = z.infer<typeof BadgeKind>;
 
+// 商品の確認ポイントの種類。通知の項目に付く BadgeKind に、添加物から出す「ハラール関連の成分」を足したもの（L-20261104-18）。
+// halal は通知の項目には付かないので、DB の notice_items.badge の値（BadgeKind）には入れない
+export type ProductBadgeKind = BadgeKind | "halal";
+
 // 記載条件「〔○○を含有する製剤に記載すること〕」を表す式
 export type Condition =
   | { always: true }

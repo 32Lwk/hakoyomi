@@ -2,7 +2,7 @@ import { dailyMaxLabel, timesPerDayLabel } from "@/lib/dosage";
 import { ingredientRole } from "@/lib/ingredientRole";
 import type { Badge } from "@/lib/rules/badges";
 import { normalizeName } from "@/lib/rules/normalize";
-import type { BadgeKind } from "@/lib/schema/notice";
+import type { ProductBadgeKind } from "@/lib/schema/notice";
 import type { Product, ProductFact } from "@/lib/schema/product";
 
 // 2〜4品を、1日最大量あたりの分量にそろえて並べる。並べ替えはしない（量の順で優劣を示さない）
@@ -108,19 +108,19 @@ export function compareRows(products: Product[]): CompareRow[] {
 }
 
 export type BadgeRowCompare = {
-  kind: BadgeKind;
+  kind: ProductBadgeKind;
   labels: (string | null)[];
   diff: boolean;
 };
 
 // 比べるの行。12歳未満と15歳未満は同じ製剤に併記されないので、1行「年齢」にまとめる（L-20261103-12）
-export function badgeRowKind(kind: BadgeKind): BadgeKind {
+export function badgeRowKind(kind: ProductBadgeKind): ProductBadgeKind {
   return kind === "under12" ? "under15" : kind;
 }
 
 // バッジの種類ごとに、各商品のラベル（なければ null）を並べる
 export function compareBadges(badgeLists: Badge[][]): BadgeRowCompare[] {
-  const kinds: BadgeKind[] = [];
+  const kinds: ProductBadgeKind[] = [];
   for (const list of badgeLists) {
     for (const b of list) {
       const kind = badgeRowKind(b.kind);

@@ -6,10 +6,11 @@ import {
   ChevronRight,
   ClipboardList,
   Coffee,
-  type LucideIcon,
+  Info,
   Medal,
   UserRound,
   Wine,
+  type LucideIcon,
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -24,7 +25,7 @@ import { DOPING_SOURCE } from "@/data/doping_list";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
 import { badgeRowKind } from "@/lib/compare";
 import type { Badge, BadgeTone, Evidence } from "@/lib/rules/badges";
-import type { BadgeKind, NoticeGroup } from "@/lib/schema/notice";
+import type { NoticeGroup, ProductBadgeKind } from "@/lib/schema/notice";
 import { cn } from "@/lib/utils";
 
 // 種類で見た目を分ける。良し悪しの色は使わない（design.md §3）
@@ -82,7 +83,7 @@ export function BadgeChip({
 }
 
 // バッジの種類ごとのアイコン（色ではなく形で見分けられるように）
-const ICON: Record<BadgeKind, LucideIcon> = {
+const ICON: Record<ProductBadgeKind, LucideIcon> = {
   abuse: ClipboardList,
   drive: Car,
   breastfeeding: Baby,
@@ -91,6 +92,7 @@ const ICON: Record<BadgeKind, LucideIcon> = {
   alcohol: Wine,
   caffeine: Coffee,
   doping: Medal,
+  halal: Info,
 };
 
 // 年齢（15歳未満・12歳未満は同じ製剤に併記されない）を1つの値にする。比べると商品カードで大きく出す（L-20261103-16）
@@ -102,7 +104,7 @@ export type AgeStatus = {
 };
 
 // unrecorded：「未収録」と出す種類（ProductView.unrecorded）
-export function ageStatus(badges: Badge[], unrecorded: BadgeKind[]): AgeStatus {
+export function ageStatus(badges: Badge[], unrecorded: ProductBadgeKind[]): AgeStatus {
   const badge = badges.find((b) => badgeRowKind(b.kind) === "under15") ?? null;
   if (badge) return { badge, text: badge.label.replace(/^年齢 /, ""), state: "set" };
   return unrecorded.includes("under15")
@@ -117,13 +119,13 @@ export function BadgeRow({
 }: {
   badges: Badge[];
   group: NoticeGroup | null;
-  unrecorded: BadgeKind[];
+  unrecorded: ProductBadgeKind[];
 }) {
   const [open, setOpen] = useState<BadgeTarget | null>(null);
   // 年齢は商品カードの上に別に大きく出すので、ここでは扱わない
   const shown = badges.filter((b) => badgeRowKind(b.kind) !== "under15");
   // バッジがない種類も「該当なし」として名前を出す（何も出ないと、見落としか該当なしか区別できない）
-  const absent = (Object.keys(BADGE_INFO) as BadgeKind[])
+  const absent = (Object.keys(BADGE_INFO) as ProductBadgeKind[])
     .filter((k) => badgeRowKind(k) === k && k !== "under15")
     .filter((k) => !shown.some((b) => b.kind === k));
   // 通知を取り込んでいない薬効群や、補正で表せない種類は「該当なし」ではなく「未収録」
@@ -181,7 +183,7 @@ export function BadgeRow({
 
 // 何のバッジかの説明と、その商品での根拠。badge が null なら説明だけ（比べるの行見出しから開いたとき）
 export type BadgeTarget = {
-  kind: BadgeKind;
+  kind: ProductBadgeKind;
   badge: Badge | null;
   group: NoticeGroup | null;
   productName?: string;

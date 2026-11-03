@@ -1,6 +1,7 @@
 import type { Condition, NoticeItem } from "@/lib/schema/notice";
 import type { Product, ProductFact } from "@/lib/schema/product";
 import { normalizeName, sameName, toMg } from "@/lib/rules/normalize";
+import { INGREDIENT_CLASSES } from "@/data/ingredient_classes";
 import { PRODUCT_USAGE } from "@/data/product_usage";
 
 // 「○○として」の換算係数（換算先 → 成分 → 係数）。
@@ -19,31 +20,77 @@ export type Match = {
 };
 
 function usableFacts(product: Product): ProductFact[] {
-  // 未検証の値はバッジの導出に使わない（rules §4-8）
+  // 未検証の分量はバッジの導出に使わない（rules §4-8）。uncertain は分量が見つからない・出典の確かさが低い印で、
+  // 成分が入っていること（既存データの成分欄）は確かめてある。成分の有無の条件にはすべての成分を使う（L-20261104-16）
   return product.facts.filter((fact) => !fact.uncertain);
+}
+
+// 成分の成分群：入力値の分類と、成分群の表（src/data/ingredient_classes）
+function classesOf(fact: ProductFact): string[] {
+  const listed = Object.entries(INGREDIENT_CLASSES)
+    .filter(([, members]) => members.some((m) => sameName(m, fact.ingredient)))
+    .map(([name]) => name);
+  return [...fact.ingredientClasses, ...listed];
+}
+
+// 剤形の上位の呼び方。通知は「貼付剤」「塗布剤」とまとめて書くことがある
+const FORM_FAMILY: Record<string, string[]> = {
+  テープ剤: ["貼付剤"],
+  パップ剤: ["貼付剤"],
+  クリーム剤: ["塗布剤"],
+  ゲル剤: ["塗布剤"],
+  外用液剤: ["塗布剤"],
+  // 外用痔疾用薬の通知の「注入の用法をもつ軟膏剤」
+  注入軟膏剤: ["軟膏剤"],
+};
+
+// 通知の成分名の書き方「dl－（d－）クロルフェニラミンマレイン酸塩」「メチルエフェドリン塩類」
+// 「フルスルチアミン及びその塩類」を、入力値の成分名と照合できるようにする（L-20261104-20）
+function namesMatch(noticeName: string, ingredient: string): boolean {
+  const n = normalizeName(noticeName);
+  const isomers = n.match(/^((?:dl|d|l)-)\((?:dl|d|l)-\)(.+)$/);
+  if (isomers) return ["dl-", "d-", ""].some((p) => sameName(`${p}${isomers[2]}`, ingredient));
+  const stem = n.match(/^(.+?)(?:及びその)?塩類$/);
+  if (stem) return normalizeName(ingredient).includes(stem[1]);
+  return sameName(noticeName, ingredient);
+}
+
+// 剤形・用法の年齢を見る条件で、商品にその値がないか（not の中で「当たらない」を事実として使わない）
+function usageUnknown(condition: Condition, product: Product): boolean {
+  const usage = PRODUCT_USAGE[product.id];
+  if ("dosageForm" in condition) return !usage?.dosageForm;
+  if ("usageUnderMonths" in condition) return usage?.usageFromMonths == null;
+  if ("all" in condition) return condition.all.some((c) => usageUnknown(c, product));
+  if ("any" in condition) return condition.any.some((c) => usageUnknown(c, product));
+  if ("not" in condition) return usageUnknown(condition.not, product);
+  return false;
 }
 
 // 条件を評価し、当たったときは根拠の成分を返す。当たらなければ null
 export function evaluate(condition: Condition, product: Product): Match | null {
-  const facts = usableFacts(product);
+  const facts = product.facts;
 
   if ("always" in condition) return { ingredients: [] };
 
   if ("hasIngredient" in condition) {
-    const hit = facts.filter((f) => condition.hasIngredient.some((n) => sameName(n, f.ingredient)));
+    const hit = facts.filter((f) =>
+      condition.hasIngredient.some((n) => namesMatch(n, f.ingredient)),
+    );
     return hit.length ? { ingredients: hit.map((f) => f.ingredient) } : null;
   }
 
   if ("hasClass" in condition) {
     const hit = facts.filter((f) =>
-      f.ingredientClasses.some((c) => condition.hasClass.some((n) => sameName(n, c))),
+      classesOf(f).some((c) => condition.hasClass.some((n) => sameName(n, c))),
     );
     return hit.length ? { ingredients: hit.map((f) => f.ingredient) } : null;
   }
 
   if ("amountAtLeast" in condition) {
     const { ingredients, as, value, unit, per } = condition.amountAtLeast;
-    const hit = facts.filter((f) => ingredients.some((n) => sameName(n, f.ingredient)));
+    const hit = usableFacts(product).filter((f) =>
+      ingredients.some((n) => namesMatch(n, f.ingredient)),
+    );
     const amount = convertedMg(product, hit, as, per);
     if (amount === null) return null;
     const threshold = toMg(value, unit) ?? value;
@@ -53,7 +100,8 @@ export function evaluate(condition: Condition, product: Product): Match | null {
   // 剤形・用法の年齢は商品の値がないときは当てない（推測しない）
   if ("dosageForm" in condition) {
     const form = PRODUCT_USAGE[product.id]?.dosageForm;
-    return form && condition.dosageForm.includes(form) ? { ingredients: [] } : null;
+    const forms = form ? [form, ...(FORM_FAMILY[form] ?? [])] : [];
+    return forms.some((f) => condition.dosageForm.includes(f)) ? { ingredients: [] } : null;
   }
 
   if ("usageUnderMonths" in condition) {
@@ -72,7 +120,8 @@ export function evaluate(condition: Condition, product: Product): Match | null {
     return matches.length ? { ingredients: unique(matches.flatMap((m) => m.ingredients)) } : null;
   }
 
-  // not：当たらないときに成立。根拠の成分はない
+  // not：当たらないときに成立。根拠の成分はない。剤形・年齢の値がない商品では「当たらない」と言えないので成立させない
+  if (usageUnknown(condition.not, product)) return null;
   return evaluate(condition.not, product) ? null : { ingredients: [] };
 }
 

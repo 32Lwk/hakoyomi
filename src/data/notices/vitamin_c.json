@@ -1,0 +1,182 @@
+{
+  "group": {
+    "id": "vitamin_c",
+    "name": "ビタミンＣ主薬製剤",
+    "sourceUrl": "https://www.mhlw.go.jp/content/001742612.pdf",
+    "sourcePage": 96,
+    "fetchedOn": "2026-11-03"
+  },
+  "items": [
+    {
+      "id": "vitamin_c-sd-1",
+      "groupId": "vitamin_c",
+      "section": "相談すること",
+      "itemNo": "1.",
+      "body": "服用後，次の症状があらわれた場合は副作用の可能性があるので，直ちに服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること 関係部位 症 状 消化器 吐き気・嘔吐",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-sd-2",
+      "groupId": "vitamin_c",
+      "section": "相談すること",
+      "itemNo": "2.",
+      "body": "服用後，次の症状があらわれることがあるので，このような症状の持続又は増強が見られた場合には，服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "vitamin_c-sd-3",
+      "groupId": "vitamin_c",
+      "section": "相談すること",
+      "itemNo": "3.",
+      "body": "１ヵ月位服用しても症状がよくならない場合は服用を中止し，この文書を持って医師，歯科医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-etc-youho-1",
+      "groupId": "vitamin_c",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(1)",
+      "body": "小児に服用させる場合には，保護者の指導監督のもとに服用させること．",
+      "condition": {
+        "usageUnderMonths": 180
+      },
+      "conditionText": "小児の用法及び用量がある場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-etc-youho-2-1",
+      "groupId": "vitamin_c",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)1)",
+      "body": "３歳以上の幼児に服用させる場合には，薬剤がのどにつかえることのないよう，よく注意すること．",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 60
+          },
+          {
+            "dosageForm": [
+              "錠剤",
+              "丸剤",
+              "軟カプセル剤"
+            ]
+          }
+        ]
+      },
+      "conditionText": "５歳未満の幼児の用法がある錠剤（発泡錠を除く）・丸剤・軟カプセル剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-etc-youho-2-2",
+      "groupId": "vitamin_c",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)2)",
+      "body": "乳幼児に服用させる場合には ，薬剤がのどにつかえることのないよう ，よく注意すること．",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 180
+          },
+          {
+            "usageUnderMonths": 36
+          },
+          {
+            "dosageForm": [
+              "チュアブル錠",
+              "ゼリー状ドロップ剤"
+            ]
+          }
+        ]
+      },
+      "conditionText": "３歳未満の乳幼児の用法があるチュアブル錠又はゼリー状ドロップ剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-etc-youho-3",
+      "groupId": "vitamin_c",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(3)",
+      "body": "必ずかんで服用すること．",
+      "condition": {
+        "dosageForm": [
+          "ゼリー状ドロップ剤"
+        ]
+      },
+      "conditionText": "ゼリー状ドロップ剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-etc-youho-4",
+      "groupId": "vitamin_c",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(4)",
+      "body": "内服にのみ使用すること．",
+      "condition": {
+        "dosageForm": [
+          "アンプル剤"
+        ]
+      },
+      "conditionText": "アンプル剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-etc-hokan-1",
+      "groupId": "vitamin_c",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(1)",
+      "body": "直射日光の当たらない（湿気の少ない）涼しい所に（密栓して）保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "（ ）内は必要とする場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-etc-hokan-2",
+      "groupId": "vitamin_c",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(2)",
+      "body": "小児の手の届かない所に保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_c-etc-hokan-3",
+      "groupId": "vitamin_c",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(3)",
+      "body": "他の容器に入れ替えないこと（誤用の原因になったり品質が変わる．）．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "容器等の個々に至適表示がなされていて，誤用のおそれのない場合には記載しなくてもよい．",
+      "excludedBy": [],
+      "needsReview": false
+    }
+  ]
+}

@@ -360,7 +360,7 @@
     "checkedOn": "2026-11-04"
   },
   "med-05216": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": 84,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -372,13 +372,13 @@
     "checkedOn": "2026-11-04"
   },
   "med-05220": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": 180,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-05277": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": 84,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -600,7 +600,7 @@
     "checkedOn": "2026-11-04"
   },
   "med-00169": {
-    "dosageForm": null,
+    "dosageForm": "液剤",
     "usageFromMonths": 180,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -636,13 +636,13 @@
     "checkedOn": "2026-11-04"
   },
   "med-01521": {
-    "dosageForm": null,
+    "dosageForm": "クリーム剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-01369": {
-    "dosageForm": null,
+    "dosageForm": "クリーム剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -654,7 +654,7 @@
     "checkedOn": "2026-11-04"
   },
   "med-02048": {
-    "dosageForm": null,
+    "dosageForm": "テープ剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -666,13 +666,13 @@
     "checkedOn": "2026-11-04"
   },
   "med-01942": {
-    "dosageForm": null,
+    "dosageForm": "テープ剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-03046": {
-    "dosageForm": null,
+    "dosageForm": "坐剤",
     "usageFromMonths": 180,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -840,31 +840,31 @@
     "checkedOn": "2026-11-04"
   },
   "med-02825": {
-    "dosageForm": null,
+    "dosageForm": "貼付剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-03539": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-03160": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-01633": {
-    "dosageForm": null,
+    "dosageForm": "クリーム剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-01540": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1056,43 +1056,43 @@
     "checkedOn": "2026-11-04"
   },
   "med-01559": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-04341": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-01755": {
-    "dosageForm": null,
+    "dosageForm": "ゲル剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-01754": {
-    "dosageForm": null,
+    "dosageForm": "クリーム剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-01982": {
-    "dosageForm": null,
+    "dosageForm": "貼付剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-02715": {
-    "dosageForm": null,
+    "dosageForm": "貼付剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-02713": {
-    "dosageForm": null,
+    "dosageForm": "貼付剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1104,19 +1104,19 @@
     "checkedOn": "2026-11-04"
   },
   "med-03167": {
-    "dosageForm": null,
+    "dosageForm": "外用液剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-03058": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-01812": {
-    "dosageForm": null,
+    "dosageForm": "パップ剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1152,7 +1152,7 @@
     "checkedOn": "2026-11-04"
   },
   "med-00614": {
-    "dosageForm": null,
+    "dosageForm": "液剤",
     "usageFromMonths": 132,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1164,13 +1164,13 @@
     "checkedOn": "2026-11-04"
   },
   "med-05221": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": 84,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-05222": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": 84,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1182,19 +1182,19 @@
     "checkedOn": "2026-11-04"
   },
   "med-05086": {
-    "dosageForm": null,
+    "dosageForm": "外用液剤",
     "usageFromMonths": 84,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-05276": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": 84,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-05239": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": 84,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1206,7 +1206,7 @@
     "checkedOn": "2026-11-04"
   },
   "med-01555": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1224,7 +1224,7 @@
     "checkedOn": "2026-11-04"
   },
   "med-03011": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1326,7 +1326,7 @@
     "checkedOn": "2026-11-04"
   },
   "med-00520": {
-    "dosageForm": null,
+    "dosageForm": "カプセル剤",
     "usageFromMonths": 180,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1362,37 +1362,37 @@
     "checkedOn": "2026-11-04"
   },
   "med-02948": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-02927": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-02934": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-02991": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-02969": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-02925": {
-    "dosageForm": null,
+    "dosageForm": "スプレー剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
@@ -1416,13 +1416,13 @@
     "checkedOn": "2026-11-04"
   },
   "med-04370": {
-    "dosageForm": null,
+    "dosageForm": "軟膏剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"
   },
   "med-04371": {
-    "dosageForm": null,
+    "dosageForm": "クリーム剤",
     "usageFromMonths": null,
     "source": "既存データの用法用量（年齢区分）と品名",
     "checkedOn": "2026-11-04"

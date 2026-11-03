@@ -1,0 +1,461 @@
+{
+  "group": {
+    "id": "vitamin_b1",
+    "name": "ビタミンＢ１主薬製剤",
+    "sourceUrl": "https://www.mhlw.go.jp/content/001742612.pdf",
+    "sourcePage": 89,
+    "fetchedOn": "2026-11-03"
+  },
+  "items": [
+    {
+      "id": "vitamin_b1-ng-1",
+      "groupId": "vitamin_b1",
+      "section": "してはいけないこと",
+      "itemNo": "1.",
+      "body": "次の人は服用しないこと",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-ng-1-1",
+      "groupId": "vitamin_b1",
+      "section": "してはいけないこと",
+      "itemNo": "1.(1)",
+      "body": "妊婦又は妊娠していると思われる人．",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": "ヘプロニカートを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-1",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "1.",
+      "body": "次の人は服用前に医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "any": [
+          {
+            "hasIngredient": [
+              "ボウイ"
+            ]
+          },
+          {
+            "hasIngredient": [
+              "ヘプロニカート"
+            ]
+          }
+        ]
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-1-1",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "1.(1)",
+      "body": "妊婦又は妊娠していると思われる人．",
+      "condition": {
+        "hasIngredient": [
+          "ボウイ"
+        ]
+      },
+      "conditionText": "ボウイを含有する製剤に記載すること． ただし，「してはいけないこと」に「妊婦又は妊娠していると思われる人．」を記載した製剤にあっては記載しない．",
+      "excludedBy": [
+        "vitamin_b1-ng-1-1"
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-1-2",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "1.(2)",
+      "body": "薬などによりアレルギー症状を起こしたことがある人．",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": "ヘプロニカートを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.",
+      "body": "服用後，次の症状があらわれた場合は副作用の可能性があるので，直ちに服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "any": [
+          {
+            "hasIngredient": [
+              "シコチアミン",
+              "ヘプロニカート",
+              "メコバラミン",
+              "フルスルチアミン",
+              "フルスルチアミン塩酸塩"
+            ]
+          },
+          {
+            "hasClass": [
+              "ビタミンＢ１"
+            ]
+          }
+        ]
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r1",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r1",
+      "body": "皮膚 発疹",
+      "condition": {
+        "hasIngredient": [
+          "シコチアミン",
+          "メコバラミン"
+        ]
+      },
+      "conditionText": "１）は，シコチアミンを含有する製剤に， ３）は，メコバラミンを含有する製剤に ただし， 「発疹・発赤」 を記載した製剤にあっては， 「発疹」 を記載しない．",
+      "excludedBy": [
+        "vitamin_b1-sd-2-r2"
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r2",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r2",
+      "body": "皮膚 発疹・発赤",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": "２）は，ヘプロニカートを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r3",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r3",
+      "body": "皮膚 かゆみ",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": "２）は，ヘプロニカートを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r4",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r4",
+      "body": "消化器 吐き気",
+      "condition": {
+        "hasIngredient": [
+          "メコバラミン"
+        ]
+      },
+      "conditionText": "３）は，メコバラミンを含有する製剤に また， 「吐き気・嘔吐」を記載した製剤にあっては， 「吐き気」を記載しない．",
+      "excludedBy": [
+        "vitamin_b1-sd-2-r5"
+      ],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r5",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r5",
+      "body": "消化器 吐き気・嘔吐",
+      "condition": {
+        "hasClass": [
+          "ビタミンＢ１"
+        ]
+      },
+      "conditionText": "４）は，チアミンの塩類並びにチアミンジスルフィド及びその塩類を除くビタミンＢ１を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r6",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r6",
+      "body": "消化器 口内炎",
+      "condition": {
+        "hasIngredient": [
+          "フルスルチアミン及びその塩類"
+        ]
+      },
+      "conditionText": "５）は，フルスルチアミン及びその塩類を含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r7",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r7",
+      "body": "消化器 食欲不振",
+      "condition": {
+        "hasIngredient": [
+          "メコバラミン"
+        ]
+      },
+      "conditionText": "３）は，メコバラミンを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r8",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r8",
+      "body": "消化器 胃痛",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": "２）は，ヘプロニカートを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r9",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r9",
+      "body": "消化器 胃部不快感",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": "２）は，ヘプロニカートを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r10",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r10",
+      "body": "精神神経系 頭痛",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": "２）は，ヘプロニカートを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-2-r11",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "2.r11",
+      "body": "その他 ほてり",
+      "condition": {
+        "hasIngredient": [
+          "ヘプロニカート"
+        ]
+      },
+      "conditionText": "２）は，ヘプロニカートを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-sd-3",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "3.",
+      "body": "服用後，次の症状があらわれることがあるので，このような症状の持続又は増強が見られた場合には，服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "any": [
+          {
+            "hasClass": [
+              "ビタミンＢ１"
+            ]
+          },
+          {
+            "hasIngredient": [
+              "メコバラミン"
+            ]
+          }
+        ]
+      },
+      "conditionText": "１）は，チアミンの塩類並びにチアミンジスルフィド及びその塩類を除くビタミンＢ１を含有する製剤に，２）は，メコバラミンを含有する製剤に記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "vitamin_b1-sd-4",
+      "groupId": "vitamin_b1",
+      "section": "相談すること",
+      "itemNo": "4.",
+      "body": "１ヵ月位服用しても症状がよくならない場合は服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-etc-youho-1",
+      "groupId": "vitamin_b1",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(1)",
+      "body": "小児に服用させる場合には，保護者の指導監督のもとに服用させること．",
+      "condition": {
+        "usageUnderMonths": 180
+      },
+      "conditionText": "小児の用法及び用量がある場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-etc-youho-2-1",
+      "groupId": "vitamin_b1",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)1)",
+      "body": "３歳以上の幼児に服用させる場合には，薬剤がのどにつかえることのないよう，よく注意すること．",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 60
+          },
+          {
+            "dosageForm": [
+              "錠剤",
+              "丸剤",
+              "軟カプセル剤"
+            ]
+          }
+        ]
+      },
+      "conditionText": "５歳未満の幼児の用法がある錠剤（発泡錠を除く）・丸剤・軟カプセル剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-etc-youho-2-2",
+      "groupId": "vitamin_b1",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)2)",
+      "body": "乳幼児に服用させる場合には，薬剤がのどにつかえることのないよう，よく注意すること．",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 36
+          },
+          {
+            "dosageForm": [
+              "チュアブル錠",
+              "ゼリー状ドロップ剤"
+            ]
+          }
+        ]
+      },
+      "conditionText": "３歳未満の乳幼児の用法があるチュアブル錠又はゼリー状ドロップ剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-etc-youho-3",
+      "groupId": "vitamin_b1",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(3)",
+      "body": "必ずかんで服用すること．",
+      "condition": {
+        "dosageForm": [
+          "ゼリー状ドロップ剤"
+        ]
+      },
+      "conditionText": "ゼリー状ドロップ剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-etc-youho-4",
+      "groupId": "vitamin_b1",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(4)",
+      "body": "内服にのみ使用すること．",
+      "condition": {
+        "dosageForm": [
+          "アンプル剤"
+        ]
+      },
+      "conditionText": "アンプル剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-etc-hokan-1",
+      "groupId": "vitamin_b1",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(1)",
+      "body": "直射日光の当たらない（湿気の少ない）涼しい所に（密栓して）保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "（ ）内は必要とする場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-etc-hokan-2",
+      "groupId": "vitamin_b1",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(2)",
+      "body": "小児の手の届かない所に保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_b1-etc-hokan-3",
+      "groupId": "vitamin_b1",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(3)",
+      "body": "他の容器に入れ替えないこと（誤用の原因になったり品質が変わる．）．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "容器等の個々に至適表示がなされていて，誤用のおそれのない場合には記載しなくてもよい．",
+      "excludedBy": [],
+      "needsReview": false
+    }
+  ]
+}

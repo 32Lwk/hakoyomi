@@ -17,16 +17,35 @@ from datetime import date
 
 OUT = "src/data/product_usage.json"
 
-# 品名の語 → 剤形（通知の書き分け：錠剤・丸剤・カプセル剤・それ以外）。「丸料」は煎じ薬の名で丸剤ではない
-FORMS = [("カプセル", "カプセル剤"), ("錠", "錠剤"), ("顆粒", "顆粒剤"), ("細粒", "細粒剤"), ("散", "散剤")]
+# 品名の語 → 剤形（通知の記載条件の剤形名にそろえる）。品名から確かに言えるものだけ。「丸料」は煎じ薬の名で丸剤ではない
+FORMS = [
+    ("坐剤", "坐剤"),
+    ("テープ", "テープ剤"),
+    ("パップ", "パップ剤"),
+    ("サロンパス", "貼付剤"),
+    ("ゲル", "ゲル剤"),
+    ("クリーム", "クリーム剤"),
+    ("軟膏", "軟膏剤"),
+    ("スプレー", "スプレー剤"),
+    ("ドリンク", "液剤"),
+    ("ニスキャップ", "カプセル剤"),
+    ("カプセル", "カプセル剤"),
+    ("錠", "錠剤"),
+    ("顆粒", "顆粒剤"),
+    ("細粒", "細粒剤"),
+    ("散", "散剤"),
+]
 
 
-def dosage_form(name: str) -> str | None:
+def dosage_form(name: str, route: str) -> str | None:
     for word, form in FORMS:
         if word in name:
             return form
     if re.search(r"丸(?!料)", name):
         return "丸剤"
+    # 外用の「液体ムヒ」など
+    if route == "external" and "液" in name:
+        return "外用液剤"
     return None
 
 
@@ -92,7 +111,7 @@ def main(catalog_path: str) -> None:
     for sku in skus:
         row = rows.get(med_of.get(sku["id"], ""), {})
         usage = {
-            "dosageForm": dosage_form(sku["name"]),
+            "dosageForm": dosage_form(sku["name"], sku["route"]),
             "usageFromMonths": usage_from_months(row.get("用法用量", "")),
             "source": "既存データの用法用量（年齢区分）と品名",
             "checkedOn": checked,

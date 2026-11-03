@@ -1,5 +1,6 @@
 import "server-only";
 import { ABUSE_INGREDIENTS, ABUSE_SOURCE } from "@/data/abuse_ingredients";
+import { additivesOf, halalFacts } from "@/data/additives";
 import { DOPING_ENTRIES, DOPING_SOURCE } from "@/data/doping_list";
 import { EFFICACY_STANDARDS } from "@/data/efficacy_standards";
 import { NO_NOTICE_GROUPS } from "@/data/notices";
@@ -8,10 +9,10 @@ import { noticeCatalog, type ProductView } from "@/lib/catalog";
 import { factAmountText } from "@/lib/compare";
 import { dailyMaxLabel, timesPerDayLabel } from "@/lib/dosage";
 import { ingredientRole } from "@/lib/ingredientRole";
-import { checkDoping } from "@/lib/rules/doping";
+import { checkDoping, dopingListCurrent, dopingMonitoring, routeOf } from "@/lib/rules/doping";
 import { applicableItems } from "@/lib/rules/noticeRules";
 import { BADGE_INFO } from "@/lib/guard/uiCopy";
-import type { BadgeKind, Condition, NoticeGroup, NoticeItem } from "@/lib/schema/notice";
+import type { Condition, NoticeGroup, NoticeItem, ProductBadgeKind } from "@/lib/schema/notice";
 
 // 質問エージェント（L-20261103-43）の根拠。コードが集め、Claude は番号を選んで原文を抜き出すだけ。
 // text は原文（通知・手引き・承認基準）か、この商品の入力値をコードで整えた文
@@ -24,7 +25,7 @@ export type Passage = {
   // 商品について集めた根拠ならその商品。全体から集めたものは null
   productId: string | null;
   // 語の一致で探すときに使う（Claude が使えないとき）
-  kinds: BadgeKind[];
+  kinds: ProductBadgeKind[];
   ingredients: string[];
 };
 
@@ -85,11 +86,103 @@ function absenceFacts(view: ProductView): Draft[] {
       ingredients: [],
     });
   }
-  if (!checkDoping(product).length) {
+  // ドーピング：2026年版との照合と、この商品の使い方での扱い（L-20261104-18）
+  const dopingSource = {
+    label: `${checked}・${DOPING_SOURCE.list}`,
+    url: DOPING_SOURCE.url,
+  };
+  const year = dopingListCurrent() ? `${DOPING_SOURCE.year}年版` : "年版確認中";
+  const dopingHits = checkDoping(product);
+  if (!dopingHits.length) {
     out.push({
-      text: `${DOPING_SOURCE.list}に掲載の成分は、この商品の成分に含まれていません${DOPING_SOURCE.verified ? "" : "（禁止表の年版は確認中）"}`,
-      source: { label: `${checked}・${DOPING_SOURCE.list}`, url: DOPING_SOURCE.url },
+      text: `WADA 禁止表（${year}）に掲載の成分は、この商品の成分に含まれていません`,
+      source: dopingSource,
       kinds: ["doping"],
+      ingredients: [],
+    });
+  }
+  const ROUTE: Record<string, string> = {
+    oral: "内服",
+    oromucosal: "口の中に使う",
+    rectal: "肛門から使う",
+    skin: "皮膚に使う",
+    nasal: "鼻に使う",
+    eye: "目に使う",
+    unclear: "使い方が商品からは決まらない",
+  };
+  for (const h of dopingHits) {
+    const where = `この商品は${ROUTE[routeOf(product)]}製剤`;
+    const tail =
+      h.status === "prohibited"
+        ? `この使い方では禁止に当たる（${h.entry.timing}）`
+        : h.status === "local"
+          ? "この使い方は禁止の対象外と禁止表にある"
+          : "使い方で変わるため Global DRO で確認";
+    out.push({
+      text: `${h.ingredient}：WADA 禁止表（${year}）の${h.entry.category}に掲載。${h.entry.condition ? `${h.entry.condition}。` : ""}${where}で、${tail}`,
+      source: dopingSource,
+      kinds: ["doping"],
+      ingredients: [h.ingredient],
+    });
+  }
+  for (const name of dopingMonitoring(product)) {
+    out.push({
+      text: `${name}：WADA の監視プログラムの成分で、禁止ではありません`,
+      source: dopingSource,
+      kinds: ["doping"],
+      ingredients: [name],
+    });
+  }
+
+  // ハラール関連の成分：添加物の事実だけ。ハラールかどうか・認証の有無は判断しない（L-20261104-18）
+  const halal = halalFacts(product);
+  const record = additivesOf(product.id);
+  const halalSource = record
+    ? {
+        label: `添加物（${record.source.kind}、${record.source.checkedOn} 確認）`,
+        url: record.source.url,
+      }
+    : { label: "ハコよみの収録状況", url: null };
+  if (!halal.checked) {
+    out.push({
+      text: "この商品の添加物は、まだ収録していません。アルコール・ゼラチン等の有無とハラール認証は、メーカーに確認してください",
+      source: { label: "ハコよみの収録状況", url: null },
+      kinds: ["halal"],
+      ingredients: [],
+    });
+  } else {
+    if (halal.ethanol.length)
+      out.push({
+        text: `成分・添加物に、アルコール（エタノール）を含みます（${halal.ethanol.join("、")}）`,
+        source: halalSource,
+        kinds: ["halal"],
+        ingredients: halal.ethanol,
+      });
+    if (halal.animal.length)
+      out.push({
+        text: `添加物に、動物・昆虫由来の可能性がある成分を含みます（${halal.animal.join("、")}）。由来は出典に書かれていないため、メーカーに確認してください`,
+        source: halalSource,
+        kinds: ["halal"],
+        ingredients: halal.animal,
+      });
+    if (halal.either.length)
+      out.push({
+        text: `${halal.either.join("、")}は、植物由来も動物由来もある成分です（この商品の由来は出典に書かれていません）`,
+        source: halalSource,
+        kinds: ["halal"],
+        ingredients: halal.either,
+      });
+    if (!halal.ethanol.length && !halal.animal.length)
+      out.push({
+        text: "成分・添加物の一覧に、アルコール（エタノール）やゼラチン等の動物・昆虫由来の可能性がある成分は見当たりません",
+        source: halalSource,
+        kinds: ["halal"],
+        ingredients: [],
+      });
+    out.push({
+      text: "ハラール認証の有無は、このアプリでは扱っていません。メーカーに確認してください",
+      source: { label: "ハコよみの扱い", url: null },
+      kinds: ["halal"],
       ingredients: [],
     });
   }

@@ -1,0 +1,4901 @@
+[
+ {
+  "productId": "alesion-20",
+  "additives": [
+   "無水ケイ酸",
+   "乳糖",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ポビドン",
+   "アクリル酸エチル・メタクリル酸メチルコポリマー",
+   "マクロゴール",
+   "シリコーン樹脂",
+   "ステアリン酸マグネシウム",
+   "タルク",
+   "酸化チタン",
+   "トウモロコシデンプン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1510000018",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1510000018（エスエス製薬（株）、包装：6錠，12錠，24錠，48錠，72錠）。"
+  }
+ },
+ {
+  "productId": "algard-gold-z",
+  "additives": [
+   "ポリソルベート80",
+   "グリセリン脂肪酸エステル",
+   "サラシミツロウ",
+   "中鎖脂肪酸トリグリセリド",
+   "ゼラチン",
+   "コハク化ゼラチン",
+   "グリセリン",
+   "酸化チタン",
+   "黄色5号"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000238",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1701000238（ロート製薬（株）、包装：10カプセル，20カプセル）。ゼラチン・コハク化ゼラチンの由来の記載なし。"
+  }
+ },
+ {
+  "productId": "allegra-fx",
+  "additives": [
+   "結晶セルロース",
+   "部分アルファー化デンプン",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ステアリン酸マグネシウム",
+   "軽質無水ケイ酸",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ポビドン",
+   "酸化チタン",
+   "マクロゴール400",
+   "三二酸化鉄",
+   "黄色三二酸化鉄"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000287",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1201000287（サノフィ（株）、包装：14錠，28錠，56錠）。"
+  }
+ },
+ {
+  "productId": "askuron",
+  "additives": [
+   "メタケイ酸アルミン酸マグネシウム",
+   "セルロース",
+   "乳糖",
+   "ヒドロキシプロピルセルロース",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601012113（大正製薬（株）、包装：24包）。"
+  }
+ },
+ {
+  "productId": "benza-block-cough",
+  "additives": [
+   "乳糖水和物",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "酸化チタン",
+   "銅クロロフィリンナトリウム",
+   "カルナウバロウ",
+   "ハッカ油"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012388",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601012388（アリナミン製薬（株）、包装：36錠）。"
+  }
+ },
+ {
+  "productId": "benza-block-l",
+  "additives": [
+   "乳糖水和物",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ヒドロキシプロピルセルロース",
+   "セルロース",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "酸化チタン",
+   "トウモロコシデンプン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012887",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601012887（アリナミン製薬（株）、包装：30錠，45錠）。"
+  }
+ },
+ {
+  "productId": "benza-block-s",
+  "additives": [
+   "トウモロコシデンプン",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ポビドン",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "酸化チタン",
+   "三二酸化鉄",
+   "カルナウバロウ",
+   "セルロース"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0607000110",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0607000110（アリナミン製薬（株）、包装：36錠，60錠）。"
+  }
+ },
+ {
+  "productId": "bufferin-a",
+  "additives": [
+   "トウモロコシデンプン",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "酸化チタン",
+   "マクロゴール",
+   "青色1号"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001404",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601001404（ライオン（株）、包装：10錠，20錠，40錠，60錠，80錠）。"
+  }
+ },
+ {
+  "productId": "bufferin-premium",
+  "additives": [
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "乳酸",
+   "D-マンニトール",
+   "リン酸二水素カリウム",
+   "二酸化ケイ素",
+   "ステアリン酸マグネシウム",
+   "ポリビニルアルコール(部分けん化物)",
+   "タルク",
+   "酸化チタン",
+   "グリセリン脂肪酸エステル",
+   "ラウリル硫酸ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000015",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1401000015（ライオン（株）、包装：20錠，40錠，60錠）。"
+  }
+ },
+ {
+  "productId": "calonal-a",
+  "additives": [
+   "セルロース",
+   "部分アルファー化デンプン",
+   "ポリビニルアルコール(部分けん化物)",
+   "ステアリン酸マグネシウム",
+   "l-メントール",
+   "香料",
+   "乳糖"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2301000211",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2301000211（第一三共ヘルスケア（株）、包装：12錠，24錠，36錠）。KEGG一覧で乳糖が末尾に記載（順序はKEGGのまま）。"
+  }
+ },
+ {
+  "productId": "colgen-film-alpha",
+  "additives": [
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "還元麦芽糖水アメ",
+   "酸化チタン",
+   "l-メントール",
+   "ヒドロキシプロピルセルロース",
+   "サッカリンナトリウム",
+   "エリスリトール",
+   "亜硫酸水素ナトリウム",
+   "香料",
+   "青色1号"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000189",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2001000189（興和（株）、包装：9枚，18枚）。フィルム剤。亜硫酸水素ナトリウムを含む。"
+  }
+ },
+ {
+  "productId": "drewell",
+  "additives": [
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "無水ケイ酸",
+   "セルロース",
+   "乳糖",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "ステアリン酸マグネシウム",
+   "タルク",
+   "酸化チタン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001652",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601001652（エスエス製薬（株）、包装：6錠，12錠）。"
+  }
+ },
+ {
+  "productId": "drewell-ex",
+  "additives": [
+   "ゼラチン",
+   "D-ソルビトール",
+   "中鎖脂肪酸トリグリセリド",
+   "ポビドン",
+   "マクロゴール",
+   "グリセリン",
+   "ベンジルアルコール",
+   "大豆レシチン",
+   "香料"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0706000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K0706000002（エスエス製薬（株）、包装：6カプセル）。ゼラチンの由来の記載なし。ベンジルアルコールを含む（エタノールではない）。大豆レシチンを含む。"
+  }
+ },
+ {
+  "productId": "eve-a",
+  "additives": [
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "無水ケイ酸",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "ステアリン酸マグネシウム",
+   "タルク",
+   "酸化チタン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001092",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601001092（エスエス製薬（株）、包装：12錠，24錠，36錠，48錠，60錠，90錠）。"
+  }
+ },
+ {
+  "productId": "eve-quick-dx",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "クロスポビドン",
+   "マクロゴール",
+   "ステアリン酸マグネシウム",
+   "タルク",
+   "酸化チタン",
+   "ラウリル硫酸ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1512000011",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1512000011（エスエス製薬（株）、包装：20錠，40錠，60錠）。"
+  }
+ },
+ {
+  "productId": "excedrin-a",
+  "additives": [
+   "トウモロコシデンプン",
+   "カルメロース(CMC)",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001103",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601001103（ライオン（株）、包装：20錠，40錠，60錠）。"
+  }
+ },
+ {
+  "productId": "jikinin-bien-ag",
+  "additives": [
+   "クエン酸",
+   "トウモロコシデンプン",
+   "乳糖",
+   "バレイショデンプン",
+   "ヒドロキシプロピルセルロース",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "酒石酸",
+   "ステアリン酸マグネシウム",
+   "セルロース",
+   "白糖",
+   "無水ケイ酸"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008197",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601008197（全薬工業（株）、包装：9包，15包）。"
+  }
+ },
+ {
+  "productId": "loxonin-s",
+  "additives": [
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "乳糖水和物",
+   "三二酸化鉄"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1101000003",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1101000003（第一三共ヘルスケア（株）、包装：12錠）。"
+  }
+ },
+ {
+  "productId": "loxonin-s-premium",
+  "additives": [
+   "乳糖",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "酸化チタン",
+   "タルク",
+   "三二酸化鉄",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000006",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1601000006（第一三共ヘルスケア（株）、包装：12錠，24錠）。"
+  }
+ },
+ {
+  "productId": "lulu-attack-ex",
+  "additives": [
+   "トレハロース",
+   "セルロース",
+   "マクロゴール",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ポリビニルアルコール(部分けん化物)",
+   "無水ケイ酸",
+   "硬化油",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "酸化チタン",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0905000028",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K0905000028（滋賀県製薬（株）、包装：12錠，18錠，24錠）。KEGGの製造販売元は滋賀県製薬（株）（入力のメーカーは第一三共ヘルスケア）。品名・包装12錠一致で採用。販売元表記の違いか箱で確認を。"
+  }
+ },
+ {
+  "productId": "lulu-attack-nx",
+  "additives": [
+   "トウモロコシデンプン",
+   "乳糖",
+   "セルロース",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "ポリビニルアルコール・アクリル酸・メタクリル酸メチル共重合体",
+   "タルク",
+   "酸化チタン",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000133",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1501000133（第一三共ヘルスケア（株）、包装：12錠，18錠，24錠）。"
+  }
+ },
+ {
+  "productId": "med-00021",
+  "additives": [
+   "タルク",
+   "ヒドロキシプロピルセルロース",
+   "酸化チタン",
+   "ステアリン酸マグネシウム",
+   "セルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0803000001",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K0803000001「チョコラBBルーセントC」（2026/10/21版）。品名で照合。包装「120錠，180錠」に入力の内容量180錠を含む。"
+  }
+ },
+ {
+  "productId": "med-00080",
+  "additives": [
+   "タルク",
+   "乳糖",
+   "バニリン",
+   "トコフェロール",
+   "ヒドロキシプロピルセルロース",
+   "D-マンニトール",
+   "l-メントール",
+   "香料",
+   "ケイヒ",
+   "二酸化ケイ素",
+   "ハッカ油"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002065",
+   "checkedOn": "2026-11-04",
+   "note": "細粒（3包中の表示）。「セルベール整胃錠」等とは別項目"
+  }
+ },
+ {
+  "productId": "med-00083",
+  "additives": [
+   "l-メントール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002825",
+   "checkedOn": "2026-11-04",
+   "note": "缶入り散剤（1.3g中の成分表示）。「太田胃散〈分包〉」（J0601002826）とは別項目"
+  }
+ },
+ {
+  "productId": "med-00085",
+  "additives": [
+   "l-メントール",
+   "乳糖",
+   "黄色4号(タートラジン)",
+   "アラビアゴム",
+   "ステアリン酸マグネシウム",
+   "炭酸マグネシウム",
+   "カルメロースカルシウム(CMC-Ca)",
+   "セルロース",
+   "天然トコフェロール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002827",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601002827 包装: 45錠（分包），120錠（瓶），300錠（瓶）。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00086",
+  "additives": [
+   "ヒドロキシプロピルセルロース",
+   "ヒドロタルサイト",
+   "メタケイ酸アルミン酸マグネシウム",
+   "ステアリン酸マグネシウム",
+   "セルロース"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0607000087",
+   "checkedOn": "2026-11-04",
+   "note": "入力は錠（120錠）なので「太田漢方胃腸薬Ⅱ〈錠剤〉」を採用。散剤の「太田漢方胃腸薬Ⅱ」（J0607000086）はステアリン酸マグネシウムなしで添加物が異なる。品名の照合に注意"
+  }
+ },
+ {
+  "productId": "med-00097",
+  "additives": [
+   "トウモロコシデンプン",
+   "カルメロースカルシウム(CMC-Ca)",
+   "硬化油",
+   "キシリトール",
+   "二酸化ケイ素",
+   "l-メントール",
+   "ヒドロキシプロピルセルロース"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000544",
+   "checkedOn": "2026-11-04",
+   "note": "硬化油の記載あり（原料油脂の記載なし）"
+  }
+ },
+ {
+  "productId": "med-00102",
+  "additives": [
+   "無水ケイ酸",
+   "バレイショデンプン",
+   "乳糖",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "タルク"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002830",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-00104",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002833",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-00118",
+  "additives": [
+   "セルロース",
+   "乳糖",
+   "ポリソルベート80",
+   "ヒドロキシプロピルセルロース",
+   "サンショウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2108000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2108000007「第一三共胃腸薬細粒s」（2026/10/21版）。品名で照合。包装の記載なし（品名一致の項目は1件）。「サンショウ」は添加物欄に記載されているとおり記録。"
+  }
+ },
+ {
+  "productId": "med-00122",
+  "additives": [
+   "バレイショデンプン",
+   "乳糖",
+   "カルメロース(CMC)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000341",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1001000341「第一三共胃腸薬グリーン錠」（2026/10/21版）。品名で照合。包装「50錠，90錠」に入力の内容量90錠を含む。"
+  }
+ },
+ {
+  "productId": "med-00133",
+  "additives": [
+   "乳糖水和物",
+   "トウモロコシデンプン",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ポビドン",
+   "D-ソルビトール",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "ヒドロキシプロピルセルロース"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002608",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGの項目に包装（内容量）の記載がなく、16包との一致は未確認。KEGG上の同名品はこの1件のみ。 KEGG J0601002608 包装: 記載なし。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00137",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "乳糖",
+   "ステアリン酸マグネシウム",
+   "l-メントール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002563",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601002563 包装: 10包，20包。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00138",
+  "additives": [
+   "カルメロースカルシウム(CMC-Ca)",
+   "無水ケイ酸",
+   "セルロース",
+   "乳糖",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002564",
+   "checkedOn": "2026-11-04",
+   "note": "「ガストール細粒」（J0601002563）とは別項目"
+  }
+ },
+ {
+  "productId": "med-00142",
+  "additives": [
+   "白糖",
+   "安息香酸ナトリウム",
+   "パラベン",
+   "セルロース",
+   "カルメロースナトリウム(CMC-Na)",
+   "ポビドン",
+   "l-メントール",
+   "香料",
+   "エタノール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002196",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGには液キャベコーワA／Gが別項目であり、名称完全一致の「液キャベコーワ」（50mL）を採用。 KEGG J0601002196 包装: 50mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00144",
+  "additives": [
+   "ケイヒ末",
+   "カルメロースカルシウム(CMC-Ca)",
+   "グリセリン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601003042",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGに「正露丸」が2件。製造販売元が大幸薬品のJ0601003042を採用（J0601003043はキョクトウ）。瓶・粒数はKEGGに記載なし"
+  }
+ },
+ {
+  "productId": "med-00145",
+  "additives": [
+   "バレイショデンプン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002967",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-00146",
+  "additives": [
+   "トウモロコシデンプン",
+   "アメ粉",
+   "カルメロースカルシウム(CMC-Ca)",
+   "タルク",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601002965",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601002965「ビオフェルミン下痢止め」（2026/10/21版）。品名で照合。包装「30錠」に入力の内容量30錠を含む。"
+  }
+ },
+ {
+  "productId": "med-00147",
+  "additives": [
+   "D-マンニトール",
+   "セルロース",
+   "クロスポビドン",
+   "トウモロコシデンプン",
+   "アラビアゴム",
+   "ステアリン酸マグネシウム",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "l-メントール",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000286",
+   "checkedOn": "2026-11-04",
+   "note": "「ストッパエル下痢止めEX」「小中学生用」とは別項目"
+  }
+ },
+ {
+  "productId": "med-00152",
+  "additives": [
+   "セルロース",
+   "アラビアゴム",
+   "プルラン",
+   "バレイショデンプン",
+   "乳糖",
+   "カルメロースカルシウム(CMC-Ca)",
+   "二酸化ケイ素",
+   "白糖",
+   "ゼラチン",
+   "タルク",
+   "炭酸カルシウム",
+   "ポリオキシエチレンポリオキシプロピレングリコール",
+   "酸化チタン",
+   "セラック",
+   "ヒマシ油",
+   "カルナウバロウ",
+   "サラシミツロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2401000042",
+   "checkedOn": "2026-11-04",
+   "note": "ゼラチン・セラック・サラシミツロウの記載あり。由来の記載なし。 KEGG J2401000042 包装: 12錠，36錠，84錠。品名と内容量で照合（KEGGにJANなし）。"
+  }
+ },
+ {
+  "productId": "med-00169",
+  "additives": [
+   "異性化糖",
+   "カラメル",
+   "安息香酸ナトリウム",
+   "ブチルパラベン",
+   "クエン酸ナトリウム水和物",
+   "香料",
+   "エタノール",
+   "プロピレングリコール",
+   "バニリン",
+   "エチルバニリン",
+   "pH調節剤2成分",
+   "アルコール0.1mL以下"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000028",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名「ヘパリーゼドリンクⅡ」50mL。添加物欄に「エタノール」と「アルコール0.1mL以下」の記載（そのまま記録）。「pH調節剤2成分」はKEGG表記のまま。"
+  }
+ },
+ {
+  "productId": "med-00177",
+  "additives": [
+   "グリセロリン酸カルシウム",
+   "ノイレチンカルシウム",
+   "バレイショデンプン",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001341",
+   "checkedOn": "2026-11-04",
+   "note": "散剤（1包690mg）。ノーシン錠・ホワイト等とは別項目"
+  }
+ },
+ {
+  "productId": "med-00179",
+  "additives": [
+   "ケイ酸アルミニウム",
+   "グリセロリン酸カルシウム",
+   "部分アルファー化デンプン",
+   "ヒドロキシプロピルセルロース",
+   "ポビドン",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001346",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601001346「ノーシンホワイト錠」（2026/10/21版）。品名で照合。包装「24錠，36錠」に入力の内容量36錠を含む。"
+  }
+ },
+ {
+  "productId": "med-00182",
+  "additives": [
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "無水ケイ酸",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ステアリン酸マグネシウム",
+   "カルナウバロウ",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "酸化チタン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001553",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601001553 包装: 24錠，48錠。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00185",
+  "additives": [
+   "ヒドロキシプロピルセルロース",
+   "カルメロースカルシウム(CMC-Ca)",
+   "無水ケイ酸",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ステアリン酸マグネシウム",
+   "ポリビニルアルコール・アクリル酸・メタクリル酸メチル共重合体",
+   "酸化チタン",
+   "タルク",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1502000016",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1502000016「ノーシンアイ頭痛薬」（2026/10/21版）。品名で照合。包装「24錠，48錠」に入力の内容量24錠を含む。"
+  }
+ },
+ {
+  "productId": "med-00186",
+  "additives": [
+   "カルメロースカルシウム(CMC-Ca)",
+   "ヒドロキシプロピルセルロース",
+   "無水ケイ酸",
+   "セルロース",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "タルク",
+   "酸化チタン",
+   "マクロゴール",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2101000137",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2101000137 包装: 24錠，48錠。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00191",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "ステアリン酸マグネシウム",
+   "タルク",
+   "酸化チタン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0704000011",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K0704000011「イブクイック頭痛薬」（2026/10/21版）。品名で照合。包装「20錠，40錠，60錠，84錠」に入力の内容量20錠を含む。「イブクイック頭痛薬DX」(K1512000011)とは別項目。"
+  }
+ },
+ {
+  "productId": "med-00193",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ポリビニルアルコール・アクリル酸・メタクリル酸メチル共重合体",
+   "タルク",
+   "ステアリン酸マグネシウム",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "酸化チタン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1406000029",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-00196",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "クロスポビドン",
+   "マクロゴール",
+   "ステアリン酸マグネシウム",
+   "タルク",
+   "酸化チタン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2408000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2408000007「イブスリーショットプレミアム」（2026/10/21版）。品名で照合。包装「30錠，60錠，90錠」に入力の内容量30錠を含む。"
+  }
+ },
+ {
+  "productId": "med-00199",
+  "additives": [
+   "乳糖",
+   "無水ケイ酸",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "タルク",
+   "トリアセチン",
+   "酸化チタン",
+   "三二酸化鉄",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000118",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2501000118 包装: 12錠，24錠。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00228",
+  "additives": [
+   "ポリソルベート80",
+   "水酸化カリウム",
+   "ゼラチン",
+   "コハク化ゼラチン",
+   "トウモロコシデンプン由来糖アルコール",
+   "クチナシ色素"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1503000036",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1503000036「リングルアイビー」（2026/10/21版）。品名で照合。包装「12カプセル，18カプセル，36カプセル」に入力の内容量12カプセルを含む。KEGGはカプセル本体の成分を分けて記載していない（添加物欄に一括）。ゼラチンの由来の記載なし。同名系の「リングルアイビーα200」「リングルアイビー錠α200」とは別項目。"
+  }
+ },
+ {
+  "productId": "med-00233",
+  "additives": [
+   "二酸化ケイ素",
+   "ヒドロキシプロピルセルロース",
+   "ケイ酸アルミニウム",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "酸化チタン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1502000002",
+   "checkedOn": "2026-11-04",
+   "note": "カプセルの「リングルアイビーα200」（K1604000009）とは別項目。錠剤のページを採用"
+  }
+ },
+ {
+  "productId": "med-00243",
+  "additives": [
+   "カルメロースカルシウム(CMC-Ca)",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ポビドン",
+   "ステアリン酸マグネシウム",
+   "結晶セルロース",
+   "トウモロコシデンプン",
+   "乳糖水和物",
+   "ヒドロキシプロピルセルロース"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001226",
+   "checkedOn": "2026-11-04",
+   "note": "「セデス・ハイ プロテクト」「セデス・ハイ G」とは別項目"
+  }
+ },
+ {
+  "productId": "med-00246",
+  "additives": [
+   "カルメロースカルシウム(CMC-Ca)",
+   "結晶セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0610000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0610000002「セデスV」（2026/10/21版）。品名で照合。包装の記載なし（品名一致の項目は1件）。"
+  }
+ },
+ {
+  "productId": "med-00274",
+  "additives": [
+   "セルロース",
+   "無水ケイ酸",
+   "メタケイ酸アルミン酸マグネシウム",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "デンプングリコール酸ナトリウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "タルク",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2103000008",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-00319",
+  "additives": [
+   "ヒドロキシプロピルセルロース",
+   "D-マンニトール",
+   "乳酸",
+   "ステアリン酸マグネシウム",
+   "ポリビニルアルコール(部分けん化物)",
+   "タルク",
+   "酸化チタン",
+   "グリセリン脂肪酸エステル",
+   "ラウリル硫酸ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000073",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1201000073「バファリンルナi」（2026/10/21版）。品名で照合。包装「20錠，40錠，60錠」に入力の内容量20錠を含む。"
+  }
+ },
+ {
+  "productId": "med-00323",
+  "additives": [
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "乳酸",
+   "D-マンニトール",
+   "リン酸二水素カリウム",
+   "二酸化ケイ素",
+   "ステアリン酸マグネシウム",
+   "ポリビニルアルコール(部分けん化物)",
+   "タルク",
+   "酸化チタン",
+   "グリセリン脂肪酸エステル",
+   "ラウリル硫酸ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000117",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2501000117「バファリンプレミアムDXクイック＋」（2026/10/21版）。品名で照合。包装「20錠，40錠，60錠」に入力の内容量40錠を含む。KEGG表記は「バファリンプレミアムDXクイック＋」（全角＋）。同名の「バファリンプレミアムDX」(J2101000116)とは別項目。"
+  }
+ },
+ {
+  "productId": "med-00520",
+  "additives": [
+   "二酸化ケイ素",
+   "ゼラチン",
+   "セルロース",
+   "白糖",
+   "ヒドロキシプロピルセルロース",
+   "エチルセルロース",
+   "グリセリン脂肪酸エステル",
+   "タルク",
+   "トウモロコシデンプン",
+   "メタクリル酸コポリマーL",
+   "ラウリル硫酸ナトリウム",
+   "没食子酸プロピル",
+   "リボフラビン",
+   "赤色3号",
+   "黄色5号",
+   "青色1号"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001704",
+   "checkedOn": "2026-11-04",
+   "note": "カプセル剤（KEGG特徴欄に「カプセル剤」）。添加物欄にゼラチンあり。カプセル本体の成分としての区別はKEGGに記載なし。由来の記載なし。 KEGG J0601001704 包装: 4カプセル，6カプセル，10カプセル。品名と内容量で照合（KEGGにJANなし）。"
+  }
+ },
+ {
+  "productId": "med-00522",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "D-マンニトール",
+   "ヒドロキシプロピルセルロース",
+   "デンプングリコール酸ナトリウム",
+   "ステアリン酸マグネシウム",
+   "三二酸化鉄",
+   "還元麦芽糖水アメ",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "青色1号"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2303000030",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名は「センパア Pro」"
+  }
+ },
+ {
+  "productId": "med-00553",
+  "additives": [
+   "リン酸水素カルシウム",
+   "乳糖",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2101000113",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-00571",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "メタケイ酸アルミン酸マグネシウム",
+   "ヒドロキシプロピルセルロース",
+   "デンプングリコール酸ナトリウム",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2209000011",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2209000011「ナロンm」（2026/10/21版）。品名で照合。包装「24錠」に入力の内容量24錠を含む。"
+  }
+ },
+ {
+  "productId": "med-00577",
+  "additives": [
+   "エチルセルロース",
+   "ラウリル硫酸ナトリウム",
+   "セタノール",
+   "トリアセチン",
+   "合成ヒドロタルサイト",
+   "D-マンニトール",
+   "トウモロコシデンプン",
+   "ヒドロキシプロピルセルロース",
+   "スクラロース",
+   "l-メントール",
+   "香料",
+   "デキストリン",
+   "バニリン",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000074",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1201000074 包装: 12錠。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00598",
+  "additives": [
+   "カラギーナン",
+   "トウモロコシデンプン",
+   "D-マンニトール",
+   "l-メントール",
+   "香料",
+   "三二酸化鉄",
+   "ジメチルポリシロキサン",
+   "ステビア抽出精製物",
+   "セルロース",
+   "ポビドン",
+   "無水ケイ酸"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1006000006",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-00614",
+  "additives": [
+   "D-ソルビトール",
+   "アセスルファムカリウム",
+   "スクラロース",
+   "安息香酸ナトリウム",
+   "クエン酸",
+   "クエン酸ナトリウム",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000161",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-00616",
+  "additives": [
+   "還元麦芽糖水アメ",
+   "トウモロコシデンプン",
+   "ヒドロキシプロピルセルロース",
+   "無水ケイ酸",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "ステアリン酸マグネシウム",
+   "香料",
+   "オクテニルコハク酸デンプンナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000159",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名は「センパア トラベル1」"
+  }
+ },
+ {
+  "productId": "med-00617",
+  "additives": [
+   "還元麦芽糖水アメ",
+   "トウモロコシデンプン",
+   "ヒドロキシプロピルセルロース",
+   "無水ケイ酸",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "ステアリン酸マグネシウム",
+   "香料",
+   "バニリン",
+   "エチルバニリン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000160",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-00619",
+  "additives": [
+   "エタノール",
+   "クエン酸",
+   "プロピレングリコール",
+   "l-メントール",
+   "香料",
+   "アセスルファムカリウム",
+   "イソマル",
+   "グリセリン脂肪酸エステル",
+   "銅クロロフィリンナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0905000029",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG上の販売会社はエーザイ（入力は高市製薬＝製造元と思われる）。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-00630",
+  "additives": [
+   "乳糖",
+   "バレイショデンプン",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1802000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG上の会社名は大木製薬（入力は日野薬品工業＝製造元と思われる）。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-00635",
+  "additives": [
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "D-マンニトール",
+   "無水ケイ酸",
+   "カラメル",
+   "オレンジ油",
+   "l-メントール",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "香料",
+   "ステアリン酸マグネシウム",
+   "炭酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000266",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-00650",
+  "additives": [
+   "タルク",
+   "トウモロコシデンプン",
+   "乳糖",
+   "ヒドロキシプロピルセルロース",
+   "酸化チタン",
+   "三二酸化鉄",
+   "ステアリン酸マグネシウム",
+   "セルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ポビドン",
+   "マクロゴール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001758",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-00651",
+  "additives": [
+   "トウモロコシデンプン",
+   "D-マンニトール",
+   "l-メントール",
+   "香料",
+   "三二酸化鉄",
+   "ジメチルポリシロキサン",
+   "精製ステビア抽出物",
+   "セルロース",
+   "ポビドン",
+   "無水ケイ酸"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001759",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG上の販売会社はエーザイ。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-00652",
+  "additives": [
+   "タルク",
+   "トウモロコシデンプン",
+   "乳糖",
+   "カルメロースカルシウム(CMC-Ca)",
+   "硬化油",
+   "酸化チタン",
+   "ステアリン酸カルシウム",
+   "セルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "無水ケイ酸"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001756",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-00660",
+  "additives": [
+   "ゼラチン",
+   "D-マンニトール",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "香料",
+   "トコフェロール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001738",
+   "checkedOn": "2026-11-04",
+   "note": "錠剤だがゼラチンが添加物に記載あり。由来の記載なし。 KEGG J0601001738 包装: 6錠。品名と内容量で照合（KEGGにJANなし）。"
+  }
+ },
+ {
+  "productId": "med-00717",
+  "additives": [
+   "白糖",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "dl-リンゴ酸",
+   "カラメル",
+   "安息香酸ナトリウム",
+   "パラベン",
+   "pH調節剤",
+   "香料",
+   "アルコール0.9mL以下"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2311000011",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG包装 30mL。添加物欄に「アルコール0.9mL以下」の記載あり（そのまま記録）。注意：KEGGの今の処方は有効成分が入力と違う（既存README注記：エレウテロコック乾燥エキス等あり、ビタミンB1硝酸塩・B12なし）。版違いの可能性。箱で確認を。"
+  }
+ },
+ {
+  "productId": "med-00723",
+  "additives": [
+   "クエン酸",
+   "dl-リンゴ酸",
+   "コハク酸",
+   "白糖",
+   "スクラロース",
+   "アセスルファムカリウム",
+   "安息香酸ナトリウム",
+   "パラベン",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "カラメル",
+   "pH調節剤",
+   "香料",
+   "グリセリン",
+   "プロピレングリコール",
+   "バニリン",
+   "l-メントール",
+   "エチルバニリン",
+   "アルコール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1503000028",
+   "checkedOn": "2026-11-04",
+   "note": "添加物欄に「アルコール0.5mL以下」と記載。 「香料（グリセリン、プロピレングリコール、バニリン、l-メントール、エチルバニリンを含む）」として記載された香料の成分を、個別の要素として入れた。 KEGG K1503000028 包装: 1瓶，3瓶，10瓶。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00764",
+  "additives": [
+   "白糖",
+   "D-ソルビトール",
+   "精製ステビア抽出物",
+   "ポビドン",
+   "安息香酸ナトリウム",
+   "クエン酸",
+   "クエン酸ナトリウム",
+   "香料",
+   "グリセリン",
+   "アルコール",
+   "バニリン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0701000705",
+   "checkedOn": "2026-11-04",
+   "note": "添加物欄に「アルコール0.2mL以下」と記載。 KEGG J0701000705 包装: 1本。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-00781",
+  "additives": [
+   "果糖",
+   "クエン酸",
+   "没食子酸プロピル",
+   "アルコール",
+   "安息香酸ナトリウム",
+   "pH調節剤",
+   "バニリン",
+   "トウモロコシデンプン",
+   "香料",
+   "アルコール0.2mL以下"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004669",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、10本包装あり。添加物欄に「アルコール」と「アルコール0.2mL以下」の両方の記載（そのまま記録）。"
+  }
+ },
+ {
+  "productId": "med-00998",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010078",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-01061",
+  "additives": [
+   "軽質無水ケイ酸",
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010891",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-01123",
+  "additives": [
+   "タルク",
+   "トウモロコシデンプン",
+   "部分アルファー化デンプン",
+   "酸化チタン",
+   "三二酸化鉄",
+   "ステアリン酸マグネシウム",
+   "セルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ポビドン",
+   "マクロゴール",
+   "リン酸水素カルシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1001000005",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、56錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-01148",
+  "additives": [
+   "ヒドロキシプロピルセルロース",
+   "トウモロコシデンプン",
+   "クロスポビドン",
+   "セルロース",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "タルク",
+   "白糖",
+   "炭酸カルシウム",
+   "ゼラチン",
+   "アラビアゴム",
+   "ポリオキシエチレンポリオキシプロピレングリコール",
+   "酸化チタン",
+   "リン酸水素ナトリウム",
+   "黄色5号",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0607000433",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、90錠包装あり（αプレミアム・α錠とは別項目）。添加物にゼラチンあり。由来の記載はKEGGにない。錠剤でカプセルではない。"
+  }
+ },
+ {
+  "productId": "med-01151",
+  "additives": [
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "クロスポビドン",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "タルク",
+   "アラビアゴム",
+   "炭酸カルシウム",
+   "白糖",
+   "ゼラチン",
+   "ポリオキシエチレンポリオキシプロピレングリコール",
+   "リン酸水素ナトリウム",
+   "酸化チタン",
+   "黄色5号",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2104000004",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（キューピーコーワゴールドαプレミアム）。ゼラチンを含むが由来の記載なし（錠剤の糖衣等の添加物、カプセル剤ではない）。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-01312",
+  "additives": [
+   "二酸化ケイ素",
+   "ケイ酸アルミニウム",
+   "エリスリトール",
+   "ポリエチレングリコール",
+   "ヒドロキシプロピルセルロース",
+   "無水ケイ酸",
+   "D-マンニトール",
+   "dl-リンゴ酸",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004971",
+   "checkedOn": "2026-11-04",
+   "note": "分量調査（README）で、KEGGの今の処方が入力の有効成分と違う（エレウテロコック乾燥エキス・ガンマ-オリザノールあり等）と記録済み。添加物も処方改定後の可能性があり、箱で確認を。 KEGG J0601004971 包装: 8包，16包。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-01348",
+  "additives": [
+   "ステアリルアルコール",
+   "ミリスチン酸オクチルドデシル",
+   "ハードファット",
+   "ステアリン酸ポリオキシル",
+   "ジメチルポリシロキサン",
+   "カルボキシビニルポリマー",
+   "エデト酸ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1301000035",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名・15gで一致。"
+  }
+ },
+ {
+  "productId": "med-01369",
+  "additives": [
+   "2-エチルヘキサン酸セチル",
+   "ジエタノールアミン",
+   "自己乳化型モノステアリン酸グリセリン",
+   "ジメチルポリシロキサン",
+   "セトステアリルアルコール",
+   "パラベン",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "プロピレングリコール",
+   "ベヘニルアルコール",
+   "ポリオキシエチレンベヘニルエーテル",
+   "ミリスチン酸イソプロピル"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000021",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名・18gで一致。"
+  }
+ },
+ {
+  "productId": "med-01521",
+  "additives": [
+   "セタノール",
+   "ステアリルアルコール",
+   "パルミチン酸セチル",
+   "ミリスチン酸イソプロピル",
+   "モノステアリン酸ソルビタン",
+   "ポリソルベート60",
+   "ベンジルアルコール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007391",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名・10gで一致。"
+  }
+ },
+ {
+  "productId": "med-01536",
+  "additives": [
+   "ポビドン",
+   "ヒドロキシプロピルセルロース",
+   "タンニン酸",
+   "クエン酸",
+   "マクロゴール",
+   "酸化チタン",
+   "赤色102号",
+   "エチルセルロース"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1907000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-01540",
+  "additives": [
+   "キシリトール",
+   "カルボキシビニルポリマー",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ゲル化炭化水素",
+   "香料",
+   "l-メントール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000446",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1401000446「口内炎軟膏大正クイックケア」（2026/10/21版）。品名で照合。包装「5g」に入力の内容量5gを含む。"
+  }
+ },
+ {
+  "productId": "med-01541",
+  "additives": [
+   "ポリアクリル酸",
+   "クエン酸トリエチル",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "エチルセルロース",
+   "ヒマシ油",
+   "酸化チタン",
+   "赤色102号"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1403000013",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1403000013 包装: 10枚，50枚。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-01555",
+  "additives": [
+   "グリセリン",
+   "ゲル化炭化水素",
+   "ポリアクリル酸ナトリウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "硬化油",
+   "カルメロースナトリウム(CMC-Na)",
+   "l-メントール",
+   "サッカリンナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1608000008",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-01559",
+  "additives": [
+   "ラウロマクロゴール",
+   "ポリソルベート80",
+   "硫酸アルミニウムカリウム",
+   "マクロゴール",
+   "グリセリン",
+   "オリブ油",
+   "ステアリルアルコール",
+   "サラシミツロウ",
+   "ワセリン",
+   "自己乳化型ステアリン酸グリセリル",
+   "香料",
+   "精製水"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601005963",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-01624",
+  "additives": [
+   "エデト酸ナトリウム",
+   "オクチルドデカノール",
+   "カルボキシビニルポリマー",
+   "ステアリルアルコール",
+   "ステアリン酸",
+   "D-ソルビトール",
+   "トリイソオクタン酸グリセリン",
+   "フィトステロール",
+   "プロピレングリコール",
+   "ベヘニルアルコール",
+   "ベヘン酸",
+   "ステアリン酸グリセリン",
+   "ポリオキシエチレンベヘニルエーテル",
+   "ステアリン酸マクロゴール",
+   "乳酸",
+   "L-乳酸ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2201000013",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2201000013「オデキュアEX」（2026/10/21版）。品名で照合。包装「12g」に入力の内容量12gを含む。"
+  }
+ },
+ {
+  "productId": "med-01633",
+  "additives": [
+   "ステアリルアルコール",
+   "ポリソルベート60",
+   "エデト酸ナトリウム",
+   "パラベン",
+   "ジイソプロパノールアミン",
+   "オクチルドデカノール",
+   "1,3-ブチレングリコール",
+   "カルボキシビニルポリマー",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0610000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0610000009「ペアアクネクリームW」（2026/10/21版）。品名で照合。包装「14g，24g」に入力の内容量14gを含む。"
+  }
+ },
+ {
+  "productId": "med-01754",
+  "additives": [
+   "カルボキシビニルポリマー",
+   "ステアリン酸グリセリン",
+   "ステアリン酸ソルビタン",
+   "ポリソルベート60",
+   "ポリオキシエチレンセチルエーテル",
+   "エデト酸ナトリウム",
+   "亜硫酸水素ナトリウム",
+   "水酸化ナトリウム",
+   "パラベン",
+   "グリセリン",
+   "ミリスチン酸オクチルドデシル",
+   "アジピン酸ジイソプロピル"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000043",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-01755",
+  "additives": [
+   "カルボキシビニルポリマー",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "エデト酸ナトリウム",
+   "亜硫酸水素ナトリウム",
+   "香料",
+   "ジイソプロパノールアミン",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "プロピレングリコール",
+   "ベンジルアルコール",
+   "アジピン酸ジイソプロピル",
+   "イソプロパノール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000042",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-01812",
+  "additives": [
+   "ポリビニルアルコール(部分けん化物)",
+   "ヒマシ油",
+   "ゼラチン",
+   "カオリン",
+   "l-メントール",
+   "尿素",
+   "エデト酸ナトリウム",
+   "グリセリン",
+   "カルメロースナトリウム(CMC-Na)",
+   "ポリアクリル酸部分中和物",
+   "D-ソルビトール",
+   "酒石酸",
+   "酸化チタン",
+   "ジヒドロキシアルミニウムアミノアセテート",
+   "メタリン酸ナトリウム",
+   "ポリソルベート80",
+   "アジピン酸ジイソプロピル",
+   "マクロゴール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012860",
+   "checkedOn": "2026-11-04",
+   "note": "ゼラチンを含むが由来の記載なし（パップ剤の膏体）。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-01942",
+  "additives": [
+   "脂環族飽和炭化水素樹脂",
+   "スチレン・イソプレン・スチレンブロック共重合体",
+   "流動パラフィン",
+   "N-メチル-2-ピロリドン",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "l-メントール",
+   "その他2成分"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1301000189",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、7枚包装あり（製造販売元 同仁医薬化工、販売 Haleonジャパン）。「その他2成分」はKEGG表記のまま（具体名なし）。"
+  }
+ },
+ {
+  "productId": "med-01982",
+  "additives": [
+   "エデト酸ナトリウム水和物",
+   "脂環族飽和炭化水素樹脂",
+   "スチレン・イソプレン・スチレンブロック共重合体",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "ポリイソブチレン",
+   "流動パラフィン",
+   "その他2成分"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0901000260",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGは「その他2成分」とだけ記載し、名称は非開示。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-01997",
+  "additives": [
+   "スチレン・イソプレン・スチレンブロック共重合体",
+   "テルペン樹脂",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "ポリイソブチレン",
+   "流動パラフィン",
+   "その他2成分"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000026",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、7枚包装あり。「その他2成分」はKEGG表記のまま（具体名なし）。"
+  }
+ },
+ {
+  "productId": "med-02048",
+  "additives": [
+   "スチレン・イソプレン・スチレンブロックコポリマー",
+   "ポリイソブチレン",
+   "水添ロジングリセリンエステル",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "l-メントール",
+   "流動パラフィン",
+   "その他2成分"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1607000001",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、7枚包装あり（製造販売元 リードケミカル、販売 第一三共ヘルスケア）。「その他2成分」はKEGG表記のまま（具体名なし）。"
+  }
+ },
+ {
+  "productId": "med-02713",
+  "additives": [
+   "アクリル酸デンプン",
+   "酸化チタン",
+   "水添ロジングリセリンエステル",
+   "スチレン・イソプレン・スチレンブロック共重合体",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "ポリイソブチレン",
+   "流動パラフィン",
+   "その他1成分"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006591",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGは「その他1成分」とだけ記載し、名称は非開示。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-02715",
+  "additives": [
+   "アクリル酸デンプン",
+   "ケイ酸アルミニウム",
+   "水添ロジングリセリンエステル",
+   "スチレン・イソプレン・スチレンブロック共重合体",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "ポリイソブチレン",
+   "流動パラフィン",
+   "その他1成分"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006590",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGは「その他1成分」とだけ記載し、名称は非開示。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-02825",
+  "additives": [
+   "アクリル酸デンプン",
+   "香料",
+   "酸化亜鉛",
+   "酸化チタン",
+   "水添ロジングリセリンエステル",
+   "生ゴム",
+   "二酸化ケイ素",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "ポリイソブチレン",
+   "ポリブテン",
+   "その他1成分"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601006593",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601006593「サロンパスAe」（2026/10/21版）。品名で照合。包装「140枚，240枚，中判40枚，大判12枚」に入力の内容量140枚を含む。KEGG記載のとおり「その他1成分」を含めて記録（成分名の開示なし）。穴あきサロンパスAe(J0601007071)とは別項目。"
+  }
+ },
+ {
+  "productId": "med-02924",
+  "additives": [
+   "プロピレングリコール",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "サッカリンナトリウム",
+   "リン酸二水素ナトリウム",
+   "リン酸水素ナトリウム",
+   "エタノール",
+   "l-メントール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2102000022",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2102000022 包装: 15mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-02925",
+  "additives": [
+   "D-ソルビトール",
+   "プロピレングリコール",
+   "グリセリン",
+   "リン酸二水素ナトリウム",
+   "リン酸水素ナトリウム",
+   "エタノール",
+   "l-メントール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2202000008",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2202000008 包装: 15mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-02927",
+  "additives": [
+   "プロピレングリコール",
+   "グリセリン",
+   "ヒドロキシエチルセルロース",
+   "サッカリンナトリウム",
+   "エタノール",
+   "リン酸水素ナトリウム",
+   "クエン酸",
+   "クエン酸ナトリウム",
+   "香料",
+   "l-メントール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000288",
+   "checkedOn": "2026-11-04",
+   "note": "「香料（l-メントールを含む）」として記載された香料の成分を、個別の要素として入れた。 KEGG J1201000288 包装: 25mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-02933",
+  "additives": [
+   "l-メントール",
+   "ベンゼトニウム塩化物",
+   "グリセリン",
+   "プロピレングリコール",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "カルボキシビニルポリマー",
+   "エデト酸ナトリウム",
+   "ステビア抽出物",
+   "塩化ナトリウム",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000400",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-02934",
+  "additives": [
+   "l-メントール",
+   "ベンゼトニウム塩化物",
+   "グリセリン",
+   "プロピレングリコール",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "カルボキシビニルポリマー",
+   "エデト酸ナトリウム",
+   "ステビア抽出物",
+   "塩化ナトリウム",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000252",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGの内容量は25mL。分量調査では「20mLの容器だがKEGGは100g中」とのメモあり。箱で確認を。 KEGG J1201000252 包装: 25mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-02948",
+  "additives": [
+   "D-ソルビトール液",
+   "サッカリンナトリウム水和物",
+   "l-メントール",
+   "グリセリン",
+   "プロピレングリコール",
+   "リン酸水素ナトリウム水和物",
+   "無水リン酸二水素ナトリウム",
+   "香料",
+   "安息香酸ベンジル",
+   "エタノール",
+   "ミツロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2607000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2607000009 包装: 30mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-02953",
+  "additives": [
+   "安息香酸ベンジル",
+   "エタノール",
+   "グリセリン",
+   "サッカリンナトリウム",
+   "D-ソルビトール",
+   "プロピレングリコール",
+   "ミツロウ",
+   "l-メントール",
+   "リン酸水素ナトリウム",
+   "香料",
+   "リン酸二水素ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1608000014",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-02969",
+  "additives": [
+   "クエン酸ナトリウム",
+   "グリセリン",
+   "l-メントール",
+   "エタノール",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0901000069",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0901000069 包装: 30mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-02991",
+  "additives": [
+   "セチルピリジニウム塩化物",
+   "グリセリン",
+   "還元麦芽糖水アメ",
+   "クエン酸",
+   "クエン酸ナトリウム",
+   "水酸化ナトリウム",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "香料",
+   "エタノール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2312000004",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGの添加物欄にセチルピリジニウム塩化物が記載されている（有効成分ではなく添加物として）。 KEGG K2312000004 包装: 30mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-03011",
+  "additives": [
+   "グリセリン",
+   "ゲル化炭化水素",
+   "ポリアクリル酸ナトリウム",
+   "メタケイ酸アルミン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "l-メントール",
+   "サッカリンナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1404000001",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-03046",
+  "additives": [
+   "カルボキシビニルポリマー",
+   "無水ケイ酸",
+   "ステアリン酸グリセリン",
+   "ハードファット"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://brand.taisho.co.jp/preser/ace/",
+   "checkedOn": "2026-11-04",
+   "note": "メーカー公式ページの坐剤Tの欄（内容量10個/30個、1個1.65g）。同じページの注入軟膏T・軟膏の添加物と取り違えないこと。KEGGは未確認。"
+  }
+ },
+ {
+  "productId": "med-03058",
+  "additives": [
+   "マクロゴール",
+   "ワセリン",
+   "トウモロコシデンプン",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "パラベン",
+   "エデト酸ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012933",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-03160",
+  "additives": [
+   "流動パラフィン",
+   "ワセリン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000260",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1001000260「ベトネベートN軟膏AS」（2026/10/21版）。品名で照合。包装「5g，10g」に入力の内容量5gを含む。"
+  }
+ },
+ {
+  "productId": "med-03162",
+  "additives": [
+   "エデト酸ナトリウム",
+   "カルボキシビニルポリマー",
+   "ステアリルアルコール",
+   "トリイソオクタン酸グリセリン",
+   "1,3-ブチレングリコール",
+   "ポリソルベート60",
+   "ジイソプロパノールアミン",
+   "リン酸水素ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000169",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0801000169「ムヒアルファEX」（2026/10/21版）。品名で照合。包装「15g」に入力の内容量15gを含む。「液体ムヒアルファEX」(K0705000044)とは別項目。"
+  }
+ },
+ {
+  "productId": "med-03167",
+  "additives": [
+   "ジブチルヒドロキシトルエン(BHT)",
+   "クエン酸",
+   "クエン酸ナトリウム",
+   "エタノール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0801000168",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-03169",
+  "additives": [
+   "エデト酸ナトリウム",
+   "アジピン酸ジイソプロピル",
+   "カルボキシビニルポリマー",
+   "ステアリルアルコール",
+   "トリイソオクタン酸グリセリン",
+   "1,3-ブチレングリコール",
+   "ベヘニルアルコール",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "ポリオキシエチレンベヘニルエーテル",
+   "ステアリン酸グリセリン",
+   "ジイソプロパノールアミン",
+   "リン酸水素ナトリウム",
+   "ポリプロピレングリコール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000098",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-03539",
+  "additives": [
+   "流動パラフィン",
+   "白色ワセリン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000202",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2001000202「リンデロンVs軟膏」（2026/10/21版）。品名で照合。包装の記載なし（品名一致の項目は1件）。"
+  }
+ },
+ {
+  "productId": "med-03562",
+  "additives": [
+   "セルロース",
+   "カルメロースカルシウム(CMC-Ca)",
+   "部分アルファー化デンプン",
+   "乳糖",
+   "ポビドン",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "酸化チタン",
+   "無水ケイ酸",
+   "三二酸化鉄",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601005881",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601005881 包装: 75錠，120錠。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-03563",
+  "additives": [
+   "乳糖",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "炭酸カルシウム",
+   "タルク",
+   "白糖",
+   "アラビアゴム",
+   "ゼラチン",
+   "リン酸水素ナトリウム",
+   "酸化チタン",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601005882",
+   "checkedOn": "2026-11-04",
+   "note": "ゼラチンの記載あり。由来の記載なし。 KEGG J0601005882 包装: 80錠，120錠。品名と内容量で照合（KEGGにJANなし）。"
+  }
+ },
+ {
+  "productId": "med-03564",
+  "additives": [
+   "乳糖",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "タルク",
+   "酸化チタン",
+   "三二酸化鉄",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2309000002 包装: 27錠。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-03936",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000082",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-03986",
+  "additives": [
+   "軽質無水ケイ酸",
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000290",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-04058",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601009675",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-04104",
+  "additives": [
+   "メタケイ酸アルミン酸マグネシウム",
+   "無水ケイ酸",
+   "バレイショデンプン",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "硬化油"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010002",
+   "checkedOn": "2026-11-04",
+   "note": "硬化油の記載あり（原料油脂の記載なし）"
+  }
+ },
+ {
+  "productId": "med-04107",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2301000198",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-04159",
+  "additives": [
+   "乳糖",
+   "ポビドン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010636",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-04210",
+  "additives": [
+   "軽質無水ケイ酸",
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010604",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-04221",
+  "additives": [
+   "メタケイ酸アルミン酸マグネシウム",
+   "バレイショデンプン",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "酸化チタン",
+   "タルク",
+   "黄色三二酸化鉄",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2212000009",
+   "checkedOn": "2026-11-04",
+   "note": "「満量Ⅱ」「新・満量」とは別項目"
+  }
+ },
+ {
+  "productId": "med-04276",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2301000191",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-04318",
+  "additives": [
+   "トウモロコシデンプン",
+   "部分アルファー化デンプン",
+   "無水ケイ酸",
+   "ヒドロキシプロピルセルロース",
+   "クロスポビドン",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "酸化チタン",
+   "タルク",
+   "クエン酸トリエチル",
+   "黄色5号",
+   "三二酸化鉄",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000106",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、70錠包装あり（製造販売元 佐藤薬品工業、販売 第一三共ヘルスケア）。"
+  }
+ },
+ {
+  "productId": "med-04323",
+  "additives": [
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "セルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "エリスリトール",
+   "マクロゴール",
+   "酸化チタン",
+   "アラビアゴム",
+   "タルク"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004218",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、40錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-04341",
+  "additives": [
+   "サリチル酸メチル",
+   "テレビン油",
+   "酸化チタン",
+   "黄色ワセリン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0904000011",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-04370",
+  "additives": [
+   "ワセリン",
+   "流動パラフィン",
+   "セタノール",
+   "ステアリルアルコール",
+   "グリセリン",
+   "ミリスチン酸オクチルドデシル",
+   "カルボキシビニルポリマー",
+   "キサンタンガム",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "ポリソルベート60",
+   "ステアリン酸ソルビタン",
+   "エデト酸ナトリウム",
+   "パラベン",
+   "クエン酸",
+   "水酸化ナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007124",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601007124 包装: 30g。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-04371",
+  "additives": [
+   "無水ケイ酸",
+   "ヒドロキシエチルセルロース",
+   "セタノール",
+   "ステアリン酸",
+   "ミリスチン酸オクチルドデシル",
+   "流動パラフィン",
+   "ジメチルポリシロキサン",
+   "ステアリン酸ポリオキシル",
+   "ポリソルベート20",
+   "オレイン酸ソルビタン",
+   "パラベン",
+   "クエン酸",
+   "香料",
+   "エタノール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000024",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1001000024 包装: 40g。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-04595",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "乳酸カルシウム",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "D-マンニトール",
+   "ジメチルポリシロキサン",
+   "二酸化ケイ素",
+   "ステアリン酸カルシウム",
+   "タルク",
+   "酸化チタン",
+   "トウモロコシデンプン",
+   "酒石酸",
+   "ポリビニルアルコール・アクリル酸・メタクリル酸メチル共重合体"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2003000001",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、180錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-04596",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "乳酸カルシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ヒドロキシプロピルセルロース",
+   "マクロゴール",
+   "ステアリン酸カルシウム",
+   "タルク",
+   "酸化チタン",
+   "トウモロコシデンプン",
+   "酒石酸",
+   "ジメチルポリシロキサン",
+   "二酸化ケイ素",
+   "ポリビニルアルコール・アクリル酸・メタクリル酸メチル共重合体"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2503000003",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGには旧品「ハイチオールCプラス2」が別項目。名称一致の「ハイチオールCプラスEX」を採用。 KEGG K2503000003 包装: 40錠，120錠，240錠，360錠。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-04780",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物",
+   "ショ糖脂肪酸エステル"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601009351",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-04810",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010106",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-05011",
+  "additives": [
+   "メタケイ酸アルミン酸マグネシウム",
+   "白糖",
+   "トウモロコシデンプン",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "セルロース",
+   "タルク",
+   "アンモニオアルキルメタクリレートコポリマー",
+   "ステアリルアルコール",
+   "トリオレイン酸ソルビタン",
+   "黄色5号",
+   "ゼラチン",
+   "ラウリル硫酸ナトリウム"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1501000206「パブロン鼻炎カプセルSα小児用」（2026/10/21版）。品名で照合。包装「12カプセル」に入力の内容量12カプセルを含む。KEGGはカプセル本体の成分を分けて記載していない（添加物欄に一括）。ゼラチンの由来の記載なし。ゼラチンを含む。"
+  }
+ },
+ {
+  "productId": "med-05074",
+  "additives": [
+   "セルロース",
+   "カルメロースナトリウム(CMC-Na)",
+   "プロピレングリコール",
+   "グリセリン",
+   "ポリソルベート80",
+   "ベンザルコニウム塩化物",
+   "クエン酸",
+   "香料",
+   "l-メントール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1611000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGには「ナザールαAR0.1％C」が別項目。Cなしの〈季節性アレルギー専用〉を採用。 「香料（l-メントールを含む）」として記載された香料の成分を、個別の要素として入れた。 KEGG K1611000009 包装: 10mL。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-05086",
+  "additives": [
+   "果糖",
+   "ベンザルコニウム塩化物",
+   "エタノール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1111000005",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-05107",
+  "additives": [
+   "グリセリン脂肪酸エステル",
+   "ポリソルベート60",
+   "ソルビタンセスキオレイン酸エステル",
+   "中鎖脂肪酸トリグリセリド",
+   "ゼラチン",
+   "グリセリン",
+   "酸化チタン",
+   "パラベン",
+   "ポリソルベート80"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008190",
+   "checkedOn": "2026-11-04",
+   "note": "ゼラチンの記載あり（ソフトカプセル）。由来の記載なし"
+  }
+ },
+ {
+  "productId": "med-05114",
+  "additives": [
+   "エリスリトール",
+   "D-マンニトール",
+   "ヒドロキシプロピルセルロース",
+   "三二酸化鉄",
+   "青色2号",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "サッカリンナトリウム",
+   "サッカリン",
+   "香料",
+   "l-メントール",
+   "無水ケイ酸",
+   "その他1成分"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1706000027",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG表記は「香料 l-メントール を含む」（香料にl-メントールを含むと読める）。「その他1成分」と記載あり（成分名不明）"
+  }
+ },
+ {
+  "productId": "med-05149",
+  "additives": [
+   "D-マンニトール",
+   "酒石酸",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "クロスポビドン",
+   "ステアリン酸マグネシウム",
+   "メタケイ酸アルミン酸マグネシウム",
+   "l-メントール",
+   "スクラロース",
+   "ハッカ油",
+   "レモン油",
+   "オレンジ油"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000252",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名は「アルガード クイックチュアブル」"
+  }
+ },
+ {
+  "productId": "med-05202",
+  "additives": [
+   "結晶セルロース",
+   "部分アルファー化デンプン",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ステアリン酸マグネシウム",
+   "軽質無水ケイ酸",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ポビドン",
+   "酸化チタン",
+   "マクロゴール400",
+   "三二酸化鉄",
+   "黄色三二酸化鉄"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1710000019",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1710000019「アレグラFXジュニア」（2026/10/21版）。品名で照合。包装「16錠」に入力の内容量16錠を含む。"
+  }
+ },
+ {
+  "productId": "med-05216",
+  "additives": [
+   "リン酸二水素カリウム",
+   "リン酸水素二カリウム",
+   "クエン酸",
+   "塩化ナトリウム",
+   "香料",
+   "アルコール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008320",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG表記は「香料 アルコール を含む」（香料にアルコールを含むと読める）。KEGG検索ではナザールスプレーは1項目のみ（J0601008320）"
+  }
+ },
+ {
+  "productId": "med-05220",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "ベンザルコニウム塩化物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1101000048",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05221",
+  "additives": [
+   "マクロゴール",
+   "リン酸二水素カリウム",
+   "リン酸水素二カリウム",
+   "塩化ナトリウム",
+   "パラベン",
+   "クエン酸",
+   "香料",
+   "フェニルエチルアルコール",
+   "ベンジルアルコール",
+   "ポリソルベート20"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000019",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGは「香料」の下に字下げで「フェニルエチルアルコール、ベンジルアルコール、ポリソルベート20 を含む」と記載（香料の成分）。配列では香料の後に並べ、「を含む」は省いた。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-05222",
+  "additives": [
+   "マクロゴール",
+   "リン酸二水素カリウム",
+   "リン酸水素二カリウム",
+   "塩化ナトリウム",
+   "パラベン",
+   "クエン酸",
+   "香料",
+   "フェニルエチルアルコール",
+   "ベンジルアルコール",
+   "ポリソルベート20",
+   "l-メントール",
+   "アルコール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2309000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGは「香料」の下に字下げで「フェニルエチルアルコール、ベンジルアルコール、ポリソルベート20、l-メントール、アルコール を含む」と記載（香料の成分）。配列では香料の後に並べ、「を含む」は省いた。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-05223",
+  "additives": [
+   "等張化剤",
+   "パラベン",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1103000031",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-05231",
+  "additives": [
+   "グリセリン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008322",
+   "checkedOn": "2026-11-04",
+   "note": null
+  }
+ },
+ {
+  "productId": "med-05239",
+  "additives": [
+   "グリセリン",
+   "エタノール",
+   "pH調節剤",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1801000132",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（KEGGにJAN・内容量の記載なし、品名で突き合わせ）"
+  }
+ },
+ {
+  "productId": "med-05276",
+  "additives": [
+   "リン酸水素Na",
+   "リン酸二水素Na",
+   "等張化剤",
+   "クロロブタノール",
+   "エタノール",
+   "l-メントール",
+   "ハッカ油",
+   "ポリソルベート80",
+   "グリセリン",
+   "CMC-Na"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-cool/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG未取得のためメーカー公式（ロート）の「添加物として…を含有する」記載から。等張化剤は名称でなく区分名のまま。容量15mLを公式ページで確認"
+  }
+ },
+ {
+  "productId": "med-05277",
+  "additives": [
+   "エデト酸Na",
+   "クロロブタノール",
+   "エタノール",
+   "リン酸水素Na",
+   "リン酸二水素Na",
+   "l-メントール",
+   "ポリソルベート80",
+   "グリセリン",
+   "CMC-Na",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "メーカー公式",
+   "url": "https://jp.rohto.com/rohto-alguard/nose-spray-st/",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG検索で該当項目なし。ロート製薬公式ページの「※添加物として、…を含有する。」を採用。エタノールの記載あり。内容量15mL一致"
+  }
+ },
+ {
+  "productId": "med-05338",
+  "additives": [
+   "ヒドロキシプロピルセルロース",
+   "乳糖"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0701000784",
+   "checkedOn": "2026-11-04",
+   "note": "KEGGの項目に包装（内容量）の記載がなく、45包との一致は未確認。KEGG上の「クラシエ」漢方葛根湯加川きゅう辛夷エキス「顆粒」はこの1件のみ（錠は別項目）。 KEGG J0701000784 包装: 記載なし。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-05349",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008881",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、20包包装あり。"
+  }
+ },
+ {
+  "productId": "med-05450",
+  "additives": [
+   "セルロース",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "マクロゴール",
+   "酸化チタン",
+   "白糖",
+   "ポリビニルアルコール(部分けん化物)",
+   "タルク",
+   "炭酸カルシウム",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2101000050",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、30錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-05476",
+  "additives": [
+   "塩化カルシウム",
+   "安息香酸ナトリウム",
+   "パラベン",
+   "アルコール",
+   "カラメル",
+   "白糖",
+   "サッカリンナトリウム",
+   "クエン酸",
+   "pH調節剤",
+   "香料",
+   "バニリン",
+   "エチルバニリン",
+   "グリセリン",
+   "ゼラチン"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012515",
+   "checkedOn": "2026-11-04",
+   "note": "アルコールの記載あり。KEGG表記は「…香料 バニリン エチルバニリン グリセリン ゼラチン を含む」で、どの語が「を含む」に係るか（香料の中の成分か）はKEGGの表示からは判別できない。ゼラチンの由来の記載なし"
+  }
+ },
+ {
+  "productId": "med-05591",
+  "additives": [
+   "ポリオキシエチレン硬化ヒマシ油",
+   "D-マンニトール",
+   "セルロース",
+   "乳糖",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ヒドロキシプロピルセルロース",
+   "無水ケイ酸",
+   "タルク",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ポリビニルアルコール(部分けん化物)",
+   "酸化チタン",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2201000106",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、12錠包装あり（製造販売元 佐藤薬品工業）。"
+  }
+ },
+ {
+  "productId": "med-05594",
+  "additives": [
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "トウモロコシデンプン",
+   "無水ケイ酸",
+   "ステアリン酸マグネシウム",
+   "フマル酸",
+   "ステアリン酸",
+   "ポリビニルアセタールジエチルアミノアセテート",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "タルク",
+   "酸化チタン",
+   "マクロゴール",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1701000017",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、12錠包装あり（製造販売元 滋賀県製薬）。"
+  }
+ },
+ {
+  "productId": "med-05596",
+  "additives": [
+   "ポリオキシエチレン硬化ヒマシ油",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "D-マンニトール",
+   "セルロース",
+   "ヒドロキシプロピルセルロース",
+   "無水ケイ酸",
+   "タルク",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ポリビニルアルコール(部分けん化物)",
+   "クエン酸トリエチル",
+   "酸化チタン",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2201000101",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、36錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-05598",
+  "additives": [
+   "ポリオキシエチレン硬化ヒマシ油",
+   "D-マンニトール",
+   "セルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ヒドロキシプロピルセルロース",
+   "無水ケイ酸",
+   "タルク",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ポリビニルアルコール(部分けん化物)",
+   "クエン酸トリエチル",
+   "酸化チタン",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2201000100",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、18錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-05599",
+  "additives": [
+   "D-マンニトール",
+   "セルロース",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ヒドロキシプロピルセルロース",
+   "タルク",
+   "無水ケイ酸",
+   "ポリビニルアルコール(部分けん化物)",
+   "クエン酸トリエチル",
+   "酸化チタン",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000103",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、24錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-05639",
+  "additives": [
+   "エタノール",
+   "白糖",
+   "カラメル",
+   "安息香酸",
+   "水酸化ナトリウム",
+   "安息香酸ベンジル",
+   "エチルバニリン",
+   "グリセリン",
+   "バニリン",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2401000138",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2401000138「メジコンせき止め液Pro」（2026/10/21版）。品名で照合。包装の記載なし（品名一致の項目は1件）。エタノールを含む。"
+  }
+ },
+ {
+  "productId": "med-05751",
+  "additives": [
+   "乳糖",
+   "セルロース",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ヒドロキシプロピルセルロース",
+   "エチルセルロース",
+   "グリセリン脂肪酸エステル",
+   "タルク",
+   "ゼラチン",
+   "赤色3号",
+   "青色1号",
+   "ラウリル硫酸ナトリウム"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1101000267",
+   "checkedOn": "2026-11-04",
+   "note": "ゼラチンの記載あり（カプセル剤。カプセル本体かどうかの区別はKEGGに記載なし）。由来の記載なし。製造販売元は佐藤薬品工業（株）と表示（販売は第一三共ヘルスケア）"
+  }
+ },
+ {
+  "productId": "med-05882",
+  "additives": [
+   "セルロース",
+   "D-マンニトール",
+   "バレイショデンプン",
+   "無水ケイ酸",
+   "メタケイ酸アルミン酸マグネシウム",
+   "ヒドロキシプロピルセルロース",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "香料",
+   "オクテニルコハク酸デンプンナトリウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1506000010",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、24包包装あり（W錠とは別項目）。"
+  }
+ },
+ {
+  "productId": "med-05883",
+  "additives": [
+   "セルロース",
+   "無水ケイ酸",
+   "リン酸水素カルシウム",
+   "デンプングリコール酸ナトリウム",
+   "ヒドロキシプロピルセルロース",
+   "硬化油",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1506000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1506000009（大正製薬（株）、包装：30錠，42錠，60錠）。"
+  }
+ },
+ {
+  "productId": "med-05905",
+  "additives": [
+   "乳糖水和物",
+   "トウモロコシデンプン",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ヒドロキシプロピルセルロース",
+   "軽質無水ケイ酸",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000122",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名「パイロンPL錠 ゴールド」。KEGGに包装の記載なし（内容量は未照合）。"
+  }
+ },
+ {
+  "productId": "med-05906",
+  "additives": [
+   "乳糖水和物",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2301000135",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致。KEGGに包装の記載なし（内容量は未照合）。"
+  }
+ },
+ {
+  "productId": "med-05907",
+  "additives": [
+   "乳糖水和物",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ヒドロキシプロピルセルロース",
+   "タルク",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1901000057",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG 2026-11時点。内容量はKEGGに記載なし（品名で照合）"
+  }
+ },
+ {
+  "productId": "med-05992",
+  "additives": [
+   "軽質無水ケイ酸",
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2201000005",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2201000005 包装: 20包。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-05993",
+  "additives": [
+   "軽質無水ケイ酸",
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010682",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601010682 包装: 8包，20包。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-05994",
+  "additives": [
+   "軽質無水ケイ酸",
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010707",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601010707 包装: 20包。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-05995",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010648",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、10包包装あり。"
+  }
+ },
+ {
+  "productId": "med-05996",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物",
+   "ショ糖脂肪酸エステル"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601010323",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、8包包装あり。"
+  }
+ },
+ {
+  "productId": "med-06002",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物",
+   "ショ糖脂肪酸エステル"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601009803",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、20包包装あり。"
+  }
+ },
+ {
+  "productId": "med-06003",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物",
+   "ショ糖脂肪酸エステル"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601009743",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、20包。"
+  }
+ },
+ {
+  "productId": "med-06004",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物",
+   "ショ糖脂肪酸エステル"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000298",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1201000298 包装: 8包，20包。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-06005",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601009060",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601009060 包装: 20包。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-06006",
+  "additives": [
+   "ステアリン酸マグネシウム",
+   "乳糖水和物"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008982",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601008982 包装: 8包，20包。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-06018",
+  "additives": [
+   "デキストリン",
+   "二酸化ケイ素",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "無水ケイ酸",
+   "l-メントール",
+   "プロピレングリコール",
+   "ステアリン酸マグネシウム",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1708000017",
+   "checkedOn": "2026-11-04",
+   "note": "成分欄に「添加物デキストリンを含む」（清肺湯エキスに係る記載）があり、additives に「デキストリン」として加えた。添加物欄の「二酸化ケイ素」「無水ケイ酸」はKEGGで同じ化合物コード（D06521）だが原文どおり両方記録"
+  }
+ },
+ {
+  "productId": "med-06118",
+  "additives": [
+   "ポリソルベート80",
+   "ラウリル硫酸ナトリウム",
+   "グリセリン脂肪酸エステル",
+   "中鎖脂肪酸トリグリセリド",
+   "水酸化カリウム",
+   "ゼラチン",
+   "コハク化ゼラチン",
+   "グリセリン",
+   "酸化チタン",
+   "カルミン"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2008000032",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2008000032「ストナアイビージェルEX」（2026/10/21版）。品名で照合。包装「12カプセル，24カプセル」に入力の内容量24カプセルを含む。KEGGはカプセル本体の成分を分けて記載していない（添加物欄に一括）。ゼラチンの由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-06128",
+  "additives": [
+   "エリスリトール",
+   "メタケイ酸アルミン酸マグネシウム",
+   "バレイショデンプン",
+   "クエン酸",
+   "l-メントール",
+   "タルク",
+   "無水ケイ酸",
+   "青色1号",
+   "黄色5号",
+   "香料",
+   "エタノール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2301000104",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2301000104「スカイブブロン　ストレート」（2026/10/21版）。品名で照合。KEGG表記は「スカイブブロン　ストレート」（全角スペース）。包装の記載なし。エタノールを含む。"
+  }
+ },
+ {
+  "productId": "med-06220",
+  "additives": [
+   "ポビドン",
+   "l-メントール",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "水酸化カリウム",
+   "マクロゴール",
+   "ゼラチン",
+   "グリセリン",
+   "パラベン",
+   "黄色5号",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "大豆レシチン",
+   "中鎖脂肪酸トリグリセリド"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1901000174",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1901000174「コルゲンコーワIB透明カプセルαプラス」（2026/10/21版）。品名で照合。包装「18カプセル，30カプセル」に入力の内容量18カプセルを含む。KEGGはカプセル本体の成分を分けて記載していない（添加物欄に一括）。ゼラチンの由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-06453",
+  "additives": [
+   "無水ケイ酸",
+   "セルロース",
+   "乳糖",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "クロスポビドン",
+   "マクロゴール",
+   "D-マンニトール",
+   "ステアリン酸マグネシウム",
+   "タルク",
+   "酸化チタン",
+   "トウモロコシデンプン",
+   "ポリビニルアルコール・アクリル酸・メタクリル酸メチル共重合体"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2101000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、24錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-06455",
+  "additives": [
+   "果糖ブドウ糖液糖",
+   "アルコール",
+   "プロピレングリコール",
+   "塩化ナトリウム",
+   "クエン酸",
+   "安息香酸ナトリウム",
+   "パラベン",
+   "エチルバニリン",
+   "カラメル",
+   "バニリン",
+   "l-メントール",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012133",
+   "checkedOn": "2026-11-04",
+   "note": "アルコール（エタノール）の記載あり"
+  }
+ },
+ {
+  "productId": "med-06556",
+  "additives": [
+   "アミノカプロン酸",
+   "エデト酸ナトリウム水和物",
+   "クロルヘキシジングルコン酸塩液",
+   "等張化剤",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000136",
+   "checkedOn": "2026-11-04",
+   "note": "参天公式ページの記載とも一致。「ヒアレインSミニ点眼」は別項目"
+  }
+ },
+ {
+  "productId": "med-06611",
+  "additives": [
+   "ホウ酸",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008096",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG包装 5mL×4本で一致。メーカー公式（https://www.santen.com/jp/healthcare/eye/products/otc/soft_santear.html）も「ホウ酸、pH調節剤」で同じ。"
+  }
+ },
+ {
+  "productId": "med-06625",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "エデト酸ナトリウム水和物",
+   "ポリオキシエチレン硬化ヒマシ油60",
+   "アルキルジアミノエチルグリシン塩酸塩",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1911000007「NewマイティアCL-s」（2026/10/21版）。品名で照合。包装「15mL」に入力の内容量15mLを含む。「NewマイティアCLクール-s」「CL-Wケア」等とは別項目。"
+  }
+ },
+ {
+  "productId": "med-06626",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ポリオキシエチレン硬化ヒマシ油60",
+   "アルキルジアミノエチルグリシン塩酸塩",
+   "l-メントール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1911000009",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1911000009「NewマイティアCLクールHi-s」（2026/10/21版）。品名で照合。包装「15mL」に入力の内容量15mLを含む。「NewマイティアCL-s」「CLクール-s」とは別項目。"
+  }
+ },
+ {
+  "productId": "med-06641",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "ヒアルロン酸ナトリウム",
+   "ポリソルベート80",
+   "ポリオキシエチレンポリオキシプロピレングリコール(ポロクサマー)",
+   "エデト酸ナトリウム",
+   "pH調節剤",
+   "塩酸ポリヘキサニド"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1201000053",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名・13mLで一致。ただし別項目「ロートCキューブa」(J2201000018)があり、同じJANが「a」として出る店がある（既存README注記）。箱で確認を。"
+  }
+ },
+ {
+  "productId": "med-06650",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "ポリオキシエチレンポリオキシプロピレングリコール",
+   "エデト酸ナトリウム",
+   "ヒアルロン酸ナトリウム",
+   "塩酸ポリヘキサニド",
+   "l-メントール",
+   "ゲラニオール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000121",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名・8mLで一致。"
+  }
+ },
+ {
+  "productId": "med-06651",
+  "additives": [
+   "プロピレングリコール",
+   "ホウ酸",
+   "ホウ砂",
+   "l-メントール",
+   "ステアリン酸ポリオキシル",
+   "ポリオキシエチレンヒマシ油",
+   "ポリオキシエチレンポリオキシプロピレングリコール",
+   "エデト酸ナトリウム",
+   "ゴマ油",
+   "塩酸ポリヘキサニド",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1901000004",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名・15mLで一致。添加物にゴマ油。"
+  }
+ },
+ {
+  "productId": "med-06660",
+  "additives": [
+   "ヒアルロン酸ナトリウム",
+   "ゴマ油",
+   "ホウ酸",
+   "ホウ砂",
+   "l-メントール",
+   "ベルガモット油",
+   "ペパーミントオイル",
+   "プロピレングリコール",
+   "ポリオキシエチレンポリオキシプロピレングリコール",
+   "ポリソルベート80",
+   "塩化亜鉛",
+   "ポビドン",
+   "クエン酸ナトリウム",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000061",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名・10mLで一致。同名の別項目(J2501000062)もあり、J2501000061を採用（既存調査と同じ）。"
+  }
+ },
+ {
+  "productId": "med-06679",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "ポリソルベート80",
+   "エデト酸ナトリウム",
+   "l-メントール",
+   "d-ボルネオール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1411000113",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG包装 100mL，500mL。品名一致。"
+  }
+ },
+ {
+  "productId": "med-06740",
+  "additives": [
+   "アミノカプロン酸",
+   "エデト酸ナトリウム水和物",
+   "ゲラニオール",
+   "ヒアルロン酸ナトリウム",
+   "フェニルエチルアルコール",
+   "ベンザルコニウム塩化物",
+   "ポリソルベート80",
+   "d-カンフル",
+   "l-メントール",
+   "等張化剤",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1303000001",
+   "checkedOn": "2026-11-04",
+   "note": "参天公式ページの記載とも一致。フェニルエチルアルコールの記載あり（エタノールとは別物質）"
+  }
+ },
+ {
+  "productId": "med-06741",
+  "additives": [
+   "アミノカプロン酸",
+   "クロロブタノール",
+   "ゲラニオール",
+   "ベンザルコニウム塩化物液",
+   "ホウ酸",
+   "d-カンフル",
+   "l-メントール",
+   "等張化剤",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007827",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601007827「サンテビオ」（2026/10/21版）。品名で照合。包装「15mL」に入力の内容量15mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06746",
+  "additives": [
+   "エデト酸ナトリウム水和物",
+   "ベンザルコニウム塩化物液",
+   "d-カンフル",
+   "d-ボルネオール",
+   "l-メントール",
+   "等張化剤",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0704000095",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名「サンテALクールⅡ」15mL。一致。"
+  }
+ },
+ {
+  "productId": "med-06747",
+  "additives": [
+   "クロロブタノール",
+   "デキストラン",
+   "ヒドロキシエチルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ベンザルコニウム塩化物液",
+   "ホウ酸",
+   "d-カンフル",
+   "d-ボルネオール",
+   "l-メントール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0903000016",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名は「サンテFX Vプラス」。参天公式ページの記載とも一致"
+  }
+ },
+ {
+  "productId": "med-06748",
+  "additives": [
+   "アミノカプロン酸",
+   "エデト酸ナトリウム水和物",
+   "クロロブタノール",
+   "ゲラニオール",
+   "デキストラン",
+   "ヒドロキシエチルセルロース",
+   "ベンザルコニウム塩化物液",
+   "ポリソルベート80",
+   "d-カンフル",
+   "l-メントール",
+   "等張化剤",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1305000002",
+   "checkedOn": "2026-11-04",
+   "note": "参天公式ページの記載と成分は一致（公式ページは「I-メントール」「ph調節剤」と表記、KEGGは「l-メントール」「pH調節剤」。KEGG表記を採用）"
+  }
+ },
+ {
+  "productId": "med-06750",
+  "additives": [
+   "エデト酸ナトリウム水和物",
+   "クロロブタノール",
+   "ヒアルロン酸ナトリウム",
+   "ベンザルコニウム塩化物",
+   "ホウ酸",
+   "d-ボルネオール",
+   "l-メントール",
+   "等張化剤",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000224",
+   "checkedOn": "2026-11-04",
+   "note": "参天公式ページの記載とも一致"
+  }
+ },
+ {
+  "productId": "med-06751",
+  "additives": [
+   "エデト酸ナトリウム水和物",
+   "デキストラン",
+   "ヒアルロン酸ナトリウム",
+   "ヒドロキシエチルセルロース",
+   "ベンザルコニウム塩化物液",
+   "ホウ酸",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "ポリソルベート80",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "d-ボルネオール",
+   "l-メントール",
+   "等張化剤",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000225",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1601000225「サンテメディカルアクティブ」（2026/10/21版）。品名で照合。包装「12mL」に入力の内容量12mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06776",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "エデト酸ナトリウム水和物",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "ベンザルコニウム塩化物",
+   "ポリソルベート80",
+   "l-メントール"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2010000007",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2010000007「マイティアアイテクトEX」（2026/10/21版）。品名で照合。包装「15mL」に入力の内容量15mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06777",
+  "additives": [
+   "塩化ナトリウム",
+   "L-グルタミン酸ナトリウム水和物",
+   "ホウ酸",
+   "ポリオキシエチレン硬化ヒマシ油60",
+   "クロロブタノール",
+   "ベンザルコニウム塩化物",
+   "l-メントール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K2206000025",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K2206000025「マイティアVプラス」（2026/10/21版）。品名で照合。包装「15mL」に入力の内容量15mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06844",
+  "additives": [
+   "ホウ酸",
+   "トロメタモール",
+   "エデト酸ナトリウム",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "ポリソルベート80",
+   "プロピレングリコール",
+   "l-メントール",
+   "dl-カンフル",
+   "d-ボルネオール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000047",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名・15mLで一致。"
+  }
+ },
+ {
+  "productId": "med-06847",
+  "additives": [
+   "ホウ酸",
+   "トロメタモール",
+   "エデト酸ナトリウム",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "ポリソルベート80",
+   "プロピレングリコール",
+   "l-メントール",
+   "dl-カンフル",
+   "d-ボルネオール",
+   "等張化剤",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1001000020",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名「スマイル40EX ゴールド」13mL。表記差のみ。"
+  }
+ },
+ {
+  "productId": "med-06875",
+  "additives": [
+   "ホウ酸",
+   "l-メントール",
+   "d-カンフル",
+   "ベルガモット油",
+   "ゲラニオール",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "クロロブタノール",
+   "ヒアルロン酸ナトリウム",
+   "ポリソルベート80",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1401000157",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1401000157「ロートリセb」（2026/10/21版）。品名で照合。包装「8mL」に入力の内容量8mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06879",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "l-メントール",
+   "dl-カンフル",
+   "ゲラニオール",
+   "ユーカリ油",
+   "エデト酸ナトリウム",
+   "塩化ナトリウム",
+   "ポリソルベート80",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "クロロブタノール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1601000231",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1601000231「Vロートプレミアム」（2026/10/21版）。品名で照合。包装「15mL」に入力の内容量15mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06881",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "塩化ナトリウム",
+   "エデト酸ナトリウム",
+   "ジブチルヒドロキシトルエン(BHT)",
+   "塩酸ポリヘキサニド",
+   "l-メントール",
+   "ゲラニオール",
+   "ユーカリ油",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "ポリオキシエチレンヒマシ油",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000206",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1701000206「Vロートアクティブプレミアム」（2026/10/21版）。品名で照合。包装「15mL」に入力の内容量15mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06902",
+  "additives": [
+   "クロロブタノール",
+   "ベンザルコニウム塩化物",
+   "ホウ酸",
+   "d-ボルネオール",
+   "dl-カンフル",
+   "l-メントール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007825",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601007825「サンテFXネオ」（2026/10/21版）。品名で照合。包装「12mL」に入力の内容量12mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06919",
+  "additives": [
+   "エデト酸ナトリウム水和物",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ベンザルコニウム塩化物",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008035",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601008035「サンテ抗菌新目薬」（2026/10/21版）。品名で照合。包装「12mL」に入力の内容量12mLを含む。"
+  }
+ },
+ {
+  "productId": "med-06956",
+  "additives": [
+   "エデト酸ナトリウム水和物",
+   "クロロブタノール",
+   "ベンザルコニウム塩化物",
+   "d-カンフル",
+   "d-ボルネオール",
+   "l-メントール",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2001000195",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2001000195「サンテFX AL」（2026/10/21版）。品名で照合。包装「12mL」に入力の内容量12mLを含む。"
+  }
+ },
+ {
+  "productId": "med-07091",
+  "additives": [
+   "タルク",
+   "炭酸カルシウム",
+   "トウモロコシデンプン",
+   "ヒドロキシプロピルセルロース",
+   "D-マンニトール",
+   "カルナウバロウ",
+   "グリセリン脂肪酸エステル",
+   "酸化チタン",
+   "三二酸化鉄",
+   "ステアリン酸",
+   "ステアリン酸マグネシウム",
+   "セラック",
+   "セルロース",
+   "二酸化ケイ素",
+   "白糖",
+   "リボフラビン",
+   "プルラン",
+   "ポビドン",
+   "マクロゴール",
+   "リン酸水素カルシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004074",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601004074 包装: 80錠。品名と内容量で照合（KEGGにJANなし）。 由来の記載なし。"
+  }
+ },
+ {
+  "productId": "med-07092",
+  "additives": [
+   "タルク",
+   "炭酸カルシウム",
+   "トウモロコシデンプン",
+   "ヒドロキシプロピルセルロース",
+   "D-マンニトール",
+   "アラビアゴム",
+   "カルナウバロウ",
+   "酸化チタン",
+   "三二酸化鉄",
+   "ステアリン酸",
+   "ステアリン酸マグネシウム",
+   "セラック",
+   "セルロース",
+   "二酸化ケイ素",
+   "白糖",
+   "リボフラビン",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "プルラン",
+   "ポビドン",
+   "マクロゴール",
+   "リン酸水素カルシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004077",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致、60錠包装あり。"
+  }
+ },
+ {
+  "productId": "med-07109",
+  "additives": [
+   "タルク",
+   "炭酸カルシウム",
+   "トウモロコシデンプン",
+   "ヒドロキシプロピルセルロース",
+   "部分アルファー化デンプン",
+   "アラビアゴム",
+   "カルナウバロウ",
+   "酸化チタン",
+   "三二酸化鉄",
+   "ステアリン酸",
+   "ステアリン酸マグネシウム",
+   "セラック",
+   "セルロース",
+   "二酸化ケイ素",
+   "白糖",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "プルラン",
+   "ポビドン",
+   "マクロゴール",
+   "リン酸水素カルシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601004076",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致。セラック（動物性の天然樹脂）を含むが由来等の記載なし。KEGGにJAN・内容量の記載なし、品名で突き合わせ"
+  }
+ },
+ {
+  "productId": "med-07231",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "l-メントール",
+   "d-ボルネオール",
+   "ユーカリ油",
+   "エデト酸ナトリウム",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601007907",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601007907「ロートビタ40α」（2026/10/21版）。品名で照合。包装「12mL」に入力の内容量12mLを含む。"
+  }
+ },
+ {
+  "productId": "med-07234",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "l-メントール",
+   "d-ボルネオール",
+   "ユーカリ油",
+   "エデト酸ナトリウム",
+   "ポリオキシエチレン硬化ヒマシ油",
+   "pH調節剤"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0806000002",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K0806000002「ロートクール40α」（2026/10/21版）。品名で照合。包装「12mL」に入力の内容量12mLを含む。添加物の並びがロートビタ40αと同一（KEGG記載どおり）。"
+  }
+ },
+ {
+  "productId": "med-07257",
+  "additives": [
+   "ホウ酸",
+   "ホウ砂",
+   "l-メントール",
+   "d-ボルネオール",
+   "ユーカリ油",
+   "クロロブタノール",
+   "ベンザルコニウム塩化物",
+   "エデト酸ナトリウム",
+   "エタノール",
+   "ポリソルベート80"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2501000064",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2501000064「Vロートゴールド40」（2026/10/21版）。品名で照合。包装「20mL」に入力の内容量20mLを含む。エタノールを含む。"
+  }
+ },
+ {
+  "productId": "med-07285",
+  "additives": [
+   "乳酸カルシウム水和物",
+   "部分アルファー化デンプン",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "セルロース",
+   "乳糖水和物",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "トウモロコシデンプン",
+   "エリスリトール",
+   "酸化チタン",
+   "アラビアゴム",
+   "炭酸カルシウム",
+   "タルク",
+   "白糖"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0607000108",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG品名一致（アリナミンA50とは別項目）。60錠の包装あり。"
+  }
+ },
+ {
+  "productId": "medicon-pro",
+  "additives": [
+   "乳糖水和物",
+   "トウモロコシデンプン",
+   "結晶セルロース",
+   "ステアリン酸マグネシウム",
+   "タルク",
+   "白色セラック",
+   "ヒマシ油"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2101000084",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2101000084（シオノギヘルスケア（株）、包装：記載なし）。KEGGに包装欄なし。品名一致で採用。"
+  }
+ },
+ {
+  "productId": "mucodyne-pro500",
+  "additives": [
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ポリビニルアルコール(部分けん化物)",
+   "ショ糖脂肪酸エステル",
+   "ステアリン酸マグネシウム",
+   "メチルセルロース",
+   "ヒドロキシプロピルセルロース",
+   "タルク"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J2401000006",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J2401000006（シオノギヘルスケア（株）、包装：記載なし）。KEGGに包装欄なし。品名一致で採用。"
+  }
+ },
+ {
+  "productId": "naron-ace",
+  "additives": [
+   "無水ケイ酸",
+   "ヒドロキシプロピルセルロース",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "タルク",
+   "ステアリン酸マグネシウム",
+   "乳糖",
+   "黄色5号",
+   "セルロース"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1609000010",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1609000010（大正製薬（株）、包装：24錠，48錠，84錠）。"
+  }
+ },
+ {
+  "productId": "pabron-bien-ex",
+  "additives": [
+   "D-マンニトール",
+   "粉糖",
+   "トウモロコシデンプン",
+   "セルロース",
+   "無水ケイ酸",
+   "クロスポビドン",
+   "ヒドロキシプロピルセルロース",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "スクラロース",
+   "ステアリン酸カルシウム",
+   "l-メントール",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1810000013",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1810000013（大正製薬（株）、包装：18錠，36錠）。"
+  }
+ },
+ {
+  "productId": "pabron-s-cough",
+  "additives": [
+   "バレイショデンプン",
+   "中鎖脂肪酸トリグリセリド",
+   "プロピレングリコール脂肪酸エステル",
+   "ゼラチン",
+   "グリセリン",
+   "ポリソルベート80",
+   "パラベン",
+   "酸化チタン",
+   "黄色5号"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012348",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601012348（大正製薬（株）、包装：12カプセル，24カプセル）。ゼラチンの由来の記載なし。"
+  }
+ },
+ {
+  "productId": "pylon-pl-granule",
+  "additives": [
+   "乳糖水和物",
+   "トウモロコシデンプン",
+   "塩化ナトリウム",
+   "白糖",
+   "含水二酸化ケイ素"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1701000179",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1701000179（シオノギヘルスケア（株）、包装：記載なし）。KEGGに包装欄なし。品名一致で採用（「パイロンPL顆粒Pro」とは別）。"
+  }
+ },
+ {
+  "productId": "shin-bron-ace",
+  "additives": [
+   "果糖ブドウ糖液糖",
+   "アルコール",
+   "プロピレングリコール",
+   "塩化ナトリウム",
+   "クエン酸",
+   "安息香酸ナトリウム",
+   "パラベン",
+   "エチルバニリン",
+   "カラメル",
+   "バニリン",
+   "l-メントール",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012517",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601012517（エスエス製薬（株）、包装：120mL）。メーカー公式（https://www.ssp.co.jp/product/detail/bra/）の添加物も同一（略記：塩化Na・安息香酸Na）。アルコールを含む。"
+  }
+ },
+ {
+  "productId": "shin-contac-kaze",
+  "additives": [
+   "無水ケイ酸",
+   "D-マンニトール",
+   "ヒドロキシプロピルセルロース",
+   "タルク",
+   "アミノアルキルメタクリレートコポリマーRS",
+   "ステアリルアルコール",
+   "ソルビタン脂肪酸エステル",
+   "メタケイ酸アルミン酸マグネシウム",
+   "ステアリン酸マグネシウム",
+   "黄色5号",
+   "酸化チタン",
+   "ラウリル硫酸ナトリウム",
+   "ゼラチン"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K0708000006",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K0708000006（グラクソ・スミスクライン・コンシューマー・ヘルスケア・ジャパン（株）、包装：12カプセル，24カプセル）。KEGGの製造販売元はグラクソ・スミスクライン・コンシューマー・ヘルスケア・ジャパン（株）（旧社名）。ゼラチンはKEGGでは添加物一覧の中に記載（カプセル本体かの区別・由来の記載なし）。"
+  }
+ },
+ {
+  "productId": "shin-estac-granule",
+  "additives": [
+   "カルメロースカルシウム(CMC-Ca)",
+   "無水ケイ酸",
+   "ゼラチン",
+   "乳糖",
+   "白糖",
+   "デンプン",
+   "トウモロコシデンプン",
+   "アスパルテーム(L-フェニルアラニン化合物)",
+   "バニリン",
+   "香料"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0701000677",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0701000677（エスエス製薬（株）、包装：22包，36包）。顆粒だがゼラチンを含む（由来の記載なし）。"
+  }
+ },
+ {
+  "productId": "shin-lulu-a-gold-s",
+  "additives": [
+   "セルロース",
+   "メタケイ酸アルミン酸マグネシウム",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "アラビアゴム",
+   "酸化チタン",
+   "ステアリン酸",
+   "白糖",
+   "タルク",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ポリビニルアセタールジエチルアミノアセテート",
+   "ポリビニルアルコール(部分けん化物)",
+   "ポビドン",
+   "フマル酸",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000132",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1501000132（第一三共ヘルスケア（株）、包装：30錠，65錠，100錠）。"
+  }
+ },
+ {
+  "productId": "shin-lulu-a-s",
+  "additives": [
+   "セルロース",
+   "メタケイ酸アルミン酸マグネシウム",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム",
+   "アラビアゴム",
+   "酸化チタン",
+   "ステアリン酸",
+   "白糖",
+   "タルク",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ポリビニルアセタールジエチルアミノアセテート",
+   "ポリビニルアルコール(部分けん化物)",
+   "ポビドン",
+   "フマル酸",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J1501000185",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J1501000185（第一三共ヘルスケア（株）、包装：45錠，90錠，135錠）。"
+  }
+ },
+ {
+  "productId": "shin-sedes",
+  "additives": [
+   "乳糖水和物",
+   "カルメロースカルシウム(CMC-Ca)",
+   "クロスカルメロースナトリウム(クロスCMC-Na)",
+   "ヒドロキシプロピルセルロース",
+   "ステアリン酸マグネシウム"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601001566",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601001566（シオノギヘルスケア（株）、包装：記載なし）。KEGGに包装欄なし。品名一致で採用。"
+  }
+ },
+ {
+  "productId": "stona-kyotan",
+  "additives": [
+   "中鎖脂肪酸トリグリセリド",
+   "サラシミツロウ",
+   "グリセリン脂肪酸エステル",
+   "セスキオレイン酸ソルビタン",
+   "ポリソルベート80",
+   "ゼラチン",
+   "グリセリン",
+   "パラベン",
+   "酸化チタン",
+   "香料（l-メントールを含む）"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601012243",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601012243（佐藤製薬（株）、包装：18カプセル，36カプセル）。KEGGでは「香料（l-メントールを含む）」と記載。ゼラチンの由来の記載なし。"
+  }
+ },
+ {
+  "productId": "stona-rhini-s",
+  "additives": [
+   "リン酸水素カルシウム",
+   "乳糖",
+   "ヒドロキシプロピルセルロース",
+   "ヒドロキシプロピルスターチ",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロースフタル酸エステル",
+   "グリセリン脂肪酸エステル",
+   "セラック",
+   "白糖",
+   "グリセリン",
+   "タルク",
+   "ポリオキシエチレンポリオキシプロピレングリコール",
+   "ポリビニルアルコール(部分けん化物)",
+   "炭酸カルシウム",
+   "酸化チタン",
+   "ジメチルポリシロキサン",
+   "二酸化ケイ素",
+   "ポビドン",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601008207",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601008207（佐藤製薬（株）、包装：12錠，18錠，24錠）。"
+  }
+ },
+ {
+  "productId": "stona-rhini-z-gel",
+  "additives": [
+   "マクロゴール",
+   "水酸化カリウム",
+   "ゼラチン",
+   "コハク化ゼラチン",
+   "グリセリン",
+   "トウモロコシデンプン由来糖アルコール",
+   "三二酸化鉄"
+  ],
+  "capsule": true,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=K1711000019",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG K1711000019（佐藤製薬（株）、包装：6カプセル，12カプセル，24カプセル）。「トウモロコシデンプン由来糖アルコール」はKEGG記載の添加物名そのまま。ゼラチン・コハク化ゼラチンの由来の記載なし。"
+  }
+ },
+ {
+  "productId": "tylenol-a",
+  "additives": [
+   "セルロース",
+   "アルファー化デンプン",
+   "ヒドロキシプロピルセルロース",
+   "カルメロースカルシウム(CMC-Ca)",
+   "ステアリン酸マグネシウム",
+   "ヒプロメロース(ヒドロキシプロピルメチルセルロース)",
+   "D-マンニトール",
+   "酸化チタン",
+   "タルク",
+   "カルナウバロウ"
+  ],
+  "capsule": false,
+  "source": {
+   "kind": "KEGG",
+   "url": "https://www.kegg.jp/medicus-bin/japic_otc?japic_code=J0601013063",
+   "checkedOn": "2026-11-04",
+   "note": "KEGG J0601013063（東亜薬品（株）、包装：10錠，20錠，30錠）。"
+  }
+ }
+]

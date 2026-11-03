@@ -35,12 +35,18 @@ describe("通知ルールの評価", () => {
     expect(ids(p)).toContain("kaze_1-sd-1-3");
   });
 
-  it("未検証の値はバッジの導出に使わない", () => {
+  // uncertain は分量の未検証の印。成分が入っていることの条件には使い、分量の条件には使わない（L-20261104-16）
+  it("未検証の分量は分量の条件に使わず、成分の有無の条件には使う", () => {
     const p = Product.parse({
       ...productA,
       facts: productA.facts.map((f) => ({ ...f, uncertain: true })),
     });
-    expect(ids(p)).toEqual(["kaze_1-ng-5"]);
+    expect(ids(p).sort()).toEqual(ids(productA).sort());
+    const caffeine = Product.parse({
+      ...productB,
+      facts: [{ ingredient: "カフェイン水和物", amountPerDay: 330, unit: "mg", uncertain: true }],
+    });
+    expect(ids(caffeine)).not.toContain("kaze_1-sd-1-3");
   });
 
   it("カフェインは無水カフェインに換算して1回100mg以上で授乳の相談に当たる", () => {
@@ -142,7 +148,7 @@ describe("バッジ", () => {
       "年齢 12歳から",
       "飲酒しない",
       "カフェイン 1回25mg",
-      "ドーピング禁止成分（年版確認中）",
+      "ドーピング禁止成分（競技会時）",
     ]);
   });
 

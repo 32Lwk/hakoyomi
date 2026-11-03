@@ -487,7 +487,10 @@ export function toNoticeItems(
 export function verbatimWords(text: string, source: string): boolean {
   const src = compact(source);
   let from = 0;
-  for (const word of text.split(/[\s，,、]+/).map(compact).filter(Boolean)) {
+  for (const word of text
+    .split(/[\s，,、]+/)
+    .map(compact)
+    .filter(Boolean)) {
     const at = src.indexOf(word, from);
     if (at < 0) return false;
     from = at + word.length;

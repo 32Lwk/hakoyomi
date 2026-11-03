@@ -67,6 +67,31 @@ const RESTAMIN_U = KEGG("J0601005881", "レスタミンUコーワ錠");
 const RESTAMIN_A = KEGG("K2309000002", "レスタミンコーワα錠");
 const CHECKED_ON = "2026-11-03";
 
+// 通知に項がない薬効群の品（L-20261104-20）。[商品 id, KEGG の japic_code, 品名]
+const CHECKED_ON_20 = "2026-11-04";
+const KOUKUU_SPRAY: [string, string, string][] = [
+  ["med-02933", "J1001000400", "トラフル クイックショット"],
+  ["med-02953", "K1608000014", "チョコラBB口内炎リペアショット"],
+  ["med-02924", "K2102000022", "のどぬーるナイテクト"],
+  ["med-02948", "K2607000009", "コフジスACのどスプレー"],
+  ["med-02927", "J1201000288", "ストナのどスプレー"],
+  ["med-02934", "J1201000252", "ルルのどスプレー"],
+  ["med-02991", "K2312000004", "ムヒののどスプレー"],
+  ["med-02969", "J0901000069", "浅田飴AZのどスプレーS"],
+  ["med-02925", "K2202000008", "ハレナーススプレー"],
+];
+const KOUNAIEN: [string, string, string][] = [
+  ["med-01540", "J1401000446", "口内炎軟膏大正クイックケア"],
+  ["med-01536", "K1907000009", "トラフルダイレクトa"],
+  ["med-01555", "K1608000008", "トラフル軟膏PROクイック"],
+  ["med-03011", "K1404000001", "トラフル軟膏"],
+  ["med-01541", "K1403000013", "口内炎パッチ大正クイックケア"],
+];
+const HYTHIOL_2 = KEGG("K2003000001", "ハイチオールCプラス2");
+const HYTHIOL_EX = KEGG("K2503000003", "ハイチオールCプラスEX");
+const TAISHO_K = KEGG("J0601002830", "大正胃腸薬K");
+const TAISHO_KAMPO = KEGG("J0601002833", "大正漢方胃腸薬〈錠剤〉");
+
 // 第2世代の抗ヒスタミン成分の単味製剤。通知（鼻炎用内服薬）の記載条件に名前がない
 const SWITCH_ANTIHISTAMINES = ["フェキソフェナジン塩酸塩", "エピナスチン塩酸塩", "セチリジン塩酸塩"];
 
@@ -330,5 +355,103 @@ export const LABEL_CORRECTIONS: LabelCorrection[] = [
     target: { productIds: ["med-03563", "med-03562"] },
     sources: [RESTAMIN, RESTAMIN_U],
     checkedOn: CHECKED_ON,
+  },
+  {
+    // 外用鎮痛消炎薬の通知は、インドメタシンの塗布剤（と膏体あたりの量が少ないテープ剤・パップ剤）で「１５歳未満」を
+    // 「１１歳未満」に置き換える。置き換えた文は通知の原文にないので出さず、年齢は「未収録」にする（L-20261104-20）
+    id: "gaiyo-chintsu-age-indomethacin",
+    groupId: "gaiyo_chintsu",
+    action: "unrecorded",
+    kinds: ["under15"],
+    note: "通知ではインドメタシンの塗布剤等は「１１歳未満の小児」に置き換える。年齢のバッジ（15歳・12歳）では表せない",
+    target: { condition: { hasIngredient: ["インドメタシン"] } },
+    sources: [{ label: "厚労省通知「使用上の注意」外用鎮痛消炎薬", url: "https://www.mhlw.go.jp/content/001742612.pdf" }],
+    checkedOn: CHECKED_ON_20,
+  },
+  // 通知に項がない薬効群（L-20261104-16）の残り18品。KEGG MEDICUS で添付文書を確かめた（L-20261104-20）。
+  // 運転・授乳・15歳未満・12歳未満・飲酒のうち、記載があるものだけ add で出し、ほかは「該当なし」にする
+  {
+    // のどスプレー9品。5つの確認ポイントはどれも記載がない。用法に年齢の区分はない（小児は保護者の指導監督のもとで使用）。
+    // エタノール配合の品の「使用後しばらく呼気からアルコールが検出されることがある」は眠気の運転注意ではないため、運転のバッジにしない
+    id: "koukuu-spray-label-checked",
+    groupId: "koukuu_spray",
+    action: "labelChecked",
+    note: "添付文書の使用上の注意を KEGG MEDICUS で確認。運転・授乳・年齢・飲酒の記載はない",
+    target: { productIds: KOUKUU_SPRAY.map(([id]) => id) },
+    sources: KOUKUU_SPRAY.map(([, code, name]) => KEGG(code, name)),
+    checkedOn: CHECKED_ON_20,
+  },
+  {
+    id: "kounaien-label-checked",
+    groupId: "kounaien",
+    action: "labelChecked",
+    note: "添付文書の使用上の注意を KEGG MEDICUS で確認",
+    target: { productIds: KOUNAIEN.map(([id]) => id) },
+    sources: KOUNAIEN.map(([, code, name]) => KEGG(code, name)),
+    checkedOn: CHECKED_ON_20,
+  },
+  {
+    // トリアムシノロンアセトニドの4品は「相談すること」に授乳中の人。アズレン等のトラフル軟膏にはない
+    id: "kounaien-breastfeeding-steroid",
+    groupId: "kounaien",
+    action: "add",
+    badge: "breastfeeding",
+    section: "相談すること",
+    body: "授乳中の人．",
+    bodyFrom: "chinga_kyotan-sd-1-3",
+    target: { onlyIngredients: ["トリアムシノロンアセトニド"] },
+    sources: KOUNAIEN.filter(([id]) => id !== "med-03011").map(([, code, name]) => KEGG(code, name)),
+    checkedOn: CHECKED_ON_20,
+  },
+  {
+    // 貼付剤の2品は「5歳未満は使用しない」
+    id: "kounaien-age-patch",
+    groupId: "kounaien",
+    action: "unrecorded",
+    kinds: ["under15"],
+    note: "添付文書の用法・用量では5才未満は使用しない。年齢のバッジ（15歳・12歳）では表せない",
+    target: { productIds: ["med-01536", "med-01541"] },
+    sources: [KEGG("K1907000009", "トラフルダイレクトa"), KEGG("K1403000013", "口内炎パッチ大正クイックケア")],
+    checkedOn: CHECKED_ON_20,
+  },
+  {
+    id: "l-cysteine-label-checked",
+    groupId: "l_cysteine",
+    action: "labelChecked",
+    note: "添付文書の使用上の注意を KEGG MEDICUS で確認。運転・授乳・飲酒の記載はない",
+    target: { productIds: ["med-04595", "med-04596"] },
+    sources: [HYTHIOL_2, HYTHIOL_EX],
+    checkedOn: CHECKED_ON_20,
+  },
+  {
+    id: "l-cysteine-age",
+    groupId: "l_cysteine",
+    action: "unrecorded",
+    kinds: ["under15"],
+    note: "添付文書の用法・用量では7才未満は服用しない。年齢のバッジ（15歳・12歳）では表せない",
+    target: { productIds: ["med-04595", "med-04596"] },
+    sources: [HYTHIOL_2, HYTHIOL_EX],
+    checkedOn: CHECKED_ON_20,
+  },
+  {
+    // 安中散と芍薬甘草湯の配合（大正）。カンゾウの注意（高齢者・むくみ等）は漢方製剤の通知の項目と同じ趣旨だが、
+    // バッジの種類ではないため補正にしない。大正漢方胃腸薬〈錠剤〉は1日のカンゾウが1g未満で、その注意自体がない
+    id: "kampo-mix-label-checked",
+    groupId: "kampo_mix",
+    action: "labelChecked",
+    note: "添付文書の使用上の注意を KEGG MEDICUS で確認。運転・授乳・飲酒の記載はない",
+    target: { productIds: ["med-00102", "med-00104"] },
+    sources: [TAISHO_K, TAISHO_KAMPO],
+    checkedOn: CHECKED_ON_20,
+  },
+  {
+    id: "kampo-mix-age",
+    groupId: "kampo_mix",
+    action: "unrecorded",
+    kinds: ["under15"],
+    note: "添付文書の用法・用量では5才未満は服用しない。年齢のバッジ（15歳・12歳）では表せない",
+    target: { productIds: ["med-00102", "med-00104"] },
+    sources: [TAISHO_K, TAISHO_KAMPO],
+    checkedOn: CHECKED_ON_20,
   },
 ];

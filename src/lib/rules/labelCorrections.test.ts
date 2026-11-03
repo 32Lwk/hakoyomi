@@ -75,7 +75,11 @@ describe("睡眠改善薬（L-20261103-36）", () => {
       const age = badges.find((b) => b.kind === "under15");
       expect(age?.label).toBe("年齢 15歳から");
       expect(age?.evidence[0]).toMatchObject({ kind: "label", labelOnly: true });
-      expect(unrecordedKinds(byName(name), false), name).toEqual([]);
+      // 通知由来の種類が未収録にならないこと（添加物を調べられなかった品の halal は別。L-20261104-18）
+      expect(
+        unrecordedKinds(byName(name), false).filter((k) => k !== "halal"),
+        name,
+      ).toEqual([]);
     }
   });
 });

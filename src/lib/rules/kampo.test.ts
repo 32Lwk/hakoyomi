@@ -101,7 +101,8 @@ describe("漢方製剤の用法・剤形と表の行の条件", () => {
     for (const s of EFFICACY_STANDARDS.filter((x) => x.id.startsWith("kampo_"))) {
       expect(s.terms.length).toBeGreaterThan(0);
       for (const t of s.terms) expect(s.text).toContain(t.word);
-      expect(s.text.startsWith(`${s.scope}：`)).toBe(true);
+      // 前置きのない処方（大黄甘草湯）は scope を持たない
+      if (s.scope) expect(s.text.startsWith(`${s.scope}：`)).toBe(true);
     }
     const kaku = EFFICACY_STANDARDS.find((x) => x.id === "kampo_033")!;
     expect(kaku.terms.map((t) => t.word)).toEqual(["鼻づまり", "蓄膿症（副鼻腔炎）", "慢性鼻炎"]);

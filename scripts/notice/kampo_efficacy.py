@@ -86,7 +86,7 @@ def main(pages_path: str) -> None:
                 "fetchedOn": fetched,
                 "text": body,
                 # 語の前の「比較的体力があるものの次の諸症」（漢方製剤の使い分けの前提。逆引きで語と一緒に出す）
-                "scope": body.split("《備考》")[0].rsplit("：", 1)[0],
+                **({"scope": scope.rsplit("：", 1)[0]} if "：" in (scope := body.split("《備考》")[0]) else {}),
                 "terms": terms(f"kampo_{no:03d}", body),
                 "note": f"承認基準の処方番号 {kijun_no}",
             }

@@ -1,13 +1,13 @@
 import { ABUSE_SOURCE } from "@/data/abuse_ingredients";
+import { halalFacts } from "@/data/additives";
 import { DOPING_SOURCE } from "@/data/doping_list";
 import { checkAbuse } from "@/lib/rules/abuse";
-import { checkDoping } from "@/lib/rules/doping";
+import { checkDoping, dopingListCurrent } from "@/lib/rules/doping";
 import { normalizeName } from "@/lib/rules/normalize";
 import type { CorrectionSource } from "@/data/label_corrections";
 import { correctionsFor } from "@/lib/rules/labelCorrections";
 import { applicableItems, convertedMg } from "@/lib/rules/noticeRules";
-import type { DemoSku } from "@/lib/schema/demoSku";
-import type { BadgeKind, NoticeItem } from "@/lib/schema/notice";
+import type { BadgeKind, NoticeItem, ProductBadgeKind } from "@/lib/schema/notice";
 import type { Product } from "@/lib/schema/product";
 
 // バッジの種類ごとの見た目（design.md §3）。良し悪しの色は使わない
@@ -35,10 +35,18 @@ export type Evidence =
       labelOnly: boolean;
     }
   | { kind: "fact"; ingredient: string; amountMg: number; per: "1回" | "1日" }
-  | { kind: "list"; list: "abuse" | "doping"; ingredient: string; listed: string; source: string };
+  | {
+      kind: "list";
+      list: "abuse" | "doping" | "halal";
+      ingredient: string;
+      listed: string;
+      source: string;
+    };
+
+export type { ProductBadgeKind } from "@/lib/schema/notice";
 
 export type Badge = {
-  kind: BadgeKind;
+  kind: ProductBadgeKind;
   tone: BadgeTone;
   label: string;
   evidence: Evidence[];
@@ -75,11 +83,16 @@ export const NOTICE_BADGE_KINDS: readonly BadgeKind[] = [
 ];
 
 // 「未収録」と出す通知由来の種類。通知を取り込んでいない薬効群は全部、取り込み済みでも補正で表せない種類（L-20261103-28）
-export function unrecordedKinds(product: Product, noticeLoaded: boolean): BadgeKind[] {
-  if (!noticeLoaded && !labelChecked(product)) return [...NOTICE_BADGE_KINDS];
-  return correctionsFor(product).flatMap(({ correction }) =>
-    correction.action === "unrecorded" ? correction.kinds : [],
-  );
+// 添加物を調べられなかった商品は、ハラール関連も「該当なし」ではなく「未収録」（L-20261104-18）
+export function unrecordedKinds(product: Product, noticeLoaded: boolean): ProductBadgeKind[] {
+  const halal: ProductBadgeKind[] = halalFacts(product).checked ? [] : ["halal"];
+  if (!noticeLoaded && !labelChecked(product)) return [...NOTICE_BADGE_KINDS, ...halal];
+  return [
+    ...correctionsFor(product).flatMap(({ correction }) =>
+      correction.action === "unrecorded" ? correction.kinds : [],
+    ),
+    ...halal,
+  ];
 }
 
 // 通知に項目がない種類で、添付文書を確かめた商品（L-20261103-36）
@@ -88,7 +101,7 @@ function labelChecked(product: Product): boolean {
 }
 
 // 並び順（制度 → 通知の注意 → 成分）。量や優劣の順ではない
-const ORDER: BadgeKind[] = [
+const ORDER: ProductBadgeKind[] = [
   "abuse",
   "drive",
   "breastfeeding",
@@ -97,6 +110,7 @@ const ORDER: BadgeKind[] = [
   "alcohol",
   "caffeine",
   "doping",
+  "halal",
 ];
 
 export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
@@ -190,46 +204,59 @@ export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
     });
   }
 
-  const doping = checkDoping(product);
+  // ドーピング：2026年版の禁止表と照合し、この商品の使い方（経路）で禁止に当たるものだけをバッジにする（L-20261104-18）。
+  // 点鼻・点眼・皮膚で対象外の成分はバッジにせず、質問の答えで「対象外と禁止表にある」と伝える
+  const doping = checkDoping(product).filter((d) => d.status !== "local");
   if (doping.length) {
+    const year = dopingListCurrent() ? `${DOPING_SOURCE.year}年版` : "年版確認中";
+    const timings = [
+      ...new Set(doping.filter((d) => d.status === "prohibited").map((d) => d.entry.timing)),
+    ];
     badges.push({
       kind: "doping",
       tone: "ingredient",
-      label: DOPING_SOURCE.verified ? "ドーピング禁止成分" : "ドーピング禁止成分（年版確認中）",
+      label: doping.every((d) => d.status === "unclear")
+        ? "ドーピング：使い方で異なる"
+        : `ドーピング禁止成分（${timings.includes("常時") ? "常時" : "競技会時"}）`,
       evidence: doping.map((d) => ({
         kind: "list",
         list: "doping",
         ingredient: d.ingredient,
-        listed: `${d.entry.name}（${d.entry.category}・${d.entry.timing}）`,
-        source: DOPING_SOURCE.list,
+        listed: `${d.entry.name}（${d.entry.category}・${d.entry.timing}${d.status === "unclear" ? "・使い方で異なる" : ""}）${d.entry.condition ? `。${d.entry.condition}` : ""}`,
+        source: `${DOPING_SOURCE.list}（${year}）`,
       })),
     });
   }
 
+  // ハラール関連の成分：添加物・成分にアルコール（エタノール）、またはゼラチンなど動物・昆虫由来の可能性がある成分。
+  // 事実だけを出し、ハラールかどうか・認証の有無は判断しない（メーカーに確認）
+  const halal = halalFacts(product);
+  if (halal.ethanol.length || halal.animal.length) {
+    badges.push({
+      kind: "halal",
+      tone: "ingredient",
+      label: [halal.ethanol.length && "アルコール", halal.animal.length && "ゼラチン等"]
+        .filter(Boolean)
+        .join("・")
+        .concat("を含む"),
+      evidence: [
+        ...halal.ethanol.map((ingredient) => ({
+          kind: "list" as const,
+          list: "halal" as const,
+          ingredient,
+          listed: "アルコール（エタノール）",
+          source: "成分・添加物（KEGG MEDICUS ほか）",
+        })),
+        ...halal.animal.map((ingredient) => ({
+          kind: "list" as const,
+          list: "halal" as const,
+          ingredient,
+          listed: "動物・昆虫由来の可能性がある成分（由来は出典に記載なし）",
+          source: "添加物（KEGG MEDICUS ほか）",
+        })),
+      ],
+    });
+  }
+
   return badges.sort((a, b) => ORDER.indexOf(a.kind) - ORDER.indexOf(b.kind));
-}
-
-export const LEGACY_DOPING_SOURCE = "既存データ（Medicine Recommend System）の禁止表区分・年版不明";
-
-// デモSKUは、成分照合ではなく既存データの「禁止物質あり」「競技会区分」を出す（L-40 ④）。
-// 照合で当たった成分があれば根拠に添え、なければ商品全体の区分として出す
-export function dopingBadgeFromSku(badges: Badge[], product: Product, sku: DemoSku): Badge[] {
-  const rest = badges.filter((b) => b.kind !== "doping");
-  if (!sku.flags.dopingRelated) return rest;
-  const listed = sku.flags.dopingClass ?? "区分不明";
-  const hits = checkDoping(product);
-  const ingredients = hits.length ? hits.map((h) => h.ingredient) : ["（成分の特定なし）"];
-  const badge: Badge = {
-    kind: "doping",
-    tone: "ingredient",
-    label: "ドーピング禁止成分（年版確認中）",
-    evidence: ingredients.map((ingredient) => ({
-      kind: "list",
-      list: "doping",
-      ingredient,
-      listed,
-      source: LEGACY_DOPING_SOURCE,
-    })),
-  };
-  return [...rest, badge].sort((a, b) => ORDER.indexOf(a.kind) - ORDER.indexOf(b.kind));
 }

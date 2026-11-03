@@ -1,0 +1,141 @@
+{
+  "group": {
+    "id": "vitamin_hoken",
+    "name": "ビタミン含有保健薬（Ａ・Ｄ含有製剤を除く）",
+    "sourceUrl": "https://www.mhlw.go.jp/content/001742612.pdf",
+    "sourcePage": 190,
+    "fetchedOn": "2026-11-03"
+  },
+  "items": [
+    {
+      "id": "vitamin_hoken-sd-1",
+      "groupId": "vitamin_hoken",
+      "section": "相談すること",
+      "itemNo": "1.",
+      "body": "次の人は服用前に医師，薬剤師又は登録販売者に相談すること １歳未満の乳児．",
+      "condition": {
+        "usageUnderMonths": 12
+      },
+      "conditionText": "１歳未満の用法がある場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_hoken-sd-2",
+      "groupId": "vitamin_hoken",
+      "section": "相談すること",
+      "itemNo": "2.",
+      "body": "服用後，次の症状があらわれた場合は副作用の可能性があるので，直ちに服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "○は各製剤により報告されている副作用を記載すること．",
+      "excludedBy": [],
+      "needsReview": true
+    },
+    {
+      "id": "vitamin_hoken-sd-3",
+      "groupId": "vitamin_hoken",
+      "section": "相談すること",
+      "itemNo": "3.",
+      "body": "しばらく服用しても症状がよくならない場合は服用を中止し，この文書を持って医師，薬剤師又は登録販売者に相談すること",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_hoken-etc-youho-1",
+      "groupId": "vitamin_hoken",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(1)",
+      "body": "小児に服用させる場合には，保護者の指導監督のもとに服用させること．",
+      "condition": {
+        "usageUnderMonths": 180
+      },
+      "conditionText": "小児の用法及び用量がある場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_hoken-etc-youho-2",
+      "groupId": "vitamin_hoken",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(2)",
+      "body": "３歳以上の幼児に服用させる場合には，薬剤がのどにつかえることのないよう，よく注意すること．",
+      "condition": {
+        "all": [
+          {
+            "usageUnderMonths": 60
+          },
+          {
+            "dosageForm": [
+              "錠剤",
+              "丸剤",
+              "軟カプセル剤"
+            ]
+          }
+        ]
+      },
+      "conditionText": "５歳未満の幼児の用法がある錠剤（発泡錠を除く）・丸剤・軟カプセル剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_hoken-etc-youho-3",
+      "groupId": "vitamin_hoken",
+      "section": "その他",
+      "itemNo": "用法及び用量に関連する注意(3)",
+      "body": "内服にのみ使用すること．",
+      "condition": {
+        "dosageForm": [
+          "アンプル剤"
+        ]
+      },
+      "conditionText": "アンプル剤の場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_hoken-etc-hokan-1",
+      "groupId": "vitamin_hoken",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(1)",
+      "body": "直射日光の当たらない（湿気の少ない）涼しい所に（密栓して）保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "（ ）内は必要とする場合に記載すること．",
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_hoken-etc-hokan-2",
+      "groupId": "vitamin_hoken",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(2)",
+      "body": "小児の手の届かない所に保管すること．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": null,
+      "excludedBy": [],
+      "needsReview": false
+    },
+    {
+      "id": "vitamin_hoken-etc-hokan-3",
+      "groupId": "vitamin_hoken",
+      "section": "その他",
+      "itemNo": "保管及び取扱い上の注意(3)",
+      "body": "他の容器に入れ替えないこと（誤用の原因になったり品質が変わる．）．",
+      "condition": {
+        "always": true
+      },
+      "conditionText": "容器等の個々に至適表示がなされていて，誤用のおそれのない場合には記載しなくてもよい．",
+      "excludedBy": [],
+      "needsReview": false
+    }
+  ]
+}
