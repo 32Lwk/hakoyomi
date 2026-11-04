@@ -42,11 +42,51 @@ const SYSTEM_PROMPT = `あなたはドラッグストアの店頭に立つベテ
 3. 主観的な効果の保証や、特定の商品を勧める表現、病状の判断・受診要否の決定は絶対に含めないでください。
 4. 出力は日本語で簡潔に作成してください。`;
 
-export async function generateDialogueChecklist(
-  view: ProductView,
-): Promise<DialogueChecklist | null> {
+export function generateFallbackChecklist(view: ProductView): DialogueChecklist {
+  const items: DialogueChecklist["items"] = [];
+
+  const ageBadge = view.badges.find((b) => b.kind === "under15" || b.kind === "under12");
+  if (ageBadge) {
+    items.push({
+      dialogue: `ご使用される方の年齢は、${ageBadge.label}を満たしていますか？`,
+      reason: "用法用量（対象年齢制限の遵守）",
+      badgeText: "年齢確認",
+    });
+  }
+
+  const driveBadge = view.badges.find((b) => b.kind === "drive");
+  if (driveBadge) {
+    items.push({
+      dialogue: "服用後にお車や機械類の運転・操作をされるご予定はありませんか？",
+      reason: "してはいけないこと（眠気等のため運転操作の禁止）",
+      badgeText: "運転注意",
+    });
+  }
+
+  const abuseBadge = view.badges.find((b) => b.kind === "abuse");
+  if (abuseBadge) {
+    items.push({
+      dialogue: "現在、他の医薬品（かぜ薬や咳止め等）と併用されるご予定はありませんか？",
+      reason: "併用時の成分重複防止（適正使用の確認）",
+      badgeText: "併用注意",
+    });
+  }
+
+  // 項目が2件未満の場合、一般的な禁忌・アレルギー確認を補完
+  if (items.length < 2) {
+    items.push({
+      dialogue: "過去に医薬品でアレルギー症状や胃腸の不調を経験されたことはありませんか？",
+      reason: "してはいけないこと・相談すること（アレルギー歴・持病の確認）",
+      badgeText: "禁忌事項",
+    });
+  }
+
+  return { items: items.slice(0, 3) };
+}
+
+export async function generateDialogueChecklist(view: ProductView): Promise<DialogueChecklist> {
   const c = client();
-  if (!c) return null;
+  if (!c) return generateFallbackChecklist(view);
 
   const age = view.badges.find((b) => b.kind === "under15" || b.kind === "under12");
   const driving = view.badges.find((b) => b.kind === "drive");
@@ -75,15 +115,15 @@ export async function generateDialogueChecklist(
     const model = process.env.CLAUDE_MODEL_FAST || process.env.CLAUDE_MODEL || "claude-haiku-4-5";
     const res = await c.beta.messages.parse({
       model,
-      max_tokens: 512,
+      max_tokens: 1024,
       system: SYSTEM_PROMPT,
       output_config: { format: zodOutputFormat(DialogueChecklistSchema) },
       messages: [{ role: "user", content: userPrompt }],
     });
 
-    if (res.stop_reason === "refusal") return null;
+    if (res.stop_reason === "refusal") return generateFallbackChecklist(view);
     const result = res.parsed_output ?? null;
-    if (!result) return null;
+    if (!result) return generateFallbackChecklist(view);
 
     // 安全ガード（禁止語チェック）
     const allText = result.items
@@ -93,12 +133,12 @@ export async function generateDialogueChecklist(
     const hits = findBanwords(allText);
     if (hits.length > 0) {
       console.warn("dialogueChecklist: 禁止語が検出されたため出力を棄却しました", hits);
-      return null;
+      return generateFallbackChecklist(view);
     }
 
     return result;
   } catch (error) {
-    console.error("dialogueChecklist: Claude API 呼び出し失敗", error);
-    return null;
+    console.error("dialogueChecklist: Claude API 呼び出し失敗、フォールバックを使用します", error);
+    return generateFallbackChecklist(view);
   }
 }

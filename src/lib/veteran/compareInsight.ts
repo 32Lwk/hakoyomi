@@ -49,13 +49,63 @@ const SYSTEM_PROMPT = `あなたはドラッグストアの店頭に立つベテ
 3. あくまで「用法（服用回数・間隔）」「運転制限」「年齢制限」「配合成分の違い」など、客観的な事実の違いと、お客様の生活状況（運転するか、何回なら飲みやすいか等）を確認するヒアリング事項のみを伝えてください。
 4. 出力は日本語で、簡潔かつ丁寧にまとめてください。`;
 
+export function generateFallbackCompareInsight(
+  views: ProductView[],
+  rows: CompareRow[],
+  badges: BadgeRowCompare[],
+): CompareInsight {
+  const diffRows = rows.filter((r) => r.diff);
+  const diffBadges = badges.filter((b) => b.diff);
+
+  const points: CompareInsight["points"] = [];
+
+  const driveDiff = diffBadges.find((b) => b.kind === "drive");
+  if (driveDiff) {
+    points.push({
+      title: "運転操作の有無",
+      description: "商品によって服用後の運転操作に関する注意事項が異なります。",
+    });
+  }
+
+  const ageDiff = diffBadges.find((b) => b.kind === "under15" || b.kind === "under12");
+  if (ageDiff) {
+    points.push({
+      title: "対象年齢の確認",
+      description: "服用可能な対象年齢の条件が異なります。",
+    });
+  }
+
+  if (diffRows.length > 0 && points.length < 3) {
+    points.push({
+      title: "配合成分・規格の違い",
+      description: `${diffRows
+        .slice(0, 2)
+        .map((r) => r.label)
+        .join("や")}などの成分や分量に違いがあります。`,
+    });
+  }
+
+  if (points.length === 0) {
+    points.push({
+      title: "規格・用法の確認",
+      description: "それぞれの添付文書に記載された用法・用量をご確認ください。",
+    });
+  }
+
+  return {
+    summary: "配合成分や生活上の注意事項（運転や服用回数など）の違いをご確認ください。",
+    points: points.slice(0, 3),
+    hearingPrompt: "お客様の日中の運転予定や、服用回数のご希望をお聞きください。",
+  };
+}
+
 export async function generateCompareInsight(
   views: ProductView[],
   rows: CompareRow[],
   badges: BadgeRowCompare[],
-): Promise<CompareInsight | null> {
+): Promise<CompareInsight> {
   const c = client();
-  if (!c || views.length < 2) return null;
+  if (!c || views.length < 2) return generateFallbackCompareInsight(views, rows, badges);
 
   // 比較データの要約を作成
   const diffRows = rows.filter((r) => r.diff);
@@ -93,15 +143,15 @@ ${diffSummary}
     const model = process.env.CLAUDE_MODEL_FAST || process.env.CLAUDE_MODEL || "claude-haiku-4-5";
     const res = await c.beta.messages.parse({
       model,
-      max_tokens: 512,
+      max_tokens: 1024,
       system: SYSTEM_PROMPT,
       output_config: { format: zodOutputFormat(CompareInsightSchema) },
       messages: [{ role: "user", content: userPrompt }],
     });
 
-    if (res.stop_reason === "refusal") return null;
+    if (res.stop_reason === "refusal") return generateFallbackCompareInsight(views, rows, badges);
     const insight = res.parsed_output ?? null;
-    if (!insight) return null;
+    if (!insight) return generateFallbackCompareInsight(views, rows, badges);
 
     // 安全ガード（禁止語チェック）
     const allText = [
@@ -113,12 +163,12 @@ ${diffSummary}
     const hits = findBanwords(allText);
     if (hits.length > 0) {
       console.warn("compareInsight: 禁止語が検出されたため出力を棄却しました", hits);
-      return null;
+      return generateFallbackCompareInsight(views, rows, badges);
     }
 
     return insight;
   } catch (error) {
-    console.error("compareInsight: Claude API 呼び出し失敗", error);
-    return null;
+    console.error("compareInsight: Claude API 呼び出し失敗、フォールバックを使用します", error);
+    return generateFallbackCompareInsight(views, rows, badges);
   }
 }

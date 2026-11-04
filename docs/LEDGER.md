@@ -2,6 +2,23 @@
 
 ## Open
 
+### L-20261104-27
+- asked: 接客前チェック（先輩ならここを確認する）が表示されなくなった原因を確認して改善する（ゆう 2026-11-04）
+- why: 店頭でお客様に渡す前の確認チェックリストが表示されず、UIが欠落して見えていた。生成速度向上と安定稼働の両立が必要
+- decisions:
+  - 原因特定:
+    1. `checklist.ts` および `compareInsight.ts` で `max_tokens: 512` となっていたため、日本語構造化JSON（3項目の台詞・根拠・バッジ）が約538文字でトークン上限に達し、JSON文字列が切断されて `Unterminated string in JSON at position 538` のパース例外が発生していた。
+    2. APIが null を返した際、フロントエンド（`product-card.tsx`）の表示条件 `{(checklist || checklistLoading) && ...}` により、DOMから完全にコンポーネントが非表示になっていた。
+  - 恒久対策:
+    1. トークン上限を `max_tokens: 1024` に拡大し、マルチバイトJSONが途中で途切れる問題を解消。
+    2. Claude API障害・通信遅延・タイムアウト時でも絶対に画面から消えないよう、商品バッジ（年齢・運転・濫用防止・禁忌）から安全に即時生成するルールベースのフォールバック関数（`generateFallbackChecklist`、`generateFallbackCompareInsight`）を新設。
+    3. キャッシュ・APIエンドポイントで常に完全なデータを返却し、フロントエンドが安定して描画できるよう改善。
+- target: src/lib/veteran/{checklist.ts,compareInsight.ts}・src/components/product-card.tsx
+- owner: Antigravity（調査・実装）／ゆう（確認）
+- status: done（2026-11-04）
+- proof: vitest 233件全件通過、npm run check 通過、Mac mini (hakoyomi.yutok.dev) でのAPIレスポンス正常確認（eve-a, med-05338）
+- notes:
+
 ### L-20261104-26
 - asked: 「守りが固すぎてAIプロダクトとしての驚き（Wow）が薄い」問題と、テーマ1の核心「ベテランの知恵の継承」が脇役になっている問題を解決する。①比較時の「ベテランの着眼点」、②スキャン時の「接客前チェックリスト（問いかけ台詞生成）」、③メモと公的通知の「自動照合タグ」を実装する（ゆう 2026-11-04）
 - why: 審査（インパクト30%・Claudeの活用25%・デモ25%）。公的通知の抜き出しに終始して電子辞書に見えてしまうリスクを打破し、安全基準（推薦・診断禁止）を完全順守したまま「現場のベテランの頭の中をClaudeが再現して新人を支える」生きた接客支援プロダクトにする
