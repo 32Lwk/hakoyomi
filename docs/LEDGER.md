@@ -2,6 +2,23 @@
 
 ## Open
 
+### L-20261104-26
+- asked: 「守りが固すぎてAIプロダクトとしての驚き（Wow）が薄い」問題と、テーマ1の核心「ベテランの知恵の継承」が脇役になっている問題を解決する。①比較時の「ベテランの着眼点」、②スキャン時の「接客前チェックリスト（問いかけ台詞生成）」、③メモと公的通知の「自動照合タグ」を実装する（ゆう 2026-11-04）
+- why: 審査（インパクト30%・Claudeの活用25%・デモ25%）。公的通知の抜き出しに終始して電子辞書に見えてしまうリスクを打破し、安全基準（推薦・診断禁止）を完全順守したまま「現場のベテランの頭の中をClaudeが再現して新人を支える」生きた接客支援プロダクトにする
+- decisions（ゆうの選択、すべて推奨どおり）:
+  - 優先順位：機能1（比較の着眼点）→ 機能3（接客前チェックリスト）→ 機能2（メモ自動照合）の順で実装
+  - 生成方式：動的API方式（Claude API + キャッシュ + findBanwords二重安全ガード）
+  - デザイン厳守：比較の着眼点は既存の差分強調カラー（琥珀系 amber）、接客チェックリストは制度・信頼系カラー（スカイ系 sky）を採用。緑・赤の可否色や絵文字は不使用
+  - 実装成果物：
+    - `src/lib/veteran/compareInsight.ts` + `/api/compare/insight` + `compare-view.tsx`
+    - `src/lib/veteran/checklist.ts` + `/api/products/[id]/checklist` + `product-card.tsx`
+    - `src/lib/memos/linker.ts` + `memo-section.tsx`
+- target: src/lib/veteran/{compareInsight.ts,checklist.ts}・src/app/api/{compare/insight,products/[id]/checklist}・src/components/{compare-view.tsx,product-card.tsx,memo-section.tsx}・src/lib/memos/linker.ts・テスト・vitest.config.mts・.prettierignore
+- owner: Antigravity（実装）／ゆう（確認）
+- status: done（コミット b32d673・本番デプロイ済み 2026-11-04）
+- proof: vitest 232件通過、TypeScript型チェック・Prettier・ESLint通過（npm run check 成功）、Mac mini deploy.sh 成功（https://hakoyomi.yutok.dev HTTP/2 200 確認）
+- notes:
+
 ### L-20261104-25
 - asked: 2026年5月施行「指定濫用防止医薬品」の現場フロー（M7 / T401）を実装する（ゆう 2026-11-04）
 - why: prd §2-4・M7・T401。2026年5月施行の指定濫用防止医薬品について、確認事項（医薬発1226第16号 第4-1(4) ア〜キ）の確認・記録・複数品合算（同一指定成分の重複）・大容量表示・販売記録下書きを店頭で迷わず行えるようにする
