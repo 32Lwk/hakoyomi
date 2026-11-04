@@ -9,26 +9,26 @@
   },
   "S2-jan-badges": {
     "file": "recordings/S2-jan-badges.webm",
-    "seconds": 45.24
+    "seconds": 48.08
   },
   "S3-compare": {
     "file": "recordings/S3-compare.webm",
-    "seconds": 47.6
+    "seconds": 52
   },
   "S4-ask": {
     "file": "recordings/S4-ask.webm",
-    "seconds": 28.72
+    "seconds": 28.64
   },
   "S4.5-askable": {
     "file": "recordings/S4.5-askable.webm",
-    "seconds": 54.24
+    "seconds": 62.56
   },
   "S5-reverse-shelf": {
     "file": "recordings/S5-reverse-shelf.webm",
-    "seconds": 37.92
+    "seconds": 37.8
   },
   "S6-memo": {
     "file": "recordings/S6-memo.webm",
-    "seconds": 47.72
+    "seconds": 50.48
   }
 }

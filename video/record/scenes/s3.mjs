@@ -33,6 +33,15 @@ export async function run(s) {
   const table = page.getByRole("table", { name: "商品の比較" });
   await table.waitFor();
   await s.pause(600);
+
+  // ベテランの着眼点（接客の分岐点）
+  const insight = page.locator('section[aria-label="ベテランの着眼点"]');
+  if (await insight.count()) {
+    await s.show(insight, { block: "center", settle: 800 });
+    await s.cue("ベテランの着眼点（接客の分岐点）");
+    await s.read(3000);
+  }
+
   const count = (await page.getByText(/^違う項目/).first().innerText()).replace(/\s+/g, "");
   await s.cue(`比べる表（${count}）`);
   await s.read(3000);

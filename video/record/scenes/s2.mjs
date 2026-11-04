@@ -21,7 +21,16 @@ export async function run(s) {
   await badges.waitFor();
   await s.pause(500);
   await s.cue(`商品カード：${PRODUCT.name}`);
-  await s.read(2200);
+  await s.read(1500);
+
+  // 接客前チェック（先輩ならここを確認する）
+  const checklist = page.locator('section[aria-label="接客前の確認チェック"]');
+  if (await checklist.count()) {
+    await s.show(checklist, { block: "center", settle: 800 });
+    await s.cue("接客前チェック（先輩ならここを確認する）");
+    await s.read(2800);
+  }
+
   await s.show(badges, { block: "start", settle: 900 });
   await s.cue(`バッジ：${(await badges.getByRole("button").allInnerTexts()).join("／")}`);
   await s.read(3200);
