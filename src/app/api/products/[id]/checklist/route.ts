@@ -16,7 +16,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   }
 
   const cached = checklistCache.get(id);
-  if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+  if (cached && cached.checklist && Date.now() - cached.timestamp < CACHE_TTL_MS) {
     return Response.json({ checklist: cached.checklist });
   }
 
@@ -31,7 +31,9 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   }
 
   const checklist = await generateDialogueChecklist(view);
-  checklistCache.set(id, { checklist, timestamp: Date.now() });
+  if (checklist) {
+    checklistCache.set(id, { checklist, timestamp: Date.now() });
+  }
 
   return Response.json({ checklist });
 }
