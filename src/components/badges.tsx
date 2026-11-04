@@ -122,11 +122,11 @@ export function BadgeRow({
   unrecorded: ProductBadgeKind[];
 }) {
   const [open, setOpen] = useState<BadgeTarget | null>(null);
-  // 年齢は商品カードの上に別に大きく出すので、ここでは扱わない
-  const shown = badges.filter((b) => badgeRowKind(b.kind) !== "under15");
+  // 年齢もここで出す（商品カードの大きな帯は L-20261104-22 でなくした）
+  const shown = badges;
   // バッジがない種類も「該当なし」として名前を出す（何も出ないと、見落としか該当なしか区別できない）
   const absent = (Object.keys(BADGE_INFO) as ProductBadgeKind[])
-    .filter((k) => badgeRowKind(k) === k && k !== "under15")
+    .filter((k) => badgeRowKind(k) === k)
     .filter((k) => !shown.some((b) => b.kind === k));
   // 通知を取り込んでいない薬効群や、補正で表せない種類は「該当なし」ではなく「未収録」
   const unloaded = absent.filter((k) => unrecorded.includes(k));

@@ -1,21 +1,21 @@
 "use client";
 
-import { ChevronRight, ExternalLink, FileText, MapPin, UserRound } from "lucide-react";
+import { ChevronRight, ExternalLink, FileText, MapPin } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { ageStatus, BadgeRow, BadgeSheet } from "@/components/badges";
+import { BadgeRow } from "@/components/badges";
 import { IngredientSheet } from "@/components/ingredient-sheet";
 import { MemoSection } from "@/components/memo-section";
 import { factAmountText } from "@/lib/compare";
 import { dailyMaxLabel, timesPerDayLabel } from "@/lib/dosage";
 import { ingredientRole } from "@/lib/ingredientRole";
-import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
+import { UI_COPY } from "@/lib/guard/uiCopy";
 import { cn } from "@/lib/utils";
 import type { ProductView } from "@/lib/catalog";
 import { ProductImage } from "@/components/product-image";
 import { packageImage } from "@/lib/packageImage";
 
-// 上から「何の商品か」→「確認ポイント」→「成分・分量」→「場所」→「添付文書」の順。店頭で聞かれる順に並べる
+// 上から「何の商品か」→「確認ポイント」→「用法・用量」→「成分・分量」→「場所」→「添付文書」の順。店頭で聞かれる順に並べる
 export function ProductCard({ view }: { view: ProductView }) {
   const { product, badges, group, location, sku } = view;
   const image = packageImage(product.id, product.kind, product.name);
@@ -47,21 +47,7 @@ export function ProductCard({ view }: { view: ProductView }) {
         </div>
       </header>
 
-      <AgeBand view={view} />
-
-      <dl className="grid grid-cols-3 divide-x divide-border rounded-xl bg-muted text-center">
-        <Stat label="内容量" value={`${product.contentQty}${product.contentUnit}`} />
-        <Stat
-          label="1日最大"
-          value={dailyMaxLabel(product)}
-          small={product.dailyMaxUnits === null}
-        />
-        <Stat
-          label="1日の回数"
-          value={timesPerDayLabel(product)}
-          small={product.timesPerDay === null}
-        />
-      </dl>
+      <DosageStats view={view} />
 
       <BadgeRow badges={badges} group={group} unrecorded={view.unrecorded} />
 
@@ -70,6 +56,9 @@ export function ProductCard({ view }: { view: ProductView }) {
           {UI_COPY.drowsyIngredient}
         </p>
       )}
+
+      {/* 確認ポイントの後に飲み方（L-20261104-22、ゆうの選択） */}
+      <DosageTable view={view} />
 
       <section aria-labelledby="facts-title" className="flex flex-col gap-2">
         <h2 id="facts-title" className="flex items-baseline justify-between text-base font-bold">
@@ -192,45 +181,94 @@ export function ProductCard({ view }: { view: ProductView }) {
   );
 }
 
-// 年齢は店頭で最初に確かめることが多いので、品名のすぐ下に大きく出す。押すと根拠（L-20261103-16）
-function AgeBand({ view }: { view: ProductView }) {
-  const [open, setOpen] = useState(false);
-  const age = ageStatus(view.badges, view.unrecorded);
+// 1日最大・服用間隔・内容量。品名のすぐ下、確認ポイントの上に置く（L-20261104-22、ゆうの指定）。
+// 表と重なる「1日の回数」は表がないときだけ
+function DosageStats({ view }: { view: ProductView }) {
+  const { dosage, product } = view;
   return (
-    <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className={cn(
-          "flex min-h-14 items-center gap-3 rounded-xl px-4 py-2 text-left active:translate-y-px",
-          age.state === "set"
-            ? "bg-notice text-white"
-            : age.state === "unloaded"
-              ? "border-2 border-uncertain text-uncertain"
-              : "border-2 border-border text-muted-foreground",
-        )}
-      >
-        <UserRound className="size-5 shrink-0" aria-hidden="true" />
-        <span className="text-sm">{BADGE_INFO.under15.name}</span>
-        <span className={cn("flex-1 font-bold", age.state === "set" ? "text-2xl" : "text-base")}>
-          {age.text}
-        </span>
-        <ChevronRight className="size-5 shrink-0 opacity-70" aria-hidden="true" />
-      </button>
-      <BadgeSheet
-        target={
-          open
-            ? {
-                kind: age.badge?.kind ?? "under15",
-                badge: age.badge,
-                group: view.group,
-                empty: age.state === "set" ? undefined : age.state,
-              }
-            : null
-        }
-        onClose={() => setOpen(false)}
-      />
-    </>
+    <dl
+      className={cn(
+        "grid divide-x divide-border rounded-xl bg-muted text-center",
+        dosage?.intervalHours == null && dosage ? "grid-cols-2" : "grid-cols-3",
+      )}
+    >
+      <Stat label="1日最大" value={dailyMaxLabel(product)} small={product.dailyMaxUnits === null} />
+      {!dosage && (
+        <Stat
+          label="1日の回数"
+          value={timesPerDayLabel(product)}
+          small={product.timesPerDay === null}
+        />
+      )}
+      {dosage?.intervalHours != null && (
+        <Stat label="服用間隔" value={`${dosage.intervalHours}時間以上`} small />
+      )}
+      <Stat label="内容量" value={`${product.contentQty}${product.contentUnit}`} />
+    </dl>
+  );
+}
+
+// 用法・用量の表（L-20261104-22）。年齢区分・1回量・1日の回数の値だけ。個人に合わせた量は出さない
+function DosageTable({ view }: { view: ProductView }) {
+  const { dosage, product } = view;
+  const notTake = product.route === "external" ? UI_COPY.dosageNotUse : UI_COPY.dosageNotTake;
+  return (
+    <section aria-labelledby="dosage-title" className="flex flex-col gap-2">
+      <h2 id="dosage-title" className="text-base font-bold">
+        用法・用量
+      </h2>
+      {dosage ? (
+        <>
+          <table className="w-full overflow-hidden rounded-xl border border-border text-sm">
+            <thead className="bg-muted text-xs text-muted-foreground">
+              <tr>
+                <th scope="col" className="px-3 py-1.5 text-left font-normal">
+                  年齢
+                </th>
+                <th scope="col" className="px-3 py-1.5 text-right font-normal">
+                  1回量
+                </th>
+                <th scope="col" className="px-3 py-1.5 text-right font-normal">
+                  1日
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              {dosage.rows.map((r) => (
+                <tr key={r.age}>
+                  <th scope="row" className="px-3 py-2 text-left font-normal">
+                    {r.age}
+                  </th>
+                  {r.dose ? (
+                    <>
+                      <td className="px-3 py-2 text-right text-lg font-bold tabular-nums">
+                        {r.dose}
+                      </td>
+                      <td className="px-3 py-2 text-right font-bold tabular-nums">
+                        {r.times ?? dosage.timesPerDay ?? (timesPerDayLabel(product) || "—")}
+                      </td>
+                    </>
+                  ) : (
+                    <td colSpan={2} className="px-3 py-2 text-right text-muted-foreground">
+                      {notTake}
+                    </td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      ) : (
+        <p className="rounded-xl border border-border px-3 py-2.5 text-sm text-uncertain">
+          {UI_COPY.dosageNone}
+        </p>
+      )}
+      {dosage && (
+        <p className="text-[11px] text-muted-foreground">
+          {UI_COPY.dosageSource}（{dosage.checkedOn}）
+        </p>
+      )}
+    </section>
   );
 }
 

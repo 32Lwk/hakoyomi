@@ -2,6 +2,7 @@ import "server-only";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { DEMO_PRODUCTS, demoSku } from "@/data/demo_products";
 import { withResearchedAmounts } from "@/data/ingredient_amounts";
+import { PRODUCT_DOSAGE, type ProductDosage } from "@/data/product_dosage";
 import { MOCK_STORE, sectionAt, type Shelf, type ShelfLocation } from "@/data/mock_store";
 import { SHELF_LOCATIONS } from "@/data/shelf_stock";
 import { NOTICE_GROUPS, NOTICE_ITEMS } from "@/data/notices";
@@ -160,6 +161,8 @@ export type ProductView = {
   unrecorded: ProductBadgeKind[];
   location: LocatedShelf | null;
   sku: DemoSku | null;
+  // 用法・用量の表（年齢区分・1回量・回数の値）。取り出せない品は null（L-20261104-22）
+  dosage: ProductDosage | null;
 };
 
 export async function productViews(products: Product[]): Promise<ProductView[]> {
@@ -178,6 +181,7 @@ export async function productViews(products: Product[]): Promise<ProductView[]> 
       unrecorded: unrecordedKinds(product, noticeLoaded),
       location: locate(catalog, product.id),
       sku,
+      dosage: PRODUCT_DOSAGE[product.id] ?? null,
     };
   });
 }

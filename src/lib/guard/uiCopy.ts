@@ -12,6 +12,11 @@ export const UI_COPY = {
   noEvidence: "該当する記載が見つかりません。添付文書（PMDA）で確認してください",
   blocked: "表示できない表現が含まれたため省略しました",
   uncertain: "添付文書で確認",
+  dosageNotTake: "服用しない",
+  dosageNotUse: "使用しない",
+  dosageNone: "年齢ごとの量はこの商品の添付文書で確認してください",
+  dosageSource:
+    "既存データの用法用量から、年齢・1回量・回数の値だけを取り出しています（箱で未照合）",
   emptyRead: "JANを読むか、品名で検索してください",
   scanning: "JANを枠に合わせてください",
   unknownJan: "このJANはデモデータにありません。品名で検索するか、入力し直してください",

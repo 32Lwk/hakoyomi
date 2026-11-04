@@ -1,0 +1,3603 @@
+{
+  "shin-lulu-a-s": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "12歳以上15歳未満",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "lulu-attack-ex": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "benza-block-l": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "shin-contac-kaze": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2カプセル",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "1カプセル",
+        "times": "2回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "shin-estac-granule": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": null
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "2/3包",
+        "times": null
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "estac-ibu-fine-ex": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "loxonin-s": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "eve-a": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "bufferin-a": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 6,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "tylenol-a": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "naron-ace": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "shin-sedes": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "alesion-20": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "pabron-bien-ex": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7〜14歳",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "stona-rhini-s": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "1〜2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "shin-bron-ace": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "10mL",
+        "times": null
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "6.6mL",
+        "times": null
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "benza-block-cough": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "drewell": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "pylon-pl-granule": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "lulu-attack-nx": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "shin-lulu-a-gold-s": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "12歳以上15歳未満",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "benza-block-s": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "loxonin-s-premium": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "eve-quick-dx": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "2回",
+    "intervalHours": 6,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "bufferin-premium": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "calonal-a": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "excedrin-a": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 6,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "stona-rhini-z-gel": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1カプセル",
+        "times": "1回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "algard-gold-z": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "colgen-film-alpha": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1枚",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "jikinin-bien-ag": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上11歳未満",
+        "dose": "1/2包",
+        "times": "3回"
+      },
+      {
+        "age": "3歳以上7歳未満",
+        "dose": "1/3包",
+        "times": "3回"
+      },
+      {
+        "age": "3歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "medicon-pro": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "mucodyne-pro500": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "pabron-s-cough": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "1カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "ss-bron-ace-tab": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "4錠",
+        "times": null
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "stona-kyotan": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "8〜14歳",
+        "dose": "1カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "8歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "askuron": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "8〜14歳",
+        "dose": "1/2包",
+        "times": "3回"
+      },
+      {
+        "age": "8歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "drewell-ex": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1カプセル",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "dreamin-z": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "1回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05883": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06448": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05907": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00553": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00193": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "2回",
+    "intervalHours": 6,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00274": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00243": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00233": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00177": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06455": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "5mL",
+        "times": null
+      },
+      {
+        "age": "11〜14歳",
+        "dose": "3.3mL",
+        "times": null
+      },
+      {
+        "age": "8〜10歳",
+        "dose": "2.5mL",
+        "times": null
+      },
+      {
+        "age": "8歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05476": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "5mL",
+        "times": "4回"
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "3.3mL",
+        "times": "4回"
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05751": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1カプセル",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06018": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "5錠",
+        "times": null
+      }
+    ],
+    "timesPerDay": "2回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05114": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05107": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05149": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00522": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "1回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00598": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "1回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00616": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "1回"
+      },
+      {
+        "age": "7〜14歳",
+        "dose": "1/2錠",
+        "times": "1回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00635": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "7〜14歳",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00083": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1.3g",
+        "times": null
+      },
+      {
+        "age": "8〜14歳",
+        "dose": "0.65g",
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00086": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": null
+      },
+      {
+        "age": "7〜14歳",
+        "dose": "2/3包",
+        "times": null
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00097": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00102": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": null
+      },
+      {
+        "age": "5〜14歳",
+        "dose": "1/2包",
+        "times": null
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00104": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "5〜14歳",
+        "dose": "1/2包",
+        "times": "3回"
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00138": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00080": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00147": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04107": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "5〜14歳",
+        "dose": "1錠",
+        "times": "1回"
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04104": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "5〜14歳",
+        "dose": "1錠",
+        "times": "1回"
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04221": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "6錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "2回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00145": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": null
+      },
+      {
+        "age": "11〜14歳",
+        "dose": "2/3包",
+        "times": null
+      },
+      {
+        "age": "8〜10歳",
+        "dose": "1/2包",
+        "times": null
+      },
+      {
+        "age": "5〜7歳",
+        "dose": "1/3包",
+        "times": null
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00144": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3粒",
+        "times": "3回"
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2粒",
+        "times": "3回"
+      },
+      {
+        "age": "8歳以上11歳未満",
+        "dose": "1.5粒",
+        "times": "3回"
+      },
+      {
+        "age": "5歳以上8歳未満",
+        "dose": "1粒",
+        "times": "3回"
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-07285": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1〜3錠",
+        "times": null
+      },
+      {
+        "age": "11〜14歳",
+        "dose": "1〜2錠",
+        "times": null
+      },
+      {
+        "age": "7〜10歳",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-07092": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-01123": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-01148": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "1〜2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 6,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04595": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "7〜14歳",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04323": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "1回"
+      },
+      {
+        "age": "7〜14歳",
+        "dose": "1錠",
+        "times": "1回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04318": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "1回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "1錠",
+        "times": "1回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00717": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1瓶",
+        "times": "1回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00781": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1本",
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00169": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1瓶",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06002": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05996": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05995": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05349": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06003": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-03046": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1個",
+        "times": "1〜3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05882": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "1/2包",
+        "times": "3回"
+      },
+      {
+        "age": "12歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05450": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上11歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05591": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05596": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05594": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05599": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05598": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05905": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06453": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06220": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06118": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00323": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00319": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00191": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00196": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "2回",
+    "intervalHours": 6,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00571": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7〜14歳",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00228": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1カプセル",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00179": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 6,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00185": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00246": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05202": {
+    "rows": [
+      {
+        "age": "7〜11歳",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "12〜14歳",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05011": {
+    "rows": [
+      {
+        "age": "7〜14歳",
+        "dose": "1カプセル",
+        "times": "2回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05639": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "6mL",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06128": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "6回"
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "6回"
+      },
+      {
+        "age": "7歳以上11歳未満",
+        "dose": "1/2包",
+        "times": "6回"
+      },
+      {
+        "age": "3歳以上7歳未満",
+        "dose": "1/3包",
+        "times": "6回"
+      },
+      {
+        "age": "3歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 2,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00118": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": null
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2/3包",
+        "times": null
+      },
+      {
+        "age": "8歳以上11歳未満",
+        "dose": "1/2包",
+        "times": null
+      },
+      {
+        "age": "5歳以上8歳未満",
+        "dose": "1/3包",
+        "times": null
+      },
+      {
+        "age": "3歳以上5歳未満",
+        "dose": "1/4包",
+        "times": null
+      },
+      {
+        "age": "3歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00122": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": null
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "11歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00146": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": null
+      },
+      {
+        "age": "11〜14歳",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "11歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00021": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-01151": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "1〜2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 6,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-07109": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04159": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "3回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "3回"
+      },
+      {
+        "age": "4歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04210": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-03986": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00998": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-01061": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-03936": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04810": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04058": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04276": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04780": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": "1/4包",
+        "times": "2回"
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00652": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00650": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "11〜14歳",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "11歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00651": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "11〜14歳",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "5〜10歳",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00619": {
+    "rows": [
+      {
+        "age": "11〜14歳",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "5〜10歳",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00617": {
+    "rows": [
+      {
+        "age": "11歳以上",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "3〜10歳",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "3歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00614": {
+    "rows": [
+      {
+        "age": "11歳以上",
+        "dose": "1本",
+        "times": "2回"
+      },
+      {
+        "age": "11歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00630": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "1回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00152": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "4錠",
+        "times": null
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "3錠",
+        "times": null
+      },
+      {
+        "age": "5歳以上11歳未満",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00137": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00142": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1本",
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00133": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": null
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2/3包",
+        "times": null
+      },
+      {
+        "age": "8歳以上11歳未満",
+        "dose": "1/2包",
+        "times": null
+      },
+      {
+        "age": "5歳以上8歳未満",
+        "dose": "1/3包",
+        "times": null
+      },
+      {
+        "age": "3歳以上5歳未満",
+        "dose": "1/4包",
+        "times": null
+      },
+      {
+        "age": "3歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05992": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05993": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05994": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": "1/4包",
+        "times": "2回"
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06004": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06005": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-06006": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "2回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "2回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-07091": {
+    "rows": [
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2錠",
+        "times": "2回"
+      },
+      {
+        "age": "5歳以上7歳未満",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-04596": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "7〜14歳",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "2回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00764": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1本",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-01312": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00723": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1本",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00520": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1カプセル",
+        "times": null
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "1回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00660": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "2回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05074": {
+    "rows": [
+      {
+        "age": "18歳以上",
+        "dose": "1噴霧",
+        "times": "2回"
+      },
+      {
+        "age": "18歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 3,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00085": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": null
+      },
+      {
+        "age": "8〜14歳",
+        "dose": "2錠",
+        "times": null
+      },
+      {
+        "age": "5〜7歳",
+        "dose": "1錠",
+        "times": null
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": "3回",
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-05338": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1包",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上15歳未満",
+        "dose": "2/3包",
+        "times": "3回"
+      },
+      {
+        "age": "4歳以上7歳未満",
+        "dose": "1/2包",
+        "times": "3回"
+      },
+      {
+        "age": "2歳以上4歳未満",
+        "dose": "1/3包",
+        "times": "3回"
+      },
+      {
+        "age": "2歳未満",
+        "dose": "1/4包",
+        "times": "3回"
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-03563": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "5歳以上11歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-03562": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "5歳以上11歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "5歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-03564": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": null,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00199": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00577": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "3錠",
+        "times": "3回"
+      },
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上11歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00186": {
+    "rows": [
+      {
+        "age": "15歳以上",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "15歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  },
+  "med-00182": {
+    "rows": [
+      {
+        "age": "11歳以上15歳未満",
+        "dose": "2錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳以上11歳未満",
+        "dose": "1錠",
+        "times": "3回"
+      },
+      {
+        "age": "7歳未満",
+        "dose": null,
+        "times": null
+      }
+    ],
+    "timesPerDay": null,
+    "intervalHours": 4,
+    "source": "既存データの用法用量（年齢・1回量・回数の値のみ）",
+    "checkedOn": "2026-11-04"
+  }
+}
