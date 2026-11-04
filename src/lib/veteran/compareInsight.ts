@@ -90,10 +90,10 @@ ${diffSummary}
 上記商品の違いをもとに、新人登録販売者がお客様に接客・説明する際の「着眼点（客観的分岐点）」と「お客様へのヒアリング事項」を作成してください。`;
 
   try {
-    const model = process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20241022";
+    const model = process.env.CLAUDE_MODEL_FAST || "claude-3-5-haiku-20241022";
     const res = await c.beta.messages.parse({
       model,
-      max_tokens: 1024,
+      max_tokens: 512,
       system: SYSTEM_PROMPT,
       output_config: { effort: "low", format: zodOutputFormat(CompareInsightSchema) },
       messages: [{ role: "user", content: userPrompt }],

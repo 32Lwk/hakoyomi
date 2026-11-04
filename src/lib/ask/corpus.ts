@@ -54,8 +54,9 @@ function noticePassage(item: NoticeItem, group: NoticeGroup | undefined): Draft 
 }
 
 function rolePassage(role: IngredientRole, ingredients: string[]): Draft {
+  const memberList = ingredients.join("、");
   return {
-    text: role.quote,
+    text: `【配合目的：${role.group}】${memberList ? `${memberList}：` : ""}${role.purpose}。${role.quote}`,
     source: {
       label: `厚労省「${TEBIKI_SOURCE.title}」第3章 ${role.section}（${role.page}頁）`,
       url: TEBIKI_SOURCE.pageUrl,

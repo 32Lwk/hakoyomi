@@ -72,10 +72,10 @@ export async function generateDialogueChecklist(
 上記医薬品を店頭でお客様にお渡しする際、新人登録販売者がお客様に確認すべき「問いかけ台詞（最大3問）」と「公的根拠」を作成してください。`;
 
   try {
-    const model = process.env.CLAUDE_MODEL || "claude-3-5-sonnet-20241022";
+    const model = process.env.CLAUDE_MODEL_FAST || "claude-3-5-haiku-20241022";
     const res = await c.beta.messages.parse({
       model,
-      max_tokens: 1024,
+      max_tokens: 512,
       system: SYSTEM_PROMPT,
       output_config: { effort: "low", format: zodOutputFormat(DialogueChecklistSchema) },
       messages: [{ role: "user", content: userPrompt }],

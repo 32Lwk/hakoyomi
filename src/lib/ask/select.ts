@@ -83,7 +83,7 @@ const SYNONYMS: { pattern: RegExp; terms: string }[] = [
   { pattern: /母乳|授乳/, terms: "授乳" },
   { pattern: /酒|アルコール/, terms: "飲酒" },
   { pattern: /妊娠|妊婦/, terms: "妊婦 妊娠" },
-  { pattern: /何のため|目的|役割|働き/, terms: "配合 目的" },
+  { pattern: /何のため|目的|役割|働き|どんな成分|作用/, terms: "配合 目的 配合目的 主な配合成分" },
   { pattern: /飲み合わせ|併用|一緒/, terms: "併用 他の" },
   { pattern: /副作用/, terms: "副作用 症状" },
   {
