@@ -53,7 +53,6 @@ export const UI_COPY = {
     "通知・リストに当たる成分を含む商品を除きます。通知を未取り込みの種類の商品も除きます",
   ingredientNoGroup: "手引きの分類なし",
   readJan: "JANを読む",
-  readJanHint: "箱のバーコードをカメラで読みます",
   clearProducts: "すべて外す",
   askAbout: "この商品について質問",
   askPlaceholder: "例：何歳から？",

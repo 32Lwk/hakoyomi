@@ -1,8 +1,9 @@
 "use client";
 
-import { BookOpen, Check, ChevronDown, Loader2, Plus, ScanBarcode, Search, X } from "lucide-react";
+import { BookOpen, Check, ChevronDown, Loader2, Plus, Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { JanButton } from "@/components/jan-button";
 import { ProductList } from "@/components/product-row";
 import { useStack } from "@/components/stack-provider";
 import { Input } from "@/components/ui/input";
@@ -97,7 +98,7 @@ type Panel = "kind" | "ingredients" | "exclude";
 // さがす（L-20261103-30）：検索欄 → 種類・成分・含まないの3つのボタン → 選んだ条件 → 結果。
 // 結果は品名順（順位なし）。検索語・条件は保存しない
 export function SearchView() {
-  const { ids, add, setScannerOpen } = useStack();
+  const { ids, add } = useStack();
   const router = useRouter();
   const [all, setAll] = useState<ProductView[] | null>(null);
   const [q, setQ] = useState("");
@@ -212,56 +213,49 @@ export function SearchView() {
 
   return (
     <div className="flex flex-col gap-4">
-      {/* 主経路は JAN（prd）。探すの最上部に大きく置く。下部の中央をもう一度押しても読める */}
-      <button
-        type="button"
-        onClick={() => setScannerOpen(true)}
-        className="flex items-center gap-3 rounded-2xl bg-gradient-to-br from-[#2d5a8c] to-primary p-3.5 text-left text-primary-foreground shadow-md active:translate-y-px"
-      >
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white/15">
-          <ScanBarcode className="size-7" aria-hidden="true" />
-        </span>
-        <span className="flex flex-col">
-          <span className="text-lg font-bold">{UI_COPY.readJan}</span>
-          <span className="text-xs opacity-85">{UI_COPY.readJanHint}</span>
-        </span>
-      </button>
-
       <div className="sticky top-12 z-20 -mx-4 -mt-2 flex flex-col gap-2 bg-background/95 px-4 pt-2 pb-2 backdrop-blur">
-        <form role="search" onSubmit={(e) => e.preventDefault()} className="relative">
-          <label htmlFor="search-q" className="sr-only">
-            {UI_COPY.searchPlaceholder}
-          </label>
-          <Search
-            className="pointer-events-none absolute top-1/2 left-3.5 size-5 -translate-y-1/2 text-muted-foreground"
-            aria-hidden="true"
-          />
-          <Input
-            id="search-q"
-            value={q}
-            onChange={(e) => {
-              setQ(e.target.value);
-              setReverse(null);
-            }}
-            placeholder={UI_COPY.searchPlaceholder}
-            inputMode="search"
-            autoComplete="off"
-            className="h-11 rounded-xl pl-11 text-base"
-          />
-          {q && (
-            <button
-              type="button"
-              onClick={() => {
-                setQ("");
+        {/* 主経路は JAN（prd）。検索ボックスの左に置く（L-20261104-21）。下部の中央をもう一度押しても読める */}
+        <div className="flex gap-1.5">
+          <JanButton />
+          <form
+            role="search"
+            onSubmit={(e) => e.preventDefault()}
+            className="relative min-w-0 flex-1"
+          >
+            <label htmlFor="search-q" className="sr-only">
+              {UI_COPY.searchPlaceholder}
+            </label>
+            <Search
+              className="pointer-events-none absolute top-1/2 left-3.5 size-5 -translate-y-1/2 text-muted-foreground"
+              aria-hidden="true"
+            />
+            <Input
+              id="search-q"
+              value={q}
+              onChange={(e) => {
+                setQ(e.target.value);
                 setReverse(null);
               }}
-              aria-label="検索語を消す"
-              className="absolute top-1/2 right-1 flex size-9 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground"
-            >
-              <X className="size-4" aria-hidden="true" />
-            </button>
-          )}
-        </form>
+              placeholder={UI_COPY.searchPlaceholder}
+              inputMode="search"
+              autoComplete="off"
+              className="h-11 rounded-xl pl-11 text-base"
+            />
+            {q && (
+              <button
+                type="button"
+                onClick={() => {
+                  setQ("");
+                  setReverse(null);
+                }}
+                aria-label="検索語を消す"
+                className="absolute top-1/2 right-1 flex size-9 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground"
+              >
+                <X className="size-4" aria-hidden="true" />
+              </button>
+            )}
+          </form>
+        </div>
 
         <div className="grid grid-cols-3 gap-1.5">
           {(

@@ -1,10 +1,10 @@
 "use client";
 
-import { Check, Plus, ScanBarcode } from "lucide-react";
+import { Check, Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ProductImage } from "@/components/product-image";
 import { useStack } from "@/components/stack-provider";
-import { Button } from "@/components/ui/button";
+import { JanButton } from "@/components/jan-button";
 import { Input } from "@/components/ui/input";
 import type { ProductView } from "@/lib/catalog";
 import { UI_COPY } from "@/lib/guard/uiCopy";
@@ -14,7 +14,7 @@ const MAX = 4;
 
 // 比べる商品を足す。候補は品名順で、順位は付けない（rules §4-7）
 export function ProductPicker({ onPicked }: { onPicked?: () => void }) {
-  const { ids, add, setScannerOpen } = useStack();
+  const { ids, add } = useStack();
   const [q, setQ] = useState("");
   const [views, setViews] = useState<ProductView[] | null>(null);
   const full = ids.length >= MAX;
@@ -37,7 +37,9 @@ export function ProductPicker({ onPicked }: { onPicked?: () => void }) {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex gap-2">
+      <div className="flex gap-1.5">
+        {/* JAN は検索ボックスの左（L-20261104-21） */}
+        <JanButton />
         <label htmlFor="picker-q" className="sr-only">
           品名で探す
         </label>
@@ -46,18 +48,9 @@ export function ProductPicker({ onPicked }: { onPicked?: () => void }) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="品名・メーカーで探す"
-          className="h-12 text-base"
+          className="h-11 rounded-xl text-base"
           autoComplete="off"
         />
-        <Button
-          type="button"
-          variant="outline"
-          onClick={() => setScannerOpen(true)}
-          className="h-12 gap-1 border-2 border-primary px-3 text-primary"
-        >
-          <ScanBarcode className="size-5" aria-hidden="true" />
-          JAN
-        </Button>
       </div>
       <p className="text-xs text-muted-foreground">
         {full ? UI_COPY.compareFull : `${UI_COPY.sortedByName}　${ids.length}/${MAX}品`}
