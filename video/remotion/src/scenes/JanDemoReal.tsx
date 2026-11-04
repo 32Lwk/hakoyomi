@@ -62,8 +62,8 @@ const fill: React.CSSProperties = { width: "100%", height: "100%", objectFit: "c
 const Caption: React.FC<{ frame: number }> = ({ frame }) => {
   const s = frame / FPS;
   const list = [
-    { from: 0.9, to: 4.2, text: "お客様が箱を持ってきたら、JAN を読むだけです。" },
-    { from: 5.2, to: 8.2, text: "読み取ると、商品の情報がすぐ手元に出ます。" },
+    { from: 0.8, to: 4.5, text: "お客様が箱を持ってきたら、バーコードを読むだけです。" },
+    { from: 5.0, to: 10.5, text: "Claudeが箱の記載と公的通知から『接客前チェック』を抽出します。" },
   ];
   const cur = list.find((c) => s >= c.from && s < c.to);
   if (!cur) return null;
@@ -77,17 +77,16 @@ const Caption: React.FC<{ frame: number }> = ({ frame }) => {
 
 const Panel: React.FC<{ frame: number }> = ({ frame }) => {
   const pts = [
-    { at: 10.4, text: "ベテランでないと迷う確認が、バッジで並ぶ" },
-    { at: 13.0, text: "ドーピング：WADA 2026年版の禁止表で確認", note: "競技に出るお客様への説明の材料" },
-    { at: 25.2, text: "ハラール：アルコール・ゼラチン等を一目に", note: "由来や認証の有無は、メーカーに確認" },
-    { at: 37.2, text: "授乳・運転・年齢・カフェイン…すべてタップで根拠", note: "出典：厚労省・PMDA など国の機関の情報" },
+    { at: 10.4, text: "接客前チェック：先輩なら確認する問いかけが即座に出現", note: "Claudeが箱の記載・公的通知から重要確認事項を自動抽出" },
+    { at: 21.0, text: "ドーピング：WADA 2026年版の禁止表で照合", note: "スポーツをされるお客様へ客観的な事実を提供" },
+    { at: 32.5, text: "ハラール・授乳・運転：公的根拠と1対1で直結", note: "出典：厚労省通知・PMDA添付文書などの一次情報" },
   ];
-  const fin = ramp(frame, Math.round(46.2 * FPS), 18);
+  const fin = ramp(frame, Math.round(45.5 * FPS), 18);
   return (
     <div style={{ position: "absolute", left: 1040, top: 170, width: 800 }}>
       <div style={rise(frame, Math.round(10.1 * FPS))}>
         <div style={{ fontSize: 26, fontWeight: 700, color: C.navy, letterSpacing: 4 }}>JAN を読むだけ</div>
-        <div style={{ fontSize: 52, fontWeight: 700, color: C.text, marginTop: 8, lineHeight: 1.25, whiteSpace: "nowrap" }}>確認が、一度にそろう</div>
+        <div style={{ fontSize: 52, fontWeight: 700, color: C.text, marginTop: 8, lineHeight: 1.25, whiteSpace: "nowrap" }}>確認が、瞬時にそろう</div>
         <div style={{ width: 96, height: 6, background: C.navy, marginTop: 24, borderRadius: 3 }} />
       </div>
       <div style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 18 }}>
@@ -101,7 +100,7 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: 30, padding: "18px 28px", borderRadius: 18, background: C.navy, color: C.white, fontSize: 40, whiteSpace: "nowrap", fontWeight: 700, letterSpacing: 3, opacity: fin, transform: `translateY(${(1 - fin) * 14}px)` }}>
+      <div style={{ marginTop: 30, padding: "18px 28px", borderRadius: 18, background: C.navy, color: C.white, fontSize: 38, whiteSpace: "nowrap", fontWeight: 700, letterSpacing: 2, opacity: fin, transform: `translateY(${(1 - fin) * 14}px)` }}>
         新人でも、ベテランと同じ自信で。
       </div>
     </div>
