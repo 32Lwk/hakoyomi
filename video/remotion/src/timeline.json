@@ -1,0 +1,188 @@
+{
+  "_note": "秒割りの正本は docs/demo-script.md（L-20261104-24、合計168秒）。S2 は実写→画面収録（JanDemoReal）。S4.5・段階表示の図は外した。",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "S1",
+      "title": "つかみ",
+      "startSec": 0,
+      "durationSec": 24
+    },
+    {
+      "id": "S2",
+      "title": "JANを読むだけで、確認がそろう",
+      "startSec": 24,
+      "durationSec": 54,
+      "recording": true,
+      "segments": [
+        {
+          "from": 12.3,
+          "to": 44.5,
+          "rate": 0.85
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "2〜4品の比較",
+      "startSec": 78,
+      "durationSec": 14,
+      "recording": true,
+      "segments": [
+        {
+          "from": 0,
+          "to": 7.4,
+          "rate": 7
+        },
+        {
+          "from": 7.4,
+          "to": 9.4,
+          "rate": 1
+        },
+        {
+          "from": 9.4,
+          "to": 29.5,
+          "rate": 10
+        },
+        {
+          "from": 29.5,
+          "to": 34.5,
+          "rate": 1
+        },
+        {
+          "from": 37.4,
+          "to": 40.4,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "質問は、チャットでも",
+      "startSec": 92,
+      "durationSec": 16,
+      "recording": true,
+      "segments": [
+        {
+          "from": 0,
+          "to": 4.1,
+          "rate": 3
+        },
+        {
+          "from": 4.1,
+          "to": 10.5,
+          "rate": 1
+        },
+        {
+          "from": 10.5,
+          "to": 17,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "症状の言葉から探す → 棚",
+      "startSec": 108,
+      "durationSec": 18,
+      "recording": true,
+      "segments": [
+        {
+          "from": 0,
+          "to": 7.8,
+          "rate": 4
+        },
+        {
+          "from": 7.8,
+          "to": 10.8,
+          "rate": 1
+        },
+        {
+          "from": 10.8,
+          "to": 18.5,
+          "rate": 3
+        },
+        {
+          "from": 18.5,
+          "to": 24.8,
+          "rate": 3
+        },
+        {
+          "from": 24.8,
+          "to": 29.1,
+          "rate": 2
+        },
+        {
+          "from": 29.1,
+          "to": 32.1,
+          "rate": 1
+        },
+        {
+          "from": 34,
+          "to": 37.9,
+          "rate": 1.5
+        }
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "ベテランのコツを受け継ぐ",
+      "startSec": 126,
+      "durationSec": 19,
+      "recording": true,
+      "segments": [
+        {
+          "from": 0,
+          "to": 8.3,
+          "rate": 4
+        },
+        {
+          "from": 8.3,
+          "to": 10.5,
+          "rate": 1
+        },
+        {
+          "from": 10.5,
+          "to": 17.4,
+          "rate": 4
+        },
+        {
+          "from": 17.4,
+          "to": 19.4,
+          "rate": 1
+        },
+        {
+          "from": 19.4,
+          "to": 26.4,
+          "rate": 5
+        },
+        {
+          "from": 26.4,
+          "to": 28.9,
+          "rate": 1
+        },
+        {
+          "from": 28.9,
+          "to": 41.9,
+          "rate": 8
+        },
+        {
+          "from": 41.9,
+          "to": 44.3,
+          "rate": 2
+        },
+        {
+          "from": 44.3,
+          "to": 47.8,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "Claude の使い方と結び",
+      "startSec": 145,
+      "durationSec": 26
+    }
+  ]
+}

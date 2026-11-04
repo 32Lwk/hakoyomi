@@ -1,0 +1,34 @@
+{
+  "JD-ipad-S2-jan-badges": {
+    "file": "recordings/JD-ipad-S2-jan-badges.webm",
+    "seconds": 34.6
+  },
+  "JD-iphone-S2-jan-badges": {
+    "file": "recordings/JD-iphone-S2-jan-badges.webm",
+    "seconds": 34.52
+  },
+  "S2-jan-badges": {
+    "file": "recordings/S2-jan-badges.webm",
+    "seconds": 45.24
+  },
+  "S3-compare": {
+    "file": "recordings/S3-compare.webm",
+    "seconds": 47.6
+  },
+  "S4-ask": {
+    "file": "recordings/S4-ask.webm",
+    "seconds": 28.72
+  },
+  "S4.5-askable": {
+    "file": "recordings/S4.5-askable.webm",
+    "seconds": 54.24
+  },
+  "S5-reverse-shelf": {
+    "file": "recordings/S5-reverse-shelf.webm",
+    "seconds": 37.92
+  },
+  "S6-memo": {
+    "file": "recordings/S6-memo.webm",
+    "seconds": 47.72
+  }
+}

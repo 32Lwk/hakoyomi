@@ -1,0 +1,13 @@
+{
+  "name": "hakoyomi-video-record",
+  "private": true,
+  "type": "module",
+  "description": "ハコよみ デモ動画（T603）の画面録画。アプリの依存とは分ける（L-20261104-19）",
+  "scripts": {
+    "record": "node record.mjs",
+    "setup": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "1.64.1"
+  }
+}

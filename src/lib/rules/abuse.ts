@@ -44,7 +44,7 @@ export function checkAbuse(product: Product): AbuseResult {
     return { target: false, reason: "external" };
   if (product.crudeDrugMain) return { target: false, reason: "crude_drug_main" };
 
-  // 対象成分が複数あるときは短いほうの日数で判定する【要確認：告示第33号の複数成分の扱い】
+  // 対象成分が複数あるときは短いほうの日数（5日優先）で判定する（L-20261104-25 確定）
   const limitDays = Math.min(...hits.map((h) => h.limitDays));
   const days = product.contentQty / product.dailyMaxUnits;
   return { target: true, hits, days, limitDays, large: days > limitDays };
@@ -52,15 +52,35 @@ export function checkAbuse(product: Product): AbuseResult {
 
 export type CartLine = { product: Product; quantity: number };
 
-// 複数個の判定：同じ商品を2個以上、または同じ指定成分を含む別の商品を合わせて2個以上（医薬発1226第16号 第4-1(5)）
-export function isMultiple(lines: CartLine[]): boolean {
-  const countByListed = new Map<string, number>();
+export type AbuseOverlap = {
+  // 告示の指定成分名
+  listed: string;
+  // 合算した個数
+  count: number;
+  // 含まれる商品名（入力順・重複なし）
+  productNames: string[];
+};
+
+// 複数個に該当する指定成分の内訳（同じ商品を2個以上、または同じ指定成分を含む別の商品を合わせて2個以上。医薬発1226第16号 第4-1(5)）
+export function multipleOverlaps(lines: CartLine[]): AbuseOverlap[] {
+  const byListed = new Map<string, { count: number; names: Set<string> }>();
   for (const { product, quantity } of lines) {
+    if (quantity <= 0) continue;
     const result = checkAbuse(product);
     if (!result.target) continue;
     for (const listed of new Set(result.hits.map((h) => h.listed))) {
-      countByListed.set(listed, (countByListed.get(listed) ?? 0) + quantity);
+      const entry = byListed.get(listed) ?? { count: 0, names: new Set<string>() };
+      entry.count += quantity;
+      entry.names.add(product.name);
+      byListed.set(listed, entry);
     }
   }
-  return [...countByListed.values()].some((count) => count >= 2);
+  return [...byListed.entries()]
+    .filter(([, v]) => v.count >= 2)
+    .map(([listed, v]) => ({ listed, count: v.count, productNames: [...v.names] }));
+}
+
+// 複数個の判定：同じ商品を2個以上、または同じ指定成分を含む別の商品を合わせて2個以上（医薬発1226第16号 第4-1(5)）
+export function isMultiple(lines: CartLine[]): boolean {
+  return multipleOverlaps(lines).length > 0;
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { compareBadges } from "@/lib/compare";
-import { checkAbuse, isMultiple } from "@/lib/rules/abuse";
+import { checkAbuse, isMultiple, multipleOverlaps } from "@/lib/rules/abuse";
 import { deriveBadges } from "@/lib/rules/badges";
 import { checkDoping } from "@/lib/rules/doping";
 import { KAZE_ITEMS, productA, productB } from "@/lib/rules/fixtures";
@@ -119,6 +119,18 @@ describe("指定濫用防止", () => {
       ]),
     ).toBe(true);
     expect(
+      multipleOverlaps([
+        { product: productA, quantity: 1 },
+        { product: other, quantity: 1 },
+      ]),
+    ).toEqual([
+      {
+        listed: "メチルエフェドリン",
+        count: 2,
+        productNames: [productA.name, other.name],
+      },
+    ]);
+    expect(
       isMultiple([
         { product: productA, quantity: 1 },
         { product: productB, quantity: 1 },
@@ -150,6 +162,25 @@ describe("バッジ", () => {
       "カフェイン 1回25mg",
       "ドーピング禁止成分（競技会時）",
     ]);
+  });
+
+  it("指定濫用防止バッジの根拠に、対象成分・1包装の日数（告示第33号）・通知Ⅲ「過量服用しないこと」を持つ", () => {
+    const abuse = deriveBadges(productA, KAZE_ITEMS).find((b) => b.kind === "abuse");
+    expect(abuse?.evidence).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          kind: "abuse_quantity",
+          days: 3.3,
+          limitDays: 7,
+          large: false,
+        }),
+        expect.objectContaining({
+          kind: "notice",
+          groupId: "abuse_prevention",
+          body: "過量服用しないこと",
+        }),
+      ]),
+    );
   });
 
   it("商品Bは授乳を「相談」で出し、カフェインは無水換算", () => {

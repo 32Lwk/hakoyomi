@@ -3,6 +3,7 @@
 import { ChevronRight, ExternalLink, FileText, MapPin } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { AbuseCheckBanner } from "@/components/abuse-check";
 import { BadgeRow } from "@/components/badges";
 import { IngredientSheet } from "@/components/ingredient-sheet";
 import { MemoSection } from "@/components/memo-section";
@@ -16,7 +17,13 @@ import { ProductImage } from "@/components/product-image";
 import { packageImage } from "@/lib/packageImage";
 
 // 上から「何の商品か」→「確認ポイント」→「用法・用量」→「成分・分量」→「場所」→「添付文書」の順。店頭で聞かれる順に並べる
-export function ProductCard({ view }: { view: ProductView }) {
+export function ProductCard({
+  view,
+  otherViews = [],
+}: {
+  view: ProductView;
+  otherViews?: ProductView[];
+}) {
   const { product, badges, group, location, sku } = view;
   const image = packageImage(product.id, product.kind, product.name);
   const [ingredient, setIngredient] = useState<string | null>(null);
@@ -48,6 +55,8 @@ export function ProductCard({ view }: { view: ProductView }) {
       </header>
 
       <DosageStats view={view} />
+
+      <AbuseCheckBanner view={view} otherViews={otherViews} />
 
       <BadgeRow badges={badges} group={group} unrecorded={view.unrecorded} />
 

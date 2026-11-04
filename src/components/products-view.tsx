@@ -4,6 +4,7 @@ import { MapPin, MessageCircleQuestion, Plus, X } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { AbuseStackNotice } from "@/components/abuse-check";
 import { ColumnNo, CompareView } from "@/components/compare-view";
 import { ProductCard } from "@/components/product-card";
 import { ProductImage } from "@/components/product-image";
@@ -111,6 +112,7 @@ export function ProductsView() {
             </li>
           )}
         </ul>
+        <AbuseStackNotice views={views} />
       </section>
 
       {/* 商品ごと／比べる。比べるは2品から */}
@@ -147,7 +149,10 @@ export function ProductsView() {
         <CompareView />
       ) : current ? (
         <>
-          <ProductCard view={current} />
+          <ProductCard
+            view={current}
+            otherViews={views.filter((v) => v.product.id !== current.product.id)}
+          />
           {/* 下部タブの上に重ねる操作バー */}
           <div className="fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-20 px-4">
             <div className="mx-auto flex max-w-3xl gap-2 rounded-2xl border border-border bg-background/95 p-2 shadow-lg backdrop-blur">

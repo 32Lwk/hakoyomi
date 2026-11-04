@@ -134,7 +134,7 @@ async function main() {
   } catch {
     // .env.local がなければ環境変数をそのまま使う
   }
-  const model = process.env.CLAUDE_MODEL || "claude-opus-5-5";
+  const model = process.env.CLAUDE_MODEL || "claude-sonnet-5-5";
   const args = process.argv.slice(2);
   const recheck = args.includes("--recheck");
   const only = args.filter((arg) => !arg.startsWith("--"));

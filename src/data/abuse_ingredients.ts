@@ -6,6 +6,25 @@ export const ABUSE_SOURCE = {
   url: "https://www.pref.toyama.jp/1208/kusuri/20260501.html",
 } as const;
 
+// 厚労省通知「かぜ薬等の添付文書等に記載する使用上の注意について」Ⅲ 指定濫用防止医薬品（PDF 195頁）
+export const ABUSE_NOTICE_GROUP = {
+  id: "abuse_prevention",
+  name: "指定濫用防止医薬品に係る使用上の注意",
+  sourceUrl: "https://www.mhlw.go.jp/content/001742612.pdf",
+  sourcePage: 195,
+  fetchedOn: "2026-11-02",
+} as const;
+
+export const ABUSE_NOTICE_ITEM = {
+  id: "abuse_prevention-ng-last",
+  groupId: "abuse_prevention",
+  section: "してはいけないこと" as const,
+  itemNo: "続き番号",
+  body: "過量服用しないこと",
+  conditionText:
+    "注意事項の最後に，続き番号として記載すること．長期連用に係る注意事項が定められている場合は，当該記載と合わせて記載することができる．（例）過量服用・長期連用しないこと",
+} as const;
+
 // 7日分になる例外の効能（薬効群名）。ここにない成分・効能は5日分
 export type AbuseIngredient = {
   name: string;
@@ -24,13 +43,35 @@ export const ABUSE_INGREDIENTS: readonly AbuseIngredient[] = [
   { name: "メチルエフェドリン", sevenDayEfficacies: ["かぜ薬", "鼻炎用内服薬"] },
 ];
 
+export type AbuseCheckCode = "ア" | "イ" | "ウ" | "エ" | "オ" | "カ" | "キ";
+export type AbuseCheckCondition = "under18" | "largeOrMultiple";
+
+export type AbuseCheckItem = {
+  code: AbuseCheckCode;
+  label: string;
+  condition?: AbuseCheckCondition;
+  note?: string;
+};
+
 // 販売時の確認事項（医薬発1226第16号 第4-1(4)）
-export const ABUSE_CHECK_ITEMS = [
+export const ABUSE_CHECK_ITEMS: readonly AbuseCheckItem[] = [
   { code: "ア", label: "年齢" },
   { code: "イ", label: "他の薬剤・医薬品の使用状況" },
-  { code: "ウ", label: "18歳未満の場合は氏名" },
+  {
+    code: "ウ",
+    label: "18歳未満の場合は氏名",
+    condition: "under18",
+    note: "店頭で確認した事実のみチェック（アプリに氏名は入力しません）",
+  },
   { code: "エ", label: "当該製品と他の指定濫用防止医薬品の購入・譲受けの状況" },
-  { code: "オ", label: "大容量製品または複数個の場合はその理由" },
+  {
+    code: "オ",
+    label: "大容量製品または複数個の場合はその理由",
+    condition: "largeOrMultiple",
+    note: "大容量製品または複数個（別製品で同一指定成分が重なる場合を含む）に該当するとき確認",
+  },
   { code: "カ", label: "適正使用の確認に必要な事項" },
   { code: "キ", label: "その他情報提供に必要な事項" },
 ] as const;
+
+export const ABUSE_CHECK_CODES = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ"] as const;

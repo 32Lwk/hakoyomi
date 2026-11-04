@@ -250,6 +250,7 @@ export function BadgeSheet({
 
 function EvidenceBlock({ evidence, group }: { evidence: Evidence; group: NoticeGroup | null }) {
   if (evidence.kind === "notice") {
+    const noticeGroup = evidence.sourceGroup ?? group;
     return (
       <div className="flex flex-col gap-2 rounded-lg border border-border p-3">
         <blockquote className="border-l-0 bg-muted px-3 py-2 text-base">{evidence.body}</blockquote>
@@ -261,18 +262,49 @@ function EvidenceBlock({ evidence, group }: { evidence: Evidence; group: NoticeG
           <p className="text-xs text-muted-foreground">記載条件：{evidence.conditionText}</p>
         )}
         <p className="text-xs text-muted-foreground">
-          出典：厚労省通知「使用上の注意」{group?.name ?? evidence.groupId}　{evidence.section}{" "}
-          {evidence.itemNo}
-          {group && (
+          出典：厚労省通知「使用上の注意」{noticeGroup?.name ?? evidence.groupId}　
+          {evidence.section} {evidence.itemNo}
+          {noticeGroup && (
             <>
               {" "}
               （
-              <a href={group.sourceUrl} target="_blank" rel="noreferrer" className="underline">
-                PDF {group.sourcePage}頁〜
+              <a
+                href={noticeGroup.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="underline"
+              >
+                PDF {noticeGroup.sourcePage}頁〜
               </a>
-              ・取得 {group.fetchedOn}）
+              ・取得 {noticeGroup.fetchedOn}）
             </>
           )}
+        </p>
+      </div>
+    );
+  }
+  if (evidence.kind === "abuse_quantity") {
+    return (
+      <div className="rounded-lg border border-border p-3 text-sm">
+        <p>
+          1包装の日数：
+          <span className="font-bold tabular-nums">{evidence.days}日分</span>
+          （内容量 {evidence.contentQty}
+          {evidence.contentUnit} ÷ 1日最大 {evidence.dailyMaxUnits}
+          {evidence.contentUnit}）
+        </p>
+        <p className="mt-1">
+          数量基準：上限 <span className="font-bold tabular-nums">{evidence.limitDays}日分</span> →{" "}
+          <span className="font-bold">
+            {evidence.large ? "大容量製品に該当" : "通常容量（上限以内）"}
+          </span>
+        </p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          出典：{evidence.source}（
+          <a href={ABUSE_SOURCE.url} target="_blank" rel="noreferrer" className="underline">
+            通知の掲載元
+          </a>
+          ）
         </p>
       </div>
     );

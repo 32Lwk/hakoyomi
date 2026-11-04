@@ -48,3 +48,16 @@ medicine_data_assets/
 
 # python
 __pycache__/
+
+# デモ動画（video/remotion、L-20261104-19）：依存・書き出し・録画の写しは入れない
+/video/remotion/node_modules/
+/video/remotion/out/
+/video/remotion/public/recordings/
+/video/remotion/public/narration/*.wav
+# デモ動画（video/record、L-20261104-19）：録画の依存と書き出し（webm・目印・静止画）は入れない
+/video/record/node_modules/
+/video/record/out/
+# デモ動画（video/real、L-20261104-23）：生成動画や作業ファイルは入れない
+/video/real/out/
+/video/real/work/
+*.mp4

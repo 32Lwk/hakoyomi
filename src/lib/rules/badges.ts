@@ -1,4 +1,4 @@
-import { ABUSE_SOURCE } from "@/data/abuse_ingredients";
+import { ABUSE_NOTICE_GROUP, ABUSE_NOTICE_ITEM, ABUSE_SOURCE } from "@/data/abuse_ingredients";
 import { halalFacts } from "@/data/additives";
 import { DOPING_SOURCE } from "@/data/doping_list";
 import { checkAbuse } from "@/lib/rules/abuse";
@@ -7,7 +7,7 @@ import { normalizeName } from "@/lib/rules/normalize";
 import type { CorrectionSource } from "@/data/label_corrections";
 import { correctionsFor } from "@/lib/rules/labelCorrections";
 import { applicableItems, convertedMg } from "@/lib/rules/noticeRules";
-import type { BadgeKind, NoticeItem, ProductBadgeKind } from "@/lib/schema/notice";
+import type { BadgeKind, NoticeGroup, NoticeItem, ProductBadgeKind } from "@/lib/schema/notice";
 import type { Product } from "@/lib/schema/product";
 
 // バッジの種類ごとの見た目（design.md §3）。良し悪しの色は使わない
@@ -22,6 +22,7 @@ export type Evidence =
       body: string;
       conditionText: string | null;
       matched: string[];
+      sourceGroup?: NoticeGroup;
     }
   // 添付文書による補正（L-20261103-28）。通知の記載条件の外で、添付文書に同じ趣旨の記載がある
   | {
@@ -35,6 +36,16 @@ export type Evidence =
       labelOnly: boolean;
     }
   | { kind: "fact"; ingredient: string; amountMg: number; per: "1回" | "1日" }
+  | {
+      kind: "abuse_quantity";
+      days: number;
+      limitDays: number;
+      large: boolean;
+      contentQty: number;
+      contentUnit: string;
+      dailyMaxUnits: number;
+      source: string;
+    }
   | {
       kind: "list";
       list: "abuse" | "doping" | "halal";
@@ -117,18 +128,40 @@ export function deriveBadges(product: Product, items: NoticeItem[]): Badge[] {
   const badges: Badge[] = [];
 
   const abuse = checkAbuse(product);
-  if (abuse.target) {
+  if (abuse.target && product.dailyMaxUnits !== null) {
     badges.push({
       kind: "abuse",
       tone: "system",
       label: abuse.large ? "濫用防止 対象・大容量" : "濫用防止 対象",
-      evidence: abuse.hits.map((h) => ({
-        kind: "list",
-        list: "abuse",
-        ingredient: h.ingredient,
-        listed: h.listed,
-        source: ABUSE_SOURCE.ingredients,
-      })),
+      evidence: [
+        ...abuse.hits.map((h) => ({
+          kind: "list" as const,
+          list: "abuse" as const,
+          ingredient: h.ingredient,
+          listed: h.listed,
+          source: ABUSE_SOURCE.ingredients,
+        })),
+        {
+          kind: "abuse_quantity",
+          days: Math.round(abuse.days * 10) / 10,
+          limitDays: abuse.limitDays,
+          large: abuse.large,
+          contentQty: product.contentQty,
+          contentUnit: product.contentUnit,
+          dailyMaxUnits: product.dailyMaxUnits,
+          source: ABUSE_SOURCE.quantity,
+        },
+        {
+          kind: "notice",
+          groupId: ABUSE_NOTICE_GROUP.id,
+          section: ABUSE_NOTICE_ITEM.section,
+          itemNo: ABUSE_NOTICE_ITEM.itemNo,
+          body: ABUSE_NOTICE_ITEM.body,
+          conditionText: ABUSE_NOTICE_ITEM.conditionText,
+          matched: abuse.hits.map((h) => h.ingredient),
+          sourceGroup: ABUSE_NOTICE_GROUP,
+        },
+      ],
     });
   }
 

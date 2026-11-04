@@ -1,0 +1,23 @@
+A photorealistic, cinematic video of about 9 seconds, 16:9, shot on a full-frame camera with a 35mm lens, shallow depth of field, soft bright fluorescent store lighting, neutral color grading, stable tripod-like camera with a very slow push-in.
+
+SETTING
+Inside a clean, modern Japanese drugstore. Out-of-focus shelves of over-the-counter medicine boxes in the background. All packaging is plain pastel or white with NO readable text, NO logos, NO brand names. Hanging aisle signs are blurred and unreadable.
+
+SUBJECT
+A Japanese pharmacist-salesperson, female, late 20s, calm focused expression, hair tied back, wearing a white lab coat over a navy shirt with a small plain blank name plate. On the left chest of the coat is a small sticker of the Japanese "shoshinsha" beginner driver mark: a V-shaped badge, dark green upper-left and yellow lower-right, thin white border, clearly visible. A fictional person.
+
+HANDS AND LEFT/RIGHT (very important; exactly TWO arms and TWO hands visible in total, never a third arm or hand)
+She always faces the camera in a three-quarter frontal view (never a back view), so her RIGHT hand appears on the LEFT side of the frame and her LEFT hand appears on the RIGHT side of the frame.
+- Her RIGHT hand (on the LEFT side of the frame) alone holds a modern smartphone (iPhone style), upright, gripped on its sides by that one hand only. The phone is NEVER held with two hands. The phone screen is a flat, uniform, bright chroma-key green (pure #00FF00), with no reflections, no glare streaks, no text, no UI.
+- Her LEFT hand (on the RIGHT side of the frame) holds a plain white medicine box with a navy stripe, tilted so a black barcode printed on its lower-right is clearly visible. The box stays in her left hand the whole time.
+
+ACTION (one continuous take)
+0-2s: Medium shot, three-quarter frontal. She looks down at the box in her left hand, then raises the phone with her right hand.
+2-5s: She points the phone's rear camera at the barcode on the box, as if scanning it; the phone in her right hand on the left of the frame, the box in her left hand on the right of the frame. Her beginner mark on the left side of her coat (the right side of the frame) stays visible.
+5-6s: She finishes scanning with a small calm nod.
+6-9s: She looks up to the camera and brings the phone, still in her RIGHT hand only, forward to the exact center of the frame at chest-to-face height, held perfectly upright and still, screen facing the camera, about 45 percent of the frame height. Her left hand with the box lowers out of frame. The phone stays steady, centered and front-on for the final 2.5 seconds, with the store softly blurred behind it.
+
+STYLE
+Realistic skin and hand detail, natural finger anatomy, correct number of fingers. No subtitles, no watermark, no brand logos, no product names. Quiet ambient store sound only (soft hum, faint footsteps, one subtle electronic beep at about 5 seconds). No music, no speech.
+
+Do not show: a third arm or hand, extra fingers, both hands on the phone, readable text, brand names, logos, subtitles, watermarks, jump cuts, cartoon or anime style.

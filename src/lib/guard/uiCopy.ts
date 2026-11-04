@@ -110,6 +110,25 @@ export const UI_COPY = {
   tebikiPending: "手引きと照合待ち",
   tebikiMissing:
     "手引きのこの薬効群の項に、この成分の記載が見つかりません。添付文書（PMDA）で確認してください",
+  abuseBannerTitle: "指定濫用防止医薬品：販売時の確認・記録",
+  abuseBannerOpen: "確認項目（ア〜キ）と販売記録の下書きを開く",
+  abuseStackMultiple:
+    "選んでいる商品で同じ指定成分が重なっています。あわせて購入する場合は「複数個」の確認（オ：理由の確認・対面等での情報提供）が必要です",
+  abuseSheetTitle: "指定濫用防止医薬品 確認・記録",
+  abuseSheetDesc:
+    "通知（医薬発1226第16号 第4-1(4) ア〜キ）の順に確認し、販売記録の下書きを作成します",
+  abuseRuleFaceToFace:
+    "18歳未満の購入者、または大容量製品・複数個の購入時は、対面等（映像・音声のリアルタイム通信を含む）での情報提供が必要です",
+  abuseRuleUnder18:
+    "18歳未満への大容量製品・複数個の販売はできません（自治体・業界団体資料の記載）",
+  abuseRuleHitlPii:
+    "お客様の氏名や症状などの個人情報はアプリに入力・保存しません。販売の判断は登録販売者が行います",
+  abuseRecordSubmit: "確認を記録して販売記録の下書きを作成",
+  abuseRecordSaving: "記録と下書きを作成しています…",
+  abuseRecordDone: "確認済み",
+  abuseDraftTitle: "販売記録の下書き（個人情報は含みません）",
+  abuseDraftCopy: "下書きをコピー",
+  abuseDraftCopied: "コピーしました",
 } as const;
 
 export type UiCopyKey = keyof typeof UI_COPY;
