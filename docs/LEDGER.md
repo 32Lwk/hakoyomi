@@ -13,8 +13,8 @@
   - 根拠シートの補強・日数計算：「濫用防止 対象」バッジの根拠シートにも「1包装の日数（○日分／基準○日分）」と通知Ⅲ「過量服用しないこと」の出典を出し、複数成分時の日数基準は現行の「短い方（5日優先）」で確定する
 - target: src/data/abuse_ingredients.ts・src/lib/rules/{abuse.ts,badges.ts,rules.test.ts}・src/components/{badges.tsx,abuse-check.tsx,product-card.tsx,products-view.tsx}・src/lib/record/{record.ts,claude.ts,store.ts,record.test.ts}・src/app/api/record/route.ts・src/lib/guard/uiCopy.ts・docs/tasks.md
 - owner: Antigravity（実装）／ゆう（確認）
-- status: done（ゆうの確認待ち・未コミット）
-- proof: vitest 224件（全src禁止語スキャン97件・record.test.ts 4件・rules.test.ts 19件を含む）通過、typecheck・lint（srcエラー0）通過
+- status: done（コミット c8ff1e3・本番デプロイ済み 2026-11-04）
+- proof: vitest 224件通過、typecheck・lint 通過、Mac mini deploy.sh 通過（https://hakoyomi.yutok.dev HTTP/2 200 確認）
 - notes:
 
 ### L-20261104-24
