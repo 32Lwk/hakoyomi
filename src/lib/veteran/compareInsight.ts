@@ -95,7 +95,7 @@ ${diffSummary}
       model,
       max_tokens: 512,
       system: SYSTEM_PROMPT,
-      output_config: { effort: "low", format: zodOutputFormat(CompareInsightSchema) },
+      output_config: { format: zodOutputFormat(CompareInsightSchema) },
       messages: [{ role: "user", content: userPrompt }],
     });
 

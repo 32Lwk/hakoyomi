@@ -77,7 +77,7 @@ export async function generateDialogueChecklist(
       model,
       max_tokens: 512,
       system: SYSTEM_PROMPT,
-      output_config: { effort: "low", format: zodOutputFormat(DialogueChecklistSchema) },
+      output_config: { format: zodOutputFormat(DialogueChecklistSchema) },
       messages: [{ role: "user", content: userPrompt }],
     });
 
