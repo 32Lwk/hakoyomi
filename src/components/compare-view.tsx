@@ -96,31 +96,33 @@ export function CompareView() {
       {(insight || insightLoading) && (
         <section
           aria-label="ベテランの着眼点"
-          className="relative overflow-hidden rounded-xl border border-amber-500/30 bg-amber-50/40 p-3.5 text-card-foreground shadow-sm dark:bg-amber-950/20"
+          className="relative overflow-hidden rounded-xl border border-diff bg-diff-soft/60 p-3.5 text-card-foreground shadow-2xs"
         >
-          <div className="flex items-center gap-1.5 text-xs font-bold text-amber-900 dark:text-amber-200">
-            <Lightbulb className="size-4 shrink-0 text-amber-600 dark:text-amber-400" />
-            <span>ベテランの着眼点（接客の分岐点）</span>
+          <div className="flex items-center gap-1.5 text-xs font-bold text-foreground">
+            <Lightbulb className="size-4 shrink-0 text-amber-600" />
+            <span className="text-sm font-bold text-foreground">
+              ベテランの着眼点（接客の分岐点）
+            </span>
             {insightLoading && (
-              <span className="flex items-center gap-1 text-[10px] font-normal text-muted-foreground ml-auto animate-pulse">
-                <Sparkles className="size-3 text-amber-500" />
+              <span className="flex items-center gap-1 text-[11px] font-normal text-muted-foreground ml-auto animate-pulse">
+                <Sparkles className="size-3 text-amber-600" />
                 分析中…
               </span>
             )}
           </div>
 
           {insight && (
-            <div className="mt-2 flex flex-col gap-2.5 text-xs">
-              <p className="font-medium text-foreground leading-relaxed">{insight.summary}</p>
+            <div className="mt-2.5 flex flex-col gap-2.5 text-xs">
+              <p className="font-bold text-foreground leading-relaxed text-[13px]">
+                {insight.summary}
+              </p>
 
               {insight.points.length > 0 && (
-                <div className="flex flex-col gap-1.5 rounded-lg bg-background/60 p-2.5 border border-amber-200/50 dark:border-amber-900/40">
+                <div className="flex flex-col gap-2 rounded-lg border border-border bg-card p-3 shadow-2xs">
                   {insight.points.map((p, idx) => (
                     <div key={idx} className="flex flex-col gap-0.5">
-                      <span className="font-bold text-amber-950 dark:text-amber-200">
-                        ・{p.title}
-                      </span>
-                      <span className="pl-3 text-muted-foreground leading-normal">
+                      <span className="font-bold text-foreground text-xs">・{p.title}</span>
+                      <span className="pl-3 text-muted-foreground text-[12px] leading-normal">
                         {p.description}
                       </span>
                     </div>
@@ -128,11 +130,11 @@ export function CompareView() {
                 </div>
               )}
 
-              <div className="rounded-lg bg-amber-100/60 p-2.5 dark:bg-amber-900/30 border border-amber-300/40 dark:border-amber-800/40">
-                <p className="text-[11px] font-bold text-amber-950 dark:text-amber-200 mb-0.5">
+              <div className="rounded-lg border border-diff/40 bg-card p-3 shadow-2xs">
+                <p className="text-[11px] font-bold text-foreground mb-1">
                   🗣️ お客様への確認ポイント
                 </p>
-                <p className="text-xs text-foreground/90 leading-relaxed font-medium">
+                <p className="text-xs text-foreground leading-relaxed font-medium">
                   {insight.hearingPrompt}
                 </p>
               </div>

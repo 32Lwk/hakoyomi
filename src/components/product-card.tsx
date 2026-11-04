@@ -92,14 +92,16 @@ export function ProductCard({
       {(checklist || checklistLoading) && (
         <section
           aria-label="接客前の確認チェック"
-          className="relative overflow-hidden rounded-xl border border-sky-500/30 bg-sky-50/40 p-3.5 text-card-foreground shadow-sm dark:bg-sky-950/20"
+          className="relative overflow-hidden rounded-xl border-2 border-primary/20 bg-accent/40 p-3.5 text-card-foreground shadow-2xs"
         >
-          <div className="flex items-center gap-1.5 text-xs font-bold text-sky-900 dark:text-sky-200">
-            <ClipboardCheck className="size-4 shrink-0 text-sky-600 dark:text-sky-400" />
-            <span>接客前チェック（先輩ならここを確認する）</span>
+          <div className="flex items-center gap-1.5 text-xs font-bold text-primary">
+            <ClipboardCheck className="size-4 shrink-0 text-primary" />
+            <span className="text-sm font-bold text-foreground">
+              接客前チェック（先輩ならここを確認する）
+            </span>
             {checklistLoading && (
-              <span className="flex items-center gap-1 text-[10px] font-normal text-muted-foreground ml-auto animate-pulse">
-                <Sparkles className="size-3 text-sky-500" />
+              <span className="flex items-center gap-1 text-[11px] font-normal text-muted-foreground ml-auto animate-pulse">
+                <Sparkles className="size-3 text-primary" />
                 生成中…
               </span>
             )}
@@ -110,19 +112,21 @@ export function ProductCard({
               {checklist.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col gap-1 rounded-lg border border-sky-200/50 bg-background/80 p-2.5 text-xs dark:border-sky-900/40"
+                  className="flex flex-col gap-1.5 rounded-lg border border-border bg-card p-3 text-xs shadow-2xs"
                 >
-                  <div className="flex items-start gap-1.5">
-                    <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-800 dark:bg-sky-900 dark:text-sky-200">
+                  <div className="flex items-start gap-2">
+                    <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
                       {idx + 1}
                     </span>
-                    <p className="font-bold text-foreground leading-snug">「{item.dialogue}」</p>
+                    <p className="font-bold text-foreground text-[13px] leading-snug">
+                      「{item.dialogue}」
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2 pl-5.5 text-[11px] text-muted-foreground">
-                    <span className="rounded bg-sky-100/70 px-1.5 py-0.2 text-[10px] font-medium text-sky-900 dark:bg-sky-900/40 dark:text-sky-300">
+                  <div className="flex flex-wrap items-center gap-2 pl-6.5 text-[11px] text-muted-foreground">
+                    <span className="rounded border border-primary/30 bg-primary/10 px-1.5 py-0.5 text-[10px] font-bold text-primary">
                       {item.badgeText}
                     </span>
-                    <span>{item.reason}</span>
+                    <span className="text-muted-foreground">{item.reason}</span>
                   </div>
                 </div>
               ))}
