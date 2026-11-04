@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, CircleHelp } from "lucide-react";
+import { ChevronRight, CircleHelp, Lightbulb, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { ageStatus, BadgeChip, BadgeSheet, type BadgeTarget } from "@/components/badges";
 import { IngredientSheet, type IngredientTarget } from "@/components/ingredient-sheet";
@@ -8,6 +8,7 @@ import { useStack } from "@/components/stack-provider";
 import type { ProductView } from "@/lib/catalog";
 import { badgeRowKind, type BadgeRowCompare, type CompareRow } from "@/lib/compare";
 import { BADGE_INFO, UI_COPY } from "@/lib/guard/uiCopy";
+import type { CompareInsight } from "@/lib/veteran/compareInsight";
 import { cn } from "@/lib/utils";
 
 type CompareData = { views: ProductView[]; rows: CompareRow[]; badges: BadgeRowCompare[] };
@@ -24,18 +25,38 @@ export function CompareView() {
   const [onlyDiff, setOnlyDiff] = useState(false);
   const [ingredient, setIngredient] = useState<IngredientTarget | null>(null);
   const [badge, setBadge] = useState<BadgeTarget | null>(null);
+  const [insightData, setInsightData] = useState<{
+    key: string;
+    insight: CompareInsight | null;
+  } | null>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+
+  const insight = insightData?.key === key ? insightData.insight : null;
+  const insightLoading = Boolean(ids.length >= 2 && insightData?.key !== key);
 
   useEffect(() => {
     if (ids.length < 2) return;
     let cancelled = false;
+
     fetch(`/api/compare?ids=${encodeURIComponent(key)}`)
       .then((res) => res.json() as Promise<CompareData>)
       .then((d) => {
         if (!cancelled) setData({ key, data: d });
       })
       .catch(() => undefined);
+
+    fetch(`/api/compare/insight?ids=${encodeURIComponent(key)}`)
+      .then((res) => res.json() as Promise<{ insight: CompareInsight | null }>)
+      .then((d) => {
+        if (!cancelled) {
+          setInsightData({ key, insight: d.insight });
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setInsightData({ key, insight: null });
+      });
+
     return () => {
       cancelled = true;
     };
@@ -71,6 +92,55 @@ export function CompareView() {
 
   return (
     <div className="flex flex-col gap-3">
+      {/* ベテランの着眼点（接客の分岐点）カード */}
+      {(insight || insightLoading) && (
+        <section
+          aria-label="ベテランの着眼点"
+          className="relative overflow-hidden rounded-xl border border-amber-500/30 bg-amber-50/40 p-3.5 text-card-foreground shadow-sm dark:bg-amber-950/20"
+        >
+          <div className="flex items-center gap-1.5 text-xs font-bold text-amber-900 dark:text-amber-200">
+            <Lightbulb className="size-4 shrink-0 text-amber-600 dark:text-amber-400" />
+            <span>ベテランの着眼点（接客の分岐点）</span>
+            {insightLoading && (
+              <span className="flex items-center gap-1 text-[10px] font-normal text-muted-foreground ml-auto animate-pulse">
+                <Sparkles className="size-3 text-amber-500" />
+                分析中…
+              </span>
+            )}
+          </div>
+
+          {insight && (
+            <div className="mt-2 flex flex-col gap-2.5 text-xs">
+              <p className="font-medium text-foreground leading-relaxed">{insight.summary}</p>
+
+              {insight.points.length > 0 && (
+                <div className="flex flex-col gap-1.5 rounded-lg bg-background/60 p-2.5 border border-amber-200/50 dark:border-amber-900/40">
+                  {insight.points.map((p, idx) => (
+                    <div key={idx} className="flex flex-col gap-0.5">
+                      <span className="font-bold text-amber-950 dark:text-amber-200">
+                        ・{p.title}
+                      </span>
+                      <span className="pl-3 text-muted-foreground leading-normal">
+                        {p.description}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="rounded-lg bg-amber-100/60 p-2.5 dark:bg-amber-900/30 border border-amber-300/40 dark:border-amber-800/40">
+                <p className="text-[11px] font-bold text-amber-950 dark:text-amber-200 mb-0.5">
+                  🗣️ お客様への確認ポイント
+                </p>
+                <p className="text-xs text-foreground/90 leading-relaxed font-medium">
+                  {insight.hearingPrompt}
+                </p>
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+
       {/* 表の操作：違う項目の数と、すべて／違いだけ */}
       <div className="flex items-center justify-between gap-2">
         <p className="text-sm">

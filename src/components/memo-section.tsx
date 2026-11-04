@@ -1,7 +1,8 @@
 "use client";
 
-import { NotebookPen, Trash2 } from "lucide-react";
+import { BookOpen, NotebookPen, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { matchOfficialNoticesForMemo } from "@/lib/memos/linker";
 import { AUTHOR_ALIASES, MEMO_MAX_LENGTH, type Memo } from "@/lib/memos/memo";
 import { cn } from "@/lib/utils";
 
@@ -29,26 +30,54 @@ function dateLabel(iso: string): string {
 export function MemoList({ memos, onDelete }: { memos: Memo[]; onDelete?: (memo: Memo) => void }) {
   return (
     <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border">
-      {memos.map((memo) => (
-        <li key={memo.id} className="flex items-start gap-2 py-2 pr-1 pl-3">
-          <div className="flex min-w-0 flex-1 flex-col gap-1 pt-1">
-            <p className="text-sm whitespace-pre-wrap">{memo.body}</p>
-            <p className="text-[11px] text-muted-foreground">
-              {memo.authorAlias}・{targetLabel(memo)}・{dateLabel(memo.createdAt)}
-            </p>
-          </div>
-          {onDelete && (
-            <button
-              type="button"
-              onClick={() => onDelete(memo)}
-              aria-label="このメモを削除"
-              className="flex size-11 shrink-0 items-center justify-center rounded-lg text-muted-foreground active:bg-accent"
-            >
-              <Trash2 className="size-4" aria-hidden="true" />
-            </button>
-          )}
-        </li>
-      ))}
+      {memos.map((memo) => {
+        const matches = matchOfficialNoticesForMemo(memo.body);
+        return (
+          <li key={memo.id} className="flex flex-col gap-2 p-3">
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex min-w-0 flex-1 flex-col gap-1">
+                <p className="text-sm font-medium whitespace-pre-wrap leading-relaxed text-foreground">
+                  {memo.body}
+                </p>
+                <p className="text-[11px] text-muted-foreground">
+                  {memo.authorAlias}・{targetLabel(memo)}・{dateLabel(memo.createdAt)}
+                </p>
+              </div>
+              {onDelete && (
+                <button
+                  type="button"
+                  onClick={() => onDelete(memo)}
+                  aria-label="このメモを削除"
+                  className="flex size-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground hover:text-destructive active:bg-accent"
+                >
+                  <Trash2 className="size-4" aria-hidden="true" />
+                </button>
+              )}
+            </div>
+
+            {/* 公的根拠の自動照合タグ */}
+            {matches.length > 0 && (
+              <div className="mt-1 flex flex-col gap-1 rounded-lg border border-primary/20 bg-primary/5 p-2 text-xs">
+                <div className="flex items-center gap-1 text-[11px] font-bold text-primary">
+                  <BookOpen className="size-3.5 shrink-0" />
+                  <span>公的根拠との自動照合（厚労省通知）</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5 pt-0.5">
+                  {matches.map((m, idx) => (
+                    <span
+                      key={idx}
+                      className="inline-flex items-center gap-1 rounded bg-background px-1.5 py-0.5 text-[10px] font-medium border border-border text-foreground shadow-2xs"
+                    >
+                      <span className="text-muted-foreground font-bold">[{m.category}]</span>
+                      {m.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </li>
+        );
+      })}
     </ul>
   );
 }

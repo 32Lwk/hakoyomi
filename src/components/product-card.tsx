@@ -1,8 +1,15 @@
 "use client";
 
-import { ChevronRight, ExternalLink, FileText, MapPin } from "lucide-react";
+import {
+  ChevronRight,
+  ClipboardCheck,
+  ExternalLink,
+  FileText,
+  MapPin,
+  Sparkles,
+} from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AbuseCheckBanner } from "@/components/abuse-check";
 import { BadgeRow } from "@/components/badges";
 import { IngredientSheet } from "@/components/ingredient-sheet";
@@ -15,6 +22,7 @@ import { cn } from "@/lib/utils";
 import type { ProductView } from "@/lib/catalog";
 import { ProductImage } from "@/components/product-image";
 import { packageImage } from "@/lib/packageImage";
+import type { DialogueChecklist } from "@/lib/veteran/checklist";
 
 // 上から「何の商品か」→「確認ポイント」→「用法・用量」→「成分・分量」→「場所」→「添付文書」の順。店頭で聞かれる順に並べる
 export function ProductCard({
@@ -27,6 +35,32 @@ export function ProductCard({
   const { product, badges, group, location, sku } = view;
   const image = packageImage(product.id, product.kind, product.name);
   const [ingredient, setIngredient] = useState<string | null>(null);
+  const [checklistData, setChecklistData] = useState<{
+    id: string;
+    checklist: DialogueChecklist | null;
+  } | null>(null);
+
+  const checklist = checklistData?.id === product.id ? checklistData.checklist : null;
+  const checklistLoading = Boolean(checklistData?.id !== product.id);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`/api/products/${product.id}/checklist`)
+      .then((res) => res.json() as Promise<{ checklist: DialogueChecklist | null }>)
+      .then((d) => {
+        if (!cancelled) {
+          setChecklistData({ id: product.id, checklist: d.checklist });
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setChecklistData({ id: product.id, checklist: null });
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [product.id]);
+
   return (
     <article className="flex flex-col gap-5">
       <header className="flex gap-4">
@@ -53,6 +87,49 @@ export function ProductCard({
           </p>
         </div>
       </header>
+
+      {/* 接客前チェックリスト（お客様への問いかけ） */}
+      {(checklist || checklistLoading) && (
+        <section
+          aria-label="接客前の確認チェック"
+          className="relative overflow-hidden rounded-xl border border-sky-500/30 bg-sky-50/40 p-3.5 text-card-foreground shadow-sm dark:bg-sky-950/20"
+        >
+          <div className="flex items-center gap-1.5 text-xs font-bold text-sky-900 dark:text-sky-200">
+            <ClipboardCheck className="size-4 shrink-0 text-sky-600 dark:text-sky-400" />
+            <span>接客前チェック（先輩ならここを確認する）</span>
+            {checklistLoading && (
+              <span className="flex items-center gap-1 text-[10px] font-normal text-muted-foreground ml-auto animate-pulse">
+                <Sparkles className="size-3 text-sky-500" />
+                生成中…
+              </span>
+            )}
+          </div>
+
+          {checklist && (
+            <div className="mt-2.5 flex flex-col gap-2">
+              {checklist.items.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col gap-1 rounded-lg border border-sky-200/50 bg-background/80 p-2.5 text-xs dark:border-sky-900/40"
+                >
+                  <div className="flex items-start gap-1.5">
+                    <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[10px] font-bold text-sky-800 dark:bg-sky-900 dark:text-sky-200">
+                      {idx + 1}
+                    </span>
+                    <p className="font-bold text-foreground leading-snug">「{item.dialogue}」</p>
+                  </div>
+                  <div className="flex items-center gap-2 pl-5.5 text-[11px] text-muted-foreground">
+                    <span className="rounded bg-sky-100/70 px-1.5 py-0.2 text-[10px] font-medium text-sky-900 dark:bg-sky-900/40 dark:text-sky-300">
+                      {item.badgeText}
+                    </span>
+                    <span>{item.reason}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
 
       <DosageStats view={view} />
 

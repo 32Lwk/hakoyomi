@@ -3,6 +3,8 @@ node_modules/
 coverage/
 docs/
 data/
+video/
+scripts/eval/
 package-lock.json
 next-env.d.ts
 *.tsbuildinfo
