@@ -8,7 +8,7 @@ import { BASE_URL, closeBrowser, recordScene } from "./lib.mjs";
 import { cleanupMemos } from "./scenes/s6.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const ORDER = ["s2", "s3", "s4", "s45", "s5", "s6"];
+const ORDER = ["s2", "s2b", "s3", "s4", "s45", "s5", "s6"];
 const wanted = process.argv.slice(2).map((a) => a.toLowerCase().replace(/[^a-z0-9]/g, ""));
 const available = readdirSync(path.join(here, "scenes")).map((f) => f.replace(/\.mjs$/, ""));
 const keys = (wanted.length ? wanted : ORDER).filter((k) => {

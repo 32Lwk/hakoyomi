@@ -16,28 +16,36 @@
     "duration": 8.11
   },
   "s2-1": {
-    "start": 0.8,
+    "start": 0.5,
     "duration": 4.24
   },
   "s2-2": {
-    "start": 6,
-    "duration": 5.92
+    "start": 4.99,
+    "duration": 5.69
   },
   "s2-3": {
-    "start": 14.5,
+    "start": 11,
     "duration": 7.2
   },
   "s2-4": {
-    "start": 23.5,
+    "start": 18.45,
     "duration": 10.25
   },
   "s2-5": {
-    "start": 36.5,
+    "start": 28.95,
     "duration": 4.32
   },
   "s2-6": {
-    "start": 43.5,
+    "start": 33.52,
     "duration": 6.98
+  },
+  "s2b-1": {
+    "start": 0.5,
+    "duration": 6.02
+  },
+  "s2b-2": {
+    "start": 7,
+    "duration": 6.36
   },
   "s3-1": {
     "start": 0.3,
@@ -53,7 +61,7 @@
   },
   "s4-2": {
     "start": 5,
-    "duration": 7.66
+    "duration": 6.99
   },
   "s5-1": {
     "start": 0.4,
@@ -61,7 +69,7 @@
   },
   "s5-2": {
     "start": 6.8,
-    "duration": 6.32
+    "duration": 6.35
   },
   "s6-1": {
     "start": 0.4,
@@ -81,7 +89,7 @@
   },
   "s7-2": {
     "start": 7,
-    "duration": 5.55
+    "duration": 5.84
   },
   "s7-3": {
     "start": 15,

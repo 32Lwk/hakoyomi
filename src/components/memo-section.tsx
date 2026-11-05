@@ -226,9 +226,15 @@ function MemoForm({
         </label>
       </div>
       {target && (
-        <p className="text-[11px] text-muted-foreground">
-          成分のメモは、{target}を含む商品すべてに出ます
-        </p>
+        <div className="flex flex-col gap-1 rounded-lg border border-primary/20 bg-primary/5 p-2.5 text-xs">
+          <p className="font-bold text-primary">
+            1つの成分メモが同一成分を含む全商品へ自動共有されます
+          </p>
+          <p className="text-[11px] leading-relaxed text-muted-foreground">
+            【自動共有先】新ルル-A錠s、パブロンゴールドA微粒など、{target}
+            を含むすべての商品カード最上部に「先輩から受け継がれた接客のコツ」として自動反映されます。
+          </p>
+        </div>
       )}
       <textarea
         value={body}

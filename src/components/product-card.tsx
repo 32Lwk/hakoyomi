@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  BookOpen,
   ChevronRight,
   ClipboardCheck,
   ExternalLink,
@@ -22,6 +23,8 @@ import { cn } from "@/lib/utils";
 import type { ProductView } from "@/lib/catalog";
 import { ProductImage } from "@/components/product-image";
 import { packageImage } from "@/lib/packageImage";
+import { matchOfficialNoticesForMemo } from "@/lib/memos/linker";
+import type { Memo } from "@/lib/memos/memo";
 import type { DialogueChecklist } from "@/lib/veteran/checklist";
 
 // 上から「何の商品か」→「確認ポイント」→「用法・用量」→「成分・分量」→「場所」→「添付文書」の順。店頭で聞かれる順に並べる
@@ -39,6 +42,7 @@ export function ProductCard({
     id: string;
     checklist: DialogueChecklist | null;
   } | null>(null);
+  const [inheritedMemos, setInheritedMemos] = useState<Memo[]>([]);
 
   const checklist = checklistData?.id === product.id ? checklistData.checklist : null;
   const checklistLoading = Boolean(checklistData?.id !== product.id);
@@ -54,6 +58,19 @@ export function ProductCard({
       })
       .catch(() => {
         if (!cancelled) setChecklistData({ id: product.id, checklist: null });
+      });
+
+    // 先輩からの接客メモ（成分共有など）を読み込む
+    fetch(`/api/memos?productIds=${encodeURIComponent(product.id)}`)
+      .then((res) => res.json() as Promise<{ products?: { productId: string; memos: Memo[] }[] }>)
+      .then((d) => {
+        if (!cancelled) {
+          const list = d.products?.find((p) => p.productId === product.id)?.memos ?? [];
+          setInheritedMemos(list);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setInheritedMemos([]);
       });
 
     return () => {
@@ -87,6 +104,57 @@ export function ProductCard({
           </p>
         </div>
       </header>
+
+      {/* 先輩から受け継がれた接客のコツ（成分共有・公的根拠タグ付き） */}
+      {inheritedMemos.length > 0 && (
+        <section
+          aria-label="先輩から受け継がれた接客のコツ"
+          className="relative overflow-hidden rounded-xl border-2 border-primary bg-primary/5 p-3.5 text-card-foreground shadow-sm"
+        >
+          <div className="flex items-center justify-between gap-1.5">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-primary">
+              <Sparkles className="size-4 shrink-0 text-primary" aria-hidden="true" />
+              <span className="text-sm font-bold text-foreground">
+                先輩から受け継がれた接客のコツ
+              </span>
+            </div>
+            <span className="rounded bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
+              同一成分で自動共有
+            </span>
+          </div>
+
+          <div className="mt-2.5 flex flex-col gap-2">
+            {inheritedMemos.map((memo) => {
+              const matches = matchOfficialNoticesForMemo(memo.body);
+              return (
+                <div
+                  key={memo.id}
+                  className="flex flex-col gap-1.5 rounded-lg border border-border bg-card p-3 text-xs shadow-2xs"
+                >
+                  <p className="text-[13px] font-medium leading-relaxed whitespace-pre-wrap text-foreground">
+                    {memo.body}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-2 border-t border-border/50 pt-1.5 text-[11px] text-muted-foreground">
+                    <span className="font-bold text-foreground">{memo.authorAlias}</span>
+                    <span>・</span>
+                    <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-foreground">
+                      {memo.target.kind === "ingredient"
+                        ? `成分：${memo.target.ingredient}`
+                        : "この商品"}
+                    </span>
+                    {matches.length > 0 && (
+                      <span className="ml-auto inline-flex items-center gap-1 text-[10px] font-bold text-primary">
+                        <BookOpen className="size-3" aria-hidden="true" />
+                        公的根拠と照合済み
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       {/* 接客前チェックリスト（お客様への問いかけ） */}
       {(checklist || checklistLoading) && (

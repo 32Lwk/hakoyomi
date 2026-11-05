@@ -11,9 +11,13 @@
     "file": "recordings/S2-jan-badges.webm",
     "seconds": 48.08
   },
+  "S2b-abuse-record": {
+    "file": "recordings/S2b-abuse-record.webm",
+    "seconds": 14.04
+  },
   "S3-compare": {
     "file": "recordings/S3-compare.webm",
-    "seconds": 52
+    "seconds": 52.88
   },
   "S4-ask": {
     "file": "recordings/S4-ask.webm",
@@ -25,10 +29,10 @@
   },
   "S5-reverse-shelf": {
     "file": "recordings/S5-reverse-shelf.webm",
-    "seconds": 37.8
+    "seconds": 21.52
   },
   "S6-memo": {
     "file": "recordings/S6-memo.webm",
-    "seconds": 50.48
+    "seconds": 44.8
   }
 }

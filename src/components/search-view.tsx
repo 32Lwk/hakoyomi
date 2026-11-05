@@ -257,6 +257,70 @@ export function SearchView() {
           </form>
         </div>
 
+        {/* ワンタップ条件（よく聞かれる条件） */}
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5" aria-label="よく使う条件">
+          <button
+            type="button"
+            onClick={() => toggleExclude("drive")}
+            className={cn(
+              "flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold transition-colors",
+              exclude.includes("drive")
+                ? "bg-primary text-primary-foreground"
+                : "border border-border bg-card text-foreground hover:bg-muted",
+            )}
+          >
+            眠気注意なし
+          </button>
+          <button
+            type="button"
+            onClick={() => toggleExclude("caffeine")}
+            className={cn(
+              "flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold transition-colors",
+              exclude.includes("caffeine")
+                ? "bg-primary text-primary-foreground"
+                : "border border-border bg-card text-foreground hover:bg-muted",
+            )}
+          >
+            カフェインなし
+          </button>
+          <button
+            type="button"
+            onClick={() => toggleExclude("abuse")}
+            className={cn(
+              "flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold transition-colors",
+              exclude.includes("abuse")
+                ? "bg-primary text-primary-foreground"
+                : "border border-border bg-card text-foreground hover:bg-muted",
+            )}
+          >
+            濫用防止の対象外
+          </button>
+          <button
+            type="button"
+            onClick={() => setKind(kind === "rhinitis" ? null : "rhinitis")}
+            className={cn(
+              "flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold transition-colors",
+              kind === "rhinitis"
+                ? "bg-primary text-primary-foreground"
+                : "border border-border bg-card text-foreground hover:bg-muted",
+            )}
+          >
+            鼻炎薬
+          </button>
+          <button
+            type="button"
+            onClick={() => setKind(kind === "cold" ? null : "cold")}
+            className={cn(
+              "flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold transition-colors",
+              kind === "cold"
+                ? "bg-primary text-primary-foreground"
+                : "border border-border bg-card text-foreground hover:bg-muted",
+            )}
+          >
+            かぜ薬
+          </button>
+        </div>
+
         <div className="grid grid-cols-3 gap-1.5">
           {(
             [
@@ -449,65 +513,69 @@ export function SearchView() {
 
 // 逆引きで対応づけた承認基準の語と出典。語は承認基準の原文で、Claude が書いた文ではない
 function ReversePanel({ result, onClear }: { result: ReverseResult; onClear: () => void }) {
+  const [expanded, setExpanded] = useState(false);
   const standards = [...new Set(result.terms.map((t) => t.standardId))].flatMap(
     (id) => standardOf(id) ?? [],
   );
+  const termsText = result.terms.map((t) => t.word).join("・");
+
   return (
     <section
       aria-labelledby="reverse-title"
-      className="-mt-2 flex flex-col gap-2 rounded-xl bg-muted p-3 text-sm"
+      className="-mt-2 flex flex-col rounded-xl border border-primary/20 bg-muted/60 p-2 text-xs shadow-2xs"
     >
-      <div className="flex items-start gap-2">
-        <h2 id="reverse-title" className="font-bold">
-          {UI_COPY.reverseTitle}
-        </h2>
-        <button
-          type="button"
-          onClick={onClear}
-          className="ml-auto shrink-0 text-xs text-primary underline underline-offset-2"
-        >
-          {UI_COPY.reverseClear}
-        </button>
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex min-w-0 flex-1 items-center gap-1.5">
+          <BookOpen className="size-4 shrink-0 text-primary" aria-hidden="true" />
+          <span id="reverse-title" className="truncate font-bold text-foreground">
+            {UI_COPY.reverseTitle}：
+            <span className="font-bold text-primary">{termsText || "合致なし"}</span>
+          </span>
+        </div>
+        <div className="flex shrink-0 items-center gap-1.5">
+          {result.terms.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setExpanded(!expanded)}
+              className="rounded px-2 py-0.5 text-[11px] font-bold text-muted-foreground hover:bg-background"
+            >
+              {expanded ? "出典を閉じる ▲" : "出典を表示 ▼"}
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={onClear}
+            className="rounded px-1 text-[11px] text-primary underline underline-offset-2"
+          >
+            {UI_COPY.reverseClear}
+          </button>
+        </div>
       </div>
-      {result.terms.length === 0 ? (
-        <p>{UI_COPY.reverseNone}</p>
-      ) : (
-        <>
+
+      {expanded && result.terms.length > 0 && (
+        <div className="mt-2 flex flex-col gap-1.5 border-t border-border pt-2 text-[11px]">
           <ul className="flex flex-col gap-1.5">
             {standards.map((s) => (
-              <li key={s.id} className="flex flex-col gap-1">
-                <span className="text-xs text-muted-foreground">{s.name}の承認基準</span>
-                {s.scope && <span className="text-xs">{s.scope}：</span>}
-                <span className="flex flex-wrap gap-1.5">
-                  {result.terms
-                    .filter((t) => t.standardId === s.id)
-                    .map((t) => (
-                      <span
-                        key={t.id}
-                        className="rounded-full bg-background px-2.5 py-1 text-xs font-bold"
-                      >
-                        {t.word}
-                      </span>
-                    ))}
-                </span>
+              <li key={s.id} className="flex flex-col gap-0.5">
+                <span className="font-bold text-muted-foreground">{s.name}の承認基準</span>
+                {s.scope && <span>{s.scope}：</span>}
                 <a
                   href={s.sourceUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[11px] break-all text-primary underline underline-offset-2"
+                  className="break-all text-primary underline underline-offset-2"
                 >
                   {s.notice}（取得 {s.fetchedOn}）
                 </a>
               </li>
             ))}
           </ul>
-          <p className="text-xs text-muted-foreground">{UI_COPY.reverseNote}</p>
-        </>
+          <p className="text-muted-foreground">{UI_COPY.reverseNote}</p>
+          {result.via === "keyword" && (
+            <p className="text-[10px] text-muted-foreground">{UI_COPY.reverseKeyword}</p>
+          )}
+        </div>
       )}
-      {result.via === "keyword" && (
-        <p className="text-[11px] text-muted-foreground">{UI_COPY.reverseKeyword}</p>
-      )}
-      <p className="text-xs font-bold">{UI_COPY.chooseNotice}</p>
     </section>
   );
 }

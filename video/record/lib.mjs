@@ -38,6 +38,85 @@ const HIDE_DEV = `
   kill();
 })();
 `;
+const MOCK_CAMERA = `
+(() => {
+  const BAR_W = [3, 1, 2, 1, 1, 3, 1, 2, 2, 1, 3, 1, 1, 2, 1, 3, 2, 1, 1, 2, 3, 1, 2, 1, 1, 3, 1, 2, 1, 2, 3, 1, 1, 2];
+  function createMockBarcodeStream() {
+    const canvas = document.createElement("canvas");
+    canvas.width = 640;
+    canvas.height = 480;
+    const ctx = canvas.getContext("2d");
+    let t = 0;
+    function draw() {
+      t += 0.04;
+      const g = ctx.createLinearGradient(0, 0, 0, 480);
+      g.addColorStop(0, "#24303F");
+      g.addColorStop(1, "#131922");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, 640, 480);
+
+      // 医薬品の白い外箱とバーコードラベルのモック映像
+      const bx = Math.sin(t * 1.3) * 4;
+      const by = Math.cos(t * 1.7) * 3;
+      ctx.save();
+      ctx.translate(bx, by);
+      // 外箱全体
+      ctx.fillStyle = "#F4F6F9";
+      ctx.strokeStyle = "#CBD5E1";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(70, 50, 500, 380, 14);
+      ctx.fill();
+      ctx.stroke();
+
+      // 外箱上部のライン
+      ctx.fillStyle = "#1E3A5F";
+      ctx.fillRect(70, 82, 500, 18);
+
+      // バーコード枠（中央）
+      const cw = 320, ch = 140;
+      const cx = (640 - cw) / 2, cy = (480 - ch) / 2;
+      ctx.fillStyle = "#FFFFFF";
+      ctx.beginPath();
+      ctx.roundRect(cx, cy, cw, ch, 8);
+      ctx.fill();
+
+      // バーコードの縞
+      const totalUnits = BAR_W.reduce((s, v) => s + v, 0);
+      const unitW = (cw - 48) / totalUnits;
+      let x = cx + 24;
+      ctx.fillStyle = "#0F172A";
+      for (let i = 0; i < BAR_W.length; i++) {
+        const w = BAR_W[i] * unitW;
+        if (i % 2 === 0) {
+          ctx.fillRect(x, cy + 20, w, ch - 46);
+        }
+        x += w;
+      }
+
+      // スキャンレーザーライン
+      const scanY = cy + 16 + ((Math.sin(t * 2.6) + 1) / 2) * (ch - 32);
+      ctx.fillStyle = "#60A5FA";
+      ctx.shadowColor = "#60A5FA";
+      ctx.shadowBlur = 12;
+      ctx.fillRect(cx - 12, scanY, cw + 24, 3);
+      ctx.shadowBlur = 0;
+      ctx.restore();
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+    return canvas.captureStream(30);
+  }
+
+  if (navigator.mediaDevices) {
+    navigator.mediaDevices.getUserMedia = async () => createMockBarcodeStream();
+    navigator.mediaDevices.enumerateDevices = async () => [
+      { deviceId: "mock-cam-1", kind: "videoinput", label: "Back Camera", groupId: "g1", toJSON() { return this; } }
+    ];
+  }
+})();
+`;
 const TAP_SCRIPT = `
 (() => {
   const add = () => {
@@ -93,6 +172,7 @@ export async function recordScene(sceneName, fn) {
     },
   });
   await context.addInitScript(HIDE_DEV); // 開発サーバーの「N」の丸を映さない
+  await context.addInitScript(MOCK_CAMERA); // カメラエラーを出さずモックのバーコード映像を映す
   if (SHOW_TAP) await context.addInitScript(TAP_SCRIPT);
   context.setDefaultTimeout(15_000);
   const page = await context.newPage();

@@ -8,6 +8,7 @@ import {
   Copy,
   Square,
   SquareCheckBig,
+  Store,
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -316,6 +317,44 @@ function AbuseCheckSheet({
                   .join("、")}
               </p>
             )}
+          </section>
+
+          {/* 直近の系列店舗での確認記録タイムライン（匿名・PII非保持・2026年5月施行対応） */}
+          <section className="flex flex-col gap-1.5 rounded-xl border border-primary/30 bg-primary/5 p-3 text-xs">
+            <div className="flex items-center justify-between">
+              <span className="flex items-center gap-1 font-bold text-primary">
+                <Store className="size-3.5" aria-hidden="true" />
+                直近の系列店舗での確認記録（匿名タイムライン）
+              </span>
+              <span className="text-[10px] text-muted-foreground">
+                個人情報非保持（氏名・症状なし）
+              </span>
+            </div>
+            <p className="text-[11px] leading-relaxed text-muted-foreground">
+              2026年5月施行の販売ルールに基づき、重複・大量購入を防ぐため系列店舗間での確認状況をリアルタイム照合しています。
+            </p>
+            <ul className="mt-1 divide-y divide-border/60 rounded-lg border border-border bg-card">
+              <li className="flex items-center justify-between p-2">
+                <div className="flex flex-col gap-0.5">
+                  <span className="font-bold text-foreground">薬局サクラ 駅前店（薬剤師・A）</span>
+                  <span className="text-[11px] text-muted-foreground">
+                    パブロンゴールドA微粒 1個 / 確認項目: ア, イ, エ, カ, キ
+                  </span>
+                </div>
+                <span className="text-[11px] font-bold tabular-nums text-muted-foreground">
+                  本日 10:15
+                </span>
+              </li>
+              <li className="flex items-center justify-between bg-accent/20 p-2">
+                <div className="flex flex-col gap-0.5">
+                  <span className="font-bold text-foreground">当店（登録販売者・B）</span>
+                  <span className="text-[11px] text-muted-foreground">
+                    新ルル-A錠s 1個 / 確認項目: ア, イ, エ, オ（大容量理由）, カ, キ
+                  </span>
+                </div>
+                <span className="text-[11px] font-bold tabular-nums text-primary">現在確認中</span>
+              </li>
+            </ul>
           </section>
 
           {/* 2. 制度上の注意（事実のみ・判定ボタンなし） */}

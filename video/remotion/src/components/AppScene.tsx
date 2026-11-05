@@ -147,12 +147,37 @@ const SpeedLabel: React.FC<{ text: string; ff?: boolean }> = ({ text, ff }) => (
   </div>
 );
 
+const SCENE_BADGE_MAP: Record<string, string> = {
+  S2b: "機能 01",
+  S3: "機能 02",
+  S4: "機能 03",
+  S5: "機能 04",
+  S6: "機能 05",
+};
+
 export const SceneHeading: React.FC<{ id: string; title: string }> = ({ id, title }) => {
   const frame = useCurrentFrame();
+  const badgeText = SCENE_BADGE_MAP[id] ?? id.replace(".", "-");
   return (
     <div style={rise(frame, 4)}>
-      <div style={{ fontSize: 26, fontWeight: 700, color: C.navy, letterSpacing: 4 }}>{id.replace(".", "-")}</div>
-      <div style={{ fontSize: 60, fontWeight: 700, color: C.text, marginTop: 8, lineHeight: 1.25 }}>{title}</div>
+      <div
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 10,
+          padding: "6px 18px",
+          borderRadius: 999,
+          background: C.navySoft,
+          color: C.navy,
+          fontSize: 24,
+          fontWeight: 700,
+          letterSpacing: 3,
+        }}
+      >
+        <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
+        {badgeText}
+      </div>
+      <div style={{ fontSize: 60, fontWeight: 700, color: C.text, marginTop: 12, lineHeight: 1.25 }}>{title}</div>
       <div style={{ width: 96, height: 6, background: C.navy, marginTop: 24, borderRadius: 3 }} />
     </div>
   );

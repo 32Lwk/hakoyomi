@@ -1,7 +1,7 @@
 import timeline from "./timeline.json";
 import { FPS } from "./theme";
 
-export type SceneId = "S1" | "S2" | "S3" | "S4" | "S4.5" | "S5" | "S6" | "S7";
+export type SceneId = "S1" | "S2" | "S2b" | "S3" | "S4" | "S4.5" | "S5" | "S6" | "S7";
 /** 録画の区切り（録画の秒）。play は from〜to を rate 倍、hold は at の絵で止める */
 export type Segment =
   | { from: number; to: number; rate: number; note?: string }

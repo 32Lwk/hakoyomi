@@ -3,7 +3,7 @@ import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
 import { AUDIO } from "./captions";
 import { Subtitles } from "./components/Subtitles";
 import { JanDemoReal } from "./scenes/JanDemoReal";
-import { S3, S4, S5, S6 } from "./scenes/AppScenes";
+import { S2b, S3, S4, S5, S6 } from "./scenes/AppScenes";
 import { pipelineDefaults, type PipelineProps } from "./scenes/Pipeline";
 import { S1Real } from "./scenes/S1Real";
 import { QrCard } from "./components/QrCard";
@@ -20,6 +20,8 @@ const render = (id: SceneId, p: MainProps) => {
       return <S1Real />;
     case "S2":
       return <JanDemoReal captions={false} />;
+    case "S2b":
+      return <S2b />;
     case "S3":
       return <S3 />;
     case "S4":
