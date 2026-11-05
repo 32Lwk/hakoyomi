@@ -139,7 +139,7 @@ const AfterScene: React.FC = () => {
             ...rise(frame, t2, 18),
           }}
         >
-          薬は勧めない。確認の材料を手元にそろえ、対話を支える。
+          誰もが等しい知識を持ち、対話に必要な正確な材料を瞬時に手元へ。
         </div>
       </div>
     </AbsoluteFill>

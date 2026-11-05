@@ -51,7 +51,7 @@ const probe = (file) =>
     }).trim(),
   );
 
-async function generateTTS(text, voiceName, outFile, retries = 5) {
+async function generateTTS(text, voiceName, outFile, tempo = 1.08, retries = 5) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
   const payload = {
     contents: [{ parts: [{ text }] }],
@@ -91,7 +91,7 @@ async function generateTTS(text, voiceName, outFile, retries = 5) {
 
     const tempPcm = path.join(outDir, `_temp_${Date.now()}.pcm`);
     fs.writeFileSync(tempPcm, Buffer.from(base64Data, "base64"));
-    // 24000Hz s16le mono -> 48000Hz wav mono (atempo=1.08 で歯切れの良いプロナレーションテンポに微調整)
+    // 24000Hz s16le mono -> 48000Hz wav mono
     execFileSync("ffmpeg", [
       "-y",
       "-v",
@@ -105,7 +105,7 @@ async function generateTTS(text, voiceName, outFile, retries = 5) {
       "-i",
       tempPcm,
       "-af",
-      "atempo=1.08",
+      `atempo=${tempo}`,
       "-ar",
       "48000",
       "-ac",
@@ -128,8 +128,9 @@ for (const line of linesData.lines) {
       console.log(`Using existing [${line.id}]: "${line.text}"`);
     } else {
       const textToSpeak = line.speak ?? line.text;
-      console.log(`Generating [${line.id}] (${selectedVoice}): "${textToSpeak}"`);
-      await generateTTS(textToSpeak, selectedVoice, wav);
+      const tempo = line.tempo ?? (line.scene === "S1" ? 1.18 : 1.08);
+      console.log(`Generating [${line.id}] (${selectedVoice}, tempo=${tempo}): "${textToSpeak}"`);
+      await generateTTS(textToSpeak, selectedVoice, wav, tempo);
       // レート制限（10 requests/min）を回避するため、リクエスト間に 2.5 秒空ける
       await new Promise((r) => setTimeout(r, 2500));
     }

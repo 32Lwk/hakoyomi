@@ -62,8 +62,8 @@ const fill: React.CSSProperties = { width: "100%", height: "100%", objectFit: "c
 const Caption: React.FC<{ frame: number }> = ({ frame }) => {
   const s = frame / FPS;
   const list = [
-    { from: 0.8, to: 4.5, text: "お客様が箱を持ってきたら、バーコードを読むだけです。" },
-    { from: 5.0, to: 10.5, text: "Claudeが箱の記載と公的通知から『接客前チェック』を抽出します。" },
+    { from: 0.8, to: 5.5, text: "お客様が箱を持って相談に来られたら、バーコードを読み取るだけ。" },
+    { from: 6.0, to: 11.5, text: "接客前に確認すべきポイントと問いかけが、瞬時に手元にそろいます。" },
   ];
   const cur = list.find((c) => s >= c.from && s < c.to);
   if (!cur) return null;
@@ -77,16 +77,16 @@ const Caption: React.FC<{ frame: number }> = ({ frame }) => {
 
 const Panel: React.FC<{ frame: number }> = ({ frame }) => {
   const pts = [
-    { at: 10.4, text: "接客前チェック：先輩なら確認する問いかけが即座に出現", note: "Claudeが箱の記載・公的通知から重要確認事項を自動抽出" },
-    { at: 21.0, text: "ドーピング：WADA 2026年版の禁止表で照合", note: "スポーツをされるお客様へ客観的な事実を提供" },
-    { at: 32.5, text: "ハラール・授乳・運転：公的根拠と1対1で直結", note: "出典：厚労省通知・PMDA添付文書などの一次情報" },
+    { at: 10.4, text: "接客前チェック：お客様への問いかけが瞬時にそろう", note: "最初に確認すべき重要ポイントを自動で整理" },
+    { at: 21.0, text: "国の機関（PMDA等）のデータを参照し正確に回答", note: "ドーピングやハラール対応も根拠とともにすぐ確認" },
+    { at: 34.0, text: "授乳・運転・年齢・カフェインもワンタップで根拠表示", note: "細かい箱の記載や添付文書をその場で探す手間をゼロに" },
   ];
-  const fin = ramp(frame, Math.round(45.5 * FPS), 18);
+  const fin = ramp(frame, Math.round(44.5 * FPS), 18);
   return (
     <div style={{ position: "absolute", left: 1040, top: 170, width: 800 }}>
       <div style={rise(frame, Math.round(10.1 * FPS))}>
-        <div style={{ fontSize: 26, fontWeight: 700, color: C.navy, letterSpacing: 4 }}>JAN を読むだけ</div>
-        <div style={{ fontSize: 52, fontWeight: 700, color: C.text, marginTop: 8, lineHeight: 1.25, whiteSpace: "nowrap" }}>確認が、瞬時にそろう</div>
+        <div style={{ fontSize: 26, fontWeight: 700, color: C.navy, letterSpacing: 4 }}>バーコードを読み取るだけ</div>
+        <div style={{ fontSize: 52, fontWeight: 700, color: C.text, marginTop: 8, lineHeight: 1.25, whiteSpace: "nowrap" }}>確認の材料が、瞬時にそろう</div>
         <div style={{ width: 96, height: 6, background: C.navy, marginTop: 24, borderRadius: 3 }} />
       </div>
       <div style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 18 }}>

@@ -1,90 +1,90 @@
 {
   "s1-1": {
-    "start": 0.5,
-    "duration": 3.73
+    "start": 0.3,
+    "duration": 2.62
   },
   "s1-2": {
-    "start": 4.48,
-    "duration": 9.33
+    "start": 3.17,
+    "duration": 6.77
   },
   "s1-3": {
-    "start": 14.06,
-    "duration": 7.31
+    "start": 10.19,
+    "duration": 5.31
+  },
+  "s1-4": {
+    "start": 15.75,
+    "duration": 8.11
   },
   "s2-1": {
     "start": 0.8,
-    "duration": 3.37
+    "duration": 4.24
   },
   "s2-2": {
-    "start": 5,
-    "duration": 6.09
+    "start": 6,
+    "duration": 5.92
   },
   "s2-3": {
-    "start": 13.8,
-    "duration": 5.77
+    "start": 14.5,
+    "duration": 7.2
   },
   "s2-4": {
-    "start": 21,
-    "duration": 10.25
+    "start": 23.5,
+    "duration": 7.83
   },
   "s2-5": {
-    "start": 32.5,
-    "duration": 8.33
+    "start": 36.5,
+    "duration": 4.32
   },
   "s2-6": {
-    "start": 45,
-    "duration": 5.33
+    "start": 44.5,
+    "duration": 5.17
   },
   "s3-1": {
     "start": 0.3,
-    "duration": 4.78
+    "duration": 4.58
   },
   "s3-2": {
-    "start": 5.33,
-    "duration": 7.72
+    "start": 5.13,
+    "duration": 6.98
   },
   "s4-1": {
-    "start": 0.5,
-    "duration": 4.69
+    "start": 0.4,
+    "duration": 4.21
   },
   "s4-2": {
-    "start": 5.44,
-    "duration": 8.93
+    "start": 5,
+    "duration": 7.66
   },
   "s5-1": {
     "start": 0.4,
-    "duration": 3.77
+    "duration": 5.76
   },
   "s5-2": {
-    "start": 4.42,
-    "duration": 6.01
-  },
-  "s5-3": {
-    "start": 11.5,
-    "duration": 3.73
+    "start": 6.8,
+    "duration": 6.32
   },
   "s6-1": {
-    "start": 0.3,
-    "duration": 5.01
+    "start": 0.4,
+    "duration": 4.48
   },
   "s6-2": {
-    "start": 5.56,
-    "duration": 8.51
+    "start": 6,
+    "duration": 4.8
   },
   "s6-3": {
-    "start": 14.32,
-    "duration": 3.64
+    "start": 12.8,
+    "duration": 3.81
   },
   "s7-1": {
     "start": 0.5,
-    "duration": 5.85
+    "duration": 4.6
   },
   "s7-2": {
-    "start": 7.8,
-    "duration": 7.97
+    "start": 7,
+    "duration": 5.55
   },
   "s7-3": {
-    "start": 16.5,
-    "duration": 7.21
+    "start": 15,
+    "duration": 5.11
   }
 }
