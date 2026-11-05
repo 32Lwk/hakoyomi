@@ -42,7 +42,7 @@ export function ProductList({
   );
 }
 
-// 一覧の1行。写真は小さく、品名を主に（1画面に多く見えるように）
+// 一覧の1行。写真を大きく見やすく、品名と棚番号を直感的に識別できるように改善
 function ProductRow({
   view,
   read,
@@ -67,7 +67,7 @@ function ProductRow({
   };
 
   return (
-    <div className="flex min-w-0 flex-1 items-center gap-2 px-2.5 py-2 active:bg-accent/40">
+    <div className="flex min-w-0 flex-1 items-center gap-3 px-3.5 py-3 active:bg-accent/40">
       <div
         role="button"
         tabIndex={0}
@@ -78,26 +78,26 @@ function ProductRow({
             onPick(product.id);
           }
         }}
-        className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 text-left"
+        className="flex min-w-0 flex-1 cursor-pointer items-center gap-3.5 text-left"
       >
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-border">
+        <span className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-white p-1 ring-1 ring-border shadow-xs">
           <ProductImage
             id={product.id}
             kind={product.kind}
             name={product.name}
-            size={48}
+            size={60}
             decorative
-            className="size-11 object-contain"
+            className="size-14 object-contain"
           />
         </span>
-        <span className="flex min-w-0 flex-1 flex-col">
-          <span className="truncate text-[15px] font-bold">{product.name}</span>
+        <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+          <span className="truncate text-[17px] font-bold text-foreground leading-snug">{product.name}</span>
           <span className="flex items-center gap-1.5 truncate text-xs text-muted-foreground">
             <span>
               {product.maker.replace(/株式会社/g, "").trim()}・{product.riskClass}
             </span>
             {abuse.target && (
-              <span className="rounded bg-primary/10 px-1 py-0.2 text-[10px] font-bold text-primary">
+              <span className="rounded bg-primary/10 px-1.5 py-0.5 text-[11px] font-bold text-primary">
                 指定濫用
               </span>
             )}
@@ -114,21 +114,21 @@ function ProductRow({
           type="button"
           onClick={handleShelfClick}
           title={`棚 ${location.shelf.id} を開く`}
-          className="flex shrink-0 items-center gap-0.5 rounded-md border border-border bg-background px-2 py-1 text-[11px] font-bold text-foreground hover:bg-accent active:bg-accent/80"
+          className="flex shrink-0 items-center gap-1 rounded-lg border border-border bg-background px-2.5 py-1.5 text-xs font-bold text-foreground hover:bg-accent active:bg-accent/80 shadow-xs"
         >
-          <MapPin className="size-3 text-primary" aria-hidden="true" />
+          <MapPin className="size-3.5 text-primary" aria-hidden="true" />
           <span>棚 {location.shelf.id}</span>
         </button>
       )}
       {read && (
-        <span className="shrink-0 rounded bg-accent px-1.5 text-[11px] font-bold text-accent-foreground">
+        <span className="shrink-0 rounded bg-accent px-1.5 py-0.5 text-xs font-bold text-accent-foreground">
           {UI_COPY.readMark}
         </span>
       )}
       {chevron && (
         <ChevronRight
           onClick={() => onPick(product.id)}
-          className="size-4 shrink-0 cursor-pointer text-muted-foreground"
+          className="size-5 shrink-0 cursor-pointer text-muted-foreground"
           aria-hidden="true"
         />
       )}

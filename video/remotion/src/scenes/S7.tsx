@@ -163,35 +163,36 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          filter: "blur(3px)",
+          filter: "blur(0.5px)",
           transform: `scale(${bgScale})`,
         }}
       />
-      {/* 背景の2人の笑顔と店頭の雰囲気がしっかり透けて見えるシネマティックなオーバーレイ */}
+      {/* 上部の顔を邪魔せず、下部の文字をくっきり見せるシネマティックグラデーション */}
       <AbsoluteFill
         style={{
           background:
-            "linear-gradient(180deg, rgba(12, 23, 39, 0.52) 0%, rgba(15, 30, 52, 0.64) 52%, rgba(10, 18, 32, 0.82) 100%)",
+            "linear-gradient(180deg, rgba(12, 23, 39, 0.15) 0%, rgba(15, 30, 52, 0.28) 42%, rgba(10, 18, 32, 0.85) 75%, rgba(10, 18, 32, 0.96) 100%)",
         }}
       />
 
+      {/* お二人の顔がしっかり見え、字幕バーとも重ならないよう、文字群をほどよい高さへ配置 */}
       <AbsoluteFill
         style={{
-          justifyContent: "center",
+          justifyContent: "flex-end",
           alignItems: "center",
-          paddingBottom: 44,
+          paddingBottom: 210,
         }}
       >
         <div
           style={{
-            padding: "8px 26px",
+            padding: "6px 22px",
             borderRadius: 999,
-            background: "rgba(14, 25, 42, 0.68)",
+            background: "rgba(14, 25, 42, 0.8)",
             border: "1px solid rgba(255, 255, 255, 0.32)",
             color: "#E2ECF8",
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: 700,
-            letterSpacing: 5,
+            letterSpacing: 4,
             ...rise(frame, start + 4, 16),
           }}
         >
@@ -200,68 +201,44 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
 
         <div
           style={{
-            marginTop: 32,
+            marginTop: 16,
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            gap: 16,
+            gap: 24,
+            whiteSpace: "nowrap",
           }}
         >
-          <div
+          <span
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 36,
-              whiteSpace: "nowrap",
-            }}
-          >
-            <span
-              style={{
-                fontSize: 60,
-                fontWeight: 700,
-                color: C.white,
-                letterSpacing: 5,
-                textShadow: "0 6px 24px rgba(0,0,0,0.65)",
-                ...rise(frame, start + 10, 18),
-              }}
-            >
-              ベテランの知恵を受け継ぐ。
-            </span>
-            <span
-              style={{
-                fontSize: 60,
-                fontWeight: 700,
-                color: C.white,
-                letterSpacing: 5,
-                textShadow: "0 6px 24px rgba(0,0,0,0.65)",
-                ...rise(frame, start + 26, 18),
-              }}
-            >
-              誰もが自信を持って。
-            </span>
-          </div>
-
-          <div
-            style={{
-              marginTop: 6,
-              fontSize: 78,
+              fontSize: 52,
               fontWeight: 700,
               color: C.white,
-              letterSpacing: 8,
-              whiteSpace: "nowrap",
-              textShadow: "0 8px 30px rgba(0,0,0,0.7)",
-              ...rise(frame, start + 44, 20),
+              letterSpacing: 4,
+              textShadow: "0 6px 24px rgba(0,0,0,0.8)",
+              ...rise(frame, start + 10, 18),
             }}
           >
-            説明するのは、人。
-          </div>
+            ベテランの知恵を受け継ぐ。
+          </span>
+          <span
+            style={{
+              fontSize: 52,
+              fontWeight: 700,
+              color: C.white,
+              letterSpacing: 4,
+              textShadow: "0 6px 24px rgba(0,0,0,0.8)",
+              ...rise(frame, start + 26, 18),
+            }}
+          >
+            誰もが自信を持って。
+          </span>
         </div>
 
         <div
           style={{
-            marginTop: 26,
-            width: 680 * lineExpand,
-            height: 4,
+            marginTop: 18,
+            width: 540 * lineExpand,
+            height: 3,
             borderRadius: 2,
             background: "linear-gradient(90deg, rgba(143,180,232,0) 0%, #8FB4E8 50%, rgba(143,180,232,0) 100%)",
             opacity: lineExpand,
@@ -270,24 +247,23 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
 
         <div
           style={{
-            marginTop: 34,
+            marginTop: 20,
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            gap: 16,
-            ...rise(frame, start + 62, 20),
+            gap: 28,
+            ...rise(frame, start + 44, 20),
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 26 }}>
-            <HakoyomiIcon size={92} idSuffix="s7" />
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <HakoyomiIcon size={64} idSuffix="s7" />
             <div
               style={{
-                fontSize: 94,
+                fontSize: 68,
                 fontWeight: 700,
                 color: C.white,
-                letterSpacing: 10,
+                letterSpacing: 8,
                 lineHeight: 1,
-                textShadow: "0 8px 28px rgba(0,0,0,0.65)",
+                textShadow: "0 8px 28px rgba(0,0,0,0.7)",
               }}
             >
               ハコよみ
@@ -298,17 +274,17 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 24,
-              padding: "10px 28px",
+              gap: 18,
+              padding: "8px 24px",
               borderRadius: 999,
-              background: "rgba(12, 22, 38, 0.72)",
+              background: "rgba(12, 22, 38, 0.78)",
               border: "1px solid rgba(255, 255, 255, 0.28)",
               color: "#E2ECF8",
-              fontSize: 24,
+              fontSize: 22,
               letterSpacing: 1.5,
             }}
           >
-            <span>hakoyomi.yutok.dev</span>
+            <span style={{ fontWeight: 700, color: "#93C5FD" }}>hakoyomi.yutok.dev</span>
             <span style={{ opacity: 0.45 }}>|</span>
             <span>{repoUrl}</span>
           </div>

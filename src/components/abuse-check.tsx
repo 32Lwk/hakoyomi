@@ -320,52 +320,60 @@ function AbuseCheckSheet({
           </section>
 
           {/* 直近の系列店舗での確認記録タイムライン（匿名・PII非保持・2026年5月施行対応） */}
-          <section className="flex flex-col gap-1.5 rounded-xl border border-primary/30 bg-primary/5 p-3 text-xs">
+          <section className="flex flex-col gap-2 rounded-xl border border-primary/30 bg-primary/5 p-3.5">
             <div className="flex items-center justify-between">
-              <span className="flex items-center gap-1 font-bold text-primary">
-                <Store className="size-3.5" aria-hidden="true" />
-                直近の系列店舗での確認記録（匿名タイムライン）
+              <span className="flex items-center gap-1.5 text-sm font-bold text-primary">
+                <Store className="size-4 shrink-0" aria-hidden="true" />
+                系列店タイムライン照合（匿名・PII非保持）
               </span>
-              <span className="text-[10px] text-muted-foreground">
-                個人情報非保持（氏名・症状なし）
+              <span className="rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-bold text-primary">
+                リアルタイム照合中
               </span>
             </div>
-            <p className="text-[11px] leading-relaxed text-muted-foreground">
-              2026年5月施行の販売ルールに基づき、重複・大量購入を防ぐため系列店舗間での確認状況をリアルタイム照合しています。
-            </p>
-            <ul className="mt-1 divide-y divide-border/60 rounded-lg border border-border bg-card">
-              <li className="flex items-center justify-between p-2">
+            <ul className="divide-y divide-border/60 rounded-lg border border-border bg-card shadow-2xs">
+              <li className="flex items-center justify-between p-2.5">
                 <div className="flex flex-col gap-0.5">
-                  <span className="font-bold text-foreground">薬局サクラ 駅前店（薬剤師・A）</span>
-                  <span className="text-[11px] text-muted-foreground">
-                    パブロンゴールドA微粒 1個 / 確認項目: ア, イ, エ, カ, キ
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-foreground">薬局サクラ 駅前店</span>
+                    <span className="rounded bg-amber-500/10 px-1 py-0.2 text-[10px] font-bold text-amber-700">直近購入あり</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground">
+                    パブロンゴールドA微粒 1個 / 確認: ア, イ, エ, カ, キ
                   </span>
                 </div>
-                <span className="text-[11px] font-bold tabular-nums text-muted-foreground">
+                <span className="text-xs font-bold tabular-nums text-muted-foreground">
                   本日 10:15
                 </span>
               </li>
-              <li className="flex items-center justify-between bg-accent/20 p-2">
+              <li className="flex items-center justify-between bg-primary/5 p-2.5">
                 <div className="flex flex-col gap-0.5">
-                  <span className="font-bold text-foreground">当店（登録販売者・B）</span>
-                  <span className="text-[11px] text-muted-foreground">
-                    新ルル-A錠s 1個 / 確認項目: ア, イ, エ, オ（大容量理由）, カ, キ
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-foreground">当店</span>
+                    <span className="rounded bg-primary/15 px-1 py-0.2 text-[10px] font-bold text-primary">受付中</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground">
+                    新ルル-A錠s 1個 / 大容量理由・他店併用を確認
                   </span>
                 </div>
-                <span className="text-[11px] font-bold tabular-nums text-primary">現在確認中</span>
+                <span className="text-xs font-bold tabular-nums text-primary">現在確認中</span>
               </li>
             </ul>
           </section>
 
-          {/* 2. 制度上の注意（事実のみ・判定ボタンなし） */}
-          <section className="flex flex-col gap-1 rounded-xl border border-border p-3 text-xs">
-            <h3 className="font-bold text-primary">制度上の留意点（{ABUSE_SOURCE.sales}）</h3>
-            <ul className="list-disc space-y-1 pl-4 text-foreground">
-              <li>{UI_COPY.abuseRuleFaceToFace}</li>
-              <li>{UI_COPY.abuseRuleUnder18}</li>
-              <li>{UI_COPY.abuseRuleHitlPii}</li>
-            </ul>
-          </section>
+          {/* 2. 制度上の注意（アコーディオン化で重要な確認に集中できるUIへ改善） */}
+          <details className="group rounded-xl border border-border bg-card text-xs">
+            <summary className="flex cursor-pointer items-center justify-between p-3 font-bold text-primary select-none">
+              <span>制度上の留意点・根拠（通知1226第16号）</span>
+              <span className="text-[11px] text-muted-foreground transition-transform group-open:rotate-90">▶</span>
+            </summary>
+            <div className="border-t border-border px-3 py-2.5 bg-muted/20">
+              <ul className="list-disc space-y-1.5 pl-4 text-foreground text-[11px] leading-relaxed">
+                <li>{UI_COPY.abuseRuleFaceToFace}</li>
+                <li>{UI_COPY.abuseRuleUnder18}</li>
+                <li>{UI_COPY.abuseRuleHitlPii}</li>
+              </ul>
+            </div>
+          </details>
 
           {/* 3. 確認事項リスト（ア〜キ、通知の順） */}
           <section className="flex flex-col gap-2">

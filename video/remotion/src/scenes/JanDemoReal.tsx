@@ -100,7 +100,7 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
 
       <ProblemSolutionBanner
         problem="小さな文字の箱の裏や添付文書を、お客様の前で必死に探す"
-        solution="バーコード1秒読取 ➔ 確認事項と注意点が一瞬で手元に集約"
+        solution="バーコード1秒 ➔ 必要な確認事項が瞬時に集約"
         at={4.6}
       />
 

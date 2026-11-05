@@ -290,11 +290,11 @@ export interface FeaturePoint {
   at: string | number;
 }
 
-/** 実務メリットを特大フォント（34px）で言い切る、シャープなプレゼン用リスト（濃紺アクセント・白地） */
+/** 実務メリットを特大フォント（34px）で言い切る、洗練されたプレゼン用リスト（囲み枠を全廃し、抜け感のあるモダンデザインへ） */
 export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
   const frame = useCurrentFrame();
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
       {items.map((it, i) => {
         const atSec = typeof it.at === "number" ? it.at : lineTiming(it.at).inScene;
         return (
@@ -303,22 +303,37 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 18,
-              background: C.white,
-              border: `1.5px solid ${C.line}`,
-              borderLeft: `6px solid ${C.navy}`,
-              borderRadius: 14,
-              padding: "18px 24px",
-              boxShadow: "0 4px 14px rgba(15, 23, 42, 0.04)",
+              gap: 20,
+              padding: "12px 14px",
+              borderBottom: "1.5px solid rgba(30, 58, 95, 0.1)",
               ...rise(frame, sec(atSec)),
             }}
           >
+            {/* スマートな番号インジケーター */}
+            <div
+              style={{
+                width: 38,
+                height: 38,
+                borderRadius: 19,
+                background: C.navy,
+                color: C.white,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 20,
+                fontWeight: 900,
+                flexShrink: 0,
+              }}
+            >
+              0{i + 1}
+            </div>
+
             {it.badge ? (
               <span
                 style={{
                   background: C.navySoft,
                   color: C.navy,
-                  fontSize: 21,
+                  fontSize: 22,
                   fontWeight: 700,
                   padding: "6px 14px",
                   borderRadius: 8,

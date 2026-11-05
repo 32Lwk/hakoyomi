@@ -11,10 +11,95 @@ import { C, FONT, FPS } from "../theme";
 const at = (s: number) => Math.round(s * FPS);
 const fill: React.CSSProperties = { width: "100%", height: "100%", objectFit: "cover" };
 
-const Chip: React.FC<{ text: string; sub?: string; left: number; frame: number; from: number }> = ({ text, sub, left, frame, from }) => (
-  <div style={{ position: "absolute", left, bottom: 150, ...rise(frame, at(from), 14) }}>
-    <div style={{ background: "rgba(255,255,255,0.94)", color: C.navy, fontSize: 40, fontWeight: 700, padding: "8px 28px", borderRadius: 999, boxShadow: "0 6px 20px rgba(0,0,0,0.25)", letterSpacing: 3 }}>{text}</div>
-    {sub ? <div style={{ marginTop: 10, color: C.white, fontSize: 28, fontWeight: 500, textShadow: "0 2px 10px rgba(0,0,0,0.6)", paddingLeft: 12 }}>{sub}</div> : null}
+const SpeechBubble: React.FC<{
+  role: string;
+  bubbleText: React.ReactNode;
+  subText: string;
+  left?: number;
+  right?: number;
+  bottom: number;
+  frame: number;
+  from: number;
+  tailDirection: "left" | "right";
+}> = ({ role, bubbleText, subText, left, right, bottom, frame, from, tailDirection }) => (
+  <div
+    style={{
+      position: "absolute",
+      left,
+      right,
+      bottom,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: tailDirection === "left" ? "flex-start" : "flex-end",
+      ...rise(frame, at(from), 14),
+    }}
+  >
+    {/* 吹き出し本体（白背景＋濃紺枠＋角丸） */}
+    <div
+      style={{
+        position: "relative",
+        background: "rgba(255, 255, 255, 0.96)",
+        border: `3px solid ${C.navy}`,
+        borderRadius: 24,
+        padding: "16px 26px",
+        boxShadow: "0 12px 36px rgba(0, 0, 0, 0.35)",
+        maxWidth: 520,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+        <span
+          style={{
+            background: tailDirection === "left" ? C.navySoft : C.navy,
+            color: tailDirection === "left" ? C.navy : C.white,
+            fontSize: 22,
+            fontWeight: 900,
+            padding: "4px 16px",
+            borderRadius: 999,
+            letterSpacing: 2,
+          }}
+        >
+          {role}
+        </span>
+        <span style={{ fontSize: 24, fontWeight: 700, color: C.sub }}>{subText}</span>
+      </div>
+      <div
+        style={{
+          fontSize: 34,
+          fontWeight: 700,
+          color: C.text,
+          lineHeight: 1.35,
+          letterSpacing: 1,
+        }}
+      >
+        {bubbleText}
+      </div>
+
+      {/* 吹き出しのしっぽ（三角） */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: -15,
+          [tailDirection === "left" ? "left" : "right"]: 44,
+          width: 0,
+          height: 0,
+          borderLeft: "14px solid transparent",
+          borderRight: "14px solid transparent",
+          borderTop: `15px solid ${C.navy}`,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: -11,
+          [tailDirection === "left" ? "left" : "right"]: 46,
+          width: 0,
+          height: 0,
+          borderLeft: "12px solid transparent",
+          borderRight: "12px solid transparent",
+          borderTop: "12px solid rgba(255, 255, 255, 0.96)",
+        }}
+      />
+    </div>
   </div>
 );
 
@@ -58,8 +143,26 @@ export const S1Real: React.FC = () => {
           <div style={{ position: "absolute", left: 0, right: 0, top: 168, textAlign: "center", color: C.white, fontSize: 56, fontWeight: 700, letterSpacing: 4, textShadow: "0 4px 24px rgba(0,0,0,0.55)", ...rise(frame, at(3.6), 18) }}>
             同じ質問でも、答えは、誰が立っているかで変わる。
           </div>
-          <Chip text="新人" sub="調べながら" left={90} frame={frame} from={4.4} />
-          <Chip text="ベテラン" sub="その場で説明" left={1050} frame={frame} from={4.8} />
+          <SpeechBubble
+            role="新人"
+            subText="調べながら…"
+            bubbleText="「少々お待ちください…確認してきます」"
+            left={70}
+            bottom={110}
+            frame={frame}
+            from={4.4}
+            tailDirection="left"
+          />
+          <SpeechBubble
+            role="ベテラン"
+            subText="その場で即答！"
+            bubbleText="「違いはこの3点。箱のここに書いてあります」"
+            right={70}
+            bottom={110}
+            frame={frame}
+            from={4.8}
+            tailDirection="right"
+          />
         </AbsoluteFill>
       ) : null}
 

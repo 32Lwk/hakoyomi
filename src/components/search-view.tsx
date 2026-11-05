@@ -598,12 +598,12 @@ function AddButton({
       disabled={added || ids.length >= 4}
       onClick={() => onAdd(id)}
       aria-label={added ? `${name} は商品に追加済み` : `${name} を商品に追加`}
-      className="mr-2 flex size-11 shrink-0 flex-col items-center justify-center rounded-lg border-2 border-primary text-[10px] leading-none font-bold text-primary disabled:border-border disabled:text-muted-foreground"
+      className="mr-3 flex size-12 shrink-0 flex-col items-center justify-center rounded-xl border-2 border-primary text-[11px] leading-none font-bold text-primary shadow-2xs transition-transform active:scale-95 disabled:border-border disabled:text-muted-foreground"
     >
       {added ? (
-        <Check className="size-4" aria-hidden="true" />
+        <Check className="size-4.5" aria-hidden="true" />
       ) : (
-        <Plus className="size-4" aria-hidden="true" />
+        <Plus className="size-4.5" aria-hidden="true" />
       )}
       追加
     </button>

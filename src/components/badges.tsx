@@ -252,85 +252,116 @@ function EvidenceBlock({ evidence, group }: { evidence: Evidence; group: NoticeG
   if (evidence.kind === "notice") {
     const noticeGroup = evidence.sourceGroup ?? group;
     return (
-      <div className="flex flex-col gap-2 rounded-lg border border-border p-3">
-        <blockquote className="border-l-0 bg-muted px-3 py-2 text-base">{evidence.body}</blockquote>
-        <p className="text-sm">
-          当たった成分：
-          <span className="font-bold">{evidence.matched.join("、") || "（全製剤に記載）"}</span>
-        </p>
-        {evidence.conditionText && (
-          <p className="text-xs text-muted-foreground">記載条件：{evidence.conditionText}</p>
-        )}
-        <p className="text-xs text-muted-foreground">
-          出典：厚労省通知「使用上の注意」{noticeGroup?.name ?? evidence.groupId}　
-          {evidence.section} {evidence.itemNo}
-          {noticeGroup && (
-            <>
-              {" "}
-              （
-              <a
-                href={noticeGroup.sourceUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="underline"
-              >
-                PDF {noticeGroup.sourcePage}頁〜
-              </a>
-              ・取得 {noticeGroup.fetchedOn}）
-            </>
-          )}
-        </p>
+      <div className="flex flex-col gap-2 rounded-xl border border-border p-3.5 bg-card shadow-2xs">
+        {/* 大切なこと（注意・禁止の本文）：大きく分かりやすく */}
+        <div className="rounded-lg bg-primary/5 border border-primary/20 px-3.5 py-2.5 text-[15px] font-bold text-foreground leading-relaxed">
+          {evidence.body}
+        </div>
+
+        {/* 細かい内容はアコーディオンで必要な時だけ詳細に確認 */}
+        <details className="group rounded-lg border border-border bg-muted/20 text-xs">
+          <summary className="flex cursor-pointer items-center justify-between p-2.5 font-bold text-primary select-none">
+            <span>根拠・該当成分・出典の詳細</span>
+            <span className="text-[11px] text-muted-foreground transition-transform group-open:rotate-90">▶</span>
+          </summary>
+          <div className="flex flex-col gap-1.5 border-t border-border p-2.5 text-xs text-foreground bg-background">
+            <p>
+              当たった成分：
+              <span className="font-bold">{evidence.matched.join("、") || "（全製剤に記載）"}</span>
+            </p>
+            {evidence.conditionText && (
+              <p className="text-muted-foreground">記載条件：{evidence.conditionText}</p>
+            )}
+            <p className="text-muted-foreground">
+              出典：厚労省通知「使用上の注意」{noticeGroup?.name ?? evidence.groupId}　
+              {evidence.section} {evidence.itemNo}
+              {noticeGroup && (
+                <>
+                  {" "}
+                  （
+                  <a
+                    href={noticeGroup.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline text-primary"
+                  >
+                    PDF {noticeGroup.sourcePage}頁〜
+                  </a>
+                  ・取得 {noticeGroup.fetchedOn}）
+                </>
+              )}
+            </p>
+          </div>
+        </details>
       </div>
     );
   }
   if (evidence.kind === "abuse_quantity") {
     return (
-      <div className="rounded-lg border border-border p-3 text-sm">
-        <p>
-          1包装の日数：
-          <span className="font-bold tabular-nums">{evidence.days}日分</span>
-          （内容量 {evidence.contentQty}
-          {evidence.contentUnit} ÷ 1日最大 {evidence.dailyMaxUnits}
-          {evidence.contentUnit}）
-        </p>
-        <p className="mt-1">
-          数量基準：上限 <span className="font-bold tabular-nums">{evidence.limitDays}日分</span> →{" "}
-          <span className="font-bold">
-            {evidence.large ? "大容量製品に該当" : "通常容量（上限以内）"}
-          </span>
-        </p>
-        <p className="mt-1 text-xs text-muted-foreground">
-          出典：{evidence.source}（
-          <a href={ABUSE_SOURCE.url} target="_blank" rel="noreferrer" className="underline">
-            通知の掲載元
-          </a>
-          ）
-        </p>
+      <div className="flex flex-col gap-2 rounded-xl border border-border p-3.5 bg-card shadow-2xs">
+        <div className="rounded-lg bg-primary/5 border border-primary/20 px-3.5 py-2.5 text-[15px] font-bold text-foreground leading-relaxed">
+          {evidence.large ? "大容量製品に該当（確認義務の対象）" : "通常容量（数量基準の上限以内）"}
+        </div>
+        <details className="group rounded-lg border border-border bg-muted/20 text-xs">
+          <summary className="flex cursor-pointer items-center justify-between p-2.5 font-bold text-primary select-none">
+            <span>算定日数・根拠の詳細</span>
+            <span className="text-[11px] text-muted-foreground transition-transform group-open:rotate-90">▶</span>
+          </summary>
+          <div className="flex flex-col gap-1 border-t border-border p-2.5 text-xs text-foreground bg-background">
+            <p>
+              1包装の日数：
+              <span className="font-bold tabular-nums">{evidence.days}日分</span>
+              （内容量 {evidence.contentQty}
+              {evidence.contentUnit} ÷ 1日最大 {evidence.dailyMaxUnits}
+              {evidence.contentUnit}）
+            </p>
+            <p>
+              数量基準：上限 <span className="font-bold tabular-nums">{evidence.limitDays}日分</span>
+            </p>
+            <p className="text-muted-foreground">
+              出典：{evidence.source}（
+              <a href={ABUSE_SOURCE.url} target="_blank" rel="noreferrer" className="underline text-primary">
+                通知の掲載元
+              </a>
+              ）
+            </p>
+          </div>
+        </details>
       </div>
     );
   }
   if (evidence.kind === "label") {
     return (
-      <div className="flex flex-col gap-2 rounded-lg border border-border p-3">
-        <blockquote className="border-l-0 bg-muted px-3 py-2 text-base">{evidence.body}</blockquote>
-        {evidence.matched.length > 0 && (
-          <p className="text-sm">
-            当たった成分：<span className="font-bold">{evidence.matched.join("、")}</span>
-          </p>
-        )}
-        <p className="text-xs text-muted-foreground">
-          {evidence.labelOnly ? UI_COPY.labelOnly : UI_COPY.labelCorrected}（{evidence.section}
-          ）。出典：
-          {evidence.sources.map((s, i) => (
-            <span key={s.url}>
-              {i > 0 && "・"}
-              <a href={s.url} target="_blank" rel="noreferrer" className="underline">
-                {s.label}
-              </a>
-            </span>
-          ))}
-          （確認 {evidence.checkedOn}）
-        </p>
+      <div className="flex flex-col gap-2 rounded-xl border border-border p-3.5 bg-card shadow-2xs">
+        <div className="rounded-lg bg-primary/5 border border-primary/20 px-3.5 py-2.5 text-[15px] font-bold text-foreground leading-relaxed">
+          {evidence.body}
+        </div>
+        <details className="group rounded-lg border border-border bg-muted/20 text-xs">
+          <summary className="flex cursor-pointer items-center justify-between p-2.5 font-bold text-primary select-none">
+            <span>成分・出典の詳細</span>
+            <span className="text-[11px] text-muted-foreground transition-transform group-open:rotate-90">▶</span>
+          </summary>
+          <div className="flex flex-col gap-1 border-t border-border p-2.5 text-xs text-foreground bg-background">
+            {evidence.matched.length > 0 && (
+              <p>
+                当たった成分：<span className="font-bold">{evidence.matched.join("、")}</span>
+              </p>
+            )}
+            <p className="text-muted-foreground">
+              {evidence.labelOnly ? UI_COPY.labelOnly : UI_COPY.labelCorrected}（{evidence.section}
+              ）。出典：
+              {evidence.sources.map((s, i) => (
+                <span key={s.url}>
+                  {i > 0 && "・"}
+                  <a href={s.url} target="_blank" rel="noreferrer" className="underline text-primary">
+                    {s.label}
+                  </a>
+                </span>
+              ))}
+              （確認 {evidence.checkedOn}）
+            </p>
+          </div>
+        </details>
       </div>
     );
   }

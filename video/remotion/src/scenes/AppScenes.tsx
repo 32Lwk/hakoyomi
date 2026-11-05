@@ -13,7 +13,7 @@ export const S2b: React.FC = () => (
   <AppScene id="S2b">
     <ProblemSolutionBanner
       problem="他店での購入歴が分からず、重複・多量販売を防ぎきれない"
-      solution="系列店タイムライン照合 ＆ 10秒で販売記録下書き作成"
+      solution="系列店タイムライン照合 ＆ 10秒で販売記録を作成"
     />
     <FeatureList
       items={[
@@ -41,7 +41,7 @@ export const S3: React.FC = () => (
   <AppScene id="S3">
     <ProblemSolutionBanner
       problem="似た薬の違いを覚えるのに何年もかかり、添付文書を行き来する"
-      solution="成分・用量を横並び比較 ＆ ベテランの視点で着眼点を整理"
+      solution="成分・用量を横並び比較 ＆ 説明の分岐点を整理"
     />
     <FeatureList
       items={[
@@ -69,7 +69,7 @@ export const S4: React.FC<{ pipeline?: PipelineProps }> = () => (
   <AppScene id="S4">
     <ProblemSolutionBanner
       problem="複雑な質問のたびに分厚い添付文書をめくり、お客様を待たせる"
-      solution="公的資料からBM25 ＆ RAGで該当箇所をピンポイント抽出"
+      solution="公的文書からBM25・RAGで正確な根拠だけを抽出"
     />
     <FeatureList
       items={[
@@ -97,7 +97,7 @@ export const S5: React.FC = () => (
   <AppScene id="S5">
     <ProblemSolutionBanner
       problem="あいまいに相談されると薬がすぐ決まらず、広い店内で棚も迷う"
-      solution="ワンタップ絞り込み（スクロール不要）➔ 店内マップ・棚正面図へ直行"
+      solution="ワンタップ絞込 ➔ スクロール不要で棚正面図へ直行"
     />
     <FeatureList
       items={[
@@ -108,7 +108,7 @@ export const S5: React.FC = () => (
         },
         {
           badge: "スクロール不要",
-          title: "文字過多を解消し、該当する候補薬を即座に表示",
+          title: "商品カードを大きく見やすく改善し、候補薬を即座に表示",
           at: out("S5", 8.8),
         },
         {
@@ -125,55 +125,171 @@ export const S6: React.FC = () => (
   <AppScene id="S6">
     <ProblemSolutionBanner
       problem="ベテランの接客ノウハウが個人の頭の中に埋もれ、属人化する"
-      solution="商品・成分ごとのメモ ➔ 同一成分を含む全商品の最上部へ自動反映"
+      solution="1つの成分メモ ➔ 全対象商品の最上部へ自動反映"
     />
-    <FeatureList
-      items={[
-        {
-          badge: "1回のメモ登録",
-          title: "現場で培った接客のコツを、商品や成分ごとにメモ保存",
-          at: "s6-1",
-        },
-        {
-          badge: "全商品へ自動共有",
-          title: "同一成分の薬を開いた瞬間、最上部に「先輩のコツ」浮上",
-          at: out("S6", 16.4),
-        },
-        {
-          badge: "店舗の集合知へ",
-          title: "ベテランが現場にいるうちに、経験を店舗全体の資産へ自然継承",
-          at: out("S6", 41.3),
-        },
-      ]}
-    />
-    {/* 1つの成分メモ → 全商品へ自動反映の図解カード */}
+
+    {/* スライドとして一目瞭然な特大インフォグラフィック（主役） */}
     <div
       style={{
-        marginTop: 16,
-        padding: "12px 20px",
-        borderRadius: 14,
-        background: C.white,
-        border: "2px solid rgba(30, 58, 95, 0.15)",
-        boxShadow: "0 4px 16px rgba(14, 17, 22, 0.05)",
+        marginTop: 20,
         display: "flex",
         flexDirection: "column",
-        gap: 10,
+        gap: 16,
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 22, fontWeight: 700, color: C.navy }}>
-        <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
-        <span>1つの成分メモ ➔ 全対象商品の最上部へ自動反映</span>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1.35fr",
+          gap: 16,
+          alignItems: "stretch",
+        }}
+      >
+        {/* 左：1商品のメモ入力 */}
+        <div
+          style={{
+            background: C.white,
+            border: `2px solid ${C.navy}`,
+            borderRadius: 16,
+            padding: "20px 22px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 10,
+            boxShadow: "0 8px 24px rgba(30, 58, 95, 0.08)",
+          }}
+        >
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: 18,
+              fontWeight: 700,
+              color: C.navy,
+            }}
+          >
+            <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
+            ベテランが1回入力
+          </div>
+          <div style={{ fontSize: 26, fontWeight: 700, color: C.text, lineHeight: 1.3 }}>
+            パブロンでメモ保存
+          </div>
+          <div
+            style={{
+              padding: "10px 14px",
+              background: C.base,
+              borderRadius: 10,
+              fontSize: 18,
+              color: C.sub,
+              lineHeight: 1.4,
+            }}
+          >
+            「眠気・運転の予定を先に確認」<br />
+            <span style={{ fontSize: 15, color: C.muted }}>成分：ジヒドロコデインリン酸塩</span>
+          </div>
+        </div>
+
+        {/* 中央：自動波及の矢印 */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 6,
+          }}
+        >
+          <div style={{ fontSize: 36, color: C.navy, fontWeight: 900 }}>➔</div>
+          <div
+            style={{
+              fontSize: 14,
+              fontWeight: 700,
+              color: C.navy,
+              background: C.navySoft,
+              padding: "4px 8px",
+              borderRadius: 6,
+              whiteSpace: "nowrap",
+            }}
+          >
+            同一成分を検知
+          </div>
+        </div>
+
+        {/* 右：全商品へ自動共有 */}
+        <div
+          style={{
+            background: C.navySoft,
+            border: `2px solid ${C.navy}`,
+            borderRadius: 16,
+            padding: "20px 22px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 10,
+            boxShadow: "0 8px 24px rgba(30, 58, 95, 0.08)",
+          }}
+        >
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: 18,
+              fontWeight: 700,
+              color: C.navy,
+            }}
+          >
+            <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
+            全対象商品の最上部へ自動浮上！
+          </div>
+          <div style={{ fontSize: 26, fontWeight: 700, color: C.navy, lineHeight: 1.3 }}>
+            新ルル・他4商品の全画面へ即時共有
+          </div>
+          <div
+            style={{
+              padding: "10px 14px",
+              background: C.white,
+              borderRadius: 10,
+              fontSize: 18,
+              fontWeight: 700,
+              color: C.text,
+              lineHeight: 1.4,
+              border: "1px solid rgba(30, 58, 95, 0.15)",
+            }}
+          >
+            「先輩から受け継がれた接客のコツ」<br />
+            <span style={{ fontSize: 15, color: C.sub, fontWeight: 500 }}>
+              同じ成分を含む薬を開いた瞬間、最優先で手元に表示
+            </span>
+          </div>
+        </div>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: 14, fontSize: 20, color: C.text }}>
-        <div style={{ padding: "10px 16px", background: C.base, borderRadius: 10, border: "1px solid rgba(30, 58, 95, 0.1)", fontWeight: 700, lineHeight: 1.35 }}>
-          パブロンでメモ入力<br />
-          <span style={{ fontSize: 16, color: C.muted, fontWeight: 500 }}>成分：ジヒドロコデイン</span>
-        </div>
-        <div style={{ fontSize: 26, color: C.navy, fontWeight: 900 }}>➔</div>
-        <div style={{ padding: "10px 16px", background: C.navySoft, borderRadius: 10, border: `1.5px solid ${C.navy}`, fontWeight: 700, lineHeight: 1.35, flex: 1 }}>
-          新ルル・他4商品の最上部に<br />
-          <span style={{ fontSize: 18, color: C.navy, fontWeight: 700 }}>「先輩から受け継がれた接客のコツ」自動浮上</span>
-        </div>
+
+      {/* 下部：成果まとめバー */}
+      <div
+        style={{
+          padding: "16px 24px",
+          borderRadius: 14,
+          background: C.navy,
+          color: C.white,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <span style={{ fontSize: 26, fontWeight: 700 }}>
+          属人化を解消。1人が書いた知恵が、店舗全体の資産へ自然継承。
+        </span>
+        <span
+          style={{
+            background: "rgba(255,255,255,0.2)",
+            padding: "4px 14px",
+            borderRadius: 999,
+            fontSize: 18,
+            fontWeight: 700,
+          }}
+        >
+          新人も安心
+        </span>
       </div>
     </div>
   </AppScene>
