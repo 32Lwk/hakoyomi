@@ -7,15 +7,22 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync, spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { cleanAndMasterAudio } from "./process-audio.mjs";
+import { optimizeTimelineAndLayout } from "./sync-user-audio-layout.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = 3030;
 const narrationDir = path.join(root, "public/narration");
+const rawDir = path.join(root, "public/narration_user_raw");
 const backupDir = path.join(root, "public/narration_backup_tts");
 const cutsFile = path.join(root, "studio/cuts-data.json");
 const defaultCutsFile = path.join(root, "studio/cuts-data-default.json");
 const linesFile = path.join(root, "src/narration-lines.json");
 const studioDir = path.join(root, "studio");
+
+if (!fs.existsSync(rawDir)) {
+  fs.mkdirSync(rawDir, { recursive: true });
+}
 
 // 音声ファイルの正確な長さを ffprobe で取得
 function getAudioDuration(filePath) {
@@ -109,7 +116,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // API: 音声の保存 (ブラウザからのバイナリ録音データを受信 -> ffmpeg で 24kHz WAV に変換)
+  // API: 音声の保存 (ブラウザからのバイナリ録音データを受信 -> raw保存 -> 無音トリム＆マスタリング -> タイムライン最適化)
   if (pathname === "/api/save-audio" && req.method === "POST") {
     const id = url.searchParams.get("id");
     if (!id) {
@@ -126,9 +133,10 @@ const server = http.createServer(async (req, res) => {
         const tempPath = path.join(root, `.temp_rec_${id}_${Date.now()}.webm`);
         fs.writeFileSync(tempPath, buffer);
 
+        const rawWav = path.join(rawDir, `${id}.wav`);
         const targetWav = path.join(narrationDir, `${id}.wav`);
 
-        // ffmpeg で 24kHz / 16bit / mono WAV に変換（Remotion ナレーション標準フォーマット）
+        // 1. まず生録音を 24kHz / 16bit / mono WAV として rawDir に安全バックアップ保存
         execFileSync("ffmpeg", [
           "-y",
           "-i",
@@ -139,12 +147,18 @@ const server = http.createServer(async (req, res) => {
           "1",
           "-c:a",
           "pcm_s16le",
-          targetWav,
+          rawWav,
         ]);
 
         try {
           fs.unlinkSync(tempPath);
         } catch (_) {}
+
+        // 2. 無音トリミング・息遣い除去・くっきりクリアマスタリングを適用して narrationDir に保存
+        cleanAndMasterAudio(rawWav, targetWav);
+
+        // 3. タイムライン＆レイアウトを即座に自動再計算
+        const opt = optimizeTimelineAndLayout();
 
         const duration = getAudioDuration(targetWav);
         res.writeHead(200, { "Content-Type": "application/json" });
@@ -153,10 +167,12 @@ const server = http.createServer(async (req, res) => {
             ok: true,
             id,
             durationSec: duration ? Math.round(duration * 100) / 100 : null,
+            totalDuration: opt.totalDuration,
             audioUrl: `/public/narration/${id}.wav?t=${Date.now()}`,
           })
         );
       } catch (err) {
+        console.error("Save audio error:", err);
         res.writeHead(500, { "Content-Type": "application/json" });
         res.end(JSON.stringify({ ok: false, error: err.message }));
       }
@@ -164,7 +180,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // API: 通し録音の保存と自動スライス（1本の通し音声を矢印キーのタイムスタンプで各カットへ分割）
+  // API: 通し録音の保存と自動スライス（1本の通し音声を分割 -> raw保存 -> 無音トリム＆マスタリング -> タイムライン最適化）
   if (pathname === "/api/save-continuous-take" && req.method === "POST") {
     const splitsHeader = req.headers["x-splits"];
     if (!splitsHeader) {
@@ -210,9 +226,10 @@ const server = http.createServer(async (req, res) => {
         const masterDuration = getAudioDuration(tempMasterWav);
         const results = [];
 
-        // 各カットを切り出して public/narration/{id}.wav に保存
+        // 各カットを切り出して rawDir に保存後、クリーンアップ＆マスタリングして narrationDir に保存
         for (const item of splits) {
           const { id, startSec, endSec } = item;
+          const rawWav = path.join(rawDir, `${id}.wav`);
           const targetWav = path.join(narrationDir, `${id}.wav`);
 
           // 開始秒と終了秒を安全にクランプ
@@ -220,6 +237,7 @@ const server = http.createServer(async (req, res) => {
           const e = Math.min(masterDuration || 9999, endSec);
           const dur = Math.max(0.1, e - s);
 
+          // 1. 生切り出し音声を rawDir に保存
           execFileSync("ffmpeg", [
             "-y",
             "-ss",
@@ -234,8 +252,11 @@ const server = http.createServer(async (req, res) => {
             "1",
             "-c:a",
             "pcm_s16le",
-            targetWav,
+            rawWav,
           ]);
+
+          // 2. 無音トリミング・うっ音/吸気音除去・くっきりクリアマスタリングを自動適用
+          cleanAndMasterAudio(rawWav, targetWav);
 
           const actualDur = getAudioDuration(targetWav);
           results.push({
@@ -246,6 +267,9 @@ const server = http.createServer(async (req, res) => {
             audioUrl: `/public/narration/${id}.wav?t=${Date.now()}`,
           });
         }
+
+        // 3. 全カットの実測秒数に基づき、タイムライン＆レイアウトを一括自動最適化
+        const opt = optimizeTimelineAndLayout();
 
         // 一時ファイルを削除
         try {
@@ -258,6 +282,7 @@ const server = http.createServer(async (req, res) => {
           JSON.stringify({
             ok: true,
             masterDuration: masterDuration ? Math.round(masterDuration * 100) / 100 : null,
+            totalDuration: opt.totalDuration,
             cuts: results,
           })
         );

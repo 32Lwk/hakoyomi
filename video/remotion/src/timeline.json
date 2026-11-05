@@ -6,32 +6,32 @@
       "id": "S1",
       "title": "つかみ",
       "startSec": 0,
-      "durationSec": 24
+      "durationSec": 19.5
     },
     {
       "id": "S2",
       "title": "JANを読むだけで、確認がそろう",
-      "startSec": 24,
-      "durationSec": 41,
+      "startSec": 19.5,
+      "durationSec": 27.4,
       "recording": true,
       "segments": [
         {
           "from": 12.3,
           "to": 44.5,
-          "rate": 0.85
+          "rate": 1.41
         }
       ]
     },
     {
       "id": "S2b",
       "title": "指定濫用防止医薬品の確認・記録",
-      "startSec": 65,
-      "durationSec": 15,
+      "startSec": 46.9,
+      "durationSec": 12.6,
       "recording": true,
       "segments": [
         {
           "from": 0,
-          "to": 14.0,
+          "to": 14,
           "rate": 1
         }
       ]
@@ -39,8 +39,8 @@
     {
       "id": "S3",
       "title": "2〜4品の比較",
-      "startSec": 80,
-      "durationSec": 13,
+      "startSec": 59.5,
+      "durationSec": 10.7,
       "recording": true,
       "segments": [
         {
@@ -73,8 +73,8 @@
     {
       "id": "S4",
       "title": "質問は、チャットでも",
-      "startSec": 93,
-      "durationSec": 15,
+      "startSec": 70.2,
+      "durationSec": 12.8,
       "recording": true,
       "segments": [
         {
@@ -97,17 +97,17 @@
     {
       "id": "S5",
       "title": "症状の言葉から探す → 棚",
-      "startSec": 108,
-      "durationSec": 18,
+      "startSec": 83,
+      "durationSec": 14.7,
       "recording": true,
       "segments": [
         {
           "from": 0,
-          "to": 6.0,
+          "to": 6,
           "rate": 2
         },
         {
-          "from": 6.0,
+          "from": 6,
           "to": 8.8,
           "rate": 1
         },
@@ -131,8 +131,8 @@
     {
       "id": "S6",
       "title": "ベテランのコツを受け継ぐ",
-      "startSec": 126,
-      "durationSec": 19,
+      "startSec": 97.7,
+      "durationSec": 15.4,
       "recording": true,
       "segments": [
         {
@@ -142,16 +142,16 @@
         },
         {
           "from": 13.7,
-          "to": 17.0,
+          "to": 17,
           "rate": 1
         },
         {
-          "from": 17.0,
-          "to": 25.0,
+          "from": 17,
+          "to": 25,
           "rate": 3
         },
         {
-          "from": 25.0,
+          "from": 25,
           "to": 39.5,
           "rate": 6
         },
@@ -165,8 +165,8 @@
     {
       "id": "S7",
       "title": "Claude の使い方と結び",
-      "startSec": 145,
-      "durationSec": 26
+      "startSec": 113.1,
+      "durationSec": 18.3
     }
   ]
 }

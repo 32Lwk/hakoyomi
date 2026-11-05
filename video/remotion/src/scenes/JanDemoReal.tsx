@@ -1,23 +1,26 @@
 import React from "react";
 import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
+import { cueSec } from "../captions";
 import { ramp, rise } from "../components/anim";
 import { FeatureList, ProblemSolutionBanner, RecordingTrack } from "../components/AppScene";
 import { PhoneFrame } from "../components/PhoneFrame";
 import { C, FONT, FPS, LAYOUT } from "../theme";
-import { type Segment } from "../timeline";
+import { scene, type Segment } from "../timeline";
 
 export const REAL_CLIP_SEC = 3.6; // 実写クリップを3.6秒でスマートに完結
 const SCENE_AT = 3.4; // アプリ画面（iPhoneフレーム＋スライド）へ切り替える秒
 const REC_FROM = 10.6; // 商品カード上部（コルゲンコーワIB透明カプセルαプラス）が見える所から進む
-const SCENE_SEC = 41;
-export const realSegments: Segment[] = [{ from: REC_FROM, to: 44.5, rate: 0.82 }];
-export const REAL_TOTAL_SEC = SCENE_SEC;
+export const getSceneSec = () => scene("S2").durationSec;
+export const realSegments: Segment[] = [{ from: REC_FROM, to: 44.5, rate: 1.0 }];
+export const REAL_TOTAL_SEC = 35;
 const FILE = "recordings/S2-jan-badges.webm";
 
 export const JanDemoReal: React.FC<{ captions?: boolean }> = ({ captions = true }) => {
   const frame = useCurrentFrame();
   const at = (sec: number) => Math.round(sec * FPS);
-  const recFrames = at(SCENE_SEC - SCENE_AT);
+  const s2Def = scene("S2");
+  const s2Segments = s2Def.segments ?? realSegments;
+  const recFrames = at(s2Def.durationSec - SCENE_AT);
 
   // 3.4秒で実写からアプリ画面へスマートにフェード（酔いゼロ）
   const crossFade = ramp(frame, at(SCENE_AT), at(0.4));
@@ -39,7 +42,7 @@ export const JanDemoReal: React.FC<{ captions?: boolean }> = ({ captions = true 
         <AbsoluteFill style={{ opacity: crossFade }}>
           <PhoneFrame>
             <Sequence from={at(SCENE_AT)} layout="none" durationInFrames={recFrames}>
-              <RecordingTrack file={FILE} seconds={null} segments={realSegments} total={recFrames} />
+              <RecordingTrack file={FILE} seconds={null} segments={s2Segments} total={recFrames} />
             </Sequence>
           </PhoneFrame>
 
@@ -71,7 +74,8 @@ const Caption: React.FC<{ frame: number }> = ({ frame }) => {
 };
 
 const Panel: React.FC<{ frame: number }> = ({ frame }) => {
-  const fin = ramp(frame, Math.round(34.0 * FPS), 18);
+  const tFin = cueSec("s2-6");
+  const fin = ramp(frame, Math.round(tFin * FPS), 18);
   return (
     <div style={{ position: "absolute", left: LAYOUT.panel.x, top: LAYOUT.panel.y, width: LAYOUT.panel.w }}>
       <div style={rise(frame, Math.round(3.8 * FPS))}>
@@ -101,7 +105,7 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
       <ProblemSolutionBanner
         problem="小さな文字の箱の裏や添付文書を、お客様の前で必死に探す"
         solution="バーコード1秒 ➔ 必要な確認事項が瞬時に集約"
-        at={4.6}
+        at={cueSec("s2-2")}
       />
 
       <FeatureList
@@ -110,19 +114,19 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
             badge: "接客前チェック",
             title: "確認漏れを未然に防止",
             desc: "年齢・運転注意・併用薬など、接客前に確認すべき項目が一瞬で手元に集約",
-            at: 4.8,
+            at: cueSec("s2-2"),
           },
           {
             badge: "直感バッジ",
             title: "注意点をひと目で判断",
             desc: "ドーピング禁止成分やハラール・授乳中などの特別な相談にも迷わず即答",
-            at: 10.0,
+            at: cueSec("s2-3"),
           },
           {
             badge: "自信を持って店頭へ",
             title: "誰でも同じ水準で説明",
             desc: "小さな文字の箱の裏や添付文書を探す時間をゼロにし、お客様との対話に集中",
-            at: 18.5,
+            at: cueSec("s2-4"),
           },
         ]}
       />

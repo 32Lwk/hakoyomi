@@ -1,184 +1,184 @@
 {
   "s1-1": {
-    "start": 0.3,
-    "duration": 2.97,
-    "startSec": 0.3,
-    "durationSec": 2.97,
-    "endSec": 3.27
+    "start": 0.35,
+    "duration": 2.08,
+    "startSec": 0.35,
+    "durationSec": 2.08,
+    "endSec": 2.43
   },
   "s1-2": {
-    "start": 3.52,
-    "duration": 4.68,
-    "startSec": 3.52,
-    "durationSec": 4.68,
-    "endSec": 8.2
+    "start": 2.71,
+    "duration": 3.98,
+    "startSec": 2.71,
+    "durationSec": 3.98,
+    "endSec": 6.69
   },
   "s1-3": {
-    "start": 8.6,
-    "duration": 6.18,
-    "startSec": 8.6,
-    "durationSec": 6.18,
-    "endSec": 14.78
+    "start": 6.97,
+    "duration": 5.99,
+    "startSec": 6.97,
+    "durationSec": 5.99,
+    "endSec": 12.96
   },
   "s1-4": {
-    "start": 15.03,
-    "duration": 6.62,
-    "startSec": 15.03,
-    "durationSec": 6.62,
-    "endSec": 21.65
+    "start": 13.24,
+    "duration": 5.48,
+    "startSec": 13.24,
+    "durationSec": 5.48,
+    "endSec": 18.72
   },
   "s2-1": {
     "start": 0.4,
-    "duration": 3.79,
+    "duration": 2.86,
     "startSec": 0.4,
-    "durationSec": 3.79,
-    "endSec": 4.19
+    "durationSec": 2.86,
+    "endSec": 3.26
   },
   "s2-2": {
-    "start": 4.6,
-    "duration": 4.21,
-    "startSec": 4.6,
-    "durationSec": 4.21,
-    "endSec": 8.81
+    "start": 3.54,
+    "duration": 3.19,
+    "startSec": 3.54,
+    "durationSec": 3.19,
+    "endSec": 6.73
   },
   "s2-3": {
-    "start": 9.8,
-    "duration": 7.98,
-    "startSec": 9.8,
-    "durationSec": 7.98,
-    "endSec": 17.78
+    "start": 7.01,
+    "duration": 6.73,
+    "startSec": 7.01,
+    "durationSec": 6.73,
+    "endSec": 13.74
   },
   "s2-4": {
-    "start": 18.03,
-    "duration": 6.29,
-    "startSec": 18.03,
-    "durationSec": 6.29,
-    "endSec": 24.32
+    "start": 14.02,
+    "duration": 5.33,
+    "startSec": 14.02,
+    "durationSec": 5.33,
+    "endSec": 19.35
   },
   "s2-5": {
-    "start": 26.5,
-    "duration": 5.43,
-    "startSec": 26.5,
-    "durationSec": 5.43,
-    "endSec": 31.93
+    "start": 19.63,
+    "duration": 4.17,
+    "startSec": 19.63,
+    "durationSec": 4.17,
+    "endSec": 23.8
   },
   "s2-6": {
-    "start": 34,
-    "duration": 3.63,
-    "startSec": 34,
-    "durationSec": 3.63,
-    "endSec": 37.63
+    "start": 24.08,
+    "duration": 2.61,
+    "startSec": 24.08,
+    "durationSec": 2.61,
+    "endSec": 26.69
   },
   "s2b-1": {
     "start": 0.4,
-    "duration": 5.55,
+    "duration": 4.61,
     "startSec": 0.4,
-    "durationSec": 5.55,
-    "endSec": 5.95
+    "durationSec": 4.61,
+    "endSec": 5.01
   },
   "s2b-2": {
-    "start": 6.4,
-    "duration": 7.51,
-    "startSec": 6.4,
-    "durationSec": 7.51,
-    "endSec": 13.91
+    "start": 5.29,
+    "duration": 6.58,
+    "startSec": 5.29,
+    "durationSec": 6.58,
+    "endSec": 11.87
   },
   "s3-1": {
-    "start": 0.3,
-    "duration": 4.51,
-    "startSec": 0.3,
-    "durationSec": 4.51,
-    "endSec": 4.81
+    "start": 0.35,
+    "duration": 3.57,
+    "startSec": 0.35,
+    "durationSec": 3.57,
+    "endSec": 3.92
   },
   "s3-2": {
-    "start": 5.06,
-    "duration": 6.3,
-    "startSec": 5.06,
-    "durationSec": 6.3,
-    "endSec": 11.36
+    "start": 4.2,
+    "duration": 5.74,
+    "startSec": 4.2,
+    "durationSec": 5.74,
+    "endSec": 9.94
   },
   "s4-1": {
-    "start": 0.4,
-    "duration": 4.39,
-    "startSec": 0.4,
-    "durationSec": 4.39,
-    "endSec": 4.79
+    "start": 0.35,
+    "duration": 3.31,
+    "startSec": 0.35,
+    "durationSec": 3.31,
+    "endSec": 3.66
   },
   "s4-2": {
-    "start": 5.04,
-    "duration": 9.18,
-    "startSec": 5.04,
-    "durationSec": 9.18,
-    "endSec": 14.22
+    "start": 3.94,
+    "duration": 8.11,
+    "startSec": 3.94,
+    "durationSec": 8.11,
+    "endSec": 12.05
   },
   "s5-1": {
-    "start": 0.4,
-    "duration": 5.77,
-    "startSec": 0.4,
-    "durationSec": 5.77,
-    "endSec": 6.17
+    "start": 0.35,
+    "duration": 4.8,
+    "startSec": 0.35,
+    "durationSec": 4.8,
+    "endSec": 5.15
   },
   "s5-2": {
-    "start": 6.42,
-    "duration": 4.47,
-    "startSec": 6.42,
-    "durationSec": 4.47,
-    "endSec": 10.89
+    "start": 5.43,
+    "duration": 4.34,
+    "startSec": 5.43,
+    "durationSec": 4.34,
+    "endSec": 9.77
   },
   "s5-3": {
-    "start": 11.8,
-    "duration": 4.97,
-    "startSec": 11.8,
-    "durationSec": 4.97,
-    "endSec": 16.77
+    "start": 10.05,
+    "duration": 3.9,
+    "startSec": 10.05,
+    "durationSec": 3.9,
+    "endSec": 13.95
   },
   "s6-1": {
-    "start": 0.4,
-    "duration": 5.69,
-    "startSec": 0.4,
-    "durationSec": 5.69,
-    "endSec": 6.09
+    "start": 0.35,
+    "duration": 4.5,
+    "startSec": 0.35,
+    "durationSec": 4.5,
+    "endSec": 4.85
   },
   "s6-2": {
-    "start": 6.34,
-    "duration": 5.6,
-    "startSec": 6.34,
-    "durationSec": 5.6,
-    "endSec": 11.94
+    "start": 5.13,
+    "duration": 4.47,
+    "startSec": 5.13,
+    "durationSec": 4.47,
+    "endSec": 9.6
   },
   "s6-3": {
-    "start": 12.19,
-    "duration": 6.14,
-    "startSec": 12.19,
-    "durationSec": 6.14,
-    "endSec": 18.33
+    "start": 9.88,
+    "duration": 4.79,
+    "startSec": 9.88,
+    "durationSec": 4.79,
+    "endSec": 14.67
   },
   "s7-1": {
-    "start": 0.5,
-    "duration": 5.13,
-    "startSec": 0.5,
-    "durationSec": 5.13,
-    "endSec": 5.63
+    "start": 0.4,
+    "duration": 3.99,
+    "startSec": 0.4,
+    "durationSec": 3.99,
+    "endSec": 4.39
   },
   "s7-2": {
-    "start": 6.5,
-    "duration": 6.61,
-    "startSec": 6.5,
-    "durationSec": 6.61,
-    "endSec": 13.11
+    "start": 4.67,
+    "duration": 5.41,
+    "startSec": 4.67,
+    "durationSec": 5.41,
+    "endSec": 10.08
   },
   "s7-3": {
-    "start": 13.5,
-    "duration": 4.62,
-    "startSec": 13.5,
-    "durationSec": 4.62,
-    "endSec": 18.12
+    "start": 10.36,
+    "duration": 3.73,
+    "startSec": 10.36,
+    "durationSec": 3.73,
+    "endSec": 14.09
   },
   "s7-4": {
-    "start": 19.5,
-    "duration": 4.06,
-    "startSec": 19.5,
-    "durationSec": 4.06,
-    "endSec": 23.56
+    "start": 14.37,
+    "duration": 2.76,
+    "startSec": 14.37,
+    "durationSec": 2.76,
+    "endSec": 17.13
   }
 }

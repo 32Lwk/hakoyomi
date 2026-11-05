@@ -580,8 +580,8 @@ function abortContinuousRecording() {
 // サーバーに通し音声と各カットの区間（splits）を送信して一括スライス
 async function saveContinuousTake(blob) {
   renderModal.style.display = "flex";
-  document.getElementById("render-modal-title").textContent = "🎙️ 通し音声のスライス・分割保存中...";
-  renderLogs.textContent = `全${continuousSplits.length}カットの音声を高音質スライス（24kHz WAV）に変換しています...\nしばらくお待ちください。\n`;
+  document.getElementById("render-modal-title").textContent = "🎙️ 通し音声の分割・自動マスタリング中...";
+  renderLogs.textContent = `全${continuousSplits.length}カットの音声を処理しています...\n・前後の無音自動トリミング\n・息吸い込み・うっ音の自動カット\n・声の輪郭クリア化（イコライザー＆コンプレッサー）\n・動画尺（シーン枠）の自動最適化\n\nしばらくお待ちください...\n`;
 
   try {
     const res = await fetch("/api/save-continuous-take", {
@@ -594,7 +594,7 @@ async function saveContinuousTake(blob) {
 
     const data = await res.json();
     if (data.ok) {
-      renderLogs.textContent += `\n🎉 全${data.cuts.length}カットの分割保存が正常に完了しました！\nマスター音声尺: ${data.masterDuration}秒\n\n`;
+      renderLogs.textContent += `\n🎉 全${data.cuts.length}カットのクリーンアップ＆マスタリングが完了しました！\nマスター音声尺: ${data.masterDuration}秒\n最適化後の動画総尺: ${data.totalDuration}秒（180秒以内 厳守クリア）\n\n`;
       data.cuts.forEach((c) => {
         renderLogs.textContent += `✓ ${c.id}: ${c.durationSec}s (区間 ${c.startSec.toFixed(1)}s - ${c.endSec.toFixed(1)}s)\n`;
       });
@@ -611,7 +611,7 @@ async function saveContinuousTake(blob) {
 
       renderSidebar();
       loadCut(0);
-      document.getElementById("render-modal-title").textContent = "🎉 通し収録が完了しました！";
+      document.getElementById("render-modal-title").textContent = "🎉 通し収録＆タイムライン最適化が完了しました！";
     } else {
       renderLogs.textContent += `\n❌ エラーが発生しました: ${data.error}`;
       document.getElementById("render-modal-title").textContent = "保存エラー";
