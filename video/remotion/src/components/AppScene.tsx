@@ -240,7 +240,7 @@ export const ProblemSolutionBanner: React.FC<{
         gridTemplateColumns: "1fr 50px 1fr",
         gap: 16,
         alignItems: "stretch",
-        marginBottom: 26,
+        marginBottom: 32,
         ...rise(frame, sec(atSec)),
       }}
     >
@@ -250,16 +250,16 @@ export const ProblemSolutionBanner: React.FC<{
           background: C.base,
           border: `2px solid ${C.line}`,
           borderRadius: 14,
-          padding: "16px 24px",
+          padding: "18px 26px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 18, fontWeight: 700, color: C.sub, letterSpacing: 1.5 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 20, fontWeight: 700, color: C.sub, letterSpacing: 1.5 }}>
           <span>現場の課題</span>
         </div>
-        <div style={{ fontSize: 32, fontWeight: 700, color: C.text, marginTop: 4, lineHeight: 1.25, whiteSpace: "nowrap" }}>
+        <div style={{ fontSize: 34, fontWeight: 700, color: C.text, marginTop: 6, lineHeight: 1.25, whiteSpace: "nowrap" }}>
           {problem}
         </div>
       </div>
@@ -271,7 +271,7 @@ export const ProblemSolutionBanner: React.FC<{
           alignItems: "center",
           justifyContent: "center",
           color: C.navy,
-          fontSize: 36,
+          fontSize: 38,
           fontWeight: 900,
         }}
       >
@@ -284,17 +284,17 @@ export const ProblemSolutionBanner: React.FC<{
           background: C.navy,
           border: `2px solid ${C.navy}`,
           borderRadius: 14,
-          padding: "16px 24px",
+          padding: "18px 26px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           boxShadow: "0 8px 24px rgba(30, 58, 95, 0.22)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 18, fontWeight: 700, color: "#93C5FD", letterSpacing: 1.5 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 20, fontWeight: 700, color: "#93C5FD", letterSpacing: 1.5 }}>
           <span>ハコよみ</span>
         </div>
-        <div style={{ fontSize: 32, fontWeight: 700, color: C.white, marginTop: 4, lineHeight: 1.25, whiteSpace: "nowrap" }}>
+        <div style={{ fontSize: 34, fontWeight: 700, color: C.white, marginTop: 6, lineHeight: 1.25, whiteSpace: "nowrap" }}>
           {solution}
         </div>
       </div>
@@ -309,11 +309,15 @@ export interface FeaturePoint {
   at: string | number;
 }
 
-/** デモを邪魔せず、音声の補助として要点のみを瞬時に伝えるスマートな1行リスト */
+/** デモを邪魔せず、音声の補助として要点のみを瞬時に伝えるスマートな1行リスト（青いバッジ撤廃・黒文字のみ特大化・等間隔配置） */
 export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
   const frame = useCurrentFrame();
+  // アイテム数に応じた最適な上下パディングと間隔（余白を小さくし等間隔に美しく分散配置）
+  const itemPadding = items.length <= 2 ? "48px 16px" : "38px 16px";
+  const itemGap = items.length <= 2 ? 38 : 30;
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 16 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: itemGap, marginTop: 24 }}>
       {items.map((it, i) => {
         const atSec = typeof it.at === "number" ? it.at : lineTiming(it.at).inScene;
         return (
@@ -322,50 +326,40 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 20,
-              padding: "16px 16px",
-              borderBottom: "1.5px solid rgba(30, 58, 95, 0.12)",
+              gap: 28,
+              padding: itemPadding,
+              borderBottom: "2px solid rgba(15, 23, 42, 0.08)",
               ...rise(frame, sec(atSec)),
             }}
           >
-            {/* スマートな番号インジケーター */}
+            {/* スマートな番号インジケーター（ユーザー要望：青丸なし・黒文字のみ・特大サイズ・等間隔整列） */}
             <div
               style={{
-                width: 44,
-                height: 44,
-                borderRadius: 22,
-                background: C.navy,
-                color: C.white,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 22,
+                minWidth: 76,
+                fontSize: 56,
                 fontWeight: 900,
+                color: C.text,
+                letterSpacing: -1,
+                lineHeight: 1,
+                fontFamily: FONT,
                 flexShrink: 0,
               }}
             >
               0{i + 1}
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: 14, flex: 1 }}>
-              {it.badge ? (
-                <span
-                  style={{
-                    background: C.navySoft,
-                    color: C.navy,
-                    fontSize: 22,
-                    fontWeight: 700,
-                    padding: "4px 14px",
-                    borderRadius: 6,
-                    letterSpacing: 0.5,
-                    flexShrink: 0,
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {it.badge}
-                </span>
-              ) : null}
-              <div style={{ fontSize: 38, fontWeight: 700, color: C.text, lineHeight: 1.2, whiteSpace: "nowrap" }}>
+            {/* 要点テキスト（ユーザー要望：青いバッジを全スライドで削除し、黒文字を特大化！） */}
+            <div style={{ display: "flex", alignItems: "center", flex: 1, minWidth: 0 }}>
+              <div
+                style={{
+                  fontSize: 52,
+                  fontWeight: 700,
+                  color: C.text,
+                  lineHeight: 1.25,
+                  whiteSpace: "nowrap",
+                  letterSpacing: -0.5,
+                }}
+              >
                 {it.title}
               </div>
             </div>

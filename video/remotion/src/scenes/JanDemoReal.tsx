@@ -103,25 +103,22 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
       </div>
 
       <ProblemSolutionBanner
-        problem="箱の裏や添付文書を必死に探す"
-        solution="バーコード1秒で確認事項が集約"
+        problem="箱裏や添付文書の捜索"
+        solution="バーコード1秒で集約"
         at={cueSec("s2-2")}
       />
 
       <FeatureList
         items={[
           {
-            badge: "接客前チェック",
             title: "確認漏れを未然に防止",
             at: cueSec("s2-2"),
           },
           {
-            badge: "直感バッジ",
             title: "注意点をひと目で判断",
             at: cueSec("s2-3"),
           },
           {
-            badge: "店頭支援",
             title: "誰でも同じ高水準で説明",
             at: cueSec("s2-4"),
           },

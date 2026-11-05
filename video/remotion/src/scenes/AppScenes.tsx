@@ -466,19 +466,17 @@ export const S2b: React.FC = () => {
       fullWidthContent={<RealAbuseDocumentChaosCanvas />}
     >
       <ProblemSolutionBanner
-        problem="多岐にわたる確認 ＆ 紙の記録"
-        solution="系列店照合 ＆ 10秒で記録完了"
+        problem="多岐にわたる確認と紙記録"
+        solution="系列店照合と10秒記録"
         at="s2b-1"
       />
       <FeatureList
         items={[
           {
-            badge: "系列店照合",
             title: "重複・多量購入を即時検知",
             at: "s2b-1",
           },
           {
-            badge: "10秒で完了",
             title: "販売記録の下書きを自動作成",
             at: "s2b-2",
           },
@@ -491,23 +489,20 @@ export const S2b: React.FC = () => {
 export const S3: React.FC = () => (
   <AppScene id="S3">
     <ProblemSolutionBanner
-      problem="似た薬の差分暗記に何年もかかる"
-      solution="横並び比較 ＆ 着眼点の自動要約"
+      problem="似た薬の差分暗記"
+      solution="横並び比較 ＆ 自動要約"
     />
     <FeatureList
       items={[
         {
-          badge: "横並び比較",
           title: "成分と用量の差を一目で把握",
           at: "s3-1",
         },
         {
-          badge: "着眼点要約",
           title: "説明の分岐点をClaudeが整理",
           at: out("S3", 30.3),
         },
         {
-          badge: "提案力向上",
           title: "自信を持って店頭で提案",
           at: out("S3", 38.2),
         },
@@ -519,23 +514,20 @@ export const S3: React.FC = () => (
 export const S4: React.FC<{ pipeline?: PipelineProps }> = () => (
   <AppScene id="S4">
     <ProblemSolutionBanner
-      problem="分厚い添付文書を探しお客様を待たせる"
-      solution="公的根拠をBM25・RAGで即座抽出"
+      problem="分厚い添付文書を探す手間"
+      solution="公的根拠を数秒で即座抽出"
     />
     <FeatureList
       items={[
         {
-          badge: "チャット検索",
           title: "店頭の疑問を自然な言葉で質問",
           at: "s4-1",
         },
         {
-          badge: "客観的根拠",
           title: "PMDA添付文書から根拠を特定",
           at: out("S4", 10.5),
         },
         {
-          badge: "即答支援",
           title: "接客を止めずに数秒で確認",
           at: out("S4", 12),
         },
@@ -547,23 +539,20 @@ export const S4: React.FC<{ pipeline?: PipelineProps }> = () => (
 export const S5: React.FC = () => (
   <AppScene id="S5">
     <ProblemSolutionBanner
-      problem="薬選びと広い店内での棚迷い"
-      solution="ワンタップ絞込 ＆ 棚図へ直行案内"
+      problem="薬選びと広い店内の棚迷い"
+      solution="ワンタップ絞込 ＆ 棚へ直行"
     />
     <FeatureList
       items={[
         {
-          badge: "ワンタップ絞込",
           title: "よくある相談条件から一瞬で絞込",
           at: "s5-1",
         },
         {
-          badge: "一覧表示",
           title: "候補薬を迷わずすぐ発見",
           at: out("S5", 8.8),
         },
         {
-          badge: "棚図直通",
           title: "棚の場所までスムーズ案内",
           at: out("S5", 14.1),
         },
@@ -575,17 +564,17 @@ export const S5: React.FC = () => (
 export const S6: React.FC = () => (
   <AppScene id="S6">
     <ProblemSolutionBanner
-      problem="接客知恵の属人化・個人の頭に埋没"
-      solution="全対象商品へ即時・自動共有"
+      problem="接客の属人化"
+      solution="全商品へ自動共有"
     />
 
     {/* 上段の ProblemSolutionBanner と列方向・幅を完全に一致させたインフォグラフィック（gridTemplateColumns: 1fr 50px 1fr） */}
     <div
       style={{
-        marginTop: 22,
+        marginTop: 26,
         display: "flex",
         flexDirection: "column",
-        gap: 18,
+        gap: 22,
       }}
     >
       <div
@@ -602,10 +591,10 @@ export const S6: React.FC = () => (
             background: C.white,
             border: `2.5px solid ${C.navy}`,
             borderRadius: 16,
-            padding: "20px 24px",
+            padding: "24px 26px",
             display: "flex",
             flexDirection: "column",
-            gap: 12,
+            gap: 14,
             boxShadow: "0 8px 24px rgba(30, 58, 95, 0.08)",
           }}
         >
@@ -614,37 +603,34 @@ export const S6: React.FC = () => (
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              fontSize: 20,
+              fontSize: 22,
               fontWeight: 700,
               color: C.navy,
             }}
           >
             <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
-            ベテランが1回入力
+            1回メモ入力
           </div>
-          <div style={{ fontSize: 34, fontWeight: 700, color: C.text, lineHeight: 1.2, whiteSpace: "nowrap" }}>
-            パブロンでメモ保存
+          <div style={{ fontSize: 38, fontWeight: 700, color: C.text, lineHeight: 1.25, whiteSpace: "nowrap" }}>
+            眠気・運転の注意
           </div>
           <div
             style={{
-              padding: "14px 18px",
+              padding: "16px 20px",
               background: C.base,
               borderRadius: 12,
               display: "flex",
-              flexDirection: "column",
-              gap: 4,
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <div style={{ fontSize: 26, fontWeight: 700, color: C.text, whiteSpace: "nowrap" }}>
-              「眠気・運転予定を先に確認」
-            </div>
-            <div style={{ fontSize: 20, color: C.sub, fontWeight: 500, whiteSpace: "nowrap" }}>
-              成分：ジヒドロコデインリン酸塩
+            <div style={{ fontSize: 24, fontWeight: 700, color: C.sub, whiteSpace: "nowrap" }}>
+              成分：ジヒドロコデイン
             </div>
           </div>
         </div>
 
-        {/* 中央：矢印のみ（ユーザー指示により「同成分を検知」バッジを削除しスッキリ統一） */}
+        {/* 中央：矢印 */}
         <div
           style={{
             display: "flex",
@@ -652,7 +638,7 @@ export const S6: React.FC = () => (
             justifyContent: "center",
           }}
         >
-          <div style={{ fontSize: 40, color: C.navy, fontWeight: 900 }}>➔</div>
+          <div style={{ fontSize: 44, color: C.navy, fontWeight: 900 }}>➔</div>
         </div>
 
         {/* 右：全商品へ即時共有 */}
@@ -661,10 +647,10 @@ export const S6: React.FC = () => (
             background: C.navySoft,
             border: `2.5px solid ${C.navy}`,
             borderRadius: 16,
-            padding: "20px 24px",
+            padding: "24px 26px",
             display: "flex",
             flexDirection: "column",
-            gap: 12,
+            gap: 14,
             boxShadow: "0 8px 24px rgba(30, 58, 95, 0.12)",
           }}
         >
@@ -673,16 +659,16 @@ export const S6: React.FC = () => (
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              fontSize: 20,
+              fontSize: 22,
               fontWeight: 700,
               color: C.navy,
             }}
           >
             <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
-            全対象商品へ自動浮上！
+            全商品へ自動浮上
           </div>
-          <div style={{ fontSize: 34, fontWeight: 700, color: C.navy, lineHeight: 1.2, whiteSpace: "nowrap" }}>
-            新ルル等の全画面へ即時共有
+          <div style={{ fontSize: 38, fontWeight: 700, color: C.navy, lineHeight: 1.25, whiteSpace: "nowrap" }}>
+            接客のコツを共有
           </div>
           <div
             style={{
@@ -695,8 +681,8 @@ export const S6: React.FC = () => (
               justifyContent: "center",
             }}
           >
-            <div style={{ fontSize: 28, fontWeight: 700, color: C.navy, whiteSpace: "nowrap" }}>
-              「先輩から受け継がれた接客のコツ」
+            <div style={{ fontSize: 26, fontWeight: 700, color: C.navy, whiteSpace: "nowrap" }}>
+              同成分の全薬で自動表示
             </div>
           </div>
         </div>
@@ -705,8 +691,8 @@ export const S6: React.FC = () => (
       {/* 下部：成果まとめバー（簡潔に要点のみを力強く主張） */}
       <div
         style={{
-          marginTop: 6,
-          padding: "20px 32px",
+          marginTop: 8,
+          padding: "22px 34px",
           borderRadius: 14,
           background: C.navy,
           color: C.white,
@@ -716,16 +702,16 @@ export const S6: React.FC = () => (
           boxShadow: "0 8px 20px rgba(30, 58, 95, 0.2)",
         }}
       >
-        <span style={{ fontSize: 32, fontWeight: 700, letterSpacing: 0.5 }}>
-          1人の知恵が、店舗全員の共通資産に。
+        <span style={{ fontSize: 34, fontWeight: 700, letterSpacing: 0.5 }}>
+          1人の知恵が、全員の資産に。
         </span>
         <span
           style={{
             background: C.white,
             color: C.navy,
-            padding: "8px 24px",
+            padding: "8px 26px",
             borderRadius: 999,
-            fontSize: 24,
+            fontSize: 26,
             fontWeight: 900,
             letterSpacing: 1,
           }}
