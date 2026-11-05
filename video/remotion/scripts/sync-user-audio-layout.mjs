@@ -1,6 +1,6 @@
 // ユーザー録音の音声ファイル（public/narration/*.wav）の実測長をもとに、
-// 1. 各カットの最適な開始タイミング（隙間ゼロ・心地よい間 GAP 0.28秒）
-// 2. 各シーンの最適な尺（timeline.json の durationSec / startSec）
+// 1. 各カットの最適な開始タイミング（落ち着いた自然な間 GAP 0.45秒）
+// 2. 各シーンの最適な尺（timeline.json の durationSec / startSec、末尾余白 1.2s〜2.0s）
 // 3. スライドアニメーションのトリガー基準（narration-lines.json の startSec）
 // 4. 音声レイアウト（narration-layout.json）
 // を100%完全連動で一括自動最適化する。
@@ -38,15 +38,15 @@ export function optimizeTimelineAndLayout() {
       const dur = Math.round(probe(f) * 100) / 100;
       durations[line.id] = Math.max(0.2, dur);
     } else {
-      durations[line.id] = 3.0; // フォールバック
+      durations[line.id] = 3.0;
     }
   }
 
-  const GAP = 0.28; // フレーズ間の心地よい自然な間（秒）
+  const GAP = 0.45; // 落ち着いた自然なフレーズ間余白（秒）
   const layout = {};
   let runningStart = 0;
 
-  console.log("=== タイムライン＆音声レイアウト完全最適化 ===");
+  console.log("=== タイムライン＆音声レイアウト自然余白最適化 ===");
 
   for (const sc of timelineData.scenes) {
     const scLines = lines.filter((l) => l.scene === sc.id);
@@ -57,7 +57,7 @@ export function optimizeTimelineAndLayout() {
       const dur = durations[l.id];
       let start;
       if (first) {
-        start = sc.id === "S2" || sc.id === "S2b" || sc.id === "S7" ? 0.4 : 0.35;
+        start = sc.id === "S2" || sc.id === "S2b" || sc.id === "S7" ? 0.45 : 0.4;
       } else {
         start = Math.round((prevEnd + GAP) * 100) / 100;
       }
@@ -78,8 +78,8 @@ export function optimizeTimelineAndLayout() {
       first = false;
     }
 
-    // シーン末尾の余白（S7は結びの余韻 1.2秒、その他は 0.75秒）
-    const padding = sc.id === "S7" ? 1.2 : 0.75;
+    // シーン末尾の余白（S7は結びの余韻 2.0秒、その他は 1.2秒）
+    const padding = sc.id === "S7" ? 2.0 : 1.2;
     const newDuration = Math.round((prevEnd + padding) * 10) / 10;
 
     sc.startSec = runningStart;
@@ -105,8 +105,8 @@ export function optimizeTimelineAndLayout() {
   fs.writeFileSync(timelineFile, JSON.stringify(timelineData, null, 2), "utf8");
   fs.writeFileSync(linesFile, JSON.stringify(linesData, null, 2), "utf8");
 
-  console.log(`\n🎉 合計動画尺: ${runningStart}秒（180秒以内 厳守クリア）`);
-  console.log("全シーン枠・カット間隔・字幕テロップが完全連動しました！\n");
+  console.log(`\n🎉 合計動画尺: ${runningStart}秒（約${Math.floor(runningStart / 60)}分${Math.round(runningStart % 60)}秒） / 180秒以内`);
+  console.log("声の余韻・自然な間（GAP 0.45s）・シーン余白が完全連動しました！\n");
 
   return { totalDuration: runningStart, scenes: timelineData.scenes };
 }

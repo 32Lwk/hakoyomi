@@ -6,27 +6,27 @@
       "id": "S1",
       "title": "つかみ",
       "startSec": 0,
-      "durationSec": 19.5
+      "durationSec": 24
     },
     {
       "id": "S2",
       "title": "JANを読むだけで、確認がそろう",
-      "startSec": 19.5,
-      "durationSec": 27.4,
+      "startSec": 24,
+      "durationSec": 35.6,
       "recording": true,
       "segments": [
         {
           "from": 12.3,
           "to": 44.5,
-          "rate": 1.41
+          "rate": 1.05
         }
       ]
     },
     {
       "id": "S2b",
       "title": "指定濫用防止医薬品の確認・記録",
-      "startSec": 46.9,
-      "durationSec": 12.6,
+      "startSec": 59.6,
+      "durationSec": 16,
       "recording": true,
       "segments": [
         {
@@ -39,8 +39,8 @@
     {
       "id": "S3",
       "title": "2〜4品の比較",
-      "startSec": 59.5,
-      "durationSec": 10.7,
+      "startSec": 75.6,
+      "durationSec": 13.8,
       "recording": true,
       "segments": [
         {
@@ -73,8 +73,8 @@
     {
       "id": "S4",
       "title": "質問は、チャットでも",
-      "startSec": 70.2,
-      "durationSec": 12.8,
+      "startSec": 89.4,
+      "durationSec": 17,
       "recording": true,
       "segments": [
         {
@@ -97,8 +97,8 @@
     {
       "id": "S5",
       "title": "症状の言葉から探す → 棚",
-      "startSec": 83,
-      "durationSec": 14.7,
+      "startSec": 106.4,
+      "durationSec": 18,
       "recording": true,
       "segments": [
         {
@@ -131,8 +131,8 @@
     {
       "id": "S6",
       "title": "ベテランのコツを受け継ぐ",
-      "startSec": 97.7,
-      "durationSec": 15.4,
+      "startSec": 124.4,
+      "durationSec": 20,
       "recording": true,
       "segments": [
         {
@@ -165,8 +165,8 @@
     {
       "id": "S7",
       "title": "Claude の使い方と結び",
-      "startSec": 113.1,
-      "durationSec": 18.3
+      "startSec": 144.4,
+      "durationSec": 24.6
     }
   ]
 }
