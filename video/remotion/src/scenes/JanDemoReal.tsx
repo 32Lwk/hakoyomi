@@ -100,8 +100,22 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: 30, padding: "18px 28px", borderRadius: 18, background: C.navy, color: C.white, fontSize: 36, whiteSpace: "nowrap", fontWeight: 700, letterSpacing: 1.5, opacity: fin, transform: `translateY(${(1 - fin) * 14}px)` }}>
-        同じ知識と経験の共有で、ベテランと同じ自信を。
+      <div
+        style={{
+          marginTop: 30,
+          padding: "16px 28px",
+          borderRadius: 18,
+          background: C.navy,
+          color: C.white,
+          fontSize: 32,
+          fontWeight: 700,
+          letterSpacing: 1.5,
+          textAlign: "center",
+          opacity: fin,
+          transform: `translateY(${(1 - fin) * 14}px)`,
+        }}
+      >
+        同じ知識の共有で、ベテランと同じ自信を。
       </div>
     </div>
   );
