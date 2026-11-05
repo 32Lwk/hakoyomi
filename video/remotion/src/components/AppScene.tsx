@@ -158,8 +158,9 @@ const SCENE_BADGE_MAP: Record<string, string> = {
 export const SceneHeading: React.FC<{ id: string; title: string }> = ({ id, title }) => {
   const frame = useCurrentFrame();
   const badgeText = SCENE_BADGE_MAP[id] ?? id.replace(".", "-");
+  const titleSize = title.length > 15 ? 52 : 58;
   return (
-    <div style={rise(frame, 4)}>
+    <div style={{ ...rise(frame, 4), maxWidth: 1100 }}>
       <div
         style={{
           display: "inline-flex",
@@ -169,7 +170,7 @@ export const SceneHeading: React.FC<{ id: string; title: string }> = ({ id, titl
           borderRadius: 999,
           background: C.navySoft,
           color: C.navy,
-          fontSize: 24,
+          fontSize: 22,
           fontWeight: 700,
           letterSpacing: 3,
         }}
@@ -177,8 +178,8 @@ export const SceneHeading: React.FC<{ id: string; title: string }> = ({ id, titl
         <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
         {badgeText}
       </div>
-      <div style={{ fontSize: 60, fontWeight: 700, color: C.text, marginTop: 12, lineHeight: 1.25 }}>{title}</div>
-      <div style={{ width: 96, height: 6, background: C.navy, marginTop: 24, borderRadius: 3 }} />
+      <div style={{ fontSize: titleSize, fontWeight: 700, color: C.text, marginTop: 10, lineHeight: 1.25 }}>{title}</div>
+      <div style={{ width: 96, height: 6, background: C.navy, marginTop: 18, marginBottom: 26, borderRadius: 3 }} />
     </div>
   );
 };
@@ -204,7 +205,7 @@ export const Points: React.FC<{ items: { text: React.ReactNode; at: string | num
   );
 };
 
-/** 現場の課題 ➔ ハコよみの解決 対比カード（プレゼン用大文字デザイン） */
+/** 現場の課題 ➔ ハコよみの解決 対比カード（デザインルール準拠：絵文字なし・赤色なし） */
 export const ProblemSolutionBanner: React.FC<{
   problem: string;
   solution: string;
@@ -220,26 +221,26 @@ export const ProblemSolutionBanner: React.FC<{
         gridTemplateColumns: "1fr auto 1.15fr",
         gap: 16,
         alignItems: "stretch",
-        marginBottom: 28,
+        marginBottom: 26,
         ...rise(frame, sec(atSec)),
       }}
     >
-      {/* 課題 */}
+      {/* 現場の課題（薄いグレー下地＋濃グレー枠） */}
       <div
         style={{
-          background: "#FFF1F2",
-          border: "2px solid #FECDD3",
+          background: C.base,
+          border: `1.5px solid ${C.line}`,
           borderRadius: 16,
-          padding: "16px 22px",
+          padding: "18px 24px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 17, fontWeight: 700, color: "#BE123C", letterSpacing: 1 }}>
-          <span>⚠️ 課題</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 16, fontWeight: 700, color: C.sub, letterSpacing: 1.5 }}>
+          <span>現場の課題</span>
         </div>
-        <div style={{ fontSize: 25, fontWeight: 700, color: "#881337", marginTop: 4, lineHeight: 1.35 }}>
+        <div style={{ fontSize: 27, fontWeight: 700, color: C.text, marginTop: 6, lineHeight: 1.35 }}>
           {problem}
         </div>
       </div>
@@ -259,23 +260,23 @@ export const ProblemSolutionBanner: React.FC<{
         ➔
       </div>
 
-      {/* 解決 */}
+      {/* ハコよみの解決（濃紺下地＋白文字） */}
       <div
         style={{
           background: C.navy,
-          border: `2px solid ${C.navy}`,
+          border: `1.5px solid ${C.navy}`,
           borderRadius: 16,
-          padding: "16px 22px",
+          padding: "18px 24px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          boxShadow: "0 6px 20px rgba(30, 58, 95, 0.22)",
+          boxShadow: "0 8px 24px rgba(30, 58, 95, 0.22)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 17, fontWeight: 700, color: "#93C5FD", letterSpacing: 1 }}>
-          <span>💡 解決</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 16, fontWeight: 700, color: "#93C5FD", letterSpacing: 1.5 }}>
+          <span>ハコよみ</span>
         </div>
-        <div style={{ fontSize: 25, fontWeight: 700, color: C.white, marginTop: 4, lineHeight: 1.35 }}>
+        <div style={{ fontSize: 27, fontWeight: 700, color: C.white, marginTop: 6, lineHeight: 1.35 }}>
           {solution}
         </div>
       </div>
@@ -289,11 +290,11 @@ export interface FeaturePoint {
   at: string | number;
 }
 
-/** 実務メリットを特大フォント（30px）で言い切る、シャープなプレゼン用リスト */
+/** 実務メリットを特大フォント（34px）で言い切る、シャープなプレゼン用リスト（濃紺アクセント・白地） */
 export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
   const frame = useCurrentFrame();
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
       {items.map((it, i) => {
         const atSec = typeof it.at === "number" ? it.at : lineTiming(it.at).inScene;
         return (
@@ -302,11 +303,13 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 16,
-              background: C.base,
+              gap: 18,
+              background: C.white,
               border: `1.5px solid ${C.line}`,
+              borderLeft: `6px solid ${C.navy}`,
               borderRadius: 14,
-              padding: "16px 22px",
+              padding: "18px 24px",
+              boxShadow: "0 4px 14px rgba(15, 23, 42, 0.04)",
               ...rise(frame, sec(atSec)),
             }}
           >
@@ -315,10 +318,10 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
                 style={{
                   background: C.navySoft,
                   color: C.navy,
-                  fontSize: 19,
+                  fontSize: 21,
                   fontWeight: 700,
-                  padding: "5px 12px",
-                  borderRadius: 6,
+                  padding: "6px 14px",
+                  borderRadius: 8,
                   letterSpacing: 0.5,
                   flexShrink: 0,
                   whiteSpace: "nowrap",
@@ -327,7 +330,7 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
                 {it.badge}
               </span>
             ) : null}
-            <div style={{ fontSize: 30, fontWeight: 700, color: C.text, lineHeight: 1.3, whiteSpace: "nowrap" }}>
+            <div style={{ fontSize: 34, fontWeight: 700, color: C.text, lineHeight: 1.3, whiteSpace: "nowrap" }}>
               {it.title}
             </div>
           </div>

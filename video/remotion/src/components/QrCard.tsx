@@ -13,7 +13,7 @@ const Leaf: React.FC<{ x: number; y: number; r: number; s: number; o?: number }>
   </g>
 );
 
-export const QrCard: React.FC<{ width?: number }> = ({ width = 400 }) => {
+export const QrCard: React.FC<{ width?: number }> = ({ width = 320 }) => {
   const k = width / 580; // 元の図の幅 580
   const qrSize = 132;
   return (

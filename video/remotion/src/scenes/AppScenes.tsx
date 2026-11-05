@@ -149,28 +149,30 @@ export const S6: React.FC = () => (
     {/* 1つの成分メモ → 全商品へ自動反映の図解カード */}
     <div
       style={{
-        marginTop: 14,
-        padding: "10px 18px",
+        marginTop: 16,
+        padding: "12px 20px",
         borderRadius: 14,
-        background: "rgba(30, 58, 95, 0.05)",
-        border: "1.5px solid rgba(30, 58, 95, 0.15)",
+        background: C.white,
+        border: "2px solid rgba(30, 58, 95, 0.15)",
+        boxShadow: "0 4px 16px rgba(14, 17, 22, 0.05)",
         display: "flex",
         flexDirection: "column",
-        gap: 6,
+        gap: 10,
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 700, color: C.navy }}>
-        <span>💡 1つの成分メモ ➔ 全対象商品の最上部へ自動反映</span>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 22, fontWeight: 700, color: C.navy }}>
+        <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
+        <span>1つの成分メモ ➔ 全対象商品の最上部へ自動反映</span>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 13, color: C.text }}>
-        <div style={{ padding: "6px 10px", background: C.white, borderRadius: 8, border: "1px solid #ddd", fontWeight: 700 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 14, fontSize: 20, color: C.text }}>
+        <div style={{ padding: "10px 16px", background: C.base, borderRadius: 10, border: "1px solid rgba(30, 58, 95, 0.1)", fontWeight: 700, lineHeight: 1.35 }}>
           パブロンでメモ入力<br />
-          <span style={{ fontSize: 11, color: "#666" }}>成分：ジヒドロコデイン</span>
+          <span style={{ fontSize: 16, color: C.muted, fontWeight: 500 }}>成分：ジヒドロコデイン</span>
         </div>
-        <div style={{ fontSize: 20, color: C.navy, fontWeight: 900 }}>➔</div>
-        <div style={{ padding: "6px 10px", background: C.white, borderRadius: 8, border: "1px solid #ddd", fontWeight: 700 }}>
+        <div style={{ fontSize: 26, color: C.navy, fontWeight: 900 }}>➔</div>
+        <div style={{ padding: "10px 16px", background: C.navySoft, borderRadius: 10, border: `1.5px solid ${C.navy}`, fontWeight: 700, lineHeight: 1.35, flex: 1 }}>
           新ルル・他4商品の最上部に<br />
-          <span style={{ fontSize: 12, color: C.navy, fontWeight: 700 }}>「先輩から受け継がれた接客のコツ」自動浮上！</span>
+          <span style={{ fontSize: 18, color: C.navy, fontWeight: 700 }}>「先輩から受け継がれた接客のコツ」自動浮上</span>
         </div>
       </div>
     </div>
