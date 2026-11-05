@@ -287,14 +287,15 @@ export const ProblemSolutionBanner: React.FC<{
 export interface FeaturePoint {
   badge?: string;
   title: React.ReactNode;
+  desc?: React.ReactNode;
   at: string | number;
 }
 
-/** 実務メリットを特大フォント（34px）で言い切る、洗練されたプレゼン用リスト（囲み枠を全廃し、抜け感のあるモダンデザインへ） */
+/** 実務メリットを2行構成（特大黒文字 40px ＋ 補足説明 26px）で言い切り、右下の余白を埋めて堂々と見せるプレゼン用リスト */
 export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
   const frame = useCurrentFrame();
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 18, marginTop: 4 }}>
       {items.map((it, i) => {
         const atSec = typeof it.at === "number" ? it.at : lineTiming(it.at).inScene;
         return (
@@ -302,51 +303,61 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             key={i}
             style={{
               display: "flex",
-              alignItems: "center",
-              gap: 20,
-              padding: "12px 14px",
-              borderBottom: "1.5px solid rgba(30, 58, 95, 0.1)",
+              alignItems: "flex-start",
+              gap: 22,
+              padding: "16px 14px",
+              borderBottom: "1.5px solid rgba(30, 58, 95, 0.12)",
               ...rise(frame, sec(atSec)),
             }}
           >
             {/* スマートな番号インジケーター */}
             <div
               style={{
-                width: 38,
-                height: 38,
-                borderRadius: 19,
+                width: 44,
+                height: 44,
+                borderRadius: 22,
                 background: C.navy,
                 color: C.white,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 20,
+                fontSize: 22,
                 fontWeight: 900,
                 flexShrink: 0,
+                marginTop: 4,
               }}
             >
               0{i + 1}
             </div>
 
-            {it.badge ? (
-              <span
-                style={{
-                  background: C.navySoft,
-                  color: C.navy,
-                  fontSize: 22,
-                  fontWeight: 700,
-                  padding: "6px 14px",
-                  borderRadius: 8,
-                  letterSpacing: 0.5,
-                  flexShrink: 0,
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {it.badge}
-              </span>
-            ) : null}
-            <div style={{ fontSize: 34, fontWeight: 700, color: C.text, lineHeight: 1.3, whiteSpace: "nowrap" }}>
-              {it.title}
+            <div style={{ display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                {it.badge ? (
+                  <span
+                    style={{
+                      background: C.navySoft,
+                      color: C.navy,
+                      fontSize: 22,
+                      fontWeight: 700,
+                      padding: "4px 14px",
+                      borderRadius: 6,
+                      letterSpacing: 0.5,
+                      flexShrink: 0,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {it.badge}
+                  </span>
+                ) : null}
+                <div style={{ fontSize: 40, fontWeight: 700, color: C.text, lineHeight: 1.25, whiteSpace: "nowrap" }}>
+                  {it.title}
+                </div>
+              </div>
+              {it.desc ? (
+                <div style={{ fontSize: 26, fontWeight: 500, color: C.sub, lineHeight: 1.4, paddingLeft: 2 }}>
+                  {it.desc}
+                </div>
+              ) : null}
             </div>
           </div>
         );

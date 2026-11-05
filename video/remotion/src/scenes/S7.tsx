@@ -180,7 +180,7 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
         style={{
           justifyContent: "flex-end",
           alignItems: "center",
-          paddingBottom: 210,
+          paddingBottom: 175,
         }}
       >
         <div
@@ -245,43 +245,48 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
           }}
         />
 
+        {/* 締めのURLとハコよみを2行で分けてハコよみの文字サイズを大きく */}
         <div
           style={{
-            marginTop: 20,
+            marginTop: 22,
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
-            gap: 28,
+            gap: 16,
             ...rise(frame, start + 44, 20),
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <HakoyomiIcon size={64} idSuffix="s7" />
+          {/* 1行目：特大「ハコよみ」 */}
+          <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+            <HakoyomiIcon size={88} idSuffix="s7" />
             <div
               style={{
-                fontSize: 68,
+                fontSize: 96,
                 fontWeight: 700,
                 color: C.white,
-                letterSpacing: 8,
+                letterSpacing: 10,
                 lineHeight: 1,
-                textShadow: "0 8px 28px rgba(0,0,0,0.7)",
+                textShadow: "0 8px 32px rgba(0,0,0,0.8)",
               }}
             >
               ハコよみ
             </div>
           </div>
 
+          {/* 2行目：URLピル */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
               gap: 18,
-              padding: "8px 24px",
+              padding: "10px 28px",
               borderRadius: 999,
               background: "rgba(12, 22, 38, 0.78)",
               border: "1px solid rgba(255, 255, 255, 0.28)",
               color: "#E2ECF8",
-              fontSize: 22,
+              fontSize: 24,
               letterSpacing: 1.5,
+              textShadow: "0 2px 8px rgba(0,0,0,0.5)",
             }}
           >
             <span style={{ fontWeight: 700, color: "#93C5FD" }}>hakoyomi.yutok.dev</span>
