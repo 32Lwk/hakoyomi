@@ -204,4 +204,143 @@ export const Points: React.FC<{ items: { text: React.ReactNode; at: string | num
   );
 };
 
+/** 現場の課題 ➔ ハコよみの解決 対比カード */
+export const ProblemSolutionBanner: React.FC<{
+  problem: string;
+  solution: string;
+  at?: number | string;
+}> = ({ problem, solution, at = 0 }) => {
+  const frame = useCurrentFrame();
+  const atSec = typeof at === "number" ? at : lineTiming(at).inScene;
+
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "1fr auto 1.15fr",
+        gap: 16,
+        alignItems: "stretch",
+        marginBottom: 26,
+        ...rise(frame, sec(atSec)),
+      }}
+    >
+      {/* 課題 */}
+      <div
+        style={{
+          background: "#FFF1F2",
+          border: "1.5px solid #FECDD3",
+          borderRadius: 14,
+          padding: "16px 20px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 16, fontWeight: 700, color: "#BE123C", letterSpacing: 1 }}>
+          <span>⚠️ 現場の課題</span>
+        </div>
+        <div style={{ fontSize: 22, fontWeight: 700, color: "#881337", marginTop: 6, lineHeight: 1.35 }}>
+          {problem}
+        </div>
+      </div>
+
+      {/* 矢印 */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: C.navy,
+          fontSize: 28,
+          fontWeight: 900,
+          padding: "0 4px",
+        }}
+      >
+        ➔
+      </div>
+
+      {/* 解決 */}
+      <div
+        style={{
+          background: C.navy,
+          border: `1.5px solid ${C.navy}`,
+          borderRadius: 14,
+          padding: "16px 20px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          boxShadow: "0 4px 16px rgba(30, 58, 95, 0.18)",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 16, fontWeight: 700, color: "#93C5FD", letterSpacing: 1 }}>
+          <span>💡 ハコよみで解決</span>
+        </div>
+        <div style={{ fontSize: 22, fontWeight: 700, color: C.white, marginTop: 6, lineHeight: 1.35 }}>
+          {solution}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export interface FeaturePoint {
+  badge?: string;
+  title: React.ReactNode;
+  desc?: string;
+  at: string | number;
+}
+
+/** 実務メリットを強力に伝える構造化リスト */
+export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
+  const frame = useCurrentFrame();
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      {items.map((it, i) => {
+        const atSec = typeof it.at === "number" ? it.at : lineTiming(it.at).inScene;
+        return (
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              background: C.base,
+              border: `1px solid ${C.line}`,
+              borderRadius: 14,
+              padding: "14px 20px",
+              ...rise(frame, sec(atSec)),
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              {it.badge ? (
+                <span
+                  style={{
+                    background: C.navySoft,
+                    color: C.navy,
+                    fontSize: 16,
+                    fontWeight: 700,
+                    padding: "3px 10px",
+                    borderRadius: 6,
+                    letterSpacing: 0.5,
+                    flexShrink: 0,
+                  }}
+                >
+                  {it.badge}
+                </span>
+              ) : null}
+              <div style={{ fontSize: 24, fontWeight: 700, color: C.text, lineHeight: 1.3 }}>
+                {it.title}
+              </div>
+            </div>
+            {it.desc ? (
+              <div style={{ fontSize: 18, color: C.sub, marginTop: 6, lineHeight: 1.45 }}>
+                {it.desc}
+              </div>
+            ) : null}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 

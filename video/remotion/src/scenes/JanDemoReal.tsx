@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { ramp, rise } from "../components/anim";
-import { RecordingTrack } from "../components/AppScene";
+import { FeatureList, ProblemSolutionBanner, RecordingTrack } from "../components/AppScene";
 import { PHONE_SCALE, PhoneFrame } from "../components/PhoneFrame";
 import { C, FONT, FPS } from "../theme";
 import { type Segment } from "../timeline";
@@ -76,38 +76,54 @@ const Caption: React.FC<{ frame: number }> = ({ frame }) => {
 };
 
 const Panel: React.FC<{ frame: number }> = ({ frame }) => {
-  const pts = [
-    { at: 10.4, text: "接客前チェック：お客様への問いかけが瞬時にそろう", note: "Claudeが確認すべき重要ポイントと問いかけ台詞を自動整理" },
-    { at: 21.0, text: "国の機関（PMDA等）のデータを参照し正確に回答", note: "2026年5月施行「指定濫用防止医薬品」の現場確認フローにも対応" },
-    { at: 34.0, text: "ドーピング・ハラール・授乳・運転もワンタップで根拠表示", note: "細かい箱の記載や添付文書をその場で探す手間をゼロに" },
-  ];
   const fin = ramp(frame, Math.round(44.0 * FPS), 18);
   return (
-    <div style={{ position: "absolute", left: 1040, top: 170, width: 800 }}>
-      <div style={rise(frame, Math.round(10.1 * FPS))}>
-        <div style={{ fontSize: 26, fontWeight: 700, color: C.navy, letterSpacing: 4 }}>バーコードを読み取るだけ</div>
-        <div style={{ fontSize: 52, fontWeight: 700, color: C.text, marginTop: 8, lineHeight: 1.25, whiteSpace: "nowrap" }}>確認の材料が、瞬時にそろう</div>
-        <div style={{ width: 96, height: 6, background: C.navy, marginTop: 24, borderRadius: 3 }} />
+    <div style={{ position: "absolute", left: 980, top: 130, width: 880 }}>
+      <div style={rise(frame, Math.round(9.5 * FPS))}>
+        <div style={{ fontSize: 24, fontWeight: 700, color: C.navy, letterSpacing: 4 }}>バーコードを読み取るだけ</div>
+        <div style={{ fontSize: 50, fontWeight: 700, color: C.text, marginTop: 6, lineHeight: 1.25, whiteSpace: "nowrap" }}>
+          確認の材料が、瞬時にそろう
+        </div>
+        <div style={{ width: 96, height: 6, background: C.navy, marginTop: 18, marginBottom: 24, borderRadius: 3 }} />
       </div>
-      <div style={{ marginTop: 36, display: "flex", flexDirection: "column", gap: 18 }}>
-        {pts.map((p, i) => (
-          <div key={i} style={{ display: "flex", gap: 22, alignItems: "flex-start", ...rise(frame, Math.round(p.at * FPS)) }}>
-            <div style={{ width: 14, height: 14, borderRadius: 7, background: C.navy, marginTop: 20, flex: "none" }} />
-            <div>
-              <div style={{ fontSize: 34, color: C.text, fontWeight: 500, lineHeight: 1.4 }}>{p.text}</div>
-              {p.note ? <div style={{ fontSize: 24, color: C.sub, marginTop: 2 }}>{p.note}</div> : null}
-            </div>
-          </div>
-        ))}
-      </div>
+
+      <ProblemSolutionBanner
+        problem="小さな文字の箱の裏や添付文書を、お客様の前で必死に探す"
+        solution="バーコード1秒読取 ➔ 確認ポイントと注意点が一瞬で手元に集約"
+        at={10.2}
+      />
+
+      <FeatureList
+        items={[
+          {
+            badge: "一瞬で集約",
+            title: "接客前チェック：確認ポイントと問いかけを整理",
+            desc: "年齢確認・運転予定・併用薬の注意など、確認漏れを未然に防止",
+            at: 10.4,
+          },
+          {
+            badge: "直感バッジ",
+            title: "ドーピング・ハラール・授乳・運転をひと目で確認",
+            desc: "添付文書を開いて探す手間をゼロにし、お客様をお待たせしない",
+            at: 21.0,
+          },
+          {
+            badge: "現場の安心",
+            title: "新人でも戸惑わず、その場で自信を持って答えられる",
+            desc: "文字が小さくて読みづらい箱の裏を探すストレスから解放",
+            at: 29.5,
+          },
+        ]}
+      />
+
       <div
         style={{
-          marginTop: 30,
-          padding: "16px 28px",
-          borderRadius: 18,
+          marginTop: 22,
+          padding: "14px 24px",
+          borderRadius: 14,
           background: C.navy,
           color: C.white,
-          fontSize: 32,
+          fontSize: 26,
           fontWeight: 700,
           letterSpacing: 1.5,
           textAlign: "center",
@@ -115,7 +131,7 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
           transform: `translateY(${(1 - fin) * 14}px)`,
         }}
       >
-        同じ知識の共有で、ベテランと同じ自信を。
+        探す時間をなくし、目の前のお客様との対話に集中。
       </div>
     </div>
   );
