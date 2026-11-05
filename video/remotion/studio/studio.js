@@ -1,18 +1,31 @@
 // ハコよみ 収録・プレゼンスタジオ フロントエンド ロジック
 let cuts = [];
 let currentIndex = 0;
+let currentPlayingAudio = null;
+
+// 単独カット録音用
 let mediaRecorder = null;
 let audioChunks = [];
 let isRecording = false;
 let recordStartTime = 0;
 let recordTimerInterval = null;
-let currentPlayingAudio = null;
+
+// 通し収録モード用
+let isContinuousMode = false;
+let continuousStream = null;
+let continuousRecorder = null;
+let continuousChunks = [];
+let continuousStartTime = 0;
+let continuousCutStartTime = 0;
+let continuousSplits = []; // [{ id, startSec, endSec }]
+let continuousTimerInterval = null;
 
 // DOM 要素
 const slideStage = document.getElementById("slide-stage");
 const slideViewport = document.getElementById("slide-viewport");
 const dynamicSlideContent = document.getElementById("dynamic-slide-content");
 const scriptText = document.getElementById("script-text");
+const scriptNextText = document.getElementById("script-next-text");
 const scriptSpeakHint = document.getElementById("script-speak-hint");
 const scriptTip = document.getElementById("script-tip");
 const cutIndicator = document.getElementById("cut-indicator");
@@ -31,6 +44,12 @@ const cutListEl = document.getElementById("cut-list");
 const recordedCountEl = document.getElementById("recorded-count");
 const btnHeaderRender = document.getElementById("btn-header-render");
 const btnSidebarRender = document.getElementById("btn-sidebar-render");
+const btnContinuousRecord = document.getElementById("btn-continuous-record");
+const btnContinuousLabel = document.getElementById("btn-continuous-label");
+const continuousBanner = document.getElementById("continuous-banner");
+const continuousTotalTimer = document.getElementById("continuous-total-timer");
+const countdownOverlay = document.getElementById("countdown-overlay");
+const countdownNum = document.getElementById("countdown-num");
 const renderModal = document.getElementById("render-modal");
 const renderLogs = document.getElementById("render-logs");
 const btnCloseModal = document.getElementById("btn-close-modal");
@@ -100,6 +119,10 @@ function renderSidebar() {
       </div>
     `;
     item.addEventListener("click", () => {
+      if (isContinuousMode) {
+        if (!confirm("通し収録を中断して移動しますか？")) return;
+        abortContinuousRecording();
+      }
       if (isRecording) stopRecording();
       loadCut(idx);
     });
@@ -126,30 +149,44 @@ function loadCut(index) {
   scriptSpeakHint.textContent = cut.speak !== cut.text ? `発音・読みガイド: ${cut.speak}` : "";
   scriptTip.textContent = cut.tip ? `💡 ${cut.tip}` : "";
 
+  // 次のカットの予告
+  if (index < cuts.length - 1) {
+    scriptNextText.textContent = cuts[index + 1].text;
+    document.getElementById("script-next-preview").style.display = "flex";
+  } else {
+    document.getElementById("script-next-preview").style.display = "none";
+  }
+
   // インジケーター & 前後ボタン
   cutIndicator.textContent = `${String(index + 1).padStart(2, "0")} / ${cuts.length}`;
   btnPrev.disabled = index === 0;
   btnNext.disabled = index === cuts.length - 1;
 
-  // タイマー表示初期化
-  const secToShow = cut.currentSec || cut.targetSec;
-  timeCur.textContent = `${secToShow.toFixed(1)}s`;
-  timeCur.classList.remove("over");
-  timeTarget.textContent = `目標: ${cut.targetSec}s (最大 ${cut.maxSec}s)`;
+  // タイマー表示（通し収録中でなければ保存済み秒数または目標秒数）
+  if (!isContinuousMode) {
+    const secToShow = cut.currentSec || cut.targetSec;
+    timeCur.textContent = `${secToShow.toFixed(1)}s`;
+    timeCur.classList.remove("over");
+    timeTarget.textContent = `目標: ${cut.targetSec}s (最大 ${cut.maxSec}s)`;
 
-  // ステータスバッジ
-  if (cut.isUserRecorded) {
-    statusBadge.className = "status-badge recorded";
-    statusBadge.textContent = "録音済み";
+    // ステータスバッジ
+    if (cut.isUserRecorded) {
+      statusBadge.className = "status-badge recorded";
+      statusBadge.textContent = "録音済み";
+    } else {
+      statusBadge.className = "status-badge tts";
+      statusBadge.textContent = "お手本TTS";
+    }
+
+    // プログレスバー
+    const pct = Math.min(100, (secToShow / cut.maxSec) * 100);
+    progressBarFill.style.width = `${pct}%`;
+    progressBarFill.className = `progress-bar-fill ${secToShow > cut.maxSec ? "danger" : secToShow > cut.targetSec ? "warn" : ""}`;
   } else {
-    statusBadge.className = "status-badge tts";
-    statusBadge.textContent = "お手本TTS";
+    timeTarget.textContent = `目標: ${cut.targetSec}s (最大 ${cut.maxSec}s)`;
+    statusBadge.className = "status-badge recorded";
+    statusBadge.textContent = "通し収録中";
   }
-
-  // プログレスバー
-  const pct = Math.min(100, (secToShow / cut.maxSec) * 100);
-  progressBarFill.style.width = `${pct}%`;
-  progressBarFill.className = `progress-bar-fill ${secToShow > cut.maxSec ? "danger" : secToShow > cut.targetSec ? "warn" : ""}`;
 
   // 試聴停止
   if (currentPlayingAudio) {
@@ -278,7 +315,6 @@ function renderSlideContent(cut) {
       </div>
     `;
 
-    // ループ再生時間設定
     setupVideoLoop(cut);
     return;
   }
@@ -336,7 +372,6 @@ function renderSlideContent(cut) {
     </div>
   `;
 
-  // デモ動画のループ再生区間設定
   setupVideoLoop(cut);
 }
 
@@ -358,8 +393,229 @@ function setupVideoLoop(cut) {
   };
 }
 
-// 6. マイク録音機能
+// ==========================================
+// 6. 通し収録モード（矢印キーで自分のペースで通し録音）
+// ==========================================
+
+async function startContinuousRecording() {
+  if (isRecording) stopRecording();
+
+  try {
+    continuousStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  } catch (err) {
+    alert("マイクへのアクセスが許可されていません: " + err.message);
+    return;
+  }
+
+  // 3秒カウントダウン
+  countdownOverlay.style.display = "flex";
+  let count = 3;
+  countdownNum.textContent = count;
+
+  const countInterval = setInterval(() => {
+    count--;
+    if (count > 0) {
+      countdownNum.textContent = count;
+    } else {
+      clearInterval(countInterval);
+      countdownOverlay.style.display = "none";
+      beginContinuousSession();
+    }
+  }, 1000);
+}
+
+function beginContinuousSession() {
+  continuousChunks = [];
+  continuousSplits = [];
+  continuousRecorder = new MediaRecorder(continuousStream);
+
+  continuousRecorder.ondataavailable = (e) => {
+    if (e.data.size > 0) continuousChunks.push(e.data);
+  };
+
+  continuousRecorder.onstop = async () => {
+    const blob = new Blob(continuousChunks, { type: "audio/webm" });
+    continuousStream.getTracks().forEach((track) => track.stop());
+    await saveContinuousTake(blob);
+  };
+
+  continuousRecorder.start(200);
+  isContinuousMode = true;
+  continuousStartTime = Date.now();
+  continuousCutStartTime = 0;
+
+  // UI 更新
+  continuousBanner.style.display = "flex";
+  btnContinuousRecord.classList.add("recording-active");
+  btnContinuousLabel.textContent = "⏹️ 通し収録を終了・一括保存";
+
+  // カット01から開始
+  loadCut(0);
+
+  // タイマー駆動
+  let cutTimerStart = Date.now();
+  continuousTimerInterval = setInterval(() => {
+    const totalElapsed = (Date.now() - continuousStartTime) / 1000;
+    const cutElapsed = (Date.now() - cutTimerStart) / 1000;
+
+    // 全体タイマー
+    const m = Math.floor(totalElapsed / 60);
+    const s = Math.floor(totalElapsed % 60);
+    continuousTotalTimer.textContent = `${m}:${String(s).padStart(2, "0")} / 2:51`;
+
+    // 現在のカットタイマー
+    timeCur.textContent = `${cutElapsed.toFixed(1)}s`;
+    const curCut = cuts[currentIndex];
+    const pct = Math.min(100, (cutElapsed / curCut.maxSec) * 100);
+    progressBarFill.style.width = `${pct}%`;
+
+    if (cutElapsed > curCut.maxSec) {
+      timeCur.classList.add("over");
+      progressBarFill.className = "progress-bar-fill danger";
+    } else if (cutElapsed > curCut.targetSec) {
+      progressBarFill.className = "progress-bar-fill warn";
+    } else {
+      progressBarFill.className = "progress-bar-fill";
+      timeCur.classList.remove("over");
+    }
+  }, 100);
+
+  // カット移動時に cutTimerStart をリセットするためのフック
+  window.__resetCutTimer = () => {
+    cutTimerStart = Date.now();
+  };
+}
+
+// 通し収録中に矢印キー（→）が押された時の処理
+function advanceContinuousCut() {
+  if (!isContinuousMode) return;
+
+  const currentTotalElapsed = (Date.now() - continuousStartTime) / 1000;
+  const curCut = cuts[currentIndex];
+
+  // 現在のカットの区間（startSec, endSec）を記録
+  continuousSplits.push({
+    id: curCut.id,
+    startSec: continuousCutStartTime,
+    endSec: currentTotalElapsed,
+  });
+
+  // 次のカットの開始秒を更新
+  continuousCutStartTime = currentTotalElapsed;
+
+  // もし最後のカットなら終了処理
+  if (currentIndex === cuts.length - 1) {
+    finishContinuousRecording();
+  } else {
+    // 次のカットへ進む
+    loadCut(currentIndex + 1);
+    if (window.__resetCutTimer) window.__resetCutTimer();
+  }
+}
+
+// 通し収録中に矢印キー（←）が押された時の処理（やり直し）
+function rewindContinuousCut() {
+  if (!isContinuousMode) return;
+
+  if (currentIndex > 0) {
+    // 直前の split 記録を削除
+    const lastSplit = continuousSplits.pop();
+    const rewindTo = currentIndex - 1;
+    // 戻った時点から再度カウント
+    continuousCutStartTime = (Date.now() - continuousStartTime) / 1000;
+    loadCut(rewindTo);
+    if (window.__resetCutTimer) window.__resetCutTimer();
+  }
+}
+
+// 通し収録の終了
+function finishContinuousRecording() {
+  if (!isContinuousMode || !continuousRecorder) return;
+
+  const currentTotalElapsed = (Date.now() - continuousStartTime) / 1000;
+  // 最後のカットが未記録なら追加
+  if (continuousSplits.length <= currentIndex) {
+    continuousSplits.push({
+      id: cuts[currentIndex].id,
+      startSec: continuousCutStartTime,
+      endSec: currentTotalElapsed,
+    });
+  }
+
+  clearInterval(continuousTimerInterval);
+  continuousRecorder.stop();
+  isContinuousMode = false;
+
+  continuousBanner.style.display = "none";
+  btnContinuousRecord.classList.remove("recording-active");
+  btnContinuousLabel.textContent = "🎙️ 通し収録スタート (→キーで進行)";
+}
+
+function abortContinuousRecording() {
+  if (continuousRecorder && continuousRecorder.state === "recording") {
+    continuousRecorder.stop();
+  }
+  if (continuousStream) {
+    continuousStream.getTracks().forEach((track) => track.stop());
+  }
+  clearInterval(continuousTimerInterval);
+  isContinuousMode = false;
+  continuousBanner.style.display = "none";
+  btnContinuousRecord.classList.remove("recording-active");
+  btnContinuousLabel.textContent = "🎙️ 通し収録スタート (→キーで進行)";
+}
+
+// サーバーに通し音声と各カットの区間（splits）を送信して一括スライス
+async function saveContinuousTake(blob) {
+  renderModal.style.display = "flex";
+  document.getElementById("render-modal-title").textContent = "🎙️ 通し音声のスライス・分割保存中...";
+  renderLogs.textContent = `全${continuousSplits.length}カットの音声を高音質スライス（24kHz WAV）に変換しています...\nしばらくお待ちください。\n`;
+
+  try {
+    const res = await fetch("/api/save-continuous-take", {
+      method: "POST",
+      headers: {
+        "x-splits": encodeURIComponent(JSON.stringify(continuousSplits)),
+      },
+      body: blob,
+    });
+
+    const data = await res.json();
+    if (data.ok) {
+      renderLogs.textContent += `\n🎉 全${data.cuts.length}カットの分割保存が正常に完了しました！\nマスター音声尺: ${data.masterDuration}秒\n\n`;
+      data.cuts.forEach((c) => {
+        renderLogs.textContent += `✓ ${c.id}: ${c.durationSec}s (区間 ${c.startSec.toFixed(1)}s - ${c.endSec.toFixed(1)}s)\n`;
+      });
+
+      // cuts 配列のステータスを一括更新
+      data.cuts.forEach((sc) => {
+        const found = cuts.find((c) => c.id === sc.id);
+        if (found) {
+          found.isUserRecorded = true;
+          found.currentSec = sc.durationSec;
+          found.audioUrl = sc.audioUrl;
+        }
+      });
+
+      renderSidebar();
+      loadCut(0);
+      document.getElementById("render-modal-title").textContent = "🎉 通し収録が完了しました！";
+    } else {
+      renderLogs.textContent += `\n❌ エラーが発生しました: ${data.error}`;
+      document.getElementById("render-modal-title").textContent = "保存エラー";
+    }
+  } catch (err) {
+    renderLogs.textContent += `\n❌ 通信エラー: ${err.message}`;
+  }
+}
+
+// ==========================================
+// 7. 単独カット録音機能（撮り直し・ピンポイント録音）
+// ==========================================
+
 async function startRecording() {
+  if (isContinuousMode) return;
+
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     audioChunks = [];
@@ -411,10 +667,10 @@ function stopRecording() {
   btnRecordLabel.textContent = "録音開始";
 }
 
-// 7. 音声データの保存（サーバーへ送信）
+// 単独音声データの保存
 async function saveAudio(blob) {
   const cut = cuts[currentIndex];
-  btnRecordLabel.textContent = "保存・変換中...";
+  btnRecordLabel.textContent = "保存中...";
 
   try {
     const res = await fetch(`/api/save-audio?id=${cut.id}`, {
@@ -484,19 +740,24 @@ btnRestoreTts.addEventListener("click", async () => {
 
 // 10. イベントリスナー
 btnPrev.addEventListener("click", () => {
-  if (currentIndex > 0) loadCut(currentIndex - 1);
+  if (isContinuousMode) rewindContinuousCut();
+  else if (currentIndex > 0) loadCut(currentIndex - 1);
 });
 
 btnNext.addEventListener("click", () => {
-  if (currentIndex < cuts.length - 1) loadCut(currentIndex + 1);
+  if (isContinuousMode) advanceContinuousCut();
+  else if (currentIndex < cuts.length - 1) loadCut(currentIndex + 1);
 });
 
 btnRecord.addEventListener("click", () => {
-  if (isRecording) {
-    stopRecording();
-  } else {
-    startRecording();
-  }
+  if (isContinuousMode) return;
+  if (isRecording) stopRecording();
+  else startRecording();
+});
+
+btnContinuousRecord.addEventListener("click", () => {
+  if (isContinuousMode) finishContinuousRecording();
+  else startContinuousRecording();
 });
 
 btnPlayVoice.addEventListener("click", () => {
@@ -511,10 +772,28 @@ btnPlayTts.addEventListener("click", () => {
 
 // キーボードショートカット
 window.addEventListener("keydown", (e) => {
-  // input等にフォーカスがある時は無効
   if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
 
-  if (e.code === "Space") {
+  // 通し収録中
+  if (isContinuousMode) {
+    if (e.code === "ArrowRight" || e.code === "Enter" || e.code === "Space") {
+      e.preventDefault();
+      advanceContinuousCut();
+    } else if (e.code === "ArrowLeft") {
+      e.preventDefault();
+      rewindContinuousCut();
+    } else if (e.code === "Escape") {
+      e.preventDefault();
+      abortContinuousRecording();
+    }
+    return;
+  }
+
+  // 通常モード
+  if (e.code === "Space" && e.shiftKey) {
+    e.preventDefault();
+    startContinuousRecording();
+  } else if (e.code === "Space") {
     e.preventDefault();
     if (isRecording) stopRecording();
     else startRecording();
@@ -536,6 +815,7 @@ async function startVideoRender() {
   if (!confirm("現在の録音データで本番動画（out/main.mp4）をレンダリングしますか？\n（所要時間：約2分）")) return;
 
   renderModal.style.display = "flex";
+  document.getElementById("render-modal-title").textContent = "動画レンダリング中...";
   renderLogs.textContent = "レンダリングを開始しています...\n";
 
   try {

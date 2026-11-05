@@ -19,11 +19,15 @@
       <span class="brand-badge">PRODUCER MODE</span>
     </div>
     <div class="header-actions">
+      <button class="btn-accent" id="btn-continuous-record" style="background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%); border-color: #F87171; box-shadow: 0 2px 10px rgba(239,68,68,0.4);" title="矢印キー（→）を押しながら自分のペースで全カットを通し収録します">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9"/></svg>
+        <span id="btn-continuous-label">🎙️ 通し収録スタート (→キーで進行)</span>
+      </button>
       <button class="btn-secondary" id="btn-restore-tts" title="現在のカットの音声を元のお手本TTSに戻します">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
         お手本TTSに戻す
       </button>
-      <button class="btn-accent" id="btn-header-render">
+      <button class="btn-secondary" id="btn-header-render">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         完成動画をレンダリング
       </button>
@@ -36,6 +40,19 @@
     <main class="stage-area">
       <div class="slide-container-wrapper" id="slide-wrapper">
         <div class="slide-viewport" id="slide-viewport">
+          <!-- 通し収録中のガイダンスバナー -->
+          <div id="continuous-banner" style="display: none; position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: rgba(220, 38, 38, 0.92); border: 2px solid #FCA5A5; color: #FFFFFF; padding: 8px 24px; border-radius: 999px; font-size: 16px; font-weight: 800; letter-spacing: 1px; z-index: 50; box-shadow: 0 8px 24px rgba(0,0,0,0.6); align-items: center; gap: 12px; backdrop-filter: blur(8px);">
+            <span style="display: inline-block; width: 10px; height: 10px; border-radius: 5px; background: #FFFFFF; animation: pulse-dot 1s infinite;"></span>
+            <span>通し収録中: 話し終わったら「 <span style="background: #FFFFFF; color: #DC2626; padding: 2px 8px; border-radius: 4px; font-family: monospace;">→</span> 」キーで次のカットへ進みます</span>
+            <span id="continuous-total-timer" style="font-family: monospace; font-size: 15px; background: rgba(0,0,0,0.3); padding: 2px 10px; border-radius: 4px;">0:00 / 2:51</span>
+          </div>
+
+          <!-- カウントダウンオーバーレイ -->
+          <div id="countdown-overlay" style="display: none; position: absolute; inset: 0; background: rgba(11, 19, 32, 0.88); z-index: 100; align-items: center; justify-content: center; flex-direction: column; gap: 16px;">
+            <div id="countdown-num" style="font-size: 140px; font-weight: 900; color: #38BDF8; line-height: 1; text-shadow: 0 0 40px rgba(56,189,248,0.6);">3</div>
+            <div style="font-size: 24px; font-weight: 700; color: #E2ECF8; letter-spacing: 2px;">マイクに向かってリラックスしてください</div>
+          </div>
+
           <div class="slide-content-stage" id="slide-stage">
             <!-- 右上QRコードカード（全スライド共通） -->
             <div class="qr-card-overlay" id="qr-card">
@@ -61,6 +78,10 @@
         <div class="script-row">
           <div class="script-text-wrap">
             <div class="script-text" id="script-text">読み込み中...</div>
+            <div class="script-next-preview" id="script-next-preview" style="font-size: 15px; color: #94A3B8; margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+              <span style="background: rgba(255,255,255,0.1); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; color: #38BDF8;">NEXT ➔</span>
+              <span id="script-next-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 800px;">次の原稿</span>
+            </div>
             <div class="script-speak-hint" id="script-speak-hint"></div>
           </div>
           <div class="script-tip" id="script-tip"></div>

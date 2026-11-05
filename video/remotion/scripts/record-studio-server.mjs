@@ -162,6 +162,116 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // API: 通し録音の保存と自動スライス（1本の通し音声を矢印キーのタイムスタンプで各カットへ分割）
+  if (pathname === "/api/save-continuous-take" && req.method === "POST") {
+    const splitsHeader = req.headers["x-splits"];
+    if (!splitsHeader) {
+      res.writeHead(400, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ ok: false, error: "Missing x-splits header" }));
+      return;
+    }
+
+    let splits = [];
+    try {
+      splits = JSON.parse(decodeURIComponent(splitsHeader));
+    } catch (e) {
+      res.writeHead(400, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ ok: false, error: "Invalid x-splits JSON" }));
+      return;
+    }
+
+    const chunks = [];
+    req.on("data", (chunk) => chunks.push(chunk));
+    req.on("end", () => {
+      const now = Date.now();
+      const tempWebm = path.join(root, `.temp_continuous_${now}.webm`);
+      const tempMasterWav = path.join(root, `.temp_continuous_master_${now}.wav`);
+
+      try {
+        const buffer = Buffer.concat(chunks);
+        fs.writeFileSync(tempWebm, buffer);
+
+        // まず通し音声を 24kHz / 16bit / mono のマスター WAV に一括変換
+        execFileSync("ffmpeg", [
+          "-y",
+          "-i",
+          tempWebm,
+          "-ar",
+          "24000",
+          "-ac",
+          "1",
+          "-c:a",
+          "pcm_s16le",
+          tempMasterWav,
+        ]);
+
+        const masterDuration = getAudioDuration(tempMasterWav);
+        const results = [];
+
+        // 各カットを切り出して public/narration/{id}.wav に保存
+        for (const item of splits) {
+          const { id, startSec, endSec } = item;
+          const targetWav = path.join(narrationDir, `${id}.wav`);
+
+          // 開始秒と終了秒を安全にクランプ
+          const s = Math.max(0, startSec);
+          const e = Math.min(masterDuration || 9999, endSec);
+          const dur = Math.max(0.1, e - s);
+
+          execFileSync("ffmpeg", [
+            "-y",
+            "-ss",
+            s.toString(),
+            "-t",
+            dur.toString(),
+            "-i",
+            tempMasterWav,
+            "-ar",
+            "24000",
+            "-ac",
+            "1",
+            "-c:a",
+            "pcm_s16le",
+            targetWav,
+          ]);
+
+          const actualDur = getAudioDuration(targetWav);
+          results.push({
+            id,
+            startSec: s,
+            endSec: e,
+            durationSec: actualDur ? Math.round(actualDur * 100) / 100 : null,
+            audioUrl: `/public/narration/${id}.wav?t=${Date.now()}`,
+          });
+        }
+
+        // 一時ファイルを削除
+        try {
+          fs.unlinkSync(tempWebm);
+          fs.unlinkSync(tempMasterWav);
+        } catch (_) {}
+
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(
+          JSON.stringify({
+            ok: true,
+            masterDuration: masterDuration ? Math.round(masterDuration * 100) / 100 : null,
+            cuts: results,
+          })
+        );
+      } catch (err) {
+        console.error("Continuous take error:", err);
+        try {
+          if (fs.existsSync(tempWebm)) fs.unlinkSync(tempWebm);
+          if (fs.existsSync(tempMasterWav)) fs.unlinkSync(tempMasterWav);
+        } catch (_) {}
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ ok: false, error: err.message }));
+      }
+    });
+    return;
+  }
+
   // API: お手本TTSに戻す
   if (pathname === "/api/restore-tts" && req.method === "POST") {
     const id = url.searchParams.get("id");

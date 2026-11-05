@@ -885,3 +885,17 @@ header {
   filter: brightness(1.1);
   transform: translateY(-1px);
 }
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.85); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.85); opacity: 0.6; }
+}
+
+/* 通し収録中のボタン発光 */
+.btn-accent.recording-active {
+  background: #DC2626 !important;
+  border-color: #F87171 !important;
+  animation: pulse-recording 1.2s infinite;
+}
+
