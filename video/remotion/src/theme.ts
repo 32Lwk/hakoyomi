@@ -29,6 +29,6 @@ export const H = 1080;
 // 画面録画の場面の配置（全場面で同じ）
 export const LAYOUT = {
   phone: { x: 190, y: 24, screenW: 390, screenH: 844, bezel: 16, radius: 56 },
-  panel: { x: 700, y: 150, w: 1140 },
+  panel: { x: 670, y: 80, w: 1200 },
   subtitle: { bottom: 34, maxW: 1560 },
 } as const;

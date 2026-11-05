@@ -96,15 +96,15 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
           <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
           バーコードを読み取るだけ
         </div>
-        <div style={{ fontSize: 58, fontWeight: 700, color: C.text, marginTop: 12, lineHeight: 1.25 }}>
+        <div style={{ fontSize: 50, fontWeight: 700, color: C.text, marginTop: 10, lineHeight: 1.25, whiteSpace: "nowrap" }}>
           確認の材料が、瞬時に手元にそろう
         </div>
-        <div style={{ width: 96, height: 6, background: C.navy, marginTop: 20, marginBottom: 26, borderRadius: 3 }} />
+        <div style={{ width: 96, height: 6, background: C.navy, marginTop: 16, marginBottom: 22, borderRadius: 3 }} />
       </div>
 
       <ProblemSolutionBanner
-        problem="小さな文字の箱の裏や添付文書を、お客様の前で必死に探す"
-        solution="バーコード1秒 ➔ 必要な確認事項が瞬時に集約"
+        problem="箱の裏や添付文書を必死に探す"
+        solution="バーコード1秒で確認事項が集約"
         at={cueSec("s2-2")}
       />
 
@@ -113,19 +113,19 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
           {
             badge: "接客前チェック",
             title: "確認漏れを未然に防止",
-            desc: "年齢・運転注意・併用薬など、接客前に確認すべき項目が一瞬で手元に集約",
+            desc: "年齢・運転注意・併用薬など接客前の確認事項が一瞬で集約",
             at: cueSec("s2-2"),
           },
           {
             badge: "直感バッジ",
             title: "注意点をひと目で判断",
-            desc: "ドーピング禁止成分やハラール・授乳中などの特別な相談にも迷わず即答",
+            desc: "ドーピング禁止成分やハラール・授乳中などの相談にも迷わず即答",
             at: cueSec("s2-3"),
           },
           {
-            badge: "自信を持って店頭へ",
-            title: "誰でも同じ水準で説明",
-            desc: "小さな文字の箱の裏や添付文書を探す時間をゼロにし、お客様との対話に集中",
+            badge: "誰でも安心",
+            title: "誰でも同じ高水準で説明",
+            desc: "探す時間をゼロにし、お客様一人ひとりとの対話に集中",
             at: cueSec("s2-4"),
           },
         ]}
@@ -133,20 +133,21 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
 
       <div
         style={{
-          marginTop: 26,
+          marginTop: 20,
           padding: "16px 28px",
-          borderRadius: 16,
+          borderRadius: 14,
           background: C.navy,
           color: C.white,
           fontSize: 28,
           fontWeight: 700,
-          letterSpacing: 1.5,
+          letterSpacing: 1,
           textAlign: "center",
+          boxShadow: "0 8px 20px rgba(30, 58, 95, 0.2)",
           opacity: fin,
           transform: `translateY(${(1 - fin) * 14}px)`,
         }}
       >
-        探す時間をゼロにして、目の前のお客様との対話に集中。
+        探す時間をゼロに。目の前のお客様との対話に集中。
       </div>
     </div>
   );

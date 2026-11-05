@@ -158,9 +158,10 @@ const SCENE_BADGE_MAP: Record<string, string> = {
 export const SceneHeading: React.FC<{ id: string; title: string }> = ({ id, title }) => {
   const frame = useCurrentFrame();
   const badgeText = SCENE_BADGE_MAP[id] ?? id.replace(".", "-");
-  const titleSize = title.length > 15 ? 52 : 58;
+  // 右上のQRコードカード（X=1492）と絶対に干渉しないよう、文字数に応じた安全なサイズに最適化
+  const titleSize = title.length > 13 ? 46 : 54;
   return (
-    <div style={{ ...rise(frame, 4), maxWidth: 1100 }}>
+    <div style={{ ...rise(frame, 4), maxWidth: 810 }}>
       <div
         style={{
           display: "inline-flex",
@@ -178,8 +179,8 @@ export const SceneHeading: React.FC<{ id: string; title: string }> = ({ id, titl
         <span style={{ width: 8, height: 8, borderRadius: 4, background: C.navy }} />
         {badgeText}
       </div>
-      <div style={{ fontSize: titleSize, fontWeight: 700, color: C.text, marginTop: 10, lineHeight: 1.25 }}>{title}</div>
-      <div style={{ width: 96, height: 6, background: C.navy, marginTop: 18, marginBottom: 26, borderRadius: 3 }} />
+      <div style={{ fontSize: titleSize, fontWeight: 700, color: C.text, marginTop: 10, lineHeight: 1.25, whiteSpace: "nowrap" }}>{title}</div>
+      <div style={{ width: 96, height: 6, background: C.navy, marginTop: 16, marginBottom: 22, borderRadius: 3 }} />
     </div>
   );
 };
@@ -205,7 +206,7 @@ export const Points: React.FC<{ items: { text: React.ReactNode; at: string | num
   );
 };
 
-/** 現場の課題 ➔ ハコよみの解決 対比カード（短く力強い要点キーワードに凝縮） */
+/** 現場の課題 ➔ ハコよみの解決 対比カード（左右完全均等グリッド・改行なし・短く力強い要点キーワード） */
 export const ProblemSolutionBanner: React.FC<{
   problem: string;
   solution: string;
@@ -218,10 +219,10 @@ export const ProblemSolutionBanner: React.FC<{
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "1fr auto 1.15fr",
+        gridTemplateColumns: "1fr 50px 1fr",
         gap: 16,
         alignItems: "stretch",
-        marginBottom: 24,
+        marginBottom: 26,
         ...rise(frame, sec(atSec)),
       }}
     >
@@ -231,16 +232,16 @@ export const ProblemSolutionBanner: React.FC<{
           background: C.base,
           border: `2px solid ${C.line}`,
           borderRadius: 14,
-          padding: "16px 22px",
+          padding: "16px 24px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 16, fontWeight: 700, color: C.sub, letterSpacing: 1.5 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 18, fontWeight: 700, color: C.sub, letterSpacing: 1.5 }}>
           <span>現場の課題</span>
         </div>
-        <div style={{ fontSize: 30, fontWeight: 700, color: C.text, marginTop: 4, lineHeight: 1.3 }}>
+        <div style={{ fontSize: 32, fontWeight: 700, color: C.text, marginTop: 4, lineHeight: 1.25, whiteSpace: "nowrap" }}>
           {problem}
         </div>
       </div>
@@ -252,9 +253,8 @@ export const ProblemSolutionBanner: React.FC<{
           alignItems: "center",
           justifyContent: "center",
           color: C.navy,
-          fontSize: 34,
+          fontSize: 36,
           fontWeight: 900,
-          padding: "0 4px",
         }}
       >
         ➔
@@ -266,17 +266,17 @@ export const ProblemSolutionBanner: React.FC<{
           background: C.navy,
           border: `2px solid ${C.navy}`,
           borderRadius: 14,
-          padding: "16px 22px",
+          padding: "16px 24px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           boxShadow: "0 8px 24px rgba(30, 58, 95, 0.22)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 16, fontWeight: 700, color: "#93C5FD", letterSpacing: 1.5 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 18, fontWeight: 700, color: "#93C5FD", letterSpacing: 1.5 }}>
           <span>ハコよみ</span>
         </div>
-        <div style={{ fontSize: 30, fontWeight: 700, color: C.white, marginTop: 4, lineHeight: 1.3 }}>
+        <div style={{ fontSize: 32, fontWeight: 700, color: C.white, marginTop: 4, lineHeight: 1.25, whiteSpace: "nowrap" }}>
           {solution}
         </div>
       </div>
@@ -291,11 +291,11 @@ export interface FeaturePoint {
   at: string | number;
 }
 
-/** 実務メリットを簡潔な2行構成（大文字タイトル 40px ＋ 要点サブ 28px）で整然と配置するリスト */
+/** 実務メリットを簡潔な2行構成（大文字タイトル 42px ＋ 要点サブ 28px）で整然と配置するリスト */
 export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
   const frame = useCurrentFrame();
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 4 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 6 }}>
       {items.map((it, i) => {
         const atSec = typeof it.at === "number" ? it.at : lineTiming(it.at).inScene;
         return (
@@ -304,8 +304,8 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             style={{
               display: "flex",
               alignItems: "flex-start",
-              gap: 20,
-              padding: "14px 12px",
+              gap: 22,
+              padding: "16px 14px",
               borderBottom: "1.5px solid rgba(30, 58, 95, 0.12)",
               ...rise(frame, sec(atSec)),
             }}
@@ -313,15 +313,15 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             {/* スマートな番号インジケーター */}
             <div
               style={{
-                width: 44,
-                height: 44,
-                borderRadius: 22,
+                width: 48,
+                height: 48,
+                borderRadius: 24,
                 background: C.navy,
                 color: C.white,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 22,
+                fontSize: 24,
                 fontWeight: 900,
                 flexShrink: 0,
                 marginTop: 2,
@@ -331,7 +331,7 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                 {it.badge ? (
                   <span
                     style={{
@@ -349,7 +349,7 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
                     {it.badge}
                   </span>
                 ) : null}
-                <div style={{ fontSize: 40, fontWeight: 700, color: C.text, lineHeight: 1.25, whiteSpace: "nowrap" }}>
+                <div style={{ fontSize: 42, fontWeight: 700, color: C.text, lineHeight: 1.2, whiteSpace: "nowrap" }}>
                   {it.title}
                 </div>
               </div>

@@ -11,8 +11,8 @@ export const PHONE_BEZEL = 9;
 export const PHONE_RIM = 3;
 export const PHONE_OUTER_W = PHONE_INNER_W + (PHONE_BEZEL + PHONE_RIM) * 2; // 414
 export const PHONE_OUTER_H = PHONE_SCREEN_H + (PHONE_BEZEL + PHONE_RIM) * 2; // 926
-export const PHONE_SCALE = 1.08; // 画面を大きく表示（実寸高さ 約1000px、上下40pxずつの完全中央配置）
-export const PHONE_CX = 400; // 左側のスマホ中心 X 座標
+export const PHONE_SCALE = 1.12; // 画面を最大限大きく表示（実寸高さ 約1037px、上下21pxずつの迫力ある中央配置）
+export const PHONE_CX = 375; // 左側のスマホ中心 X 座標
 export const PHONE_CY = H / 2; // 画面上下中央（540px）
 
 /** iPhone 16 Pro スタイルのリアルな筐体フレーム。

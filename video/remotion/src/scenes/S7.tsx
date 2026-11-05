@@ -171,16 +171,16 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
       <AbsoluteFill
         style={{
           background:
-            "linear-gradient(180deg, rgba(12, 23, 39, 0.15) 0%, rgba(15, 30, 52, 0.28) 42%, rgba(10, 18, 32, 0.85) 75%, rgba(10, 18, 32, 0.96) 100%)",
+            "linear-gradient(180deg, rgba(12, 23, 39, 0.08) 0%, rgba(15, 30, 52, 0.18) 50%, rgba(10, 18, 32, 0.82) 80%, rgba(10, 18, 32, 0.95) 100%)",
         }}
       />
 
-      {/* お二人の顔がしっかり見え、字幕バーとも重ならないよう、文字群をほどよい高さへ配置 */}
+      {/* 字幕なしに最適化：お二人の表情がしっかり見え、画面下部まで美しく均等にレイアウト */}
       <AbsoluteFill
         style={{
           justifyContent: "flex-end",
           alignItems: "center",
-          paddingBottom: 175,
+          paddingBottom: 90,
         }}
       >
         <div
