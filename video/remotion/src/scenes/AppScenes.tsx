@@ -68,11 +68,34 @@ const RealAbuseDocumentChaosCanvas: React.FC = () => {
           bottom: 20,
         }}
       >
+        {/* 背景にチラ見えする販売証票シール台紙（別添8.xls 本物PNG） */}
+        <div
+          style={{
+            position: "absolute",
+            top: 260,
+            left: 450,
+            width: 380,
+            transform: "rotate(-6deg)",
+            boxShadow: "0 10px 25px rgba(15, 23, 42, 0.15)",
+            borderRadius: 6,
+            overflow: "hidden",
+            border: "1.5px solid #94A3B8",
+            background: C.white,
+            zIndex: 1,
+            opacity: 0.85,
+          }}
+        >
+          <div style={{ background: "#475569", color: C.white, padding: "4px 10px", fontSize: 12, fontWeight: 700 }}>
+            販売証票（別添8・シール台紙）
+          </div>
+          <Img src={staticFile("real/doc-stamp-sheet.png")} style={{ width: "100%", display: "block" }} />
+        </div>
+
         {/* 1. 日本薬剤師会『業務手順書モデル』（20260205_01.pdf 本物PNG） */}
         <div
           style={{
             position: "absolute",
-            top: 24,
+            top: 10,
             left: 10,
             width: 440,
             transform: "rotate(-3.5deg)",
@@ -101,9 +124,9 @@ const RealAbuseDocumentChaosCanvas: React.FC = () => {
         <div
           style={{
             position: "absolute",
-            top: 360,
-            left: 30,
-            width: 500,
+            top: 340,
+            left: 20,
+            width: 490,
             transform: "rotate(2deg)",
             boxShadow: "0 18px 40px rgba(15, 23, 42, 0.25)",
             borderRadius: 8,
@@ -124,7 +147,7 @@ const RealAbuseDocumentChaosCanvas: React.FC = () => {
               display: "block",
             }}
           />
-          <div style={{ background: "#DC2626", color: C.white, padding: "8px 14px", fontSize: 13, fontWeight: 700, textAlign: "center" }}>
+          <div style={{ background: "#DC2626", color: C.white, padding: "7px 12px", fontSize: 13, fontWeight: 700, textAlign: "center" }}>
             ※購入者1人あたり10項目以上を店頭でチェック・確認必須！
           </div>
         </div>
@@ -133,24 +156,24 @@ const RealAbuseDocumentChaosCanvas: React.FC = () => {
         <div
           style={{
             position: "absolute",
-            top: 10,
-            left: 510,
-            width: 710,
-            height: 870,
-            transform: "rotate(1deg)",
-            boxShadow: "0 24px 50px rgba(15, 23, 42, 0.32)",
+            top: 5,
+            left: 500,
+            width: 730,
+            height: 885,
+            transform: "rotate(0.5deg)",
+            boxShadow: "0 26px 55px rgba(15, 23, 42, 0.35)",
             borderRadius: 10,
             overflow: "hidden",
-            border: "2.5px solid #D97706",
+            border: "3px solid #D97706",
             background: "#FFFDF5",
-            zIndex: 5,
+            zIndex: 6,
             display: "flex",
             flexDirection: "column",
           }}
         >
           <div style={{ background: "#D97706", color: C.white, padding: "8px 18px", fontSize: 16, fontWeight: 900, display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
-            <span style={{ fontSize: 18 }}>医薬品販売記録（本物様式例・紙の手書き作業）</span>
-            <span style={{ background: "#DC2626", padding: "3px 10px", borderRadius: 4, fontSize: 13 }}>法令上必須・2年間保存</span>
+            <span style={{ fontSize: 18 }}>医薬品販売記録（本物様式例・紙の手書き記録作業）</span>
+            <span style={{ background: "#DC2626", padding: "4px 12px", borderRadius: 4, fontSize: 13, fontWeight: 900 }}>法令上必須・2年間保存</span>
           </div>
           <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
             <Img
@@ -164,103 +187,114 @@ const RealAbuseDocumentChaosCanvas: React.FC = () => {
             <div
               style={{
                 position: "absolute",
-                bottom: 20,
-                right: 20,
-                transform: "rotate(-3.5deg)",
-                filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.25))",
+                bottom: 25,
+                right: 25,
+                transform: "rotate(-3deg)",
+                filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.3))",
               }}
             >
               <Img
                 src={staticFile("real/stamp-sold.png")}
                 style={{
-                  width: 240,
+                  width: 250,
                   display: "block",
                   borderRadius: 4,
-                  border: "1.5px solid rgba(0,0,0,0.12)",
+                  border: "1.5px solid rgba(0,0,0,0.15)",
                 }}
               />
             </div>
           </div>
         </div>
 
-        {/* 4. 指定濫用防止医薬品 対象成分拡大リスト（右上、幅580pxで美しく収める） */}
+        {/* 4. 本日ダウンロードの店頭POP（20260205_04.ppt 本物PNG、QRカードの下から展開） */}
         <div
           style={{
             position: "absolute",
-            top: 20,
-            left: 1250,
-            right: 10,
-            background: C.white,
-            border: `2.5px solid ${C.navy}`,
-            borderRadius: 12,
-            padding: "18px 22px",
+            top: 40,
+            left: 1270,
+            right: 20,
             transform: "rotate(-1.5deg)",
-            boxShadow: "0 16px 36px rgba(30, 58, 95, 0.22)",
-            zIndex: 3,
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ background: "#DC2626", color: C.white, fontSize: 15, fontWeight: 900, padding: "4px 8px", borderRadius: 6 }}>
-              対象成分拡大
-            </span>
-            <span style={{ fontSize: 22, fontWeight: 900, color: C.navy }}>
-              指定濫用防止医薬品
-            </span>
-          </div>
-          <div style={{ fontSize: 15, fontWeight: 700, color: C.sub, marginTop: 4 }}>
-            総合感冒薬・鎮咳薬の多数が該当（パブロン・新ルル・ブロン等）
-          </div>
-
-          {/* 成分バッジの群れ */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>
-            {["ジヒドロコデイン", "コデイン", "ブロモバレリル尿素", "エフェドリン", "プソイドエフェドリン", "メチルエフェドリン", "デキストロメトルファン"].map((c, i) => (
-              <span
-                key={i}
-                style={{
-                  background: C.navySoft,
-                  border: "1.5px solid #CBD5E1",
-                  color: C.navy,
-                  fontSize: 16,
-                  fontWeight: 700,
-                  padding: "5px 12px",
-                  borderRadius: 8,
-                }}
-              >
-                ⚠ {c}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* 5. 現場の過重負担コールアウト（右下、特大赤スタンプ付箋） */}
-        <div
-          style={{
-            position: "absolute",
-            top: 380,
-            left: 1250,
-            right: 10,
-            background: "#DC2626",
-            color: C.white,
-            borderRadius: 12,
-            padding: "20px 24px",
-            transform: "rotate(1.5deg)",
-            boxShadow: "0 16px 36px rgba(220, 38, 38, 0.45)",
-            display: "flex",
-            flexDirection: "column",
-            gap: 6,
+            boxShadow: "0 18px 40px rgba(15, 23, 42, 0.22)",
+            borderRadius: 10,
+            overflow: "hidden",
+            border: "2px solid #DC2626",
+            background: C.white,
             zIndex: 4,
           }}
         >
-          <div style={{ fontSize: 26, fontWeight: 900, letterSpacing: 1 }}>
-            現場の悲鳴：確認・記録業務がパンク！
+          <div style={{ background: "#DC2626", color: C.white, padding: "5px 14px", fontSize: 13, fontWeight: 900, display: "flex", justifyContent: "space-between" }}>
+            <span>店頭掲示用POP文書（本物様式）</span>
+            <span>18歳未満複数個販売禁止</span>
           </div>
-          <div style={{ fontSize: 17, fontWeight: 700, opacity: 0.98, lineHeight: 1.4 }}>
-            ・1人1人これら全てを手書き記入<br />
+          <Img
+            src={staticFile("real/doc-pop-notice.png")}
+            style={{
+              width: "100%",
+              display: "block",
+            }}
+          />
+        </div>
+
+        {/* 5. 本日ダウンロードの販売・陳列一覧（20260205_06.ppt 本物PNG） */}
+        <div
+          style={{
+            position: "absolute",
+            top: 470,
+            left: 1290,
+            right: 15,
+            height: 240,
+            transform: "rotate(2deg)",
+            boxShadow: "0 16px 36px rgba(15, 23, 42, 0.2)",
+            borderRadius: 8,
+            overflow: "hidden",
+            border: "1.5px solid #2563EB",
+            background: C.white,
+            zIndex: 3,
+          }}
+        >
+          <div style={{ background: "#2563EB", color: C.white, padding: "5px 12px", fontSize: 13, fontWeight: 700, display: "flex", justifyContent: "space-between" }}>
+            <span>対面販売・陳列管理規定（本物様式）</span>
+            <span>手の届かない陳列義務</span>
+          </div>
+          <Img
+            src={staticFile("real/doc-sales-rules.png")}
+            style={{
+              width: "100%",
+              display: "block",
+            }}
+          />
+        </div>
+
+        {/* 6. 現場の過重負担コールアウト（右下前面、特大赤スタンプ付箋） */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 12,
+            left: 1255,
+            right: 15,
+            background: "linear-gradient(135deg, #DC2626, #B91C1C)",
+            color: C.white,
+            borderRadius: 12,
+            padding: "16px 20px",
+            transform: "rotate(-1deg)",
+            boxShadow: "0 20px 45px rgba(220, 38, 38, 0.5)",
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+            zIndex: 7,
+            border: "2px solid #FCA5A5",
+          }}
+        >
+          <div style={{ fontSize: 24, fontWeight: 900, letterSpacing: 0.5 }}>
+            現場の悲鳴：確認・記録がパンク！
+          </div>
+          <div style={{ fontSize: 15, fontWeight: 700, opacity: 0.98, lineHeight: 1.35 }}>
+            ・1人1人これら全てを手書き記録<br />
             ・法令に基づき2年間の紙保管義務<br />
             ・他店での直近購入履歴は紙では確認不能！
           </div>
-          <div style={{ fontSize: 15, fontWeight: 700, color: "#FEF08A", marginTop: 4, borderTop: "1px dashed rgba(255,255,255,0.4)", paddingTop: 6 }}>
-            ※店頭オペレーションが崩壊の危機に直面
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#FEF08A", borderTop: "1px dashed rgba(255,255,255,0.4)", paddingTop: 4 }}>
+            ※2026年5月施行：店頭オペレーションが崩壊の危機
           </div>
         </div>
       </div>
