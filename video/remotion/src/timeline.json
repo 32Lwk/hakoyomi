@@ -26,7 +26,7 @@
       "id": "S2b",
       "title": "指定濫用防止医薬品の確認・記録",
       "startSec": 59.6,
-      "durationSec": 16,
+      "durationSec": 24.7,
       "recording": true,
       "segments": [
         {
@@ -39,7 +39,7 @@
     {
       "id": "S3",
       "title": "2〜4品の比較",
-      "startSec": 75.6,
+      "startSec": 84.3,
       "durationSec": 13.8,
       "recording": true,
       "segments": [
@@ -73,7 +73,7 @@
     {
       "id": "S4",
       "title": "質問は、チャットでも",
-      "startSec": 89.4,
+      "startSec": 98.1,
       "durationSec": 17,
       "recording": true,
       "segments": [
@@ -97,7 +97,7 @@
     {
       "id": "S5",
       "title": "症状の言葉から探す → 棚",
-      "startSec": 106.4,
+      "startSec": 115.1,
       "durationSec": 18,
       "recording": true,
       "segments": [
@@ -131,7 +131,7 @@
     {
       "id": "S6",
       "title": "ベテランのコツを受け継ぐ",
-      "startSec": 124.4,
+      "startSec": 133.1,
       "durationSec": 20,
       "recording": true,
       "segments": [
@@ -165,7 +165,7 @@
     {
       "id": "S7",
       "title": "Claude の使い方と結び",
-      "startSec": 144.4,
+      "startSec": 153.1,
       "durationSec": 24.6
     }
   ]

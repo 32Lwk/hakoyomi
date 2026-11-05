@@ -205,7 +205,7 @@ export const Points: React.FC<{ items: { text: React.ReactNode; at: string | num
   );
 };
 
-/** 現場の課題 ➔ ハコよみの解決 対比カード（デザインルール準拠：絵文字なし・赤色なし） */
+/** 現場の課題 ➔ ハコよみの解決 対比カード（短く力強い要点キーワードに凝縮） */
 export const ProblemSolutionBanner: React.FC<{
   problem: string;
   solution: string;
@@ -221,7 +221,7 @@ export const ProblemSolutionBanner: React.FC<{
         gridTemplateColumns: "1fr auto 1.15fr",
         gap: 16,
         alignItems: "stretch",
-        marginBottom: 26,
+        marginBottom: 24,
         ...rise(frame, sec(atSec)),
       }}
     >
@@ -229,9 +229,9 @@ export const ProblemSolutionBanner: React.FC<{
       <div
         style={{
           background: C.base,
-          border: `1.5px solid ${C.line}`,
-          borderRadius: 16,
-          padding: "18px 24px",
+          border: `2px solid ${C.line}`,
+          borderRadius: 14,
+          padding: "16px 22px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -240,7 +240,7 @@ export const ProblemSolutionBanner: React.FC<{
         <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 16, fontWeight: 700, color: C.sub, letterSpacing: 1.5 }}>
           <span>現場の課題</span>
         </div>
-        <div style={{ fontSize: 27, fontWeight: 700, color: C.text, marginTop: 6, lineHeight: 1.35 }}>
+        <div style={{ fontSize: 30, fontWeight: 700, color: C.text, marginTop: 4, lineHeight: 1.3 }}>
           {problem}
         </div>
       </div>
@@ -252,7 +252,7 @@ export const ProblemSolutionBanner: React.FC<{
           alignItems: "center",
           justifyContent: "center",
           color: C.navy,
-          fontSize: 32,
+          fontSize: 34,
           fontWeight: 900,
           padding: "0 4px",
         }}
@@ -264,9 +264,9 @@ export const ProblemSolutionBanner: React.FC<{
       <div
         style={{
           background: C.navy,
-          border: `1.5px solid ${C.navy}`,
-          borderRadius: 16,
-          padding: "18px 24px",
+          border: `2px solid ${C.navy}`,
+          borderRadius: 14,
+          padding: "16px 22px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -276,7 +276,7 @@ export const ProblemSolutionBanner: React.FC<{
         <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 16, fontWeight: 700, color: "#93C5FD", letterSpacing: 1.5 }}>
           <span>ハコよみ</span>
         </div>
-        <div style={{ fontSize: 27, fontWeight: 700, color: C.white, marginTop: 6, lineHeight: 1.35 }}>
+        <div style={{ fontSize: 30, fontWeight: 700, color: C.white, marginTop: 4, lineHeight: 1.3 }}>
           {solution}
         </div>
       </div>
@@ -291,11 +291,11 @@ export interface FeaturePoint {
   at: string | number;
 }
 
-/** 実務メリットを2行構成（特大黒文字 40px ＋ 補足説明 26px）で言い切り、右下の余白を埋めて堂々と見せるプレゼン用リスト */
+/** 実務メリットを簡潔な2行構成（大文字タイトル 40px ＋ 要点サブ 28px）で整然と配置するリスト */
 export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
   const frame = useCurrentFrame();
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 18, marginTop: 4 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 4 }}>
       {items.map((it, i) => {
         const atSec = typeof it.at === "number" ? it.at : lineTiming(it.at).inScene;
         return (
@@ -304,8 +304,8 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             style={{
               display: "flex",
               alignItems: "flex-start",
-              gap: 22,
-              padding: "16px 14px",
+              gap: 20,
+              padding: "14px 12px",
               borderBottom: "1.5px solid rgba(30, 58, 95, 0.12)",
               ...rise(frame, sec(atSec)),
             }}
@@ -324,14 +324,14 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
                 fontSize: 22,
                 fontWeight: 900,
                 flexShrink: 0,
-                marginTop: 4,
+                marginTop: 2,
               }}
             >
               0{i + 1}
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 {it.badge ? (
                   <span
                     style={{
@@ -354,7 +354,7 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
                 </div>
               </div>
               {it.desc ? (
-                <div style={{ fontSize: 26, fontWeight: 500, color: C.sub, lineHeight: 1.4, paddingLeft: 2 }}>
+                <div style={{ fontSize: 28, fontWeight: 500, color: C.sub, lineHeight: 1.35, paddingLeft: 2 }}>
                   {it.desc}
                 </div>
               ) : null}

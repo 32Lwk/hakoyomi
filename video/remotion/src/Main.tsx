@@ -12,7 +12,7 @@ import { C } from "./theme";
 import { SCENES, sec, type SceneId } from "./timeline";
 
 export type MainProps = { pipeline: PipelineProps; s7: S7Props; narration: boolean; subtitles: boolean };
-export const mainDefaults: MainProps = { pipeline: pipelineDefaults, s7: s7Defaults, narration: true, subtitles: true };
+export const mainDefaults: MainProps = { pipeline: pipelineDefaults, s7: s7Defaults, narration: true, subtitles: false };
 
 const render = (id: SceneId, p: MainProps) => {
   switch (id) {

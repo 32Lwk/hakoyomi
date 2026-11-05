@@ -69,19 +69,26 @@
     "durationSec": 3.79,
     "endSec": 34.41
   },
-  "s2b-1": {
+  "s2b-0": {
     "start": 0.45,
-    "duration": 6.07,
+    "duration": 8.26,
     "startSec": 0.45,
+    "durationSec": 8.26,
+    "endSec": 8.71
+  },
+  "s2b-1": {
+    "start": 9.16,
+    "duration": 6.07,
+    "startSec": 9.16,
     "durationSec": 6.07,
-    "endSec": 6.52
+    "endSec": 15.23
   },
   "s2b-2": {
-    "start": 6.97,
+    "start": 15.68,
     "duration": 7.83,
-    "startSec": 6.97,
+    "startSec": 15.68,
     "durationSec": 7.83,
-    "endSec": 14.8
+    "endSec": 23.51
   },
   "s3-1": {
     "start": 0.4,
