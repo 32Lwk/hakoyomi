@@ -404,25 +404,22 @@ const RealAbuseDocumentChaosCanvas: React.FC = () => {
         <div
           style={{
             position: "absolute",
-            top: 420,
-            left: 490,
-            width: 860,
-            transform: "rotate(-3.5deg)",
-            background: "linear-gradient(135deg, rgba(220, 38, 38, 0.96), rgba(185, 28, 28, 0.96))",
-            color: C.white,
-            padding: "16px 28px",
-            borderRadius: 14,
-            boxShadow: "0 24px 60px rgba(0, 0, 0, 0.5)",
-            border: "3px solid #FEF08A",
+            top: 410,
+            left: 450,
+            width: 940,
+            transform: "rotate(-3deg)",
+            background: "linear-gradient(135deg, rgba(220, 38, 38, 0.98), rgba(185, 28, 28, 0.98))",
+            color: "#FEF08A",
+            padding: "20px 36px",
+            borderRadius: 16,
+            boxShadow: "0 28px 65px rgba(0, 0, 0, 0.6)",
+            border: "4px solid #FEF08A",
             zIndex: 30,
             textAlign: "center",
           }}
         >
-          <div style={{ fontSize: 32, fontWeight: 900, letterSpacing: 2, color: "#FEF08A" }}>
-            毎回の紙手書きは、現場の限界！
-          </div>
-          <div style={{ fontSize: 21, fontWeight: 800, marginTop: 4, letterSpacing: 1 }}>
-            他店での購入履歴は、紙では絶対に追えない
+          <div style={{ fontSize: 48, fontWeight: 900, letterSpacing: 3, whiteSpace: "nowrap" }}>
+            毎回の紙手書きは現場の限界！
           </div>
         </div>
 
@@ -477,14 +474,12 @@ export const S2b: React.FC = () => {
         items={[
           {
             badge: "系列店照合",
-            title: "重複・多量購入をリアルタイム検知",
-            desc: "PII非保持で他店舗の購入履歴を安全かつ瞬時に照合",
+            title: "重複・多量購入を即時検知",
             at: "s2b-1",
           },
           {
             badge: "10秒で完了",
-            title: "販売記録の下書きをClaudeが自動作成",
-            desc: "確認項目をチェックするだけで要約と記録保存が完了",
+            title: "販売記録の下書きを自動作成",
             at: "s2b-2",
           },
         ]}
@@ -504,19 +499,16 @@ export const S3: React.FC = () => (
         {
           badge: "横並び比較",
           title: "成分と用量の差を一目で把握",
-          desc: "1日最大量や有効成分の違いを横並びで瞬時に整理",
           at: "s3-1",
         },
         {
           badge: "着眼点要約",
-          title: "説明の分岐点をClaudeが自動整理",
-          desc: "ベテランが重視する『どう説明し分けるか』のコツを提示",
+          title: "説明の分岐点をClaudeが整理",
           at: out("S3", 30.3),
         },
         {
           badge: "提案力向上",
-          title: "新人でも自信を持って店頭で提案",
-          desc: "お客様一人ひとりの状況に合わせた最適な提案へ直結",
+          title: "自信を持って店頭で提案",
           at: out("S3", 38.2),
         },
       ]}
@@ -535,19 +527,16 @@ export const S4: React.FC<{ pipeline?: PipelineProps }> = () => (
         {
           badge: "チャット検索",
           title: "店頭の疑問を自然な言葉で質問",
-          desc: "『授乳中について書いてある？』など店頭の相談を即座に検索",
           at: "s4-1",
         },
         {
           badge: "客観的根拠",
-          title: "PMDA添付文書から該当箇所を特定",
-          desc: "BM25とRAGで該当箇所だけを客観的・ピンポイントに特定",
+          title: "PMDA添付文書から根拠を特定",
           at: out("S4", 10.5),
         },
         {
-          badge: "即答サポート",
-          title: "接客を止めずに数秒で手元にお届け",
-          desc: "分厚い資料を探す時間をゼロにし、お客様との対話に集中",
+          badge: "即答支援",
+          title: "接客を止めずに数秒で確認",
           at: out("S4", 12),
         },
       ]}
@@ -566,19 +555,16 @@ export const S5: React.FC = () => (
         {
           badge: "ワンタップ絞込",
           title: "よくある相談条件から一瞬で絞込",
-          desc: "『眠気注意なし』などよく聞かれる条件チップをタップするだけ",
           at: "s5-1",
         },
         {
-          badge: "一覧即座表示",
-          title: "候補薬を大きなカードで一覧表示",
-          desc: "大きな商品カードでスクロール不要、目的の薬を迷わずすぐ発見",
+          badge: "一覧表示",
+          title: "候補薬を迷わずすぐ発見",
           at: out("S5", 8.8),
         },
         {
-          badge: "棚 6B-5 直通",
-          title: "棚正面図でお客様をスムーズ案内",
-          desc: "売場図と琥珀色ハイライトでお客様をスムーズに棚まで直行案内",
+          badge: "棚図直通",
+          title: "棚の場所までスムーズ案内",
           at: out("S5", 14.1),
         },
       ]}
@@ -700,20 +686,17 @@ export const S6: React.FC = () => (
           </div>
           <div
             style={{
-              padding: "14px 18px",
+              padding: "16px 20px",
               background: C.white,
               borderRadius: 12,
               border: "1.5px solid rgba(30, 58, 95, 0.2)",
               display: "flex",
-              flexDirection: "column",
-              gap: 4,
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <div style={{ fontSize: 26, fontWeight: 700, color: C.navy, whiteSpace: "nowrap" }}>
+            <div style={{ fontSize: 28, fontWeight: 700, color: C.navy, whiteSpace: "nowrap" }}>
               「先輩から受け継がれた接客のコツ」
-            </div>
-            <div style={{ fontSize: 20, color: C.sub, fontWeight: 500, whiteSpace: "nowrap" }}>
-              同成分の薬を開いた瞬間、最優先で手元に表示
             </div>
           </div>
         </div>

@@ -309,11 +309,11 @@ export interface FeaturePoint {
   at: string | number;
 }
 
-/** 実務メリットを簡潔な2行構成（大文字タイトル 42px ＋ 要点サブ 28px）で整然と配置するリスト */
+/** デモを邪魔せず、音声の補助として要点のみを瞬時に伝えるスマートな1行リスト */
 export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
   const frame = useCurrentFrame();
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 6 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 16 }}>
       {items.map((it, i) => {
         const atSec = typeof it.at === "number" ? it.at : lineTiming(it.at).inScene;
         return (
@@ -321,9 +321,9 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             key={i}
             style={{
               display: "flex",
-              alignItems: "flex-start",
-              gap: 22,
-              padding: "16px 14px",
+              alignItems: "center",
+              gap: 20,
+              padding: "16px 16px",
               borderBottom: "1.5px solid rgba(30, 58, 95, 0.12)",
               ...rise(frame, sec(atSec)),
             }}
@@ -331,52 +331,49 @@ export const FeatureList: React.FC<{ items: FeaturePoint[] }> = ({ items }) => {
             {/* スマートな番号インジケーター */}
             <div
               style={{
-                width: 48,
-                height: 48,
-                borderRadius: 24,
+                width: 44,
+                height: 44,
+                borderRadius: 22,
                 background: C.navy,
                 color: C.white,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: 900,
                 flexShrink: 0,
-                marginTop: 2,
               }}
             >
               0{i + 1}
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                {it.badge ? (
-                  <span
-                    style={{
-                      background: C.navySoft,
-                      color: C.navy,
-                      fontSize: 22,
-                      fontWeight: 700,
-                      padding: "4px 14px",
-                      borderRadius: 6,
-                      letterSpacing: 0.5,
-                      flexShrink: 0,
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {it.badge}
-                  </span>
-                ) : null}
-                <div style={{ fontSize: 42, fontWeight: 700, color: C.text, lineHeight: 1.2, whiteSpace: "nowrap" }}>
-                  {it.title}
-                </div>
-              </div>
-              {it.desc ? (
-                <div style={{ fontSize: 28, fontWeight: 500, color: C.sub, lineHeight: 1.35, paddingLeft: 2 }}>
-                  {it.desc}
-                </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 14, flex: 1 }}>
+              {it.badge ? (
+                <span
+                  style={{
+                    background: C.navySoft,
+                    color: C.navy,
+                    fontSize: 22,
+                    fontWeight: 700,
+                    padding: "4px 14px",
+                    borderRadius: 6,
+                    letterSpacing: 0.5,
+                    flexShrink: 0,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {it.badge}
+                </span>
               ) : null}
+              <div style={{ fontSize: 38, fontWeight: 700, color: C.text, lineHeight: 1.2, whiteSpace: "nowrap" }}>
+                {it.title}
+              </div>
             </div>
+            {it.desc ? (
+              <div style={{ fontSize: 24, fontWeight: 500, color: C.sub, lineHeight: 1.35, paddingLeft: 2 }}>
+                {it.desc}
+              </div>
+            ) : null}
           </div>
         );
       })}

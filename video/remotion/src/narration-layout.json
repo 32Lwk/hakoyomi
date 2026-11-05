@@ -78,17 +78,17 @@
   },
   "s2b-1": {
     "start": 12.96,
-    "duration": 7.69,
+    "duration": 8.83,
     "startSec": 12.96,
-    "durationSec": 7.69,
-    "endSec": 20.65
+    "durationSec": 8.83,
+    "endSec": 21.79
   },
   "s2b-2": {
-    "start": 20.95,
-    "duration": 10.12,
-    "startSec": 20.95,
-    "durationSec": 10.12,
-    "endSec": 31.07
+    "start": 22.09,
+    "duration": 9.68,
+    "startSec": 22.09,
+    "durationSec": 9.68,
+    "endSec": 31.77
   },
   "s3-1": {
     "start": 0.3,
