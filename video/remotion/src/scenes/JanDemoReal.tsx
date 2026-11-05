@@ -78,10 +78,10 @@ const Caption: React.FC<{ frame: number }> = ({ frame }) => {
 const Panel: React.FC<{ frame: number }> = ({ frame }) => {
   const pts = [
     { at: 10.4, text: "接客前チェック：お客様への問いかけが瞬時にそろう", note: "最初に確認すべき重要ポイントを自動で整理" },
-    { at: 21.0, text: "国の機関（PMDA等）のデータを参照し正確に回答", note: "ドーピングやハラール対応も根拠とともにすぐ確認" },
-    { at: 34.0, text: "授乳・運転・年齢・カフェインもワンタップで根拠表示", note: "細かい箱の記載や添付文書をその場で探す手間をゼロに" },
+    { at: 21.0, text: "国の機関（PMDA等）のデータを参照し正確に回答", note: "2026年5月施行「指定濫用防止医薬品」の現場確認フローにも対応" },
+    { at: 34.0, text: "ドーピング・ハラール・授乳・運転もワンタップで根拠表示", note: "細かい箱の記載や添付文書をその場で探す手間をゼロに" },
   ];
-  const fin = ramp(frame, Math.round(44.5 * FPS), 18);
+  const fin = ramp(frame, Math.round(44.0 * FPS), 18);
   return (
     <div style={{ position: "absolute", left: 1040, top: 170, width: 800 }}>
       <div style={rise(frame, Math.round(10.1 * FPS))}>
@@ -100,8 +100,8 @@ const Panel: React.FC<{ frame: number }> = ({ frame }) => {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: 30, padding: "18px 28px", borderRadius: 18, background: C.navy, color: C.white, fontSize: 38, whiteSpace: "nowrap", fontWeight: 700, letterSpacing: 2, opacity: fin, transform: `translateY(${(1 - fin) * 14}px)` }}>
-        新人でも、ベテランと同じ自信で。
+      <div style={{ marginTop: 30, padding: "18px 28px", borderRadius: 18, background: C.navy, color: C.white, fontSize: 36, whiteSpace: "nowrap", fontWeight: 700, letterSpacing: 1.5, opacity: fin, transform: `translateY(${(1 - fin) * 14}px)` }}>
+        同じ知識と経験の共有で、ベテランと同じ自信を。
       </div>
     </div>
   );
