@@ -899,3 +899,125 @@ header {
   animation: pulse-recording 1.2s infinite;
 }
 
+/* インライン原稿編集 */
+.btn-edit-script {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #94A3B8;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s;
+}
+
+.btn-edit-script:hover {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38BDF8;
+  border-color: #38BDF8;
+}
+
+.script-edit-box {
+  background: #0B1320;
+  border: 1.5px solid #38BDF8;
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+}
+
+.edit-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  padding: 8px 12px;
+  resize: vertical;
+  outline: none;
+}
+
+.edit-textarea:focus {
+  border-color: #38BDF8;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.edit-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: #BAE6FD;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 4px 8px;
+  outline: none;
+}
+
+.edit-input:focus {
+  border-color: #38BDF8;
+}
+
+.btn-save-script {
+  background: #10B981;
+  border: none;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.btn-save-script:hover {
+  background: #059669;
+}
+
+.btn-cancel-edit {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  color: var(--text-sub);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-cancel-edit:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.btn-reset-default {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  color: #94A3B8;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-reset-default:hover {
+  border-color: #F87171;
+  color: #F87171;
+}
+
+

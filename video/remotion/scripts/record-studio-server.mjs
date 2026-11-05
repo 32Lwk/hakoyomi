@@ -13,6 +13,8 @@ const PORT = 3030;
 const narrationDir = path.join(root, "public/narration");
 const backupDir = path.join(root, "public/narration_backup_tts");
 const cutsFile = path.join(root, "studio/cuts-data.json");
+const defaultCutsFile = path.join(root, "studio/cuts-data-default.json");
+const linesFile = path.join(root, "src/narration-lines.json");
 const studioDir = path.join(root, "studio");
 
 // 音声ファイルの正確な長さを ffprobe で取得
@@ -265,6 +267,112 @@ const server = http.createServer(async (req, res) => {
           if (fs.existsSync(tempWebm)) fs.unlinkSync(tempWebm);
           if (fs.existsSync(tempMasterWav)) fs.unlinkSync(tempMasterWav);
         } catch (_) {}
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ ok: false, error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // API: 原稿の更新（スタジオ cuts-data.json と動画字幕 narration-lines.json に同時反映）
+  if (pathname === "/api/update-script" && req.method === "POST") {
+    let body = "";
+    req.on("data", (chunk) => (body += chunk));
+    req.on("end", () => {
+      try {
+        const { id, text, speak } = JSON.parse(body);
+        if (!id || !text) {
+          res.writeHead(400, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ ok: false, error: "Missing id or text" }));
+          return;
+        }
+
+        // 1. studio/cuts-data.json を更新
+        let updatedCut = null;
+        if (fs.existsSync(cutsFile)) {
+          const cutsData = JSON.parse(fs.readFileSync(cutsFile, "utf8"));
+          const target = cutsData.cuts.find((c) => c.id === id);
+          if (target) {
+            target.text = text;
+            if (speak !== undefined) target.speak = speak;
+            if (target.customerBubble) target.customerBubble = text;
+            if (target.noviceBubble) target.noviceBubble = `新人「${text}」`;
+            if (target.veteranBubble) target.veteranBubble = `ベテラン「${text}」`;
+            if (target.catchTitle) target.catchTitle = text;
+            updatedCut = target;
+          }
+          fs.writeFileSync(cutsFile, JSON.stringify(cutsData, null, 2), "utf8");
+        }
+
+        // 2. src/narration-lines.json を更新（動画の字幕テロップと100%同期）
+        if (fs.existsSync(linesFile)) {
+          const linesData = JSON.parse(fs.readFileSync(linesFile, "utf8"));
+          const lineTarget = linesData.lines.find((l) => l.id === id);
+          if (lineTarget) {
+            lineTarget.text = text;
+            if (speak !== undefined) lineTarget.speak = speak;
+          }
+          fs.writeFileSync(linesFile, JSON.stringify(linesData, null, 2), "utf8");
+        }
+
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ ok: true, cut: updatedCut }));
+      } catch (err) {
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ ok: false, error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // API: 原稿を初期値にリセット
+  if (pathname === "/api/reset-script" && req.method === "POST") {
+    let body = "";
+    req.on("data", (chunk) => (body += chunk));
+    req.on("end", () => {
+      try {
+        const { id } = JSON.parse(body || "{}");
+        if (!fs.existsSync(defaultCutsFile)) {
+          throw new Error("Default cuts backup not found");
+        }
+
+        const defaultData = JSON.parse(fs.readFileSync(defaultCutsFile, "utf8"));
+        let restoredCut = null;
+
+        if (id) {
+          const defCut = defaultData.cuts.find((c) => c.id === id);
+          if (!defCut) throw new Error(`Default cut ${id} not found`);
+
+          // cuts-data.json を更新
+          const currentData = JSON.parse(fs.readFileSync(cutsFile, "utf8"));
+          const target = currentData.cuts.find((c) => c.id === id);
+          if (target) {
+            target.text = defCut.text;
+            target.speak = defCut.speak;
+            target.tip = defCut.tip;
+            if (target.customerBubble) target.customerBubble = defCut.customerBubble;
+            if (target.noviceBubble) target.noviceBubble = defCut.noviceBubble;
+            if (target.veteranBubble) target.veteranBubble = defCut.veteranBubble;
+            if (target.catchTitle) target.catchTitle = defCut.catchTitle;
+            restoredCut = target;
+          }
+          fs.writeFileSync(cutsFile, JSON.stringify(currentData, null, 2), "utf8");
+
+          // narration-lines.json も更新
+          if (fs.existsSync(linesFile)) {
+            const linesData = JSON.parse(fs.readFileSync(linesFile, "utf8"));
+            const lineTarget = linesData.lines.find((l) => l.id === id);
+            if (lineTarget) {
+              lineTarget.text = defCut.text;
+              lineTarget.speak = defCut.speak;
+            }
+            fs.writeFileSync(linesFile, JSON.stringify(linesData, null, 2), "utf8");
+          }
+        }
+
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ ok: true, cut: restoredCut }));
+      } catch (err) {
         res.writeHead(500, { "Content-Type": "application/json" });
         res.end(JSON.stringify({ ok: false, error: err.message }));
       }

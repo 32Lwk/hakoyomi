@@ -54,6 +54,17 @@ const renderModal = document.getElementById("render-modal");
 const renderLogs = document.getElementById("render-logs");
 const btnCloseModal = document.getElementById("btn-close-modal");
 
+// 原稿編集用 DOM 要素
+const scriptRowView = document.getElementById("script-row-view");
+const scriptRowEdit = document.getElementById("script-row-edit");
+const btnStartEdit = document.getElementById("btn-start-edit");
+const inputEditText = document.getElementById("input-edit-text");
+const inputEditSpeak = document.getElementById("input-edit-speak");
+const btnSaveScript = document.getElementById("btn-save-script");
+const btnCancelEdit = document.getElementById("btn-cancel-edit");
+const btnResetDefault = document.getElementById("btn-reset-default");
+const toastMsg = document.getElementById("toast-msg");
+
 // 1. スライドのリサイズスケール計算 (1920x1080 をアスペクト比維持で最大化)
 function resizeSlide() {
   const wrapper = document.getElementById("slide-wrapper");
@@ -135,6 +146,7 @@ function renderSidebar() {
 // 4. カットの読み込み＆スライド描画
 function loadCut(index) {
   if (index < 0 || index >= cuts.length) return;
+  cancelEditScript();
   currentIndex = index;
   const cut = cuts[index];
 
@@ -770,8 +782,137 @@ btnPlayTts.addEventListener("click", () => {
   playAudio(cut.ttsAudioUrl);
 });
 
+// ==========================================
+// 10. 原稿編集機能（インライン編集＆動画字幕同期）
+// ==========================================
+
+function showToast(text, duration = 2500) {
+  if (!toastMsg) return;
+  toastMsg.textContent = text;
+  toastMsg.style.display = "block";
+  toastMsg.style.opacity = "1";
+  setTimeout(() => {
+    toastMsg.style.opacity = "0";
+    setTimeout(() => {
+      toastMsg.style.display = "none";
+    }, 300);
+  }, duration);
+}
+
+function startEditScript() {
+  if (isRecording || isContinuousMode) return;
+  const cut = cuts[currentIndex];
+  inputEditText.value = cut.text;
+  inputEditSpeak.value = cut.speak || "";
+  scriptRowView.style.display = "none";
+  scriptRowEdit.style.display = "flex";
+  inputEditText.focus();
+  inputEditText.select();
+}
+
+function cancelEditScript() {
+  if (scriptRowEdit) scriptRowEdit.style.display = "none";
+  if (scriptRowView) scriptRowView.style.display = "flex";
+}
+
+async function saveEditScript() {
+  const cut = cuts[currentIndex];
+  const newText = inputEditText.value.trim();
+  const newSpeak = inputEditSpeak.value.trim() || newText;
+
+  if (!newText) {
+    alert("原稿テキストを入力してください");
+    return;
+  }
+
+  btnSaveScript.disabled = true;
+  btnSaveScript.textContent = "保存中...";
+
+  try {
+    const res = await fetch("/api/update-script", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: cut.id,
+        text: newText,
+        speak: newSpeak,
+      }),
+    });
+
+    const data = await res.json();
+    if (data.ok) {
+      cut.text = newText;
+      cut.speak = newSpeak;
+
+      if (cut.customerBubble) cut.customerBubble = newText;
+      if (cut.noviceBubble) cut.noviceBubble = `新人「${newText}」`;
+      if (cut.veteranBubble) cut.veteranBubble = `ベテラン「${newText}」`;
+      if (cut.catchTitle) cut.catchTitle = newText;
+
+      loadCut(currentIndex);
+      renderSidebar();
+      cancelEditScript();
+      showToast("✓ 原稿を更新しました（動画字幕にも反映済）");
+    } else {
+      alert("保存に失敗しました: " + data.error);
+    }
+  } catch (err) {
+    alert("通信エラー: " + err.message);
+  } finally {
+    btnSaveScript.disabled = false;
+    btnSaveScript.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 保存して反映`;
+  }
+}
+
+async function resetDefaultScript() {
+  const cut = cuts[currentIndex];
+  if (!confirm(`カット「${cut.id}」の原稿を初期値に戻しますか？`)) return;
+
+  try {
+    const res = await fetch("/api/reset-script", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: cut.id }),
+    });
+
+    const data = await res.json();
+    if (data.ok && data.cut) {
+      Object.assign(cut, data.cut);
+      loadCut(currentIndex);
+      renderSidebar();
+      cancelEditScript();
+      showToast("✓ 初期原稿に戻しました（動画字幕にも反映済）");
+    } else {
+      alert("リセットに失敗しました: " + (data.error || ""));
+    }
+  } catch (err) {
+    alert("通信エラー: " + err.message);
+  }
+}
+
+// 編集イベント登録
+scriptText.addEventListener("click", startEditScript);
+btnStartEdit.addEventListener("click", startEditScript);
+btnSaveScript.addEventListener("click", saveEditScript);
+btnCancelEdit.addEventListener("click", cancelEditScript);
+btnResetDefault.addEventListener("click", resetDefaultScript);
+
 // キーボードショートカット
 window.addEventListener("keydown", (e) => {
+  // 原稿編集ボックス内のキー操作
+  if (scriptRowEdit && scriptRowEdit.style.display !== "none") {
+    if ((e.metaKey || e.ctrlKey) && e.code === "Enter") {
+      e.preventDefault();
+      saveEditScript();
+      return;
+    } else if (e.code === "Escape") {
+      e.preventDefault();
+      cancelEditScript();
+      return;
+    }
+  }
+
+  // input等にフォーカスがある時は通常のショートカットは無効
   if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
 
   // 通し収録中
@@ -801,6 +942,9 @@ window.addEventListener("keydown", (e) => {
     e.preventDefault();
     const cut = cuts[currentIndex];
     playAudio(cut.audioUrl);
+  } else if (e.code === "KeyE") {
+    e.preventDefault();
+    startEditScript();
   } else if (e.code === "ArrowLeft") {
     e.preventDefault();
     if (currentIndex > 0) loadCut(currentIndex - 1);

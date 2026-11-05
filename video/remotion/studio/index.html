@@ -75,9 +75,15 @@
       <!-- 下部コントロールパネル -->
       <footer class="controls-area">
         <!-- カンペ原稿 -->
-        <div class="script-row">
+        <div class="script-row" id="script-row-view">
           <div class="script-text-wrap">
-            <div class="script-text" id="script-text">読み込み中...</div>
+            <div style="display: flex; align-items: baseline; gap: 14px;">
+              <div class="script-text" id="script-text" title="クリックして編集できます" style="cursor: pointer;">読み込み中...</div>
+              <button class="btn-edit-script" id="btn-start-edit" title="原稿を編集">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                編集
+              </button>
+            </div>
             <div class="script-next-preview" id="script-next-preview" style="font-size: 15px; color: #94A3B8; margin-top: 4px; display: flex; align-items: center; gap: 6px;">
               <span style="background: rgba(255,255,255,0.1); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-size: 11px; color: #38BDF8;">NEXT ➔</span>
               <span id="script-next-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 800px;">次の原稿</span>
@@ -85,6 +91,31 @@
             <div class="script-speak-hint" id="script-speak-hint"></div>
           </div>
           <div class="script-tip" id="script-tip"></div>
+        </div>
+
+        <!-- インライン原稿編集フォーム -->
+        <div class="script-edit-box" id="script-row-edit" style="display: none;">
+          <div style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 12px; font-weight: 700; color: #38BDF8;">✏️ カンペ原稿の編集（動画の字幕テロップにも自動反映されます）</span>
+              <span style="font-size: 11px; color: #94A3B8;">⌘+Enter または 保存ボタンで確定</span>
+            </div>
+            <textarea id="input-edit-text" class="edit-textarea" rows="2" placeholder="カンペ・字幕テキストを入力..."></textarea>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 11px; color: #94A3B8; white-space: nowrap;">読みガイド（任意）:</span>
+              <input type="text" id="input-edit-speak" class="edit-input" placeholder="TTSや発音用（例: ビーエムにじゅうご）">
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; justify-content: center;">
+            <button class="btn-save-script" id="btn-save-script">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              保存して反映
+            </button>
+            <div style="display: flex; gap: 6px;">
+              <button class="btn-cancel-edit" id="btn-cancel-edit">キャンセル</button>
+              <button class="btn-reset-default" id="btn-reset-default" title="初期の原稿テキストに戻します">初期値に戻す</button>
+            </div>
+          </div>
         </div>
 
         <!-- 録音・操作アクション -->
@@ -150,6 +181,11 @@
         </button>
       </div>
     </aside>
+  </div>
+
+  <!-- トースト通知 -->
+  <div id="toast-msg" style="display: none; position: fixed; bottom: 240px; left: 50%; transform: translateX(-50%); background: #10B981; color: #FFFFFF; font-weight: 800; font-size: 15px; padding: 10px 24px; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); z-index: 200; pointer-events: none; transition: opacity 0.3s;">
+    原稿を更新しました（動画字幕にも反映済）
   </div>
 
   <!-- レンダリング進捗モーダル -->
