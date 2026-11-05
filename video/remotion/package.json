@@ -8,6 +8,7 @@
     "sync": "node scripts/sync-recordings.mjs",
     "prestudio": "node scripts/sync-recordings.mjs",
     "studio": "remotion studio src/index.ts",
+    "studio:record": "node scripts/record-studio-server.mjs",
     "narration": "node scripts/narration-voicevox.mjs",
     "narration:voicevox": "node scripts/narration-voicevox.mjs",
     "narration:gemini": "node scripts/narration-gemini.mjs",
