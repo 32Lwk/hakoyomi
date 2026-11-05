@@ -42,7 +42,7 @@ export function optimizeTimelineAndLayout() {
     }
   }
 
-  const GAP = 0.45; // 落ち着いた自然なフレーズ間余白（秒）
+  const GAP = 0.30; // 心地よく自然なフレーズ間余白（秒）
   const layout = {};
   let runningStart = 0;
 
@@ -57,7 +57,7 @@ export function optimizeTimelineAndLayout() {
       const dur = durations[l.id];
       let start;
       if (first) {
-        start = sc.id === "S2" || sc.id === "S2b" || sc.id === "S7" ? 0.45 : 0.4;
+        start = sc.id === "S2" || sc.id === "S2b" || sc.id === "S7" ? 0.35 : 0.3;
       } else {
         start = Math.round((prevEnd + GAP) * 100) / 100;
       }
@@ -78,8 +78,8 @@ export function optimizeTimelineAndLayout() {
       first = false;
     }
 
-    // シーン末尾の余白（S7は結びの余韻 2.0秒、その他は 1.2秒）
-    const padding = sc.id === "S7" ? 2.0 : 1.2;
+    // シーン末尾の余白（180秒以内規定を遵守しつつ適度な余韻を確保）
+    const padding = sc.id === "S7" ? 1.5 : 0.7;
     const newDuration = Math.round((prevEnd + padding) * 10) / 10;
 
     sc.startSec = runningStart;
