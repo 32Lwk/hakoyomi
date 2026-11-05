@@ -140,7 +140,7 @@ ${diffSummary}
 上記商品の違いをもとに、新人登録販売者がお客様に接客・説明する際の「着眼点（客観的分岐点）」と「お客様へのヒアリング事項」を作成してください。`;
 
   try {
-    const model = process.env.CLAUDE_MODEL_FAST || process.env.CLAUDE_MODEL || "claude-haiku-4-5";
+    const model = process.env.CLAUDE_MODEL_FAST || process.env.CLAUDE_MODEL || "claude-haiku-5-5";
     const res = await c.beta.messages.parse({
       model,
       max_tokens: 1024,

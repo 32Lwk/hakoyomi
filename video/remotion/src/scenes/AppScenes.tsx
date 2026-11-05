@@ -1,7 +1,7 @@
 import React from "react";
-import { useCurrentFrame } from "remotion";
-import { AppScene, FeatureList, ProblemSolutionBanner } from "../components/AppScene";
-import { C, FPS } from "../theme";
+import { Img, staticFile, useCurrentFrame } from "remotion";
+import { AppScene, FeatureList, ProblemSolutionBanner, SceneHeading } from "../components/AppScene";
+import { C, FONT, FPS, LAYOUT } from "../theme";
 import { lineTiming } from "../captions";
 import { outputSec, scene, sec, type SceneId } from "../timeline";
 import { type PipelineProps } from "./Pipeline";
@@ -11,211 +11,257 @@ import { type PipelineProps } from "./Pipeline";
 /** 録画の秒 t（cues.json の秒）が場面の何秒目に映るか */
 const out = (id: SceneId, t: number) => outputSec(scene(id), t) ?? 0;
 
-/** S2b-0：厚労省の厳格化通知・紙の確認記録簿・増え続ける対象医薬品が乱雑に散乱するリアル現場ペイン演出 */
-const AbuseRegulationChaosBoard: React.FC = () => {
+/** S2b-0（0〜8.7秒）：画面全体（1920x1080フルスクリーン）に本物のPDF・文書PNGをまばらに散乱させ、大変な記録作業を特大表示して現場の過重負担を圧倒的迫力で主張するキャンバス */
+const RealAbuseDocumentChaosCanvas: React.FC = () => {
   return (
     <div
       style={{
-        position: "relative",
-        width: "100%",
-        height: 640,
-        borderRadius: 16,
-        background: "radial-gradient(ellipse at center, #F8FAFC 0%, #E2E8F0 100%)",
-        border: `2px dashed ${C.line}`,
-        padding: 24,
+        position: "absolute",
+        inset: 0,
+        background: "radial-gradient(ellipse at 50% 40%, #F8FAFC 0%, #E2E8F0 100%)",
+        fontFamily: FONT,
         overflow: "hidden",
-        boxShadow: "inset 0 2px 8px rgba(0,0,0,0.04)",
       }}
     >
-      {/* 背景デスク感の透かしラベル */}
-      <div
-        style={{
-          position: "absolute",
-          top: 16,
-          left: 20,
-          fontSize: 16,
-          fontWeight: 700,
-          color: C.muted,
-          letterSpacing: 2,
-        }}
-      >
-        現場のデスク：増大する紙・確認書類の山
-      </div>
-
-      {/* 1. 厚生労働省 通知公文書カード（左上、-2.5度回転） */}
-      <div
-        style={{
-          position: "absolute",
-          top: 48,
-          left: 20,
-          width: 580,
-          background: C.white,
-          border: `2px solid ${C.line}`,
-          borderRadius: 8,
-          padding: "18px 24px",
-          transform: "rotate(-2.5deg)",
-          boxShadow: "0 12px 28px rgba(15, 23, 42, 0.15)",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", borderBottom: `1.5px solid ${C.line}`, paddingBottom: 10 }}>
-          <div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: C.sub }}>厚生労働省 医薬局総務課 通知（医薬安発 第0214号）</div>
-            <div style={{ fontSize: 22, fontWeight: 900, color: C.text, marginTop: 4 }}>
-              指定濫用防止医薬品の販売時における確認・記録義務の厳格化
-            </div>
-          </div>
-          {/* 厚労省 角印風スタンプ */}
-          <div
-            style={{
-              border: "2px solid #DC2626",
-              color: "#DC2626",
-              borderRadius: 4,
-              padding: "4px 8px",
-              fontSize: 14,
-              fontWeight: 900,
-              transform: "rotate(4deg)",
-              letterSpacing: 1,
-            }}
-          >
-            厚生労働省印
-          </div>
-        </div>
-
-        <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 6, fontSize: 18, color: C.text, lineHeight: 1.4 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, fontWeight: 700, color: "#DC2626" }}>
-            <span style={{ width: 8, height: 8, borderRadius: 4, background: "#DC2626" }} />
-            2026年5月施行：薬機法施行規則の改正
-          </div>
-          <div style={{ fontSize: 16, color: C.sub, paddingLeft: 16 }}>
-            ・氏名および年齢確認（公的身分証明書の提示）<br />
-            ・他店での購入状況および購入理由の聴取<br />
-            ・<strong style={{ color: C.text }}>販売記録（品名・数量・確認結果）の作成および保存義務</strong>
-          </div>
-        </div>
-      </div>
-
-      {/* 2. 現場の手書き「適正販売確認記録簿」（右上〜中央、+2.5度回転） */}
+      {/* 上部ヘッダー（左に見出し、中央〜右寄りに法改正アラートバッジ：QRカードと絶対に被らない安全位置） */}
       <div
         style={{
           position: "absolute",
           top: 36,
-          right: 20,
-          width: 530,
-          background: "#FEFCE8", // 紙のような薄黄
-          border: "2px solid #EAB308",
-          borderRadius: 8,
-          padding: "16px 20px",
-          transform: "rotate(2.5deg)",
-          boxShadow: "0 14px 32px rgba(15, 23, 42, 0.18)",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1.5px solid #CA8A04", paddingBottom: 8 }}>
-          <div style={{ fontSize: 19, fontWeight: 900, color: "#854D0E" }}>
-            適正販売確認記録簿（紙・手書き様式例）
-          </div>
-          <div style={{ fontSize: 14, fontWeight: 700, color: "#DC2626", background: "#FEE2E2", padding: "2px 8px", borderRadius: 4 }}>
-            手書き・手入力必須
-          </div>
-        </div>
-
-        {/* 記録簿の記入テーブル */}
-        <div style={{ marginTop: 10, display: "flex", flexDirection: "column", gap: 8, fontSize: 16, color: "#713F12" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "100px 1fr", gap: 8, borderBottom: "1px dashed #EAB308", paddingBottom: 4 }}>
-            <span style={{ fontWeight: 700 }}>購入者氏名:</span>
-            <span style={{ color: "#1E293B", fontWeight: 500 }}>山田 太郎 殿（28歳）</span>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "100px 1fr", gap: 8, borderBottom: "1px dashed #EAB308", paddingBottom: 4 }}>
-            <span style={{ fontWeight: 700 }}>身元確認:</span>
-            <span style={{ color: "#1E293B", fontWeight: 500 }}>☑ 運転免許証・保険証確認済</span>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "100px 1fr", gap: 8, borderBottom: "1px dashed #EAB308", paddingBottom: 4 }}>
-            <span style={{ fontWeight: 700 }}>他店購入歴:</span>
-            <span style={{ color: "#DC2626", fontWeight: 700 }}>他店舗での直近購入状況の確認要</span>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "100px 1fr", gap: 8 }}>
-            <span style={{ fontWeight: 700 }}>販売者印:</span>
-            <span style={{ color: "#1E293B", fontWeight: 500 }}>川島（登録販売者）㊞</span>
-          </div>
-        </div>
-
-        <div style={{ marginTop: 8, fontSize: 14, fontWeight: 700, color: "#B45309", textAlign: "right" }}>
-          ※1件あたり数分の手書き記入・ファイリング負担
-        </div>
-      </div>
-
-      {/* 3. 増え続ける対象医薬品の警告リスト（中央下、-1度回転） */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 24,
-          left: 40,
-          right: 40,
-          background: C.white,
-          border: `2.5px solid ${C.navy}`,
-          borderRadius: 12,
-          padding: "16px 22px",
-          transform: "rotate(-1deg)",
-          boxShadow: "0 16px 36px rgba(30, 58, 95, 0.22)",
-        }}
-      >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ background: "#DC2626", color: C.white, fontSize: 16, fontWeight: 900, padding: "4px 10px", borderRadius: 6 }}>
-              対象成分拡大
-            </span>
-            <span style={{ fontSize: 24, fontWeight: 900, color: C.navy }}>
-              指定濫用防止医薬品（総合感冒薬・鎮咳薬の多数が該当）
-            </span>
-          </div>
-          <span style={{ fontSize: 16, fontWeight: 700, color: C.sub }}>
-            パブロン・新ルル・ブロン・プレコール等
-          </span>
-        </div>
-
-        {/* 成分バッジの群れ */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 12 }}>
-          {["ジヒドロコデイン", "コデイン", "ブロモバレリル尿素", "エフェドリン", "プソイドエフェドリン", "メチルエフェドリン", "デキストロメトルファン"].map((c, i) => (
-            <span
-              key={i}
-              style={{
-                background: C.navySoft,
-                border: "1.5px solid #CBD5E1",
-                color: C.navy,
-                fontSize: 18,
-                fontWeight: 700,
-                padding: "6px 14px",
-                borderRadius: 8,
-              }}
-            >
-              ⚠ {c}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* 4. 現場の悲鳴スタンプ（右下手前、+5度回転） */}
-      <div
-        style={{
-          position: "absolute",
-          top: 240,
-          right: 32,
-          background: "#DC2626",
-          color: C.white,
-          borderRadius: 10,
-          padding: "12px 20px",
-          transform: "rotate(4deg)",
-          boxShadow: "0 10px 24px rgba(220, 38, 38, 0.35)",
+          left: 80,
+          right: 440, // QRコードカード（幅400+余白）の左端でしっかり止める
           display: "flex",
-          flexDirection: "column",
-          gap: 4,
+          justifyContent: "space-between",
+          alignItems: "center",
           zIndex: 10,
         }}
       >
-        <div style={{ fontSize: 22, fontWeight: 900, letterSpacing: 1 }}>
-          現場の悲鳴：確認・記録がパンク！
+        <SceneHeading id="S2b" title="指定濫用防止医薬品の確認・記録" />
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            background: "#FEF2F2",
+            border: "2px solid #EF4444",
+            padding: "8px 20px",
+            borderRadius: 999,
+            boxShadow: "0 8px 24px rgba(239, 68, 68, 0.2)",
+            flexShrink: 0,
+          }}
+        >
+          <span style={{ width: 10, height: 10, borderRadius: 5, background: "#DC2626" }} />
+          <span style={{ fontSize: 20, fontWeight: 900, color: "#991B1B", letterSpacing: 1 }}>
+            2026年5月施行：改正薬機法により確認・記録が義務化
+          </span>
         </div>
-        <div style={{ fontSize: 16, fontWeight: 500, opacity: 0.95 }}>
-          紙の手書き帳簿では、他店舗の購入履歴も追えない
+      </div>
+
+      {/* デスク上の本物文書散乱エリア（本物のPDF/DOC画像PNGをまばらに散乱・記録作業を特大表示！） */}
+      <div
+        style={{
+          position: "absolute",
+          top: 150,
+          left: 50,
+          right: 50,
+          bottom: 20,
+        }}
+      >
+        {/* 1. 日本薬剤師会『業務手順書モデル』（20260205_01.pdf 本物PNG） */}
+        <div
+          style={{
+            position: "absolute",
+            top: 24,
+            left: 10,
+            width: 440,
+            transform: "rotate(-3.5deg)",
+            boxShadow: "0 14px 34px rgba(15, 23, 42, 0.22)",
+            borderRadius: 6,
+            overflow: "hidden",
+            border: "1.5px solid #CBD5E1",
+            background: C.white,
+            zIndex: 2,
+          }}
+        >
+          <div style={{ background: C.navy, color: C.white, padding: "6px 12px", fontSize: 13, fontWeight: 700, display: "flex", justifyContent: "space-between" }}>
+            <span>日本薬剤師会 手順書モデル（本物）</span>
+            <span style={{ color: "#FDE047" }}>令和8年5月1日施行</span>
+          </div>
+          <Img
+            src={staticFile("real/doc-guideline.png")}
+            style={{
+              width: "100%",
+              display: "block",
+            }}
+          />
+        </div>
+
+        {/* 2. 『［OTC医薬品販売時確認シート］販売者用』（20260205_09.doc 本物PNG） */}
+        <div
+          style={{
+            position: "absolute",
+            top: 360,
+            left: 30,
+            width: 500,
+            transform: "rotate(2deg)",
+            boxShadow: "0 18px 40px rgba(15, 23, 42, 0.25)",
+            borderRadius: 8,
+            overflow: "hidden",
+            border: "2px solid #16A34A",
+            background: C.white,
+            zIndex: 3,
+          }}
+        >
+          <div style={{ background: "#16A34A", color: C.white, padding: "6px 14px", fontSize: 14, fontWeight: 900, display: "flex", justifyContent: "space-between" }}>
+            <span>［OTC医薬品販売時確認シート］（本物）</span>
+            <span>【濫】必須確認項目</span>
+          </div>
+          <Img
+            src={staticFile("real/doc-checksheet.png")}
+            style={{
+              width: "100%",
+              display: "block",
+            }}
+          />
+          <div style={{ background: "#DC2626", color: C.white, padding: "8px 14px", fontSize: 13, fontWeight: 700, textAlign: "center" }}>
+            ※購入者1人あたり10項目以上を店頭でチェック・確認必須！
+          </div>
+        </div>
+
+        {/* 3. 『医薬品販売記録』（20260205_10.doc 本物PNG） ★ユーザー指示により最も大変な記録作業を中央に特大表示！ */}
+        <div
+          style={{
+            position: "absolute",
+            top: 10,
+            left: 510,
+            width: 710,
+            height: 870,
+            transform: "rotate(1deg)",
+            boxShadow: "0 24px 50px rgba(15, 23, 42, 0.32)",
+            borderRadius: 10,
+            overflow: "hidden",
+            border: "2.5px solid #D97706",
+            background: "#FFFDF5",
+            zIndex: 5,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <div style={{ background: "#D97706", color: C.white, padding: "8px 18px", fontSize: 16, fontWeight: 900, display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
+            <span style={{ fontSize: 18 }}>医薬品販売記録（本物様式例・紙の手書き作業）</span>
+            <span style={{ background: "#DC2626", padding: "3px 10px", borderRadius: 4, fontSize: 13 }}>法令上必須・2年間保存</span>
+          </div>
+          <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
+            <Img
+              src={staticFile("real/doc-record.png")}
+              style={{
+                width: "100%",
+                display: "block",
+              }}
+            />
+            {/* ユーザー提供の本物スタンプ画像を右下にリアルに捺印！ */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: 20,
+                right: 20,
+                transform: "rotate(-3.5deg)",
+                filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.25))",
+              }}
+            >
+              <Img
+                src={staticFile("real/stamp-sold.png")}
+                style={{
+                  width: 240,
+                  display: "block",
+                  borderRadius: 4,
+                  border: "1.5px solid rgba(0,0,0,0.12)",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* 4. 指定濫用防止医薬品 対象成分拡大リスト（右上、幅580pxで美しく収める） */}
+        <div
+          style={{
+            position: "absolute",
+            top: 20,
+            left: 1250,
+            right: 10,
+            background: C.white,
+            border: `2.5px solid ${C.navy}`,
+            borderRadius: 12,
+            padding: "18px 22px",
+            transform: "rotate(-1.5deg)",
+            boxShadow: "0 16px 36px rgba(30, 58, 95, 0.22)",
+            zIndex: 3,
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ background: "#DC2626", color: C.white, fontSize: 15, fontWeight: 900, padding: "4px 8px", borderRadius: 6 }}>
+              対象成分拡大
+            </span>
+            <span style={{ fontSize: 22, fontWeight: 900, color: C.navy }}>
+              指定濫用防止医薬品
+            </span>
+          </div>
+          <div style={{ fontSize: 15, fontWeight: 700, color: C.sub, marginTop: 4 }}>
+            総合感冒薬・鎮咳薬の多数が該当（パブロン・新ルル・ブロン等）
+          </div>
+
+          {/* 成分バッジの群れ */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>
+            {["ジヒドロコデイン", "コデイン", "ブロモバレリル尿素", "エフェドリン", "プソイドエフェドリン", "メチルエフェドリン", "デキストロメトルファン"].map((c, i) => (
+              <span
+                key={i}
+                style={{
+                  background: C.navySoft,
+                  border: "1.5px solid #CBD5E1",
+                  color: C.navy,
+                  fontSize: 16,
+                  fontWeight: 700,
+                  padding: "5px 12px",
+                  borderRadius: 8,
+                }}
+              >
+                ⚠ {c}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* 5. 現場の過重負担コールアウト（右下、特大赤スタンプ付箋） */}
+        <div
+          style={{
+            position: "absolute",
+            top: 380,
+            left: 1250,
+            right: 10,
+            background: "#DC2626",
+            color: C.white,
+            borderRadius: 12,
+            padding: "20px 24px",
+            transform: "rotate(1.5deg)",
+            boxShadow: "0 16px 36px rgba(220, 38, 38, 0.45)",
+            display: "flex",
+            flexDirection: "column",
+            gap: 6,
+            zIndex: 4,
+          }}
+        >
+          <div style={{ fontSize: 26, fontWeight: 900, letterSpacing: 1 }}>
+            現場の悲鳴：確認・記録業務がパンク！
+          </div>
+          <div style={{ fontSize: 17, fontWeight: 700, opacity: 0.98, lineHeight: 1.4 }}>
+            ・1人1人これら全てを手書き記入<br />
+            ・法令に基づき2年間の紙保管義務<br />
+            ・他店での直近購入履歴は紙では確認不能！
+          </div>
+          <div style={{ fontSize: 15, fontWeight: 700, color: "#FEF08A", marginTop: 4, borderTop: "1px dashed rgba(255,255,255,0.4)", paddingTop: 6 }}>
+            ※店頭オペレーションが崩壊の危機に直面
+          </div>
         </div>
       </div>
     </div>
@@ -223,40 +269,36 @@ const AbuseRegulationChaosBoard: React.FC = () => {
 };
 
 export const S2b: React.FC = () => {
-  const frame = useCurrentFrame();
-  // s2b-1 ナレーションの開始秒（約 8.8 秒 / 265 フレーム）
+  // s2b-1 ナレーションの開始秒（約 9.16 秒）
   const s2b1StartSec = lineTiming("s2b-1").inScene;
-  const isChaosPhase = frame < sec(s2b1StartSec);
 
   return (
-    <AppScene id="S2b">
-      {isChaosPhase ? (
-        <AbuseRegulationChaosBoard />
-      ) : (
-        <>
-          <ProblemSolutionBanner
-            problem="多岐にわたる確認 ＆ 紙の記録"
-            solution="系列店照合 ＆ 10秒で記録完了"
-            at="s2b-1"
-          />
-          <FeatureList
-            items={[
-              {
-                badge: "系列店照合",
-                title: "重複・多量購入をリアルタイム検知",
-                desc: "PII非保持で他店舗の購入履歴を安全かつ瞬時に照合",
-                at: "s2b-1",
-              },
-              {
-                badge: "10秒で完了",
-                title: "販売記録の下書きをClaudeが自動作成",
-                desc: "確認項目をチェックするだけで要約と記録保存が完了",
-                at: "s2b-2",
-              },
-            ]}
-          />
-        </>
-      )}
+    <AppScene
+      id="S2b"
+      phoneStartSec={s2b1StartSec}
+      fullWidthContent={<RealAbuseDocumentChaosCanvas />}
+    >
+      <ProblemSolutionBanner
+        problem="多岐にわたる確認 ＆ 紙の記録"
+        solution="系列店照合 ＆ 10秒で記録完了"
+        at="s2b-1"
+      />
+      <FeatureList
+        items={[
+          {
+            badge: "系列店照合",
+            title: "重複・多量購入をリアルタイム検知",
+            desc: "PII非保持で他店舗の購入履歴を安全かつ瞬時に照合",
+            at: "s2b-1",
+          },
+          {
+            badge: "10秒で完了",
+            title: "販売記録の下書きをClaudeが自動作成",
+            desc: "確認項目をチェックするだけで要約と記録保存が完了",
+            at: "s2b-2",
+          },
+        ]}
+      />
     </AppScene>
   );
 };
@@ -426,30 +468,15 @@ export const S6: React.FC = () => (
           </div>
         </div>
 
-        {/* 中央：同一成分検知 矢印 */}
+        {/* 中央：矢印のみ（ユーザー指示により「同成分を検知」バッジを削除しスッキリ統一） */}
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: 8,
           }}
         >
           <div style={{ fontSize: 40, color: C.navy, fontWeight: 900 }}>➔</div>
-          <div
-            style={{
-              fontSize: 16,
-              fontWeight: 700,
-              color: C.navy,
-              background: C.navySoft,
-              padding: "6px 8px",
-              borderRadius: 6,
-              whiteSpace: "nowrap",
-            }}
-          >
-            同成分を検知
-          </div>
         </div>
 
         {/* 右：全商品へ即時共有 */}

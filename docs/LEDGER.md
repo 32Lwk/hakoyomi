@@ -2,6 +2,18 @@
 
 ## Open
 
+### L-20261106-01
+- asked: Anthropic から「2026-11-04 に hakoyomi キー(…RgAA)で廃止済み claude-3-haiku-20240307 へのリクエストが1件失敗（not_found_error）」と通知。原因確認と対応（ゆう 2026-11-06）
+- why: 廃止モデルへの呼び出しが残っていると、該当経路でClaudeが使えず不意の失敗になる。審査・デモ前に潰す
+- decisions（ゆうの選択、すべて推奨どおり）:
+  - 調査：リポ全体・git履歴・ローカル/.env・Mac mini の .env.local に claude-3-haiku は無し（ローカル CLAUDE_MODEL=claude-sonnet-5-5、Mac mini は claude-opus-5-5）。出どころは本リポ現行コード以外（同キーを使う別プロジェクト／古いビルド等）の可能性。Anthropic コンソールで当該キーのログ確認を継続
+  - コード：`CLAUDE_MODEL_FAST` の未設定時の既定を `claude-haiku-4-5` → `claude-haiku-5-5` に更新（veteran/checklist.ts・compareInsight.ts）
+- target: src/lib/veteran/{checklist.ts,compareInsight.ts}
+- owner: Claude Code（調査・実装）／ゆう（コンソール確認）
+- status: in progress
+- proof:
+- notes: 失敗は11/4の1件のみ。以後再発しなければ現行デプロイは無関係
+
 ### L-20261104-27
 - asked: 接客前チェック（先輩ならここを確認する）が表示されなくなった原因を確認して改善する（ゆう 2026-11-04）
 - why: 店頭でお客様に渡す前の確認チェックリストが表示されず、UIが欠落して見えていた。生成速度向上と安定稼働の両立が必要

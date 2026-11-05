@@ -112,7 +112,7 @@ export async function generateDialogueChecklist(view: ProductView): Promise<Dial
 上記医薬品を店頭でお客様にお渡しする際、新人登録販売者がお客様に確認すべき「問いかけ台詞（最大3問）」と「公的根拠」を作成してください。`;
 
   try {
-    const model = process.env.CLAUDE_MODEL_FAST || process.env.CLAUDE_MODEL || "claude-haiku-4-5";
+    const model = process.env.CLAUDE_MODEL_FAST || process.env.CLAUDE_MODEL || "claude-haiku-5-5";
     const res = await c.beta.messages.parse({
       model,
       max_tokens: 1024,

@@ -8,29 +8,47 @@ import { rise } from "./anim";
 import { PHONE_CX, PHONE_OUTER_W, PHONE_SCALE, PhoneFrame, RecordingPlaceholder } from "./PhoneFrame";
 
 /** 画面録画の場面：左にスマホ（上下中央・大サイズ）、右に場面名と要点（背景は元の白） */
-export const AppScene: React.FC<{ id: SceneId; children?: React.ReactNode }> = ({ id, children }) => {
+export const AppScene: React.FC<{
+  id: SceneId;
+  children?: React.ReactNode;
+  phoneStartSec?: number;
+  fullWidthContent?: React.ReactNode;
+}> = ({ id, children, phoneStartSec = 0, fullWidthContent }) => {
   const def = scene(id);
   const rec = findRecording(id);
   const total = sec(def.durationSec);
+  const frame = useCurrentFrame();
+  const showPhone = frame >= sec(phoneStartSec);
 
   return (
     <AbsoluteFill style={{ background: C.white, fontFamily: FONT }}>
-      <PhoneFrame>
-        {rec ? (
-          <RecordingTrack file={rec.file} seconds={rec.seconds} segments={def.segments} total={total} />
-        ) : (
-          <RecordingPlaceholder
-            sceneId={def.id}
-            title={def.title}
-            expected={`video/record/out/${def.id}-….webm`}
-          />
-        )}
-      </PhoneFrame>
-      {rec ? <LabelTrack segments={def.segments} total={total} /> : null}
-      <div style={{ position: "absolute", left: LAYOUT.panel.x, top: LAYOUT.panel.y, width: LAYOUT.panel.w }}>
-        <SceneHeading id={def.id} title={def.title} />
-        <div style={{ marginTop: 32 }}>{children}</div>
-      </div>
+      {showPhone ? (
+        <>
+          <PhoneFrame>
+            {rec ? (
+              <RecordingTrack file={rec.file} seconds={rec.seconds} segments={def.segments} total={total} />
+            ) : (
+              <RecordingPlaceholder
+                sceneId={def.id}
+                title={def.title}
+                expected={`video/record/out/${def.id}-….webm`}
+              />
+            )}
+          </PhoneFrame>
+          {rec ? <LabelTrack segments={def.segments} total={total} /> : null}
+          <div style={{ position: "absolute", left: LAYOUT.panel.x, top: LAYOUT.panel.y, width: LAYOUT.panel.w }}>
+            <SceneHeading id={def.id} title={def.title} />
+            <div style={{ marginTop: 32 }}>{children}</div>
+          </div>
+        </>
+      ) : (
+        fullWidthContent ?? (
+          <div style={{ position: "absolute", left: LAYOUT.panel.x, top: LAYOUT.panel.y, width: LAYOUT.panel.w }}>
+            <SceneHeading id={def.id} title={def.title} />
+            <div style={{ marginTop: 32 }}>{children}</div>
+          </div>
+        )
+      )}
     </AbsoluteFill>
   );
 };
