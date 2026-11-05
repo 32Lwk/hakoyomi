@@ -225,7 +225,7 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
                 ...rise(frame, start + 10, 18),
               }}
             >
-              年数の壁を、なくす。
+              ベテランの知恵を受け継ぐ。
             </span>
             <span
               style={{
@@ -237,7 +237,7 @@ export const Closing: React.FC<{ repoUrl: string; start: number }> = ({ repoUrl,
                 ...rise(frame, start + 26, 18),
               }}
             >
-              新人でも、自信を持って。
+              誰もが自信を持って。
             </span>
           </div>
 
