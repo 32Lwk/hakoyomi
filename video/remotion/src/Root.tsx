@@ -10,6 +10,7 @@ import { S1Opening } from "./scenes/S1Opening";
 import { S1Real } from "./scenes/S1Real";
 import { QrCard } from "./components/QrCard";
 import { Closing, Results, Roles, S7, s7Defaults, type S7Props } from "./scenes/S7";
+import { ThumbnailA, ThumbnailB, ThumbnailC, ThumbnailD } from "./scenes/Thumbnails";
 import { FPS, H, W } from "./theme";
 import { scene, sec, TOTAL_SEC } from "./timeline";
 
@@ -52,5 +53,9 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="S7-Roles" component={() => <Roles start={0} />} durationInFrames={sec(6)} {...common} />
     <Composition id="S7-Results" component={S7ResultsOnly} durationInFrames={sec(6)} defaultProps={s7Defaults} {...common} />
     <Composition id="S7-Closing" component={S7ClosingOnly} durationInFrames={sec(6)} defaultProps={{ repoUrl: s7Defaults.repoUrl }} {...common} />
+    <Composition id="ThumbnailA" component={ThumbnailA} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailB" component={ThumbnailB} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailC" component={ThumbnailC} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailD" component={ThumbnailD} durationInFrames={1} {...common} />
   </>
 );
