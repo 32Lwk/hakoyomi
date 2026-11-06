@@ -503,7 +503,7 @@ export const S3: React.FC = () => (
           at: out("S3", 30.3),
         },
         {
-          title: "自信を持って店頭で提案",
+          title: "根拠をそろえて自信を持って説明",
           at: out("S3", 38.2),
         },
       ]}
@@ -524,7 +524,7 @@ export const S4: React.FC<{ pipeline?: PipelineProps }> = () => (
           at: "s4-1",
         },
         {
-          title: "PMDA添付文書から根拠を特定",
+          title: "厚労省の通知から根拠を抜き出す",
           at: out("S4", 10.5),
         },
         {

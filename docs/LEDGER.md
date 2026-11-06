@@ -2,6 +2,38 @@
 
 ## Open
 
+### L-20261106-04
+- asked: F（白地の特大タイポ＋実機）と I（問いの吹き出し＋新人とベテランの写真）を組み合わせたサムネイルを作る（ゆう 2026-11-06）
+- why: F の読みやすさと I の人の写った絵を両立させる
+- decisions: 白地・「新人でも、ベテランの説明を。」（琥珀の下線）・上に「この薬、何が違うの？」の吹き出し・新人とベテランの写真・実機。写真の見せ方で3案（M＝円の中、N＝右から白へ溶ける、O＝大きな円で右下に実機）。顔に実機や文字を重ねない
+- target: video/remotion/src/scenes/Thumbnails4.tsx・src/Root.tsx
+- owner: Claude Code（実装）／ゆう（選択）
+- status: done（ゆうが N を選択 2026-11-06。out/youtube_thumbnail.jpg）
+- proof: out/thumbnail_{m,n,o}.{png,jpg}（JPG 各 0.5MB 未満）、一覧 out/thumbnails_new_MNO.png（右下は比較用の F）。tsc 通過
+- notes:
+
+### L-20261106-03
+- asked: 前の写真の一覧で「左下（新人がお客様に説明）」が良く、「真ん中の下（新人とベテランが並ぶ）」と組み合わせたサムネイルを何パターンか作る（ゆう 2026-11-06）
+- why: L-20261106-02 の E〜H より、人が写った絵のほうがテーマ1（ベテランの説明を受け継ぐ）が伝わる
+- decisions: G の問い「この薬、何が違うの？」と real/s7-confident-{1,2}.jpg を組み合わせた4案 I〜L を作る。YouTube の上限 2MB に収めるため JPG も書き出す
+- target: video/remotion/src/scenes/Thumbnails3.tsx・src/scenes/Thumbnails2.tsx（部品を export）・src/Root.tsx
+- owner: Claude Code（実装）／ゆう（選択）
+- status: done（L-20261106-04 の N に決定）
+- proof: out/thumbnail_{i,j,k,l}.{png,jpg}（JPG は各 0.5MB 未満）、一覧 out/thumbnails_new_IJKL.png。tsc 通過
+- notes: 写真は動画 S7 と同じ生成画像（実在の人物ではない）
+
+### L-20261106-02
+- asked: YouTube アップ前に動画の表示文言を直して書き出し直す。サムネイル4案はダサくインパクトが弱く、モックの iPhone もおかしいので作り直して何パターンか提案する（ゆう 2026-11-06）
+- why: S4 の「PMDA添付文書から根拠を特定」は事実と違う（根拠は厚労省通知・承認基準。添付文書本文は持たない、prd §5・CLAUDE.md）。審査で権利のないデータの利用と誤解されるおそれ。S3 の「自信を持って店頭で提案」は推薦に読める。サムネイル D の「Claude 3.5 Sonnet 実装」は事実と違い、B・C の「添付文書を横断比較」も同じ誤解を招く
+- decisions（ゆうの選択、推奨どおり）:
+  - S4「PMDA添付文書から根拠を特定」→「厚労省の通知から根拠を抜き出す」、S3「自信を持って店頭で提案」→「根拠をそろえて自信を持って説明」。main.mp4 を書き出し直す
+  - サムネイルは新しい案を複数作り、実際のアプリ画面（録画のコマ）を使う。モデル名・添付文書・推薦に読める文言・根拠のない数字は入れない
+- target: video/remotion/src/scenes/{AppScenes.tsx,Thumbnails.tsx}・video/remotion/src/Root.tsx・video/remotion/out/
+- owner: Claude Code（実装・書き出し）／ゆう（サムネイルの選択・YouTube アップ）
+- status: done（動画は main-v2.mp4、サムネイルは L-20261106-04 の N）
+- proof: out/main-v2.mp4（178.0秒、1920×1080）を書き出し、1:54 のコマで「厚労省の通知から根拠を抜き出す」を確認。新サムネイル E〜H（src/scenes/Thumbnails2.tsx、Root に ThumbnailE〜H）を out/thumbnail_{e,f,g,h}.png に書き出し（各 2MB 未満）。iPhone はコードで描いた筐体＋録画のコマ（public/thumbnails/app_{badges,compare,ask}.png・photo_scan.png）。tsc 通過
+- notes: 旧 main.mp4 は残してある。アップに使うのは main-v2.mp4
+
 ### L-20261106-01
 - asked: Anthropic から「2026-11-04 に hakoyomi キー(…RgAA)で廃止済み claude-3-haiku-20240307 へのリクエストが1件失敗（not_found_error）」と通知。原因確認と対応（ゆう 2026-11-06）
 - why: 廃止モデルへの呼び出しが残っていると、該当経路でClaudeが使えず不意の失敗になる。審査・デモ前に潰す

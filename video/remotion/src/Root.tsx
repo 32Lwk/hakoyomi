@@ -11,6 +11,9 @@ import { S1Real } from "./scenes/S1Real";
 import { QrCard } from "./components/QrCard";
 import { Closing, Results, Roles, S7, s7Defaults, type S7Props } from "./scenes/S7";
 import { ThumbnailA, ThumbnailB, ThumbnailC, ThumbnailD } from "./scenes/Thumbnails";
+import { ThumbnailE, ThumbnailF, ThumbnailG, ThumbnailH } from "./scenes/Thumbnails2";
+import { ThumbnailI, ThumbnailJ, ThumbnailK, ThumbnailL } from "./scenes/Thumbnails3";
+import { ThumbnailM, ThumbnailN, ThumbnailO } from "./scenes/Thumbnails4";
 import { FPS, H, W } from "./theme";
 import { scene, sec, TOTAL_SEC } from "./timeline";
 
@@ -57,5 +60,16 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="ThumbnailB" component={ThumbnailB} durationInFrames={1} {...common} />
     <Composition id="ThumbnailC" component={ThumbnailC} durationInFrames={1} {...common} />
     <Composition id="ThumbnailD" component={ThumbnailD} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailE" component={ThumbnailE} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailF" component={ThumbnailF} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailG" component={ThumbnailG} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailH" component={ThumbnailH} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailI" component={ThumbnailI} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailJ" component={ThumbnailJ} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailK" component={ThumbnailK} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailL" component={ThumbnailL} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailM" component={ThumbnailM} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailN" component={ThumbnailN} durationInFrames={1} {...common} />
+    <Composition id="ThumbnailO" component={ThumbnailO} durationInFrames={1} {...common} />
   </>
 );
